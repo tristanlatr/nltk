@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.translate.stack_decoder.StackDecoder : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.translate.stack_decoder.StackDecoder</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.translate.html">translate</a></code>.<code><a href="nltk.translate.stack_decoder.html">stack_decoder</a></code>.<code><a href="nltk.translate.stack_decoder.StackDecoder.html">StackDecoder</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.translate.html">translate</a></code><wbr></wbr>.<code><a href="nltk.translate.stack_decoder.html">stack_decoder</a></code><wbr></wbr>.<code><a href="nltk.translate.stack_decoder.StackDecoder.html">StackDecoder</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">StackDecoder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L50">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StackDecoder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L50" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.stack_decoder.StackDecoder">View In Hierarchy</a></p>
       </div>
 
@@ -67,58 +98,19 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1900">
+        <table class="children sortable" id="id1904">
   
-  <tr class="method">
+  
+  <tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#valid_phrases">valid_phrases</a></code></td>
+    <td><span>Extract phrases from ``all_phrases_from`` that contains words that have not been translated by ``hypothesis``</span></td>
+  </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span>:param phrase_table: Table of translations for source language phrases and the log probabilities for those translations. :type phrase_table: PhraseTable</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#phrase_table">phrase_table</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#language_model">language_model</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#word_penalty">word_penalty</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#beam_threshold">beam_threshold</a></code></td>
-    <td><span>float: Hypotheses that score below this factor of the best hypothesis in a stack are dropped from consideration. Value between 0.0 and 1.0.</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#stack_size">stack_size</a></code></td>
-    <td><span>int: Maximum number of hypotheses to consider in a stack. Higher values increase the likelihood of a good translation, but increases processing time.</span></td>
-  </tr><tr class="property">
-    
-    <td>Property</td>
-    <td><code><a href="#distortion_factor">distortion_factor</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#distortion_factor.setter">distortion_factor.setter</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#translate">translate</a></code></td>
-    <td><span>:param src_sentence: Sentence to be translated :type src_sentence: list(str)</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#find_all_src_phrases">find_all_src_phrases</a></code></td>
-    <td><span>Finds all subsequences in src_sentence that have a phrase translation in the translation table</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -127,8 +119,13 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#future_score">future_score</a></code></td>
-    <td><span>Determines the approximate score for translating the untranslated words in ``hypothesis``</span></td>
+    <td><code><a href="#distortion_factor.setter">distortion_factor.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#distortion_score">distortion_score</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -137,22 +134,57 @@
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#distortion_score">distortion_score</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="staticmethod">
+    <td><code><a href="#find_all_src_phrases">find_all_src_phrases</a></code></td>
+    <td><span>Finds all subsequences in src_sentence that have a phrase translation in the translation table</span></td>
+  </tr><tr class="method">
     
-    <td>Static Method</td>
-    <td><code><a href="#valid_phrases">valid_phrases</a></code></td>
-    <td><span>Extract phrases from ``all_phrases_from`` that contains words that have not been translated by ``hypothesis``</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#future_score">future_score</a></code></td>
+    <td><span>Determines the approximate score for translating the untranslated words in ``hypothesis``</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#translate">translate</a></code></td>
+    <td><span>:param src_sentence: Sentence to be translated :type src_sentence: list(str)</span></td>
+  </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#__distortion_factor">__distortion_factor</a></code></td>
+    <td><code><a href="#beam_threshold">beam_threshold</a></code></td>
+    <td><span>float: Hypotheses that score below this factor of the best hypothesis in a stack are dropped from consideration. Value between 0.0 and 1.0.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#language_model">language_model</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#phrase_table">phrase_table</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#stack_size">stack_size</a></code></td>
+    <td><span>int: Maximum number of hypotheses to consider in a stack. Higher values increase the likelihood of a good translation, but increases processing time.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#word_penalty">word_penalty</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#distortion_factor">distortion_factor</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#__compute_log_distortion">__compute_log_distortion</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#__distortion_factor">__distortion_factor</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -168,7 +200,42 @@
 
       <div id="childList">
 
-        <div class="basemethod">
+        <div class="basestaticmethod">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.valid_phrases">
+    
+  </a>
+  <a name="valid_phrases">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">valid_phrases</span>(all_phrases_from, hypothesis):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L305">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Extract phrases from ``all_phrases_from`` that contains words
+that have not been translated by ``hypothesis``
+
+:param all_phrases_from: Phrases represented by their spans, in
+    the same format as the return value of
+    ``find_all_src_phrases``
+:type all_phrases_from: list(list(int))
+
+:type hypothesis: _Hypothesis
+
+:return: A list of phrases, represented by their spans, that
+    cover untranslated positions.
+:rtype: list(tuple(int, int))</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.translate.stack_decoder.StackDecoder.__init__">
     
@@ -179,7 +246,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, phrase_table, language_model):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L80">
       
       (source)
     </a>
@@ -199,284 +266,8 @@
     with nltk.model once it is implemented.
 :type language_model: object</p></div>
   </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.phrase_table">
-    
-  </a>
-  <a name="phrase_table">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">phrase_table</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L94">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.language_model">
-    
-  </a>
-  <a name="language_model">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">language_model</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L95">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.word_penalty">
-    
-  </a>
-  <a name="word_penalty">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">word_penalty</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L97">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">float: Influences the translation length exponentially.
-    If positive, shorter translations are preferred.
-    If negative, longer translations are preferred.
-    If zero, no penalty is applied.</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.beam_threshold">
-    
-  </a>
-  <a name="beam_threshold">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">beam_threshold</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L105">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">float: Hypotheses that score below this factor of the best
-    hypothesis in a stack are dropped from consideration.
-    Value between 0.0 and 1.0.</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.stack_size">
-    
-  </a>
-  <a name="stack_size">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">stack_size</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L112">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">int: Maximum number of hypotheses to consider in a stack.
-    Higher values increase the likelihood of a good translation,
-    but increases processing time.</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.__distortion_factor">
-    
-  </a>
-  <a name="__distortion_factor">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__distortion_factor</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L119">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.distortion_factor">
-    
-  </a>
-  <a name="distortion_factor">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">distortion_factor</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L122">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">float: Amount of reordering of source phrases.
-    Lower values favour monotone translation, suitable when
-    word order is similar for both source and target languages.
-    Value between 0.0 and 1.0. Default 0.5.</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="nltk.translate.stack_decoder.StackDecoder.distortion_factor.setter">
-    
-  </a>
-  <a name="distortion_factor.setter">
-    
-  </a>
-  <div class="functionHeader">
-    @distortion_factor.setter<br />
-    <span class="py-keyword">def</span> <span class="py-defname">distortion_factor</span>(self, d):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L132">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.__compute_log_distortion">
-    
-  </a>
-  <a name="__compute_log_distortion">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__compute_log_distortion</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L137">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.__log_distortion_factor">
-    
-  </a>
-  <a name="__log_distortion_factor">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__log_distortion_factor</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L141">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.translate">
-    
-  </a>
-  <a name="translate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">translate</span>(self, src_sentence):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L145">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">:param src_sentence: Sentence to be translated
-:type src_sentence: list(str)
-
-:return: Translated sentence
-:rtype: list(str)</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.translate.stack_decoder.StackDecoder.find_all_src_phrases">
-    
-  </a>
-  <a name="find_all_src_phrases">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">find_all_src_phrases</span>(self, src_sentence):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L202">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Finds all subsequences in src_sentence that have a phrase
-translation in the translation table
-
-:type src_sentence: tuple(str)
-
-:return: Subsequences that have a phrase translation,
-    represented as a table of lists of end positions.
-    For example, if result[2] is [5, 6, 9], then there are
-    three phrases starting from position 2 in ``src_sentence``,
-    ending at positions 5, 6, and 9 exclusive. The list of
-    ending positions are in ascending order.
-:rtype: list(list(int))</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.translate.stack_decoder.StackDecoder.compute_future_scores">
     
@@ -487,7 +278,7 @@ translation in the translation table
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">compute_future_scores</span>(self, src_sentence):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L226">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L226">
       
       (source)
     </a>
@@ -510,16 +301,17 @@ subsequence covering positions 2, 3, and 4.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.translate.stack_decoder.StackDecoder.future_score">
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.distortion_factor.setter">
     
   </a>
-  <a name="future_score">
+  <a name="distortion_factor.setter">
     
   </a>
   <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">future_score</span>(self, hypothesis, future_score_table, sentence_length):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L262">
+    @distortion_factor.setter<br />
+    <span class="py-keyword">def</span> <span class="py-defname">distortion_factor</span>(self, d):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L132">
       
       (source)
     </a>
@@ -527,10 +319,32 @@ subsequence covering positions 2, 3, and 4.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Determines the approximate score for translating the
-untranslated words in ``hypothesis``</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.distortion_score">
+    
+  </a>
+  <a name="distortion_score">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">distortion_score</span>(self, hypothesis, next_src_phrase_span):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L297">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.translate.stack_decoder.StackDecoder.expansion_score">
     
@@ -541,7 +355,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">expansion_score</span>(self, hypothesis, translation_option, src_phrase_span):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L272">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L272">
       
       (source)
     </a>
@@ -563,16 +377,241 @@ untranslated words in ``hypothesis``</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.translate.stack_decoder.StackDecoder.distortion_score">
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.find_all_src_phrases">
     
   </a>
-  <a name="distortion_score">
+  <a name="find_all_src_phrases">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">distortion_score</span>(self, hypothesis, next_src_phrase_span):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L297">
+    <span class="py-keyword">def</span> <span class="py-defname">find_all_src_phrases</span>(self, src_sentence):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L202">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Finds all subsequences in src_sentence that have a phrase
+translation in the translation table
+
+:type src_sentence: tuple(str)
+
+:return: Subsequences that have a phrase translation,
+    represented as a table of lists of end positions.
+    For example, if result[2] is [5, 6, 9], then there are
+    three phrases starting from position 2 in ``src_sentence``,
+    ending at positions 5, 6, and 9 exclusive. The list of
+    ending positions are in ascending order.
+:rtype: list(list(int))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.future_score">
+    
+  </a>
+  <a name="future_score">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">future_score</span>(self, hypothesis, future_score_table, sentence_length):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L262">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Determines the approximate score for translating the
+untranslated words in ``hypothesis``</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.translate">
+    
+  </a>
+  <a name="translate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">translate</span>(self, src_sentence):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L145">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:param src_sentence: Sentence to be translated
+:type src_sentence: list(str)
+
+:return: Translated sentence
+:rtype: list(str)</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.beam_threshold">
+    
+  </a>
+  <a name="beam_threshold">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">beam_threshold</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L105">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">float: Hypotheses that score below this factor of the best
+    hypothesis in a stack are dropped from consideration.
+    Value between 0.0 and 1.0.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.language_model">
+    
+  </a>
+  <a name="language_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">language_model</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L95">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.phrase_table">
+    
+  </a>
+  <a name="phrase_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">phrase_table</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L94">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.stack_size">
+    
+  </a>
+  <a name="stack_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stack_size</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L112">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">int: Maximum number of hypotheses to consider in a stack.
+    Higher values increase the likelihood of a good translation,
+    but increases processing time.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.word_penalty">
+    
+  </a>
+  <a name="word_penalty">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">word_penalty</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L97">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">float: Influences the translation length exponentially.
+    If positive, shorter translations are preferred.
+    If negative, longer translations are preferred.
+    If zero, no penalty is applied.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.distortion_factor">
+    
+  </a>
+  <a name="distortion_factor">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">distortion_factor</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">float: Amount of reordering of source phrases.
+    Lower values favour monotone translation, suitable when
+    word order is similar for both source and target languages.
+    Value between 0.0 and 1.0. Default 0.5.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.__compute_log_distortion">
+    
+  </a>
+  <a name="__compute_log_distortion">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__compute_log_distortion</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L137">
       
       (source)
     </a>
@@ -582,47 +621,63 @@ untranslated words in ``hypothesis``</p></div>
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basestaticmethod">
+</div><div class="baseinstancevariable private">
   
-  <a name="nltk.translate.stack_decoder.StackDecoder.valid_phrases">
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.__distortion_factor">
     
   </a>
-  <a name="valid_phrases">
+  <a name="__distortion_factor">
     
   </a>
   <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">valid_phrases</span>(all_phrases_from, hypothesis):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/stack_decoder.py#L305">
+    
+    <span class="py-defname">__distortion_factor</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L119">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="pre">Extract phrases from ``all_phrases_from`` that contains words
-that have not been translated by ``hypothesis``
-
-:param all_phrases_from: Phrases represented by their spans, in
-    the same format as the return value of
-    ``find_all_src_phrases``
-:type all_phrases_from: list(list(int))
-
-:type hypothesis: _Hypothesis
-
-:return: A list of phrases, represented by their spans, that
-    cover untranslated positions.
-:rtype: list(tuple(int, int))</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.translate.stack_decoder.StackDecoder.__log_distortion_factor">
+    
+  </a>
+  <a name="__log_distortion_factor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__log_distortion_factor</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L141">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

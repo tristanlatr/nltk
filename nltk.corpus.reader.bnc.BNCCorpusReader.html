@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>nltk.corpus.reader.bnc.BNCCorpusReader</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.corpus.html">corpus</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.html">reader</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.bnc.html">bnc</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.bnc.BNCCorpusReader.html">BNCCorpusReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BNCCorpusReader</span>(<a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html" title="nltk.corpus.reader.xmldocs.XMLCorpusReader">XMLCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L14" class="sourceLink">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.corpus.reader.bnc.BNCCorpusReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Corpus reader for the XML version of the British National Corpus.
+
+For access to the complete XML data structure, use the ``xml()``
+method.  For access to simple word lists and tagged word lists, use
+``words()``, ``sents()``, ``tagged_words()``, and ``tagged_sents()``.
+
+You can obtain the full version of the BNC corpus at
+http://www.ota.ox.ac.uk/desc/2554
+
+If you extracted the archive to a directory called `BNC`, then you can
+instantiate the reader as::
+
+    BNCCorpusReader(root='BNC/Texts/', fileids=r'[A-K]/\w*/\w*\.xml')</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id244">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sents">sents</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tagged_sents">tagged_sents</a></code></td>
+    <td><span>:return: the given file(s) as a list of sentences, each encoded as a list of ``(word,tag)`` tuples. :rtype: list(list(tuple(str,str)))</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tagged_words">tagged_words</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#words">words</a></code></td>
+    <td><span>:return: the given file(s) as a list of words and punctuation symbols. :rtype: list(str)</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_views">_views</a></code></td>
+    <td><span>A helper function that instantiates BNCWordViews or the list of words/sentences.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_words">_words</a></code></td>
+    <td><span>Helper used to implement the view methods -- returns a list of words or a list of sentences, optionally tagged.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_lazy">_lazy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html">XMLCorpusReader</a></code>:
+          </p>
+          <table class="children sortable" id="id245">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html#raw">raw</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html#xml">xml</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html#_wrap_etree">_wrap_etree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html">XMLCorpusReader</a></code>):
+          </p>
+          <table class="children sortable" id="id246">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#abspath">abspath</a></code></td>
+    <td><span>Return the absolute path for the given file.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#abspaths">abspaths</a></code></td>
+    <td><span>Return a list of the absolute paths for all fileids in this corpus; or for the given list of fileids, if specified.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#citation">citation</a></code></td>
+    <td><span>Return the contents of the corpus citation.bib file, if it exists.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#encoding">encoding</a></code></td>
+    <td><span>Return the unicode encoding for the given corpus file, if known. If the encoding is unknown, or if the given file should be processed using byte strings (str), then return None.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#ensure_loaded">ensure_loaded</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#fileids">fileids</a></code></td>
+    <td><span>Return a list of file identifiers for the fileids that make up this corpus.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#license">license</a></code></td>
+    <td><span>Return the contents of the corpus LICENSE file, if it exists.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#open">open</a></code></td>
+    <td><span>Return an open stream that can be used to read the given file. If the file's encoding is not None, then the stream will automatically decode the file's contents into unicode.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#readme">readme</a></code></td>
+    <td><span>Return the contents of the corpus README file, if it exists.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#root">root</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_get_root">_get_root</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_fileids">_fileids</a></code></td>
+    <td><span>A list of the relative paths for the fileids that make up this corpus.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_root">_root</a></code></td>
+    <td><span>The root directory for this corpus.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_tagset">_tagset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.bnc.BNCCorpusReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, lazy=True):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L31">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html#__init__">nltk.corpus.reader.xmldocs.XMLCorpusReader.__init__</a></code></div>
+    
+    <div><p class="pre">:type root: PathPointer or str
+:param root: A path pointer identifying the root directory for
+    this corpus.  If a string is specified, then it will be
+    converted to a ``PathPointer`` automatically.
+:param fileids: A list of the files that make up this corpus.
+    This list can either be specified explicitly, as a list of
+    strings; or implicitly, as a regular expression over file
+    paths.  The absolute path for each file will be constructed
+    by joining the reader's root to each file name.
+:param encoding: The default unicode encoding for the files
+    that make up the corpus.  The value of ``encoding`` can be any
+    of the following:
+    - A string: ``encoding`` is the encoding name for all files.
+    - A dictionary: ``encoding[file_id]`` is the encoding
+      name for the file whose identifier is ``file_id``.  If
+      ``file_id`` is not in ``encoding``, then the file
+      contents will be processed using non-unicode byte strings.
+    - A list: ``encoding`` should be a list of ``(regexp, encoding)``
+      tuples.  The encoding for a file whose identifier is ``file_id``
+      will be the ``encoding`` value for the first tuple whose
+      ``regexp`` matches the ``file_id``.  If no tuple's ``regexp``
+      matches the ``file_id``, the file contents will be processed
+      using non-unicode byte strings.
+    - None: the file contents of all files will be
+      processed using non-unicode byte strings.
+:param tagset: The name of the tagset used by this corpus, to be used
+      for normalizing or converting the POS tags returned by the
+      tagged_...() methods.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.bnc.BNCCorpusReader.sents">
+    
+  </a>
+  <a name="sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None, strip_space=True, stem=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: the given file(s) as a list of
+    sentences or utterances, each encoded as a list of word
+    strings.
+:rtype: list(list(str))
+
+:param strip_space: If true, then strip trailing spaces from
+    word tokens.  Otherwise, leave the spaces on the tokens.
+:param stem: If true, then use word stems instead of word strings.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.bnc.BNCCorpusReader.tagged_sents">
+    
+  </a>
+  <a name="tagged_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, c5=False, strip_space=True, stem=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: the given file(s) as a list of
+    sentences, each encoded as a list of ``(word,tag)`` tuples.
+:rtype: list(list(tuple(str,str)))
+
+:param c5: If true, then the tags used will be the more detailed
+    c5 tags.  Otherwise, the simplified tags will be used.
+:param strip_space: If true, then strip trailing spaces from
+    word tokens.  Otherwise, leave the spaces on the tokens.
+:param stem: If true, then use word stems instead of word strings.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.bnc.BNCCorpusReader.tagged_words">
+    
+  </a>
+  <a name="tagged_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, c5=False, strip_space=True, stem=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L47">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: the given file(s) as a list of tagged
+    words and punctuation symbols, encoded as tuples
+    ``(word,tag)``.
+:rtype: list(tuple(str,str))
+
+:param c5: If true, then the tags used will be the more detailed
+    c5 tags.  Otherwise, the simplified tags will be used.
+:param strip_space: If true, then strip trailing spaces from
+    word tokens.  Otherwise, leave the spaces on the tokens.
+:param stem: If true, then use word stems instead of word strings.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.bnc.BNCCorpusReader.words">
+    
+  </a>
+  <a name="words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None, strip_space=True, stem=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L35">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html#words">nltk.corpus.reader.xmldocs.XMLCorpusReader.words</a></code></div>
+    
+    <div><p class="pre">:return: the given file(s) as a list of words
+    and punctuation symbols.
+:rtype: list(str)
+
+:param strip_space: If true, then strip trailing spaces from
+    word tokens.  Otherwise, leave the spaces on the tokens.
+:param stem: If true, then use word stems instead of word strings.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.bnc.BNCCorpusReader._views">
+    
+  </a>
+  <a name="_views">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_views</span>(self, fileids=None, sent=False, tag=False, strip_space=True, stem=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L93">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">A helper function that instantiates BNCWordViews or the list of words/sentences.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.bnc.BNCCorpusReader._words">
+    
+  </a>
+  <a name="_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_words</span>(self, fileid, bracket_sent, tag, strip_space, stem):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L103">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper used to implement the view methods -- returns a list of
+words or a list of sentences, optionally tagged.
+
+:param fileid: The name of the underlying file.
+:param bracket_sent: If true, include sentence bracketing.
+:param tag: The name of the tagset to use, or None for no tags.
+:param strip_space: If true, strip spaces from word tokens.
+:param stem: If true, then substitute stems for words.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.bnc.BNCCorpusReader._lazy">
+    
+  </a>
+  <a name="_lazy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lazy</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bnc.py#L33">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

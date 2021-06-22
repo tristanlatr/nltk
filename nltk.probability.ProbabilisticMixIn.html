@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.probability.ProbabilisticMixIn : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.probability.ProbabilisticMixIn</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.probability.html">probability</a></code>.<code><a href="nltk.probability.ProbabilisticMixIn.html">ProbabilisticMixIn</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.probability.html">probability</a></code><wbr></wbr>.<code><a href="nltk.probability.ProbabilisticMixIn.html">ProbabilisticMixIn</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticMixIn</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2301">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.probability.ImmutableProbabilisticMixIn.html">nltk.probability.ImmutableProbabilisticMixIn</a></code>, <code><a href="nltk.tree.ImmutableProbabilisticTree.html">nltk.tree.ImmutableProbabilisticTree</a></code>, <code><a href="nltk.tree.ProbabilisticTree.html">nltk.tree.ProbabilisticTree</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticMixIn</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2301" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.probability.ImmutableProbabilisticMixIn.html">nltk.probability.ImmutableProbabilisticMixIn</a></code>, <code><a href="nltk.tree.ImmutableProbabilisticTree.html">nltk.tree.ImmutableProbabilisticTree</a></code>, <code><a href="nltk.tree.ProbabilisticTree.html">nltk.tree.ProbabilisticTree</a></code></p>
         <p><a href="classIndex.html#nltk.probability.ProbabilisticMixIn">View In Hierarchy</a></p>
       </div>
 
@@ -64,7 +95,8 @@ methods, the comparison methods, and the hashing method.</p></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1162">
+        <table class="children sortable" id="id1166">
+  
   
   <tr class="method">
     
@@ -74,13 +106,8 @@ methods, the comparison methods, and the hashing method.</p></div>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#set_prob">set_prob</a></code></td>
-    <td><span>Set the probability associated with this object to ``prob``.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_logprob">set_logprob</a></code></td>
-    <td><span>Set the log probability associated with this object to ``logprob``.  I.e., set the probability associated with this object to ``2**(logprob)``.</span></td>
+    <td><code><a href="#logprob">logprob</a></code></td>
+    <td><span>Return ``log(p)``, where ``p`` is the probability associated with this object.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -89,17 +116,22 @@ methods, the comparison methods, and the hashing method.</p></div>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#logprob">logprob</a></code></td>
-    <td><span>Return ``log(p)``, where ``p`` is the probability associated with this object.</span></td>
-  </tr><tr class="instancevariable private">
+    <td><code><a href="#set_logprob">set_logprob</a></code></td>
+    <td><span>Set the log probability associated with this object to ``logprob``.  I.e., set the probability associated with this object to ``2**(logprob)``.</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#__prob">__prob</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="#set_prob">set_prob</a></code></td>
+    <td><span>Set the probability associated with this object to ``prob``.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#__logprob">__logprob</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#__prob">__prob</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -112,6 +144,7 @@ methods, the comparison methods, and the hashing method.</p></div>
 
         <div class="basemethod">
   
+  
   <a name="nltk.probability.ProbabilisticMixIn.__init__">
     
   </a>
@@ -121,7 +154,7 @@ methods, the comparison methods, and the hashing method.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, **kwargs):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2327">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2327">
       
       (source)
     </a>
@@ -139,73 +172,57 @@ the first argument for those constructors.
     the object.
 :type logprob: float</p></div>
   </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.probability.ProbabilisticMixIn.__prob">
-    
-  </a>
-  <a name="__prob">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__prob</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2347">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.probability.ProbabilisticMixIn.__logprob">
-    
-  </a>
-  <a name="__logprob">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__logprob</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2347">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="nltk.probability.ProbabilisticMixIn.set_prob">
+  
+  <a name="nltk.probability.ProbabilisticMixIn.logprob">
     
   </a>
-  <a name="set_prob">
+  <a name="logprob">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">set_prob</span>(self, prob):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2349">
+    <span class="py-keyword">def</span> <span class="py-defname">logprob</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2383">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="nltk.probability.ImmutableProbabilisticMixIn.html">nltk.probability.ImmutableProbabilisticMixIn</a></code></div>
     
-    <div><p class="pre">Set the probability associated with this object to ``prob``.
+    
+    <div><p class="pre">Return ``log(p)``, where ``p`` is the probability associated
+with this object.
 
-:param prob: The new probability
-:type prob: float</p></div>
+:rtype: float</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="nltk.probability.ProbabilisticMixIn.prob">
+    
+  </a>
+  <a name="prob">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2371">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the probability associated with this object.
+
+:rtype: float</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.probability.ProbabilisticMixIn.set_logprob">
     
@@ -216,7 +233,7 @@ the first argument for those constructors.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_logprob</span>(self, logprob):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2359">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2359">
       
       (source)
     </a>
@@ -233,59 +250,86 @@ object to ``2**(logprob)``.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.probability.ProbabilisticMixIn.prob">
-    
-  </a>
-  <a name="prob">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2371">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Return the probability associated with this object.
-
-:rtype: float</p></div>
-  </div>
-</div><div class="basemethod">
   
-  <a name="nltk.probability.ProbabilisticMixIn.logprob">
+  <a name="nltk.probability.ProbabilisticMixIn.set_prob">
     
   </a>
-  <a name="logprob">
+  <a name="set_prob">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">logprob</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2383">
+    <span class="py-keyword">def</span> <span class="py-defname">set_prob</span>(self, prob):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2349">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.probability.ImmutableProbabilisticMixIn.html">nltk.probability.ImmutableProbabilisticMixIn</a></code></div>
     
-    
-    <div><p class="pre">Return ``log(p)``, where ``p`` is the probability associated
-with this object.
+    <div><p class="pre">Set the probability associated with this object to ``prob``.
 
-:rtype: float</p></div>
+:param prob: The new probability
+:type prob: float</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.probability.ProbabilisticMixIn.__logprob">
+    
+  </a>
+  <a name="__logprob">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__logprob</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2347">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.probability.ProbabilisticMixIn.__prob">
+    
+  </a>
+  <a name="__prob">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__prob</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2347">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

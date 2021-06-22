@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.classify.naivebayes.NaiveBayesClassifier : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.classify.naivebayes.NaiveBayesClassifier</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.classify.html">classify</a></code>.<code><a href="nltk.classify.naivebayes.html">naivebayes</a></code>.<code><a href="nltk.classify.naivebayes.NaiveBayesClassifier.html">NaiveBayesClassifier</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.classify.html">classify</a></code><wbr></wbr>.<code><a href="nltk.classify.naivebayes.html">naivebayes</a></code><wbr></wbr>.<code><a href="nltk.classify.naivebayes.NaiveBayesClassifier.html">NaiveBayesClassifier</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NaiveBayesClassifier</span>(<a href="nltk.classify.api.ClassifierI.html" title="nltk.classify.api.ClassifierI">ClassifierI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L43">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier.html">nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NaiveBayesClassifier</span>(<a href="nltk.classify.api.ClassifierI.html" title="nltk.classify.api.ClassifierI">ClassifierI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L43" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier.html">nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier</a></code></p>
         <p><a href="classIndex.html#nltk.classify.naivebayes.NaiveBayesClassifier">View In Hierarchy</a></p>
       </div>
 
@@ -59,13 +90,24 @@ your own features.</p></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id154">
+        <table class="children sortable" id="id155">
   
-  <tr class="method">
+  
+  <tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#train">train</a></code></td>
+    <td><span>:param labeled_featuresets: A list of classified featuresets, i.e., a list of tuples ``(featureset, label)``.</span></td>
+  </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#classify">classify</a></code></td>
+    <td><span>:return: the most appropriate label for the given featureset. :rtype: label</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -74,8 +116,8 @@ your own features.</p></div>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#classify">classify</a></code></td>
-    <td><span>:return: the most appropriate label for the given featureset. :rtype: label</span></td>
+    <td><code><a href="#most_informative_features">most_informative_features</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -86,25 +128,15 @@ your own features.</p></div>
     <td>Method</td>
     <td><code><a href="#show_most_informative_features">show_most_informative_features</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#most_informative_features">most_informative_features</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="classmethod">
-    
-    <td>Class Method</td>
-    <td><code><a href="#train">train</a></code></td>
-    <td><span>:param labeled_featuresets: A list of classified featuresets, i.e., a list of tuples ``(featureset, label)``.</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_label_probdist">_label_probdist</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_feature_probdist">_feature_probdist</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_label_probdist">_label_probdist</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -122,7 +154,8 @@ your own features.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.classify.api.ClassifierI.html">ClassifierI</a></code>:
           </p>
-          <table class="children sortable" id="id155">
+          <table class="children sortable" id="id156">
+  
   
   <tr class="basemethod">
     
@@ -143,7 +176,31 @@ your own features.</p></div>
 
       <div id="childList">
 
-        <div class="basemethod">
+        <div class="baseclassmethod">
+  
+  
+  <a name="nltk.classify.naivebayes.NaiveBayesClassifier.train">
+    
+  </a>
+  <a name="train">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">train</span>(cls, labeled_featuresets, estimator=ELEProbDist):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier.html">nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier</a></code></div>
+    
+    <div><p class="pre">:param labeled_featuresets: A list of classified featuresets,
+    i.e., a list of tuples ``(featureset, label)``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.classify.naivebayes.NaiveBayesClassifier.__init__">
     
@@ -154,7 +211,7 @@ your own features.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, label_probdist, feature_probdist):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L64">
       
       (source)
     </a>
@@ -177,92 +234,8 @@ your own features.</p></div>
     it is assumed that the corresponding P(fname=fval|label)
     is 0 for all values of ``fval``.</p></div>
   </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.classify.naivebayes.NaiveBayesClassifier._label_probdist">
-    
-  </a>
-  <a name="_label_probdist">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_label_probdist</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L81">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.classify.naivebayes.NaiveBayesClassifier._feature_probdist">
-    
-  </a>
-  <a name="_feature_probdist">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_feature_probdist</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L82">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.classify.naivebayes.NaiveBayesClassifier._labels">
-    
-  </a>
-  <a name="_labels">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_labels</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L83">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="nltk.classify.naivebayes.NaiveBayesClassifier.labels">
-    
-  </a>
-  <a name="labels">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">labels</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L85">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#labels">nltk.classify.api.ClassifierI.labels</a></code></div>
-    
-    <div><p class="pre">:return: the list of category labels used by this classifier.
-:rtype: list of (immutable)</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.classify.naivebayes.NaiveBayesClassifier.classify">
     
@@ -273,7 +246,7 @@ your own features.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify</span>(self, featureset):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L88">
       
       (source)
     </a>
@@ -286,49 +259,29 @@ your own features.</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.classify.naivebayes.NaiveBayesClassifier.prob_classify">
+  
+  <a name="nltk.classify.naivebayes.NaiveBayesClassifier.labels">
     
   </a>
-  <a name="prob_classify">
+  <a name="labels">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">prob_classify</span>(self, featureset):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L91">
+    <span class="py-keyword">def</span> <span class="py-defname">labels</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L85">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#prob_classify">nltk.classify.api.ClassifierI.prob_classify</a></code></div>
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#labels">nltk.classify.api.ClassifierI.labels</a></code></div>
     
-    <div><p class="pre">:return: a probability distribution over labels for the given
-    featureset.
-:rtype: ProbDistI</p></div>
+    <div><p class="pre">:return: the list of category labels used by this classifier.
+:rtype: list of (immutable)</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.classify.naivebayes.NaiveBayesClassifier.show_most_informative_features">
-    
-  </a>
-  <a name="show_most_informative_features">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">show_most_informative_features</span>(self, n=10):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L124">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.classify.naivebayes.NaiveBayesClassifier.most_informative_features">
     
@@ -339,7 +292,7 @@ your own features.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">most_informative_features</span>(self, n=100):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L156">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L156">
       
       (source)
     </a>
@@ -355,7 +308,120 @@ the lowest value of P(fname=fval|label), for any label:
 
 |  max[ P(fname=fval|label1) / P(fname=fval|label2) ]</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.classify.naivebayes.NaiveBayesClassifier.prob_classify">
+    
+  </a>
+  <a name="prob_classify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prob_classify</span>(self, featureset):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L91">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#prob_classify">nltk.classify.api.ClassifierI.prob_classify</a></code></div>
+    
+    <div><p class="pre">:return: a probability distribution over labels for the given
+    featureset.
+:rtype: ProbDistI</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.classify.naivebayes.NaiveBayesClassifier.show_most_informative_features">
+    
+  </a>
+  <a name="show_most_informative_features">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_most_informative_features</span>(self, n=10):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L124">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
 </div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.classify.naivebayes.NaiveBayesClassifier._feature_probdist">
+    
+  </a>
+  <a name="_feature_probdist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_feature_probdist</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L82">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.classify.naivebayes.NaiveBayesClassifier._label_probdist">
+    
+  </a>
+  <a name="_label_probdist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_label_probdist</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L81">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.classify.naivebayes.NaiveBayesClassifier._labels">
+    
+  </a>
+  <a name="_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_labels</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L83">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
   
   <a name="nltk.classify.naivebayes.NaiveBayesClassifier._most_informative_features">
     
@@ -366,7 +432,7 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="functionHeader">
     
     <span class="py-defname">_most_informative_features</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L188">
       
       (source)
     </a>
@@ -376,36 +442,19 @@ the lowest value of P(fname=fval|label), for any label:
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseclassmethod">
-  
-  <a name="nltk.classify.naivebayes.NaiveBayesClassifier.train">
-    
-  </a>
-  <a name="train">
-    
-  </a>
-  <div class="functionHeader">
-    @classmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">train</span>(cls, labeled_featuresets, estimator=ELEProbDist):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/naivebayes.py#L194">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier.html">nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier</a></code></div>
-    
-    <div><p class="pre">:param labeled_featuresets: A list of classified featuresets,
-    i.e., a list of tuples ``(featureset, label)``.</p></div>
-  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

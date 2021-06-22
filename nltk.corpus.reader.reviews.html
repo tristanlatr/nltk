@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>nltk.corpus.reader.reviews</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.corpus.html">corpus</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.html">reader</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.reviews.html">reviews</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py" class="sourceLink">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">CorpusReader for reviews corpora (syntax based on Customer Review Corpus).
+
+- Customer Review Corpus information -
+Annotated by: Minqing Hu and Bing Liu, 2004.
+    Department of Computer Sicence
+    University of Illinois at Chicago
+
+Contact: Bing Liu, liub@cs.uic.edu
+        http://www.cs.uic.edu/~liub
+
+Distributed with permission.
+
+The "product_reviews_1" and "product_reviews_2" datasets respectively contain
+annotated customer reviews of 5 and 9 products from amazon.com.
+
+Related papers:
+
+- Minqing Hu and Bing Liu. "Mining and summarizing customer reviews".
+    Proceedings of the ACM SIGKDD International Conference on Knowledge
+    Discovery &amp; Data Mining (KDD-04), 2004.
+
+- Minqing Hu and Bing Liu. "Mining Opinion Features in Customer Reviews".
+    Proceedings of Nineteeth National Conference on Artificial Intelligence
+    (AAAI-2004), 2004.
+
+- Xiaowen Ding, Bing Liu and Philip S. Yu. "A Holistic Lexicon-Based Appraoch to
+    Opinion Mining." Proceedings of First ACM International Conference on Web
+    Search and Data Mining (WSDM-2008), Feb 11-12, 2008, Stanford University,
+    Stanford, California, USA.
+
+Symbols used in the annotated reviews:
+
+    [t] : the title of the review: Each [t] tag starts a review.
+    xxxx[+|-n]: xxxx is a product feature.
+    [+n]: Positive opinion, n is the opinion strength: 3 strongest, and 1 weakest.
+          Note that the strength is quite subjective.
+          You may want ignore it, but only considering + and -
+    [-n]: Negative opinion
+    ##  : start of each sentence. Each line is a sentence.
+    [u] : feature not appeared in the sentence.
+    [p] : feature not appeared in the sentence. Pronoun resolution is needed.
+    [s] : suggestion or recommendation.
+    [cc]: comparison with a competing product from a different brand.
+    [cs]: comparison with a competing product from the same brand.
+
+Note: Some of the files (e.g. "ipod.txt", "Canon PowerShot SD500.txt") do not
+    provide separation between different reviews. This is due to the fact that
+    the dataset was specifically designed for aspect/feature-based sentiment
+    analysis, for which sentence-level annotation is sufficient. For document-
+    level classification and analysis, this peculiarity should be taken into
+    consideration.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id423">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus.reader.reviews.Review.html">Review</a></code></td>
+    <td><span>A Review is the main block of a ReviewsCorpusReader.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus.reader.reviews.ReviewLine.html">ReviewLine</a></code></td>
+    <td><span>A ReviewLine represents a sentence of the review, together with (optional) annotations of its features and notes about the reviewed item.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus.reader.reviews.ReviewsCorpusReader.html">ReviewsCorpusReader</a></code></td>
+    <td><span>Reader for the Customer Review Data dataset by Hu, Liu (2004). Note: we are not applying any sentence tokenization at the moment, just word tokenization.</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#FEATURES">FEATURES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#NOTES">NOTES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SENT">SENT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TITLE">TITLE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  
+  <a name="nltk.corpus.reader.reviews.FEATURES">
+    
+  </a>
+  <a name="FEATURES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">FEATURES</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L68">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="nltk.corpus.reader.reviews.NOTES">
+    
+  </a>
+  <a name="NOTES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NOTES</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L71">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="nltk.corpus.reader.reviews.SENT">
+    
+  </a>
+  <a name="SENT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SENT</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="nltk.corpus.reader.reviews.TITLE">
+    
+  </a>
+  <a name="TITLE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TITLE</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>nltk.corpus.reader</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.corpus.html">corpus</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.html">reader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/__init__.py" class="sourceLink">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">NLTK corpus readers.  The modules in this package provide functions
+that can be used to read corpus fileids in a variety of formats.  These
+functions can be used to read both the corpus fileids that are
+distributed in the NLTK corpus package, and corpus fileids that are part
+of external corpora.
+
+Corpus Reader Functions
+=======================
+Each corpus module defines one or more "corpus reader functions",
+which can be used to read documents from that corpus.  These functions
+take an argument, ``item``, which is used to indicate which document
+should be read from the corpus:
+
+- If ``item`` is one of the unique identifiers listed in the corpus
+  module's ``items`` variable, then the corresponding document will
+  be loaded from the NLTK corpus package.
+- If ``item`` is a fileid, then that file will be read.
+
+Additionally, corpus reader functions can be given lists of item
+names; in which case, they will return a concatenation of the
+corresponding documents.
+
+Corpus reader functions are named based on the type of information
+they return.  Some common examples, and their return types, are:
+
+- words(): list of str
+- sents(): list of (list of str)
+- paras(): list of (list of (list of str))
+- tagged_words(): list of (str,str) tuple
+- tagged_sents(): list of (list of (str,str))
+- tagged_paras(): list of (list of (list of (str,str)))
+- chunked_sents(): list of (Tree w/ (str,str) leaves)
+- parsed_sents(): list of (Tree with str leaves)
+- parsed_paras(): list of (list of (Tree with str leaves))
+- xml(): A single xml ElementTree
+- raw(): unprocessed corpus contents
+
+For example, to read a list of the words in the Brown Corpus, use
+``nltk.corpus.brown.words()``:
+
+    &gt;&gt;&gt; from nltk.corpus import brown
+    &gt;&gt;&gt; print(", ".join(brown.words()))
+    The, Fulton, County, Grand, Jury, said, ...</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id232">
+  
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.aligned.html">aligned</a></code></td>
+    <td><span class="undocumented">No module docstring; 2/2 classes documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.api.html">api</a></code></td>
+    <td><span>API for corpus readers.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.bnc.html">bnc</a></code></td>
+    <td><span>Corpus reader for the XML version of the British National Corpus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.bracket_parse.html">bracket_parse</a></code></td>
+    <td><span>Corpus reader for corpora that consist of parenthesis-delineated parse trees.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.categorized_sents.html">categorized_sents</a></code></td>
+    <td><span>CorpusReader structured for corpora that contain one instance on each row. This CorpusReader is specifically used for the Subjectivity Dataset and the Sentence Polarity Dataset.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.chasen.html">chasen</a></code></td>
+    <td><span class="undocumented">No module docstring; 0/2 function, 1/2 class documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.childes.html">childes</a></code></td>
+    <td><span>Corpus reader for the XML version of the CHILDES corpus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.chunked.html">chunked</a></code></td>
+    <td><span>A reader for corpora that contain chunked (and optionally tagged) documents.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.cmudict.html">cmudict</a></code></td>
+    <td><span>The Carnegie Mellon Pronouncing Dictionary [cmudict.0.6] ftp://ftp.cs.cmu.edu/project/speech/dict/ Copyright 1998 Carnegie Mellon University</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.comparative_sents.html">comparative_sents</a></code></td>
+    <td><span>CorpusReader for the Comparative Sentence Dataset.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.conll.html">conll</a></code></td>
+    <td><span>Read CoNLL-style chunk fileids.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.crubadan.html">crubadan</a></code></td>
+    <td><span>An NLTK interface for the n-gram statistics gathered from the corpora for each language using An Crubadan.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.dependency.html">dependency</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.framenet.html">framenet</a></code></td>
+    <td><span>Corpus reader for the FrameNet 1.7 lexicon and corpus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.ieer.html">ieer</a></code></td>
+    <td><span>Corpus reader for the Information Extraction and Entity Recognition Corpus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.indian.html">indian</a></code></td>
+    <td><span>Indian Language POS-Tagged Corpus Collected by A Kumaran, Microsoft Research, India Distributed with permission</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.ipipan.html">ipipan</a></code></td>
+    <td><span class="undocumented">No module docstring; 0/1 function, 1/2 class documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.knbc.html">knbc</a></code></td>
+    <td><span class="undocumented">No module docstring; 0/1 variable, 0/2 function, 1/1 class documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.lin.html">lin</a></code></td>
+    <td><span class="undocumented">No module docstring; 0/1 function, 1/1 class documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.mte.html">mte</a></code></td>
+    <td><span>A reader for corpora whose documents are in MTE format.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.nkjp.html">nkjp</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/1 function, 4/6 classes documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.nombank.html">nombank</a></code></td>
+    <td><span class="undocumented">No module docstring; 3/6 classes documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.nps_chat.html">nps_chat</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.opinion_lexicon.html">opinion_lexicon</a></code></td>
+    <td><span>CorpusReader for the Opinion Lexicon.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.panlex_lite.html">panlex_lite</a></code></td>
+    <td><span>CorpusReader for PanLex Lite, a stripped down version of PanLex distributed as an SQLite database. See the README.txt in the panlex_lite corpus directory for more information on PanLex Lite.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.panlex_swadesh.html">panlex_swadesh</a></code></td>
+    <td><span class="undocumented">No module docstring; 0/1 variable, 1/1 class documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.pl196x.html">pl196x</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.plaintext.html">plaintext</a></code></td>
+    <td><span>A reader for corpora that consist of plaintext documents.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.ppattach.html">ppattach</a></code></td>
+    <td><span>Read lines from the Prepositional Phrase Attachment Corpus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.propbank.html">propbank</a></code></td>
+    <td><span class="undocumented">No module docstring; 3/7 classes documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.pros_cons.html">pros_cons</a></code></td>
+    <td><span>CorpusReader for the Pros and Cons dataset.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.reviews.html">reviews</a></code></td>
+    <td><span>CorpusReader for reviews corpora (syntax based on Customer Review Corpus).</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.rte.html">rte</a></code></td>
+    <td><span>Corpus reader for the Recognizing Textual Entailment (RTE) Challenge Corpora.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.semcor.html">semcor</a></code></td>
+    <td><span>Corpus reader for the SemCor Corpus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.senseval.html">senseval</a></code></td>
+    <td><span>Read from the Senseval 2 Corpus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.sentiwordnet.html">sentiwordnet</a></code></td>
+    <td><span>An NLTK interface for SentiWordNet</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.sinica_treebank.html">sinica_treebank</a></code></td>
+    <td><span>Sinica Treebank Corpus Sample</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.string_category.html">string_category</a></code></td>
+    <td><span>Read tuples from a corpus consisting of categorized strings. For example, from the question classification corpus:</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.switchboard.html">switchboard</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/2 class documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.tagged.html">tagged</a></code></td>
+    <td><span>A reader for corpora whose documents contain part-of-speech-tagged words.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.timit.html">timit</a></code></td>
+    <td><span>Read tokens, phonemes and audio data from the NLTK TIMIT Corpus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.toolbox.html">toolbox</a></code></td>
+    <td><span>Module for reading, writing and manipulating Toolbox databases and settings fileids.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.twitter.html">twitter</a></code></td>
+    <td><span>A reader for corpora that consist of Tweets. It is assumed that the Tweets have been serialised into line-delimited JSON.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.udhr.html">udhr</a></code></td>
+    <td><span>UDHR corpus reader. It mostly deals with encodings.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.util.html">util</a></code></td>
+    <td><span class="undocumented">No module docstring; 4/13 functions, 3/3 classes documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.verbnet.html">verbnet</a></code></td>
+    <td><span>An NLTK interface to the VerbNet verb lexicon</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.wordlist.html">wordlist</a></code></td>
+    <td><span class="undocumented">No module docstring; 4/5 classes documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.wordnet.html">wordnet</a></code></td>
+    <td><span>An NLTK interface for WordNet</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.xmldocs.html">xmldocs</a></code></td>
+    <td><span>Corpus reader for corpora whose documents are xml files.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.corpus.reader.ycoe.html">ycoe</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

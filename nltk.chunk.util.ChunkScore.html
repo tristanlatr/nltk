@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.chunk.util.ChunkScore : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.chunk.util.ChunkScore</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.chunk.html">chunk</a></code>.<code><a href="nltk.chunk.util.html">util</a></code>.<code><a href="nltk.chunk.util.ChunkScore.html">ChunkScore</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.chunk.html">chunk</a></code><wbr></wbr>.<code><a href="nltk.chunk.util.html">util</a></code><wbr></wbr>.<code><a href="nltk.chunk.util.ChunkScore.html">ChunkScore</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChunkScore</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L52">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChunkScore</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L52" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.chunk.util.ChunkScore">View In Hierarchy</a></p>
       </div>
 
@@ -101,58 +132,14 @@ as ``precision`` and ``f_measure``.  A typical use of the
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id129">
+        <table class="children sortable" id="id130">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#score">score</a></code></td>
-    <td><span>Given a correctly chunked sentence, score another chunked version of the same sentence.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#accuracy">accuracy</a></code></td>
-    <td><span>Return the overall tag-based accuracy for all text that have been scored by this ``ChunkScore``, using the IOB (conll2000) tag encoding.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#precision">precision</a></code></td>
-    <td><span>Return the overall precision for all texts that have been scored by this ``ChunkScore``.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#recall">recall</a></code></td>
-    <td><span>Return the overall recall for all texts that have been scored by this ``ChunkScore``.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#f_measure">f_measure</a></code></td>
-    <td><span>Return the overall F measure for all texts that have been scored by this ``ChunkScore``.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#missed">missed</a></code></td>
-    <td><span>Return the chunks which were included in the correct chunk structures, but not in the guessed chunk structures, listed in input order.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#incorrect">incorrect</a></code></td>
-    <td><span>Return the chunks which were included in the guessed chunk structures, but not in the correct chunk structures, listed in input order.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#correct">correct</a></code></td>
-    <td><span>Return the chunks which were included in the correct chunk structures, listed in input order.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#guessed">guessed</a></code></td>
-    <td><span>Return the chunks which were included in the guessed chunk structures, listed in input order.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -168,45 +155,55 @@ as ``precision`` and ``f_measure``.  A typical use of the
     <td>Method</td>
     <td><code><a href="#__str__">__str__</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_correct">_correct</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#accuracy">accuracy</a></code></td>
+    <td><span>Return the overall tag-based accuracy for all text that have been scored by this ``ChunkScore``, using the IOB (conll2000) tag encoding.</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_guessed">_guessed</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#correct">correct</a></code></td>
+    <td><span>Return the chunks which were included in the correct chunk structures, listed in input order.</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_tp">_tp</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#f_measure">f_measure</a></code></td>
+    <td><span>Return the overall F measure for all texts that have been scored by this ``ChunkScore``.</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_fp">_fp</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#guessed">guessed</a></code></td>
+    <td><span>Return the chunks which were included in the guessed chunk structures, listed in input order.</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_fn">_fn</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#incorrect">incorrect</a></code></td>
+    <td><span>Return the chunks which were included in the guessed chunk structures, but not in the correct chunk structures, listed in input order.</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_max_tp">_max_tp</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#missed">missed</a></code></td>
+    <td><span>Return the chunks which were included in the correct chunk structures, but not in the guessed chunk structures, listed in input order.</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_max_fp">_max_fp</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
+    <td>Method</td>
+    <td><code><a href="#precision">precision</a></code></td>
+    <td><span>Return the overall precision for all texts that have been scored by this ``ChunkScore``.</span></td>
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_max_fn">_max_fn</a></code></td>
+    <td>Method</td>
+    <td><code><a href="#recall">recall</a></code></td>
+    <td><span>Return the overall recall for all texts that have been scored by this ``ChunkScore``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#score">score</a></code></td>
+    <td><span>Given a correctly chunked sentence, score another chunked version of the same sentence.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_updateMeasures">_updateMeasures</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -216,12 +213,17 @@ as ``precision`` and ``f_measure``.  A typical use of the
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_tp_num">_tp_num</a></code></td>
+    <td><code><a href="#_correct">_correct</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_fp_num">_fp_num</a></code></td>
+    <td><code><a href="#_count">_count</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_fn">_fn</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -231,7 +233,37 @@ as ``precision`` and ``f_measure``.  A typical use of the
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_count">_count</a></code></td>
+    <td><code><a href="#_fp">_fp</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_fp_num">_fp_num</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_guessed">_guessed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_max_fn">_max_fn</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_max_fp">_max_fp</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_max_tp">_max_tp</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_measuresNeedUpdate">_measuresNeedUpdate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -246,12 +278,12 @@ as ``precision`` and ``f_measure``.  A typical use of the
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_measuresNeedUpdate">_measuresNeedUpdate</a></code></td>
+    <td><code><a href="#_tp">_tp</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
+  </tr><tr class="instancevariable private">
     
-    <td>Method</td>
-    <td><code><a href="#_updateMeasures">_updateMeasures</a></code></td>
+    <td>Instance Variable</td>
+    <td><code><a href="#_tp_num">_tp_num</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -264,6 +296,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
 
         <div class="basemethod">
   
+  
   <a name="nltk.chunk.util.ChunkScore.__init__">
     
   </a>
@@ -273,364 +306,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, **kwargs):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L115">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._correct">
-    
-  </a>
-  <a name="_correct">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_correct</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L116">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._guessed">
-    
-  </a>
-  <a name="_guessed">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_guessed</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L117">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._tp">
-    
-  </a>
-  <a name="_tp">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_tp</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L118">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._fp">
-    
-  </a>
-  <a name="_fp">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_fp</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L119">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._fn">
-    
-  </a>
-  <a name="_fn">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_fn</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L120">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._max_tp">
-    
-  </a>
-  <a name="_max_tp">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_max_tp</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L121">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._max_fp">
-    
-  </a>
-  <a name="_max_fp">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_max_fp</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L122">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._max_fn">
-    
-  </a>
-  <a name="_max_fn">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_max_fn</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L123">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._chunk_label">
-    
-  </a>
-  <a name="_chunk_label">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_chunk_label</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L124">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._tp_num">
-    
-  </a>
-  <a name="_tp_num">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_tp_num</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L125">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._fp_num">
-    
-  </a>
-  <a name="_fp_num">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_fp_num</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L126">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._fn_num">
-    
-  </a>
-  <a name="_fn_num">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_fn_num</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L127">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._count">
-    
-  </a>
-  <a name="_count">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_count</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L128">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._tags_correct">
-    
-  </a>
-  <a name="_tags_correct">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_tags_correct</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L129">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._tags_total">
-    
-  </a>
-  <a name="_tags_total">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_tags_total</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L130">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code>)
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.chunk.util.ChunkScore._measuresNeedUpdate">
-    
-  </a>
-  <a name="_measuresNeedUpdate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_measuresNeedUpdate</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L132">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="nltk.chunk.util.ChunkScore._updateMeasures">
-    
-  </a>
-  <a name="_updateMeasures">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_updateMeasures</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L134">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L115">
       
       (source)
     </a>
@@ -642,16 +318,17 @@ as ``precision`` and ``f_measure``.  A typical use of the
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.chunk.util.ChunkScore.score">
+  
+  <a name="nltk.chunk.util.ChunkScore.__len__">
     
   </a>
-  <a name="score">
+  <a name="__len__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">score</span>(self, correct, guessed):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L144">
+    <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L275">
       
       (source)
     </a>
@@ -659,16 +336,61 @@ as ``precision`` and ``f_measure``.  A typical use of the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a correctly chunked sentence, score another chunked
-version of the same sentence.
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L279">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a concise representation of this ``ChunkScoring``.
 
-:type correct: chunk structure
-:param correct: The known-correct ("gold standard") chunked
-    sentence.
-:type guessed: chunk structure
-:param guessed: The chunked sentence to be scored.</p></div>
+:rtype: str</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L287">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a verbose representation of this ``ChunkScoring``.
+This representation includes the precision, recall, and
+f-measure scores.  For other information about the score,
+use the accessor methods (e.g., ``missed()`` and ``incorrect()``).
+
+:rtype: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.chunk.util.ChunkScore.accuracy">
     
@@ -679,7 +401,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">accuracy</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L173">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L173">
       
       (source)
     </a>
@@ -695,16 +417,17 @@ tag encoding.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.chunk.util.ChunkScore.precision">
+  
+  <a name="nltk.chunk.util.ChunkScore.correct">
     
   </a>
-  <a name="precision">
+  <a name="correct">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">precision</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L185">
+    <span class="py-keyword">def</span> <span class="py-defname">correct</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L255">
       
       (source)
     </a>
@@ -712,36 +435,13 @@ tag encoding.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the overall precision for all texts that have been
-scored by this ``ChunkScore``.
+    <div><p class="pre">Return the chunks which were included in the correct
+chunk structures, listed in input order.
 
-:rtype: float</p></div>
+:rtype: list of chunks</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.chunk.util.ChunkScore.recall">
-    
-  </a>
-  <a name="recall">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">recall</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L199">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Return the overall recall for all texts that have been
-scored by this ``ChunkScore``.
-
-:rtype: float</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.chunk.util.ChunkScore.f_measure">
     
@@ -752,7 +452,7 @@ scored by this ``ChunkScore``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">f_measure</span>(self, alpha=0.5):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L213">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L213">
       
       (source)
     </a>
@@ -772,6 +472,57 @@ scored by this ``ChunkScore``.
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="nltk.chunk.util.ChunkScore.guessed">
+    
+  </a>
+  <a name="guessed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">guessed</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L265">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the chunks which were included in the guessed
+chunk structures, listed in input order.
+
+:rtype: list of chunks</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore.incorrect">
+    
+  </a>
+  <a name="incorrect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">incorrect</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L244">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the chunks which were included in the guessed chunk structures,
+but not in the correct chunk structures, listed in input order.
+
+:rtype: list of chunks</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="nltk.chunk.util.ChunkScore.missed">
     
   </a>
@@ -781,7 +532,7 @@ scored by this ``ChunkScore``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">missed</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L232">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L232">
       
       (source)
     </a>
@@ -797,16 +548,17 @@ structures, listed in input order.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.chunk.util.ChunkScore.incorrect">
+  
+  <a name="nltk.chunk.util.ChunkScore.precision">
     
   </a>
-  <a name="incorrect">
+  <a name="precision">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">incorrect</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L244">
+    <span class="py-keyword">def</span> <span class="py-defname">precision</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L185">
       
       (source)
     </a>
@@ -814,23 +566,24 @@ structures, listed in input order.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the chunks which were included in the guessed chunk structures,
-but not in the correct chunk structures, listed in input order.
+    <div><p class="pre">Return the overall precision for all texts that have been
+scored by this ``ChunkScore``.
 
-:rtype: list of chunks</p></div>
+:rtype: float</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.chunk.util.ChunkScore.correct">
+  
+  <a name="nltk.chunk.util.ChunkScore.recall">
     
   </a>
-  <a name="correct">
+  <a name="recall">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">correct</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L255">
+    <span class="py-keyword">def</span> <span class="py-defname">recall</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L199">
       
       (source)
     </a>
@@ -838,23 +591,24 @@ but not in the correct chunk structures, listed in input order.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the chunks which were included in the correct
-chunk structures, listed in input order.
+    <div><p class="pre">Return the overall recall for all texts that have been
+scored by this ``ChunkScore``.
 
-:rtype: list of chunks</p></div>
+:rtype: float</p></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.chunk.util.ChunkScore.guessed">
+  
+  <a name="nltk.chunk.util.ChunkScore.score">
     
   </a>
-  <a name="guessed">
+  <a name="score">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">guessed</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L265">
+    <span class="py-keyword">def</span> <span class="py-defname">score</span>(self, correct, guessed):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L144">
       
       (source)
     </a>
@@ -862,23 +616,28 @@ chunk structures, listed in input order.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the chunks which were included in the guessed
-chunk structures, listed in input order.
+    <div><p class="pre">Given a correctly chunked sentence, score another chunked
+version of the same sentence.
 
-:rtype: list of chunks</p></div>
+:type correct: chunk structure
+:param correct: The known-correct ("gold standard") chunked
+    sentence.
+:type guessed: chunk structure
+:param guessed: The chunked sentence to be scored.</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="basemethod private">
   
-  <a name="nltk.chunk.util.ChunkScore.__len__">
+  
+  <a name="nltk.chunk.util.ChunkScore._updateMeasures">
     
   </a>
-  <a name="__len__">
+  <a name="_updateMeasures">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L275">
+    <span class="py-keyword">def</span> <span class="py-defname">_updateMeasures</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L134">
       
       (source)
     </a>
@@ -888,63 +647,371 @@ chunk structures, listed in input order.
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable private">
   
-  <a name="nltk.chunk.util.ChunkScore.__repr__">
+  
+  <a name="nltk.chunk.util.ChunkScore._chunk_label">
     
   </a>
-  <a name="__repr__">
+  <a name="_chunk_label">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L279">
+    <span class="py-defname">_chunk_label</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L124">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="pre">Return a concise representation of this ``ChunkScoring``.
-
-:rtype: str</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable private">
   
-  <a name="nltk.chunk.util.ChunkScore.__str__">
+  
+  <a name="nltk.chunk.util.ChunkScore._correct">
     
   </a>
-  <a name="__str__">
+  <a name="_correct">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/util.py#L287">
+    <span class="py-defname">_correct</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L116">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="pre">Return a verbose representation of this ``ChunkScoring``.
-This representation includes the precision, recall, and
-f-measure scores.  For other information about the score,
-use the accessor methods (e.g., ``missed()`` and ``incorrect()``).
-
-:rtype: str</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._count">
+    
+  </a>
+  <a name="_count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_count</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L128">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._fn">
+    
+  </a>
+  <a name="_fn">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_fn</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._fn_num">
+    
+  </a>
+  <a name="_fn_num">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_fn_num</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L127">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._fp">
+    
+  </a>
+  <a name="_fp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_fp</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L119">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._fp_num">
+    
+  </a>
+  <a name="_fp_num">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_fp_num</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L126">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._guessed">
+    
+  </a>
+  <a name="_guessed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_guessed</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L117">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._max_fn">
+    
+  </a>
+  <a name="_max_fn">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_max_fn</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L123">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._max_fp">
+    
+  </a>
+  <a name="_max_fp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_max_fp</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._max_tp">
+    
+  </a>
+  <a name="_max_tp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_max_tp</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L121">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._measuresNeedUpdate">
+    
+  </a>
+  <a name="_measuresNeedUpdate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_measuresNeedUpdate</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L132">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._tags_correct">
+    
+  </a>
+  <a name="_tags_correct">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tags_correct</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L129">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._tags_total">
+    
+  </a>
+  <a name="_tags_total">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tags_total</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L130">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._tp">
+    
+  </a>
+  <a name="_tp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tp</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore._tp_num">
+    
+  </a>
+  <a name="_tp_num">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tp_num</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L125">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.translate.ibm_model.IBMModel : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.translate.ibm_model.IBMModel</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.translate.html">translate</a></code>.<code><a href="nltk.translate.ibm_model.html">ibm_model</a></code>.<code><a href="nltk.translate.ibm_model.IBMModel.html">IBMModel</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.translate.html">translate</a></code><wbr></wbr>.<code><a href="nltk.translate.ibm_model.html">ibm_model</a></code><wbr></wbr>.<code><a href="nltk.translate.ibm_model.IBMModel.html">IBMModel</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L61">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L61" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.ibm_model.IBMModel">View In Hierarchy</a></p>
       </div>
 
@@ -43,14 +74,10 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1891">
+        <table class="children sortable" id="id1895">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#MIN_PROB">MIN_PROB</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
@@ -58,13 +85,68 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#best_model2_alignment">best_model2_alignment</a></code></td>
+    <td><span>Finds the best alignment according to IBM Model 2</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#hillclimb">hillclimb</a></code></td>
+    <td><span>Starting from the alignment in ``alignment_info``, look at neighboring alignments iteratively for the best one</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#init_vocab">init_vocab</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#maximize_fertility_probabilities">maximize_fertility_probabilities</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#maximize_lexical_translation_probabilities">maximize_lexical_translation_probabilities</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#maximize_null_generation_probabilities">maximize_null_generation_probabilities</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#neighboring">neighboring</a></code></td>
+    <td><span>Determine the neighbors of ``alignment_info``, obtained by moving or swapping one alignment point</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prob_of_alignments">prob_of_alignments</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prob_t_a_given_s">prob_t_a_given_s</a></code></td>
+    <td><span>Probability of target sentence and an alignment given the source sentence</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#reset_probabilities">reset_probabilities</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="method">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#translation_table">translation_table</a></code></td>
-    <td><span>dict[str][str]: float. Probability(target word | source word). Values accessed as ``translation_table[target_word][source_word]``.</span></td>
+    <td>Method</td>
+    <td><code><a href="#sample">sample</a></code></td>
+    <td><span>Sample the most probable alignments from the entire alignment space</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_uniform_probabilities">set_uniform_probabilities</a></code></td>
+    <td><span>Initialize probability tables to a uniform distribution</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#MIN_PROB">MIN_PROB</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -80,16 +162,6 @@
     <td>Instance Variable</td>
     <td><code><a href="#p1">p1</a></code></td>
     <td><span>Probability that a generated word requires another target word that is aligned to NULL. Used in model 3 and higher.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#set_uniform_probabilities">set_uniform_probabilities</a></code></td>
-    <td><span>Initialize probability tables to a uniform distribution</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#init_vocab">init_vocab</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -98,53 +170,13 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
+    <td><code><a href="#translation_table">translation_table</a></code></td>
+    <td><span>dict[str][str]: float. Probability(target word | source word). Values accessed as ``translation_table[target_word][source_word]``.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
     <td><code><a href="#trg_vocab">trg_vocab</a></code></td>
     <td><span>set(str): All target language words used in training</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#sample">sample</a></code></td>
-    <td><span>Sample the most probable alignments from the entire alignment space</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#best_model2_alignment">best_model2_alignment</a></code></td>
-    <td><span>Finds the best alignment according to IBM Model 2</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#hillclimb">hillclimb</a></code></td>
-    <td><span>Starting from the alignment in ``alignment_info``, look at neighboring alignments iteratively for the best one</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#neighboring">neighboring</a></code></td>
-    <td><span>Determine the neighbors of ``alignment_info``, obtained by moving or swapping one alignment point</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#maximize_lexical_translation_probabilities">maximize_lexical_translation_probabilities</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#maximize_fertility_probabilities">maximize_fertility_probabilities</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#maximize_null_generation_probabilities">maximize_null_generation_probabilities</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#prob_of_alignments">prob_of_alignments</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#prob_t_a_given_s">prob_t_a_given_s</a></code></td>
-    <td><span>Probability of target sentence and an alignment given the source sentence</span></td>
   </tr>
 </table>
         
@@ -154,28 +186,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="nltk.translate.ibm_model.IBMModel.MIN_PROB">
-    
-  </a>
-  <a name="MIN_PROB">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">MIN_PROB</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L71">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code>)
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.translate.ibm_model.IBMModel.__init__">
     
@@ -186,7 +198,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, sentence_aligned_corpus):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L73">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L73">
       
       (source)
     </a>
@@ -198,16 +210,17 @@
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.translate.ibm_model.IBMModel.reset_probabilities">
+  
+  <a name="nltk.translate.ibm_model.IBMModel.best_model2_alignment">
     
   </a>
-  <a name="reset_probabilities">
+  <a name="best_model2_alignment">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">reset_probabilities</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L77">
+    <span class="py-keyword">def</span> <span class="py-defname">best_model2_alignment</span>(self, sentence_pair, j_pegged=None, i_pegged=0):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L184">
       
       (source)
     </a>
@@ -215,123 +228,59 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.ibm_model.IBMModel.translation_table">
-    
-  </a>
-  <a name="translation_table">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">translation_table</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L78">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">dict[str][str]: float. Probability(target word | source word).
-Values accessed as ``translation_table[target_word][source_word]``.</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.ibm_model.IBMModel.alignment_table">
-    
-  </a>
-  <a name="alignment_table">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">alignment_table</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L86">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">dict[int][int][int][int]: float. Probability(i | j,l,m).
-Values accessed as ``alignment_table[i][j][l][m]``.
-Used in model 2 and hill climbing in models 3 and above</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.ibm_model.IBMModel.fertility_table">
-    
-  </a>
-  <a name="fertility_table">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">fertility_table</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L97">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">dict[int][str]: float. Probability(fertility | source word).
-Values accessed as ``fertility_table[fertility][source_word]``.
-Used in model 3 and higher.</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.ibm_model.IBMModel.p1">
-    
-  </a>
-  <a name="p1">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">p1</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L104">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">Probability that a generated word requires another target word
-that is aligned to NULL.
-Used in model 3 and higher.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.translate.ibm_model.IBMModel.set_uniform_probabilities">
-    
-  </a>
-  <a name="set_uniform_probabilities">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_uniform_probabilities</span>(self, sentence_aligned_corpus):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L111">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Initialize probability tables to a uniform distribution
+    <div><p class="pre">Finds the best alignment according to IBM Model 2
 
-Derived classes should implement this accordingly.</p></div>
+Used as a starting point for hill climbing in Models 3 and
+above, because it is easier to compute than the best alignments
+in higher models
+
+:param sentence_pair: Source and target language sentence pair
+    to be word-aligned
+:type sentence_pair: AlignedSent
+
+:param j_pegged: If specified, the alignment point of j_pegged
+    will be fixed to i_pegged
+:type j_pegged: int
+
+:param i_pegged: Alignment point to j_pegged
+:type i_pegged: int</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.hillclimb">
+    
+  </a>
+  <a name="hillclimb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">hillclimb</span>(self, alignment_info, j_pegged=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L238">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Starting from the alignment in ``alignment_info``, look at
+neighboring alignments iteratively for the best one
+
+There is no guarantee that the best alignment in the alignment
+space will be found, because the algorithm might be stuck in a
+local maximum.
+
+:param j_pegged: If specified, the search will be constrained to
+    alignments where ``j_pegged`` remains unchanged
+:type j_pegged: int
+
+:return: The best alignment found from hill climbing
+:rtype: AlignmentInfo</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.translate.ibm_model.IBMModel.init_vocab">
     
@@ -342,7 +291,7 @@ Derived classes should implement this accordingly.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">init_vocab</span>(self, sentence_aligned_corpus):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L119">
       
       (source)
     </a>
@@ -352,49 +301,177 @@ Derived classes should implement this accordingly.</p></div>
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable">
+</div><div class="basemethod">
   
-  <a name="nltk.translate.ibm_model.IBMModel.src_vocab">
+  
+  <a name="nltk.translate.ibm_model.IBMModel.maximize_fertility_probabilities">
     
   </a>
-  <a name="src_vocab">
+  <a name="maximize_fertility_probabilities">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">src_vocab</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L128">
+    <span class="py-keyword">def</span> <span class="py-defname">maximize_fertility_probabilities</span>(self, counts):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L352">
       
       (source)
     </a>
   </div>
-  <div class="functionBody">
+  <div class="docstring functionBody">
     
     
-    <div><p class="pre">set(str): All source language words used in training</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.translate.ibm_model.IBMModel.trg_vocab">
-    
-  </a>
-  <a name="trg_vocab">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">trg_vocab</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L133">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">set(str): All target language words used in training</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.maximize_lexical_translation_probabilities">
+    
+  </a>
+  <a name="maximize_lexical_translation_probabilities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">maximize_lexical_translation_probabilities</span>(self, counts):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L346">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.maximize_null_generation_probabilities">
+    
+  </a>
+  <a name="maximize_null_generation_probabilities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">maximize_null_generation_probabilities</span>(self, counts):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L358">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.neighboring">
+    
+  </a>
+  <a name="neighboring">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">neighboring</span>(self, alignment_info, j_pegged=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L273">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Determine the neighbors of ``alignment_info``, obtained by
+moving or swapping one alignment point
+
+:param j_pegged: If specified, neighbors that have a different
+    alignment point from j_pegged will not be considered
+:type j_pegged: int
+
+:return: A set neighboring alignments represented by their
+    ``AlignmentInfo``
+:rtype: set(AlignmentInfo)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.prob_of_alignments">
+    
+  </a>
+  <a name="prob_of_alignments">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prob_of_alignments</span>(self, alignments):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L365">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.prob_t_a_given_s">
+    
+  </a>
+  <a name="prob_t_a_given_s">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prob_t_a_given_s</span>(self, alignment_info):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L371">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Probability of target sentence and an alignment given the
+source sentence
+
+All required information is assumed to be in ``alignment_info``
+and self.
+
+Derived classes should override this method</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.reset_probabilities">
+    
+  </a>
+  <a name="reset_probabilities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reset_probabilities</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.translate.ibm_model.IBMModel.sample">
     
@@ -405,7 +482,7 @@ Derived classes should implement this accordingly.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sample</span>(self, sentence_pair):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L138">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L138">
       
       (source)
     </a>
@@ -436,52 +513,17 @@ and trying out of different alignments.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.translate.ibm_model.IBMModel.best_model2_alignment">
-    
-  </a>
-  <a name="best_model2_alignment">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">best_model2_alignment</span>(self, sentence_pair, j_pegged=None, i_pegged=0):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L184">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Finds the best alignment according to IBM Model 2
-
-Used as a starting point for hill climbing in Models 3 and
-above, because it is easier to compute than the best alignments
-in higher models
-
-:param sentence_pair: Source and target language sentence pair
-    to be word-aligned
-:type sentence_pair: AlignedSent
-
-:param j_pegged: If specified, the alignment point of j_pegged
-    will be fixed to i_pegged
-:type j_pegged: int
-
-:param i_pegged: Alignment point to j_pegged
-:type i_pegged: int</p></div>
-  </div>
-</div><div class="basemethod">
   
-  <a name="nltk.translate.ibm_model.IBMModel.hillclimb">
+  <a name="nltk.translate.ibm_model.IBMModel.set_uniform_probabilities">
     
   </a>
-  <a name="hillclimb">
+  <a name="set_uniform_probabilities">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">hillclimb</span>(self, alignment_info, j_pegged=None):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L238">
+    <span class="py-keyword">def</span> <span class="py-defname">set_uniform_probabilities</span>(self, sentence_aligned_corpus):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L111">
       
       (source)
     </a>
@@ -489,169 +531,184 @@ in higher models
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Starting from the alignment in ``alignment_info``, look at
-neighboring alignments iteratively for the best one
+    <div><p class="pre">Initialize probability tables to a uniform distribution
 
-There is no guarantee that the best alignment in the alignment
-space will be found, because the algorithm might be stuck in a
-local maximum.
-
-:param j_pegged: If specified, the search will be constrained to
-    alignments where ``j_pegged`` remains unchanged
-:type j_pegged: int
-
-:return: The best alignment found from hill climbing
-:rtype: AlignmentInfo</p></div>
+Derived classes should implement this accordingly.</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseclassvariable">
   
-  <a name="nltk.translate.ibm_model.IBMModel.neighboring">
-    
-  </a>
-  <a name="neighboring">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">neighboring</span>(self, alignment_info, j_pegged=None):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L273">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Determine the neighbors of ``alignment_info``, obtained by
-moving or swapping one alignment point
-
-:param j_pegged: If specified, neighbors that have a different
-    alignment point from j_pegged will not be considered
-:type j_pegged: int
-
-:return: A set neighboring alignments represented by their
-    ``AlignmentInfo``
-:rtype: set(AlignmentInfo)</p></div>
-  </div>
-</div><div class="basemethod">
   
-  <a name="nltk.translate.ibm_model.IBMModel.maximize_lexical_translation_probabilities">
+  <a name="nltk.translate.ibm_model.IBMModel.MIN_PROB">
     
   </a>
-  <a name="maximize_lexical_translation_probabilities">
+  <a name="MIN_PROB">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">maximize_lexical_translation_probabilities</span>(self, counts):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L346">
+    <span class="py-defname">MIN_PROB</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L71">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="nltk.translate.ibm_model.IBMModel.maximize_fertility_probabilities">
+  
+  <a name="nltk.translate.ibm_model.IBMModel.alignment_table">
     
   </a>
-  <a name="maximize_fertility_probabilities">
+  <a name="alignment_table">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">maximize_fertility_probabilities</span>(self, counts):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L352">
+    <span class="py-defname">alignment_table</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L86">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p class="pre">dict[int][int][int][int]: float. Probability(i | j,l,m).
+Values accessed as ``alignment_table[i][j][l][m]``.
+Used in model 2 and hill climbing in models 3 and above</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="nltk.translate.ibm_model.IBMModel.maximize_null_generation_probabilities">
+  
+  <a name="nltk.translate.ibm_model.IBMModel.fertility_table">
     
   </a>
-  <a name="maximize_null_generation_probabilities">
+  <a name="fertility_table">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">maximize_null_generation_probabilities</span>(self, counts):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L358">
+    <span class="py-defname">fertility_table</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L97">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p class="pre">dict[int][str]: float. Probability(fertility | source word).
+Values accessed as ``fertility_table[fertility][source_word]``.
+Used in model 3 and higher.</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="nltk.translate.ibm_model.IBMModel.prob_of_alignments">
+  
+  <a name="nltk.translate.ibm_model.IBMModel.p1">
     
   </a>
-  <a name="prob_of_alignments">
+  <a name="p1">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">prob_of_alignments</span>(self, alignments):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L365">
+    <span class="py-defname">p1</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L104">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p class="pre">Probability that a generated word requires another target word
+that is aligned to NULL.
+Used in model 3 and higher.</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable">
   
-  <a name="nltk.translate.ibm_model.IBMModel.prob_t_a_given_s">
+  
+  <a name="nltk.translate.ibm_model.IBMModel.src_vocab">
     
   </a>
-  <a name="prob_t_a_given_s">
+  <a name="src_vocab">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">prob_t_a_given_s</span>(self, alignment_info):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L371">
+    <span class="py-defname">src_vocab</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L128">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="pre">Probability of target sentence and an alignment given the
-source sentence
-
-All required information is assumed to be in ``alignment_info``
-and self.
-
-Derived classes should override this method</p></div>
+    <div><p class="pre">set(str): All source language words used in training</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.translation_table">
+    
+  </a>
+  <a name="translation_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">translation_table</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L78">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">dict[str][str]: float. Probability(target word | source word).
+Values accessed as ``translation_table[target_word][source_word]``.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.translate.ibm_model.IBMModel.trg_vocab">
+    
+  </a>
+  <a name="trg_vocab">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">trg_vocab</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L133">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">set(str): All target language words used in training</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

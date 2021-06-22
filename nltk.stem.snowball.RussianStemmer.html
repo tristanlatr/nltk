@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.stem.snowball.RussianStemmer : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.stem.snowball.RussianStemmer</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.stem.html">stem</a></code>.<code><a href="nltk.stem.snowball.html">snowball</a></code>.<code><a href="nltk.stem.snowball.RussianStemmer.html">RussianStemmer</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.stem.html">stem</a></code><wbr></wbr>.<code><a href="nltk.stem.snowball.html">snowball</a></code><wbr></wbr>.<code><a href="nltk.stem.snowball.RussianStemmer.html">RussianStemmer</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">RussianStemmer</span>(<a href="nltk.stem.snowball._LanguageSpecificStemmer.html" title="nltk.stem.snowball._LanguageSpecificStemmer">_LanguageSpecificStemmer</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4516">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">RussianStemmer</span>(<a href="nltk.stem.snowball._LanguageSpecificStemmer.html" title="nltk.stem.snowball._LanguageSpecificStemmer">_LanguageSpecificStemmer</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4516" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.stem.snowball.RussianStemmer">View In Hierarchy</a></p>
       </div>
 
@@ -61,18 +92,29 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1525">
+        <table class="children sortable" id="id1529">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#stem">stem</a></code></td>
     <td><span>Stem a Russian word and return the stemmed form.</span></td>
-  </tr><tr class="classvariable private">
+  </tr><tr class="method private">
     
-    <td>Class Variable</td>
-    <td><code><a href="#__perfective_gerund_suffixes">__perfective_gerund_suffixes</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Method</td>
+    <td><code><a href="#__cyrillic_to_roman">__cyrillic_to_roman</a></code></td>
+    <td><span>Transliterate a Russian word into the Roman alphabet.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#__regions_russian">__regions_russian</a></code></td>
+    <td><span>Return the regions RV and R2 which are used by the Russian stemmer.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#__roman_to_cyrillic">__roman_to_cyrillic</a></code></td>
+    <td><span>Transliterate a Russian word back into the Cyrillic alphabet.</span></td>
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
@@ -81,12 +123,7 @@
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
-    <td><code><a href="#__reflexive_suffixes">__reflexive_suffixes</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="classvariable private">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#__verb_suffixes">__verb_suffixes</a></code></td>
+    <td><code><a href="#__derivational_suffixes">__derivational_suffixes</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="classvariable private">
     
@@ -96,51 +133,47 @@
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
+    <td><code><a href="#__perfective_gerund_suffixes">__perfective_gerund_suffixes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__reflexive_suffixes">__reflexive_suffixes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
     <td><code><a href="#__superlative_suffixes">__superlative_suffixes</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
-    <td><code><a href="#__derivational_suffixes">__derivational_suffixes</a></code></td>
+    <td><code><a href="#__verb_suffixes">__verb_suffixes</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#__regions_russian">__regions_russian</a></code></td>
-    <td><span>Return the regions RV and R2 which are used by the Russian stemmer.</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#__cyrillic_to_roman">__cyrillic_to_roman</a></code></td>
-    <td><span>Transliterate a Russian word into the Roman alphabet.</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#__roman_to_cyrillic">__roman_to_cyrillic</a></code></td>
-    <td><span>Transliterate a Russian word back into the Cyrillic alphabet.</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.stem.snowball._LanguageSpecificStemmer.html">_LanguageSpecificStemmer</a></code>:
           </p>
-          <table class="children sortable" id="id1526">
+          <table class="children sortable" id="id1530">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.stem.snowball._LanguageSpecificStemmer.html#__init__">__init__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="nltk.stem.snowball._LanguageSpecificStemmer.html#stopwords">stopwords</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.stem.snowball._LanguageSpecificStemmer.html#__repr__">__repr__</a></code></td>
     <td><span>Print out the string representation of the respective class.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.stem.snowball._LanguageSpecificStemmer.html#stopwords">stopwords</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
@@ -150,154 +183,8 @@
 
       <div id="childList">
 
-        <div class="baseclassvariable private">
+        <div class="basemethod">
   
-  <a name="nltk.stem.snowball.RussianStemmer.__perfective_gerund_suffixes">
-    
-  </a>
-  <a name="__perfective_gerund_suffixes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__perfective_gerund_suffixes</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4541">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
-  </div>
-</div><div class="baseclassvariable private">
-  
-  <a name="nltk.stem.snowball.RussianStemmer.__adjectival_suffixes">
-    
-  </a>
-  <a name="__adjectival_suffixes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__adjectival_suffixes</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4552">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
-  </div>
-</div><div class="baseclassvariable private">
-  
-  <a name="nltk.stem.snowball.RussianStemmer.__reflexive_suffixes">
-    
-  </a>
-  <a name="__reflexive_suffixes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__reflexive_suffixes</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4788">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
-  </div>
-</div><div class="baseclassvariable private">
-  
-  <a name="nltk.stem.snowball.RussianStemmer.__verb_suffixes">
-    
-  </a>
-  <a name="__verb_suffixes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__verb_suffixes</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4789">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
-  </div>
-</div><div class="baseclassvariable private">
-  
-  <a name="nltk.stem.snowball.RussianStemmer.__noun_suffixes">
-    
-  </a>
-  <a name="__noun_suffixes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__noun_suffixes</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4837">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
-  </div>
-</div><div class="baseclassvariable private">
-  
-  <a name="nltk.stem.snowball.RussianStemmer.__superlative_suffixes">
-    
-  </a>
-  <a name="__superlative_suffixes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__superlative_suffixes</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4875">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
-  </div>
-</div><div class="baseclassvariable private">
-  
-  <a name="nltk.stem.snowball.RussianStemmer.__derivational_suffixes">
-    
-  </a>
-  <a name="__derivational_suffixes">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__derivational_suffixes</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4876">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.stem.snowball.RussianStemmer.stem">
     
@@ -308,7 +195,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">stem</span>(self, word):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L4878">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4878">
       
       (source)
     </a>
@@ -325,6 +212,40 @@
   </div>
 </div><div class="basemethod private">
   
+  
+  <a name="nltk.stem.snowball.RussianStemmer.__cyrillic_to_roman">
+    
+  </a>
+  <a name="__cyrillic_to_roman">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__cyrillic_to_roman</span>(self, word):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L5215">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Transliterate a Russian word into the Roman alphabet.
+
+A Russian word whose letters consist of the Cyrillic
+alphabet are transliterated into the Roman alphabet
+in order to ease the forthcoming stemming process.
+
+:param word: The word that is transliterated.
+:type word: unicode
+:return: the transliterated word.
+:rtype: unicode
+:note: This helper method is invoked by the stem method of the subclass
+       RussianStemmer. It is not to be invoked directly!</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
   <a name="nltk.stem.snowball.RussianStemmer.__regions_russian">
     
   </a>
@@ -334,7 +255,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__regions_russian</span>(self, word):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L5167">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L5167">
       
       (source)
     </a>
@@ -362,37 +283,6 @@ or the end of the word if there is no such non-vowel.
   </div>
 </div><div class="basemethod private">
   
-  <a name="nltk.stem.snowball.RussianStemmer.__cyrillic_to_roman">
-    
-  </a>
-  <a name="__cyrillic_to_roman">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__cyrillic_to_roman</span>(self, word):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L5215">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Transliterate a Russian word into the Roman alphabet.
-
-A Russian word whose letters consist of the Cyrillic
-alphabet are transliterated into the Roman alphabet
-in order to ease the forthcoming stemming process.
-
-:param word: The word that is transliterated.
-:type word: unicode
-:return: the transliterated word.
-:rtype: unicode
-:note: This helper method is invoked by the stem method of the subclass
-       RussianStemmer. It is not to be invoked directly!</p></div>
-  </div>
-</div><div class="basemethod private">
   
   <a name="nltk.stem.snowball.RussianStemmer.__roman_to_cyrillic">
     
@@ -403,7 +293,7 @@ in order to ease the forthcoming stemming process.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__roman_to_cyrillic</span>(self, word):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L5302">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L5302">
       
       (source)
     </a>
@@ -424,14 +314,173 @@ into the Cyrillic alphabet, its original form.
 :note: This helper method is invoked by the stem method of the subclass
        RussianStemmer. It is not to be invoked directly!</p></div>
   </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.stem.snowball.RussianStemmer.__adjectival_suffixes">
+    
+  </a>
+  <a name="__adjectival_suffixes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__adjectival_suffixes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4552">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.stem.snowball.RussianStemmer.__derivational_suffixes">
+    
+  </a>
+  <a name="__derivational_suffixes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__derivational_suffixes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4876">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.stem.snowball.RussianStemmer.__noun_suffixes">
+    
+  </a>
+  <a name="__noun_suffixes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__noun_suffixes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4837">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.stem.snowball.RussianStemmer.__perfective_gerund_suffixes">
+    
+  </a>
+  <a name="__perfective_gerund_suffixes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__perfective_gerund_suffixes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4541">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.stem.snowball.RussianStemmer.__reflexive_suffixes">
+    
+  </a>
+  <a name="__reflexive_suffixes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__reflexive_suffixes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4788">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.stem.snowball.RussianStemmer.__superlative_suffixes">
+    
+  </a>
+  <a name="__superlative_suffixes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__superlative_suffixes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4875">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.stem.snowball.RussianStemmer.__verb_suffixes">
+    
+  </a>
+  <a name="__verb_suffixes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__verb_suffixes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L4789">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

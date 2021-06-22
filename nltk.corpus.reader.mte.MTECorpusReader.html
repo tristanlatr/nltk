@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>nltk.corpus.reader.mte.MTECorpusReader</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.corpus.html">corpus</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.html">reader</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.mte.html">mte</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.mte.MTECorpusReader.html">MTECorpusReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MTECorpusReader</span>(<span title="nltk.corpus.reader.TaggedCorpusReader">TaggedCorpusReader</span>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L209" class="sourceLink">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.corpus.reader.mte.MTECorpusReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Reader for corpora following the TEI-p5 xml scheme, such as MULTEXT-East.
+MULTEXT-East contains part-of-speech-tagged words with a quite precise tagging
+scheme. These tags can be converted to the Universal tagset</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id342">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a new MTECorpusreader for a set of documents located at the given root directory.  Example usage:</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lemma_paras">lemma_paras</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lemma_sents">lemma_sents</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lemma_words">lemma_words</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#paras">paras</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#raw">raw</a></code></td>
+    <td><span>:param fileids: A list specifying the fileids that should be used. :return: the given file(s) as a single string. :rtype: str</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#readme">readme</a></code></td>
+    <td><span>Prints some information about this corpus. :return: the content of the attached README file :rtype: str</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sents">sents</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tagged_paras">tagged_paras</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tagged_sents">tagged_sents</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tagged_words">tagged_words</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#words">words</a></code></td>
+    <td><span>:param fileids: A list specifying the fileids that should be used. :return: the given file(s) as a list of words and punctuation symbols. :rtype: list(str)</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#__fileids">__fileids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root=None, fileids=None, encoding='utf8'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L216">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a new MTECorpusreader for a set of documents
+located at the given root directory.  Example usage:
+
+    &gt;&gt;&gt; root = '/...path to corpus.../'
+    &gt;&gt;&gt; reader = MTECorpusReader(root, 'oana-*.xml', 'utf8') # doctest: +SKIP
+
+:param root: The root directory for this corpus. (default points to location in multext config file)
+:param fileids: A list or regexp specifying the fileids in this corpus. (default is oana-en.xml)
+:param enconding: The encoding of the given files (default is utf8)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.lemma_paras">
+    
+  </a>
+  <a name="lemma_paras">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lemma_paras</span>(self, fileids=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L375">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:return: the given file(s) as a list of paragraphs, each encoded as a
+         list of sentences, which are in turn encoded as a list of
+         tuples of the word and the corresponding lemma (word, lemma)
+:rtype: list(List(List(tuple(str, str))))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.lemma_sents">
+    
+  </a>
+  <a name="lemma_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lemma_sents</span>(self, fileids=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L337">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:return: the given file(s) as a list of sentences or utterances, each
+         encoded as a list of tuples of the word and the corresponding
+         lemma (word, lemma)
+:rtype: list(list(tuple(str, str)))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.lemma_words">
+    
+  </a>
+  <a name="lemma_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lemma_words</span>(self, fileids=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L300">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:return: the given file(s) as a list of words, the corresponding lemmas
+         and punctuation symbols, encoded as tuples (word, lemma)
+:rtype: list(tuple(str,str))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.paras">
+    
+  </a>
+  <a name="paras">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">paras</span>(self, fileids=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L286">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:return: the given file(s) as a list of paragraphs, each encoded as a list
+         of sentences, which are in turn encoded as lists of word string
+:rtype: list(list(list(str)))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.raw">
+    
+  </a>
+  <a name="raw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L251">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:return: the given file(s) as a single string.
+:rtype: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.readme">
+    
+  </a>
+  <a name="readme">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readme</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L243">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Prints some information about this corpus.
+:return: the content of the attached README file
+:rtype: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.sents">
+    
+  </a>
+  <a name="sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L272">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:return: the given file(s) as a list of sentences or utterances,
+         each encoded as a list of word strings
+:rtype: list(list(str))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.tagged_paras">
+    
+  </a>
+  <a name="tagged_paras">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tagged_paras</span>(self, fileids=None, tagset='msd', tags=''):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L390">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:param tagset: The tagset that should be used in the returned object,
+               either "universal" or "msd", "msd" is the default
+:param tags: An MSD Tag that is used to filter all parts of the used corpus
+             that are not more precise or at least equal to the given tag
+:return: the given file(s) as a list of paragraphs, each encoded as a
+         list of sentences, which are in turn encoded as a list
+         of (word,tag) tuples
+:rtype: list(list(list(tuple(str, str))))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.tagged_sents">
+    
+  </a>
+  <a name="tagged_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, tagset='msd', tags=''):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L352">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:param tagset: The tagset that should be used in the returned object,
+               either "universal" or "msd", "msd" is the default
+:param tags: An MSD Tag that is used to filter all parts of the used corpus
+             that are not more precise or at least equal to the given tag
+:return: the given file(s) as a list of sentences or utterances, each
+         each encoded as a list of (word,tag) tuples
+:rtype: list(list(tuple(str, str)))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.tagged_words">
+    
+  </a>
+  <a name="tagged_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, tagset='msd', tags=''):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L314">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:param tagset: The tagset that should be used in the returned object,
+               either "universal" or "msd", "msd" is the default
+:param tags: An MSD Tag that is used to filter all parts of the used corpus
+             that are not more precise or at least equal to the given tag
+:return: the given file(s) as a list of tagged words and punctuation symbols
+         encoded as tuples (word, tag)
+:rtype: list(tuple(str, str))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.words">
+    
+  </a>
+  <a name="words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L259">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
+:return: the given file(s) as a list of words and punctuation symbols.
+:rtype: list(str)</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.mte.MTECorpusReader.__fileids">
+    
+  </a>
+  <a name="__fileids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__fileids</span>(self, fileids):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.inference.discourse.ReadingCommand : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.inference.discourse.ReadingCommand</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.inference.html">inference</a></code>.<code><a href="nltk.inference.discourse.html">discourse</a></code>.<code><a href="nltk.inference.discourse.ReadingCommand.html">ReadingCommand</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.inference.html">inference</a></code><wbr></wbr>.<code><a href="nltk.inference.discourse.html">discourse</a></code><wbr></wbr>.<code><a href="nltk.inference.discourse.ReadingCommand.html">ReadingCommand</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ReadingCommand</span>: <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/discourse.py#L64">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.inference.discourse.CfgReadingCommand.html">nltk.inference.discourse.CfgReadingCommand</a></code>, <code><a href="nltk.inference.discourse.DrtGlueReadingCommand.html">nltk.inference.discourse.DrtGlueReadingCommand</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ReadingCommand</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L64" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.inference.discourse.CfgReadingCommand.html">nltk.inference.discourse.CfgReadingCommand</a></code>, <code><a href="nltk.inference.discourse.DrtGlueReadingCommand.html">nltk.inference.discourse.DrtGlueReadingCommand</a></code></p>
         <p><a href="classIndex.html#nltk.inference.discourse.ReadingCommand">View In Hierarchy</a></p>
       </div>
 
@@ -43,9 +74,15 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id696">
+        <table class="children sortable" id="id700">
+  
   
   <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#combine_readings">combine_readings</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse_to_readings">parse_to_readings</a></code></td>
@@ -55,11 +92,6 @@
     <td>Method</td>
     <td><code><a href="#process_thread">process_thread</a></code></td>
     <td><span>This method should be used to handle dependencies between readings such as resolving anaphora.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#combine_readings">combine_readings</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -76,6 +108,32 @@
 
         <div class="basemethod">
   
+  
+  <a name="nltk.inference.discourse.ReadingCommand.combine_readings">
+    
+  </a>
+  <a name="combine_readings">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">combine_readings</span>(self, readings):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L84">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.inference.discourse.CfgReadingCommand.html">nltk.inference.discourse.CfgReadingCommand</a></code>, <code><a href="nltk.inference.discourse.DrtGlueReadingCommand.html">nltk.inference.discourse.DrtGlueReadingCommand</a></code></div>
+    
+    <div><p class="pre">:param readings: readings to combine
+:type readings: list(Expression)
+:return: one combined reading
+:rtype: Expression</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="nltk.inference.discourse.ReadingCommand.parse_to_readings">
     
   </a>
@@ -85,7 +143,7 @@
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">parse_to_readings</span>(self, sentence):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/discourse.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L65">
       
       (source)
     </a>
@@ -98,6 +156,7 @@
   </div>
 </div><div class="basemethod">
   
+  
   <a name="nltk.inference.discourse.ReadingCommand.process_thread">
     
   </a>
@@ -107,7 +166,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">process_thread</span>(self, sentence_readings):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/discourse.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L72">
       
       (source)
     </a>
@@ -125,29 +184,6 @@ as resolving anaphora.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.inference.discourse.ReadingCommand.combine_readings">
-    
-  </a>
-  <a name="combine_readings">
-    
-  </a>
-  <div class="functionHeader">
-    @abstractmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">combine_readings</span>(self, readings):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/discourse.py#L84">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overridden in <code><a href="nltk.inference.discourse.CfgReadingCommand.html">nltk.inference.discourse.CfgReadingCommand</a></code>, <code><a href="nltk.inference.discourse.DrtGlueReadingCommand.html">nltk.inference.discourse.DrtGlueReadingCommand</a></code></div>
-    
-    <div><p class="pre">:param readings: readings to combine
-:type readings: list(Expression)
-:return: one combined reading
-:rtype: Expression</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.inference.discourse.ReadingCommand.to_fol">
     
@@ -158,7 +194,7 @@ as resolving anaphora.
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">to_fol</span>(self, expression):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/discourse.py#L93">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L93">
       
       (source)
     </a>
@@ -176,11 +212,16 @@ as resolving anaphora.
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

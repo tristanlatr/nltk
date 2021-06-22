@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.metrics.spearman : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.metrics.spearman</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.metrics.html">metrics</a></code>.<code><a href="nltk.metrics.spearman.html">spearman</a></code></code></h1>
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.metrics.html">metrics</a></code><wbr></wbr>.<code><a href="nltk.metrics.spearman.html">spearman</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/spearman.py">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/spearman.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -43,12 +74,13 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id822">
+        <table class="children sortable" id="id826">
+  
   
   <tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#spearman_correlation">spearman_correlation</a></code></td>
+    <td><code><a href="#ranks_from_scores">ranks_from_scores</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
@@ -58,7 +90,7 @@
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#ranks_from_scores">ranks_from_scores</a></code></td>
+    <td><code><a href="#spearman_correlation">spearman_correlation</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function private">
     
@@ -74,18 +106,19 @@
 
       <div id="childList">
 
-        <div class="basefunction private">
+        <div class="basefunction">
   
-  <a name="nltk.metrics.spearman._rank_dists">
+  
+  <a name="nltk.metrics.spearman.ranks_from_scores">
     
   </a>
-  <a name="_rank_dists">
+  <a name="ranks_from_scores">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_rank_dists</span>(ranks1, ranks2):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/spearman.py#L13">
+    <span class="py-keyword">def</span> <span class="py-defname">ranks_from_scores</span>(scores, rank_gap=1e-15):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/spearman.py#L52">
       
       (source)
     </a>
@@ -93,11 +126,36 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Finds the difference between the values in ranks1 and ranks2 for keys
-present in both dicts. If the arguments are not dicts, they are converted
-from (key, rank) sequences.</p></div>
+    <div><p class="pre">Given a sequence of (key, score) tuples, yields each key with an
+increasing rank, tying with previous key's rank if the difference between
+their scores is less than rank_gap. Suitable for use as an argument to
+``spearman_correlation``.</p></div>
   </div>
 </div><div class="basefunction">
+  
+  
+  <a name="nltk.metrics.spearman.ranks_from_sequence">
+    
+  </a>
+  <a name="ranks_from_sequence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ranks_from_sequence</span>(seq):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/spearman.py#L45">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Given a sequence, yields each element with an increasing rank, suitable
+for use as an argument to ``spearman_correlation``.</p></div>
+  </div>
+</div><div class="basefunction">
+  
   
   <a name="nltk.metrics.spearman.spearman_correlation">
     
@@ -108,7 +166,7 @@ from (key, rank) sequences.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">spearman_correlation</span>(ranks1, ranks2):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/spearman.py#L27">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/spearman.py#L27">
       
       (source)
     </a>
@@ -122,18 +180,19 @@ should be dicts or sequences of (key, rank). The coefficient ranges from
 calculated for keys in both rankings (for meaningful results, remove keys
 present in only one list before ranking).</p></div>
   </div>
-</div><div class="basefunction">
+</div><div class="basefunction private">
   
-  <a name="nltk.metrics.spearman.ranks_from_sequence">
+  
+  <a name="nltk.metrics.spearman._rank_dists">
     
   </a>
-  <a name="ranks_from_sequence">
+  <a name="_rank_dists">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">ranks_from_sequence</span>(seq):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/spearman.py#L45">
+    <span class="py-keyword">def</span> <span class="py-defname">_rank_dists</span>(ranks1, ranks2):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/spearman.py#L13">
       
       (source)
     </a>
@@ -141,41 +200,23 @@ present in only one list before ranking).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a sequence, yields each element with an increasing rank, suitable
-for use as an argument to ``spearman_correlation``.</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="nltk.metrics.spearman.ranks_from_scores">
-    
-  </a>
-  <a name="ranks_from_scores">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">ranks_from_scores</span>(scores, rank_gap=1e-15):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/spearman.py#L52">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Given a sequence of (key, score) tuples, yields each key with an
-increasing rank, tying with previous key's rank if the difference between
-their scores is less than rank_gap. Suitable for use as an argument to
-``spearman_correlation``.</p></div>
+    <div><p class="pre">Finds the difference between the values in ranks1 and ranks2 for keys
+present in both dicts. If the arguments are not dicts, they are converted
+from (key, rank) sequences.</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

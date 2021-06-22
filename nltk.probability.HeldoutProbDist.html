@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.probability.HeldoutProbDist : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.probability.HeldoutProbDist</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.probability.html">probability</a></code>.<code><a href="nltk.probability.HeldoutProbDist.html">HeldoutProbDist</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.probability.html">probability</a></code><wbr></wbr>.<code><a href="nltk.probability.HeldoutProbDist.html">HeldoutProbDist</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">HeldoutProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L984">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HeldoutProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L984" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.HeldoutProbDist">View In Hierarchy</a></p>
       </div>
 
@@ -80,18 +111,19 @@ when the ``HeldoutProbDist`` is created.
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1144">
+        <table class="children sortable" id="id1148">
   
-  <tr class="classvariable">
-    
-    <td>Class Variable</td>
-    <td><code><a href="#SUM_TO_ONE">SUM_TO_ONE</a></code></td>
-    <td><span>True if the probabilities of the samples in this probability distribution will always sum to one.</span></td>
-  </tr><tr class="method">
+  
+  <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span>Use the heldout estimate to create a probability distribution for the experiment used to generate ``base_fdist`` and ``heldout_fdist``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span>:rtype: str :return: A string representation of this ``ProbDist``.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -100,18 +132,13 @@ when the ``HeldoutProbDist`` is created.
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#discount">discount</a></code></td>
+    <td><span>Return the ratio by which counts are discounted on average: c*/c</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#heldout_fdist">heldout_fdist</a></code></td>
     <td><span>Return the heldout frequency distribution that this probability distribution is based on.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#samples">samples</a></code></td>
-    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#prob">prob</a></code></td>
-    <td><span>Return the probability for a given sample.  Probabilities are always real numbers in the range [0, 1].</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -120,17 +147,37 @@ when the ``HeldoutProbDist`` is created.
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#discount">discount</a></code></td>
-    <td><span>Return the ratio by which counts are discounted on average: c*/c</span></td>
+    <td><code><a href="#prob">prob</a></code></td>
+    <td><span>Return the probability for a given sample.  Probabilities are always real numbers in the range [0, 1].</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>:rtype: str :return: A string representation of this ``ProbDist``.</span></td>
+    <td><code><a href="#samples">samples</a></code></td>
+    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#SUM_TO_ONE">SUM_TO_ONE</a></code></td>
+    <td><span>True if the probabilities of the samples in this probability distribution will always sum to one.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_calculate_estimate">_calculate_estimate</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_calculate_Tr">_calculate_Tr</a></code></td>
+    <td><span>Return the list *Tr*, where *Tr[r]* is the total count in ``heldout_fdist`` for all samples that occur *r* times in ``base_fdist``.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_base_fdist">_base_fdist</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_estimate">_estimate</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -142,39 +189,25 @@ when the ``HeldoutProbDist`` is created.
     <td>Instance Variable</td>
     <td><code><a href="#_max_r">_max_r</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_estimate">_estimate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_calculate_Tr">_calculate_Tr</a></code></td>
-    <td><span>Return the list *Tr*, where *Tr[r]* is the total count in ``heldout_fdist`` for all samples that occur *r* times in ``base_fdist``.</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
-    <td><code><a href="#_calculate_estimate">_calculate_estimate</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.ProbDistI.html">ProbDistI</a></code>:
           </p>
-          <table class="children sortable" id="id1145">
+          <table class="children sortable" id="id1149">
+  
   
   <tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="nltk.probability.ProbDistI.html#logprob">logprob</a></code></td>
-    <td><span>Return the base 2 logarithm of the probability for a given sample.</span></td>
+    <td><code><a href="nltk.probability.ProbDistI.html#generate">generate</a></code></td>
+    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
-    <td><code><a href="nltk.probability.ProbDistI.html#generate">generate</a></code></td>
-    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
+    <td><code><a href="nltk.probability.ProbDistI.html#logprob">logprob</a></code></td>
+    <td><span>Return the base 2 logarithm of the probability for a given sample.</span></td>
   </tr>
 </table>
           
@@ -184,29 +217,8 @@ when the ``HeldoutProbDist`` is created.
 
       <div id="childList">
 
-        <div class="baseclassvariable">
+        <div class="basemethod">
   
-  <a name="nltk.probability.HeldoutProbDist.SUM_TO_ONE">
-    
-  </a>
-  <a name="SUM_TO_ONE">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">SUM_TO_ONE</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1026">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#SUM_TO_ONE">nltk.probability.ProbDistI.SUM_TO_ONE</a></code></div>
-    
-    <div><p class="pre">True if the probabilities of the samples in this probability
-distribution will always sum to one.</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.probability.HeldoutProbDist.__init__">
     
@@ -217,7 +229,7 @@ distribution will always sum to one.</p></div> (type: <code><a href="https://doc
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, base_fdist, heldout_fdist, bins=None):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1028">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1028">
       
       (source)
     </a>
@@ -240,102 +252,19 @@ for the experiment used to generate ``base_fdist`` and
     probabilities of the sample values to sum to one.  If
     ``bins`` is not specified, it defaults to ``freqdist.B()``.</p></div>
   </div>
-</div><div class="baseinstancevariable private">
+</div><div class="basemethod">
   
-  <a name="nltk.probability.HeldoutProbDist._base_fdist">
+  
+  <a name="nltk.probability.HeldoutProbDist.__repr__">
     
   </a>
-  <a name="_base_fdist">
+  <a name="__repr__">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_base_fdist</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1046">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.probability.HeldoutProbDist._heldout_fdist">
-    
-  </a>
-  <a name="_heldout_fdist">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_heldout_fdist</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1047">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.probability.HeldoutProbDist._max_r">
-    
-  </a>
-  <a name="_max_r">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_max_r</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1050">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.probability.HeldoutProbDist._estimate">
-    
-  </a>
-  <a name="_estimate">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_estimate</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1060">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="nltk.probability.HeldoutProbDist._calculate_Tr">
-    
-  </a>
-  <a name="_calculate_Tr">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_calculate_Tr</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1062">
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1139">
       
       (source)
     </a>
@@ -343,13 +272,187 @@ for the experiment used to generate ``base_fdist`` and
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the list *Tr*, where *Tr[r]* is the total count in
-``heldout_fdist`` for all samples that occur *r*
-times in ``base_fdist``.
+    <div><p class="pre">:rtype: str
+:return: A string representation of this ``ProbDist``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.probability.HeldoutProbDist.base_fdist">
+    
+  </a>
+  <a name="base_fdist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">base_fdist</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1104">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the base frequency distribution that this probability
+distribution is based on.
 
-:rtype: list(float)</p></div>
+:rtype: FreqDist</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.probability.HeldoutProbDist.discount">
+    
+  </a>
+  <a name="discount">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">discount</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1136">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#discount">nltk.probability.ProbDistI.discount</a></code></div>
+    
+    <div><p class="pre">Return the ratio by which counts are discounted on average: c*/c
+
+:rtype: float</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.probability.HeldoutProbDist.heldout_fdist">
+    
+  </a>
+  <a name="heldout_fdist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">heldout_fdist</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1113">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the heldout frequency distribution that this
+probability distribution is based on.
+
+:rtype: FreqDist</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.probability.HeldoutProbDist.max">
+    
+  </a>
+  <a name="max">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">max</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1130">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#max">nltk.probability.ProbDistI.max</a></code></div>
+    
+    <div><p class="pre">Return the sample with the greatest probability.  If two or
+more samples have the same probability, return one of them;
+which sample is returned is undefined.
+
+:rtype: any</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.probability.HeldoutProbDist.prob">
+    
+  </a>
+  <a name="prob">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self, sample):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1125">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#prob">nltk.probability.ProbDistI.prob</a></code></div>
+    
+    <div><p class="pre">Return the probability for a given sample.  Probabilities
+are always real numbers in the range [0, 1].
+
+:param sample: The sample whose probability
+       should be returned.
+:type sample: any
+:rtype: float</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.probability.HeldoutProbDist.samples">
+    
+  </a>
+  <a name="samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">samples</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#samples">nltk.probability.ProbDistI.samples</a></code></div>
+    
+    <div><p class="pre">Return a list of all samples that have nonzero probabilities.
+Use ``prob`` to find the probability of each sample.
+
+:rtype: list</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="nltk.probability.HeldoutProbDist.SUM_TO_ONE">
+    
+  </a>
+  <a name="SUM_TO_ONE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SUM_TO_ONE</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1026">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#SUM_TO_ONE">nltk.probability.ProbDistI.SUM_TO_ONE</a></code></div>
+    
+    <div><p class="pre">True if the probabilities of the samples in this probability
+distribution will always sum to one.</p></div>
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="nltk.probability.HeldoutProbDist._calculate_estimate">
     
@@ -360,7 +463,7 @@ times in ``base_fdist``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_calculate_estimate</span>(self, Tr, Nr, N):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1076">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1076">
       
       (source)
     </a>
@@ -386,18 +489,19 @@ so we define *estimate[r]=None* for those cases.
 :param N: The total number of outcomes recorded by the heldout
     frequency distribution.</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="basemethod private">
   
-  <a name="nltk.probability.HeldoutProbDist.base_fdist">
+  
+  <a name="nltk.probability.HeldoutProbDist._calculate_Tr">
     
   </a>
-  <a name="base_fdist">
+  <a name="_calculate_Tr">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">base_fdist</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1104">
+    <span class="py-keyword">def</span> <span class="py-defname">_calculate_Tr</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1062">
       
       (source)
     </a>
@@ -405,164 +509,113 @@ so we define *estimate[r]=None* for those cases.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the base frequency distribution that this probability
-distribution is based on.
+    <div><p class="pre">Return the list *Tr*, where *Tr[r]* is the total count in
+``heldout_fdist`` for all samples that occur *r*
+times in ``base_fdist``.
 
-:rtype: FreqDist</p></div>
+:rtype: list(float)</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable private">
   
-  <a name="nltk.probability.HeldoutProbDist.heldout_fdist">
+  
+  <a name="nltk.probability.HeldoutProbDist._base_fdist">
     
   </a>
-  <a name="heldout_fdist">
+  <a name="_base_fdist">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">heldout_fdist</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1113">
+    <span class="py-defname">_base_fdist</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1046">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="pre">Return the heldout frequency distribution that this
-probability distribution is based on.
-
-:rtype: FreqDist</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable private">
   
-  <a name="nltk.probability.HeldoutProbDist.samples">
+  
+  <a name="nltk.probability.HeldoutProbDist._estimate">
     
   </a>
-  <a name="samples">
+  <a name="_estimate">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">samples</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1122">
+    <span class="py-defname">_estimate</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1060">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#samples">nltk.probability.ProbDistI.samples</a></code></div>
+  <div class="functionBody">
     
-    <div><p class="pre">Return a list of all samples that have nonzero probabilities.
-Use ``prob`` to find the probability of each sample.
-
-:rtype: list</p></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable private">
   
-  <a name="nltk.probability.HeldoutProbDist.prob">
+  
+  <a name="nltk.probability.HeldoutProbDist._heldout_fdist">
     
   </a>
-  <a name="prob">
+  <a name="_heldout_fdist">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self, sample):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1125">
+    <span class="py-defname">_heldout_fdist</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1047">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#prob">nltk.probability.ProbDistI.prob</a></code></div>
+  <div class="functionBody">
     
-    <div><p class="pre">Return the probability for a given sample.  Probabilities
-are always real numbers in the range [0, 1].
-
-:param sample: The sample whose probability
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="basemethod">
+</div><div class="baseinstancevariable private">
   
-  <a name="nltk.probability.HeldoutProbDist.max">
+  
+  <a name="nltk.probability.HeldoutProbDist._max_r">
     
   </a>
-  <a name="max">
+  <a name="_max_r">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">max</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1130">
+    <span class="py-defname">_max_r</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1050">
       
       (source)
     </a>
   </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#max">nltk.probability.ProbDistI.max</a></code></div>
-    
-    <div><p class="pre">Return the sample with the greatest probability.  If two or
-more samples have the same probability, return one of them;
-which sample is returned is undefined.
-
-:rtype: any</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.probability.HeldoutProbDist.discount">
-    
-  </a>
-  <a name="discount">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">discount</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1136">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#discount">nltk.probability.ProbDistI.discount</a></code></div>
-    
-    <div><p class="pre">Return the ratio by which counts are discounted on average: c*/c
-
-:rtype: float</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.probability.HeldoutProbDist.__repr__">
-    
-  </a>
-  <a name="__repr__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1139">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
+  <div class="functionBody">
     
     
-    <div><p class="pre">:rtype: str
-:return: A string representation of this ``ProbDist``.</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

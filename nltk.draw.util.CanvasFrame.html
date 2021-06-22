@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>nltk.draw.util.CanvasFrame</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.draw.html">draw</a></code><wbr></wbr>.<code><a href="nltk.draw.util.html">util</a></code><wbr></wbr>.<code><a href="nltk.draw.util.CanvasFrame.html">CanvasFrame</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CanvasFrame</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1765" class="sourceLink">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.draw.util.CanvasFrame">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A ``Tkinter`` frame containing a canvas and scrollbars.
+``CanvasFrame`` uses a ``ScrollWatcherWidget`` to ensure that all of
+the canvas widgets contained on its canvas are within its
+scrollregion.  In order for ``CanvasFrame`` to make these checks,
+all canvas widgets must be registered with ``add_widget`` when they
+are added to the canvas; and destroyed with ``destroy_widget`` when
+they are no longer needed.
+
+If a ``CanvasFrame`` is created with no parent, then it will create
+its own main window, including a "Done" button and a "Print"
+button.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id615">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Create a new ``CanvasFrame``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_widget">add_widget</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#canvas">canvas</a></code></td>
+    <td><span>:return: The canvas managed by this ``CanvasFrame``. :rtype: Tkinter.Canvas</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#destroy">destroy</a></code></td>
+    <td><span>Destroy this ``CanvasFrame``.  If this ``CanvasFrame`` created a top-level window, then this will close that window.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#destroy_widget">destroy_widget</a></code></td>
+    <td><span>Remove a canvas widget from this ``CanvasFrame``.  This deregisters the canvas widget, and destroys it.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mainloop">mainloop</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pack">pack</a></code></td>
+    <td><span>Pack this ``CanvasFrame``.  See the documentation for ``Tkinter.Pack`` for more information.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#print_to_file">print_to_file</a></code></td>
+    <td><span>Print the contents of this ``CanvasFrame`` to a postscript file.  If no filename is given, then prompt the user for one.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove_widget">remove_widget</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#scrollregion">scrollregion</a></code></td>
+    <td><span>:return: The current scroll region for the canvas managed by this ``CanvasFrame``. :rtype: 4-tuple of int</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_find_room">_find_room</a></code></td>
+    <td><span>Try to find a space for a given widget.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_menubar">_init_menubar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_canvas">_canvas</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_frame">_frame</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_parent">_parent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_scrollwatcher">_scrollwatcher</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parent=None, **kw):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1780">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Create a new ``CanvasFrame``.
+
+:type parent: Tkinter.BaseWidget or Tkinter.Tk
+:param parent: The parent ``Tkinter`` widget.  If no parent is
+    specified, then ``CanvasFrame`` will create a new main
+    window.
+:param kw: Keyword arguments for the new ``Canvas``.  See the
+    documentation for ``Tkinter.Canvas`` for more information.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.add_widget">
+    
+  </a>
+  <a name="add_widget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_widget</span>(self, canvaswidget, x=None, y=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1888">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Register a canvas widget with this ``CanvasFrame``.  The
+``CanvasFrame`` will ensure that this canvas widget is always
+within the ``Canvas``'s scrollregion.  If no coordinates are
+given for the canvas widget, then the ``CanvasFrame`` will
+attempt to find a clear area of the canvas for it.
+
+:type canvaswidget: CanvasWidget
+:param canvaswidget: The new canvas widget.  ``canvaswidget``
+    must have been created on this ``CanvasFrame``'s canvas.
+:type x: int
+:param x: The initial x coordinate for the upper left hand
+    corner of ``canvaswidget``, in the canvas's coordinate
+    space.
+:type y: int
+:param y: The initial y coordinate for the upper left hand
+    corner of ``canvaswidget``, in the canvas's coordinate
+    space.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.canvas">
+    
+  </a>
+  <a name="canvas">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">canvas</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1881">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The canvas managed by this ``CanvasFrame``.
+:rtype: Tkinter.Canvas</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.destroy">
+    
+  </a>
+  <a name="destroy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">destroy</span>(self, *e):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1979">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Destroy this ``CanvasFrame``.  If this ``CanvasFrame`` created a
+top-level window, then this will close that window.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.destroy_widget">
+    
+  </a>
+  <a name="destroy_widget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">destroy_widget</span>(self, canvaswidget):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1959">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Remove a canvas widget from this ``CanvasFrame``.  This
+deregisters the canvas widget, and destroys it.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.mainloop">
+    
+  </a>
+  <a name="mainloop">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mainloop</span>(self, *args, **kwargs):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1989">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Enter the Tkinter mainloop.  This function must be called if
+this frame is created from a non-interactive program (e.g.
+from a secript); otherwise, the frame will close as soon as
+the script completes.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.pack">
+    
+  </a>
+  <a name="pack">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pack</span>(self, cnf={}, **kw):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1971">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Pack this ``CanvasFrame``.  See the documentation for
+``Tkinter.Pack`` for more information.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.print_to_file">
+    
+  </a>
+  <a name="print_to_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print_to_file</span>(self, filename=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1842">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Print the contents of this ``CanvasFrame`` to a postscript
+file.  If no filename is given, then prompt the user for one.
+
+:param filename: The name of the file to print the tree to.
+:type filename: str
+:rtype: None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.remove_widget">
+    
+  </a>
+  <a name="remove_widget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove_widget</span>(self, canvaswidget):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1967">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame.scrollregion">
+    
+  </a>
+  <a name="scrollregion">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">scrollregion</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1872">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The current scroll region for the canvas managed by
+    this ``CanvasFrame``.
+:rtype: 4-tuple of int</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame._find_room">
+    
+  </a>
+  <a name="_find_room">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_room</span>(self, widget, desired_x, desired_y):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1918">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Try to find a space for a given widget.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame._init_menubar">
+    
+  </a>
+  <a name="_init_menubar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_menubar</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1825">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame._canvas">
+    
+  </a>
+  <a name="_canvas">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_canvas</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1803">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame._frame">
+    
+  </a>
+  <a name="_frame">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_frame</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1802">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame._parent">
+    
+  </a>
+  <a name="_parent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_parent</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1793">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.draw.util.CanvasFrame._scrollwatcher">
+    
+  </a>
+  <a name="_scrollwatcher">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_scrollwatcher</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L1818">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

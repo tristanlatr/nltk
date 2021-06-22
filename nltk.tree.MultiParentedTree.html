@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.tree.MultiParentedTree : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.tree.MultiParentedTree</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tree.html">tree</a></code>.<code><a href="nltk.tree.MultiParentedTree.html">MultiParentedTree</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.tree.html">tree</a></code><wbr></wbr>.<code><a href="nltk.tree.MultiParentedTree.html">MultiParentedTree</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">MultiParentedTree</span>(<a href="nltk.tree.AbstractParentedTree.html" title="nltk.tree.AbstractParentedTree">AbstractParentedTree</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1362">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tree.ImmutableMultiParentedTree.html">nltk.tree.ImmutableMultiParentedTree</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MultiParentedTree</span>(<a href="nltk.tree.AbstractParentedTree.html" title="nltk.tree.AbstractParentedTree">AbstractParentedTree</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1362" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tree.ImmutableMultiParentedTree.html">nltk.tree.ImmutableMultiParentedTree</a></code></p>
         <p><a href="classIndex.html#nltk.tree.MultiParentedTree">View In Hierarchy</a></p>
       </div>
 
@@ -56,7 +87,8 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1912">
+        <table class="children sortable" id="id1916">
+  
   
   <tr class="method">
     
@@ -66,12 +98,17 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#parents">parents</a></code></td>
+    <td><code><a href="#left_siblings">left_siblings</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#left_siblings">left_siblings</a></code></td>
+    <td><code><a href="#parent_indices">parent_indices</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parents">parents</a></code></td>
     <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method">
     
@@ -86,18 +123,13 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#parent_indices">parent_indices</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
     <td><code><a href="#treepositions">treepositions</a></code></td>
     <td><span>Return a list of all tree positions that can be used to reach this multi-parented tree starting from ``root``.  I.e., the following is always true::</span></td>
-  </tr><tr class="instancevariable private">
+  </tr><tr class="method private">
     
-    <td>Instance Variable</td>
-    <td><code><a href="#_parents">_parents</a></code></td>
-    <td><span>A list of this tree's parents.  This list should not contain duplicates, even if a parent contains this tree multiple times.</span></td>
+    <td>Method</td>
+    <td><code><a href="#_delparent">_delparent</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -116,20 +148,21 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_delparent">_delparent</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method private">
-    
-    <td>Method</td>
     <td><code><a href="#_setparent">_setparent</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_parents">_parents</a></code></td>
+    <td><span>A list of this tree's parents.  This list should not contain duplicates, even if a parent contains this tree multiple times.</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tree.AbstractParentedTree.html">AbstractParentedTree</a></code>:
           </p>
-          <table class="children sortable" id="id1913">
+          <table class="children sortable" id="id1917">
+  
   
   <tr class="basemethod">
     
@@ -139,7 +172,22 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="nltk.tree.AbstractParentedTree.html#__delslice__">__delslice__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.AbstractParentedTree.html#__getslice__">__getslice__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="nltk.tree.AbstractParentedTree.html#__setitem__">__setitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.AbstractParentedTree.html#__setslice__">__setslice__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod">
     
@@ -166,30 +214,41 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
     <td>Method</td>
     <td><code><a href="nltk.tree.AbstractParentedTree.html#remove">remove</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.AbstractParentedTree.html#__getslice__">__getslice__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.AbstractParentedTree.html#__delslice__">__delslice__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.AbstractParentedTree.html#__setslice__">__setslice__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tree.Tree.html">Tree</a></code> (via <code><a href="nltk.tree.AbstractParentedTree.html">AbstractParentedTree</a></code>):
           </p>
-          <table class="children sortable" id="id1914">
+          <table class="children sortable" id="id1918">
   
-  <tr class="basemethod">
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="nltk.tree.Tree.html#convert">convert</a></code></td>
+    <td><span>Convert a tree between different subtypes of Tree.  ``cls`` determines which class will be used to encode the new tree.</span></td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="nltk.tree.Tree.html#fromstring">fromstring</a></code></td>
+    <td><span>Read a bracketed tree string and return the resulting tree. Trees are represented as nested brackettings, such as::</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__add__">__add__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__copy__">__copy__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__deepcopy__">__deepcopy__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tree.Tree.html#__eq__">__eq__</a></code></td>
@@ -197,12 +256,142 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="nltk.tree.Tree.html#__lt__">__lt__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__mul__">__mul__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__radd__">__radd__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__rmul__">__rmul__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#chomsky_normal_form">chomsky_normal_form</a></code></td>
+    <td><span>This method can modify a tree in three ways:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#collapse_unary">collapse_unary</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#copy">copy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#draw">draw</a></code></td>
+    <td><span>Open a new window containing a graphical diagram of this tree.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#flatten">flatten</a></code></td>
+    <td><span>Return a flat version of the tree, with all non-root non-terminals removed.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#freeze">freeze</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#height">height</a></code></td>
+    <td><span>Return the height of the tree.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#label">label</a></code></td>
+    <td><span>Return the node label of the tree.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#leaf_treeposition">leaf_treeposition</a></code></td>
+    <td><span>:return: The tree position of the ``index``-th leaf in this tree.  I.e., if ``tp=self.leaf_treeposition(i)``, then ``self[tp]==self.leaves()[i]``.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#leaves">leaves</a></code></td>
+    <td><span>Return the leaves of the tree.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#pformat">pformat</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#pformat_latex_qtree">pformat_latex_qtree</a></code></td>
+    <td><span>Returns a representation of the tree compatible with the LaTeX qtree package. This consists of the string ``\Tree`` followed by the tree represented in bracketed notation.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#pos">pos</a></code></td>
+    <td><span>Return a sequence of pos-tagged words extracted from the tree.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#pprint">pprint</a></code></td>
+    <td><span>Print a string representation of this Tree to 'stream'</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#pretty_print">pretty_print</a></code></td>
+    <td><span>Pretty-print this tree as ASCII or Unicode art. For explanation of the arguments, see the documentation for `nltk.treeprettyprinter.TreePrettyPrinter`.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#productions">productions</a></code></td>
+    <td><span>Generate the productions that correspond to the non-terminal nodes of the tree. For each subtree of the form (P: C1 C2 ... Cn) this produces a production of the form P -&gt; C1 C2 ... Cn.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#set_label">set_label</a></code></td>
+    <td><span>Set the node label of the tree.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#subtrees">subtrees</a></code></td>
+    <td><span>Generate all the subtrees of this tree, optionally restricted to trees matching the filter function.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#treeposition_spanning_leaves">treeposition_spanning_leaves</a></code></td>
+    <td><span>:return: The tree position of the lowest descendant of this tree that dominates ``self.leaves()[start:end]``. :raise ValueError: if ``end &lt;= start``</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#un_chomsky_normal_form">un_chomsky_normal_form</a></code></td>
+    <td><span>This method modifies the tree in three ways:</span></td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
-    <td><code><a href="nltk.tree.Tree.html#__ne__">__ne__</a></code></td>
+    <td><code><a href="nltk.tree.Tree.html#__ge__">__ge__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseclassvariable">
     
@@ -217,183 +406,13 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
-    <td><code><a href="nltk.tree.Tree.html#__ge__">__ge__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__mul__">__mul__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__rmul__">__rmul__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__add__">__add__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__radd__">__radd__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__getitem__">__getitem__</a></code></td>
+    <td><code><a href="nltk.tree.Tree.html#__ne__">__ne__</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
     <td><code><a href="nltk.tree.Tree.html#node">node</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#label">label</a></code></td>
-    <td><span>Return the node label of the tree.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#set_label">set_label</a></code></td>
-    <td><span>Set the node label of the tree.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#leaves">leaves</a></code></td>
-    <td><span>Return the leaves of the tree.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#flatten">flatten</a></code></td>
-    <td><span>Return a flat version of the tree, with all non-root non-terminals removed.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#height">height</a></code></td>
-    <td><span>Return the height of the tree.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#subtrees">subtrees</a></code></td>
-    <td><span>Generate all the subtrees of this tree, optionally restricted to trees matching the filter function.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#productions">productions</a></code></td>
-    <td><span>Generate the productions that correspond to the non-terminal nodes of the tree. For each subtree of the form (P: C1 C2 ... Cn) this produces a production of the form P -&gt; C1 C2 ... Cn.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#pos">pos</a></code></td>
-    <td><span>Return a sequence of pos-tagged words extracted from the tree.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#leaf_treeposition">leaf_treeposition</a></code></td>
-    <td><span>:return: The tree position of the ``index``-th leaf in this tree.  I.e., if ``tp=self.leaf_treeposition(i)``, then ``self[tp]==self.leaves()[i]``.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#treeposition_spanning_leaves">treeposition_spanning_leaves</a></code></td>
-    <td><span>:return: The tree position of the lowest descendant of this tree that dominates ``self.leaves()[start:end]``. :raise ValueError: if ``end &lt;= start``</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#chomsky_normal_form">chomsky_normal_form</a></code></td>
-    <td><span>This method can modify a tree in three ways:</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#un_chomsky_normal_form">un_chomsky_normal_form</a></code></td>
-    <td><span>This method modifies the tree in three ways:</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#collapse_unary">collapse_unary</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseclassmethod">
-    
-    <td>Class Method</td>
-    <td><code><a href="nltk.tree.Tree.html#convert">convert</a></code></td>
-    <td><span>Convert a tree between different subtypes of Tree.  ``cls`` determines which class will be used to encode the new tree.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__copy__">__copy__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__deepcopy__">__deepcopy__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#copy">copy</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#freeze">freeze</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="baseclassmethod">
-    
-    <td>Class Method</td>
-    <td><code><a href="nltk.tree.Tree.html#fromstring">fromstring</a></code></td>
-    <td><span>Read a bracketed tree string and return the resulting tree. Trees are represented as nested brackettings, such as::</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#draw">draw</a></code></td>
-    <td><span>Open a new window containing a graphical diagram of this tree.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#pretty_print">pretty_print</a></code></td>
-    <td><span>Pretty-print this tree as ASCII or Unicode art. For explanation of the arguments, see the documentation for `nltk.treeprettyprinter.TreePrettyPrinter`.</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__repr__">__repr__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#__str__">__str__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#pprint">pprint</a></code></td>
-    <td><span>Print a string representation of this Tree to 'stream'</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#pformat">pformat</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#pformat_latex_qtree">pformat_latex_qtree</a></code></td>
-    <td><span>Returns a representation of the tree compatible with the LaTeX qtree package. This consists of the string ``\Tree`` followed by the tree represented in bracketed notation.</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="nltk.tree.Tree.html#_label">_label</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="basemethod private">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#_get_node">_get_node</a></code></td>
-    <td><span>Outdated method to access the node value; use the label() method instead.</span></td>
-  </tr><tr class="basemethod private">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#_set_node">_set_node</a></code></td>
-    <td><span>Outdated method to set the node value; use the set_label() method instead.</span></td>
   </tr><tr class="baseclassmethod private">
     
     <td>Class Method</td>
@@ -402,12 +421,27 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#_get_node">_get_node</a></code></td>
+    <td><span>Outdated method to access the node value; use the label() method instead.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tree.Tree.html#_pformat_flat">_pformat_flat</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
     <td><code><a href="nltk.tree.Tree.html#_repr_png_">_repr_png_</a></code></td>
     <td><span>Draws and outputs in PNG for ipython. PNG is used instead of PDF, since it can be displayed in the qt console and has wider browser support.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="nltk.tree.Tree.html#_pformat_flat">_pformat_flat</a></code></td>
+    <td><code><a href="nltk.tree.Tree.html#_set_node">_set_node</a></code></td>
+    <td><span>Outdated method to set the node value; use the set_label() method instead.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.tree.Tree.html#_label">_label</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -420,6 +454,7 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
 
         <div class="basemethod">
   
+  
   <a name="nltk.tree.MultiParentedTree.__init__">
     
   </a>
@@ -429,7 +464,7 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, node, children=None):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1380">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1380">
       
       (source)
     </a>
@@ -439,77 +474,8 @@ result in incorrect parent pointers and in ``TypeError`` exceptions.</p></div>
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.tree.MultiParentedTree._parents">
-    
-  </a>
-  <a name="_parents">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_parents</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1381">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">A list of this tree's parents.  This list should not
-contain duplicates, even if a parent contains this tree
-multiple times.</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="nltk.tree.MultiParentedTree._frozen_class">
-    
-  </a>
-  <a name="_frozen_class">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_frozen_class</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1396">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.tree.Tree.html#_frozen_class">nltk.tree.Tree._frozen_class</a></code></div>
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
 </div><div class="basemethod">
   
-  <a name="nltk.tree.MultiParentedTree.parents">
-    
-  </a>
-  <a name="parents">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">parents</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1403">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">The set of parents of this tree.  If this tree has no parents,
-then ``parents`` is the empty set.  To check if a tree is used
-as multiple children of the same parent, use the
-``parent_indices()`` method.
-
-:type: list(MultiParentedTree)</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.tree.MultiParentedTree.left_siblings">
     
@@ -520,7 +486,7 @@ as multiple children of the same parent, use the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">left_siblings</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1414">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1414">
       
       (source)
     </a>
@@ -538,99 +504,6 @@ of this tree with respect to multiple parents.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.tree.MultiParentedTree.right_siblings">
-    
-  </a>
-  <a name="right_siblings">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">right_siblings</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1430">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">A list of all right siblings of this tree, in any of its parent
-trees.  A tree may be its own right sibling if it is used as
-multiple contiguous children of the same parent.  A tree may
-appear multiple times in this list if it is the right sibling
-of this tree with respect to multiple parents.
-
-:type: list(MultiParentedTree)</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="nltk.tree.MultiParentedTree._get_parent_indices">
-    
-  </a>
-  <a name="_get_parent_indices">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_get_parent_indices</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1446">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.tree.MultiParentedTree.roots">
-    
-  </a>
-  <a name="roots">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">roots</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1454">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">The set of all roots of this tree.  This set is formed by
-tracing all possible parent paths until trees with no parents
-are found.
-
-:type: list(MultiParentedTree)</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="nltk.tree.MultiParentedTree._get_roots_helper">
-    
-  </a>
-  <a name="_get_roots_helper">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_get_roots_helper</span>(self, result):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1464">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.tree.MultiParentedTree.parent_indices">
     
@@ -641,7 +514,7 @@ are found.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parent_indices</span>(self, parent):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1472">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1472">
       
       (source)
     </a>
@@ -659,6 +532,88 @@ always true::
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="nltk.tree.MultiParentedTree.parents">
+    
+  </a>
+  <a name="parents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parents</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1403">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">The set of parents of this tree.  If this tree has no parents,
+then ``parents`` is the empty set.  To check if a tree is used
+as multiple children of the same parent, use the
+``parent_indices()`` method.
+
+:type: list(MultiParentedTree)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.tree.MultiParentedTree.right_siblings">
+    
+  </a>
+  <a name="right_siblings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">right_siblings</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1430">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">A list of all right siblings of this tree, in any of its parent
+trees.  A tree may be its own right sibling if it is used as
+multiple contiguous children of the same parent.  A tree may
+appear multiple times in this list if it is the right sibling
+of this tree with respect to multiple parents.
+
+:type: list(MultiParentedTree)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.tree.MultiParentedTree.roots">
+    
+  </a>
+  <a name="roots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">roots</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1454">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">The set of all roots of this tree.  This set is formed by
+tracing all possible parent paths until trees with no parents
+are found.
+
+:type: list(MultiParentedTree)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="nltk.tree.MultiParentedTree.treepositions">
     
   </a>
@@ -668,7 +623,7 @@ always true::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">treepositions</span>(self, root):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1487">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1487">
       
       (source)
     </a>
@@ -685,6 +640,7 @@ following is always true::
   </div>
 </div><div class="basemethod private">
   
+  
   <a name="nltk.tree.MultiParentedTree._delparent">
     
   </a>
@@ -694,7 +650,7 @@ following is always true::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_delparent</span>(self, child, index):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1511">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1511">
       
       (source)
     </a>
@@ -714,6 +670,73 @@ child list of ``self``.
   </div>
 </div><div class="basemethod private">
   
+  
+  <a name="nltk.tree.MultiParentedTree._frozen_class">
+    
+  </a>
+  <a name="_frozen_class">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_frozen_class</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1396">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.tree.Tree.html#_frozen_class">nltk.tree.Tree._frozen_class</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.tree.MultiParentedTree._get_parent_indices">
+    
+  </a>
+  <a name="_get_parent_indices">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_parent_indices</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1446">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.tree.MultiParentedTree._get_roots_helper">
+    
+  </a>
+  <a name="_get_roots_helper">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_roots_helper</span>(self, result):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1464">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
   <a name="nltk.tree.MultiParentedTree._setparent">
     
   </a>
@@ -723,7 +746,7 @@ child list of ``self``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_setparent</span>(self, child, index, dry_run=False):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tree.py#L1525">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1525">
       
       (source)
     </a>
@@ -749,14 +772,43 @@ child list of ``self``.
     parent pointer; just check for any error conditions, and
     raise an exception if one is found.</p></div>
   </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.tree.MultiParentedTree._parents">
+    
+  </a>
+  <a name="_parents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_parents</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1381">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A list of this tree's parents.  This list should not
+contain duplicates, even if a parent contains this tree
+multiple times.</p></div>
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

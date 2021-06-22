@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.sem.hole.HoleSemantics : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.sem.hole.HoleSemantics</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.sem.html">sem</a></code>.<code><a href="nltk.sem.hole.html">hole</a></code>.<code><a href="nltk.sem.hole.HoleSemantics.html">HoleSemantics</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.sem.html">sem</a></code><wbr></wbr>.<code><a href="nltk.sem.hole.html">hole</a></code><wbr></wbr>.<code><a href="nltk.sem.hole.HoleSemantics.html">HoleSemantics</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">HoleSemantics</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L75">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HoleSemantics</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L75" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.sem.hole.HoleSemantics">View In Hierarchy</a></p>
       </div>
 
@@ -47,13 +78,39 @@ and finding legal ways to plug holes with labels.</p></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1333">
+        <table class="children sortable" id="id1337">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#formula_tree">formula_tree</a></code></td>
+    <td><span>Return the first-order logic formula tree for this underspecified representation using the plugging given.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#is_node">is_node</a></code></td>
+    <td><span>Return true if x is a node (label or hole) in this semantic representation.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pluggings">pluggings</a></code></td>
+    <td><span>Calculate and return all the legal pluggings (mappings of labels to holes) of this semantics given the constraints.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#constraints">constraints</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#fragments">fragments</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -67,38 +124,13 @@ and finding legal ways to plug holes with labels.</p></div>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
-    <td><code><a href="#fragments">fragments</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#constraints">constraints</a></code></td>
+    <td><code><a href="#top_hole">top_hole</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="#top_most_labels">top_most_labels</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#top_hole">top_hole</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#is_node">is_node</a></code></td>
-    <td><span>Return true if x is a node (label or hole) in this semantic representation.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#pluggings">pluggings</a></code></td>
-    <td><span>Calculate and return all the legal pluggings (mappings of labels to holes) of this semantics given the constraints.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#formula_tree">formula_tree</a></code></td>
-    <td><span>Return the first-order logic formula tree for this underspecified representation using the plugging given.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -107,8 +139,8 @@ and finding legal ways to plug holes with labels.</p></div>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_find_top_nodes">_find_top_nodes</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><code><a href="#_find_top_hole">_find_top_hole</a></code></td>
+    <td><span>Return the hole that will be the top of the formula tree.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -117,13 +149,13 @@ and finding legal ways to plug holes with labels.</p></div>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_find_top_hole">_find_top_hole</a></code></td>
-    <td><span>Return the hole that will be the top of the formula tree.</span></td>
+    <td><code><a href="#_find_top_nodes">_find_top_nodes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_plug_nodes">_plug_nodes</a></code></td>
-    <td><span>Plug the nodes in `queue' with the labels in `potential_labels'.</span></td>
+    <td><code><a href="#_formula_tree">_formula_tree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -132,8 +164,8 @@ and finding legal ways to plug holes with labels.</p></div>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_violates_constraints">_violates_constraints</a></code></td>
-    <td><span>Return True if the `label' cannot be placed underneath the holes given by the set `ancestors' because it would violate the constraints imposed on it.</span></td>
+    <td><code><a href="#_plug_nodes">_plug_nodes</a></code></td>
+    <td><span>Plug the nodes in `queue' with the labels in `potential_labels'.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -142,8 +174,8 @@ and finding legal ways to plug holes with labels.</p></div>
   </tr><tr class="method private">
     
     <td>Method</td>
-    <td><code><a href="#_formula_tree">_formula_tree</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><code><a href="#_violates_constraints">_violates_constraints</a></code></td>
+    <td><span>Return True if the `label' cannot be placed underneath the holes given by the set `ancestors' because it would violate the constraints imposed on it.</span></td>
   </tr>
 </table>
         
@@ -155,6 +187,7 @@ and finding legal ways to plug holes with labels.</p></div>
 
         <div class="basemethod">
   
+  
   <a name="nltk.sem.hole.HoleSemantics.__init__">
     
   </a>
@@ -164,7 +197,7 @@ and finding legal ways to plug holes with labels.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, usr):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L84">
       
       (source)
     </a>
@@ -188,133 +221,31 @@ LABEL(n)
 where l is the label of the node described by the predicate, n is either
 a label or a hole, and v is a variable.</p></div>
   </div>
-</div><div class="baseinstancevariable">
+</div><div class="basemethod">
   
-  <a name="nltk.sem.hole.HoleSemantics.holes">
+  
+  <a name="nltk.sem.hole.HoleSemantics.formula_tree">
     
   </a>
-  <a name="holes">
+  <a name="formula_tree">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">holes</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L102">
+    <span class="py-keyword">def</span> <span class="py-defname">formula_tree</span>(self, plugging):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L283">
       
       (source)
     </a>
   </div>
-  <div class="functionBody">
+  <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.sem.hole.HoleSemantics.labels">
-    
-  </a>
-  <a name="labels">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">labels</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L103">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.sem.hole.HoleSemantics.fragments">
-    
-  </a>
-  <a name="fragments">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">fragments</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L104">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.sem.hole.HoleSemantics.constraints">
-    
-  </a>
-  <a name="constraints">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">constraints</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L105">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.sem.hole.HoleSemantics.top_most_labels">
-    
-  </a>
-  <a name="top_most_labels">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">top_most_labels</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L107">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.sem.hole.HoleSemantics.top_hole">
-    
-  </a>
-  <a name="top_hole">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">top_hole</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L108">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p class="pre">Return the first-order logic formula tree for this underspecified
+representation using the plugging given.</p></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="nltk.sem.hole.HoleSemantics.is_node">
     
@@ -325,7 +256,7 @@ a label or a hole, and v is a variable.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_node</span>(self, x):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L110">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L110">
       
       (source)
     </a>
@@ -336,7 +267,163 @@ a label or a hole, and v is a variable.</p></div>
     <div><p class="pre">Return true if x is a node (label or hole) in this semantic
 representation.</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics.pluggings">
+    
+  </a>
+  <a name="pluggings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pluggings</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L166">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Calculate and return all the legal pluggings (mappings of labels to
+holes) of this semantics given the constraints.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics.constraints">
+    
+  </a>
+  <a name="constraints">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">constraints</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L105">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics.fragments">
+    
+  </a>
+  <a name="fragments">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">fragments</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L104">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics.holes">
+    
+  </a>
+  <a name="holes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">holes</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics.labels">
+    
+  </a>
+  <a name="labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">labels</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L103">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics.top_hole">
+    
+  </a>
+  <a name="top_hole">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">top_hole</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L108">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics.top_most_labels">
+    
+  </a>
+  <a name="top_most_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">top_most_labels</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L107">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
 </div><div class="basemethod private">
+  
   
   <a name="nltk.sem.hole.HoleSemantics._break_down">
     
@@ -347,7 +434,7 @@ representation.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_break_down</span>(self, usr):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L117">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L117">
       
       (source)
     </a>
@@ -360,16 +447,17 @@ semantics underspecified representation (USR).</p></div>
   </div>
 </div><div class="basemethod private">
   
-  <a name="nltk.sem.hole.HoleSemantics._find_top_nodes">
+  
+  <a name="nltk.sem.hole.HoleSemantics._find_top_hole">
     
   </a>
-  <a name="_find_top_nodes">
+  <a name="_find_top_hole">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_find_top_nodes</span>(self, node_list):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L140">
+    <span class="py-keyword">def</span> <span class="py-defname">_find_top_hole</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L158">
       
       (source)
     </a>
@@ -377,9 +465,10 @@ semantics underspecified representation (USR).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p class="pre">Return the hole that will be the top of the formula tree.</p></div>
   </div>
 </div><div class="basemethod private">
+  
   
   <a name="nltk.sem.hole.HoleSemantics._find_top_most_labels">
     
@@ -390,7 +479,7 @@ semantics underspecified representation (USR).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_find_top_most_labels</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L150">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L150">
       
       (source)
     </a>
@@ -404,37 +493,17 @@ subtree that they are part of.</p></div>
   </div>
 </div><div class="basemethod private">
   
-  <a name="nltk.sem.hole.HoleSemantics._find_top_hole">
-    
-  </a>
-  <a name="_find_top_hole">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_find_top_hole</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L158">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Return the hole that will be the top of the formula tree.</p></div>
-  </div>
-</div><div class="basemethod">
   
-  <a name="nltk.sem.hole.HoleSemantics.pluggings">
+  <a name="nltk.sem.hole.HoleSemantics._find_top_nodes">
     
   </a>
-  <a name="pluggings">
+  <a name="_find_top_nodes">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">pluggings</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L166">
+    <span class="py-keyword">def</span> <span class="py-defname">_find_top_nodes</span>(self, node_list):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L140">
       
       (source)
     </a>
@@ -442,10 +511,55 @@ subtree that they are part of.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate and return all the legal pluggings (mappings of labels to
-holes) of this semantics given the constraints.</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basemethod private">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics._formula_tree">
+    
+  </a>
+  <a name="_formula_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_formula_tree</span>(self, plugging, node):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L290">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.sem.hole.HoleSemantics._plug_hole">
+    
+  </a>
+  <a name="_plug_hole">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_plug_hole</span>(self, hole, ancestors0, queue, potential_labels0, plug_acc0, record):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L208">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Try all possible ways of plugging a single hole.
+See _plug_nodes for the meanings of the parameters.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
   
   <a name="nltk.sem.hole.HoleSemantics._plug_nodes">
     
@@ -456,7 +570,7 @@ holes) of this semantics given the constraints.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_plug_nodes</span>(self, queue, potential_labels, plug_acc, record):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L175">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L175">
       
       (source)
     </a>
@@ -480,50 +594,6 @@ total so far.  It is the only parameter that is destructively updated.</p></div>
   </div>
 </div><div class="basemethod private">
   
-  <a name="nltk.sem.hole.HoleSemantics._plug_hole">
-    
-  </a>
-  <a name="_plug_hole">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_plug_hole</span>(self, hole, ancestors0, queue, potential_labels0, plug_acc0, record):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L208">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Try all possible ways of plugging a single hole.
-See _plug_nodes for the meanings of the parameters.</p></div>
-  </div>
-</div><div class="basemethod private">
-  
-  <a name="nltk.sem.hole.HoleSemantics._violates_constraints">
-    
-  </a>
-  <a name="_violates_constraints">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">_violates_constraints</span>(self, label, ancestors):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L251">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Return True if the `label' cannot be placed underneath the holes given
-by the set `ancestors' because it would violate the constraints imposed
-on it.</p></div>
-  </div>
-</div><div class="basemethod private">
   
   <a name="nltk.sem.hole.HoleSemantics._sanity_check_plugging">
     
@@ -534,7 +604,7 @@ on it.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_sanity_check_plugging</span>(self, plugging, node, ancestors):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L263">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L263">
       
       (source)
     </a>
@@ -546,40 +616,19 @@ on it.</p></div>
 each node and make sure that no constraints are violated.
 We also check that all holes have been filled.</p></div>
   </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.sem.hole.HoleSemantics.formula_tree">
-    
-  </a>
-  <a name="formula_tree">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">formula_tree</span>(self, plugging):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L283">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Return the first-order logic formula tree for this underspecified
-representation using the plugging given.</p></div>
-  </div>
 </div><div class="basemethod private">
   
-  <a name="nltk.sem.hole.HoleSemantics._formula_tree">
+  
+  <a name="nltk.sem.hole.HoleSemantics._violates_constraints">
     
   </a>
-  <a name="_formula_tree">
+  <a name="_violates_constraints">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">_formula_tree</span>(self, plugging, node):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/hole.py#L290">
+    <span class="py-keyword">def</span> <span class="py-defname">_violates_constraints</span>(self, label, ancestors):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/hole.py#L251">
       
       (source)
     </a>
@@ -587,16 +636,23 @@ representation using the plugging given.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p class="pre">Return True if the `label' cannot be placed underneath the holes given
+by the set `ancestors' because it would violate the constraints imposed
+on it.</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

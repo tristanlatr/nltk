@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.tokenize.repp.ReppTokenizer : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.tokenize.repp.ReppTokenizer</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tokenize.html">tokenize</a></code>.<code><a href="nltk.tokenize.repp.html">repp</a></code>.<code><a href="nltk.tokenize.repp.ReppTokenizer.html">ReppTokenizer</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.tokenize.html">tokenize</a></code><wbr></wbr>.<code><a href="nltk.tokenize.repp.html">repp</a></code><wbr></wbr>.<code><a href="nltk.tokenize.repp.ReppTokenizer.html">ReppTokenizer</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ReppTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L23">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ReppTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L23" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.repp.ReppTokenizer">View In Hierarchy</a></p>
       </div>
 
@@ -71,12 +102,43 @@ and Toolkit. In ACL. http://anthology.aclweb.org/P/P12/P12-2.pdf#page=406
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1812">
+        <table class="children sortable" id="id1816">
   
-  <tr class="method">
+  
+  <tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#parse_repp_outputs">parse_repp_outputs</a></code></td>
+    <td><span>This module parses the tri-tuple format that REPP outputs using the "--format triple" option and returns an generator with tuple of string tokens.</span></td>
+  </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_repptokenizer">find_repptokenizer</a></code></td>
+    <td><span>A module to find REPP tokenizer binary and its *repp.set* config file.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#generate_repp_command">generate_repp_command</a></code></td>
+    <td><span>This module generates the REPP command to be used at the terminal.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tokenize">tokenize</a></code></td>
+    <td><span>Use Repp to tokenize a single sentence.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tokenize_sents">tokenize_sents</a></code></td>
+    <td><span>Tokenize multiple sentences using Repp.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#encoding">encoding</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
@@ -88,36 +150,6 @@ and Toolkit. In ACL. http://anthology.aclweb.org/P/P12/P12-2.pdf#page=406
     <td>Instance Variable</td>
     <td><code><a href="#working_dir">working_dir</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#encoding">encoding</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Use Repp to tokenize a single sentence.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Tokenize multiple sentences using Repp.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#generate_repp_command">generate_repp_command</a></code></td>
-    <td><span>This module generates the REPP command to be used at the terminal.</span></td>
-  </tr><tr class="staticmethod">
-    
-    <td>Static Method</td>
-    <td><code><a href="#parse_repp_outputs">parse_repp_outputs</a></code></td>
-    <td><span>This module parses the tri-tuple format that REPP outputs using the "--format triple" option and returns an generator with tuple of string tokens.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#find_repptokenizer">find_repptokenizer</a></code></td>
-    <td><span>A module to find REPP tokenizer binary and its *repp.set* config file.</span></td>
   </tr><tr class="staticmethod private">
     
     <td>Static Method</td>
@@ -129,7 +161,8 @@ and Toolkit. In ACL. http://anthology.aclweb.org/P/P12/P12-2.pdf#page=406
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1813">
+          <table class="children sortable" id="id1817">
+  
   
   <tr class="basemethod">
     
@@ -150,188 +183,8 @@ and Toolkit. In ACL. http://anthology.aclweb.org/P/P12/P12-2.pdf#page=406
 
       <div id="childList">
 
-        <div class="basemethod">
+        <div class="basestaticmethod">
   
-  <a name="nltk.tokenize.repp.ReppTokenizer.__init__">
-    
-  </a>
-  <a name="__init__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, repp_dir, encoding='utf8'):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L56">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.tokenize.repp.ReppTokenizer.repp_dir">
-    
-  </a>
-  <a name="repp_dir">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">repp_dir</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L57">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.tokenize.repp.ReppTokenizer.working_dir">
-    
-  </a>
-  <a name="working_dir">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">working_dir</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L59">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="nltk.tokenize.repp.ReppTokenizer.encoding">
-    
-  </a>
-  <a name="encoding">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">encoding</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L61">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.tokenize.repp.ReppTokenizer.tokenize">
-    
-  </a>
-  <a name="tokenize">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, sentence):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L63">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
-    
-    <div><p class="pre">Use Repp to tokenize a single sentence.
-
-:param sentence: A single sentence string.
-:type sentence: str
-:return: A tuple of tokens.
-:rtype: tuple(str)</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.tokenize.repp.ReppTokenizer.tokenize_sents">
-    
-  </a>
-  <a name="tokenize_sents">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">tokenize_sents</span>(self, sentences, keep_token_positions=False):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L74">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">nltk.tokenize.api.TokenizerI.tokenize_sents</a></code></div>
-    
-    <div><p class="pre">Tokenize multiple sentences using Repp.
-
-:param sentences: A list of sentence strings.
-:type sentences: list(str)
-:return: A list of tuples of tokens
-:rtype: iter(tuple(str))</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.tokenize.repp.ReppTokenizer.generate_repp_command">
-    
-  </a>
-  <a name="generate_repp_command">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">generate_repp_command</span>(self, inputfilename):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L100">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">This module generates the REPP command to be used at the terminal.
-
-:param inputfilename: path to the input file
-:type inputfilename: str</p></div>
-  </div>
-</div><div class="basestaticmethod private">
-  
-  <a name="nltk.tokenize.repp.ReppTokenizer._execute">
-    
-  </a>
-  <a name="_execute">
-    
-  </a>
-  <div class="functionHeader">
-    @staticmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">_execute</span>(cmd):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L113">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basestaticmethod">
   
   <a name="nltk.tokenize.repp.ReppTokenizer.parse_repp_outputs">
     
@@ -342,7 +195,7 @@ and Toolkit. In ACL. http://anthology.aclweb.org/P/P12/P12-2.pdf#page=406
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">parse_repp_outputs</span>(repp_output):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L119">
       
       (source)
     </a>
@@ -361,6 +214,29 @@ tokens.
   </div>
 </div><div class="basemethod">
   
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, repp_dir, encoding='utf8'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="nltk.tokenize.repp.ReppTokenizer.find_repptokenizer">
     
   </a>
@@ -370,7 +246,7 @@ tokens.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_repptokenizer</span>(self, repp_dirname):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L140">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L140">
       
       (source)
     </a>
@@ -380,14 +256,186 @@ tokens.
     
     <div><p class="pre">A module to find REPP tokenizer binary and its *repp.set* config file.</p></div>
   </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.generate_repp_command">
+    
+  </a>
+  <a name="generate_repp_command">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generate_repp_command</span>(self, inputfilename):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This module generates the REPP command to be used at the terminal.
+
+:param inputfilename: path to the input file
+:type inputfilename: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.tokenize">
+    
+  </a>
+  <a name="tokenize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, sentence):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
+    
+    <div><p class="pre">Use Repp to tokenize a single sentence.
+
+:param sentence: A single sentence string.
+:type sentence: str
+:return: A tuple of tokens.
+:rtype: tuple(str)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.tokenize_sents">
+    
+  </a>
+  <a name="tokenize_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tokenize_sents</span>(self, sentences, keep_token_positions=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L74">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">nltk.tokenize.api.TokenizerI.tokenize_sents</a></code></div>
+    
+    <div><p class="pre">Tokenize multiple sentences using Repp.
+
+:param sentences: A list of sentence strings.
+:type sentences: list(str)
+:return: A list of tuples of tokens
+:rtype: iter(tuple(str))</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.encoding">
+    
+  </a>
+  <a name="encoding">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">encoding</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L61">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.repp_dir">
+    
+  </a>
+  <a name="repp_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">repp_dir</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L57">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.working_dir">
+    
+  </a>
+  <a name="working_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">working_dir</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L59">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer._execute">
+    
+  </a>
+  <a name="_execute">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_execute</span>(cmd):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/repp.py#L113">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.classify.maxent.GISEncoding : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.classify.maxent.GISEncoding</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.classify.html">classify</a></code>.<code><a href="nltk.classify.maxent.html">maxent</a></code>.<code><a href="nltk.classify.maxent.GISEncoding.html">GISEncoding</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.classify.html">classify</a></code><wbr></wbr>.<code><a href="nltk.classify.maxent.html">maxent</a></code><wbr></wbr>.<code><a href="nltk.classify.maxent.GISEncoding.html">GISEncoding</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,37 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">GISEncoding</span>(<a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html" title="nltk.classify.maxent.BinaryMaxentFeatureEncoding">BinaryMaxentFeatureEncoding</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L682">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">GISEncoding</span>(<a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html" title="nltk.classify.maxent.BinaryMaxentFeatureEncoding">BinaryMaxentFeatureEncoding</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L682" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.classify.maxent.GISEncoding">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A binary feature encoding which adds one new joint-feature to the
-joint-features defined by ``BinaryMaxentFeatureEncoding``: a
-correction feature, whose value is chosen to ensure that the
-sparse vector always sums to a constant non-negative number.  This
-new feature is used to ensure two preconditions for the GIS
-training algorithm:
-
-  - At least one feature vector index must be nonzero for every
-    token.
-  - The feature vector must sum to a constant non-negative number
-    for every token.</p></div>
+        <div><p>A binary feature encoding which adds one new joint-feature to the joint-features defined by ``BinaryMaxentFeatureEncoding``: a correction feature, whose value is chosen to ensure that the sparse vector always sums to a constant non-negative number.  This new feature is used to ensure two preconditions for the GIS training algorithm:</p><ul><li>At least one feature vector index must be nonzero for every token.</li><li>The feature vector must sum to a constant non-negative number for every token.</li></ul></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id144">
+        <table class="children sortable" id="id145">
+  
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="property">
+  </tr><tr class="method">
     
-    <td>Property</td>
-    <td><code><a href="#C">C</a></code></td>
-    <td><span>The non-negative constant that all encoded feature vectors will sum to.</span></td>
+    <td>Method</td>
+    <td><code><a href="#describe">describe</a></code></td>
+    <td><span>:return: A string describing the value of the joint-feature whose index in the generated feature vectors is ``fid``. :rtype: str</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -75,11 +97,11 @@ training algorithm:
     <td>Method</td>
     <td><code><a href="#length">length</a></code></td>
     <td><span>:return: The size of the fixed-length joint-feature vectors that are generated by this encoding. :rtype: int</span></td>
-  </tr><tr class="method">
+  </tr><tr class="property">
     
-    <td>Method</td>
-    <td><code><a href="#describe">describe</a></code></td>
-    <td><span>:return: A string describing the value of the joint-feature whose index in the generated feature vectors is ``fid``. :rtype: str</span></td>
+    <td>Property</td>
+    <td><code><a href="#C">C</a></code></td>
+    <td><span>The non-negative constant that all encoded feature vectors will sum to.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -91,33 +113,19 @@ training algorithm:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html">BinaryMaxentFeatureEncoding</a></code>:
           </p>
-          <table class="children sortable" id="id145">
+          <table class="children sortable" id="id146">
   
-  <tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#labels">labels</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseclassmethod">
+  
+  <tr class="baseclassmethod">
     
     <td>Class Method</td>
     <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#train">train</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseinstancevariable private">
+  </tr><tr class="basemethod">
     
-    <td>Instance Variable</td>
-    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_labels">_labels</a></code></td>
-    <td><span>A list of attested labels.</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_mapping">_mapping</a></code></td>
-    <td><span>dict mapping from (fname,fval,label) -&gt; fid</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_length">_length</a></code></td>
-    <td><span>The length of generated joint feature vectors.</span></td>
+    <td>Method</td>
+    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#labels">labels</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -126,13 +134,28 @@ training algorithm:
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_unseen">_unseen</a></code></td>
-    <td><span>dict mapping from fname -&gt; fid</span></td>
+    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_inv_mapping">_inv_mapping</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_inv_mapping">_inv_mapping</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_labels">_labels</a></code></td>
+    <td><span>A list of attested labels.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_length">_length</a></code></td>
+    <td><span>The length of generated joint feature vectors.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_mapping">_mapping</a></code></td>
+    <td><span>dict mapping from (fname,fval,label) -&gt; fid</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#_unseen">_unseen</a></code></td>
+    <td><span>dict mapping from fname -&gt; fid</span></td>
   </tr>
 </table>
           
@@ -144,6 +167,7 @@ training algorithm:
 
         <div class="basemethod">
   
+  
   <a name="nltk.classify.maxent.GISEncoding.__init__">
     
   </a>
@@ -153,7 +177,7 @@ training algorithm:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, labels, mapping, unseen_features=False, alwayson_features=False, C=None):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L697">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L697">
       
       (source)
     </a>
@@ -161,105 +185,10 @@ training algorithm:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#__init__">nltk.classify.maxent.BinaryMaxentFeatureEncoding.__init__</a></code></div>
     
-    <div><p class="pre">:param C: The correction constant.  The value of the correction
-    feature is based on this value.  In particular, its value is
-    ``C - sum([v for (f,v) in encoding])``.
-:seealso: ``BinaryMaxentFeatureEncoding.__init__``</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.classify.maxent.GISEncoding._C">
-    
-  </a>
-  <a name="_C">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_C</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L711">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseproperty">
-  
-  <a name="nltk.classify.maxent.GISEncoding.C">
-    
-  </a>
-  <a name="C">
-    
-  </a>
-  <div class="functionHeader">
-    @property<br />
-    <span class="py-defname">C</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L713">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="pre">The non-negative constant that all encoded feature vectors
-will sum to.</p></div>
+    <div></div>
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.classify.maxent.GISEncoding.encode">
-    
-  </a>
-  <a name="encode">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">encode</span>(self, featureset, label):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L719">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#encode">nltk.classify.maxent.BinaryMaxentFeatureEncoding.encode</a></code></div>
-    
-    <div><p class="pre">Given a (featureset, label) pair, return the corresponding
-vector of joint-feature values.  This vector is represented as
-a list of ``(index, value)`` tuples, specifying the value of
-each non-zero joint-feature.
-
-:type featureset: dict
-:rtype: list(tuple(int, int))</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.classify.maxent.GISEncoding.length">
-    
-  </a>
-  <a name="length">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">length</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L733">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#length">nltk.classify.maxent.BinaryMaxentFeatureEncoding.length</a></code></div>
-    
-    <div><p class="pre">:return: The size of the fixed-length joint-feature vectors
-    that are generated by this encoding.
-:rtype: int</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.classify.maxent.GISEncoding.describe">
     
@@ -270,7 +199,7 @@ each non-zero joint-feature.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">describe</span>(self, f_id):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L736">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L736">
       
       (source)
     </a>
@@ -278,18 +207,109 @@ each non-zero joint-feature.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#describe">nltk.classify.maxent.BinaryMaxentFeatureEncoding.describe</a></code></div>
     
-    <div><p class="pre">:return: A string describing the value of the joint-feature
-    whose index in the generated feature vectors is ``fid``.
-:rtype: str</p></div>
+    <div></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.classify.maxent.GISEncoding.encode">
+    
+  </a>
+  <a name="encode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">encode</span>(self, featureset, label):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L719">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#encode">nltk.classify.maxent.BinaryMaxentFeatureEncoding.encode</a></code></div>
+    
+    <div><p>Given a (featureset, label) pair, return the corresponding vector of joint-feature values.  This vector is represented as a list of ``(index, value)`` tuples, specifying the value of each non-zero joint-feature.</p><p>:type featureset: dict :rtype: list(tuple(int, int))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.classify.maxent.GISEncoding.length">
+    
+  </a>
+  <a name="length">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">length</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L733">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html#length">nltk.classify.maxent.BinaryMaxentFeatureEncoding.length</a></code></div>
+    
+    <div></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="nltk.classify.maxent.GISEncoding.C">
+    
+  </a>
+  <a name="C">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">C</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L713">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The non-negative constant that all encoded feature vectors will sum to.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.classify.maxent.GISEncoding._C">
+    
+  </a>
+  <a name="_C">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_C</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L711">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

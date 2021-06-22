@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.classify.maxent : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.classify.maxent</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.classify.html">classify</a></code>.<code><a href="nltk.classify.maxent.html">maxent</a></code></code></h1>
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.classify.html">classify</a></code><wbr></wbr>.<code><a href="nltk.classify.maxent.html">maxent</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,64 +65,33 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A classifier model based on maximum entropy modeling framework.  This
-framework considers all of the probability distributions that are
-empirically consistent with the training data; and chooses the
-distribution with the highest entropy.  A probability distribution is
-"empirically consistent" with a set of training data if its estimated
-frequency with which a class and a feature vector value co-occur is
-equal to the actual frequency in the data.
-
-Terminology: 'feature'
-======================
-The term *feature* is usually used to refer to some property of an
-unlabeled token.  For example, when performing word sense
-disambiguation, we might define a ``'prevword'`` feature whose value is
-the word preceding the target word.  However, in the context of
-maxent modeling, the term *feature* is typically used to refer to a
-property of a "labeled" token.  In order to prevent confusion, we
-will introduce two distinct terms to disambiguate these two different
-concepts:
-
-  - An "input-feature" is a property of an unlabeled token.
-  - A "joint-feature" is a property of a labeled token.
-
-In the rest of the ``nltk.classify`` module, the term "features" is
-used to refer to what we will call "input-features" in this module.
-
-In literature that describes and discusses maximum entropy models,
-input-features are typically called "contexts", and joint-features
-are simply referred to as "features".
-
-Converting Input-Features to Joint-Features
--------------------------------------------
-In maximum entropy models, joint-features are required to have numeric
-values.  Typically, each input-feature ``input_feat`` is mapped to a
-set of joint-features of the form:
-
-|   joint_feat(token, label) = { 1 if input_feat(token) == feat_val
-|                              {      and label == some_label
-|                              {
-|                              { 0 otherwise
-
-For all values of ``feat_val`` and ``some_label``.  This mapping is
-performed by classes that implement the ``MaxentFeatureEncodingI``
-interface.</p></div>
+        <div></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id137">
+        <table class="children sortable" id="id138">
   
-  <tr class="variable">
+  
+  <tr class="class">
     
-    <td>Variable</td>
-    <td><code><a href="#__docformat__">__docformat__</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Class</td>
+    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html">BinaryMaxentFeatureEncoding</a></code></td>
+    <td><span>A feature encoding that generates vectors containing a binary joint-features of the form:</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.classify.maxent.FunctionBackedMaxentFeatureEncoding.html">FunctionBackedMaxentFeatureEncoding</a></code></td>
+    <td><span>A feature encoding that calls a user-supplied function to map a given featureset/label pair to a sparse joint-feature vector.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.classify.maxent.GISEncoding.html">GISEncoding</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -105,22 +105,12 @@ interface.</p></div>
   </tr><tr class="class">
     
     <td>Class</td>
-    <td><code><a href="nltk.classify.maxent.FunctionBackedMaxentFeatureEncoding.html">FunctionBackedMaxentFeatureEncoding</a></code></td>
-    <td><span>A feature encoding that calls a user-supplied function to map a given featureset/label pair to a sparse joint-feature vector.</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="nltk.classify.maxent.BinaryMaxentFeatureEncoding.html">BinaryMaxentFeatureEncoding</a></code></td>
-    <td><span>A feature encoding that generates vectors containing a binary joint-features of the form:</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="nltk.classify.maxent.GISEncoding.html">GISEncoding</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
     <td><code><a href="nltk.classify.maxent.TadmEventMaxentFeatureEncoding.html">TadmEventMaxentFeatureEncoding</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.classify.maxent.TadmMaxentClassifier.html">TadmMaxentClassifier</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="class">
     
@@ -130,8 +120,8 @@ interface.</p></div>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#train_maxent_classifier_with_gis">train_maxent_classifier_with_gis</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
+    <td><code><a href="#calculate_deltas">calculate_deltas</a></code></td>
+    <td><span>Calculate the update values for the classifier weights for this iteration of IIS.  These update weights are the value of ``delta`` that solves the equation:</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -145,33 +135,28 @@ interface.</p></div>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#train_maxent_classifier_with_iis">train_maxent_classifier_with_iis</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
     <td><code><a href="#calculate_nfmap">calculate_nfmap</a></code></td>
     <td><span>Construct a map that can be used to compress ``nf`` (which is typically sparse).</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#calculate_deltas">calculate_deltas</a></code></td>
-    <td><span>Calculate the update values for the classifier weights for this iteration of IIS.  These update weights are the value of ``delta`` that solves the equation::</span></td>
+    <td><code><a href="#demo">demo</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#train_maxent_classifier_with_gis">train_maxent_classifier_with_gis</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#train_maxent_classifier_with_iis">train_maxent_classifier_with_iis</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#train_maxent_classifier_with_megam">train_maxent_classifier_with_megam</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="class">
-    
-    <td>Class</td>
-    <td><code><a href="nltk.classify.maxent.TadmMaxentClassifier.html">TadmMaxentClassifier</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="function">
-    
-    <td>Function</td>
-    <td><code><a href="#demo">demo</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
         
@@ -181,161 +166,8 @@ interface.</p></div>
 
       <div id="childList">
 
-        <div class="basevariable">
+        <div class="basefunction">
   
-  <a name="nltk.classify.maxent.__docformat__">
-    
-  </a>
-  <a name="__docformat__">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">__docformat__</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L72">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
-  </div>
-</div><div class="basefunction">
-  
-  <a name="nltk.classify.maxent.train_maxent_classifier_with_gis">
-    
-  </a>
-  <a name="train_maxent_classifier_with_gis">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">train_maxent_classifier_with_gis</span>(train_toks, trace=3, encoding=None, labels=None, **cutoffs):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L1034">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Train a new ``ConditionalExponentialClassifier``, using the given
-training samples, using the Generalized Iterative Scaling
-algorithm.  This ``ConditionalExponentialClassifier`` will encode
-the model that maximizes entropy from all the models that are
-empirically consistent with ``train_toks``.
-
-:see: ``train_maxent_classifier()`` for parameter descriptions.</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="nltk.classify.maxent.calculate_empirical_fcount">
-    
-  </a>
-  <a name="calculate_empirical_fcount">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">calculate_empirical_fcount</span>(train_toks, encoding):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L1132">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="nltk.classify.maxent.calculate_estimated_fcount">
-    
-  </a>
-  <a name="calculate_estimated_fcount">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">calculate_estimated_fcount</span>(classifier, train_toks, encoding):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L1142">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="nltk.classify.maxent.train_maxent_classifier_with_iis">
-    
-  </a>
-  <a name="train_maxent_classifier_with_iis">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">train_maxent_classifier_with_iis</span>(train_toks, trace=3, encoding=None, labels=None, **cutoffs):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L1160">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Train a new ``ConditionalExponentialClassifier``, using the given
-training samples, using the Improved Iterative Scaling algorithm.
-This ``ConditionalExponentialClassifier`` will encode the model
-that maximizes entropy from all the models that are empirically
-consistent with ``train_toks``.
-
-:see: ``train_maxent_classifier()`` for parameter descriptions.</p></div>
-  </div>
-</div><div class="basefunction">
-  
-  <a name="nltk.classify.maxent.calculate_nfmap">
-    
-  </a>
-  <a name="calculate_nfmap">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">calculate_nfmap</span>(train_toks, encoding):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L1252">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Construct a map that can be used to compress ``nf`` (which is
-typically sparse).
-
-*nf(feature_vector)* is the sum of the feature values for
-*feature_vector*.
-
-This represents the number of features that are active for a
-given labeled text.  This method finds all values of *nf(t)*
-that are attested for at least one token in the given list of
-training tokens; and constructs a dictionary mapping these
-attested values to a continuous range *0...N*.  For example,
-if the only values of *nf()* that were attested were 3, 5, and
-7, then ``_nfmap`` might return the dictionary ``{3:0, 5:1, 7:2}``.
-
-:return: A map that can be used to compress ``nf`` to a dense
-    vector.
-:rtype: dict(int -&gt; int)</p></div>
-  </div>
-</div><div class="basefunction">
   
   <a name="nltk.classify.maxent.calculate_deltas">
     
@@ -346,7 +178,7 @@ if the only values of *nf()* that were attested were 3, 5, and
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">calculate_deltas</span>(train_toks, classifier, unattested, ffreq_empirical, nfmap, nfarray, nftranspose, encoding):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L1280">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L1280">
       
       (source)
     </a>
@@ -354,77 +186,21 @@ if the only values of *nf()* that were attested were 3, 5, and
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate the update values for the classifier weights for
-this iteration of IIS.  These update weights are the value of
-``delta`` that solves the equation::
-
-  ffreq_empirical[i]
-         =
-  SUM[fs,l] (classifier.prob_classify(fs).prob(l) *
-             feature_vector(fs,l)[i] *
-             exp(delta[i] * nf(feature_vector(fs,l))))
-
-Where:
-    - *(fs,l)* is a (featureset, label) tuple from ``train_toks``
-    - *feature_vector(fs,l)* = ``encoding.encode(fs,l)``
-    - *nf(vector)* = ``sum([val for (id,val) in vector])``
-
-This method uses Newton's method to solve this equation for
-*delta[i]*.  In particular, it starts with a guess of
-``delta[i]`` = 1; and iteratively updates ``delta`` with:
-
-| delta[i] -= (ffreq_empirical[i] - sum1[i])/(-sum2[i])
-
-until convergence, where *sum1* and *sum2* are defined as:
-
-|    sum1[i](delta) = SUM[fs,l] f[i](fs,l,delta)
-|    sum2[i](delta) = SUM[fs,l] (f[i](fs,l,delta).nf(feature_vector(fs,l)))
-|    f[i](fs,l,delta) = (classifier.prob_classify(fs).prob(l) .
-|                        feature_vector(fs,l)[i] .
-|                        exp(delta[i] . nf(feature_vector(fs,l))))
-
-Note that *sum1* and *sum2* depend on ``delta``; so they need
-to be re-computed each iteration.
-
-The variables ``nfmap``, ``nfarray``, and ``nftranspose`` are
-used to generate a dense encoding for *nf(ltext)*.  This
-allows ``_deltas`` to calculate *sum1* and *sum2* using
-matrices, which yields a significant performance improvement.
-
-:param train_toks: The set of training tokens.
-:type train_toks: list(tuple(dict, str))
-:param classifier: The current classifier.
-:type classifier: ClassifierI
-:param ffreq_empirical: An array containing the empirical
-    frequency for each feature.  The *i*\ th element of this
-    array is the empirical frequency for feature *i*.
-:type ffreq_empirical: sequence of float
-:param unattested: An array that is 1 for features that are
-    not attested in the training data; and 0 for features that
-    are attested.  In other words, ``unattested[i]==0`` iff
-    ``ffreq_empirical[i]==0``.
-:type unattested: sequence of int
-:param nfmap: A map that can be used to compress ``nf`` to a dense
-    vector.
-:type nfmap: dict(int -&gt; int)
-:param nfarray: An array that can be used to uncompress ``nf``
-    from a dense vector.
-:type nfarray: array(float)
-:param nftranspose: The transpose of ``nfarray``
-:type nftranspose: array(float)</p></div>
+    <div></div>
   </div>
 </div><div class="basefunction">
   
-  <a name="nltk.classify.maxent.train_maxent_classifier_with_megam">
+  
+  <a name="nltk.classify.maxent.calculate_empirical_fcount">
     
   </a>
-  <a name="train_maxent_classifier_with_megam">
+  <a name="calculate_empirical_fcount">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">train_maxent_classifier_with_megam</span>(train_toks, trace=3, encoding=None, labels=None, gaussian_prior_sigma=0, **kwargs):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L1414">
+    <span class="py-keyword">def</span> <span class="py-defname">calculate_empirical_fcount</span>(train_toks, encoding):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L1132">
       
       (source)
     </a>
@@ -432,16 +208,54 @@ matrices, which yields a significant performance improvement.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Train a new ``ConditionalExponentialClassifier``, using the given
-training samples, using the external ``megam`` library.  This
-``ConditionalExponentialClassifier`` will encode the model that
-maximizes entropy from all the models that are empirically
-consistent with ``train_toks``.
-
-:see: ``train_maxent_classifier()`` for parameter descriptions.
-:see: ``nltk.classify.megam``</p></div>
+    <div><p class="undocumented">Undocumented</p></div>
   </div>
 </div><div class="basefunction">
+  
+  
+  <a name="nltk.classify.maxent.calculate_estimated_fcount">
+    
+  </a>
+  <a name="calculate_estimated_fcount">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">calculate_estimated_fcount</span>(classifier, train_toks, encoding):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L1142">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="nltk.classify.maxent.calculate_nfmap">
+    
+  </a>
+  <a name="calculate_nfmap">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">calculate_nfmap</span>(train_toks, encoding):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L1252">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div></div>
+  </div>
+</div><div class="basefunction">
+  
   
   <a name="nltk.classify.maxent.demo">
     
@@ -452,7 +266,7 @@ consistent with ``train_toks``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L1567">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L1567">
       
       (source)
     </a>
@@ -462,14 +276,85 @@ consistent with ``train_toks``.
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="basefunction">
+  
+  
+  <a name="nltk.classify.maxent.train_maxent_classifier_with_gis">
+    
+  </a>
+  <a name="train_maxent_classifier_with_gis">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train_maxent_classifier_with_gis</span>(train_toks, trace=3, encoding=None, labels=None, **cutoffs):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L1034">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Train a new ``ConditionalExponentialClassifier``, using the given training samples, using the Generalized Iterative Scaling algorithm.  This ``ConditionalExponentialClassifier`` will encode the model that maximizes entropy from all the models that are empirically consistent with ``train_toks``.</p><p>:see: ``train_maxent_classifier()`` for parameter descriptions.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="nltk.classify.maxent.train_maxent_classifier_with_iis">
+    
+  </a>
+  <a name="train_maxent_classifier_with_iis">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train_maxent_classifier_with_iis</span>(train_toks, trace=3, encoding=None, labels=None, **cutoffs):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L1160">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Train a new ``ConditionalExponentialClassifier``, using the given training samples, using the Improved Iterative Scaling algorithm. This ``ConditionalExponentialClassifier`` will encode the model that maximizes entropy from all the models that are empirically consistent with ``train_toks``.</p><p>:see: ``train_maxent_classifier()`` for parameter descriptions.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="nltk.classify.maxent.train_maxent_classifier_with_megam">
+    
+  </a>
+  <a name="train_maxent_classifier_with_megam">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train_maxent_classifier_with_megam</span>(train_toks, trace=3, encoding=None, labels=None, gaussian_prior_sigma=0, **kwargs):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/maxent.py#L1414">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Train a new ``ConditionalExponentialClassifier``, using the given training samples, using the external ``megam`` library.  This ``ConditionalExponentialClassifier`` will encode the model that maximizes entropy from all the models that are empirically consistent with ``train_toks``.</p><p>:see: ``train_maxent_classifier()`` for parameter descriptions. :see: ``nltk.classify.megam``</p></div>
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 

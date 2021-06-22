@@ -1,0 +1,1740 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>nltk.corpus.reader.wordnet.WordNetCorpusReader</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.corpus.html">corpus</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.html">reader</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.wordnet.html">wordnet</a></code><wbr></wbr>.<code><a href="nltk.corpus.reader.wordnet.WordNetCorpusReader.html">WordNetCorpusReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">WordNetCorpusReader</span>(<span title="nltk.corpus.reader.CorpusReader">CorpusReader</span>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1092" class="sourceLink">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.corpus.reader.wordnet.WordNetCorpusReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A corpus reader used to access wordnet or its variants.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id520">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a new wordnet corpus reader, with the given root directory.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#all_lemma_names">all_lemma_names</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#all_synsets">all_synsets</a></code></td>
+    <td><span>Iterate over all synsets with a given part of speech tag. If no pos is specified, all synsets for all parts of speech will be loaded.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#citation">citation</a></code></td>
+    <td><span>Return the contents of citation.bib file (for omw) use lang=lang to get the citation for an individual language</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#custom_lemmas">custom_lemmas</a></code></td>
+    <td><span>Reads a custom tab file containing mappings of lemmas in the given language to Princeton WordNet 3.0 synset offsets, allowing NLTK's WordNet functions to then be used with that language.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_version">get_version</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#ic">ic</a></code></td>
+    <td><span>Creates an information content lookup dictionary from a corpus.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#jcn_similarity">jcn_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#langs">langs</a></code></td>
+    <td><span>return a list of languages supported by Multilingual Wordnet</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lch_similarity">lch_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lemma">lemma</a></code></td>
+    <td><span>Return lemma object that matches the name</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lemma_count">lemma_count</a></code></td>
+    <td><span>Return the frequency count for this Lemma</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lemma_from_key">lemma_from_key</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lemmas">lemmas</a></code></td>
+    <td><span>Return all Lemma objects with a name matching the specified lemma name and part of speech tag. Matches any part of speech tag if none is specified.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#license">license</a></code></td>
+    <td><span>Return the contents of LICENSE (for omw) use lang=lang to get the license for an individual language</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lin_similarity">lin_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#morphy">morphy</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#of2ss">of2ss</a></code></td>
+    <td><span>take an id and return the synsets</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#path_similarity">path_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#readme">readme</a></code></td>
+    <td><span>Return the contents of README (for omw) use lang=lang to get the readme for an individual language</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#res_similarity">res_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#ss2of">ss2of</a></code></td>
+    <td><span>return the ID of the synset</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#synset">synset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#synset_from_pos_and_offset">synset_from_pos_and_offset</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#synset_from_sense_key">synset_from_sense_key</a></code></td>
+    <td><span>Retrieves synset based on a given sense_key. Sense keys can be obtained from lemma.key()</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#synsets">synsets</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#words">words</a></code></td>
+    <td><span>return lemmas of the given language as list of words</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#wup_similarity">wup_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#ADJ">ADJ</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#ADJ_SAT">ADJ_SAT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#ADV">ADV</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#MORPHOLOGICAL_SUBSTITUTIONS">MORPHOLOGICAL_SUBSTITUTIONS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#NOUN">NOUN</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#VERB">VERB</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_compute_max_depth">_compute_max_depth</a></code></td>
+    <td><span>Compute the max depth for the given part of speech.  This is used by the lch similarity metric.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_data_file">_data_file</a></code></td>
+    <td><span>Return an open file pointer for the data file for the given part of speech.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_load_exception_map">_load_exception_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_load_lang_data">_load_lang_data</a></code></td>
+    <td><span>load the wordnet data of the requested language from the file to the cache, _lang_data</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_load_lemma_pos_offset_map">_load_lemma_pos_offset_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_morphy">_morphy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_synset_from_pos_and_line">_synset_from_pos_and_line</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_synset_from_pos_and_offset">_synset_from_pos_and_offset</a></code></td>
+    <td><span>Hack to help people like the readers of http://stackoverflow.com/a/27145655/1709587 who were using this function before it was officially a public method</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_ENCODING">_ENCODING</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_FILEMAP">_FILEMAP</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_FILES">_FILES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_pos_names">_pos_names</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_pos_numbers">_pos_numbers</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_data_file_map">_data_file_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_exception_map">_exception_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_key_count_file">_key_count_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_key_synset_file">_key_synset_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_lang_data">_lang_data</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_lemma_pos_offset_map">_lemma_pos_offset_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_lexnames">_lexnames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_max_depth">_max_depth</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_omw_reader">_omw_reader</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_synset_offset_cache">_synset_offset_cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, omw_reader):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1132">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a new wordnet corpus reader, with the given root
+directory.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.all_lemma_names">
+    
+  </a>
+  <a name="all_lemma_names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">all_lemma_names</span>(self, pos=None, lang='eng'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1652">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return all lemma names for all synsets for the given
+part of speech tag and language or languages. If pos is
+not specified, all synsets for all parts of speech will
+be used.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.all_synsets">
+    
+  </a>
+  <a name="all_synsets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">all_synsets</span>(self, pos=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1678">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Iterate over all synsets with a given part of speech tag.
+If no pos is specified, all synsets for all parts of speech
+will be loaded.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.citation">
+    
+  </a>
+  <a name="citation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">citation</span>(self, lang='omw'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1770">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the contents of citation.bib file (for omw)
+use lang=lang to get the citation for an individual language</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.custom_lemmas">
+    
+  </a>
+  <a name="custom_lemmas">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">custom_lemmas</span>(self, tab_file, lang):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L2010">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Reads a custom tab file containing mappings of lemmas in the given
+language to Princeton WordNet 3.0 synset offsets, allowing NLTK's
+WordNet functions to then be used with that language.
+
+See the "Tab files" section at http://compling.hss.ntu.edu.sg/omw/ for
+documentation on the Multilingual WordNet tab file format.
+
+:param tab_file: Tab file as a file or file-like object
+:type  lang str
+:param lang ISO 639-3 code of the language of the tab file</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.get_version">
+    
+  </a>
+  <a name="get_version">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_version</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1292">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.ic">
+    
+  </a>
+  <a name="ic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ic</span>(self, corpus, weight_senses_equally=False, smoothing=1.0):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1956">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Creates an information content lookup dictionary from a corpus.
+
+:type corpus: CorpusReader
+:param corpus: The corpus from which we create an information
+content dictionary.
+:type weight_senses_equally: bool
+:param weight_senses_equally: If this is True, gives all
+possible senses equal weight rather than dividing by the
+number of possible senses.  (If a word has 3 synses, each
+sense gets 0.3333 per appearance when this is False, 1.0 when
+it is true.)
+:param smoothing: How much do we smooth synset counts (default is 1.0)
+:type smoothing: float
+:return: An information content dictionary</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.jcn_similarity">
+    
+  </a>
+  <a name="jcn_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">jcn_similarity</span>(self, synset1, synset2, ic, verbose=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1823">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.langs">
+    
+  </a>
+  <a name="langs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">langs</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1206">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">return a list of languages supported by Multilingual Wordnet </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.lch_similarity">
+    
+  </a>
+  <a name="lch_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lch_similarity</span>(self, synset1, synset2, verbose=False, simulate_root=True):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1808">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.lemma">
+    
+  </a>
+  <a name="lemma">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lemma</span>(self, name, lang='eng'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1305">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return lemma object that matches the name</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.lemma_count">
+    
+  </a>
+  <a name="lemma_count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lemma_count</span>(self, lemma):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1788">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the frequency count for this Lemma</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.lemma_from_key">
+    
+  </a>
+  <a name="lemma_from_key">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lemma_from_key</span>(self, key):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1319">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.lemmas">
+    
+  </a>
+  <a name="lemmas">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lemmas</span>(self, lemma, pos=None, lang='eng'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1626">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return all Lemma objects with a name matching the specified lemma
+name and part of speech tag. Matches any part of speech tag if none is
+specified.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.license">
+    
+  </a>
+  <a name="license">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">license</span>(self, lang='eng'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1740">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the contents of LICENSE (for omw)
+use lang=lang to get the license for an individual language</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.lin_similarity">
+    
+  </a>
+  <a name="lin_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lin_similarity</span>(self, synset1, synset2, ic, verbose=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1828">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.morphy">
+    
+  </a>
+  <a name="morphy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">morphy</span>(self, form, pos=None, check_exceptions=True):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1837">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Find a possible base form for the given form, with the given
+part of speech, by checking WordNet's list of exceptional
+forms, and by recursively stripping affixes for this part of
+speech until a form in WordNet is found.
+
+&gt;&gt;&gt; from nltk.corpus import wordnet as wn
+&gt;&gt;&gt; print(wn.morphy('dogs'))
+dog
+&gt;&gt;&gt; print(wn.morphy('churches'))
+church
+&gt;&gt;&gt; print(wn.morphy('aardwolves'))
+aardwolf
+&gt;&gt;&gt; print(wn.morphy('abaci'))
+abacus
+&gt;&gt;&gt; wn.morphy('hardrock', wn.ADV)
+&gt;&gt;&gt; print(wn.morphy('book', wn.NOUN))
+book
+&gt;&gt;&gt; wn.morphy('book', wn.ADJ)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.of2ss">
+    
+  </a>
+  <a name="of2ss">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">of2ss</span>(self, of):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1180">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">take an id and return the synsets </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.path_similarity">
+    
+  </a>
+  <a name="path_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">path_similarity</span>(self, synset1, synset2, verbose=False, simulate_root=True):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1803">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.readme">
+    
+  </a>
+  <a name="readme">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readme</span>(self, lang='omw'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1755">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the contents of README (for omw)
+use lang=lang to get the readme for an individual language</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.res_similarity">
+    
+  </a>
+  <a name="res_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">res_similarity</span>(self, synset1, synset2, ic, verbose=False):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1818">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.ss2of">
+    
+  </a>
+  <a name="ss2of">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ss2of</span>(self, ss, lang=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1184">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">return the ID of the synset </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.synset">
+    
+  </a>
+  <a name="synset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">synset</span>(self, name):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1347">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.synset_from_pos_and_offset">
+    
+  </a>
+  <a name="synset_from_pos_and_offset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">synset_from_pos_and_offset</span>(self, pos, offset):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1394">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">- pos: The synset's part of speech, matching one of the module level
+  attributes ADJ, ADJ_SAT, ADV, NOUN or VERB ('a', 's', 'r', 'n', or 'v').
+- offset: The byte offset of this synset in the WordNet dict file
+  for this pos.
+&gt;&gt;&gt; from nltk.corpus import wordnet as wn
+&gt;&gt;&gt; print(wn.synset_from_pos_and_offset('n', 1740))
+Synset('entity.n.01')</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.synset_from_sense_key">
+    
+  </a>
+  <a name="synset_from_sense_key">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">synset_from_sense_key</span>(self, sense_key):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1554">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Retrieves synset based on a given sense_key. Sense keys can be
+obtained from lemma.key()
+
+From https://wordnet.princeton.edu/documentation/senseidx5wn:
+A sense_key is represented as:
+    lemma % lex_sense (e.g. 'dog%1:18:01::')
+where lex_sense is encoded as:
+    ss_type:lex_filenum:lex_id:head_word:head_id
+
+lemma:       ASCII text of word/collocation, in lower case
+ss_type:     synset type for the sense (1 digit int)
+             The synset type is encoded as follows:
+             1    NOUN
+             2    VERB
+             3    ADJECTIVE
+             4    ADVERB
+             5    ADJECTIVE SATELLITE
+lex_filenum: name of lexicographer file containing the synset for the sense (2 digit int)
+lex_id:      when paired with lemma, uniquely identifies a sense in the lexicographer file (2 digit int)
+head_word:   lemma of the first word in satellite's head synset
+             Only used if sense is in an adjective satellite synset
+head_id:     uniquely identifies sense in a lexicographer file when paired with head_word
+             Only used if head_word is present (2 digit int)
+
+&gt;&gt;&gt; import nltk
+&gt;&gt;&gt; from nltk.corpus import wordnet as wn
+&gt;&gt;&gt; print(wn.synset_from_sense_key("drive%1:04:03::"))
+Synset('drive.n.06')
+
+&gt;&gt;&gt; print(wn.synset_from_sense_key("driving%1:04:03::"))
+Synset('drive.n.06')</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.synsets">
+    
+  </a>
+  <a name="synsets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">synsets</span>(self, lemma, pos=None, lang='eng', check_exceptions=True):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1595">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Load all synsets with a given lemma and part of speech tag.
+If no pos is specified, all synsets for all parts of speech
+will be loaded.
+If lang is specified, all the synsets associated with the lemma name
+of that language will be returned.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.words">
+    
+  </a>
+  <a name="words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, lang='eng'):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1736">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">return lemmas of the given language as list of words</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.wup_similarity">
+    
+  </a>
+  <a name="wup_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">wup_similarity</span>(self, synset1, synset2, verbose=False, simulate_root=True):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1813">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.ADJ">
+    
+  </a>
+  <a name="ADJ">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ADJ</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.ADJ_SAT">
+    
+  </a>
+  <a name="ADJ_SAT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ADJ_SAT</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.ADV">
+    
+  </a>
+  <a name="ADV">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ADV</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.MORPHOLOGICAL_SUBSTITUTIONS">
+    
+  </a>
+  <a name="MORPHOLOGICAL_SUBSTITUTIONS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MORPHOLOGICAL_SUBSTITUTIONS</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1872">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.NOUN">
+    
+  </a>
+  <a name="NOUN">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NOUN</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader.VERB">
+    
+  </a>
+  <a name="VERB">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">VERB</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._compute_max_depth">
+    
+  </a>
+  <a name="_compute_max_depth">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_max_depth</span>(self, pos, simulate_root):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1277">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Compute the max depth for the given part of speech.  This is
+used by the lch similarity metric.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._data_file">
+    
+  </a>
+  <a name="_data_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_data_file</span>(self, pos):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1382">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return an open file pointer for the data file for the given
+part of speech.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._load_exception_map">
+    
+  </a>
+  <a name="_load_exception_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_exception_map</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1268">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._load_lang_data">
+    
+  </a>
+  <a name="_load_lang_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_lang_data</span>(self, lang):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1192">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">load the wordnet data of the requested language from the file to
+the cache, _lang_data </p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._load_lemma_pos_offset_map">
+    
+  </a>
+  <a name="_load_lemma_pos_offset_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_lemma_pos_offset_map</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1219">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._morphy">
+    
+  </a>
+  <a name="_morphy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_morphy</span>(self, form, pos, check_exceptions=True):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1900">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._synset_from_pos_and_line">
+    
+  </a>
+  <a name="_synset_from_pos_and_line">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_synset_from_pos_and_line</span>(self, pos, data_file_line):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1432">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._synset_from_pos_and_offset">
+    
+  </a>
+  <a name="_synset_from_pos_and_offset">
+    
+  </a>
+  <div class="functionHeader">
+    @deprecated('Use public method synset_from_pos_and_offset() instead')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_synset_from_pos_and_offset</span>(self, *args, **kwargs):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1423">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Hack to help people like the readers of
+http://stackoverflow.com/a/27145655/1709587
+who were using this function before it was officially a public method</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._ENCODING">
+    
+  </a>
+  <a name="_ENCODING">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ENCODING</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1097">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._FILEMAP">
+    
+  </a>
+  <a name="_FILEMAP">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_FILEMAP</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1104">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._FILES">
+    
+  </a>
+  <a name="_FILES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_FILES</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._pos_names">
+    
+  </a>
+  <a name="_pos_names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pos_names</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1109">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._pos_numbers">
+    
+  </a>
+  <a name="_pos_numbers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pos_numbers</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1108">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._data_file_map">
+    
+  </a>
+  <a name="_data_file_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_data_file_map</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1159">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._exception_map">
+    
+  </a>
+  <a name="_exception_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_exception_map</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1160">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._key_count_file">
+    
+  </a>
+  <a name="_key_count_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_key_count_file</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1162">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._key_synset_file">
+    
+  </a>
+  <a name="_key_synset_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_key_synset_file</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1163">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._lang_data">
+    
+  </a>
+  <a name="_lang_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lang_data</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1157">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._lemma_pos_offset_map">
+    
+  </a>
+  <a name="_lemma_pos_offset_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lemma_pos_offset_map</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1143">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._lexnames">
+    
+  </a>
+  <a name="_lexnames">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lexnames</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1161">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._max_depth">
+    
+  </a>
+  <a name="_max_depth">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_max_depth</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1151">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._omw_reader">
+    
+  </a>
+  <a name="_omw_reader">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_omw_reader</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1154">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.corpus.reader.wordnet.WordNetCorpusReader._synset_offset_cache">
+    
+  </a>
+  <a name="_synset_offset_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_synset_offset_cache</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordnet.py#L1147">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

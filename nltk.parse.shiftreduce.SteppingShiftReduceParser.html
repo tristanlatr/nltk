@@ -2,28 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "DTD/xhtml1-strict.dtd">
 <html>
-  <head>
-    <title>nltk.parse.shiftreduce.SteppingShiftReduceParser : API documentation</title>
+  
 
+  <head>
+    
+    <title>nltk.parse.shiftreduce.SteppingShiftReduceParser</title>
+    <meta name="generator" content="pydoctor 21.2.2"> 
+        
+    </meta>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="apidocs.css" />
-  </head>
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
   <body>
 
+    
+
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header navbar-brand">
-          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
-          <a href="index.html">API Documentation</a>
-        </div>
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a> <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
       </div>
-    </nav>
+
+    </div>
+  </div>
+</nav>
+
+    
 
     <div class="container">
 
       <div class="page-header">
-        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.parse.html">parse</a></code>.<code><a href="nltk.parse.shiftreduce.html">shiftreduce</a></code>.<code><a href="nltk.parse.shiftreduce.SteppingShiftReduceParser.html">SteppingShiftReduceParser</a></code></code></h1>
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code><wbr></wbr>.<code><a href="nltk.parse.html">parse</a></code><wbr></wbr>.<code><a href="nltk.parse.shiftreduce.html">shiftreduce</a></code><wbr></wbr>.<code><a href="nltk.parse.shiftreduce.SteppingShiftReduceParser.html">SteppingShiftReduceParser</a></code></code></h1>
         <div id="showPrivate">
           <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
         </div>
@@ -34,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SteppingShiftReduceParser</span>(<a href="nltk.parse.shiftreduce.ShiftReduceParser.html" title="nltk.parse.shiftreduce.ShiftReduceParser">ShiftReduceParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L286">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SteppingShiftReduceParser</span>(<a href="nltk.parse.shiftreduce.ShiftReduceParser.html" title="nltk.parse.shiftreduce.ShiftReduceParser">ShiftReduceParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L286" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.shiftreduce.SteppingShiftReduceParser">View In Hierarchy</a></p>
       </div>
 
@@ -57,7 +88,8 @@ found by the parser.
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1101">
+        <table class="children sortable" id="id1105">
+  
   
   <tr class="method">
     
@@ -67,48 +99,13 @@ found by the parser.
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#stack">stack</a></code></td>
-    <td><span>:return: The parser's stack. :rtype: list(str and Tree)</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#remaining_text">remaining_text</a></code></td>
-    <td><span>:return: The portion of the text that is not yet covered by the stack. :rtype: list(str)</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
     <td><code><a href="#initialize">initialize</a></code></td>
     <td><span>Start parsing a given text.  This sets the parser's stack to ``[]`` and sets its remaining text to ``tokens``.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
-    <td><code><a href="#step">step</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#shift">shift</a></code></td>
-    <td><span>Move a token from the beginning of the remaining text to the end of the stack.  If there are no more tokens in the remaining text, then do nothing.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#reduce">reduce</a></code></td>
-    <td><span>Use ``production`` to combine the rightmost stack elements into a single Tree.  If ``production`` does not match the rightmost stack elements, then do nothing.</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#undo">undo</a></code></td>
-    <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#reducible_productions">reducible_productions</a></code></td>
-    <td><span>:return: A list of the productions for which reductions are available for the current parser state. :rtype: list(Production)</span></td>
+    <td><code><a href="#parse">parse</a></code></td>
+    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -117,17 +114,47 @@ found by the parser.
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#reduce">reduce</a></code></td>
+    <td><span>Use ``production`` to combine the rightmost stack elements into a single Tree.  If ``production`` does not match the rightmost stack elements, then do nothing.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reducible_productions">reducible_productions</a></code></td>
+    <td><span>:return: A list of the productions for which reductions are available for the current parser state. :rtype: list(Production)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remaining_text">remaining_text</a></code></td>
+    <td><span>:return: The portion of the text that is not yet covered by the stack. :rtype: list(str)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#set_grammar">set_grammar</a></code></td>
     <td><span>Change the grammar used to parse texts.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#shift">shift</a></code></td>
+    <td><span>Move a token from the beginning of the remaining text to the end of the stack.  If there are no more tokens in the remaining text, then do nothing.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#stack">stack</a></code></td>
+    <td><span>:return: The parser's stack. :rtype: list(str and Tree)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#step">step</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#undo">undo</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_stack">_stack</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#_remaining_text">_remaining_text</a></code></td>
+    <td><code><a href="#_grammar">_grammar</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable private">
     
@@ -137,7 +164,12 @@ found by the parser.
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
-    <td><code><a href="#_grammar">_grammar</a></code></td>
+    <td><code><a href="#_remaining_text">_remaining_text</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_stack">_stack</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
@@ -145,7 +177,8 @@ found by the parser.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html">ShiftReduceParser</a></code>:
           </p>
-          <table class="children sortable" id="id1102">
+          <table class="children sortable" id="id1106">
+  
   
   <tr class="basemethod">
     
@@ -157,16 +190,11 @@ found by the parser.
     <td>Method</td>
     <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#trace">trace</a></code></td>
     <td><span>Set the level of tracing output that should be generated when parsing a text.</span></td>
-  </tr><tr class="baseinstancevariable private">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_trace">_trace</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_shift">_shift</a></code></td>
-    <td><span>Move a token from the beginning of ``remaining_text`` to the end of ``stack``.</span></td>
+    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_check_grammar">_check_grammar</a></code></td>
+    <td><span>Check to make sure that all of the CFG productions are potentially useful.  If any productions can never be used, then print a warning.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -180,13 +208,8 @@ found by the parser.
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_trace_stack">_trace_stack</a></code></td>
-    <td><span>Print trace output displaying the given stack and text.</span></td>
-  </tr><tr class="basemethod private">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_trace_shift">_trace_shift</a></code></td>
-    <td><span>Print trace output displaying that a token has been shifted.</span></td>
+    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_shift">_shift</a></code></td>
+    <td><span>Move a token from the beginning of ``remaining_text`` to the end of ``stack``.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -195,22 +218,28 @@ found by the parser.
   </tr><tr class="basemethod private">
     
     <td>Method</td>
-    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_check_grammar">_check_grammar</a></code></td>
-    <td><span>Check to make sure that all of the CFG productions are potentially useful.  If any productions can never be used, then print a warning.</span></td>
+    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_trace_shift">_trace_shift</a></code></td>
+    <td><span>Print trace output displaying that a token has been shifted.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_trace_stack">_trace_stack</a></code></td>
+    <td><span>Print trace output displaying the given stack and text.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_trace">_trace</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code> (via <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html">ShiftReduceParser</a></code>):
           </p>
-          <table class="children sortable" id="id1103">
+          <table class="children sortable" id="id1107">
+  
   
   <tr class="basemethod">
-    
-    <td>Method</td>
-    <td><code><a href="nltk.parse.api.ParserI.html#parse_sents">parse_sents</a></code></td>
-    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
-  </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
@@ -220,6 +249,11 @@ found by the parser.
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
     <td><span>:rtype: Tree or None</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.api.ParserI.html#parse_sents">parse_sents</a></code></td>
+    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
   </tr>
 </table>
           
@@ -231,6 +265,7 @@ found by the parser.
 
         <div class="basemethod">
   
+  
   <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.__init__">
     
   </a>
@@ -240,7 +275,7 @@ found by the parser.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, grammar, trace=0):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L305">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L305">
       
       (source)
     </a>
@@ -259,70 +294,31 @@ parse texts.
     and higher numbers will produce more verbose tracing
     output.</p></div>
   </div>
-</div><div class="baseinstancevariable private">
+</div><div class="basemethod">
   
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser._stack">
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.initialize">
     
   </a>
-  <a name="_stack">
+  <a name="initialize">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_stack</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L307">
+    <span class="py-keyword">def</span> <span class="py-defname">initialize</span>(self, tokens):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L333">
       
       (source)
     </a>
   </div>
-  <div class="functionBody">
+  <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser._remaining_text">
-    
-  </a>
-  <a name="_remaining_text">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_remaining_text</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L308">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="baseinstancevariable private">
-  
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser._history">
-    
-  </a>
-  <a name="_history">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">_history</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L309">
-      
-      (source)
-    </a>
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+    <div><p class="pre">Start parsing a given text.  This sets the parser's stack to
+``[]`` and sets its remaining text to ``tokens``.</p></div>
   </div>
 </div><div class="basemethod">
+  
   
   <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.parse">
     
@@ -333,7 +329,7 @@ parse texts.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L311">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L311">
       
       (source)
     </a>
@@ -350,16 +346,17 @@ When possible this list is sorted from most likely to least likely.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.stack">
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.parses">
     
   </a>
-  <a name="stack">
+  <a name="parses">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">stack</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L318">
+    <span class="py-keyword">def</span> <span class="py-defname">parses</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L420">
       
       (source)
     </a>
@@ -367,10 +364,66 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The parser's stack.
-:rtype: list(str and Tree)</p></div>
+    <div><p class="pre">:return: An iterator of the parses that have been found by this
+    parser so far.
+:rtype: iter(Tree)</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.reduce">
+    
+  </a>
+  <a name="reduce">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reduce</span>(self, production=None):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L372">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Use ``production`` to combine the rightmost stack elements into
+a single Tree.  If ``production`` does not match the
+rightmost stack elements, then do nothing.
+
+:return: The production used to reduce the stack, if a
+    reduction was performed.  If no reduction was performed,
+    return None.
+
+:rtype: Production or None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.reducible_productions">
+    
+  </a>
+  <a name="reducible_productions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reducible_productions</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L407">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: A list of the productions for which reductions are
+    available for the current parser state.
+:rtype: list(Production)</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.remaining_text">
     
@@ -381,7 +434,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remaining_text</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L325">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L325">
       
       (source)
     </a>
@@ -395,16 +448,17 @@ When possible this list is sorted from most likely to least likely.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.initialize">
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.set_grammar">
     
   </a>
-  <a name="initialize">
+  <a name="set_grammar">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">initialize</span>(self, tokens):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L333">
+    <span class="py-keyword">def</span> <span class="py-defname">set_grammar</span>(self, grammar):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L435">
       
       (source)
     </a>
@@ -412,10 +466,63 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Start parsing a given text.  This sets the parser's stack to
-``[]`` and sets its remaining text to ``tokens``.</p></div>
+    <div><p class="pre">Change the grammar used to parse texts.
+
+:param grammar: The new grammar.
+:type grammar: CFG</p></div>
   </div>
 </div><div class="basemethod">
+  
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.shift">
+    
+  </a>
+  <a name="shift">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">shift</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L357">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Move a token from the beginning of the remaining text to the
+end of the stack.  If there are no more tokens in the
+remaining text, then do nothing.
+
+:return: True if the shift operation was successful.
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.stack">
+    
+  </a>
+  <a name="stack">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">stack</span>(self):
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L318">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The parser's stack.
+:rtype: list(str and Tree)</p></div>
+  </div>
+</div><div class="basemethod">
+  
   
   <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.step">
     
@@ -426,7 +533,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">step</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L342">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L342">
       
       (source)
     </a>
@@ -447,60 +554,6 @@ return False.
   </div>
 </div><div class="basemethod">
   
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.shift">
-    
-  </a>
-  <a name="shift">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">shift</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L357">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Move a token from the beginning of the remaining text to the
-end of the stack.  If there are no more tokens in the
-remaining text, then do nothing.
-
-:return: True if the shift operation was successful.
-:rtype: bool</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.reduce">
-    
-  </a>
-  <a name="reduce">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">reduce</span>(self, production=None):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L372">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Use ``production`` to combine the rightmost stack elements into
-a single Tree.  If ``production`` does not match the
-rightmost stack elements, then do nothing.
-
-:return: The production used to reduce the stack, if a
-    reduction was performed.  If no reduction was performed,
-    return None.
-
-:rtype: Production or None</p></div>
-  </div>
-</div><div class="basemethod">
   
   <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.undo">
     
@@ -511,7 +564,7 @@ rightmost stack elements, then do nothing.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">undo</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L391">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L391">
       
       (source)
     </a>
@@ -528,77 +581,8 @@ changes.
 :return: true if an operation was successfully undone.
 :rtype: bool</p></div>
   </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.reducible_productions">
-    
-  </a>
-  <a name="reducible_productions">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">reducible_productions</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L407">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">:return: A list of the productions for which reductions are
-    available for the current parser state.
-:rtype: list(Production)</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.parses">
-    
-  </a>
-  <a name="parses">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">parses</span>(self):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L420">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">:return: An iterator of the parses that have been found by this
-    parser so far.
-:rtype: iter(Tree)</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser.set_grammar">
-    
-  </a>
-  <a name="set_grammar">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-keyword">def</span> <span class="py-defname">set_grammar</span>(self, grammar):
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L435">
-      
-      (source)
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    
-    <div><p class="pre">Change the grammar used to parse texts.
-
-:param grammar: The new grammar.
-:type grammar: CFG</p></div>
-  </div>
 </div><div class="baseinstancevariable private">
+  
   
   <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser._grammar">
     
@@ -609,7 +593,7 @@ changes.
   <div class="functionHeader">
     
     <span class="py-defname">_grammar</span> =
-    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/shiftreduce.py#L442">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L442">
       
       (source)
     </a>
@@ -619,14 +603,85 @@ changes.
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser._history">
+    
+  </a>
+  <a name="_history">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_history</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L309">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser._remaining_text">
+    
+  </a>
+  <a name="_remaining_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_remaining_text</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L308">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.parse.shiftreduce.SteppingShiftReduceParser._stack">
+    
+  </a>
+  <a name="_stack">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_stack</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L307">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
 </div>
 
       </div>
-      <address>
-        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
-      </address>
-
     </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.2.2 at 2021-06-22 02:51:08.
+  </div>
+</footer>
 
     <script src="pydoctor.js" type="text/javascript"></script>
 
