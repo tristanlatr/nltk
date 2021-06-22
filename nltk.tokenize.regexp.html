@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tokenize.regexp : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tokenize.html">tokenize</a></code>.<code><a href="nltk.tokenize.regexp.html">regexp</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/regexp.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Regular-Expression Tokenizers
+
+A ``RegexpTokenizer`` splits a string into substrings using a regular expression.
+For example, the following tokenizer forms tokens out of alphabetic sequences,
+money expressions, and any other non-whitespace sequences:
+
+    &gt;&gt;&gt; from nltk.tokenize import RegexpTokenizer
+    &gt;&gt;&gt; s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."
+    &gt;&gt;&gt; tokenizer = RegexpTokenizer('\w+|\$[\d\.]+|\S+')
+    &gt;&gt;&gt; tokenizer.tokenize(s)
+    ['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York', '.',
+    'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
+
+A ``RegexpTokenizer`` can use its regexp to match delimiters instead:
+
+    &gt;&gt;&gt; tokenizer = RegexpTokenizer('\s+', gaps=True)
+    &gt;&gt;&gt; tokenizer.tokenize(s)
+    ['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York.',
+    'Please', 'buy', 'me', 'two', 'of', 'them.', 'Thanks.']
+
+Note that empty tokens are not returned when the delimiter appears at
+the start or end of the string.
+
+The material between the tokens is discarded.  For example,
+the following tokenizer selects just the capitalized words:
+
+    &gt;&gt;&gt; capword_tokenizer = RegexpTokenizer('[A-Z]\w+')
+    &gt;&gt;&gt; capword_tokenizer.tokenize(s)
+    ['Good', 'New', 'York', 'Please', 'Thanks']
+
+This module contains several subclasses of ``RegexpTokenizer``
+that use pre-defined regular expressions.
+
+    &gt;&gt;&gt; from nltk.tokenize import BlanklineTokenizer
+    &gt;&gt;&gt; # Uses '\s*\n\s*\n\s*':
+    &gt;&gt;&gt; BlanklineTokenizer().tokenize(s)
+    ['Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.',
+    'Thanks.']
+
+All of the regular expression tokenizers are also available as functions:
+
+    &gt;&gt;&gt; from nltk.tokenize import regexp_tokenize, wordpunct_tokenize, blankline_tokenize
+    &gt;&gt;&gt; regexp_tokenize(s, pattern='\w+|\$[\d\.]+|\S+')
+    ['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York', '.',
+    'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
+    &gt;&gt;&gt; wordpunct_tokenize(s)
+    ['Good', 'muffins', 'cost', '$', '3', '.', '88', 'in', 'New', 'York',
+     '.', 'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
+    &gt;&gt;&gt; blankline_tokenize(s)
+    ['Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.', 'Thanks.']
+
+Caution: The function ``regexp_tokenize()`` takes the text as its
+first argument, and the regular expression pattern as its second
+argument.  This differs from the conventions used by Python's
+``re`` functions, where the pattern is always the first argument.
+(This is for consistency with the other NLTK tokenizers.)</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1799">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.tokenize.regexp.RegexpTokenizer.html">RegexpTokenizer</a></code></td>
+    <td><span>A tokenizer that splits a string using a regular expression, which matches either the tokens or the separators between tokens.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.tokenize.regexp.WhitespaceTokenizer.html">WhitespaceTokenizer</a></code></td>
+    <td><span>Tokenize a string on whitespace (space, tab, newline). In general, users should use the string ``split()`` method instead.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.tokenize.regexp.BlanklineTokenizer.html">BlanklineTokenizer</a></code></td>
+    <td><span>Tokenize a string, treating any sequence of blank lines as a delimiter. Blank lines are defined as lines containing no characters, except for space or tab characters.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.tokenize.regexp.WordPunctTokenizer.html">WordPunctTokenizer</a></code></td>
+    <td><span>Tokenize a text into a sequence of alphabetic and non-alphabetic characters, using the regexp ``\w+|[^\w\s]+``.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#regexp_tokenize">regexp_tokenize</a></code></td>
+    <td><span>Return a tokenized copy of *text*.  See :class:`.RegexpTokenizer` for descriptions of the arguments.</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#blankline_tokenize">blankline_tokenize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#wordpunct_tokenize">wordpunct_tokenize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.tokenize.regexp.regexp_tokenize">
+    
+  </a>
+  <a name="regexp_tokenize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">regexp_tokenize</span>(text, pattern, gaps=False, discard_empty=True, flags=(re.UNICODE | re.MULTILINE | re.DOTALL)):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/regexp.py#L204">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a tokenized copy of *text*.  See :class:`.RegexpTokenizer`
+for descriptions of the arguments.</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.tokenize.regexp.blankline_tokenize">
+    
+  </a>
+  <a name="blankline_tokenize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">blankline_tokenize</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/regexp.py#L219">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.tokenize.regexp.wordpunct_tokenize">
+    
+  </a>
+  <a name="wordpunct_tokenize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">wordpunct_tokenize</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/regexp.py#L220">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

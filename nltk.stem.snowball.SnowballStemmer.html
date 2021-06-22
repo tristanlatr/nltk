@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.stem.snowball.SnowballStemmer : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.stem.html">stem</a></code>.<code><a href="nltk.stem.snowball.html">snowball</a></code>.<code><a href="nltk.stem.snowball.SnowballStemmer.html">SnowballStemmer</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SnowballStemmer</span>(<a href="nltk.stem.api.StemmerI.html" title="nltk.stem.api.StemmerI">StemmerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L36">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.stem.snowball.SnowballStemmer">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Snowball Stemmer
+
+The following languages are supported:
+Arabic, Danish, Dutch, English, Finnish, French, German,
+Hungarian, Italian, Norwegian, Portuguese, Romanian, Russian,
+Spanish and Swedish.
+
+The algorithm for English is documented here:
+
+    Porter, M. "An algorithm for suffix stripping."
+    Program 14.3 (1980): 130-137.
+
+The algorithms have been developed by Martin Porter.
+These stemmers are called Snowball, because Porter created
+a programming language with this name for creating
+new stemming algorithms. There is more information available
+at http://snowball.tartarus.org/
+
+The stemmer is invoked as shown below:
+
+&gt;&gt;&gt; from nltk.stem import SnowballStemmer
+&gt;&gt;&gt; print(" ".join(SnowballStemmer.languages)) # See which languages are supported
+arabic danish dutch english finnish french german hungarian
+italian norwegian porter portuguese romanian russian
+spanish swedish
+&gt;&gt;&gt; stemmer = SnowballStemmer("german") # Choose a language
+&gt;&gt;&gt; stemmer.stem("Autobahnen") # Stem a word
+'autobahn'
+
+Invoking the stemmers that way is useful if you do not know the
+language to be stemmed at runtime. Alternatively, if you already know
+the language, then you can invoke the language specific stemmer directly:
+
+&gt;&gt;&gt; from nltk.stem.snowball import GermanStemmer
+&gt;&gt;&gt; stemmer = GermanStemmer()
+&gt;&gt;&gt; stemmer.stem("Autobahnen")
+'autobahn'
+
+:param language: The language whose subclass is instantiated.
+:type language: str or unicode
+:param ignore_stopwords: If set to True, stopwords are
+                         not stemmed and returned unchanged.
+                         Set to False by default.
+:type ignore_stopwords: bool
+:raise ValueError: If there is no stemmer for the specified
+                       language, a ValueError is raised.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1477">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#languages">languages</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#stemmer">stemmer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#stopwords">stopwords</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#stem">stem</a></code></td>
+    <td><span>Strip affixes from the token and return the stem.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="nltk.stem.snowball.SnowballStemmer.languages">
+    
+  </a>
+  <a name="languages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">languages</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, ...]</code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.stem.snowball.SnowballStemmer.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, language, ignore_stopwords=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L106">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.stem.snowball.SnowballStemmer.stemmer">
+    
+  </a>
+  <a name="stemmer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stemmer</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L110">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.stem.snowball.SnowballStemmer.stopwords">
+    
+  </a>
+  <a name="stopwords">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stopwords</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L112">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.stem.snowball.SnowballStemmer.stem">
+    
+  </a>
+  <a name="stem">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">stem</span>(self, token):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/stem/snowball.py#L114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.stem.api.StemmerI.html#stem">nltk.stem.api.StemmerI.stem</a></code></div>
+    
+    <div><p class="pre">Strip affixes from the token and return the stem.
+
+:param token: The token that should be stemmed.
+:type token: str</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

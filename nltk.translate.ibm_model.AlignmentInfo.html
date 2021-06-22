@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.translate.ibm_model.AlignmentInfo : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.translate.html">translate</a></code>.<code><a href="nltk.translate.ibm_model.html">ibm_model</a></code>.<code><a href="nltk.translate.ibm_model.AlignmentInfo.html">AlignmentInfo</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AlignmentInfo</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L384">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.translate.ibm_model.AlignmentInfo">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Helper data object for training IBM Models 3 and up
+
+Read-only. For a source sentence and its counterpart in the target
+language, this class holds information about the sentence pair's
+alignment, cepts, and fertility.
+
+Warning: Alignments are one-indexed here, in contrast to
+nltk.translate.Alignment and AlignedSent, which are zero-indexed
+This class is not meant to be used outside of IBM models.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1892">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#alignment">alignment</a></code></td>
+    <td><span>tuple(int): Alignment function. ``alignment[j]`` is the position in the source sentence that is aligned to the position j in the target sentence.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#src_sentence">src_sentence</a></code></td>
+    <td><span>tuple(str): Source sentence referred to by this object. Should include NULL token (None) in index 0.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#trg_sentence">trg_sentence</a></code></td>
+    <td><span>tuple(str): Target sentence referred to by this object. Should have a dummy element in index 0 so that the first word starts from index 1.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#cepts">cepts</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#score">score</a></code></td>
+    <td><span>float: Optional. Probability of alignment, as defined by the IBM model that assesses this alignment</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#fertility_of_i">fertility_of_i</a></code></td>
+    <td><span>Fertility of word in position ``i`` of the source sentence</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#is_head_word">is_head_word</a></code></td>
+    <td><span>:return: Whether the word in position ``j`` of the target sentence is a head word</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#center_of_cept">center_of_cept</a></code></td>
+    <td><span>:return: The ceiling of the average positions of the words in the tablet of cept ``i``, or 0 if ``i`` is None</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#previous_cept">previous_cept</a></code></td>
+    <td><span>:return: The previous cept of ``j``, or None if ``j`` belongs to the first cept</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#previous_in_tablet">previous_in_tablet</a></code></td>
+    <td><span>:return: The position of the previous word that is in the same tablet as ``j``, or None if ``j`` is the first word of the tablet</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#zero_indexed_alignment">zero_indexed_alignment</a></code></td>
+    <td><span>:return: Zero-indexed alignment, suitable for use in external ``nltk.translate`` modules like ``nltk.translate.Alignment`` :rtype: list(tuple)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__ne__">__ne__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__hash__">__hash__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, alignment, src_sentence, trg_sentence, cepts):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L397">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.alignment">
+    
+  </a>
+  <a name="alignment">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">alignment</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L404">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">tuple(int): Alignment function. ``alignment[j]`` is the position
+in the source sentence that is aligned to the position j in the
+target sentence.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.src_sentence">
+    
+  </a>
+  <a name="src_sentence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">src_sentence</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L411">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">tuple(str): Source sentence referred to by this object.
+Should include NULL token (None) in index 0.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.trg_sentence">
+    
+  </a>
+  <a name="trg_sentence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">trg_sentence</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L417">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">tuple(str): Target sentence referred to by this object.
+Should have a dummy element in index 0 so that the first word
+starts from index 1.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.cepts">
+    
+  </a>
+  <a name="cepts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">cepts</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L424">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">list(list(int)): The positions of the target words, in
+ascending order, aligned to a source word position. For example,
+cepts[4] = (2, 3, 7) means that words in positions 2, 3 and 7
+of the target sentence are aligned to the word in position 4 of
+the source sentence</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.score">
+    
+  </a>
+  <a name="score">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">score</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L433">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">float: Optional. Probability of alignment, as defined by the
+IBM model that assesses this alignment</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.fertility_of_i">
+    
+  </a>
+  <a name="fertility_of_i">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fertility_of_i</span>(self, i):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L439">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Fertility of word in position ``i`` of the source sentence</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.is_head_word">
+    
+  </a>
+  <a name="is_head_word">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_head_word</span>(self, j):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L445">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: Whether the word in position ``j`` of the target
+    sentence is a head word</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.center_of_cept">
+    
+  </a>
+  <a name="center_of_cept">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">center_of_cept</span>(self, i):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L453">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The ceiling of the average positions of the words in
+    the tablet of cept ``i``, or 0 if ``i`` is None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.previous_cept">
+    
+  </a>
+  <a name="previous_cept">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">previous_cept</span>(self, j):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L464">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The previous cept of ``j``, or None if ``j`` belongs to
+    the first cept</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.previous_in_tablet">
+    
+  </a>
+  <a name="previous_in_tablet">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">previous_in_tablet</span>(self, j):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L483">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The position of the previous word that is in the same
+    tablet as ``j``, or None if ``j`` is the first word of the
+    tablet</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.zero_indexed_alignment">
+    
+  </a>
+  <a name="zero_indexed_alignment">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">zero_indexed_alignment</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L495">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: Zero-indexed alignment, suitable for use in external
+    ``nltk.translate`` modules like ``nltk.translate.Alignment``
+:rtype: list(tuple)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L509">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.__ne__">
+    
+  </a>
+  <a name="__ne__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L512">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm_model.AlignmentInfo.__hash__">
+    
+  </a>
+  <a name="__hash__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm_model.py#L515">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.corpus 0.reader.plaintext.CategorizedPlaintextCorpusReader : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.corpus%200.html">corpus 0</a></code>.<code><a href="nltk.corpus%200.reader.html">reader</a></code>.<code><a href="nltk.corpus%200.reader.plaintext.html">plaintext</a></code>.<code><a href="nltk.corpus%200.reader.plaintext.CategorizedPlaintextCorpusReader.html">CategorizedPlaintextCorpusReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CategorizedPlaintextCorpusReader</span>(<a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html" title="nltk.corpus.reader.api.CategorizedCorpusReader">CategorizedCorpusReader</a>, <a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html" title="nltk.corpus.reader.plaintext.PlaintextCorpusReader">PlaintextCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/plaintext.py#L160">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus%200.reader.plaintext.PortugueseCategorizedPlaintextCorpusReader.html">nltk.corpus 0.reader.plaintext.PortugueseCategorizedPlaintextCorpusReader</a></code></p>
+        <p><a href="classIndex.html#nltk.corpus 0.reader.plaintext.CategorizedPlaintextCorpusReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A reader for plaintext corpora whose documents are divided into
+categories based on their file identifiers.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id393">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#raw">raw</a></code></td>
+    <td><span>:return: the given file(s) as a single string. :rtype: str</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#words">words</a></code></td>
+    <td><span>:return: the given file(s) as a list of words and punctuation symbols. :rtype: list(str)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sents">sents</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#paras">paras</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_resolve">_resolve</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html">CategorizedCorpusReader</a></code>:
+          </p>
+          <table class="children sortable" id="id394">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#categories">categories</a></code></td>
+    <td><span>Return a list of the categories that are defined for this corpus, or for the file(s) if it is given.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#fileids">fileids</a></code></td>
+    <td><span>Return a list of file identifiers for the files that make up this corpus, or that make up the given category(s) if specified.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#_f2c">_f2c</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#_c2f">_c2f</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#_pattern">_pattern</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#_map">_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#_file">_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#_delimiter">_delimiter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#_init">_init</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#_add">_add</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html">PlaintextCorpusReader</a></code>:
+          </p>
+          <table class="children sortable" id="id395">
+  
+  <tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#_word_tokenizer">_word_tokenizer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#_sent_tokenizer">_sent_tokenizer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#_para_block_reader">_para_block_reader</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#_read_word_block">_read_word_block</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#_read_sent_block">_read_sent_block</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#_read_para_block">_read_para_block</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.corpus%200.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html">PlaintextCorpusReader</a></code>):
+          </p>
+          <table class="children sortable" id="id396">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#ensure_loaded">ensure_loaded</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#readme">readme</a></code></td>
+    <td><span>Return the contents of the corpus README file, if it exists.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#license">license</a></code></td>
+    <td><span>Return the contents of the corpus LICENSE file, if it exists.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#citation">citation</a></code></td>
+    <td><span>Return the contents of the corpus citation.bib file, if it exists.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#fileids">fileids</a></code></td>
+    <td><span>Return a list of file identifiers for the fileids that make up this corpus.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#abspath">abspath</a></code></td>
+    <td><span>Return the absolute path for the given file.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#abspaths">abspaths</a></code></td>
+    <td><span>Return a list of the absolute paths for all fileids in this corpus; or for the given list of fileids, if specified.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#open">open</a></code></td>
+    <td><span>Return an open stream that can be used to read the given file. If the file's encoding is not None, then the stream will automatically decode the file's contents into unicode.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#encoding">encoding</a></code></td>
+    <td><span>Return the unicode encoding for the given corpus file, if known. If the encoding is unknown, or if the given file should be processed using byte strings (str), then return None.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#root">root</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_fileids">_fileids</a></code></td>
+    <td><span>A list of the relative paths for the fileids that make up this corpus.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_root">_root</a></code></td>
+    <td><span>The root directory for this corpus.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_tagset">_tagset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_get_root">_get_root</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.plaintext.CategorizedPlaintextCorpusReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, *args, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/plaintext.py#L166">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus%200.reader.api.CategorizedCorpusReader.html#__init__">nltk.corpus 0.reader.api.CategorizedCorpusReader.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.corpus%200.reader.plaintext.PortugueseCategorizedPlaintextCorpusReader.html">nltk.corpus 0.reader.plaintext.PortugueseCategorizedPlaintextCorpusReader</a></code></div>
+    
+    <div><p class="pre">Initialize the corpus reader.  Categorization arguments
+(``cat_pattern``, ``cat_map``, and ``cat_file``) are passed to
+the ``CategorizedCorpusReader`` constructor.  The remaining arguments
+are passed to the ``PlaintextCorpusReader`` constructor.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.plaintext.CategorizedPlaintextCorpusReader._resolve">
+    
+  </a>
+  <a name="_resolve">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_resolve</span>(self, fileids, categories):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/plaintext.py#L176">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.plaintext.CategorizedPlaintextCorpusReader.raw">
+    
+  </a>
+  <a name="raw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None, categories=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/plaintext.py#L184">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#raw">nltk.corpus 0.reader.plaintext.PlaintextCorpusReader.raw</a></code></div>
+    
+    <div><p class="pre">:return: the given file(s) as a single string.
+:rtype: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.plaintext.CategorizedPlaintextCorpusReader.words">
+    
+  </a>
+  <a name="words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None, categories=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/plaintext.py#L187">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#words">nltk.corpus 0.reader.plaintext.PlaintextCorpusReader.words</a></code></div>
+    
+    <div><p class="pre">:return: the given file(s) as a list of words
+    and punctuation symbols.
+:rtype: list(str)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.plaintext.CategorizedPlaintextCorpusReader.sents">
+    
+  </a>
+  <a name="sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None, categories=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/plaintext.py#L190">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#sents">nltk.corpus 0.reader.plaintext.PlaintextCorpusReader.sents</a></code></div>
+    
+    <div><p class="pre">:return: the given file(s) as a list of
+    sentences or utterances, each encoded as a list of word
+    strings.
+:rtype: list(list(str))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.plaintext.CategorizedPlaintextCorpusReader.paras">
+    
+  </a>
+  <a name="paras">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">paras</span>(self, fileids=None, categories=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/plaintext.py#L193">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus%200.reader.plaintext.PlaintextCorpusReader.html#paras">nltk.corpus 0.reader.plaintext.PlaintextCorpusReader.paras</a></code></div>
+    
+    <div><p class="pre">:return: the given file(s) as a list of
+    paragraphs, each encoded as a list of sentences, which are
+    in turn encoded as lists of word strings.
+:rtype: list(list(list(str)))</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

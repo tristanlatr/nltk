@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.parse.recursivedescent.SteppingRecursiveDescentParser : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.parse.html">parse</a></code>.<code><a href="nltk.parse.recursivedescent.html">recursivedescent</a></code>.<code><a href="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.html">SteppingRecursiveDescentParser</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SteppingRecursiveDescentParser</span>(<a href="nltk.parse.recursivedescent.RecursiveDescentParser.html" title="nltk.parse.recursivedescent.RecursiveDescentParser">RecursiveDescentParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L349">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.parse.recursivedescent.SteppingRecursiveDescentParser">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A ``RecursiveDescentParser`` that allows you to step through the
+parsing process, performing a single operation at a time.
+
+The ``initialize`` method is used to start parsing a text.
+``expand`` expands the first element on the frontier using a single
+CFG production, and ``match`` matches the first element on the
+frontier against the next text token. ``backtrack`` undoes the most
+recent expand or match operation.  ``step`` performs a single
+expand, match, or backtrack operation.  ``parses`` returns the set
+of parses that have been found by the parser.
+
+:ivar _history: A list of ``(rtext, tree, frontier)`` tripples,
+    containing the previous states of the parser.  This history is
+    used to implement the ``backtrack`` operation.
+:ivar _tried_e: A record of all productions that have been tried
+    for a given tree.  This record is used by ``expand`` to perform
+    the next untried production.
+:ivar _tried_m: A record of what tokens have been matched for a
+    given tree.  This record is used by ``step`` to decide whether
+    or not to match a token.
+:see: ``nltk.grammar``</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1095">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Create a new ``RecursiveDescentParser``, that uses ``grammar`` to parse texts.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse">parse</a></code></td>
+    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#initialize">initialize</a></code></td>
+    <td><span>Start parsing a given text.  This sets the parser's tree to the start symbol, its frontier to the root node, and its remaining text to ``token['SUBTOKENS']``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remaining_text">remaining_text</a></code></td>
+    <td><span>:return: The portion of the text that is not yet covered by the tree. :rtype: list(str)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#frontier">frontier</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tree">tree</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#step">step</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#expand">expand</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#match">match</a></code></td>
+    <td><span>Match the first element of the frontier.  In particular, if the first element of the frontier has the same type as the next text token, then substitute the text token into the tree.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#backtrack">backtrack</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#expandable_productions">expandable_productions</a></code></td>
+    <td><span>:return: A list of all the productions for which expansions are available for the current parser state. :rtype: list(Production)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#untried_expandable_productions">untried_expandable_productions</a></code></td>
+    <td><span>:return: A list of all the untried productions for which expansions are available for the current parser state. :rtype: list(Production)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#untried_match">untried_match</a></code></td>
+    <td><span>:return: Whether the first element of the frontier is a token that has not yet been matched. :rtype: bool</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#currently_complete">currently_complete</a></code></td>
+    <td><span>:return: Whether the parser's current state represents a complete parse. :rtype: bool</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parses">parses</a></code></td>
+    <td><span>:return: An iterator of the parses that have been found by this parser so far. :rtype: list of Tree</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_grammar">set_grammar</a></code></td>
+    <td><span>Change the grammar used to parse texts.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rtext">_rtext</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tree">_tree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_frontier">_frontier</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tried_e">_tried_e</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tried_m">_tried_m</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_history">_history</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_parses">_parses</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_freeze">_freeze</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse">_parse</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_grammar">_grammar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html">RecursiveDescentParser</a></code>:
+          </p>
+          <table class="children sortable" id="id1096">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#grammar">grammar</a></code></td>
+    <td><span>:return: The grammar used by this parser.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#trace">trace</a></code></td>
+    <td><span>Set the level of tracing output that should be generated when parsing a text.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_trace">_trace</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_match">_match</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_expand">_expand</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_production_to_tree">_production_to_tree</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_trace_fringe">_trace_fringe</a></code></td>
+    <td><span>Print trace output displaying the fringe of ``tree``.  The fringe of ``tree`` consists of all of its leaves and all of its childless subtrees.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_trace_tree">_trace_tree</a></code></td>
+    <td><span>Print trace output displaying the parser's current state.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_trace_start">_trace_start</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_trace_expand">_trace_expand</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_trace_match">_trace_match</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_trace_succeed">_trace_succeed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_trace_backtrack">_trace_backtrack</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code> (via <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html">RecursiveDescentParser</a></code>):
+          </p>
+          <table class="children sortable" id="id1097">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.api.ParserI.html#parse_sents">parse_sents</a></code></td>
+    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
+    <td><span>:rtype: list(Tree)</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
+    <td><span>:rtype: Tree or None</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, grammar, trace=0):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L374">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#__init__">nltk.parse.recursivedescent.RecursiveDescentParser.__init__</a></code></div>
+    
+    <div><p class="pre">Create a new ``RecursiveDescentParser``, that uses ``grammar``
+to parse texts.
+
+:type grammar: CFG
+:param grammar: The grammar used to parse texts.
+:type trace: int
+:param trace: The level of tracing that should be used when
+    parsing a text.  ``0`` will generate no tracing output;
+    and higher numbers will produce more verbose tracing
+    output.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._rtext">
+    
+  </a>
+  <a name="_rtext">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rtext</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L376">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._tree">
+    
+  </a>
+  <a name="_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tree</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L377">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._frontier">
+    
+  </a>
+  <a name="_frontier">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_frontier</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L378">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._tried_e">
+    
+  </a>
+  <a name="_tried_e">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tried_e</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L379">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._tried_m">
+    
+  </a>
+  <a name="_tried_m">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tried_m</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L380">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._history">
+    
+  </a>
+  <a name="_history">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_history</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L381">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._parses">
+    
+  </a>
+  <a name="_parses">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_parses</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L382">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._freeze">
+    
+  </a>
+  <a name="_freeze">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_freeze</span>(self, tree):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L386">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.parse">
+    
+  </a>
+  <a name="parse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L392">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#parse">nltk.parse.recursivedescent.RecursiveDescentParser.parse</a></code></div>
+    
+    <div><p class="pre">:return: An iterator that generates parse trees for the sentence.
+When possible this list is sorted from most likely to least likely.
+
+:param sent: The sentence to be parsed
+:type sent: list(str)
+:rtype: iter(Tree)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.initialize">
+    
+  </a>
+  <a name="initialize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">initialize</span>(self, tokens):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L399">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Start parsing a given text.  This sets the parser's tree to
+the start symbol, its frontier to the root node, and its
+remaining text to ``token['SUBTOKENS']``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.remaining_text">
+    
+  </a>
+  <a name="remaining_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remaining_text</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L417">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The portion of the text that is not yet covered by the
+    tree.
+:rtype: list(str)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.frontier">
+    
+  </a>
+  <a name="frontier">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">frontier</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L425">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: A list of the tree locations of all subtrees that
+    have not yet been expanded, and all leaves that have not
+    yet been matched.
+:rtype: list(tuple(int))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.tree">
+    
+  </a>
+  <a name="tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tree</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L434">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: A partial structure for the text that is
+    currently being parsed.  The elements specified by the
+    frontier have not yet been expanded or matched.
+:rtype: Tree</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.step">
+    
+  </a>
+  <a name="step">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">step</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L443">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Perform a single parsing operation.  If an untried match is
+possible, then perform the match, and return the matched
+token.  If an untried expansion is possible, then perform the
+expansion, and return the production that it is based on.  If
+backtracking is possible, then backtrack, and return True.
+Otherwise, return None.
+
+:return: None if no operation was performed; a token if a match
+    was performed; a production if an expansion was performed;
+    and True if a backtrack operation was performed.
+:rtype: Production or String or bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.expand">
+    
+  </a>
+  <a name="expand">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">expand</span>(self, production=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L476">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Expand the first element of the frontier.  In particular, if
+the first element of the frontier is a subtree whose node type
+is equal to ``production``'s left hand side, then add a child
+to that subtree for each element of ``production``'s right hand
+side.  If ``production`` is not specified, then use the first
+untried expandable production.  If all expandable productions
+have been tried, do nothing.
+
+:return: The production used to expand the frontier, if an
+   expansion was performed.  If no expansion was performed,
+   return None.
+:rtype: Production or None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.match">
+    
+  </a>
+  <a name="match">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">match</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L516">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Match the first element of the frontier.  In particular, if
+the first element of the frontier has the same type as the
+next text token, then substitute the text token into the tree.
+
+:return: The token matched, if a match operation was
+    performed.  If no match was performed, return None
+:rtype: str or None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.backtrack">
+    
+  </a>
+  <a name="backtrack">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">backtrack</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L542">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the parser to its state before the most recent
+match or expand operation.  Calling ``undo`` repeatedly return
+the parser to successively earlier states.  If no match or
+expand operations have been performed, ``undo`` will make no
+changes.
+
+:return: true if an operation was successfully undone.
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.expandable_productions">
+    
+  </a>
+  <a name="expandable_productions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">expandable_productions</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L558">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: A list of all the productions for which expansions
+    are available for the current parser state.
+:rtype: list(Production)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.untried_expandable_productions">
+    
+  </a>
+  <a name="untried_expandable_productions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">untried_expandable_productions</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L577">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: A list of all the untried productions for which
+    expansions are available for the current parser state.
+:rtype: list(Production)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.untried_match">
+    
+  </a>
+  <a name="untried_match">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">untried_match</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L587">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: Whether the first element of the frontier is a token
+    that has not yet been matched.
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.currently_complete">
+    
+  </a>
+  <a name="currently_complete">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">currently_complete</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L599">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: Whether the parser's current state represents a
+    complete parse.
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._parse">
+    
+  </a>
+  <a name="_parse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse</span>(self, remaining_text, tree, frontier):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L607">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_parse">nltk.parse.recursivedescent.RecursiveDescentParser._parse</a></code></div>
+    
+    <div><p class="pre">A stub version of ``_parse`` that sets the parsers current
+state to the given arguments.  In ``RecursiveDescentParser``,
+the ``_parse`` method is used to recursively continue parsing a
+text.  ``SteppingRecursiveDescentParser`` overrides it to
+capture these recursive calls.  It records the parser's old
+state in the history (to allow for backtracking), and updates
+the parser's new state using the given arguments.  Finally, it
+returns ``[1]``, which is used by ``match`` and ``expand`` to
+detect whether their operations were successful.
+
+:return: ``[1]``
+:rtype: list of int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.parses">
+    
+  </a>
+  <a name="parses">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parses</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L634">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: An iterator of the parses that have been found by this
+    parser so far.
+:rtype: list of Tree</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser.set_grammar">
+    
+  </a>
+  <a name="set_grammar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_grammar</span>(self, grammar):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L642">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Change the grammar used to parse texts.
+
+:param grammar: The new grammar.
+:type grammar: CFG</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.recursivedescent.SteppingRecursiveDescentParser._grammar">
+    
+  </a>
+  <a name="_grammar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_grammar</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/recursivedescent.py#L649">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html#_grammar">nltk.parse.recursivedescent.RecursiveDescentParser._grammar</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

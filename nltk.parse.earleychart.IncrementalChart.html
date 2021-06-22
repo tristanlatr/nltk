@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.parse.earleychart.IncrementalChart : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.parse.html">parse</a></code>.<code><a href="nltk.parse.earleychart.html">earleychart</a></code>.<code><a href="nltk.parse.earleychart.IncrementalChart.html">IncrementalChart</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">IncrementalChart</span>(<a href="nltk.parse.chart.Chart.html" title="nltk.parse.chart.Chart">Chart</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L62">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.earleychart.FeatureIncrementalChart.html">nltk.parse.earleychart.FeatureIncrementalChart</a></code></p>
+        <p><a href="classIndex.html#nltk.parse.earleychart.IncrementalChart">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id906">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#initialize">initialize</a></code></td>
+    <td><span>Clear the chart.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#edges">edges</a></code></td>
+    <td><span>Return a list of all edges in this chart.  New edges that are added to the chart after the call to edges() will *not* be contained in this list.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#iteredges">iteredges</a></code></td>
+    <td><span>Return an iterator over the edges in this chart.  It is not guaranteed that new edges which are added to the chart before the iterator is exhausted will also be generated.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#select">select</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_edgelists">_edgelists</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_edge_to_cpls">_edge_to_cpls</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_indexes">_indexes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_add_index">_add_index</a></code></td>
+    <td><span>A helper function for ``select``, which creates a new index for a given set of attributes (aka restriction keys).</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_register_with_indexes">_register_with_indexes</a></code></td>
+    <td><span>A helper function for ``insert``, which registers the new edge with all existing indexes.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_append_edge">_append_edge</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_positions">_positions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.parse.chart.Chart.html">Chart</a></code>:
+          </p>
+          <table class="children sortable" id="id907">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#__init__">__init__</a></code></td>
+    <td><span>Construct a new chart. The chart is initialized with the leaf edges corresponding to the terminal leaves.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#num_leaves">num_leaves</a></code></td>
+    <td><span>Return the number of words in this chart's sentence.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#leaf">leaf</a></code></td>
+    <td><span>Return the leaf value of the word at the given index.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#leaves">leaves</a></code></td>
+    <td><span>Return a list of the leaf values of each word in the chart's sentence.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#num_edges">num_edges</a></code></td>
+    <td><span>Return the number of edges contained in this chart.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#insert_with_backpointer">insert_with_backpointer</a></code></td>
+    <td><span>Add a new edge to the chart, using a pointer to the previous edge.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#insert">insert</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#parses">parses</a></code></td>
+    <td><span>Return an iterator of the complete tree structures that span the entire chart, and whose root node is ``root``.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#trees">trees</a></code></td>
+    <td><span>Return an iterator of the tree structures that are associated with ``edge``.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#child_pointer_lists">child_pointer_lists</a></code></td>
+    <td><span>Return the set of child pointer lists for the given edge. Each child pointer list is a list of edges that have been used to form this edge.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#pretty_format_edge">pretty_format_edge</a></code></td>
+    <td><span>Return a pretty-printed string representation of a given edge in this chart.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#pretty_format_leaves">pretty_format_leaves</a></code></td>
+    <td><span>Return a pretty-printed string representation of this chart's leaves.  This string can be used as a header for calls to ``pretty_format_edge``.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#pretty_format">pretty_format</a></code></td>
+    <td><span>Return a pretty-printed string representation of this chart.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#dot_digraph">dot_digraph</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#_tokens">_tokens</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#_num_leaves">_num_leaves</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#_edges">_edges</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.Chart.html#_trees">_trees</a></code></td>
+    <td><span>A helper function for ``trees``.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart.initialize">
+    
+  </a>
+  <a name="initialize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">initialize</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#initialize">nltk.parse.chart.Chart.initialize</a></code></div>
+    
+    <div><p class="pre">Clear the chart.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart._edgelists">
+    
+  </a>
+  <a name="_edgelists">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_edgelists</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L65">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart._edge_to_cpls">
+    
+  </a>
+  <a name="_edge_to_cpls">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_edge_to_cpls</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L68">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#_edge_to_cpls">nltk.parse.chart.Chart._edge_to_cpls</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart._indexes">
+    
+  </a>
+  <a name="_indexes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_indexes</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#_indexes">nltk.parse.chart.Chart._indexes</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart.edges">
+    
+  </a>
+  <a name="edges">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">edges</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L74">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#edges">nltk.parse.chart.Chart.edges</a></code></div>
+    
+    <div><p class="pre">Return a list of all edges in this chart.  New edges
+that are added to the chart after the call to edges()
+will *not* be contained in this list.
+
+:rtype: list(EdgeI)
+:see: ``iteredges``, ``select``</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart.iteredges">
+    
+  </a>
+  <a name="iteredges">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iteredges</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#iteredges">nltk.parse.chart.Chart.iteredges</a></code></div>
+    
+    <div><p class="pre">Return an iterator over the edges in this chart.  It is
+not guaranteed that new edges which are added to the
+chart before the iterator is exhausted will also be generated.
+
+:rtype: iter(EdgeI)
+:see: ``edges``, ``select``</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart.select">
+    
+  </a>
+  <a name="select">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">select</span>(self, end, **restrictions):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L80">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#select">nltk.parse.chart.Chart.select</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.FeatureIncrementalChart.html">nltk.parse.earleychart.FeatureIncrementalChart</a></code></div>
+    
+    <div><p class="pre">Return an iterator over the edges in this chart.  Any
+new edges that are added to the chart before the iterator
+is exahusted will also be generated.  ``restrictions``
+can be used to restrict the set of edges that will be
+generated.
+
+:param span: Only generate edges ``e`` where ``e.span()==span``
+:param start: Only generate edges ``e`` where ``e.start()==start``
+:param end: Only generate edges ``e`` where ``e.end()==end``
+:param length: Only generate edges ``e`` where ``e.length()==length``
+:param lhs: Only generate edges ``e`` where ``e.lhs()==lhs``
+:param rhs: Only generate edges ``e`` where ``e.rhs()==rhs``
+:param nextsym: Only generate edges ``e`` where
+    ``e.nextsym()==nextsym``
+:param dot: Only generate edges ``e`` where ``e.dot()==dot``
+:param is_complete: Only generate edges ``e`` where
+    ``e.is_complete()==is_complete``
+:param is_incomplete: Only generate edges ``e`` where
+    ``e.is_incomplete()==is_incomplete``
+:rtype: iter(EdgeI)</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart._add_index">
+    
+  </a>
+  <a name="_add_index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_add_index</span>(self, restr_keys):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L98">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#_add_index">nltk.parse.chart.Chart._add_index</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.FeatureIncrementalChart.html">nltk.parse.earleychart.FeatureIncrementalChart</a></code></div>
+    
+    <div><p class="pre">A helper function for ``select``, which creates a new index for
+a given set of attributes (aka restriction keys).</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart._register_with_indexes">
+    
+  </a>
+  <a name="_register_with_indexes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_register_with_indexes</span>(self, edge):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#_register_with_indexes">nltk.parse.chart.Chart._register_with_indexes</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.FeatureIncrementalChart.html">nltk.parse.earleychart.FeatureIncrementalChart</a></code></div>
+    
+    <div><p class="pre">A helper function for ``insert``, which registers the new
+edge with all existing indexes.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart._append_edge">
+    
+  </a>
+  <a name="_append_edge">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_append_edge</span>(self, edge):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#_append_edge">nltk.parse.chart.Chart._append_edge</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.parse.earleychart.IncrementalChart._positions">
+    
+  </a>
+  <a name="_positions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_positions</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/earleychart.py#L123">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

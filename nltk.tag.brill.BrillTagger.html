@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tag.brill.BrillTagger : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tag.html">tag</a></code>.<code><a href="nltk.tag.brill.html">brill</a></code>.<code><a href="nltk.tag.brill.BrillTagger.html">BrillTagger</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BrillTagger</span>(<span title="nltk.tag.TaggerI">TaggerI</span>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L191">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.tag.brill.BrillTagger">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Brill's transformational rule-based tagger.  Brill taggers use an
+initial tagger (such as ``tag.DefaultTagger``) to assign an initial
+tag sequence to a text; and then apply an ordered list of
+transformational rules to correct the tags of individual tokens.
+These transformation rules are specified by the ``TagRule``
+interface.
+
+Brill taggers can be created directly, from an initial tagger and
+a list of transformational rules; but more often, Brill taggers
+are created by learning rules from a training corpus, using one
+of the TaggerTrainers available.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1544">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#json_tag">json_tag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>:param initial_tagger: The initial tagger :type initial_tagger: TaggerI</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#encode_json_obj">encode_json_obj</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#decode_json_obj">decode_json_obj</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#rules">rules</a></code></td>
+    <td><span>Return the ordered list of  transformation rules that this tagger has learnt</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#train_stats">train_stats</a></code></td>
+    <td><span>Return a named statistic collected during training, or a dictionary of all available statistics if no name given</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tag">tag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#print_template_statistics">print_template_statistics</a></code></td>
+    <td><span>Print a list of all templates, ranked according to efficiency.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#batch_tag_incremental">batch_tag_incremental</a></code></td>
+    <td><span>Tags by applying each rule to the entire corpus (rather than all rules to a single sequence). The point is to collect statistics on the test set for individual rules.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_initial_tagger">_initial_tagger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rules">_rules</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_training_stats">_training_stats</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="nltk.tag.brill.BrillTagger.json_tag">
+    
+  </a>
+  <a name="json_tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">json_tag</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L207">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.brill.BrillTagger.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, initial_tagger, rules, training_stats=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L209">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:param initial_tagger: The initial tagger
+:type initial_tagger: TaggerI
+
+:param rules: An ordered list of transformation rules that
+    should be used to correct the initial tagging.
+:type rules: list(TagRule)
+
+:param training_stats: A dictionary of statistics collected
+    during training, for possible later use
+:type training_stats: dict</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill.BrillTagger._initial_tagger">
+    
+  </a>
+  <a name="_initial_tagger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_initial_tagger</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L223">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill.BrillTagger._rules">
+    
+  </a>
+  <a name="_rules">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rules</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L224">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill.BrillTagger._training_stats">
+    
+  </a>
+  <a name="_training_stats">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_training_stats</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L225">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.brill.BrillTagger.encode_json_obj">
+    
+  </a>
+  <a name="encode_json_obj">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">encode_json_obj</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L227">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="nltk.tag.brill.BrillTagger.decode_json_obj">
+    
+  </a>
+  <a name="decode_json_obj">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">decode_json_obj</span>(cls, obj):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.brill.BrillTagger.rules">
+    
+  </a>
+  <a name="rules">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rules</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L235">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the ordered list of  transformation rules that this tagger has learnt
+
+:return: the ordered list of transformation rules that correct the initial tagging
+:rtype: list of Rules</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.brill.BrillTagger.train_stats">
+    
+  </a>
+  <a name="train_stats">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train_stats</span>(self, statistic=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L244">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a named statistic collected during training, or a dictionary of all
+available statistics if no name given
+
+:param statistic: name of statistic
+:type statistic: str
+:return: some statistic collected during training of this tagger
+:rtype: any (but usually a number)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.brill.BrillTagger.tag">
+    
+  </a>
+  <a name="tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, tokens):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L259">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.brill.BrillTagger.print_template_statistics">
+    
+  </a>
+  <a name="print_template_statistics">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print_template_statistics</span>(self, test_stats=None, printunused=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L286">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Print a list of all templates, ranked according to efficiency.
+
+If test_stats is available, the templates are ranked according to their
+relative contribution (summed for all rules created from a given template,
+weighted by score) to the performance on the test set. If no test_stats, then
+statistics collected during training are used instead. There is also
+an unweighted measure (just counting the rules). This is less informative,
+though, as many low-score rules will appear towards end of training.
+
+:param test_stats: dictionary of statistics collected during testing
+:type test_stats: dict of str -&gt; any (but usually numbers)
+:param printunused: if True, print a list of all unused templates
+:type printunused: bool
+:return: None
+:rtype: None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.brill.BrillTagger.batch_tag_incremental">
+    
+  </a>
+  <a name="batch_tag_incremental">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">batch_tag_incremental</span>(self, sequences, gold):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill.py#L409">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Tags by applying each rule to the entire corpus (rather than all rules to a
+single sequence). The point is to collect statistics on the test set for
+individual rules.
+
+NOTE: This is inefficient (does not build any index, so will traverse the entire
+corpus N times for N rules) -- usually you would not care about statistics for
+individual rules and thus use batch_tag() instead
+
+:param sequences: lists of token sequences (sentences, in some applications) to be tagged
+:type sequences: list of list of strings
+:param gold: the gold standard
+:type gold: list of list of strings
+:returns: tuple of (tagged_sequences, ordered list of rule scores (one for each rule))</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

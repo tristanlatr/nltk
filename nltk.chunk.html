@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.chunk : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.chunk.html">chunk</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/__init__.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Classes and interfaces for identifying non-overlapping linguistic
+groups (such as base noun phrases) in unrestricted text.  This task is
+called "chunk parsing" or "chunking", and the identified groups are
+called "chunks".  The chunked text is represented using a shallow
+tree called a "chunk structure."  A chunk structure is a tree
+containing tokens and chunks, where each chunk is a subtree containing
+only tokens.  For example, the chunk structure for base noun phrase
+chunks in the sentence "I saw the big dog on the hill" is::
+
+  (SENTENCE:
+    (NP: &lt;I&gt;)
+    &lt;saw&gt;
+    (NP: &lt;the&gt; &lt;big&gt; &lt;dog&gt;)
+    &lt;on&gt;
+    (NP: &lt;the&gt; &lt;hill&gt;))
+
+To convert a chunk structure back to a list of tokens, simply use the
+chunk structure's ``leaves()`` method.
+
+This module defines ``ChunkParserI``, a standard interface for
+chunking texts; and ``RegexpChunkParser``, a regular-expression based
+implementation of that interface. It also defines ``ChunkScore``, a
+utility class for scoring chunk parsers.
+
+RegexpChunkParser
+=================
+
+``RegexpChunkParser`` is an implementation of the chunk parser interface
+that uses regular-expressions over tags to chunk a text.  Its
+``parse()`` method first constructs a ``ChunkString``, which encodes a
+particular chunking of the input text.  Initially, nothing is
+chunked.  ``parse.RegexpChunkParser`` then applies a sequence of
+``RegexpChunkRule`` rules to the ``ChunkString``, each of which modifies
+the chunking that it encodes.  Finally, the ``ChunkString`` is
+transformed back into a chunk structure, which is returned.
+
+``RegexpChunkParser`` can only be used to chunk a single kind of phrase.
+For example, you can use an ``RegexpChunkParser`` to chunk the noun
+phrases in a text, or the verb phrases in a text; but you can not
+use it to simultaneously chunk both noun phrases and verb phrases in
+the same text.  (This is a limitation of ``RegexpChunkParser``, not of
+chunk parsers in general.)
+
+RegexpChunkRules
+----------------
+
+A ``RegexpChunkRule`` is a transformational rule that updates the
+chunking of a text by modifying its ``ChunkString``.  Each
+``RegexpChunkRule`` defines the ``apply()`` method, which modifies
+the chunking encoded by a ``ChunkString``.  The
+``RegexpChunkRule`` class itself can be used to implement any
+transformational rule based on regular expressions.  There are
+also a number of subclasses, which can be used to implement
+simpler types of rules:
+
+    - ``ChunkRule`` chunks anything that matches a given regular
+      expression.
+    - ``StripRule`` strips anything that matches a given regular
+      expression.
+    - ``UnChunkRule`` will un-chunk any chunk that matches a given
+      regular expression.
+    - ``MergeRule`` can be used to merge two contiguous chunks.
+    - ``SplitRule`` can be used to split a single chunk into two
+      smaller chunks.
+    - ``ExpandLeftRule`` will expand a chunk to incorporate new
+      unchunked material on the left.
+    - ``ExpandRightRule`` will expand a chunk to incorporate new
+      unchunked material on the right.
+
+Tag Patterns
+~~~~~~~~~~~~
+
+A ``RegexpChunkRule`` uses a modified version of regular
+expression patterns, called "tag patterns".  Tag patterns are
+used to match sequences of tags.  Examples of tag patterns are::
+
+     r'(&lt;DT&gt;|&lt;JJ&gt;|&lt;NN&gt;)+'
+     r'&lt;NN&gt;+'
+     r'&lt;NN.*&gt;'
+
+The differences between regular expression patterns and tag
+patterns are:
+
+    - In tag patterns, ``'&lt;'`` and ``'&gt;'`` act as parentheses; so
+      ``'&lt;NN&gt;+'`` matches one or more repetitions of ``'&lt;NN&gt;'``, not
+      ``'&lt;NN'`` followed by one or more repetitions of ``'&gt;'``.
+    - Whitespace in tag patterns is ignored.  So
+      ``'&lt;DT&gt; | &lt;NN&gt;'`` is equivalant to ``'&lt;DT&gt;|&lt;NN&gt;'``
+    - In tag patterns, ``'.'`` is equivalant to ``'[^{}&lt;&gt;]'``; so
+      ``'&lt;NN.*&gt;'`` matches any single tag starting with ``'NN'``.
+
+The function ``tag_pattern2re_pattern`` can be used to transform
+a tag pattern to an equivalent regular expression pattern.
+
+Efficiency
+----------
+
+Preliminary tests indicate that ``RegexpChunkParser`` can chunk at a
+rate of about 300 tokens/second, with a moderately complex rule set.
+
+There may be problems if ``RegexpChunkParser`` is used with more than
+5,000 tokens at a time.  In particular, evaluation of some regular
+expressions may cause the Python regular expression engine to
+exceed its maximum recursion depth.  We have attempted to minimize
+these problems, but it is impossible to avoid them completely.  We
+therefore recommend that you apply the chunk parser to a single
+sentence at a time.
+
+Emacs Tip
+---------
+
+If you evaluate the following elisp expression in emacs, it will
+colorize a ``ChunkString`` when you use an interactive python shell
+with emacs or xemacs ("C-c !")::
+
+    (let ()
+      (defconst comint-mode-font-lock-keywords
+        '(("&lt;[^&gt;]+&gt;" 0 'font-lock-reference-face)
+          ("[{}]" 0 'font-lock-function-name-face)))
+      (add-hook 'comint-mode-hook (lambda () (turn-on-font-lock))))
+
+You can evaluate this code by copying it to a temporary buffer,
+placing the cursor after the last close parenthesis, and typing
+"``C-x C-e``".  You should evaluate it before running the interactive
+session.  The change will last until you close emacs.
+
+Unresolved Issues
+-----------------
+
+If we use the ``re`` module for regular expressions, Python's
+regular expression engine generates "maximum recursion depth
+exceeded" errors when processing very large texts, even for
+regular expressions that should not require any recursion.  We
+therefore use the ``pre`` module instead.  But note that ``pre``
+does not include Unicode support, so this module will not work
+with unicode strings.  Note also that ``pre`` regular expressions
+are not quite as advanced as ``re`` ones (e.g., no leftward
+zero-length assertions).
+
+:type CHUNK_TAG_PATTERN: regexp
+:var CHUNK_TAG_PATTERN: A regular expression to test whether a tag
+     pattern is valid.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id97">
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.chunk.api.html">api</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/1 classes documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.chunk.named_entity.html">named_entity</a></code></td>
+    <td><span>Named entity chunker</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.chunk.regexp.html">regexp</a></code></td>
+    <td><span class="undocumented">No module docstring; 12/12 classes, 3/3 functions, 0/1 variables documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.chunk.util.html">util</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/1 classes, 7/10 functions, 0/3 variables documented</span></td>
+  </tr>
+</table>
+        
+
+          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id98">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="nltk.chunk.html#ne_chunk">ne_chunk</a></code></td>
+    <td><span>Use NLTK's currently recommended named entity chunker to chunk the given list of tagged tokens.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="nltk.chunk.html#ne_chunk_sents">ne_chunk_sents</a></code></td>
+    <td><span>Use NLTK's currently recommended named entity chunker to chunk the given list of tagged sentences, each consisting of a list of tagged tokens.</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="nltk.chunk.html#_BINARY_NE_CHUNKER">_BINARY_NE_CHUNKER</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="nltk.chunk.html#_MULTICLASS_NE_CHUNKER">_MULTICLASS_NE_CHUNKER</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable private">
+  
+  <a name="nltk.chunk._BINARY_NE_CHUNKER">
+    
+  </a>
+  <a name="_BINARY_NE_CHUNKER">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_BINARY_NE_CHUNKER</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/__init__.py#L172">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.chunk._MULTICLASS_NE_CHUNKER">
+    
+  </a>
+  <a name="_MULTICLASS_NE_CHUNKER">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MULTICLASS_NE_CHUNKER</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/__init__.py#L173">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.chunk.ne_chunk">
+    
+  </a>
+  <a name="ne_chunk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ne_chunk</span>(tagged_tokens, binary=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/__init__.py#L176">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Use NLTK's currently recommended named entity chunker to
+chunk the given list of tagged tokens.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.chunk.ne_chunk_sents">
+    
+  </a>
+  <a name="ne_chunk_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ne_chunk_sents</span>(tagged_sentences, binary=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/__init__.py#L189">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Use NLTK's currently recommended named entity chunker to chunk the
+given list of tagged sentences, each consisting of a list of tagged tokens.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

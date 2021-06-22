@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tokenize.util : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tokenize.html">tokenize</a></code>.<code><a href="nltk.tokenize.util.html">util</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/util.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1851">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#string_span_tokenize">string_span_tokenize</a></code></td>
+    <td><span>Return the offsets of the tokens in *s*, as a sequence of ``(start, end)`` tuples, by splitting the string at each occurrence of *sep*.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#regexp_span_tokenize">regexp_span_tokenize</a></code></td>
+    <td><span>Return the offsets of the tokens in *s*, as a sequence of ``(start, end)`` tuples, by splitting the string at each successive match of *regexp*.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#spans_to_relative">spans_to_relative</a></code></td>
+    <td><span>Return a sequence of relative spans, given a sequence of spans.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.tokenize.util.CJKChars.html">CJKChars</a></code></td>
+    <td><span>An object that enumerates the code points of the CJK characters as listed on http://en.wikipedia.org/wiki/Basic_Multilingual_Plane#Basic_Multilingual_Plane</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_cjk">is_cjk</a></code></td>
+    <td><span>Python port of Moses' code to check for CJK character.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#xml_escape">xml_escape</a></code></td>
+    <td><span>This function transforms the input text into an "escaped" version suitable for well-formed XML formatting.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#xml_unescape">xml_unescape</a></code></td>
+    <td><span>This function transforms the "escaped" version suitable for well-formed XML formatting into humanly-readable string.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#align_tokens">align_tokens</a></code></td>
+    <td><span>This module attempt to find the offsets of the tokens in *s*, as a sequence of ``(start, end)`` tuples, given the tokens and also the source string.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.tokenize.util.string_span_tokenize">
+    
+  </a>
+  <a name="string_span_tokenize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">string_span_tokenize</span>(s, sep):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/util.py#L13">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the offsets of the tokens in *s*, as a sequence of ``(start, end)``
+tuples, by splitting the string at each occurrence of *sep*.
+
+    &gt;&gt;&gt; from nltk.tokenize.util import string_span_tokenize
+    &gt;&gt;&gt; s = '''Good muffins cost $3.88\nin New York.  Please buy me
+    ... two of them.\n\nThanks.'''
+    &gt;&gt;&gt; list(string_span_tokenize(s, " "))
+    [(0, 4), (5, 12), (13, 17), (18, 26), (27, 30), (31, 36), (37, 37),
+    (38, 44), (45, 48), (49, 55), (56, 58), (59, 73)]
+
+:param s: the string to be tokenized
+:type s: str
+:param sep: the token separator
+:type sep: str
+:rtype: iter(tuple(int, int))</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tokenize.util.regexp_span_tokenize">
+    
+  </a>
+  <a name="regexp_span_tokenize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">regexp_span_tokenize</span>(s, regexp):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/util.py#L47">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the offsets of the tokens in *s*, as a sequence of ``(start, end)``
+tuples, by splitting the string at each successive match of *regexp*.
+
+    &gt;&gt;&gt; from nltk.tokenize.util import regexp_span_tokenize
+    &gt;&gt;&gt; s = '''Good muffins cost $3.88\nin New York.  Please buy me
+    ... two of them.\n\nThanks.'''
+    &gt;&gt;&gt; list(regexp_span_tokenize(s, r'\s'))
+    [(0, 4), (5, 12), (13, 17), (18, 23), (24, 26), (27, 30), (31, 36),
+    (38, 44), (45, 48), (49, 51), (52, 55), (56, 58), (59, 64), (66, 73)]
+
+:param s: the string to be tokenized
+:type s: str
+:param regexp: regular expression that matches token separators (must not be empty)
+:type regexp: str
+:rtype: iter(tuple(int, int))</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tokenize.util.spans_to_relative">
+    
+  </a>
+  <a name="spans_to_relative">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">spans_to_relative</span>(spans):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/util.py#L74">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a sequence of relative spans, given a sequence of spans.
+
+    &gt;&gt;&gt; from nltk.tokenize import WhitespaceTokenizer
+    &gt;&gt;&gt; from nltk.tokenize.util import spans_to_relative
+    &gt;&gt;&gt; s = '''Good muffins cost $3.88\nin New York.  Please buy me
+    ... two of them.\n\nThanks.'''
+    &gt;&gt;&gt; list(spans_to_relative(WhitespaceTokenizer().span_tokenize(s)))
+    [(0, 4), (1, 7), (1, 4), (1, 5), (1, 2), (1, 3), (1, 5), (2, 6),
+    (1, 3), (1, 2), (1, 3), (1, 2), (1, 5), (2, 7)]
+
+:param spans: a sequence of (start, end) offsets of the tokens
+:type spans: iter(tuple(int, int))
+:rtype: iter(tuple(int, int))</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tokenize.util.is_cjk">
+    
+  </a>
+  <a name="is_cjk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_cjk</span>(character):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/util.py#L162">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Python port of Moses' code to check for CJK character.
+
+&gt;&gt;&gt; CJKChars().ranges
+[(4352, 4607), (11904, 42191), (43072, 43135), (44032, 55215), (63744, 64255), (65072, 65103), (65381, 65500), (131072, 196607)]
+&gt;&gt;&gt; is_cjk(u'㏾')
+True
+&gt;&gt;&gt; is_cjk(u'﹟')
+False
+
+:param character: The character that needs to be checked.
+:type character: char
+:return: bool</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tokenize.util.xml_escape">
+    
+  </a>
+  <a name="xml_escape">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">xml_escape</span>(text):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/util.py#L194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This function transforms the input text into an "escaped" version suitable
+for well-formed XML formatting.
+
+Note that the default xml.sax.saxutils.escape() function don't escape
+some characters that Moses does so we have to manually add them to the
+entities dictionary.
+
+    &gt;&gt;&gt; input_str = ''')| &amp; &lt; &gt; ' " ] ['''
+    &gt;&gt;&gt; expected_output =  ''')| &amp;amp; &amp;lt; &amp;gt; ' " ] ['''
+    &gt;&gt;&gt; escape(input_str) == expected_output
+    True
+    &gt;&gt;&gt; xml_escape(input_str)
+    ')&amp;#124; &amp;amp; &amp;lt; &amp;gt; &amp;apos; &amp;quot; &amp;#93; &amp;#91;'
+
+:param text: The text that needs to be escaped.
+:type text: str
+:rtype: str</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tokenize.util.xml_unescape">
+    
+  </a>
+  <a name="xml_unescape">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">xml_unescape</span>(text):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/util.py#L226">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This function transforms the "escaped" version suitable
+for well-formed XML formatting into humanly-readable string.
+
+Note that the default xml.sax.saxutils.unescape() function don't unescape
+some characters that Moses does so we have to manually add them to the
+entities dictionary.
+
+    &gt;&gt;&gt; from xml.sax.saxutils import unescape
+    &gt;&gt;&gt; s = ')&amp;#124; &amp;amp; &amp;lt; &amp;gt; &amp;apos; &amp;quot; &amp;#93; &amp;#91;'
+    &gt;&gt;&gt; expected = ''')| &amp; &lt; &gt; ' " ] ['''
+    &gt;&gt;&gt; xml_unescape(s) == expected
+    True
+
+:param text: The text that needs to be unescaped.
+:type text: str
+:rtype: str</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tokenize.util.align_tokens">
+    
+  </a>
+  <a name="align_tokens">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">align_tokens</span>(tokens, sentence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/util.py#L257">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This module attempt to find the offsets of the tokens in *s*, as a sequence
+of ``(start, end)`` tuples, given the tokens and also the source string.
+
+    &gt;&gt;&gt; from nltk.tokenize import TreebankWordTokenizer
+    &gt;&gt;&gt; from nltk.tokenize.util import align_tokens
+    &gt;&gt;&gt; s = str("The plane, bound for St Petersburg, crashed in Egypt's "
+    ... "Sinai desert just 23 minutes after take-off from Sharm el-Sheikh "
+    ... "on Saturday.")
+    &gt;&gt;&gt; tokens = TreebankWordTokenizer().tokenize(s)
+    &gt;&gt;&gt; expected = [(0, 3), (4, 9), (9, 10), (11, 16), (17, 20), (21, 23),
+    ... (24, 34), (34, 35), (36, 43), (44, 46), (47, 52), (52, 54),
+    ... (55, 60), (61, 67), (68, 72), (73, 75), (76, 83), (84, 89),
+    ... (90, 98), (99, 103), (104, 109), (110, 119), (120, 122),
+    ... (123, 131), (131, 132)]
+    &gt;&gt;&gt; output = list(align_tokens(tokens, s))
+    &gt;&gt;&gt; len(tokens) == len(expected) == len(output)  # Check that length of tokens and tuples are the same.
+    True
+    &gt;&gt;&gt; expected == list(align_tokens(tokens, s))  # Check that the output is as expected.
+    True
+    &gt;&gt;&gt; tokens == [s[start:end] for start, end in output]  # Check that the slices of the string corresponds to the tokens.
+    True
+
+:param tokens: The list of strings that are the result of tokenization
+:type tokens: list(str)
+:param sentence: The original string
+:type sentence: str
+:rtype: list(tuple(int,int))</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

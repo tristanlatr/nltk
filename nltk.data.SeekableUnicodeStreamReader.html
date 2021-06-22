@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.data.SeekableUnicodeStreamReader : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.data.html">data</a></code>.<code><a href="nltk.data.SeekableUnicodeStreamReader.html">SeekableUnicodeStreamReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SeekableUnicodeStreamReader</span>: <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L968">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.data.SeekableUnicodeStreamReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A stream reader that automatically encodes the source byte stream
+into unicode (like ``codecs.StreamReader``); but still supports the
+``seek()`` and ``tell()`` operations correctly.  This is in contrast
+to ``codecs.StreamReader``, which provide *broken* ``seek()`` and
+``tell()`` methods.
+
+This class was motivated by ``StreamBackedCorpusView``, which
+makes extensive use of ``seek()`` and ``tell()``, and needs to be
+able to handle unicode-encoded files.
+
+Note: this class requires stateless decoders.  To my knowledge,
+this shouldn't cause a problem with any of python's builtin
+unicode encodings.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id547">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#DEBUG">DEBUG</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#stream">stream</a></code></td>
+    <td><span>The underlying stream.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#encoding">encoding</a></code></td>
+    <td><span>The name of the encoding that should be used to encode the underlying stream.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#errors">errors</a></code></td>
+    <td><span>The error mode that should be used when decoding data from the underlying stream.  Can be 'strict', 'ignore', or 'replace'.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#decode">decode</a></code></td>
+    <td><span>The function that is used to decode byte strings into unicode strings.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#bytebuffer">bytebuffer</a></code></td>
+    <td><span>A buffer to use bytes that have been read but have not yet been decoded.  This is only used when the final bytes from a read do not form a complete encoding for a character.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#linebuffer">linebuffer</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#read">read</a></code></td>
+    <td><span>Read up to ``size`` bytes, decode them using this reader's encoding, and return the resulting unicode string.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#discard_line">discard_line</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#readline">readline</a></code></td>
+    <td><span>Read a line of text, decode it using this reader's encoding, and return the resulting unicode string.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#readlines">readlines</a></code></td>
+    <td><span>Read this file's contents, decode them using this reader's encoding, and return it as a list of unicode lines.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#next">next</a></code></td>
+    <td><span>Return the next decoded line from the underlying stream.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__next__">__next__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__iter__">__iter__</a></code></td>
+    <td><span>Return self</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__del__">__del__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#xreadlines">xreadlines</a></code></td>
+    <td><span>Return self</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#closed">closed</a></code></td>
+    <td><span>True if the underlying stream is closed.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#name">name</a></code></td>
+    <td><span>The name of the underlying stream.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#mode">mode</a></code></td>
+    <td><span>The mode of the underlying stream.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#close">close</a></code></td>
+    <td><span>Close the underlying stream.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#seek">seek</a></code></td>
+    <td><span>Move the stream to a new file position.  If the reader is maintaining any buffers, then they will be cleared.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#char_seek_forward">char_seek_forward</a></code></td>
+    <td><span>Move the read pointer forward by ``offset`` characters.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tell">tell</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rewind_checkpoint">_rewind_checkpoint</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rewind_numchars">_rewind_numchars</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_bom">_bom</a></code></td>
+    <td><span>The length of the byte order marker at the beginning of the stream (or None for no byte order marker).</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_char_seek_forward">_char_seek_forward</a></code></td>
+    <td><span>Move the file position forward by ``offset`` characters, ignoring all buffers.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_read">_read</a></code></td>
+    <td><span>Read up to ``size`` bytes from the underlying stream, decode them using this reader's encoding, and return the resulting unicode string.  ``linebuffer`` is not included in the result.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_incr_decode">_incr_decode</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_BOM_TABLE">_BOM_TABLE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_check_bom">_check_bom</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.DEBUG">
+    
+  </a>
+  <a name="DEBUG">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DEBUG</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L985">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    @py3_data<br />
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, stream, encoding, errors='strict'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L987">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.stream">
+    
+  </a>
+  <a name="stream">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stream</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L992">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The underlying stream.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.encoding">
+    
+  </a>
+  <a name="encoding">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">encoding</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L995">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The name of the encoding that should be used to encode the
+underlying stream.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.errors">
+    
+  </a>
+  <a name="errors">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">errors</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L999">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The error mode that should be used when decoding data from
+the underlying stream.  Can be 'strict', 'ignore', or
+'replace'.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.decode">
+    
+  </a>
+  <a name="decode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">decode</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1004">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The function that is used to decode byte strings into
+unicode strings.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.bytebuffer">
+    
+  </a>
+  <a name="bytebuffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bytebuffer</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1008">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A buffer to use bytes that have been read but have not yet
+been decoded.  This is only used when the final bytes from
+a read do not form a complete encoding for a character.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.linebuffer">
+    
+  </a>
+  <a name="linebuffer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">linebuffer</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1013">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A buffer used by ``readline()`` to hold characters that have
+been read, but have not yet been returned by ``read()`` or
+``readline()``.  This buffer consists of a list of unicode
+strings, where each string corresponds to a single line.
+The final element of the list may or may not be a complete
+line.  Note that the existence of a linebuffer makes the
+``tell()`` operation more complex, because it must backtrack
+to the beginning of the buffer to determine the correct
+file position in the underlying byte stream.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader._rewind_checkpoint">
+    
+  </a>
+  <a name="_rewind_checkpoint">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rewind_checkpoint</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1024">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The file position at which the most recent read on the
+underlying stream began.  This is used, together with
+``_rewind_numchars``, to backtrack to the beginning of
+``linebuffer`` (which is required by ``tell()``).</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader._rewind_numchars">
+    
+  </a>
+  <a name="_rewind_numchars">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rewind_numchars</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1030">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The number of characters that have been returned since the
+read that started at ``_rewind_checkpoint``.  This is used,
+together with ``_rewind_checkpoint``, to backtrack to the
+beginning of ``linebuffer`` (which is required by ``tell()``).</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader._bom">
+    
+  </a>
+  <a name="_bom">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_bom</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1036">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The length of the byte order marker at the beginning of
+the stream (or None for no byte order marker).</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.read">
+    
+  </a>
+  <a name="read">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read</span>(self, size=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1044">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Read up to ``size`` bytes, decode them using this reader's
+encoding, and return the resulting unicode string.
+
+:param size: The maximum number of bytes to read.  If not
+    specified, then read as many bytes as possible.
+:type size: int
+:rtype: unicode</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.discard_line">
+    
+  </a>
+  <a name="discard_line">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">discard_line</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1064">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.readline">
+    
+  </a>
+  <a name="readline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readline</span>(self, size=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1071">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Read a line of text, decode it using this reader's encoding,
+and return the resulting unicode string.
+
+:param size: The maximum number of bytes to read.  If no
+    newline is encountered before ``size`` bytes have been read,
+    then the returned value may not be a complete line of text.
+:type size: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.readlines">
+    
+  </a>
+  <a name="readlines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readlines</span>(self, sizehint=None, keepends=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1131">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Read this file's contents, decode them using this reader's
+encoding, and return it as a list of unicode lines.
+
+:rtype: list(unicode)
+:param sizehint: Ignored.
+:param keepends: If false, then strip newlines.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.next">
+    
+  </a>
+  <a name="next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">next</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1142">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the next decoded line from the underlying stream.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.__next__">
+    
+  </a>
+  <a name="__next__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__next__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1150">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.__iter__">
+    
+  </a>
+  <a name="__iter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1153">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return self</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.__del__">
+    
+  </a>
+  <a name="__del__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__del__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1157">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.xreadlines">
+    
+  </a>
+  <a name="xreadlines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">xreadlines</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1162">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return self</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.closed">
+    
+  </a>
+  <a name="closed">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">closed</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1170">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">True if the underlying stream is closed.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">name</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1175">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The name of the underlying stream.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.mode">
+    
+  </a>
+  <a name="mode">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">mode</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1180">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The mode of the underlying stream.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.close">
+    
+  </a>
+  <a name="close">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">close</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1185">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Close the underlying stream.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.seek">
+    
+  </a>
+  <a name="seek">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">seek</span>(self, offset, whence=0):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1195">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Move the stream to a new file position.  If the reader is
+maintaining any buffers, then they will be cleared.
+
+:param offset: A byte count offset.
+:param whence: If 0, then the offset is from the start of the file
+    (offset should be positive), if 1, then the offset is from the
+    current position (offset may be positive or negative); and if 2,
+    then the offset is from the end of the file (offset should
+    typically be negative).</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.char_seek_forward">
+    
+  </a>
+  <a name="char_seek_forward">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">char_seek_forward</span>(self, offset):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1219">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Move the read pointer forward by ``offset`` characters.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader._char_seek_forward">
+    
+  </a>
+  <a name="_char_seek_forward">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_char_seek_forward</span>(self, offset, est_bytes=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Move the file position forward by ``offset`` characters,
+ignoring all buffers.
+
+:param est_bytes: A hint, giving an estimate of the number of
+    bytes that will be needed to move forward by ``offset`` chars.
+    Defaults to ``offset``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader.tell">
+    
+  </a>
+  <a name="tell">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tell</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1270">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the current file position on the underlying byte
+stream.  If this reader is maintaining any buffers, then the
+returned file position will be the position of the beginning
+of those buffers.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader._read">
+    
+  </a>
+  <a name="_read">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_read</span>(self, size=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1316">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Read up to ``size`` bytes from the underlying stream, decode
+them using this reader's encoding, and return the resulting
+unicode string.  ``linebuffer`` is not included in the result.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader._incr_decode">
+    
+  </a>
+  <a name="_incr_decode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_incr_decode</span>(self, bytes):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1354">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Decode the given byte string into a unicode string, using this
+reader's encoding.  If an exception is encountered that
+appears to be caused by a truncation error, then just decode
+the byte string without the bytes that cause the trunctaion
+error.
+
+Return a tuple ``(chars, num_consumed)``, where ``chars`` is
+the decoded unicode string, and ``num_consumed`` is the
+number of bytes that were consumed.</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader._BOM_TABLE">
+    
+  </a>
+  <a name="_BOM_TABLE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_BOM_TABLE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1384">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.data.SeekableUnicodeStreamReader._check_bom">
+    
+  </a>
+  <a name="_check_bom">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_check_bom</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L1394">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

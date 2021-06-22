@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tag.hmm.HiddenMarkovModelTagger : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tag.html">tag</a></code>.<code><a href="nltk.tag.hmm.html">hmm</a></code>.<code><a href="nltk.tag.hmm.HiddenMarkovModelTagger.html">HiddenMarkovModelTagger</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HiddenMarkovModelTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L104">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.tag.hmm.HiddenMarkovModelTagger">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Hidden Markov model class, a generative model for labelling sequence data.
+These models define the joint probability of a sequence of symbols and
+their labels (state transitions) as the product of the starting state
+probability, the probability of each state transition, and the probability
+of each observation being generated from each state. This is described in
+more detail in the module documentation.
+
+This implementation is based on the HMM description in Chapter 8, Huang,
+Acero and Hon, Spoken Language Processing and includes an extension for
+training shallow HMM parsers or specialized HMMs as in Molina et.
+al, 2002.  A specialized HMM modifies training data by applying a
+specialization function to create a new training set that is more
+appropriate for sequential tagging with an HMM.  A typical use case is
+chunking.
+
+:param symbols: the set of output symbols (alphabet)
+:type symbols: seq of any
+:param states: a set of states representing state space
+:type states: seq of any
+:param transitions: transition probabilities; Pr(s_i | s_j) is the
+    probability of transition from state i given the model is in
+    state_j
+:type transitions: ConditionalProbDistI
+:param outputs: output probabilities; Pr(o_k | s_i) is the probability
+    of emitting symbol k when entering state i
+:type outputs: ConditionalProbDistI
+:param priors: initial state distribution; Pr(s_i) is the probability
+    of starting in state i
+:type priors: ProbDistI
+:param transform: an optional function for transforming training
+    instances, defaults to the identity function.
+:type transform: callable</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1551">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#train">train</a></code></td>
+    <td><span>Train a new HiddenMarkovModelTagger using the given labeled and unlabeled training instances. Testing will be performed if test instances are provided.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#probability">probability</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#log_probability">log_probability</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tag">tag</a></code></td>
+    <td><span>Tags the sequence with the highest probability state sequence. This uses the best_path method to find the Viterbi path.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reset_cache">reset_cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#best_path">best_path</a></code></td>
+    <td><span>Returns the state sequence of the optimal (most probable) path through the HMM. Uses the Viterbi algorithm to calculate this part by dynamic programming.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#best_path_simple">best_path_simple</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#random_sample">random_sample</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#entropy">entropy</a></code></td>
+    <td><span>Returns the entropy over labellings of the given sequence. This is given by::</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#point_entropy">point_entropy</a></code></td>
+    <td><span>Returns the pointwise entropy over the possible states at each position in the chain, given the observation sequence.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test">test</a></code></td>
+    <td><span>Tests the HiddenMarkovModelTagger instance.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_symbols">_symbols</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_states">_states</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_transitions">_transitions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_outputs">_outputs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_priors">_priors</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_cache">_cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_transform">_transform</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_train">_train</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_tag">_tag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_output_logprob">_output_logprob</a></code></td>
+    <td><span>:return: the log probability of the symbol being observed in the given state :rtype: float</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_create_cache">_create_cache</a></code></td>
+    <td><span>The cache is a tuple (P, O, X, S) where:</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_cache">_update_cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_best_path">_best_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_best_path_simple">_best_path_simple</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_sample_probdist">_sample_probdist</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_exhaustive_entropy">_exhaustive_entropy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_exhaustive_point_entropy">_exhaustive_point_entropy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_transitions_matrix">_transitions_matrix</a></code></td>
+    <td><span>Return a matrix of transition log probabilities.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_outputs_vector">_outputs_vector</a></code></td>
+    <td><span>Return a vector with log probabilities of emitting a symbol when entering states.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_forward_probability">_forward_probability</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_backward_probability">_backward_probability</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code>:
+          </p>
+          <table class="children sortable" id="id1552">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
+    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tag.api.TaggerI.html#evaluate">evaluate</a></code></td>
+    <td><span>Score the accuracy of the tagger against the gold standard. Strip the tags from the gold standard text, retag it using the tagger, then compute the accuracy score.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tag.api.TaggerI.html#_check_params">_check_params</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, symbols, states, transitions, outputs, priors, transform=_identity):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L140">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._symbols">
+    
+  </a>
+  <a name="_symbols">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_symbols</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L143">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._states">
+    
+  </a>
+  <a name="_states">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_states</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L144">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._transitions">
+    
+  </a>
+  <a name="_transitions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_transitions</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L145">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._outputs">
+    
+  </a>
+  <a name="_outputs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_outputs</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L146">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._priors">
+    
+  </a>
+  <a name="_priors">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_priors</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L147">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._cache">
+    
+  </a>
+  <a name="_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_cache</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L148">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._transform">
+    
+  </a>
+  <a name="_transform">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_transform</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L149">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._train">
+    
+  </a>
+  <a name="_train">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_train</span>(cls, labeled_sequence, test_sequence=None, unlabeled_sequence=None, transform=_identity, estimator=None, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L151">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.train">
+    
+  </a>
+  <a name="train">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">train</span>(cls, labeled_sequence, test_sequence=None, unlabeled_sequence=None, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L195">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Train a new HiddenMarkovModelTagger using the given labeled and
+unlabeled training instances. Testing will be performed if test
+instances are provided.
+
+:return: a hidden markov model tagger
+:rtype: HiddenMarkovModelTagger
+:param labeled_sequence: a sequence of labeled training instances,
+    i.e. a list of sentences represented as tuples
+:type labeled_sequence: list(list)
+:param test_sequence: a sequence of labeled test instances
+:type test_sequence: list(list)
+:param unlabeled_sequence: a sequence of unlabeled training instances,
+    i.e. a list of sentences represented as words
+:type unlabeled_sequence: list(list)
+:param transform: an optional function for transforming training
+    instances, defaults to the identity function, see ``transform()``
+:type transform: function
+:param estimator: an optional function or class that maps a
+    condition's frequency distribution to its probability
+    distribution, defaults to a Lidstone distribution with gamma = 0.1
+:type estimator: class or function
+:param verbose: boolean flag indicating whether training should be
+    verbose or include printed output
+:type verbose: bool
+:param max_iterations: number of Baum-Welch interations to perform
+:type max_iterations: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.probability">
+    
+  </a>
+  <a name="probability">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">probability</span>(self, sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L229">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the probability of the given symbol sequence. If the sequence
+is labelled, then returns the joint probability of the symbol, state
+sequence. Otherwise, uses the forward algorithm to find the
+probability over all label sequences.
+
+:return: the probability of the sequence
+:rtype: float
+:param sequence: the sequence of symbols which must contain the TEXT
+    property, and optionally the TAG property
+:type sequence:  Token</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.log_probability">
+    
+  </a>
+  <a name="log_probability">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">log_probability</span>(self, sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L244">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the log-probability of the given symbol sequence. If the
+sequence is labelled, then returns the joint log-probability of the
+symbol, state sequence. Otherwise, uses the forward algorithm to find
+the log-probability over all label sequences.
+
+:return: the log-probability of the sequence
+:rtype: float
+:param sequence: the sequence of symbols which must contain the TEXT
+    property, and optionally the TAG property
+:type sequence:  Token</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.tag">
+    
+  </a>
+  <a name="tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L278">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.tag.api.TaggerI.html#tag">nltk.tag.api.TaggerI.tag</a></code></div>
+    
+    <div><p class="pre">Tags the sequence with the highest probability state sequence. This
+uses the best_path method to find the Viterbi path.
+
+:return: a labelled sequence of symbols
+:rtype: list
+:param unlabeled_sequence: the sequence of unlabeled symbols
+:type unlabeled_sequence: list</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._tag">
+    
+  </a>
+  <a name="_tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_tag</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L291">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._output_logprob">
+    
+  </a>
+  <a name="_output_logprob">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_output_logprob</span>(self, state, symbol):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L295">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: the log probability of the symbol being observed in the given
+    state
+:rtype: float</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._create_cache">
+    
+  </a>
+  <a name="_create_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_cache</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L303">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">The cache is a tuple (P, O, X, S) where:
+
+  - S maps symbols to integers.  I.e., it is the inverse
+    mapping from self._symbols; for each symbol s in
+    self._symbols, the following is true::
+
+      self._symbols[S[s]] == s
+
+  - O is the log output probabilities::
+
+      O[i,k] = log( P(token[t]=sym[k]|tag[t]=state[i]) )
+
+  - X is the log transition probabilities::
+
+      X[i,j] = log( P(tag[t]=state[j]|tag[t-1]=state[i]) )
+
+  - P is the log prior probabilities::
+
+      P[i] = log( P(tag[0]=state[i]) )</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._update_cache">
+    
+  </a>
+  <a name="_update_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_cache</span>(self, symbols):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L343">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.reset_cache">
+    
+  </a>
+  <a name="reset_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reset_cache</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L371">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.best_path">
+    
+  </a>
+  <a name="best_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">best_path</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L374">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the state sequence of the optimal (most probable) path through
+the HMM. Uses the Viterbi algorithm to calculate this part by dynamic
+programming.
+
+:return: the state sequence
+:rtype: sequence of any
+:param unlabeled_sequence: the sequence of unlabeled symbols
+:type unlabeled_sequence: list</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._best_path">
+    
+  </a>
+  <a name="_best_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_best_path</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L388">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.best_path_simple">
+    
+  </a>
+  <a name="best_path_simple">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">best_path_simple</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L416">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the state sequence of the optimal (most probable) path through
+the HMM. Uses the Viterbi algorithm to calculate this part by dynamic
+programming.  This uses a simple, direct method, and is included for
+teaching purposes.
+
+:return: the state sequence
+:rtype: sequence of any
+:param unlabeled_sequence: the sequence of unlabeled symbols
+:type unlabeled_sequence: list</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._best_path_simple">
+    
+  </a>
+  <a name="_best_path_simple">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_best_path_simple</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L431">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.random_sample">
+    
+  </a>
+  <a name="random_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">random_sample</span>(self, rng, length):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L475">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Randomly sample the HMM to generate a sentence of a given length. This
+samples the prior distribution then the observation distribution and
+transition distribution for each subsequent observation and state.
+This will mostly generate unintelligible garbage, but can provide some
+amusement.
+
+:return:        the randomly created state/observation sequence,
+                generated according to the HMM's probability
+                distributions. The SUBTOKENS have TEXT and TAG
+                properties containing the observation and state
+                respectively.
+:rtype:         list
+:param rng:     random number generator
+:type rng:      Random (or any object with a random() method)
+:param length:  desired output length
+:type length:   int</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._sample_probdist">
+    
+  </a>
+  <a name="_sample_probdist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_sample_probdist</span>(self, probdist, p, samples):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L515">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.entropy">
+    
+  </a>
+  <a name="entropy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">entropy</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L524">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the entropy over labellings of the given sequence. This is
+given by::
+
+    H(O) = - sum_S Pr(S | O) log Pr(S | O)
+
+where the summation ranges over all state sequences, S. Let
+*Z = Pr(O) = sum_S Pr(S, O)}* where the summation ranges over all state
+sequences and O is the observation sequence. As such the entropy can
+be re-expressed as::
+
+    H = - sum_S Pr(S | O) log [ Pr(S, O) / Z ]
+    = log Z - sum_S Pr(S | O) log Pr(S, 0)
+    = log Z - sum_S Pr(S | O) [ log Pr(S_0) + sum_t Pr(S_t | S_{t-1}) + sum_t Pr(O_t | S_t) ]
+
+The order of summation for the log terms can be flipped, allowing
+dynamic programming to be used to calculate the entropy. Specifically,
+we use the forward and backward probabilities (alpha, beta) giving::
+
+    H = log Z - sum_s0 alpha_0(s0) beta_0(s0) / Z * log Pr(s0)
+    + sum_t,si,sj alpha_t(si) Pr(sj | si) Pr(O_t+1 | sj) beta_t(sj) / Z * log Pr(sj | si)
+    + sum_t,st alpha_t(st) beta_t(st) / Z * log Pr(O_t | st)
+
+This simply uses alpha and beta to find the probabilities of partial
+sequences, constrained to include the given state(s) at some point in
+time.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.point_entropy">
+    
+  </a>
+  <a name="point_entropy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">point_entropy</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L595">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the pointwise entropy over the possible states at each
+position in the chain, given the observation sequence.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._exhaustive_entropy">
+    
+  </a>
+  <a name="_exhaustive_entropy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_exhaustive_entropy</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L620">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._exhaustive_point_entropy">
+    
+  </a>
+  <a name="_exhaustive_point_entropy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_exhaustive_point_entropy</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L650">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._transitions_matrix">
+    
+  </a>
+  <a name="_transitions_matrix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_transitions_matrix</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L689">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a matrix of transition log probabilities. </p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._outputs_vector">
+    
+  </a>
+  <a name="_outputs_vector">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_outputs_vector</span>(self, symbol):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L701">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a vector with log probabilities of emitting a symbol
+when entering states.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._forward_probability">
+    
+  </a>
+  <a name="_forward_probability">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_forward_probability</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L709">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the forward probability matrix, a T by N array of
+log-probabilities, where T is the length of the sequence and N is the
+number of states. Each entry (t, s) gives the probability of being in
+state s at time t after observing the partial symbol sequence up to
+and including t.
+
+:param unlabeled_sequence: the sequence of unlabeled symbols
+:type unlabeled_sequence: list
+:return: the forward log probability matrix
+:rtype: array</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger._backward_probability">
+    
+  </a>
+  <a name="_backward_probability">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_backward_probability</span>(self, unlabeled_sequence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L746">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the backward probability matrix, a T by N array of
+log-probabilities, where T is the length of the sequence and N is the
+number of states. Each entry (t, s) gives the probability of being in
+state s at time t after observing the partial symbol sequence from t
+.. T.
+
+:return: the backward log probability matrix
+:rtype:  array
+:param unlabeled_sequence: the sequence of unlabeled symbols
+:type unlabeled_sequence: list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.test">
+    
+  </a>
+  <a name="test">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test</span>(self, test_sequence, verbose=False, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L780">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Tests the HiddenMarkovModelTagger instance.
+
+:param test_sequence: a sequence of labeled test instances
+:type test_sequence: list(list)
+:param verbose: boolean flag indicating whether training should be
+    verbose or include printed output
+:type verbose: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.hmm.HiddenMarkovModelTagger.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/hmm.py#L831">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

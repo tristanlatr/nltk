@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.classify.scikitlearn.SklearnClassifier : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.classify.html">classify</a></code>.<code><a href="nltk.classify.scikitlearn.html">scikitlearn</a></code>.<code><a href="nltk.classify.scikitlearn.SklearnClassifier.html">SklearnClassifier</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SklearnClassifier</span>(<a href="nltk.classify.api.ClassifierI.html" title="nltk.classify.api.ClassifierI">ClassifierI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L46">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.classify.scikitlearn.SklearnClassifier">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Wrapper for scikit-learn classifiers.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id163">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>:param estimator: scikit-learn classifier object.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#classify_many">classify_many</a></code></td>
+    <td><span>Classify a batch of samples.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prob_classify_many">prob_classify_many</a></code></td>
+    <td><span>Compute per-class probabilities for a batch of samples.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#labels">labels</a></code></td>
+    <td><span>The class labels used by this classifier.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#train">train</a></code></td>
+    <td><span>Train (fit) the scikit-learn estimator.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_clf">_clf</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_encoder">_encoder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_vectorizer">_vectorizer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_make_probdist">_make_probdist</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.classify.api.ClassifierI.html">ClassifierI</a></code>:
+          </p>
+          <table class="children sortable" id="id164">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.classify.api.ClassifierI.html#classify">classify</a></code></td>
+    <td><span>:return: the most appropriate label for the given featureset. :rtype: label</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.classify.api.ClassifierI.html#prob_classify">prob_classify</a></code></td>
+    <td><span>:return: a probability distribution over labels for the given featureset. :rtype: ProbDistI</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, estimator, dtype=float, sparse=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L49">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:param estimator: scikit-learn classifier object.
+
+:param dtype: data type used when building feature array.
+    scikit-learn estimators work exclusively on numeric data. The
+    default value should be fine for almost all situations.
+
+:param sparse: Whether to use sparse matrices internally.
+    The estimator must support these; not all scikit-learn classifiers
+    do (see their respective documentation and look for "sparse
+    matrix"). The default value is True, since most NLP problems
+    involve sparse feature sets. Setting this to False may take a
+    great amount of memory.
+:type sparse: boolean.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier._clf">
+    
+  </a>
+  <a name="_clf">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_clf</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L65">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier._encoder">
+    
+  </a>
+  <a name="_encoder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_encoder</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L66">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier._vectorizer">
+    
+  </a>
+  <a name="_vectorizer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_vectorizer</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L69">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier.classify_many">
+    
+  </a>
+  <a name="classify_many">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">classify_many</span>(self, featuresets):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#classify_many">nltk.classify.api.ClassifierI.classify_many</a></code></div>
+    
+    <div><p class="pre">Classify a batch of samples.
+
+:param featuresets: An iterable over featuresets, each a dict mapping
+    strings to either numbers, booleans or strings.
+:return: The predicted class label for each input sample.
+:rtype: list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier.prob_classify_many">
+    
+  </a>
+  <a name="prob_classify_many">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prob_classify_many</span>(self, featuresets):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L84">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#prob_classify_many">nltk.classify.api.ClassifierI.prob_classify_many</a></code></div>
+    
+    <div><p class="pre">Compute per-class probabilities for a batch of samples.
+
+:param featuresets: An iterable over featuresets, each a dict mapping
+    strings to either numbers, booleans or strings.
+:rtype: list of ``ProbDistI``</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier.labels">
+    
+  </a>
+  <a name="labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">labels</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L95">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#labels">nltk.classify.api.ClassifierI.labels</a></code></div>
+    
+    <div><p class="pre">The class labels used by this classifier.
+
+:rtype: list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier.train">
+    
+  </a>
+  <a name="train">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, labeled_featuresets):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Train (fit) the scikit-learn estimator.
+
+:param labeled_featuresets: A list of ``(featureset, label)``
+    where each ``featureset`` is a dict mapping strings to either
+    numbers, booleans or strings.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.classify.scikitlearn.SklearnClassifier._make_probdist">
+    
+  </a>
+  <a name="_make_probdist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_probdist</span>(self, y_proba):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/scikitlearn.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

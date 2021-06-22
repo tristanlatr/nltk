@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.sem : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.sem.html">sem</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/__init__.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">NLTK Semantic Interpretation Package
+
+This package contains classes for representing semantic structure in
+formulas of first-order logic and for evaluating such formulas in
+set-theoretic models.
+
+    &gt;&gt;&gt; from nltk.sem import logic
+    &gt;&gt;&gt; logic._counter._value = 0
+
+The package has two main components:
+
+ - ``logic`` provides support for analyzing expressions of First
+   Order Logic (FOL).
+ - ``evaluate`` allows users to recursively determine truth in a
+   model for formulas of FOL.
+
+A model consists of a domain of discourse and a valuation function,
+which assigns values to non-logical constants. We assume that entities
+in the domain are represented as strings such as ``'b1'``, ``'g1'``,
+etc. A ``Valuation`` is initialized with a list of (symbol, value)
+pairs, where values are entities, sets of entities or sets of tuples
+of entities.
+The domain of discourse can be inferred from the valuation, and model
+is then created with domain and valuation as parameters.
+
+    &gt;&gt;&gt; from nltk.sem import Valuation, Model
+    &gt;&gt;&gt; v = [('adam', 'b1'), ('betty', 'g1'), ('fido', 'd1'),
+    ... ('girl', set(['g1', 'g2'])), ('boy', set(['b1', 'b2'])),
+    ... ('dog', set(['d1'])),
+    ... ('love', set([('b1', 'g1'), ('b2', 'g2'), ('g1', 'b1'), ('g2', 'b1')]))]
+    &gt;&gt;&gt; val = Valuation(v)
+    &gt;&gt;&gt; dom = val.domain
+    &gt;&gt;&gt; m = Model(dom, val)</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1165">
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.boxer.html">boxer</a></code></td>
+    <td><span>An interface to Boxer.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.chat80.html">chat80</a></code></td>
+    <td><span>Overview ========</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.cooper_storage.html">cooper_storage</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/1 classes, 1/2 functions documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.drt.html">drt</a></code></td>
+    <td><span class="undocumented">No module docstring; 4/21 classes, 1/5 functions documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.drt_glue_demo.html">drt_glue_demo</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.evaluate.html">evaluate</a></code></td>
+    <td><span>This module provides data structures for representing first-order models.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.glue.html">glue</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.hole.html">hole</a></code></td>
+    <td><span>An implementation of the Hole Semantics model, following Blackburn and Bos, Representation and Inference for Natural Language (CSLI, 2005).</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.lfg.html">lfg</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.linearlogic.html">linearlogic</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/12 classes, 0/1 functions, 0/1 variables documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.logic.html">logic</a></code></td>
+    <td><span>A version of first order predicate logic, built on top of the typed lambda calculus.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.relextract.html">relextract</a></code></td>
+    <td><span>Code for extracting relational triples from the ieer and conll2002 corpora.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.skolemize.html">skolemize</a></code></td>
+    <td><span class="undocumented">No module docstring; 2/2 functions documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.sem.util.html">util</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

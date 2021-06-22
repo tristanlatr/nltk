@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.draw 0.util.BracketWidget : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.draw%200.html">draw 0</a></code>.<code><a href="nltk.draw%200.util.html">util</a></code>.<code><a href="nltk.draw%200.util.BracketWidget.html">BracketWidget</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BracketWidget</span>(<a href="nltk.draw%200.util.AbstractContainerWidget.html" title="nltk.draw 0.util.AbstractContainerWidget">AbstractContainerWidget</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1216">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.draw 0.util.BracketWidget">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A canvas widget that places a pair of brackets around a child
+widget.
+
+Attributes:
+  - ``color``: The color used to draw the brackets.
+  - ``width``: The width of the brackets.
+  - ``draggable``: whether the text can be dragged by the user.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id600">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Create a new bracket widget.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__setitem__">__setitem__</a></code></td>
+    <td><span>Set the value of the attribute ``attr`` to ``value``.  See the class documentation for a list of attributes supported by this canvas widget.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_child">_child</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_obrack">_obrack</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_cbrack">_cbrack</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update">_update</a></code></td>
+    <td><span>Update this canvas widget in response to a change in one of its children.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_tags">_tags</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.draw%200.util.AbstractContainerWidget.html">AbstractContainerWidget</a></code>:
+          </p>
+          <table class="children sortable" id="id601">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.AbstractContainerWidget.html#child">child</a></code></td>
+    <td><span>:return: The child widget contained by this container widget. :rtype: CanvasWidget</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.AbstractContainerWidget.html#set_child">set_child</a></code></td>
+    <td><span>Change the child widget contained by this container widget.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.AbstractContainerWidget.html#__repr__">__repr__</a></code></td>
+    <td><span>:return: a string representation of this canvas widget. :rtype: str</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.AbstractContainerWidget.html#_manage">_manage</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.draw%200.util.CanvasWidget.html">CanvasWidget</a></code> (via <code><a href="nltk.draw%200.util.AbstractContainerWidget.html">AbstractContainerWidget</a></code>):
+          </p>
+          <table class="children sortable" id="id602">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#bbox">bbox</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#width">width</a></code></td>
+    <td><span>:return: The width of this canvas widget's bounding box, in its ``Canvas``'s coordinate space. :rtype: int</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#height">height</a></code></td>
+    <td><span>:return: The height of this canvas widget's bounding box, in its ``Canvas``'s coordinate space. :rtype: int</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#parent">parent</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#child_widgets">child_widgets</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#canvas">canvas</a></code></td>
+    <td><span>:return: The canvas that this canvas widget is bound to. :rtype: Tkinter.Canvas</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#move">move</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#moveto">moveto</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#destroy">destroy</a></code></td>
+    <td><span>Remove this ``CanvasWidget`` from its ``Canvas``.  After a ``CanvasWidget`` has been destroyed, it should not be accessed.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#update">update</a></code></td>
+    <td><span>Update the graphical display of this canvas widget, and all of its ancestors, in response to a change in one of this canvas widget's children.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#manage">manage</a></code></td>
+    <td><span>Arrange this canvas widget and all of its descendants.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#tags">tags</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#hide">hide</a></code></td>
+    <td><span>Temporarily hide this canvas widget.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#show">show</a></code></td>
+    <td><span>Show a hidden canvas widget.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#hidden">hidden</a></code></td>
+    <td><span>:return: True if this canvas widget is hidden. :rtype: bool</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#bind_click">bind_click</a></code></td>
+    <td><span>Register a new callback that will be called whenever this ``CanvasWidget`` is clicked on.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#bind_drag">bind_drag</a></code></td>
+    <td><span>Register a new callback that will be called after this ``CanvasWidget`` is dragged.  This implicitly makes this ``CanvasWidget`` draggable.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#unbind_click">unbind_click</a></code></td>
+    <td><span>Remove a callback that was registered with ``bind_click``.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#unbind_drag">unbind_drag</a></code></td>
+    <td><span>Remove a callback that was registered with ``bind_drag``.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__canvas">__canvas</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__parent">__parent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__children">__children</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__hidden">__hidden</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__updating">__updating</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__press">__press</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__drag_x">__drag_x</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__drag_y">__drag_y</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__callbacks">__callbacks</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__draggable">__draggable</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__press_cb">__press_cb</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__start_drag">__start_drag</a></code></td>
+    <td><span>Begin dragging this object: - register a motion callback - record the drag coordinates</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__motion_cb">__motion_cb</a></code></td>
+    <td><span>Handle a motion event: - move this object to the new location - record the new drag coordinates</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__release_cb">__release_cb</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__drag">__drag</a></code></td>
+    <td><span>If this ``CanvasWidget`` has a drag callback, then call it; otherwise, find the closest ancestor with a drag callback, and call it.  If no ancestors have a drag callback, do nothing.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#__click">__click</a></code></td>
+    <td><span>If this ``CanvasWidget`` has a drag callback, then call it; otherwise, find the closest ancestor with a click callback, and call it.  If no ancestors have a click callback, do nothing.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#_add_child_widget">_add_child_widget</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.draw%200.util.CanvasWidget.html#_remove_child_widget">_remove_child_widget</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.draw 0.util.BracketWidget.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, canvas, child, **attribs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1227">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.draw%200.util.AbstractContainerWidget.html#__init__">nltk.draw 0.util.AbstractContainerWidget.__init__</a></code></div>
+    
+    <div><p class="pre">Create a new bracket widget.
+
+:type canvas: Tkinter.Canvas
+:param canvas: This canvas widget's canvas.
+:param child: The child widget.  ``child`` must not have a
+    parent.
+:type child: CanvasWidget
+:param attribs: The new canvas widget's attributes.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.BracketWidget._child">
+    
+  </a>
+  <a name="_child">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_child</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1238">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.draw%200.util.AbstractContainerWidget.html#_child">nltk.draw 0.util.AbstractContainerWidget._child</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.BracketWidget._obrack">
+    
+  </a>
+  <a name="_obrack">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_obrack</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1239">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.BracketWidget._cbrack">
+    
+  </a>
+  <a name="_cbrack">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_cbrack</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1240">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.BracketWidget.__setitem__">
+    
+  </a>
+  <a name="__setitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, attr, value):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1243">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.draw%200.util.CanvasWidget.html#__setitem__">nltk.draw 0.util.CanvasWidget.__setitem__</a></code></div>
+    
+    <div><p class="pre">Set the value of the attribute ``attr`` to ``value``.  See the
+class documentation for a list of attributes supported by this
+canvas widget.
+
+:rtype: None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.BracketWidget.__getitem__">
+    
+  </a>
+  <a name="__getitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, attr):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1253">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.draw%200.util.CanvasWidget.html#__getitem__">nltk.draw 0.util.CanvasWidget.__getitem__</a></code></div>
+    
+    <div><p class="pre">:return: the value of the attribute ``attr``.  See the class
+    documentation for a list of attributes supported by this
+    canvas widget.
+:rtype: (any)</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.util.BracketWidget._update">
+    
+  </a>
+  <a name="_update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update</span>(self, child):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1261">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.draw%200.util.CanvasWidget.html#_update">nltk.draw 0.util.CanvasWidget._update</a></code></div>
+    
+    <div><p class="pre">Update this canvas widget in response to a change in one of
+its children.
+
+:param child: The child that changed.
+:type child: CanvasWidget
+:rtype: None</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.util.BracketWidget._tags">
+    
+  </a>
+  <a name="_tags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_tags</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L1271">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.draw%200.util.CanvasWidget.html#_tags">nltk.draw 0.util.CanvasWidget._tags</a></code></div>
+    
+    <div><p class="pre">:return: a list of canvas tags for all graphical elements
+    managed by this canvas widget, not including graphical
+    elements managed by its child widgets.
+:rtype: list of int</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

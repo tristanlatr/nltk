@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.sem.drt.DrtExpression : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.sem.html">sem</a></code>.<code><a href="nltk.sem.drt.html">drt</a></code>.<code><a href="nltk.sem.drt.DrtExpression.html">DrtExpression</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DrtExpression</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L197">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.sem.drt.DRS.html">nltk.sem.drt.DRS</a></code>, <code><a href="nltk.sem.drt.DrtAbstractVariableExpression.html">nltk.sem.drt.DrtAbstractVariableExpression</a></code>, <code><a href="nltk.sem.drt.DrtApplicationExpression.html">nltk.sem.drt.DrtApplicationExpression</a></code>, <code><a href="nltk.sem.drt.DrtBinaryExpression.html">nltk.sem.drt.DrtBinaryExpression</a></code>, <code><a href="nltk.sem.drt.DrtLambdaExpression.html">nltk.sem.drt.DrtLambdaExpression</a></code>, <code><a href="nltk.sem.drt.DrtNegatedExpression.html">nltk.sem.drt.DrtNegatedExpression</a></code>, <code><a href="nltk.sem.drt.DrtProposition.html">nltk.sem.drt.DrtProposition</a></code>, <code><a href="nltk.sem.drt.PossibleAntecedents.html">nltk.sem.drt.PossibleAntecedents</a></code></p>
+        <p><a href="classIndex.html#nltk.sem.drt.DrtExpression">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">This is the base abstract DRT Expression from which every DRT
+Expression extends.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1216">
+  
+  <tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#fromstring">fromstring</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#applyto">applyto</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__neg__">__neg__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__and__">__and__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__or__">__or__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__gt__">__gt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#equiv">equiv</a></code></td>
+    <td><span>Check for logical equivalence. Pass the expression (self &lt;-&gt; other) to the theorem prover. If the prover says it is valid, then the self and other are equal.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#type">type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#typecheck">typecheck</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__add__">__add__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_refs">get_refs</a></code></td>
+    <td><span>Return the set of discourse referents in this DRS. :param recursive: bool Also find discourse referents in subterms? :return: list of ``Variable`` objects</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#is_pronoun_function">is_pronoun_function</a></code></td>
+    <td><span>Is self of the form "PRO(x)"?</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#make_EqualityExpression">make_EqualityExpression</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#make_VariableExpression">make_VariableExpression</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#resolve_anaphora">resolve_anaphora</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#eliminate_equality">eliminate_equality</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pretty_format">pretty_format</a></code></td>
+    <td><span>Draw the DRS :return: the pretty print string</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pretty_print">pretty_print</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#draw">draw</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_drt_parser">_drt_parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable private">
+  
+  <a name="nltk.sem.drt.DrtExpression._drt_parser">
+    
+  </a>
+  <a name="_drt_parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_drt_parser</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L203">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.fromstring">
+    
+  </a>
+  <a name="fromstring">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">fromstring</span>(cls, s):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L205">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.applyto">
+    
+  </a>
+  <a name="applyto">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">applyto</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L209">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.__neg__">
+    
+  </a>
+  <a name="__neg__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__neg__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L212">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.__and__">
+    
+  </a>
+  <a name="__and__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__and__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L215">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.__or__">
+    
+  </a>
+  <a name="__or__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__or__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L218">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.__gt__">
+    
+  </a>
+  <a name="__gt__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__gt__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L222">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.equiv">
+    
+  </a>
+  <a name="equiv">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">equiv</span>(self, other, prover=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Check for logical equivalence.
+Pass the expression (self &lt;-&gt; other) to the theorem prover.
+If the prover says it is valid, then the self and other are equal.
+
+:param other: an ``DrtExpression`` to check equality against
+:param prover: a ``nltk.inference.api.Prover``</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.sem.drt.DrtExpression.type">
+    
+  </a>
+  <a name="type">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">type</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L245">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.typecheck">
+    
+  </a>
+  <a name="typecheck">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">typecheck</span>(self, signature=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L251">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.__add__">
+    
+  </a>
+  <a name="__add__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__add__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L254">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.get_refs">
+    
+  </a>
+  <a name="get_refs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_refs</span>(self, recursive=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L257">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.sem.drt.DRS.html">nltk.sem.drt.DRS</a></code>, <code><a href="nltk.sem.drt.DrtAbstractVariableExpression.html">nltk.sem.drt.DrtAbstractVariableExpression</a></code>, <code><a href="nltk.sem.drt.DrtApplicationExpression.html">nltk.sem.drt.DrtApplicationExpression</a></code>, <code><a href="nltk.sem.drt.DrtBinaryExpression.html">nltk.sem.drt.DrtBinaryExpression</a></code>, <code><a href="nltk.sem.drt.DrtNegatedExpression.html">nltk.sem.drt.DrtNegatedExpression</a></code>, <code><a href="nltk.sem.drt.DrtProposition.html">nltk.sem.drt.DrtProposition</a></code></div>
+    
+    <div><p class="pre">Return the set of discourse referents in this DRS.
+:param recursive: bool Also find discourse referents in subterms?
+:return: list of ``Variable`` objects</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.is_pronoun_function">
+    
+  </a>
+  <a name="is_pronoun_function">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_pronoun_function</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L265">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Is self of the form "PRO(x)"? </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.make_EqualityExpression">
+    
+  </a>
+  <a name="make_EqualityExpression">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">make_EqualityExpression</span>(self, first, second):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L274">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.make_VariableExpression">
+    
+  </a>
+  <a name="make_VariableExpression">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">make_VariableExpression</span>(self, variable):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L277">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.resolve_anaphora">
+    
+  </a>
+  <a name="resolve_anaphora">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">resolve_anaphora</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L280">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.eliminate_equality">
+    
+  </a>
+  <a name="eliminate_equality">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">eliminate_equality</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L283">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.sem.drt.DRS.html">nltk.sem.drt.DRS</a></code>, <code><a href="nltk.sem.drt.DrtAbstractVariableExpression.html">nltk.sem.drt.DrtAbstractVariableExpression</a></code>, <code><a href="nltk.sem.drt.DrtConcatenation.html">nltk.sem.drt.DrtConcatenation</a></code>, <code><a href="nltk.sem.drt.DrtProposition.html">nltk.sem.drt.DrtProposition</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.pretty_format">
+    
+  </a>
+  <a name="pretty_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pretty_format</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L286">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Draw the DRS
+:return: the pretty print string</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.pretty_print">
+    
+  </a>
+  <a name="pretty_print">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pretty_print</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L293">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.sem.drt.DrtExpression.draw">
+    
+  </a>
+  <a name="draw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">draw</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/drt.py#L296">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

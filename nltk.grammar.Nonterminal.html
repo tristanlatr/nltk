@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.grammar.Nonterminal : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.grammar.html">grammar</a></code>.<code><a href="nltk.grammar.Nonterminal.html">Nonterminal</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Nonterminal</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L86">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.grammar.FeatStructNonterminal.html">nltk.grammar.FeatStructNonterminal</a></code></p>
+        <p><a href="classIndex.html#nltk.grammar.Nonterminal">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A non-terminal symbol for a context free grammar.  ``Nonterminal``
+is a wrapper class for node values; it is used by ``Production``
+objects to distinguish node values from leaf values.
+The node value that is wrapped by a ``Nonterminal`` is known as its
+"symbol".  Symbols are typically strings representing phrasal
+categories (such as ``"NP"`` or ``"VP"``).  However, more complex
+symbol types are sometimes used (e.g., for lexicalized grammars).
+Since symbols are node values, they must be immutable and
+hashable.  Two ``Nonterminals`` are considered equal if their
+symbols are equal.
+
+:see: ``CFG``, ``Production``
+:type _symbol: any
+:ivar _symbol: The node value corresponding to this
+    ``Nonterminal``.  This value must be immutable and hashable.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id640">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a new non-terminal from the given symbol.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#symbol">symbol</a></code></td>
+    <td><span>Return the node value corresponding to this ``Nonterminal``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
+    <td><span>Return True if this non-terminal is equal to ``other``.  In particular, return True if ``other`` is a ``Nonterminal`` and this non-terminal's symbol is equal to ``other`` 's symbol.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__ne__">__ne__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__lt__">__lt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__hash__">__hash__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span>Return a string representation for this ``Nonterminal``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td><span>Return a string representation for this ``Nonterminal``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__div__">__div__</a></code></td>
+    <td><span>Return a new nonterminal whose symbol is ``A/B``, where ``A`` is the symbol for this nonterminal, and ``B`` is the symbol for rhs.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__truediv__">__truediv__</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_symbol">_symbol</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, symbol):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L106">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a new non-terminal from the given symbol.
+
+:type symbol: any
+:param symbol: The node value corresponding to this
+    ``Nonterminal``.  This value must be immutable and
+    hashable.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.grammar.Nonterminal._symbol">
+    
+  </a>
+  <a name="_symbol">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_symbol</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L115">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.symbol">
+    
+  </a>
+  <a name="symbol">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">symbol</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L117">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.FeatStructNonterminal.html">nltk.grammar.FeatStructNonterminal</a></code></div>
+    
+    <div><p class="pre">Return the node value corresponding to this ``Nonterminal``.
+
+:rtype: (any)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L125">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return True if this non-terminal is equal to ``other``.  In
+particular, return True if ``other`` is a ``Nonterminal``
+and this non-terminal's symbol is equal to ``other`` 's symbol.
+
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__ne__">
+    
+  </a>
+  <a name="__ne__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L135">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__lt__">
+    
+  </a>
+  <a name="__lt__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L138">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__hash__">
+    
+  </a>
+  <a name="__hash__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L143">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.FeatStructNonterminal.html">nltk.grammar.FeatStructNonterminal</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L146">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a string representation for this ``Nonterminal``.
+
+:rtype: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L157">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a string representation for this ``Nonterminal``.
+
+:rtype: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__div__">
+    
+  </a>
+  <a name="__div__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__div__</span>(self, rhs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L168">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a new nonterminal whose symbol is ``A/B``, where ``A`` is
+the symbol for this nonterminal, and ``B`` is the symbol for rhs.
+
+:param rhs: The nonterminal used to form the right hand side
+    of the new nonterminal.
+:type rhs: Nonterminal
+:rtype: Nonterminal</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.grammar.Nonterminal.__truediv__">
+    
+  </a>
+  <a name="__truediv__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__truediv__</span>(self, rhs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/grammar.py#L180">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a new nonterminal whose symbol is ``A/B``, where ``A`` is
+the symbol for this nonterminal, and ``B`` is the symbol for rhs.
+This function allows use of the slash ``/`` operator with
+the future import of division.
+
+:param rhs: The nonterminal used to form the right hand side
+    of the new nonterminal.
+:type rhs: Nonterminal
+:rtype: Nonterminal</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

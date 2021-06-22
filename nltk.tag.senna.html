@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tag.senna : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tag.html">tag</a></code>.<code><a href="nltk.tag.senna.html">senna</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/senna.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Senna POS tagger, NER Tagger, Chunk Tagger
+
+The input is:
+- path to the directory that contains SENNA executables. If the path is incorrect,
+   SennaTagger will automatically search for executable file specified in SENNA environment variable
+- (optionally) the encoding of the input data (default:utf-8)
+
+Note: Unit tests for this module can be found in test/unit/test_senna.py
+
+    &gt;&gt;&gt; from nltk.tag import SennaTagger
+    &gt;&gt;&gt; tagger = SennaTagger('/usr/share/senna-v3.0')
+    &gt;&gt;&gt; tagger.tag('What is the airspeed of an unladen swallow ?'.split()) # doctest: +SKIP
+    [('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'),
+    ('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'NN'), ('?', '.')]
+
+    &gt;&gt;&gt; from nltk.tag import SennaChunkTagger
+    &gt;&gt;&gt; chktagger = SennaChunkTagger('/usr/share/senna-v3.0')
+    &gt;&gt;&gt; chktagger.tag('What is the airspeed of an unladen swallow ?'.split()) # doctest: +SKIP
+    [('What', 'B-NP'), ('is', 'B-VP'), ('the', 'B-NP'), ('airspeed', 'I-NP'),
+    ('of', 'B-PP'), ('an', 'B-NP'), ('unladen', 'I-NP'), ('swallow', 'I-NP'),
+    ('?', 'O')]
+
+    &gt;&gt;&gt; from nltk.tag import SennaNERTagger
+    &gt;&gt;&gt; nertagger = SennaNERTagger('/usr/share/senna-v3.0')
+    &gt;&gt;&gt; nertagger.tag('Shakespeare theatre was in London .'.split()) # doctest: +SKIP
+    [('Shakespeare', 'B-PER'), ('theatre', 'O'), ('was', 'O'), ('in', 'O'),
+    ('London', 'B-LOC'), ('.', 'O')]
+    &gt;&gt;&gt; nertagger.tag('UN headquarters are in NY , USA .'.split()) # doctest: +SKIP
+    [('UN', 'B-ORG'), ('headquarters', 'O'), ('are', 'O'), ('in', 'O'),
+    ('NY', 'B-LOC'), (',', 'O'), ('USA', 'B-LOC'), ('.', 'O')]</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1562">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.tag.senna.SennaTagger.html">SennaTagger</a></code></td>
+    <td><span class="undocumented">No class docstring; 1/2 methods documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.tag.senna.SennaChunkTagger.html">SennaChunkTagger</a></code></td>
+    <td><span class="undocumented">No class docstring; 2/3 methods documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.tag.senna.SennaNERTagger.html">SennaNERTagger</a></code></td>
+    <td><span class="undocumented">No class docstring; 1/2 methods documented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#setup_module">setup_module</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.tag.senna.setup_module">
+    
+  </a>
+  <a name="setup_module">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup_module</span>(module):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/senna.py#L141">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

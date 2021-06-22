@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tbl.feature.Feature : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tbl.html">tbl</a></code>.<code><a href="nltk.tbl.feature.html">feature</a></code>.<code><a href="nltk.tbl.feature.Feature.html">Feature</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Feature</span>: <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L14">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.tbl.feature.Feature">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">An abstract base class for Features. A Feature is a combination of
+a specific property-computing method and a list of relative positions
+to apply that method to.
+
+The property-computing method, M{extract_property(tokens, index)},
+must be implemented by every subclass. It extracts or computes a specific
+property for the token at the current index. Typical extract_property()
+methods return features such as the token text or tag; but more involved
+methods may consider the entire sequence M{tokens} and
+for instance compute the length of the sentence the token belongs to.
+
+In addition, the subclass may have a PROPERTY_NAME, which is how
+it will be printed (in Rules and Templates, etc). If not given, defaults
+to the classname.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1627">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#json_tag">json_tag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#PROPERTY_NAME">PROPERTY_NAME</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a Feature which may apply at C{positions}.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#positions">positions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#encode_json_obj">encode_json_obj</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#decode_json_obj">decode_json_obj</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#expand">expand</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#issuperset">issuperset</a></code></td>
+    <td><span>Return True if this Feature always returns True when other does</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#intersects">intersects</a></code></td>
+    <td><span>Return True if the positions of this Feature intersects with those of other</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__lt__">__lt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__ne__">__ne__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__gt__">__gt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__ge__">__ge__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__le__">__le__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#extract_property">extract_property</a></code></td>
+    <td><span>Any subclass of Feature must define static method extract_property(tokens, index)</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="nltk.tbl.feature.Feature.json_tag">
+    
+  </a>
+  <a name="json_tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">json_tag</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L33">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tbl.feature.Feature.PROPERTY_NAME">
+    
+  </a>
+  <a name="PROPERTY_NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PROPERTY_NAME</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L34">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, positions, end=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L36">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a Feature which may apply at C{positions}.
+
+#For instance, importing some concrete subclasses (Feature is abstract)
+&gt;&gt;&gt; from nltk.tag.brill import Word, Pos
+
+#Feature Word, applying at one of [-2, -1]
+&gt;&gt;&gt; Word([-2,-1])
+Word([-2, -1])
+
+#Positions need not be contiguous
+&gt;&gt;&gt; Word([-2,-1, 1])
+Word([-2, -1, 1])
+
+#Contiguous ranges can alternatively be specified giving the
+#two endpoints (inclusive)
+&gt;&gt;&gt; Pos(-3, -1)
+Pos([-3, -2, -1])
+
+#In two-arg form, start &lt;= end is enforced
+&gt;&gt;&gt; Pos(2, 1)
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+  File "nltk/tbl/template.py", line 306, in __init__
+    raise TypeError
+ValueError: illegal interval specification: (start=2, end=1)
+
+:type positions: list of int
+:param positions: the positions at which this features should apply
+:raises ValueError: illegal position specifications
+
+An alternative calling convention, for contiguous positions only,
+is Feature(start, end):
+
+:type start: int
+:param start: start of range where this feature should apply
+:type end: int
+:param end: end of range (NOTE: inclusive!) where this feature should apply</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tbl.feature.Feature.positions">
+    
+  </a>
+  <a name="positions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">positions</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.encode_json_obj">
+    
+  </a>
+  <a name="encode_json_obj">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">encode_json_obj</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L96">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="nltk.tbl.feature.Feature.decode_json_obj">
+    
+  </a>
+  <a name="decode_json_obj">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">decode_json_obj</span>(cls, obj):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L99">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L104">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="nltk.tbl.feature.Feature.expand">
+    
+  </a>
+  <a name="expand">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">expand</span>(cls, starts, winlens, excludezero=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L107">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a list of features, one for each start point in starts
+and for each window length in winlen. If excludezero is True,
+no Features containing 0 in its positions will be generated
+(many tbl trainers have a special representation for the
+target feature at [0])
+
+For instance, importing a concrete subclass (Feature is abstract)
+&gt;&gt;&gt; from nltk.tag.brill import Word
+
+First argument gives the possible start positions, second the
+possible window lengths
+&gt;&gt;&gt; Word.expand([-3,-2,-1], [1])
+[Word([-3]), Word([-2]), Word([-1])]
+
+&gt;&gt;&gt; Word.expand([-2,-1], [1])
+[Word([-2]), Word([-1])]
+
+&gt;&gt;&gt; Word.expand([-3,-2,-1], [1,2])
+[Word([-3]), Word([-2]), Word([-1]), Word([-3, -2]), Word([-2, -1])]
+
+&gt;&gt;&gt; Word.expand([-2,-1], [1])
+[Word([-2]), Word([-1])]
+
+a third optional argument excludes all Features whose positions contain zero
+&gt;&gt;&gt; Word.expand([-2,-1,0], [1,2], excludezero=False)
+[Word([-2]), Word([-1]), Word([0]), Word([-2, -1]), Word([-1, 0])]
+
+&gt;&gt;&gt; Word.expand([-2,-1,0], [1,2], excludezero=True)
+[Word([-2]), Word([-1]), Word([-2, -1])]
+
+All window lengths must be positive
+&gt;&gt;&gt; Word.expand([-2,-1], [0])
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+  File "nltk/tag/tbl/template.py", line 371, in expand
+    :param starts: where to start looking for Feature
+ValueError: non-positive window length in [0]
+
+:param starts: where to start looking for Feature
+:type starts: list of ints
+:param winlens: window lengths where to look for Feature
+:type starts: list of ints
+:param excludezero: do not output any Feature with 0 in any of its positions.
+:type excludezero: bool
+:returns: list of Features
+:raises ValueError: for non-positive window lengths</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.issuperset">
+    
+  </a>
+  <a name="issuperset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">issuperset</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L162">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return True if this Feature always returns True when other does
+
+More precisely, return True if this feature refers to the same property as other;
+and this Feature looks at all positions that other does (and possibly
+other positions in addition).
+
+#For instance, importing a concrete subclass (Feature is abstract)
+&gt;&gt;&gt; from nltk.tag.brill import Word, Pos
+
+&gt;&gt;&gt; Word([-3,-2,-1]).issuperset(Word([-3,-2]))
+True
+
+&gt;&gt;&gt; Word([-3,-2,-1]).issuperset(Word([-3,-2, 0]))
+False
+
+#Feature subclasses must agree
+&gt;&gt;&gt; Word([-3,-2,-1]).issuperset(Pos([-3,-2]))
+False
+
+:param other: feature with which to compare
+:type other: (subclass of) Feature
+:return: True if this feature is superset, otherwise False
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.intersects">
+    
+  </a>
+  <a name="intersects">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">intersects</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return True if the positions of this Feature intersects with those of other
+
+More precisely, return True if this feature refers to the same property as other;
+and there is some overlap in the positions they look at.
+
+#For instance, importing a concrete subclass (Feature is abstract)
+&gt;&gt;&gt; from nltk.tag.brill import Word, Pos
+
+&gt;&gt;&gt; Word([-3,-2,-1]).intersects(Word([-3,-2]))
+True
+
+&gt;&gt;&gt; Word([-3,-2,-1]).intersects(Word([-3,-2, 0]))
+True
+
+&gt;&gt;&gt; Word([-3,-2,-1]).intersects(Word([0]))
+False
+
+#Feature subclasses must agree
+&gt;&gt;&gt; Word([-3,-2,-1]).intersects(Pos([-3,-2]))
+False
+
+:param other: feature with which to compare
+:type other: (subclass of) Feature
+:return: True if feature classes agree and there is some overlap in the positions they look at
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L232">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.__lt__">
+    
+  </a>
+  <a name="__lt__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L235">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.__ne__">
+    
+  </a>
+  <a name="__ne__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L243">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.__gt__">
+    
+  </a>
+  <a name="__gt__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__gt__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L246">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.__ge__">
+    
+  </a>
+  <a name="__ge__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__ge__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L249">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.feature.Feature.__le__">
+    
+  </a>
+  <a name="__le__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__le__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L252">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="nltk.tbl.feature.Feature.extract_property">
+    
+  </a>
+  <a name="extract_property">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />@abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">extract_property</span>(tokens, index):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/feature.py#L255">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Any subclass of Feature must define static method extract_property(tokens, index)
+
+:param tokens: the sequence of tokens
+:type tokens: list of tokens
+:param index: the current index
+:type index: int
+:return: feature value
+:rtype: any (but usually scalar)</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

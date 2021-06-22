@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.parse.nonprojectivedependencyparser.DependencyScorerI : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.parse.html">parse</a></code>.<code><a href="nltk.parse.nonprojectivedependencyparser.html">nonprojectivedependencyparser</a></code>.<code><a href="nltk.parse.nonprojectivedependencyparser.DependencyScorerI.html">DependencyScorerI</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DependencyScorerI</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L22">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.nonprojectivedependencyparser.DemoScorer.html">nltk.parse.nonprojectivedependencyparser.DemoScorer</a></code>, <code><a href="nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer.html">nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer</a></code></p>
+        <p><a href="classIndex.html#nltk.parse.nonprojectivedependencyparser.DependencyScorerI">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A scorer for calculated the weights on the edges of a weighted
+dependency graph.  This is used by a
+``ProbabilisticNonprojectiveParser`` to initialize the edge
+weights of a ``DependencyGraph``.  While typically this would be done
+by training a binary classifier, any class that can return a
+multidimensional list representation of the edge weights can
+implement this interface.  As such, it has no necessary
+fields.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1052">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#train">train</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#score">score</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.DependencyScorerI.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L34">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer.html">nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.DependencyScorerI.train">
+    
+  </a>
+  <a name="train">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, graphs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L38">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.parse.nonprojectivedependencyparser.DemoScorer.html">nltk.parse.nonprojectivedependencyparser.DemoScorer</a></code>, <code><a href="nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer.html">nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer</a></code></div>
+    
+    <div><p class="pre">:type graphs: list(DependencyGraph)
+:param graphs: A list of dependency graphs to train the scorer.
+Typically the edges present in the graphs can be used as
+positive training examples, and the edges not present as negative
+examples.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.DependencyScorerI.score">
+    
+  </a>
+  <a name="score">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">score</span>(self, graph):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L48">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.parse.nonprojectivedependencyparser.DemoScorer.html">nltk.parse.nonprojectivedependencyparser.DemoScorer</a></code>, <code><a href="nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer.html">nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer</a></code></div>
+    
+    <div><p class="pre">:type graph: DependencyGraph
+:param graph: A dependency graph whose set of edges need to be
+scored.
+:rtype: A three-dimensional list of numbers.
+:return: The score is returned in a multidimensional(3) list, such
+that the outer-dimension refers to the head, and the
+inner-dimension refers to the dependencies.  For instance,
+scores[0][1] would reference the list of scores corresponding to
+arcs from node 0 to node 1.  The node's 'address' field can be used
+to determine its number identification.
+
+For further illustration, a score list corresponding to Fig.2 of
+Keith Hall's 'K-best Spanning Tree Parsing' paper:
+      scores = [[[], [5],  [1],  [1]],
+               [[], [],   [11], [4]],
+               [[], [10], [],   [5]],
+               [[], [8],  [8],  []]]
+When used in conjunction with a MaxEntClassifier, each score would
+correspond to the confidence of a particular edge being classified
+with the positive training examples.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.test.unit.test_tgrep.TestSequenceFunctions : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.test.html">test</a></code>.<code><a href="nltk.test.unit.html">unit</a></code>.<code><a href="nltk.test.unit.test_tgrep.html">test_tgrep</a></code>.<code><a href="nltk.test.unit.test_tgrep.TestSequenceFunctions.html">TestSequenceFunctions</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TestSequenceFunctions</span>(<a href="https://docs.python.org/3/library/unittest.html#unittest.TestCase" title="unittest.TestCase">unittest.TestCase</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L22">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.test.unit.test_tgrep.TestSequenceFunctions">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Class containing unit tests for nltk.tgrep.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1726">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_simple">test_tokenize_simple</a></code></td>
+    <td><span>Simple test of tokenization.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_encoding">test_tokenize_encoding</a></code></td>
+    <td><span>Test that tokenization handles bytes and strs the same way.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_link_types">test_tokenize_link_types</a></code></td>
+    <td><span>Test tokenization of basic link types.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_examples">test_tokenize_examples</a></code></td>
+    <td><span>Test tokenization of the TGrep2 manual example patterns.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_quoting">test_tokenize_quoting</a></code></td>
+    <td><span>Test tokenization of quoting.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_nodenames">test_tokenize_nodenames</a></code></td>
+    <td><span>Test tokenization of node names.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_macros">test_tokenize_macros</a></code></td>
+    <td><span>Test tokenization of macro definitions.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_simple">test_node_simple</a></code></td>
+    <td><span>Test a simple use of tgrep for finding nodes matching a given pattern.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_printing">test_node_printing</a></code></td>
+    <td><span>Test that the tgrep print operator ' is properly ignored.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_encoding">test_node_encoding</a></code></td>
+    <td><span>Test that tgrep search strings handles bytes and strs the same way.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_nocase">test_node_nocase</a></code></td>
+    <td><span>Test selecting nodes using case insensitive node names.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_quoted">test_node_quoted</a></code></td>
+    <td><span>Test selecting nodes using quoted node names.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_regex">test_node_regex</a></code></td>
+    <td><span>Test regex matching on nodes.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_regex_2">test_node_regex_2</a></code></td>
+    <td><span>Test regex matching on nodes.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_tree_position">test_node_tree_position</a></code></td>
+    <td><span>Test matching on nodes based on NLTK tree position.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_node_noleaves">test_node_noleaves</a></code></td>
+    <td><span>Test node name matching with the search_leaves flag set to False.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tests_rel_dominance">tests_rel_dominance</a></code></td>
+    <td><span>Test matching nodes based on dominance relations.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_bad_operator">test_bad_operator</a></code></td>
+    <td><span>Test error handling of undefined tgrep operators.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_comments">test_comments</a></code></td>
+    <td><span>Test that comments are correctly filtered out of tgrep search strings.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_rel_sister_nodes">test_rel_sister_nodes</a></code></td>
+    <td><span>Test matching sister nodes in a tree.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tests_rel_indexed_children">tests_rel_indexed_children</a></code></td>
+    <td><span>Test matching nodes based on their index in their parent node.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_rel_precedence">test_rel_precedence</a></code></td>
+    <td><span>Test matching nodes based on precedence relations.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_examples">test_examples</a></code></td>
+    <td><span>Test the Basic Examples from the TGrep2 manual.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_use_macros">test_use_macros</a></code></td>
+    <td><span>Test defining and using tgrep2 macros.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_node_labels">test_tokenize_node_labels</a></code></td>
+    <td><span>Test tokenization of labeled nodes.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_tokenize_segmented_patterns">test_tokenize_segmented_patterns</a></code></td>
+    <td><span>Test tokenization of segmented patterns.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_labeled_nodes">test_labeled_nodes</a></code></td>
+    <td><span>Test labeled nodes.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_multiple_conjs">test_multiple_conjs</a></code></td>
+    <td><span>Test that multiple (3 or more) conjunctions of node relations are handled properly.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_trailing_semicolon">test_trailing_semicolon</a></code></td>
+    <td><span>Test that semicolons at the end of a tgrep2 search string won't cause a parse failure.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_simple">
+    
+  </a>
+  <a name="test_tokenize_simple">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_simple</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L28">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Simple test of tokenization.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_encoding">
+    
+  </a>
+  <a name="test_tokenize_encoding">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_encoding</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L61">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test that tokenization handles bytes and strs the same way.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_link_types">
+    
+  </a>
+  <a name="test_tokenize_link_types">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_link_types</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L70">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test tokenization of basic link types.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_examples">
+    
+  </a>
+  <a name="test_tokenize_examples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_examples</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L137">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test tokenization of the TGrep2 manual example patterns.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_quoting">
+    
+  </a>
+  <a name="test_tokenize_quoting">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_quoting</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L175">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test tokenization of quoting.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_nodenames">
+    
+  </a>
+  <a name="test_tokenize_nodenames">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_nodenames</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L184">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test tokenization of node names.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_macros">
+    
+  </a>
+  <a name="test_tokenize_macros">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_macros</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L200">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test tokenization of macro definitions.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_simple">
+    
+  </a>
+  <a name="test_node_simple">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_simple</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L232">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test a simple use of tgrep for finding nodes matching a given
+pattern.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_printing">
+    
+  </a>
+  <a name="test_node_printing">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_printing</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L248">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test that the tgrep print operator ' is properly ignored.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_encoding">
+    
+  </a>
+  <a name="test_node_encoding">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_encoding</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L260">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test that tgrep search strings handles bytes and strs the same
+way.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_nocase">
+    
+  </a>
+  <a name="test_node_nocase">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_nocase</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L281">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test selecting nodes using case insensitive node names.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_quoted">
+    
+  </a>
+  <a name="test_node_quoted">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_quoted</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L289">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test selecting nodes using quoted node names.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_regex">
+    
+  </a>
+  <a name="test_node_regex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_regex</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L299">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test regex matching on nodes.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_regex_2">
+    
+  </a>
+  <a name="test_node_regex_2">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_regex_2</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L308">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test regex matching on nodes.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_tree_position">
+    
+  </a>
+  <a name="test_node_tree_position">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_tree_position</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L320">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test matching on nodes based on NLTK tree position.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_node_noleaves">
+    
+  </a>
+  <a name="test_node_noleaves">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_node_noleaves</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L336">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test node name matching with the search_leaves flag set to False.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.tests_rel_dominance">
+    
+  </a>
+  <a name="tests_rel_dominance">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tests_rel_dominance</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L346">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test matching nodes based on dominance relations.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_bad_operator">
+    
+  </a>
+  <a name="test_bad_operator">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_bad_operator</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L433">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test error handling of undefined tgrep operators.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_comments">
+    
+  </a>
+  <a name="test_comments">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_comments</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L442">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test that comments are correctly filtered out of tgrep search
+strings.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_rel_sister_nodes">
+    
+  </a>
+  <a name="test_rel_sister_nodes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_rel_sister_nodes</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L464">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test matching sister nodes in a tree.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.tests_rel_indexed_children">
+    
+  </a>
+  <a name="tests_rel_indexed_children">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tests_rel_indexed_children</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L475">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test matching nodes based on their index in their parent node.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_rel_precedence">
+    
+  </a>
+  <a name="test_rel_precedence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_rel_precedence</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L500">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test matching nodes based on precedence relations.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_examples">
+    
+  </a>
+  <a name="test_examples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_examples</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L539">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test the Basic Examples from the TGrep2 manual.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_use_macros">
+    
+  </a>
+  <a name="test_use_macros">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_use_macros</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L618">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test defining and using tgrep2 macros.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_node_labels">
+    
+  </a>
+  <a name="test_tokenize_node_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_node_labels</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L644">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test tokenization of labeled nodes.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_tokenize_segmented_patterns">
+    
+  </a>
+  <a name="test_tokenize_segmented_patterns">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_tokenize_segmented_patterns</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L687">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test tokenization of segmented patterns.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_labeled_nodes">
+    
+  </a>
+  <a name="test_labeled_nodes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_labeled_nodes</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L716">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test labeled nodes.
+
+Test case from Emily M. Bender.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_multiple_conjs">
+    
+  </a>
+  <a name="test_multiple_conjs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_multiple_conjs</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L756">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test that multiple (3 or more) conjunctions of node relations are
+handled properly.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.test.unit.test_tgrep.TestSequenceFunctions.test_trailing_semicolon">
+    
+  </a>
+  <a name="test_trailing_semicolon">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_trailing_semicolon</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/test/unit/test_tgrep.py#L771">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Test that semicolons at the end of a tgrep2 search string won't
+cause a parse failure.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.sem.logic : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.sem.html">sem</a></code>.<code><a href="nltk.sem.logic.html">logic</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A version of first order predicate logic, built on
+top of the typed lambda calculus.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1356">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#APP">APP</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.Tokens.html">Tokens</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#boolean_ops">boolean_ops</a></code></td>
+    <td><span>Boolean operators</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#equality_preds">equality_preds</a></code></td>
+    <td><span>Equality predicates</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#binding_ops">binding_ops</a></code></td>
+    <td><span>Binding operators</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.LogicParser.html">LogicParser</a></code></td>
+    <td><span>A lambda calculus expression parser.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_logic">read_logic</a></code></td>
+    <td><span>Convert a file of First Order Formulas into a list of {Expression}s.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.Variable.html">Variable</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/1 instance variables, 1/8 methods documented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#unique_variable">unique_variable</a></code></td>
+    <td><span>Return a new, unique variable.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#skolem_function">skolem_function</a></code></td>
+    <td><span>Return a skolem function over the variables in univ_scope param univ_scope</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.Type.html">Type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.ComplexType.html">ComplexType</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.BasicType.html">BasicType</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.EntityType.html">EntityType</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.TruthValueType.html">TruthValueType</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.EventType.html">EventType</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.AnyType.html">AnyType</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TRUTH_TYPE">TRUTH_TYPE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ENTITY_TYPE">ENTITY_TYPE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#EVENT_TYPE">EVENT_TYPE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ANY_TYPE">ANY_TYPE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_type">read_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.TypeException.html">TypeException</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.InconsistentTypeHierarchyException.html">InconsistentTypeHierarchyException</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.TypeResolutionException.html">TypeResolutionException</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.IllegalTypeException.html">IllegalTypeException</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#typecheck">typecheck</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.SubstituteBindingsI.html">SubstituteBindingsI</a></code></td>
+    <td><span>An interface for classes that can perform substitutions for variables.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.Expression.html">Expression</a></code></td>
+    <td><span>This is the base abstract object for all logical expressions</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.ApplicationExpression.html">ApplicationExpression</a></code></td>
+    <td><span>This class is used to represent two related types of logical expressions.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.AbstractVariableExpression.html">AbstractVariableExpression</a></code></td>
+    <td><span>This class represents a variable to be used as a predicate or entity</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.IndividualVariableExpression.html">IndividualVariableExpression</a></code></td>
+    <td><span>This class represents variables that take the form of a single lowercase character (other than 'e') followed by zero or more digits.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.FunctionVariableExpression.html">FunctionVariableExpression</a></code></td>
+    <td><span>This class represents variables that take the form of a single uppercase character followed by zero or more digits.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.EventVariableExpression.html">EventVariableExpression</a></code></td>
+    <td><span>This class represents variables that take the form of a single lowercase 'e' character followed by zero or more digits.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.ConstantExpression.html">ConstantExpression</a></code></td>
+    <td><span>This class represents variables that do not take the form of a single character followed by zero or more digits.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#VariableExpression">VariableExpression</a></code></td>
+    <td><span>This is a factory method that instantiates and returns a subtype of ``AbstractVariableExpression`` appropriate for the given variable.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.VariableBinderExpression.html">VariableBinderExpression</a></code></td>
+    <td><span>This an abstract class for any Expression that binds a variable in an Expression.  This includes LambdaExpressions and Quantified Expressions</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.LambdaExpression.html">LambdaExpression</a></code></td>
+    <td><span class="undocumented">No class docstring; 1/2 methods, 0/1 propertys documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.QuantifiedExpression.html">QuantifiedExpression</a></code></td>
+    <td><span class="undocumented">No class docstring; 1/2 methods, 0/1 propertys documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.ExistsExpression.html">ExistsExpression</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.AllExpression.html">AllExpression</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.NegatedExpression.html">NegatedExpression</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/1 instance variables, 3/8 methods, 0/1 propertys documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.BinaryExpression.html">BinaryExpression</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/2 instance variables, 2/7 methods, 0/1 propertys documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.BooleanExpression.html">BooleanExpression</a></code></td>
+    <td><span class="undocumented">No class docstring; 1/1 methods documented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.AndExpression.html">AndExpression</a></code></td>
+    <td><span>This class represents conjunctions</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.OrExpression.html">OrExpression</a></code></td>
+    <td><span>This class represents disjunctions</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.ImpExpression.html">ImpExpression</a></code></td>
+    <td><span>This class represents implications</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.IffExpression.html">IffExpression</a></code></td>
+    <td><span>This class represents biconditionals</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.EqualityExpression.html">EqualityExpression</a></code></td>
+    <td><span>This class represents equality expressions like "(x = y)".</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.LogicalExpressionException.html">LogicalExpressionException</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.UnexpectedTokenException.html">UnexpectedTokenException</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.logic.ExpectedMoreTokensException.html">ExpectedMoreTokensException</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_indvar">is_indvar</a></code></td>
+    <td><span>An individual variable must be a single lowercase character other than 'e', followed by zero or more digits.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_funcvar">is_funcvar</a></code></td>
+    <td><span>A function variable must be a single uppercase character followed by zero or more digits.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_eventvar">is_eventvar</a></code></td>
+    <td><span>An event variable must be a single lowercase 'e' character followed by zero or more digits.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo">demo</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_errors">demo_errors</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demoException">demoException</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#printtype">printtype</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_counter">_counter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="nltk.sem.logic.APP">
+    
+  </a>
+  <a name="APP">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">APP</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L22">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.sem.logic._counter">
+    
+  </a>
+  <a name="_counter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_counter</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L24">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.boolean_ops">
+    
+  </a>
+  <a name="boolean_ops">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">boolean_ops</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L70">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Boolean operators</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.equality_preds">
+    
+  </a>
+  <a name="equality_preds">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">equality_preds</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Equality predicates</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.binding_ops">
+    
+  </a>
+  <a name="binding_ops">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">binding_ops</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L88">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Binding operators</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.read_logic">
+    
+  </a>
+  <a name="read_logic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_logic</span>(s, logic_parser=None, encoding=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L586">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Convert a file of First Order Formulas into a list of {Expression}s.
+
+:param s: the contents of the file
+:type s: str
+:param logic_parser: The parser to be used to parse the logical expression
+:type logic_parser: LogicParser
+:param encoding: the encoding of the input string, if it is binary
+:type encoding: str
+:return: a list of parsed formulas.
+:rtype: list(Expression)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.unique_variable">
+    
+  </a>
+  <a name="unique_variable">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unique_variable</span>(pattern=None, ignore=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L649">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a new, unique variable.
+
+:param pattern: ``Variable`` that is being replaced.  The new variable must
+    be the same type.
+:param term: a set of ``Variable`` objects that should not be returned from
+    this function.
+:rtype: Variable</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.skolem_function">
+    
+  </a>
+  <a name="skolem_function">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">skolem_function</span>(univ_scope=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L677">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a skolem function over the variables in univ_scope
+param univ_scope</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.sem.logic.TRUTH_TYPE">
+    
+  </a>
+  <a name="TRUTH_TYPE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TRUTH_TYPE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L830">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.sem.logic.ENTITY_TYPE">
+    
+  </a>
+  <a name="ENTITY_TYPE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ENTITY_TYPE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L831">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.sem.logic.EVENT_TYPE">
+    
+  </a>
+  <a name="EVENT_TYPE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">EVENT_TYPE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L832">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.sem.logic.ANY_TYPE">
+    
+  </a>
+  <a name="ANY_TYPE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ANY_TYPE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L833">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.read_type">
+    
+  </a>
+  <a name="read_type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_type</span>(type_string):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L836">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.typecheck">
+    
+  </a>
+  <a name="typecheck">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">typecheck</span>(expressions, signature=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L903">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Ensure correct typing across a collection of ``Expression`` objects.
+:param expressions: a collection of expressions
+:param signature: dict that maps variable names to types (or string
+representations of types)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.VariableExpression">
+    
+  </a>
+  <a name="VariableExpression">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">VariableExpression</span>(variable):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L1577">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This is a factory method that instantiates and returns a subtype of
+``AbstractVariableExpression`` appropriate for the given variable.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.is_indvar">
+    
+  </a>
+  <a name="is_indvar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_indvar</span>(expr):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L1956">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">An individual variable must be a single lowercase character other than 'e',
+followed by zero or more digits.
+
+:param expr: str
+:return: bool True if expr is of the correct form</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.is_funcvar">
+    
+  </a>
+  <a name="is_funcvar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_funcvar</span>(expr):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L1968">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">A function variable must be a single uppercase character followed by
+zero or more digits.
+
+:param expr: str
+:return: bool True if expr is of the correct form</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.is_eventvar">
+    
+  </a>
+  <a name="is_eventvar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_eventvar</span>(expr):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L1980">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">An event variable must be a single lowercase 'e' character followed by
+zero or more digits.
+
+:param expr: str
+:return: bool True if expr is of the correct form</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.demo">
+    
+  </a>
+  <a name="demo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L1992">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.demo_errors">
+    
+  </a>
+  <a name="demo_errors">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_errors</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L2025">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.demoException">
+    
+  </a>
+  <a name="demoException">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demoException</span>(s):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L2042">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.logic.printtype">
+    
+  </a>
+  <a name="printtype">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">printtype</span>(ex):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/logic.py#L2049">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

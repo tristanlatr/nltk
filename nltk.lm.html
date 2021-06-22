@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.lm : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.lm.html">lm</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/__init__.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">NLTK Language Modeling Module.
+------------------------------
+
+Currently this module covers only ngram language models, but it should be easy
+to extend to neural models.
+
+
+Preparing Data
+==============
+
+Before we train our ngram models it is necessary to make sure the data we put in
+them is in the right format.
+Let's say we have a text that is a list of sentences, where each sentence is
+a list of strings. For simplicity we just consider a text consisting of
+characters instead of words.
+
+    &gt;&gt;&gt; text = [['a', 'b', 'c'], ['a', 'c', 'd', 'c', 'e', 'f']]
+
+If we want to train a bigram model, we need to turn this text into bigrams.
+Here's what the first sentence of our text would look like if we use a function
+from NLTK for this.
+
+    &gt;&gt;&gt; from nltk.util import bigrams
+    &gt;&gt;&gt; list(bigrams(text[0]))
+    [('a', 'b'), ('b', 'c')]
+
+Notice how "b" occurs both as the first and second member of different bigrams
+but "a" and "c" don't? Wouldn't it be nice to somehow indicate how often sentences
+start with "a" and end with "c"?
+A standard way to deal with this is to add special "padding" symbols to the
+sentence before splitting it into ngrams.
+Fortunately, NLTK also has a function for that, let's see what it does to the
+first sentence.
+
+    &gt;&gt;&gt; from nltk.util import pad_sequence
+    &gt;&gt;&gt; list(pad_sequence(text[0],
+    ... pad_left=True,
+    ... left_pad_symbol="&lt;s&gt;",
+    ... pad_right=True,
+    ... right_pad_symbol="&lt;/s&gt;",
+    ... n=2))
+    ['&lt;s&gt;', 'a', 'b', 'c', '&lt;/s&gt;']
+
+Note the `n` argument, that tells the function we need padding for bigrams.
+Now, passing all these parameters every time is tedious and in most cases they
+can be safely assumed as defaults anyway.
+Thus our module provides a convenience function that has all these arguments
+already set while the other arguments remain the same as for `pad_sequence`.
+
+    &gt;&gt;&gt; from nltk.lm.preprocessing import pad_both_ends
+    &gt;&gt;&gt; list(pad_both_ends(text[0], n=2))
+    ['&lt;s&gt;', 'a', 'b', 'c', '&lt;/s&gt;']
+
+Combining the two parts discussed so far we get the following preparation steps
+for one sentence.
+
+    &gt;&gt;&gt; list(bigrams(pad_both_ends(text[0], n=2)))
+    [('&lt;s&gt;', 'a'), ('a', 'b'), ('b', 'c'), ('c', '&lt;/s&gt;')]
+
+To make our model more robust we could also train it on unigrams (single words)
+as well as bigrams, its main source of information.
+NLTK once again helpfully provides a function called `everygrams`.
+While not the most efficient, it is conceptually simple.
+
+
+    &gt;&gt;&gt; from nltk.util import everygrams
+    &gt;&gt;&gt; padded_bigrams = list(pad_both_ends(text[0], n=2))
+    &gt;&gt;&gt; list(everygrams(padded_bigrams, max_len=2))
+    [('&lt;s&gt;',), ('&lt;s&gt;', 'a'), ('a',), ('a', 'b'), ('b',), ('b', 'c'), ('c',), ('c', '&lt;/s&gt;'), ('&lt;/s&gt;',)]
+
+We are almost ready to start counting ngrams, just one more step left.
+During training and evaluation our model will rely on a vocabulary that
+defines which words are "known" to the model.
+To create this vocabulary we need to pad our sentences (just like for counting
+ngrams) and then combine the sentences into one flat stream of words.
+
+    &gt;&gt;&gt; from nltk.lm.preprocessing import flatten
+    &gt;&gt;&gt; list(flatten(pad_both_ends(sent, n=2) for sent in text))
+    ['&lt;s&gt;', 'a', 'b', 'c', '&lt;/s&gt;', '&lt;s&gt;', 'a', 'c', 'd', 'c', 'e', 'f', '&lt;/s&gt;']
+
+In most cases we want to use the same text as the source for both vocabulary
+and ngram counts.
+Now that we understand what this means for our preprocessing, we can simply import
+a function that does everything for us.
+
+    &gt;&gt;&gt; from nltk.lm.preprocessing import padded_everygram_pipeline
+    &gt;&gt;&gt; train, vocab = padded_everygram_pipeline(2, text)
+
+So as to avoid re-creating the text in memory, both `train` and `vocab` are lazy
+iterators. They are evaluated on demand at training time.
+
+
+Training
+========
+Having prepared our data we are ready to start training a model.
+As a simple example, let us train a Maximum Likelihood Estimator (MLE).
+We only need to specify the highest ngram order to instantiate it.
+
+    &gt;&gt;&gt; from nltk.lm import MLE
+    &gt;&gt;&gt; lm = MLE(2)
+
+This automatically creates an empty vocabulary...
+
+    &gt;&gt;&gt; len(lm.vocab)
+    0
+
+... which gets filled as we fit the model.
+
+    &gt;&gt;&gt; lm.fit(train, vocab)
+    &gt;&gt;&gt; print(lm.vocab)
+    &lt;Vocabulary with cutoff=1 unk_label='&lt;UNK&gt;' and 9 items&gt;
+    &gt;&gt;&gt; len(lm.vocab)
+    9
+
+The vocabulary helps us handle words that have not occurred during training.
+
+    &gt;&gt;&gt; lm.vocab.lookup(text[0])
+    ('a', 'b', 'c')
+    &gt;&gt;&gt; lm.vocab.lookup(["aliens", "from", "Mars"])
+    ('&lt;UNK&gt;', '&lt;UNK&gt;', '&lt;UNK&gt;')
+
+Moreover, in some cases we want to ignore words that we did see during training
+but that didn't occur frequently enough, to provide us useful information.
+You can tell the vocabulary to ignore such words.
+To find out how that works, check out the docs for the `Vocabulary` class.
+
+
+Using a Trained Model
+=====================
+When it comes to ngram models the training boils down to counting up the ngrams
+from the training corpus.
+
+    &gt;&gt;&gt; print(lm.counts)
+    &lt;NgramCounter with 2 ngram orders and 24 ngrams&gt;
+
+This provides a convenient interface to access counts for unigrams...
+
+    &gt;&gt;&gt; lm.counts['a']
+    2
+
+...and bigrams (in this case "a b")
+
+    &gt;&gt;&gt; lm.counts[['a']]['b']
+    1
+
+And so on. However, the real purpose of training a language model is to have it
+score how probable words are in certain contexts.
+This being MLE, the model returns the item's relative frequency as its score.
+
+    &gt;&gt;&gt; lm.score("a")
+    0.15384615384615385
+
+Items that are not seen during training are mapped to the vocabulary's
+"unknown label" token. This is "&lt;UNK&gt;" by default.
+
+    &gt;&gt;&gt; lm.score("&lt;UNK&gt;") == lm.score("aliens")
+    True
+
+Here's how you get the score for a word given some preceding context.
+For example we want to know what is the chance that "b" is preceded by "a".
+
+    &gt;&gt;&gt; lm.score("b", ["a"])
+    0.5
+
+To avoid underflow when working with many small score values it makes sense to
+take their logarithm.
+For convenience this can be done with the `logscore` method.
+
+    &gt;&gt;&gt; lm.logscore("a")
+    -2.700439718141092
+
+Building on this method, we can also evaluate our model's cross-entropy and
+perplexity with respect to sequences of ngrams.
+
+    &gt;&gt;&gt; test = [('a', 'b'), ('c', 'd')]
+    &gt;&gt;&gt; lm.entropy(test)
+    1.292481250360578
+    &gt;&gt;&gt; lm.perplexity(test)
+    2.449489742783178
+
+It is advisable to preprocess your test text exactly the same way as you did
+the training text.
+
+One cool feature of ngram models is that they can be used to generate text.
+
+    &gt;&gt;&gt; lm.generate(1, random_seed=3)
+    '&lt;s&gt;'
+    &gt;&gt;&gt; lm.generate(5, random_seed=3)
+    ['&lt;s&gt;', 'a', 'b', 'c', 'd']
+
+Provide `random_seed` if you want to consistently reproduce the same text all
+other things being equal. Here we are using it to test the examples.
+
+You can also condition your generation on some preceding text with the `context`
+argument.
+
+    &gt;&gt;&gt; lm.generate(5, text_seed=['c'], random_seed=3)
+    ['&lt;/s&gt;', 'c', 'd', 'c', 'd']
+
+Note that an ngram model is restricted in how much preceding context it can
+take into account. For example, a trigram model can only condition its output
+on 2 preceding words. If you pass in a 4-word context, the first two words
+will be ignored.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id771">
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.lm.api.html">api</a></code></td>
+    <td><span>Language Model Interface.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.lm.counter.html">counter</a></code></td>
+    <td><span>Language Model Counter ----------------------</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.lm.models.html">models</a></code></td>
+    <td><span>Language Models</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.lm.preprocessing.html">preprocessing</a></code></td>
+    <td><span class="undocumented">No module docstring; 2/2 functions, 1/1 variables documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.lm.smoothing.html">smoothing</a></code></td>
+    <td><span>Smoothing algorithms for language modeling.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.lm.util.html">util</a></code></td>
+    <td><span>Language Model Utilities</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.lm.vocabulary.html">vocabulary</a></code></td>
+    <td><span>Language Model Vocabulary</span></td>
+  </tr>
+</table>
+        
+
+          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id772">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.lm.KneserNeyInterpolated.html">KneserNeyInterpolated</a></code></td>
+    <td><span>Interpolated version of Kneser-Ney smoothing.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.lm.Laplace.html">Laplace</a></code></td>
+    <td><span>Implements Laplace (add one) smoothing.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.lm.Lidstone.html">Lidstone</a></code></td>
+    <td><span>Provides Lidstone-smoothed scores.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.lm.MLE.html">MLE</a></code></td>
+    <td><span>Class for providing MLE ngram model scores.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.lm.NgramCounter.html">NgramCounter</a></code></td>
+    <td><span>Class for counting ngrams.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.lm.Vocabulary.html">Vocabulary</a></code></td>
+    <td><span>Stores language model vocabulary.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.lm.WittenBellInterpolated.html">WittenBellInterpolated</a></code></td>
+    <td><span>Interpolated version of Witten-Bell smoothing.</span></td>
+  </tr>
+</table>
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

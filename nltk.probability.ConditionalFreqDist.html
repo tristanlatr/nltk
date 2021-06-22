@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.probability.ConditionalFreqDist : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.probability.html">probability</a></code>.<code><a href="nltk.probability.ConditionalFreqDist.html">ConditionalFreqDist</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConditionalFreqDist</span>(<a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict">defaultdict</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1839">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.probability.ConditionalFreqDist">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A collection of frequency distributions for a single experiment
+run under different conditions.  Conditional frequency
+distributions are used to record the number of times each sample
+occurred, given the condition under which the experiment was run.
+For example, a conditional frequency distribution could be used to
+record the frequency of each word (type) in a document, given its
+length.  Formally, a conditional frequency distribution can be
+defined as a function that maps from each condition to the
+FreqDist for the experiment under that condition.
+
+Conditional frequency distributions are typically constructed by
+repeatedly running an experiment under a variety of conditions,
+and incrementing the sample outcome counts for the appropriate
+conditions.  For example, the following code will produce a
+conditional frequency distribution that encodes how often each
+word type occurs, given the length of that word type:
+
+    &gt;&gt;&gt; from nltk.probability import ConditionalFreqDist
+    &gt;&gt;&gt; from nltk.tokenize import word_tokenize
+    &gt;&gt;&gt; sent = "the the the dog dog some other words that we do not care about"
+    &gt;&gt;&gt; cfdist = ConditionalFreqDist()
+    &gt;&gt;&gt; for word in word_tokenize(sent):
+    ...     condition = len(word)
+    ...     cfdist[condition][word] += 1
+
+An equivalent way to do this is with the initializer:
+
+    &gt;&gt;&gt; cfdist = ConditionalFreqDist((len(word), word) for word in word_tokenize(sent))
+
+The frequency distribution for each condition is accessed using
+the indexing operator:
+
+    &gt;&gt;&gt; cfdist[3]
+    FreqDist({'the': 3, 'dog': 2, 'not': 1})
+    &gt;&gt;&gt; cfdist[3].freq('the')
+    0.5
+    &gt;&gt;&gt; cfdist[3]['dog']
+    2
+
+When the indexing operator is used to access the frequency
+distribution for a condition that has not been accessed before,
+``ConditionalFreqDist`` creates a new empty FreqDist for that
+condition.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1156">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a new empty conditional frequency distribution.  In particular, the count for every sample, under every condition, is zero.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__reduce__">__reduce__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#conditions">conditions</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#N">N</a></code></td>
+    <td><span>Return the total number of sample outcomes that have been recorded by this ``ConditionalFreqDist``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#plot">plot</a></code></td>
+    <td><span>Plot the given samples from the conditional frequency distribution. For a cumulative plot, specify cumulative=True. (Requires Matplotlib to be installed.)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tabulate">tabulate</a></code></td>
+    <td><span>Tabulate the given samples from the conditional frequency distribution.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__add__">__add__</a></code></td>
+    <td><span>Add counts from two ConditionalFreqDists.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__sub__">__sub__</a></code></td>
+    <td><span>Subtract count, but keep only results with positive counts.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__or__">__or__</a></code></td>
+    <td><span>Union is the maximum of value in either of the input counters.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__and__">__and__</a></code></td>
+    <td><span>Intersection is the minimum of corresponding counts.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__le__">__le__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__lt__">__lt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__ge__">__ge__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__gt__">__gt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span>Return a string representation of this ``ConditionalFreqDist``.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, cond_samples=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1887">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a new empty conditional frequency distribution.  In
+particular, the count for every sample, under every condition,
+is zero.
+
+:param cond_samples: The samples to initialize the conditional
+    frequency distribution with
+:type cond_samples: Sequence of (condition, sample) tuples</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__reduce__">
+    
+  </a>
+  <a name="__reduce__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__reduce__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1903">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.conditions">
+    
+  </a>
+  <a name="conditions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">conditions</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1907">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a list of the conditions that have been accessed for
+this ``ConditionalFreqDist``.  Use the indexing operator to
+access the frequency distribution for a given condition.
+Note that the frequency distributions for some conditions
+may contain zero sample outcomes.
+
+:rtype: list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.N">
+    
+  </a>
+  <a name="N">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">N</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1919">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the total number of sample outcomes that have been
+recorded by this ``ConditionalFreqDist``.
+
+:rtype: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot</span>(self, *args, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1928">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Plot the given samples from the conditional frequency distribution.
+For a cumulative plot, specify cumulative=True.
+(Requires Matplotlib to be installed.)
+
+:param samples: The samples to plot
+:type samples: list
+:param title: The title for the graph
+:type title: str
+:param conditions: The conditions to plot (default is all)
+:type conditions: list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.tabulate">
+    
+  </a>
+  <a name="tabulate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tabulate</span>(self, *args, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L1995">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Tabulate the given samples from the conditional frequency distribution.
+
+:param samples: The samples to plot
+:type samples: list
+:param conditions: The conditions to plot (default is all)
+:type conditions: list
+:param cumulative: A flag to specify whether the freqs are cumulative (default = False)
+:type title: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__add__">
+    
+  </a>
+  <a name="__add__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__add__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2037">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Add counts from two ConditionalFreqDists.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__sub__">
+    
+  </a>
+  <a name="__sub__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__sub__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2055">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Subtract count, but keep only results with positive counts.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__or__">
+    
+  </a>
+  <a name="__or__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__or__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2073">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Union is the maximum of value in either of the input counters.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__and__">
+    
+  </a>
+  <a name="__and__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__and__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2091">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Intersection is the minimum of corresponding counts.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__le__">
+    
+  </a>
+  <a name="__le__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__le__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2105">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__lt__">
+    
+  </a>
+  <a name="__lt__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2112">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__ge__">
+    
+  </a>
+  <a name="__ge__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__ge__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2117">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__gt__">
+    
+  </a>
+  <a name="__gt__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__gt__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalFreqDist.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2127">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a string representation of this ``ConditionalFreqDist``.
+
+:rtype: str</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

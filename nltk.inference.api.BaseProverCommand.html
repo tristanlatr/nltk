@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.inference.api.BaseProverCommand : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.inference.html">inference</a></code>.<code><a href="nltk.inference.api.html">api</a></code>.<code><a href="nltk.inference.api.BaseProverCommand.html">BaseProverCommand</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BaseProverCommand</span>(<a href="nltk.inference.api.BaseTheoremToolCommand.html" title="nltk.inference.api.BaseTheoremToolCommand">BaseTheoremToolCommand</a>, <a href="nltk.inference.api.ProverCommand.html" title="nltk.inference.api.ProverCommand">ProverCommand</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L260">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.inference.api.ParallelProverBuilderCommand.html">nltk.inference.api.ParallelProverBuilderCommand</a></code>, <code><a href="nltk.inference.prover9.Prover9Command.html">nltk.inference.prover9.Prover9Command</a></code>, <code><a href="nltk.inference.resolution.ResolutionProverCommand.html">nltk.inference.resolution.ResolutionProverCommand</a></code>, <code><a href="nltk.inference.tableau.TableauProverCommand.html">nltk.inference.tableau.TableauProverCommand</a></code></p>
+        <p><a href="classIndex.html#nltk.inference.api.BaseProverCommand">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">This class holds a ``Prover``, a goal, and a list of assumptions.  When
+prove() is called, the ``Prover`` is executed with the goal and assumptions.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id671">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>:param prover: The theorem tool to execute with the assumptions :type prover: Prover :see: ``BaseTheoremToolCommand``</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prove">prove</a></code></td>
+    <td><span>Perform the actual proof.  Store the result to prevent unnecessary re-proving.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#proof">proof</a></code></td>
+    <td><span>Return the proof string :param simplify: bool simplify the proof? :return: str</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#decorate_proof">decorate_proof</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_prover">get_prover</a></code></td>
+    <td><span>Return the prover object :return: ``Prover``</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_prover">_prover</a></code></td>
+    <td><span>The theorem tool to execute with the assumptions</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_proof">_proof</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_result">_result</a></code></td>
+    <td><span>A holder for the result, to prevent unnecessary re-proving</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.inference.api.BaseTheoremToolCommand.html">BaseTheoremToolCommand</a></code>:
+          </p>
+          <table class="children sortable" id="id672">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.BaseTheoremToolCommand.html#add_assumptions">add_assumptions</a></code></td>
+    <td><span>Add new assumptions to the assumption list.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.BaseTheoremToolCommand.html#retract_assumptions">retract_assumptions</a></code></td>
+    <td><span>Retract assumptions from the assumption list.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.BaseTheoremToolCommand.html#assumptions">assumptions</a></code></td>
+    <td><span>List the current assumptions.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.BaseTheoremToolCommand.html#goal">goal</a></code></td>
+    <td><span>Return the goal</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.BaseTheoremToolCommand.html#print_assumptions">print_assumptions</a></code></td>
+    <td><span>Print the list of the current assumptions.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.inference.api.BaseTheoremToolCommand.html#_goal">_goal</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.inference.api.BaseTheoremToolCommand.html#_assumptions">_assumptions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.inference.api.TheoremToolCommand.html">TheoremToolCommand</a></code> (via <code><a href="nltk.inference.api.ProverCommand.html">ProverCommand</a></code>):
+          </p>
+          <table class="children sortable" id="id673">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.TheoremToolCommand.html#add_assumptions">add_assumptions</a></code></td>
+    <td><span>Add new assumptions to the assumption list.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.TheoremToolCommand.html#retract_assumptions">retract_assumptions</a></code></td>
+    <td><span>Retract assumptions from the assumption list.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.TheoremToolCommand.html#assumptions">assumptions</a></code></td>
+    <td><span>List the current assumptions.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.TheoremToolCommand.html#goal">goal</a></code></td>
+    <td><span>Return the goal</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.inference.api.TheoremToolCommand.html#print_assumptions">print_assumptions</a></code></td>
+    <td><span>Print the list of the current assumptions.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.inference.api.BaseProverCommand.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, prover, goal=None, assumptions=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L266">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.inference.api.BaseTheoremToolCommand.html#__init__">nltk.inference.api.BaseTheoremToolCommand.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.inference.api.ParallelProverBuilderCommand.html">nltk.inference.api.ParallelProverBuilderCommand</a></code>, <code><a href="nltk.inference.prover9.Prover9Command.html">nltk.inference.prover9.Prover9Command</a></code>, <code><a href="nltk.inference.resolution.ResolutionProverCommand.html">nltk.inference.resolution.ResolutionProverCommand</a></code>, <code><a href="nltk.inference.tableau.TableauProverCommand.html">nltk.inference.tableau.TableauProverCommand</a></code></div>
+    
+    <div><p class="pre">:param prover: The theorem tool to execute with the assumptions
+:type prover: Prover
+:see: ``BaseTheoremToolCommand``</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.inference.api.BaseProverCommand._prover">
+    
+  </a>
+  <a name="_prover">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_prover</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L272">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The theorem tool to execute with the assumptions</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.inference.api.BaseProverCommand._proof">
+    
+  </a>
+  <a name="_proof">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_proof</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L277">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.inference.resolution.ResolutionProverCommand.html">nltk.inference.resolution.ResolutionProverCommand</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.inference.api.BaseProverCommand.prove">
+    
+  </a>
+  <a name="prove">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prove</span>(self, verbose=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L279">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.inference.api.ProverCommand.html#prove">nltk.inference.api.ProverCommand.prove</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.inference.api.ParallelProverBuilderCommand.html">nltk.inference.api.ParallelProverBuilderCommand</a></code>, <code><a href="nltk.inference.resolution.ResolutionProverCommand.html">nltk.inference.resolution.ResolutionProverCommand</a></code></div>
+    
+    <div><p class="pre">Perform the actual proof.  Store the result to prevent unnecessary
+re-proving.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.inference.api.BaseProverCommand._result">
+    
+  </a>
+  <a name="_result">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_result</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L285">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.inference.api.BaseTheoremToolCommand.html#_result">nltk.inference.api.BaseTheoremToolCommand._result</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.inference.api.ParallelProverBuilderCommand.html">nltk.inference.api.ParallelProverBuilderCommand</a></code>, <code><a href="nltk.inference.resolution.ResolutionProverCommand.html">nltk.inference.resolution.ResolutionProverCommand</a></code></div>
+    
+    <div><p class="pre">A holder for the result, to prevent unnecessary re-proving</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.inference.api.BaseProverCommand.proof">
+    
+  </a>
+  <a name="proof">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">proof</span>(self, simplify=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L290">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.inference.api.ProverCommand.html#proof">nltk.inference.api.ProverCommand.proof</a></code></div>
+    
+    <div><p class="pre">Return the proof string
+:param simplify: bool simplify the proof?
+:return: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.inference.api.BaseProverCommand.decorate_proof">
+    
+  </a>
+  <a name="decorate_proof">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">decorate_proof</span>(self, proof_string, simplify=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L301">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.inference.prover9.Prover9Command.html">nltk.inference.prover9.Prover9Command</a></code></div>
+    
+    <div><p class="pre">Modify and return the proof string
+:param proof_string: str the proof to decorate
+:param simplify: bool simplify the proof?
+:return: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.inference.api.BaseProverCommand.get_prover">
+    
+  </a>
+  <a name="get_prover">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_prover</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/inference/api.py#L310">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.inference.api.ProverCommand.html#get_prover">nltk.inference.api.ProverCommand.get_prover</a></code></div>
+    
+    <div><p class="pre">Return the prover object
+:return: ``Prover``</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

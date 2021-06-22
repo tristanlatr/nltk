@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.lm.Vocabulary : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.lm.html">lm</a></code>.<code><a href="nltk.lm.Vocabulary.html">Vocabulary</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Vocabulary</span>: <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L39">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.lm.Vocabulary">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Stores language model vocabulary.
+
+Satisfies two common language modeling requirements for a vocabulary:
+- When checking membership and calculating its size, filters items
+  by comparing their counts to a cutoff value.
+- Adds a special "unknown" token which unseen words are mapped to.
+
+&gt;&gt;&gt; words = ['a', 'c', '-', 'd', 'c', 'a', 'b', 'r', 'a', 'c', 'd']
+&gt;&gt;&gt; from nltk.lm import Vocabulary
+&gt;&gt;&gt; vocab = Vocabulary(words, unk_cutoff=2)
+
+Tokens with counts greater than or equal to the cutoff value will
+be considered part of the vocabulary.
+
+&gt;&gt;&gt; vocab['c']
+3
+&gt;&gt;&gt; 'c' in vocab
+True
+&gt;&gt;&gt; vocab['d']
+2
+&gt;&gt;&gt; 'd' in vocab
+True
+
+Tokens with frequency counts less than the cutoff value will be considered not
+part of the vocabulary even though their entries in the count dictionary are
+preserved.
+
+&gt;&gt;&gt; vocab['b']
+1
+&gt;&gt;&gt; 'b' in vocab
+False
+&gt;&gt;&gt; vocab['aliens']
+0
+&gt;&gt;&gt; 'aliens' in vocab
+False
+
+Keeping the count entries for seen words allows us to change the cutoff value
+without having to recalculate the counts.
+
+&gt;&gt;&gt; vocab2 = Vocabulary(vocab.counts, unk_cutoff=1)
+&gt;&gt;&gt; "b" in vocab2
+True
+
+The cutoff value influences not only membership checking but also the result of
+getting the size of the vocabulary using the built-in `len`.
+Note that while the number of keys in the vocabulary's counter stays the same,
+the items in the vocabulary differ depending on the cutoff.
+We use `sorted` to demonstrate because it keeps the order consistent.
+
+&gt;&gt;&gt; sorted(vocab2.counts)
+['-', 'a', 'b', 'c', 'd', 'r']
+&gt;&gt;&gt; sorted(vocab2)
+['-', '&lt;UNK&gt;', 'a', 'b', 'c', 'd', 'r']
+&gt;&gt;&gt; sorted(vocab.counts)
+['-', 'a', 'b', 'c', 'd', 'r']
+&gt;&gt;&gt; sorted(vocab)
+['&lt;UNK&gt;', 'a', 'c', 'd']
+
+In addition to items it gets populated with, the vocabulary stores a special
+token that stands in for so-called "unknown" items. By default it's "&lt;UNK&gt;".
+
+&gt;&gt;&gt; "&lt;UNK&gt;" in vocab
+True
+
+We can look up words in a vocabulary using its `lookup` method.
+"Unseen" words (with counts less than cutoff) are looked up as the unknown label.
+If given one word (a string) as an input, this method will return a string.
+
+&gt;&gt;&gt; vocab.lookup("a")
+'a'
+&gt;&gt;&gt; vocab.lookup("aliens")
+'&lt;UNK&gt;'
+
+If given a sequence, it will return an tuple of the looked up words.
+
+&gt;&gt;&gt; vocab.lookup(["p", 'a', 'r', 'd', 'b', 'c'])
+('&lt;UNK&gt;', 'a', '&lt;UNK&gt;', 'd', '&lt;UNK&gt;', 'c')
+
+It's possible to update the counts after the vocabulary has been created.
+In general, the interface is the same as that of `collections.Counter`.
+
+&gt;&gt;&gt; vocab['b']
+1
+&gt;&gt;&gt; vocab.update(["b", "b", "c"])
+&gt;&gt;&gt; vocab['b']
+3</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id787">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Create a new Vocabulary.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#unk_label">unk_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#counts">counts</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#cutoff">cutoff</a></code></td>
+    <td><span>Cutoff value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update">update</a></code></td>
+    <td><span>Update vocabulary counts.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lookup">lookup</a></code></td>
+    <td><span>Look up one or more words in the vocabulary.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__contains__">__contains__</a></code></td>
+    <td><span>Only consider items with counts GE to cutoff as being in the vocabulary.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__iter__">__iter__</a></code></td>
+    <td><span>Building on membership check define how to iterate over vocabulary.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__len__">__len__</a></code></td>
+    <td><span>Computing size of vocabulary reflects the cutoff.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_cutoff">_cutoff</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_len">_len</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, counts=None, unk_cutoff=1, unk_label='&lt;UNK&gt;'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L128">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Create a new Vocabulary.
+
+:param counts: Optional iterable or `collections.Counter` instance to
+               pre-seed the Vocabulary. In case it is iterable, counts
+               are calculated.
+:param int unk_cutoff: Words that occur less frequently than this value
+                       are not considered part of the vocabulary.
+:param unk_label: Label for marking words not part of vocabulary.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.lm.Vocabulary.unk_label">
+    
+  </a>
+  <a name="unk_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">unk_label</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L139">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.lm.Vocabulary._cutoff">
+    
+  </a>
+  <a name="_cutoff">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_cutoff</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L144">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.lm.Vocabulary.counts">
+    
+  </a>
+  <a name="counts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">counts</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L146">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.lm.Vocabulary.cutoff">
+    
+  </a>
+  <a name="cutoff">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">cutoff</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L149">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Cutoff value.
+
+Items with count below this value are not considered part of vocabulary.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.update">
+    
+  </a>
+  <a name="update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, *counter_args, **counter_kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L158">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Update vocabulary counts.
+
+Wraps `collections.Counter.update` method.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.lm.Vocabulary._len">
+    
+  </a>
+  <a name="_len">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_len</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L165">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.lookup">
+    
+  </a>
+  <a name="lookup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lookup</span>(self, words):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L167">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Look up one or more words in the vocabulary.
+
+If passed one word as a string will return that word or `self.unk_label`.
+Otherwise will assume it was passed a sequence of words, will try to look
+each of them up and return an iterator over the looked up words.
+
+:param words: Word(s) to look up.
+:type words: Iterable(str) or str
+:rtype: generator(str) or str
+:raises: TypeError for types other than strings or iterables
+
+&gt;&gt;&gt; from nltk.lm import Vocabulary
+&gt;&gt;&gt; vocab = Vocabulary(["a", "b", "c", "a", "b"], unk_cutoff=2)
+&gt;&gt;&gt; vocab.lookup("a")
+'a'
+&gt;&gt;&gt; vocab.lookup("aliens")
+'&lt;UNK&gt;'
+&gt;&gt;&gt; vocab.lookup(["a", "b", "c", ["x", "b"]])
+('a', 'b', '&lt;UNK&gt;', ('&lt;UNK&gt;', 'b'))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.__getitem__">
+    
+  </a>
+  <a name="__getitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, item):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L191">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.__contains__">
+    
+  </a>
+  <a name="__contains__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__contains__</span>(self, item):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Only consider items with counts GE to cutoff as being in the
+vocabulary.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.__iter__">
+    
+  </a>
+  <a name="__iter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L199">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Building on membership check define how to iterate over
+vocabulary.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.__len__">
+    
+  </a>
+  <a name="__len__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L207">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Computing size of vocabulary reflects the cutoff.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L211">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.lm.Vocabulary.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/vocabulary.py#L218">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

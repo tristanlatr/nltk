@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.downloader.Package : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.downloader.html">downloader</a></code>.<code><a href="nltk.downloader.Package.html">Package</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Package</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L198">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.downloader.Package">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A directory entry for a downloadable package.  These entries are
+extracted from the XML index file that is downloaded by
+``Downloader``.  Each package consists of a single file; but if
+that file is a zip file, then it can be automatically decompressed
+when the package is installed.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id550">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#id">id</a></code></td>
+    <td><span>A unique identifier for this package.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#name">name</a></code></td>
+    <td><span>A string name for this package.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#subdir">subdir</a></code></td>
+    <td><span>The subdirectory where this package should be installed. E.g., ``'corpora'`` or ``'taggers'``.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#url">url</a></code></td>
+    <td><span>A URL that can be used to download this package's file.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#size">size</a></code></td>
+    <td><span>The filesize (in bytes) of the package file.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#unzipped_size">unzipped_size</a></code></td>
+    <td><span>The total filesize of the files contained in the package's zipfile.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#checksum">checksum</a></code></td>
+    <td><span>The MD-5 checksum of the package file.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#svn_revision">svn_revision</a></code></td>
+    <td><span>A subversion revision number for this package.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#copyright">copyright</a></code></td>
+    <td><span>Copyright holder for this package.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#contact">contact</a></code></td>
+    <td><span>Name &amp; email of the person who should be contacted with questions about this package.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#license">license</a></code></td>
+    <td><span>License information for this package.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#author">author</a></code></td>
+    <td><span>Author of this package.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#filename">filename</a></code></td>
+    <td><span>The filename that should be used for this package's file.  It is formed by joining ``self.subdir`` with ``self.id``, and using the same extension as ``url``.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#unzip">unzip</a></code></td>
+    <td><span>A flag indicating whether this corpus should be unzipped by default.</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#fromxml">fromxml</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__lt__">__lt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.downloader.Package.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, id, url, name=None, subdir='', size=None, unzipped_size=None, checksum=None, svn_revision=None, copyright='Unknown', contact='Unknown', license='Unknown', author='Unknown', unzip=True, **kw):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L207">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.id">
+    
+  </a>
+  <a name="id">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L224">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A unique identifier for this package.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L227">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A string name for this package.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.subdir">
+    
+  </a>
+  <a name="subdir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">subdir</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The subdirectory where this package should be installed.
+E.g., ``'corpora'`` or ``'taggers'``.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.url">
+    
+  </a>
+  <a name="url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">url</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L234">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A URL that can be used to download this package's file.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.size">
+    
+  </a>
+  <a name="size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">size</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L237">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The filesize (in bytes) of the package file.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.unzipped_size">
+    
+  </a>
+  <a name="unzipped_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">unzipped_size</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L240">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The total filesize of the files contained in the package's
+zipfile.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.checksum">
+    
+  </a>
+  <a name="checksum">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">checksum</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L244">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The MD-5 checksum of the package file.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.svn_revision">
+    
+  </a>
+  <a name="svn_revision">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">svn_revision</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L247">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A subversion revision number for this package.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.copyright">
+    
+  </a>
+  <a name="copyright">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">copyright</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L250">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Copyright holder for this package.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.contact">
+    
+  </a>
+  <a name="contact">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">contact</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L253">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Name &amp; email of the person who should be contacted with
+questions about this package.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.license">
+    
+  </a>
+  <a name="license">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">license</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L257">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">License information for this package.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.author">
+    
+  </a>
+  <a name="author">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">author</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L260">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Author of this package.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.filename">
+    
+  </a>
+  <a name="filename">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">filename</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L264">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The filename that should be used for this package's file.  It
+is formed by joining ``self.subdir`` with ``self.id``, and
+using the same extension as ``url``.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.downloader.Package.unzip">
+    
+  </a>
+  <a name="unzip">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">unzip</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L269">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A flag indicating whether this corpus should be unzipped by
+default.</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="nltk.downloader.Package.fromxml">
+    
+  </a>
+  <a name="fromxml">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">fromxml</span>(xml):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L276">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.downloader.Package.__lt__">
+    
+  </a>
+  <a name="__lt__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L284">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.downloader.Package.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L287">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

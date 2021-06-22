@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.translate.gleu_score : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.translate.html">translate</a></code>.<code><a href="nltk.translate.gleu_score.html">gleu_score</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/gleu_score.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">GLEU score implementation. </p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1870">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#sentence_gleu">sentence_gleu</a></code></td>
+    <td><span>Calculates the sentence level GLEU (Google-BLEU) score described in</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#corpus_gleu">corpus_gleu</a></code></td>
+    <td><span>Calculate a single corpus-level GLEU score (aka. system-level GLEU) for all the hypotheses and their respective references.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.translate.gleu_score.sentence_gleu">
+    
+  </a>
+  <a name="sentence_gleu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sentence_gleu</span>(references, hypothesis, min_len=1, max_len=4):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/gleu_score.py#L17">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Calculates the sentence level GLEU (Google-BLEU) score described in
+
+    Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V. Le, Mohammad Norouzi,
+    Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey,
+    Jeff Klingner, Apurva Shah, Melvin Johnson, Xiaobing Liu, Lukasz Kaiser,
+    Stephan Gouws, Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens,
+    George Kurian, Nishant Patil, Wei Wang, Cliff Young, Jason Smith,
+    Jason Riesa, Alex Rudnick, Oriol Vinyals, Greg Corrado, Macduff Hughes,
+    Jeffrey Dean. (2016) Google’s Neural Machine Translation System:
+    Bridging the Gap between Human and Machine Translation.
+    eprint arXiv:1609.08144. https://arxiv.org/pdf/1609.08144v2.pdf
+    Retrieved on 27 Oct 2016.
+
+From Wu et al. (2016):
+    "The BLEU score has some undesirable properties when used for single
+     sentences, as it was designed to be a corpus measure. We therefore
+     use a slightly different score for our RL experiments which we call
+     the 'GLEU score'. For the GLEU score, we record all sub-sequences of
+     1, 2, 3 or 4 tokens in output and target sequence (n-grams). We then
+     compute a recall, which is the ratio of the number of matching n-grams
+     to the number of total n-grams in the target (ground truth) sequence,
+     and a precision, which is the ratio of the number of matching n-grams
+     to the number of total n-grams in the generated output sequence. Then
+     GLEU score is simply the minimum of recall and precision. This GLEU
+     score's range is always between 0 (no matches) and 1 (all match) and
+     it is symmetrical when switching output and target. According to
+     our experiments, GLEU score correlates quite well with the BLEU
+     metric on a corpus level but does not have its drawbacks for our per
+     sentence reward objective."
+
+Note: The initial implementation only allowed a single reference, but now
+      a list of references is required (which is consistent with
+      bleu_score.sentence_bleu()).
+
+The infamous "the the the ... " example
+
+    &gt;&gt;&gt; ref = 'the cat is on the mat'.split()
+    &gt;&gt;&gt; hyp = 'the the the the the the the'.split()
+    &gt;&gt;&gt; sentence_gleu([ref], hyp)  # doctest: +ELLIPSIS
+    0.0909...
+
+An example to evaluate normal machine translation outputs
+
+    &gt;&gt;&gt; ref1 = str('It is a guide to action that ensures that the military '
+    ...            'will forever heed Party commands').split()
+    &gt;&gt;&gt; hyp1 = str('It is a guide to action which ensures that the military '
+    ...            'always obeys the commands of the party').split()
+    &gt;&gt;&gt; hyp2 = str('It is to insure the troops forever hearing the activity '
+    ...            'guidebook that party direct').split()
+    &gt;&gt;&gt; sentence_gleu([ref1], hyp1) # doctest: +ELLIPSIS
+    0.4393...
+    &gt;&gt;&gt; sentence_gleu([ref1], hyp2) # doctest: +ELLIPSIS
+    0.1206...
+
+:param references: a list of reference sentences
+:type references: list(list(str))
+:param hypothesis: a hypothesis sentence
+:type hypothesis: list(str)
+:param min_len: The minimum order of n-gram this function should extract.
+:type min_len: int
+:param max_len: The maximum order of n-gram this function should extract.
+:type max_len: int
+:return: the sentence level GLEU score.
+:rtype: float</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.translate.gleu_score.corpus_gleu">
+    
+  </a>
+  <a name="corpus_gleu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">corpus_gleu</span>(list_of_references, hypotheses, min_len=1, max_len=4):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/gleu_score.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Calculate a single corpus-level GLEU score (aka. system-level GLEU) for all
+the hypotheses and their respective references.
+
+Instead of averaging the sentence level GLEU scores (i.e. macro-average
+precision), Wu et al. (2016) sum up the matching tokens and the max of
+hypothesis and reference tokens for each sentence, then compute using the
+aggregate values.
+
+From Mike Schuster (via email):
+    "For the corpus, we just add up the two statistics n_match and
+     n_all = max(n_all_output, n_all_target) for all sentences, then
+     calculate gleu_score = n_match / n_all, so it is not just a mean of
+     the sentence gleu scores (in our case, longer sentences count more,
+     which I think makes sense as they are more difficult to translate)."
+
+&gt;&gt;&gt; hyp1 = ['It', 'is', 'a', 'guide', 'to', 'action', 'which',
+...         'ensures', 'that', 'the', 'military', 'always',
+...         'obeys', 'the', 'commands', 'of', 'the', 'party']
+&gt;&gt;&gt; ref1a = ['It', 'is', 'a', 'guide', 'to', 'action', 'that',
+...          'ensures', 'that', 'the', 'military', 'will', 'forever',
+...          'heed', 'Party', 'commands']
+&gt;&gt;&gt; ref1b = ['It', 'is', 'the', 'guiding', 'principle', 'which',
+...          'guarantees', 'the', 'military', 'forces', 'always',
+...          'being', 'under', 'the', 'command', 'of', 'the', 'Party']
+&gt;&gt;&gt; ref1c = ['It', 'is', 'the', 'practical', 'guide', 'for', 'the',
+...          'army', 'always', 'to', 'heed', 'the', 'directions',
+...          'of', 'the', 'party']
+
+&gt;&gt;&gt; hyp2 = ['he', 'read', 'the', 'book', 'because', 'he', 'was',
+...         'interested', 'in', 'world', 'history']
+&gt;&gt;&gt; ref2a = ['he', 'was', 'interested', 'in', 'world', 'history',
+...          'because', 'he', 'read', 'the', 'book']
+
+&gt;&gt;&gt; list_of_references = [[ref1a, ref1b, ref1c], [ref2a]]
+&gt;&gt;&gt; hypotheses = [hyp1, hyp2]
+&gt;&gt;&gt; corpus_gleu(list_of_references, hypotheses) # doctest: +ELLIPSIS
+0.5673...
+
+The example below show that corpus_gleu() is different from averaging
+sentence_gleu() for hypotheses
+
+&gt;&gt;&gt; score1 = sentence_gleu([ref1a], hyp1)
+&gt;&gt;&gt; score2 = sentence_gleu([ref2a], hyp2)
+&gt;&gt;&gt; (score1 + score2) / 2 # doctest: +ELLIPSIS
+0.6144...
+
+:param list_of_references: a list of reference sentences, w.r.t. hypotheses
+:type list_of_references: list(list(list(str)))
+:param hypotheses: a list of hypothesis sentences
+:type hypotheses: list(list(str))
+:param min_len: The minimum order of n-gram this function should extract.
+:type min_len: int
+:param max_len: The maximum order of n-gram this function should extract.
+:type max_len: int
+:return: The corpus-level GLEU score.
+:rtype: float</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

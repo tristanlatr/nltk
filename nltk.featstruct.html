@@ -1,0 +1,1352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.featstruct : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.featstruct.html">featstruct</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Basic data classes for representing feature structures, and for
+performing basic operations on those feature structures.  A feature
+structure is a mapping from feature identifiers to feature values,
+where each feature value is either a basic value (such as a string or
+an integer), or a nested feature structure.  There are two types of
+feature structure, implemented by two subclasses of ``FeatStruct``:
+
+    - feature dictionaries, implemented by ``FeatDict``, act like
+      Python dictionaries.  Feature identifiers may be strings or
+      instances of the ``Feature`` class.
+    - feature lists, implemented by ``FeatList``, act like Python
+      lists.  Feature identifiers are integers.
+
+Feature structures are typically used to represent partial information
+about objects.  A feature identifier that is not mapped to a value
+stands for a feature whose value is unknown (*not* a feature without
+a value).  Two feature structures that represent (potentially
+overlapping) information about the same object can be combined by
+unification.  When two inconsistent feature structures are unified,
+the unification fails and returns None.
+
+Features can be specified using "feature paths", or tuples of feature
+identifiers that specify path through the nested feature structures to
+a value.  Feature structures may contain reentrant feature values.  A
+"reentrant feature value" is a single feature value that can be
+accessed via multiple feature paths.  Unification preserves the
+reentrance relations imposed by both of the unified feature
+structures.  In the feature structure resulting from unification, any
+modifications to a reentrant feature value will be visible using any
+of its feature paths.
+
+Feature structure variables are encoded using the ``nltk.sem.Variable``
+class.  The variables' values are tracked using a bindings
+dictionary, which maps variables to their values.  When two feature
+structures are unified, a fresh bindings dictionary is created to
+track their values; and before unification completes, all bound
+variables are replaced by their values.  Thus, the bindings
+dictionaries are usually strictly internal to the unification process.
+However, it is possible to track the bindings of variables if you
+choose to, by supplying your own initial bindings dictionary to the
+``unify()`` function.
+
+When unbound variables are unified with one another, they become
+aliased.  This is encoded by binding one variable to the other.
+
+Lightweight Feature Structures
+==============================
+Many of the functions defined by ``nltk.featstruct`` can be applied
+directly to simple Python dictionaries and lists, rather than to
+full-fledged ``FeatDict`` and ``FeatList`` objects.  In other words,
+Python ``dicts`` and ``lists`` can be used as "light-weight" feature
+structures.
+
+    &gt;&gt;&gt; from nltk.featstruct import unify
+    &gt;&gt;&gt; unify(dict(x=1, y=dict()), dict(a='a', y=dict(b='b')))  # doctest: +SKIP
+    {'y': {'b': 'b'}, 'x': 1, 'a': 'a'}
+
+However, you should keep in mind the following caveats:
+
+  - Python dictionaries &amp; lists ignore reentrance when checking for
+    equality between values.  But two FeatStructs with different
+    reentrances are considered nonequal, even if all their base
+    values are equal.
+
+  - FeatStructs can be easily frozen, allowing them to be used as
+    keys in hash tables.  Python dictionaries and lists can not.
+
+  - FeatStructs display reentrance in their string representations;
+    Python dictionaries and lists do not.
+
+  - FeatStructs may *not* be mixed with Python dictionaries and lists
+    (e.g., when performing unification).
+
+  - FeatStructs provide a number of useful methods, such as ``walk()``
+    and ``cyclic()``, which are not available for Python dicts and lists.
+
+In general, if your feature structures will contain any reentrances,
+or if you plan to use them as dictionary keys, it is strongly
+recommended that you use full-fledged ``FeatStruct`` objects.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id616">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.FeatStruct.html">FeatStruct</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.FeatDict.html">FeatDict</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.FeatList.html">FeatList</a></code></td>
+    <td><span>A list of feature values, where each feature value is either a basic value (such as a string or an integer), or a nested feature structure.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#substitute_bindings">substitute_bindings</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#retract_bindings">retract_bindings</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#find_variables">find_variables</a></code></td>
+    <td><span>:return: The set of variables used by this feature structure. :rtype: set(Variable)</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#rename_variables">rename_variables</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#remove_variables">remove_variables</a></code></td>
+    <td><span>:rtype: FeatStruct :return: The feature structure that is obtained by deleting all features whose values are ``Variables``.</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#UnificationFailure">UnificationFailure</a></code></td>
+    <td><span>A unique value used to indicate unification failure.  It can be returned by ``Feature.unify_base_values()`` or by custom ``fail()`` functions to indicate that unificaiton should fail.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#unify">unify</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#subsumes">subsumes</a></code></td>
+    <td><span>Return True if ``fstruct1`` subsumes ``fstruct2``.  I.e., return true if unifying ``fstruct1`` with ``fstruct2`` would result in a feature structure equal to ``fstruct2.``</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#conflicts">conflicts</a></code></td>
+    <td><span>Return a list of the feature paths of all features which are assigned incompatible values by ``fstruct1`` and ``fstruct2``.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.SubstituteBindingsSequence.html">SubstituteBindingsSequence</a></code></td>
+    <td><span>A mixin class for sequence clases that distributes variables() and substitute_bindings() over the object's elements.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.FeatureValueTuple.html">FeatureValueTuple</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.FeatureValueSet.html">FeatureValueSet</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.FeatureValueUnion.html">FeatureValueUnion</a></code></td>
+    <td><span>A base feature value that represents the union of two or more ``FeatureValueSet`` or ``Variable``.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.FeatureValueConcat.html">FeatureValueConcat</a></code></td>
+    <td><span>A base feature value that represents the concatenation of two or more ``FeatureValueTuple`` or ``Variable``.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.Feature.html">Feature</a></code></td>
+    <td><span>A feature identifier that's specialized to put additional constraints, default values, etc.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.SlashFeature.html">SlashFeature</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.RangeFeature.html">RangeFeature</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SLASH">SLASH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TYPE">TYPE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.CustomFeatureValue.html">CustomFeatureValue</a></code></td>
+    <td><span>An abstract base class for base values that define a custom unification method.  The custom unification method of ``CustomFeatureValue`` will be used during unification if:</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct.FeatStructReader.html">FeatStructReader</a></code></td>
+    <td><span class="undocumented">No class docstring; 0/12 class variables, 0/7 instance variables, 5/20 methods documented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#display_unification">display_unification</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#interactive_demo">interactive_demo</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo">demo</a></code></td>
+    <td><span>Just for testing</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_FROZEN_ERROR">_FROZEN_ERROR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_FROZEN_NOTICE">_FROZEN_NOTICE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_check_frozen">_check_frozen</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_substitute_bindings">_substitute_bindings</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_retract_bindings">_retract_bindings</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_variables">_variables</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_rename_variables">_rename_variables</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_rename_variable">_rename_variable</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_remove_variables">_remove_variables</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct._UnificationFailure.html">_UnificationFailure</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.featstruct._UnificationFailureError.html">_UnificationFailureError</a></code></td>
+    <td><span>An exception that is used by ``_destructively_unify`` to abort unification when a failure is encountered.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_destructively_unify">_destructively_unify</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_unify_feature_values">_unify_feature_values</a></code></td>
+    <td><span>Attempt to unify ``fval1`` and and ``fval2``, and return the resulting unified value.  The method of unification will depend on the types of ``fval1`` and ``fval2``:</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_apply_forwards_to_bindings">_apply_forwards_to_bindings</a></code></td>
+    <td><span>Replace any feature structure that has a forward pointer with the target of its forward pointer (to preserve reentrancy).</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_apply_forwards">_apply_forwards</a></code></td>
+    <td><span>Replace any feature structure that has a forward pointer with the target of its forward pointer (to preserve reentrancy).</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_resolve_aliases">_resolve_aliases</a></code></td>
+    <td><span>Replace any bound aliased vars with their binding; and replace any unbound aliased vars with their representative var.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_trace_unify_start">_trace_unify_start</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_trace_unify_identity">_trace_unify_identity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_trace_unify_fail">_trace_unify_fail</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_trace_unify_succeed">_trace_unify_succeed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_trace_bindings">_trace_bindings</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_trace_valrepr">_trace_valrepr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_is_mapping">_is_mapping</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_is_sequence">_is_sequence</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_default_fs_class">_default_fs_class</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_flatten">_flatten</a></code></td>
+    <td><span>Helper function -- return a copy of list, with all elements of type ``cls`` spliced in rather than appended in.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable private">
+  
+  <a name="nltk.featstruct._FROZEN_ERROR">
+    
+  </a>
+  <a name="_FROZEN_ERROR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_FROZEN_ERROR</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L570">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.featstruct._FROZEN_NOTICE">
+    
+  </a>
+  <a name="_FROZEN_NOTICE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_FROZEN_NOTICE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L571">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._check_frozen">
+    
+  </a>
+  <a name="_check_frozen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_check_frozen</span>(method, indent=''):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L574">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Given a method function, return a new method function that first
+checks if ``self._frozen`` is true; and if so, raises ``ValueError``
+with an appropriate message.  Otherwise, call the method and return
+its result.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.substitute_bindings">
+    
+  </a>
+  <a name="substitute_bindings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">substitute_bindings</span>(fstruct, bindings, fs_class='default'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1083">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the feature structure that is obtained by replacing each
+variable bound by ``bindings`` with its binding.  If a variable is
+aliased to a bound variable, then it will be replaced by that
+variable's value.  If a variable is aliased to an unbound
+variable, then it will be replaced by that variable.
+
+:type bindings: dict(Variable -&gt; any)
+:param bindings: A dictionary mapping from variables to values.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._substitute_bindings">
+    
+  </a>
+  <a name="_substitute_bindings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_substitute_bindings</span>(fstruct, bindings, fs_class, visited):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1101">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.retract_bindings">
+    
+  </a>
+  <a name="retract_bindings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">retract_bindings</span>(fstruct, bindings, fs_class='default'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the feature structure that is obtained by replacing each
+feature structure value that is bound by ``bindings`` with the
+variable that binds it.  A feature structure value must be
+identical to a bound value (i.e., have equal id) to be replaced.
+
+``bindings`` is modified to point to this new feature structure,
+rather than the original feature structure.  Feature structure
+values in ``bindings`` may be modified if they are contained in
+``fstruct``.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._retract_bindings">
+    
+  </a>
+  <a name="_retract_bindings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_retract_bindings</span>(fstruct, inv_bindings, fs_class, visited):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1143">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.find_variables">
+    
+  </a>
+  <a name="find_variables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find_variables</span>(fstruct, fs_class='default'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1162">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The set of variables used by this feature structure.
+:rtype: set(Variable)</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._variables">
+    
+  </a>
+  <a name="_variables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_variables</span>(fstruct, vars, fs_class, visited):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1172">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.rename_variables">
+    
+  </a>
+  <a name="rename_variables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rename_variables</span>(fstruct, vars=None, used_vars=(), new_vars=None, fs_class='default'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1193">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the feature structure that is obtained by replacing
+any of this feature structure's variables that are in ``vars``
+with new variables.  The names for these new variables will be
+names that are not used by any variable in ``vars``, or in
+``used_vars``, or in this feature structure.
+
+:type vars: set
+:param vars: The set of variables that should be renamed.
+    If not specified, ``find_variables(fstruct)`` is used; i.e., all
+    variables will be given new names.
+:type used_vars: set
+:param used_vars: A set of variables whose names should not be
+    used by the new variables.
+:type new_vars: dict(Variable -&gt; Variable)
+:param new_vars: A dictionary that is used to hold the mapping
+    from old variables to new variables.  For each variable *v*
+    in this feature structure:
+
+    - If ``new_vars`` maps *v* to *v'*, then *v* will be
+      replaced by *v'*.
+    - If ``new_vars`` does not contain *v*, but ``vars``
+      does contain *v*, then a new entry will be added to
+      ``new_vars``, mapping *v* to the new variable that is used
+      to replace it.
+
+To consistently rename the variables in a set of feature
+structures, simply apply rename_variables to each one, using
+the same dictionary:
+
+    &gt;&gt;&gt; from nltk.featstruct import FeatStruct
+    &gt;&gt;&gt; fstruct1 = FeatStruct('[subj=[agr=[gender=?y]], obj=[agr=[gender=?y]]]')
+    &gt;&gt;&gt; fstruct2 = FeatStruct('[subj=[agr=[number=?z,gender=?y]], obj=[agr=[number=?z,gender=?y]]]')
+    &gt;&gt;&gt; new_vars = {}  # Maps old vars to alpha-renamed vars
+    &gt;&gt;&gt; fstruct1.rename_variables(new_vars=new_vars)
+    [obj=[agr=[gender=?y2]], subj=[agr=[gender=?y2]]]
+    &gt;&gt;&gt; fstruct2.rename_variables(new_vars=new_vars)
+    [obj=[agr=[gender=?y2, number=?z2]], subj=[agr=[gender=?y2, number=?z2]]]
+
+If new_vars is not specified, then an empty dictionary is used.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._rename_variables">
+    
+  </a>
+  <a name="_rename_variables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_rename_variables</span>(fstruct, vars, used_vars, new_vars, fs_class, visited):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1257">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._rename_variable">
+    
+  </a>
+  <a name="_rename_variable">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_rename_variable</span>(var, used_vars):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1290">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.remove_variables">
+    
+  </a>
+  <a name="remove_variables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove_variables</span>(fstruct, fs_class='default'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1299">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:rtype: FeatStruct
+:return: The feature structure that is obtained by deleting
+    all features whose values are ``Variables``.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._remove_variables">
+    
+  </a>
+  <a name="_remove_variables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_remove_variables</span>(fstruct, fs_class, visited):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1310">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.featstruct.UnificationFailure">
+    
+  </a>
+  <a name="UnificationFailure">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">UnificationFailure</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1341">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A unique value used to indicate unification failure.  It can be
+returned by ``Feature.unify_base_values()`` or by custom ``fail()``
+functions to indicate that unificaiton should fail.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.unify">
+    
+  </a>
+  <a name="unify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unify</span>(fstruct1, fstruct2, bindings=None, trace=False, fail=None, rename_vars=True, fs_class='default'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1352">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Unify ``fstruct1`` with ``fstruct2``, and return the resulting feature
+structure.  This unified feature structure is the minimal
+feature structure that contains all feature value assignments from both
+``fstruct1`` and ``fstruct2``, and that preserves all reentrancies.
+
+If no such feature structure exists (because ``fstruct1`` and
+``fstruct2`` specify incompatible values for some feature), then
+unification fails, and ``unify`` returns None.
+
+Bound variables are replaced by their values.  Aliased
+variables are replaced by their representative variable
+(if unbound) or the value of their representative variable
+(if bound).  I.e., if variable *v* is in ``bindings``,
+then *v* is replaced by ``bindings[v]``.  This will
+be repeated until the variable is replaced by an unbound
+variable or a non-variable value.
+
+Unbound variables are bound when they are unified with
+values; and aliased when they are unified with variables.
+I.e., if variable *v* is not in ``bindings``, and is
+unified with a variable or value *x*, then
+``bindings[v]`` is set to *x*.
+
+If ``bindings`` is unspecified, then all variables are
+assumed to be unbound.  I.e., ``bindings`` defaults to an
+empty dict.
+
+    &gt;&gt;&gt; from nltk.featstruct import FeatStruct
+    &gt;&gt;&gt; FeatStruct('[a=?x]').unify(FeatStruct('[b=?x]'))
+    [a=?x, b=?x2]
+
+:type bindings: dict(Variable -&gt; any)
+:param bindings: A set of variable bindings to be used and
+    updated during unification.
+:type trace: bool
+:param trace: If true, generate trace output.
+:type rename_vars: bool
+:param rename_vars: If True, then rename any variables in
+    ``fstruct2`` that are also used in ``fstruct1``, in order to
+    avoid collisions on variable names.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._destructively_unify">
+    
+  </a>
+  <a name="_destructively_unify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_destructively_unify</span>(fstruct1, fstruct2, bindings, forward, trace, fail, fs_class, path):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1479">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Attempt to unify ``fstruct1`` and ``fstruct2`` by modifying them
+in-place.  If the unification succeeds, then ``fstruct1`` will
+contain the unified value, the value of ``fstruct2`` is undefined,
+and forward[id(fstruct2)] is set to fstruct1.  If the unification
+fails, then a _UnificationFailureError is raised, and the
+values of ``fstruct1`` and ``fstruct2`` are undefined.
+
+:param bindings: A dictionary mapping variables to values.
+:param forward: A dictionary mapping feature structures ids
+    to replacement structures.  When two feature structures
+    are merged, a mapping from one to the other will be added
+    to the forward dictionary; and changes will be made only
+    to the target of the forward dictionary.
+    ``_destructively_unify`` will always 'follow' any links
+    in the forward dictionary for fstruct1 and fstruct2 before
+    actually unifying them.
+:param trace: If true, generate trace output
+:param path: The feature path that led us to this unification
+    step.  Used for trace output.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._unify_feature_values">
+    
+  </a>
+  <a name="_unify_feature_values">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_unify_feature_values</span>(fname, fval1, fval2, bindings, forward, trace, fail, fs_class, fpath):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1582">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Attempt to unify ``fval1`` and and ``fval2``, and return the
+resulting unified value.  The method of unification will depend on
+the types of ``fval1`` and ``fval2``:
+
+  1. If they're both feature structures, then destructively
+     unify them (see ``_destructively_unify()``.
+  2. If they're both unbound variables, then alias one variable
+     to the other (by setting bindings[v2]=v1).
+  3. If one is an unbound variable, and the other is a value,
+     then bind the unbound variable to the value.
+  4. If one is a feature structure, and the other is a base value,
+     then fail.
+  5. If they're both base values, then unify them.  By default,
+     this will succeed if they are equal, and fail otherwise.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._apply_forwards_to_bindings">
+    
+  </a>
+  <a name="_apply_forwards_to_bindings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_apply_forwards_to_bindings</span>(forward, bindings):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1703">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Replace any feature structure that has a forward pointer with
+the target of its forward pointer (to preserve reentrancy).</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._apply_forwards">
+    
+  </a>
+  <a name="_apply_forwards">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_apply_forwards</span>(fstruct, forward, fs_class, visited):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1714">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Replace any feature structure that has a forward pointer with
+the target of its forward pointer (to preserve reentrancy).</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._resolve_aliases">
+    
+  </a>
+  <a name="_resolve_aliases">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_resolve_aliases</span>(bindings):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1746">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Replace any bound aliased vars with their binding; and replace
+any unbound aliased vars with their representative var.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._trace_unify_start">
+    
+  </a>
+  <a name="_trace_unify_start">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_unify_start</span>(path, fval1, fval2):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1756">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._trace_unify_identity">
+    
+  </a>
+  <a name="_trace_unify_identity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_unify_identity</span>(path, fval1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1767">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._trace_unify_fail">
+    
+  </a>
+  <a name="_trace_unify_fail">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_unify_fail</span>(path, result):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1774">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._trace_unify_succeed">
+    
+  </a>
+  <a name="_trace_unify_succeed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_unify_succeed</span>(path, fval1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1783">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._trace_bindings">
+    
+  </a>
+  <a name="_trace_bindings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_bindings</span>(path, bindings):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1789">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._trace_valrepr">
+    
+  </a>
+  <a name="_trace_valrepr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_valrepr</span>(val):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1799">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.subsumes">
+    
+  </a>
+  <a name="subsumes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">subsumes</span>(fstruct1, fstruct2):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1806">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return True if ``fstruct1`` subsumes ``fstruct2``.  I.e., return
+true if unifying ``fstruct1`` with ``fstruct2`` would result in a
+feature structure equal to ``fstruct2.``
+
+:rtype: bool</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.conflicts">
+    
+  </a>
+  <a name="conflicts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">conflicts</span>(fstruct1, fstruct2, trace=0):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1817">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a list of the feature paths of all features which are
+assigned incompatible values by ``fstruct1`` and ``fstruct2``.
+
+:rtype: list(tuple)</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._is_mapping">
+    
+  </a>
+  <a name="_is_mapping">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_is_mapping</span>(v):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1839">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._is_sequence">
+    
+  </a>
+  <a name="_is_sequence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_is_sequence</span>(v):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1843">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._default_fs_class">
+    
+  </a>
+  <a name="_default_fs_class">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_default_fs_class</span>(obj):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1851">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.featstruct._flatten">
+    
+  </a>
+  <a name="_flatten">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_flatten</span>(lst, cls):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L1988">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper function -- return a copy of list, with all elements of
+type ``cls`` spliced in rather than appended in.</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.featstruct.SLASH">
+    
+  </a>
+  <a name="SLASH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SLASH</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L2106">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.featstruct.TYPE">
+    
+  </a>
+  <a name="TYPE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TYPE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L2107">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.display_unification">
+    
+  </a>
+  <a name="display_unification">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">display_unification</span>(fs1, fs2, indent='  '):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L2585">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.interactive_demo">
+    
+  </a>
+  <a name="interactive_demo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">interactive_demo</span>(trace=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L2619">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.featstruct.demo">
+    
+  </a>
+  <a name="demo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo</span>(trace=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/featstruct.py#L2736">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Just for testing</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.parse.html">parse</a></code>.<code><a href="nltk.parse.nonprojectivedependencyparser.html">nonprojectivedependencyparser</a></code>.<code><a href="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.html">ProbabilisticNonprojectiveParser</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticNonprojectiveParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L202">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A probabilistic non-projective dependency parser.
+
+Nonprojective dependencies allows for "crossing branches" in the parse tree
+which is necessary for representing particular linguistic phenomena, or even
+typical parses in some languages.  This parser follows the MST parsing
+algorithm, outlined in McDonald(2005), which likens the search for the best
+non-projective parse to finding the maximum spanning tree in a weighted
+directed graph.
+
+&gt;&gt;&gt; class Scorer(DependencyScorerI):
+...     def train(self, graphs):
+...         pass
+...
+...     def score(self, graph):
+...         return [
+...             [[], [5],  [1],  [1]],
+...             [[], [],   [11], [4]],
+...             [[], [10], [],   [5]],
+...             [[], [8],  [8],  []],
+...         ]
+
+
+&gt;&gt;&gt; npp = ProbabilisticNonprojectiveParser()
+&gt;&gt;&gt; npp.train([], Scorer())
+
+&gt;&gt;&gt; parses = npp.parse(['v1', 'v2', 'v3'], [None, None, None])
+&gt;&gt;&gt; len(list(parses))
+1
+
+Rule based example
+------------------
+
+&gt;&gt;&gt; from nltk.grammar import DependencyGrammar
+
+&gt;&gt;&gt; grammar = DependencyGrammar.fromstring('''
+... 'taught' -&gt; 'play' | 'man'
+... 'man' -&gt; 'the' | 'in'
+... 'in' -&gt; 'corner'
+... 'corner' -&gt; 'the'
+... 'play' -&gt; 'golf' | 'dachshund' | 'to'
+... 'dachshund' -&gt; 'his'
+... ''')
+
+&gt;&gt;&gt; ndp = NonprojectiveDependencyParser(grammar)
+&gt;&gt;&gt; parses = ndp.parse(['the', 'man', 'in', 'the', 'corner', 'taught', 'his', 'dachshund', 'to', 'play', 'golf'])
+&gt;&gt;&gt; len(list(parses))
+4</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1056">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Creates a new non-projective parser.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#train">train</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#initialize_edge_scores">initialize_edge_scores</a></code></td>
+    <td><span>Assigns a score to every edge in the ``DependencyGraph`` graph. These scores are generated via the parser's scorer which was assigned during the training process.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#scores">scores</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#collapse_nodes">collapse_nodes</a></code></td>
+    <td><span>Takes a list of nodes that have been identified to belong to a cycle, and collapses them into on larger node.  The arcs of all nodes in the graph must be updated to account for this.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update_edge_scores">update_edge_scores</a></code></td>
+    <td><span>Updates the edge scores to reflect a collapse operation into new_node.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#compute_original_indexes">compute_original_indexes</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#compute_max_subtract_score">compute_max_subtract_score</a></code></td>
+    <td><span>When updating scores the score of the highest-weighted incoming arc is subtracted upon collapse.  This returns the correct amount to subtract from that edge.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#best_incoming_arc">best_incoming_arc</a></code></td>
+    <td><span>Returns the source of the best incoming arc to the node with address: node_index</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#original_best_arc">original_best_arc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse">parse</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#inner_nodes">inner_nodes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_scorer">_scorer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L253">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Creates a new non-projective parser.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.train">
+    
+  </a>
+  <a name="train">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, graphs, dependency_scorer):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L259">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Trains a ``DependencyScorerI`` from a set of ``DependencyGraph`` objects,
+and establishes this as the parser's scorer.  This is used to
+initialize the scores on a ``DependencyGraph`` during the parsing
+procedure.
+
+:type graphs: list(DependencyGraph)
+:param graphs: A list of dependency graphs to train the scorer.
+:type dependency_scorer: DependencyScorerI
+:param dependency_scorer: A scorer which implements the
+    ``DependencyScorerI`` interface.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser._scorer">
+    
+  </a>
+  <a name="_scorer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_scorer</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L272">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.initialize_edge_scores">
+    
+  </a>
+  <a name="initialize_edge_scores">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">initialize_edge_scores</span>(self, graph):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L275">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Assigns a score to every edge in the ``DependencyGraph`` graph.
+These scores are generated via the parser's scorer which
+was assigned during the training process.
+
+:type graph: DependencyGraph
+:param graph: A dependency graph to assign scores to.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.scores">
+    
+  </a>
+  <a name="scores">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">scores</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L284">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.collapse_nodes">
+    
+  </a>
+  <a name="collapse_nodes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">collapse_nodes</span>(self, new_node, cycle_path, g_graph, b_graph, c_graph):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L286">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Takes a list of nodes that have been identified to belong to a cycle,
+and collapses them into on larger node.  The arcs of all nodes in
+the graph must be updated to account for this.
+
+:type new_node: Node.
+:param new_node: A Node (Dictionary) to collapse the cycle nodes into.
+:type cycle_path: A list of integers.
+:param cycle_path: A list of node addresses, each of which is in the cycle.
+:type g_graph, b_graph, c_graph: DependencyGraph
+:param g_graph, b_graph, c_graph: Graphs which need to be updated.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.update_edge_scores">
+    
+  </a>
+  <a name="update_edge_scores">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update_edge_scores</span>(self, new_node, cycle_path):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L306">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Updates the edge scores to reflect a collapse operation into
+new_node.
+
+:type new_node: A Node.
+:param new_node: The node which cycle nodes are collapsed into.
+:type cycle_path: A list of integers.
+:param cycle_path: A list of node addresses that belong to the cycle.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.compute_original_indexes">
+    
+  </a>
+  <a name="compute_original_indexes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">compute_original_indexes</span>(self, new_indexes):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L344">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">As nodes are collapsed into others, they are replaced
+by the new node in the graph, but it's still necessary
+to keep track of what these original nodes were.  This
+takes a list of node addresses and replaces any collapsed
+node addresses with their original addresses.
+
+:type new_indexes: A list of integers.
+:param new_indexes: A list of node addresses to check for
+subsumed nodes.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.compute_max_subtract_score">
+    
+  </a>
+  <a name="compute_max_subtract_score">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">compute_max_subtract_score</span>(self, column_index, cycle_indexes):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L371">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">When updating scores the score of the highest-weighted incoming
+arc is subtracted upon collapse.  This returns the correct
+amount to subtract from that edge.
+
+:type column_index: integer.
+:param column_index: A index representing the column of incoming arcs
+to a particular node being updated
+:type cycle_indexes: A list of integers.
+:param cycle_indexes: Only arcs from cycle nodes are considered.  This
+is a list of such nodes addresses.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.best_incoming_arc">
+    
+  </a>
+  <a name="best_incoming_arc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">best_incoming_arc</span>(self, node_index):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L391">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the source of the best incoming arc to the
+node with address: node_index
+
+:type node_index: integer.
+:param node_index: The address of the 'destination' node,
+the node that is arced to.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.original_best_arc">
+    
+  </a>
+  <a name="original_best_arc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">original_best_arc</span>(self, node_index):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L423">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.parse">
+    
+  </a>
+  <a name="parse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens, tags):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L438">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Parses a list of tokens in accordance to the MST parsing algorithm
+for non-projective dependency parses.  Assumes that the tokens to
+be parsed have already been tagged and those tags are provided.  Various
+scoring methods can be used by implementing the ``DependencyScorerI``
+interface and passing it to the training algorithm.
+
+:type tokens: list(str)
+:param tokens: A list of words or punctuation to be parsed.
+:type tags: list(str)
+:param tags: A list of tags corresponding by index to the words in the tokens list.
+:return: An iterator of non-projective parses.
+:rtype: iter(DependencyGraph)</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser.inner_nodes">
+    
+  </a>
+  <a name="inner_nodes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">inner_nodes</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/nonprojectivedependencyparser.py#L453">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

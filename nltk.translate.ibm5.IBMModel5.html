@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.translate.ibm5.IBMModel5 : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.translate.html">translate</a></code>.<code><a href="nltk.translate.ibm5.html">ibm5</a></code>.<code><a href="nltk.translate.ibm5.IBMModel5.html">IBMModel5</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel5</span>(<span title="nltk.translate.IBMModel">IBMModel</span>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L126">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.translate.ibm5.IBMModel5">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Translation model that keeps track of vacant positions in the target
+sentence to decide where to place translated words
+
+&gt;&gt;&gt; bitext = []
+&gt;&gt;&gt; bitext.append(AlignedSent(['klein', 'ist', 'das', 'haus'], ['the', 'house', 'is', 'small']))
+&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'haus', 'war', 'ja', 'groß'], ['the', 'house', 'was', 'big']))
+&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'buch', 'ist', 'ja', 'klein'], ['the', 'book', 'is', 'small']))
+&gt;&gt;&gt; bitext.append(AlignedSent(['ein', 'haus', 'ist', 'klein'], ['a', 'house', 'is', 'small']))
+&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'haus'], ['the', 'house']))
+&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'buch'], ['the', 'book']))
+&gt;&gt;&gt; bitext.append(AlignedSent(['ein', 'buch'], ['a', 'book']))
+&gt;&gt;&gt; bitext.append(AlignedSent(['ich', 'fasse', 'das', 'buch', 'zusammen'], ['i', 'summarize', 'the', 'book']))
+&gt;&gt;&gt; bitext.append(AlignedSent(['fasse', 'zusammen'], ['summarize']))
+&gt;&gt;&gt; src_classes = {'the': 0, 'a': 0, 'small': 1, 'big': 1, 'house': 2, 'book': 2, 'is': 3, 'was': 3, 'i': 4, 'summarize': 5 }
+&gt;&gt;&gt; trg_classes = {'das': 0, 'ein': 0, 'haus': 1, 'buch': 1, 'klein': 2, 'groß': 2, 'ist': 3, 'war': 3, 'ja': 4, 'ich': 5, 'fasse': 6, 'zusammen': 6 }
+
+&gt;&gt;&gt; ibm5 = IBMModel5(bitext, 5, src_classes, trg_classes)
+
+&gt;&gt;&gt; print(round(ibm5.head_vacancy_table[1][1][1], 3))
+1.0
+&gt;&gt;&gt; print(round(ibm5.head_vacancy_table[2][1][1], 3))
+0.0
+&gt;&gt;&gt; print(round(ibm5.non_head_vacancy_table[3][3][6], 3))
+1.0
+
+&gt;&gt;&gt; print(round(ibm5.fertility_table[2]['summarize'], 3))
+1.0
+&gt;&gt;&gt; print(round(ibm5.fertility_table[1]['book'], 3))
+1.0
+
+&gt;&gt;&gt; print(ibm5.p1)
+0.033...
+
+&gt;&gt;&gt; test_sentence = bitext[2]
+&gt;&gt;&gt; test_sentence.words
+['das', 'buch', 'ist', 'ja', 'klein']
+&gt;&gt;&gt; test_sentence.mots
+['the', 'book', 'is', 'small']
+&gt;&gt;&gt; test_sentence.alignment
+Alignment([(0, 0), (1, 1), (2, 2), (3, None), (4, 3)])</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1886">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#MIN_SCORE_FACTOR">MIN_SCORE_FACTOR</a></code></td>
+    <td><span>Alignments with scores below this factor are pruned during sampling</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Train on ``sentence_aligned_corpus`` and create a lexical translation model, vacancy models, a fertility model, and a model for generating NULL-aligned words.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#src_classes">src_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#trg_classes">trg_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#translation_table">translation_table</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#alignment_table">alignment_table</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#fertility_table">fertility_table</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#p1">p1</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#head_distortion_table">head_distortion_table</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#non_head_distortion_table">non_head_distortion_table</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#head_vacancy_table">head_vacancy_table</a></code></td>
+    <td><span>dict[int][int][int]: float. Probability(vacancy difference | number of remaining valid positions,target word class). Values accessed as ``head_vacancy_table[dv][v_max][trg_class]``.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#non_head_vacancy_table">non_head_vacancy_table</a></code></td>
+    <td><span>dict[int][int][int]: float. Probability(vacancy difference | number of remaining valid positions,target word class). Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reset_probabilities">reset_probabilities</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_uniform_probabilities">set_uniform_probabilities</a></code></td>
+    <td><span>Set vacancy probabilities uniformly to 1 / cardinality of vacancy difference values</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#train">train</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sample">sample</a></code></td>
+    <td><span>Sample the most probable alignments from the entire alignment space according to Model 4</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prune">prune</a></code></td>
+    <td><span>Removes alignments from ``alignment_infos`` that have substantially lower Model 4 scores than the best alignment</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#hillclimb">hillclimb</a></code></td>
+    <td><span>Starting from the alignment in ``alignment_info``, look at neighboring alignments iteratively for the best one, according to Model 4</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prob_t_a_given_s">prob_t_a_given_s</a></code></td>
+    <td><span>Probability of target sentence and an alignment given the source sentence</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#maximize_vacancy_probabilities">maximize_vacancy_probabilities</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.MIN_SCORE_FACTOR">
+    
+  </a>
+  <a name="MIN_SCORE_FACTOR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MIN_SCORE_FACTOR</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L171">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Alignments with scores below this factor are pruned during sampling</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, sentence_aligned_corpus, iterations, source_word_classes, target_word_classes, probability_tables=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L176">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Train on ``sentence_aligned_corpus`` and create a lexical
+translation model, vacancy models, a fertility model, and a
+model for generating NULL-aligned words.
+
+Translation direction is from ``AlignedSent.mots`` to
+``AlignedSent.words``.
+
+:param sentence_aligned_corpus: Sentence-aligned parallel corpus
+:type sentence_aligned_corpus: list(AlignedSent)
+
+:param iterations: Number of iterations to run training algorithm
+:type iterations: int
+
+:param source_word_classes: Lookup table that maps a source word
+    to its word class, the latter represented by an integer id
+:type source_word_classes: dict[str]: int
+
+:param target_word_classes: Lookup table that maps a target word
+    to its word class, the latter represented by an integer id
+:type target_word_classes: dict[str]: int
+
+:param probability_tables: Optional. Use this to pass in custom
+    probability values. If not specified, probabilities will be
+    set to a uniform distribution, or some other sensible value.
+    If specified, all the following entries must be present:
+    ``translation_table``, ``alignment_table``,
+    ``fertility_table``, ``p1``, ``head_distortion_table``,
+    ``non_head_distortion_table``, ``head_vacancy_table``,
+    ``non_head_vacancy_table``. See ``IBMModel``, ``IBMModel4``,
+    and ``IBMModel5`` for the type and purpose of these tables.
+:type probability_tables: dict[str]: object</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.src_classes">
+    
+  </a>
+  <a name="src_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">src_classes</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L219">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.trg_classes">
+    
+  </a>
+  <a name="trg_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">trg_classes</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L220">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.translation_table">
+    
+  </a>
+  <a name="translation_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">translation_table</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.alignment_table">
+    
+  </a>
+  <a name="alignment_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">alignment_table</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L231">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.fertility_table">
+    
+  </a>
+  <a name="fertility_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">fertility_table</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L232">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.p1">
+    
+  </a>
+  <a name="p1">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">p1</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L233">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.head_distortion_table">
+    
+  </a>
+  <a name="head_distortion_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">head_distortion_table</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L234">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.non_head_distortion_table">
+    
+  </a>
+  <a name="non_head_distortion_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">non_head_distortion_table</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L235">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.head_vacancy_table">
+    
+  </a>
+  <a name="head_vacancy_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">head_vacancy_table</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L247">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">dict[int][int][int]: float. Probability(vacancy difference |
+number of remaining valid positions,target word class).
+Values accessed as ``head_vacancy_table[dv][v_max][trg_class]``.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.non_head_vacancy_table">
+    
+  </a>
+  <a name="non_head_vacancy_table">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">non_head_vacancy_table</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L248">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">dict[int][int][int]: float. Probability(vacancy difference |
+number of remaining valid positions,target word class).
+Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.reset_probabilities">
+    
+  </a>
+  <a name="reset_probabilities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reset_probabilities</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L253">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.set_uniform_probabilities">
+    
+  </a>
+  <a name="set_uniform_probabilities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_uniform_probabilities</span>(self, sentence_aligned_corpus):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L273">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Set vacancy probabilities uniformly to
+1 / cardinality of vacancy difference values</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.train">
+    
+  </a>
+  <a name="train">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, parallel_corpus):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L309">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.sample">
+    
+  </a>
+  <a name="sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sample</span>(self, sentence_pair):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L355">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Sample the most probable alignments from the entire alignment
+space according to Model 4
+
+Note that Model 4 scoring is used instead of Model 5 because the
+latter is too expensive to compute.
+
+First, determine the best alignment according to IBM Model 2.
+With this initial alignment, use hill climbing to determine the
+best alignment according to a IBM Model 4. Add this
+alignment and its neighbors to the sample set. Repeat this
+process with other initial alignments obtained by pegging an
+alignment point. Finally, prune alignments that have
+substantially lower Model 4 scores than the best alignment.
+
+:param sentence_pair: Source and target language sentence pair
+    to generate a sample of alignments from
+:type sentence_pair: AlignedSent
+
+:return: A set of best alignments represented by their ``AlignmentInfo``
+    and the best alignment of the set for convenience
+:rtype: set(AlignmentInfo), AlignmentInfo</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.prune">
+    
+  </a>
+  <a name="prune">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prune</span>(self, alignment_infos):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L384">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Removes alignments from ``alignment_infos`` that have
+substantially lower Model 4 scores than the best alignment
+
+:return: Pruned alignments
+:rtype: set(AlignmentInfo)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.hillclimb">
+    
+  </a>
+  <a name="hillclimb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">hillclimb</span>(self, alignment_info, j_pegged=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L404">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Starting from the alignment in ``alignment_info``, look at
+neighboring alignments iteratively for the best one, according
+to Model 4
+
+Note that Model 4 scoring is used instead of Model 5 because the
+latter is too expensive to compute.
+
+There is no guarantee that the best alignment in the alignment
+space will be found, because the algorithm might be stuck in a
+local maximum.
+
+:param j_pegged: If specified, the search will be constrained to
+    alignments where ``j_pegged`` remains unchanged
+:type j_pegged: int
+
+:return: The best alignment found from hill climbing
+:rtype: AlignmentInfo</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.prob_t_a_given_s">
+    
+  </a>
+  <a name="prob_t_a_given_s">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prob_t_a_given_s</span>(self, alignment_info):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L445">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Probability of target sentence and an alignment given the
+source sentence</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.translate.ibm5.IBMModel5.maximize_vacancy_probabilities">
+    
+  </a>
+  <a name="maximize_vacancy_probabilities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">maximize_vacancy_probabilities</span>(self, counts):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/translate/ibm5.py#L552">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

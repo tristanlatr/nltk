@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.chunk.regexp.RegexpParser : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.chunk.html">chunk</a></code>.<code><a href="nltk.chunk.regexp.html">regexp</a></code>.<code><a href="nltk.chunk.regexp.RegexpParser.html">RegexpParser</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">RegexpParser</span>(<a href="nltk.chunk.api.ChunkParserI.html" title="nltk.chunk.api.ChunkParserI">ChunkParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1133">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.chunk.regexp.RegexpParser">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A grammar based chunk parser.  ``chunk.RegexpParser`` uses a set of
+regular expression patterns to specify the behavior of the parser.
+The chunking of the text is encoded using a ``ChunkString``, and
+each rule acts by modifying the chunking in the ``ChunkString``.
+The rules are all implemented using regular expression matching
+and substitution.
+
+A grammar contains one or more clauses in the following form::
+
+ NP:
+   {&lt;DT|JJ&gt;}          # chunk determiners and adjectives
+   }&lt;[\.VI].*&gt;+{      # strip any tag beginning with V, I, or .
+   &lt;.*&gt;}{&lt;DT&gt;         # split a chunk at a determiner
+   &lt;DT|JJ&gt;{}&lt;NN.*&gt;    # merge chunk ending with det/adj
+                      # with one starting with a noun
+
+The patterns of a clause are executed in order.  An earlier
+pattern may introduce a chunk boundary that prevents a later
+pattern from executing.  Sometimes an individual pattern will
+match on multiple, overlapping extents of the input.  As with
+regular expression substitution more generally, the chunker will
+identify the first match possible, then continue looking for matches
+after this one has ended.
+
+The clauses of a grammar are also executed in order.  A cascaded
+chunk parser is one having more than one clause.  The maximum depth
+of a parse tree created by this chunk parser is the same as the
+number of clauses in the grammar.
+
+When tracing is turned on, the comment portion of a line is displayed
+each time the corresponding pattern is applied.
+
+:type _start: str
+:ivar _start: The start symbol of the grammar (the root node of
+    resulting trees)
+:type _stages: int
+:ivar _stages: The list of parsing stages corresponding to the grammar</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id126">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Create a new chunk parser, from the given start state and set of chunk patterns.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parse">parse</a></code></td>
+    <td><span>Apply the chunk parser to this input.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span>:return: a concise string representation of this ``chunk.RegexpParser``. :rtype: str</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td><span>:return: a verbose string representation of this ``RegexpParser``. :rtype: str</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_trace">_trace</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_stages">_stages</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_grammar">_grammar</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_loop">_loop</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_read_grammar">_read_grammar</a></code></td>
+    <td><span>Helper function for __init__: read the grammar if it is a string.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_add_stage">_add_stage</a></code></td>
+    <td><span>Helper function for __init__: add a new stage to the parser.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.chunk.api.ChunkParserI.html">ChunkParserI</a></code>:
+          </p>
+          <table class="children sortable" id="id127">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.chunk.api.ChunkParserI.html#evaluate">evaluate</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.chunk.regexp.RegexpParser.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, grammar, root_label='S', loop=1, trace=0):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1175">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Create a new chunk parser, from the given start state
+and set of chunk patterns.
+
+:param grammar: The grammar, or a list of RegexpChunkParser objects
+:type grammar: str or list(RegexpChunkParser)
+:param root_label: The top node of the tree being created
+:type root_label: str or Nonterminal
+:param loop: The number of times to run through the patterns
+:type loop: int
+:type trace: int
+:param trace: The level of tracing that should be used when
+    parsing a text.  ``0`` will generate no tracing output;
+    ``1`` will generate normal tracing output; and ``2`` or
+    higher will generate verbose tracing output.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.chunk.regexp.RegexpParser._trace">
+    
+  </a>
+  <a name="_trace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_trace</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1192">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.chunk.regexp.RegexpParser._stages">
+    
+  </a>
+  <a name="_stages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_stages</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1193">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.chunk.regexp.RegexpParser._grammar">
+    
+  </a>
+  <a name="_grammar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_grammar</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1194">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.chunk.regexp.RegexpParser._loop">
+    
+  </a>
+  <a name="_loop">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_loop</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1195">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.chunk.regexp.RegexpParser._read_grammar">
+    
+  </a>
+  <a name="_read_grammar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_read_grammar</span>(self, grammar, root_label, trace):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1213">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper function for __init__: read the grammar if it is a
+string.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.chunk.regexp.RegexpParser._add_stage">
+    
+  </a>
+  <a name="_add_stage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_add_stage</span>(self, rules, lhs, root_label, trace):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1243">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper function for __init__: add a new stage to the parser.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.chunk.regexp.RegexpParser.parse">
+    
+  </a>
+  <a name="parse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, chunk_struct, trace=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1255">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.chunk.api.ChunkParserI.html#parse">nltk.chunk.api.ChunkParserI.parse</a></code></div>
+    
+    <div><p class="pre">Apply the chunk parser to this input.
+
+:type chunk_struct: Tree
+:param chunk_struct: the chunk structure to be (further) chunked
+    (this tree is modified, and is also returned)
+:type trace: int
+:param trace: The level of tracing that should be used when
+    parsing a text.  ``0`` will generate no tracing output;
+    ``1`` will generate normal tracing output; and ``2`` or
+    highter will generate verbose tracing output.  This value
+    overrides the trace level value that was given to the
+    constructor.
+:return: the chunked output.
+:rtype: Tree</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.chunk.regexp.RegexpParser.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1279">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: a concise string representation of this ``chunk.RegexpParser``.
+:rtype: str</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.chunk.regexp.RegexpParser.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L1286">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: a verbose string representation of this
+    ``RegexpParser``.
+:rtype: str</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

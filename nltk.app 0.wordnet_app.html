@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.app 0.wordnet_app : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.app%200.html">app 0</a></code>.<code><a href="nltk.app%200.wordnet_app.html">wordnet_app</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A WordNet Browser application which launches the default browser
+(if it is not already running) and opens a new tab with a connection
+to http://localhost:port/ .  It also starts an HTTP server on the
+specified port and begins serving browser requests.  The default
+port is 8000.  (For command-line help, run "python wordnet -h")
+This application requires that the user's web browser supports
+Javascript.
+
+BrowServer is a server for browsing the NLTK Wordnet database It first
+launches a browser client to be used for browsing and then starts
+serving the requests of that and maybe other clients
+
+Usage::
+
+    browserver.py -h
+    browserver.py [-s] [-p &lt;port&gt;]
+
+Options::
+
+    -h or --help
+        Display this help message.
+
+    -l &lt;file&gt; or --log-file &lt;file&gt;
+        Logs messages to the given file, If this option is not specified
+        messages are silently dropped.
+
+    -p &lt;port&gt; or --port &lt;port&gt;
+        Run the web server on this TCP port, defaults to 8000.
+
+    -s or --server-mode
+        Do not start a web browser, and do not allow a user to
+        shotdown the server through the web interface.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id47">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#firstClient">firstClient</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#server_mode">server_mode</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logfile">logfile</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.app%200.wordnet_app.MyServerHandler.html">MyServerHandler</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_unique_counter_from_url">get_unique_counter_from_url</a></code></td>
+    <td><span>Extract the unique counter from the URL if it has one.  Otherwise return null.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#wnb">wnb</a></code></td>
+    <td><span>Run NLTK Wordnet Browser Server.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#startBrowser">startBrowser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#HYPONYM">HYPONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#HYPERNYM">HYPERNYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#CLASS_REGIONAL">CLASS_REGIONAL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PART_HOLONYM">PART_HOLONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PART_MERONYM">PART_MERONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ATTRIBUTE">ATTRIBUTE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SUBSTANCE_HOLONYM">SUBSTANCE_HOLONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SUBSTANCE_MERONYM">SUBSTANCE_MERONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#MEMBER_HOLONYM">MEMBER_HOLONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#MEMBER_MERONYM">MEMBER_MERONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#VERB_GROUP">VERB_GROUP</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#INSTANCE_HYPONYM">INSTANCE_HYPONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#INSTANCE_HYPERNYM">INSTANCE_HYPERNYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#CAUSE">CAUSE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ALSO_SEE">ALSO_SEE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SIMILAR">SIMILAR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ENTAILMENT">ENTAILMENT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ANTONYM">ANTONYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#FRAMES">FRAMES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PERTAINYM">PERTAINYM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#CLASS_CATEGORY">CLASS_CATEGORY</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#CLASS_USAGE">CLASS_USAGE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#DERIVATIONALLY_RELATED_FORM">DERIVATIONALLY_RELATED_FORM</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#INDIRECT_HYPERNYMS">INDIRECT_HYPERNYMS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#lemma_property">lemma_property</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#rebuild_tree">rebuild_tree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_relations_data">get_relations_data</a></code></td>
+    <td><span>Get synset relations data for a synset.  Note that this doesn't yet support things such as full hyponym vs direct hyponym.</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#html_header">html_header</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#html_trailer">html_trailer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#explanation">explanation</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#pg">pg</a></code></td>
+    <td><span>Return a HTML page of NLTK Browser format constructed from the word and body</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#full_hyponym_cont_text">full_hyponym_cont_text</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.app%200.wordnet_app.Reference.html">Reference</a></code></td>
+    <td><span>A reference to a page that may be generated by page_word</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#make_lookup_link">make_lookup_link</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#page_from_word">page_from_word</a></code></td>
+    <td><span>Return a HTML page for the given word.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#page_from_href">page_from_href</a></code></td>
+    <td><span>Returns a tuple of the HTML page built and the new current word</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#page_from_reference">page_from_reference</a></code></td>
+    <td><span>Returns a tuple of the HTML page built and the new current word</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_static_page_by_path">get_static_page_by_path</a></code></td>
+    <td><span>Return a static HTML page from the path given.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_static_web_help_page">get_static_web_help_page</a></code></td>
+    <td><span>Return the static web help page.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_static_welcome_message">get_static_welcome_message</a></code></td>
+    <td><span>Get the static welcome page.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_static_index_page">get_static_index_page</a></code></td>
+    <td><span>Get the static index page.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_static_upper_page">get_static_upper_page</a></code></td>
+    <td><span>Return the upper frame page,</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#usage">usage</a></code></td>
+    <td><span>Display the command line help message.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#app">app</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_pos_tuples">_pos_tuples</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_pos_match">_pos_match</a></code></td>
+    <td><span>This function returns the complete pos tuple for the partial pos tuple given to it.  It attempts to match it against the first non-null component of the given pos tuple.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_bold">_bold</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_center">_center</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_hlev">_hlev</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_italic">_italic</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_li">_li</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_ul">_ul</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_abbc">_abbc</a></code></td>
+    <td><span>abbc = asterisks, breaks, bold, center</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_synset">_get_synset</a></code></td>
+    <td><span>The synset key is the unique name of the synset, this can be retrived via synset.name()</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_collect_one_synset">_collect_one_synset</a></code></td>
+    <td><span>Returns the HTML string for one synset or word</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_collect_all_synsets">_collect_all_synsets</a></code></td>
+    <td><span>Return a HTML unordered list of synsets for the given word and part of speech.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_synset_relations">_synset_relations</a></code></td>
+    <td><span>Builds the HTML string for the relations of a synset</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.firstClient">
+    
+  </a>
+  <a name="firstClient">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">firstClient</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L75">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.server_mode">
+    
+  </a>
+  <a name="server_mode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">server_mode</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.logfile">
+    
+  </a>
+  <a name="logfile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logfile</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L82">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.get_unique_counter_from_url">
+    
+  </a>
+  <a name="get_unique_counter_from_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_unique_counter_from_url</span>(sp):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L175">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Extract the unique counter from the URL if it has one.  Otherwise return
+null.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.wnb">
+    
+  </a>
+  <a name="wnb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">wnb</span>(port=8000, runBrowser=True, logfilename=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L187">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Run NLTK Wordnet Browser Server.
+
+:param port: The port number for the server to listen on, defaults to
+             8000
+:type  port: int
+
+:param runBrowser: True to start a web browser and point it at the web
+                   server.
+:type  runBrowser: bool</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.startBrowser">
+    
+  </a>
+  <a name="startBrowser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">startBrowser</span>(url, server_ready):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L258">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._pos_tuples">
+    
+  </a>
+  <a name="_pos_tuples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_pos_tuples</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L288">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._pos_match">
+    
+  </a>
+  <a name="_pos_match">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_pos_match</span>(pos_tuple):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L297">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This function returns the complete pos tuple for the partial pos
+tuple given to it.  It attempts to match it against the first
+non-null component of the given pos tuple.</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.HYPONYM">
+    
+  </a>
+  <a name="HYPONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">HYPONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L314">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.HYPERNYM">
+    
+  </a>
+  <a name="HYPERNYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">HYPERNYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L315">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.CLASS_REGIONAL">
+    
+  </a>
+  <a name="CLASS_REGIONAL">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">CLASS_REGIONAL</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L316">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.PART_HOLONYM">
+    
+  </a>
+  <a name="PART_HOLONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PART_HOLONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L317">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.PART_MERONYM">
+    
+  </a>
+  <a name="PART_MERONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PART_MERONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L318">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.ATTRIBUTE">
+    
+  </a>
+  <a name="ATTRIBUTE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ATTRIBUTE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L319">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.SUBSTANCE_HOLONYM">
+    
+  </a>
+  <a name="SUBSTANCE_HOLONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SUBSTANCE_HOLONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L320">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.SUBSTANCE_MERONYM">
+    
+  </a>
+  <a name="SUBSTANCE_MERONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SUBSTANCE_MERONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L321">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.MEMBER_HOLONYM">
+    
+  </a>
+  <a name="MEMBER_HOLONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MEMBER_HOLONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L322">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.MEMBER_MERONYM">
+    
+  </a>
+  <a name="MEMBER_MERONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MEMBER_MERONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L323">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.VERB_GROUP">
+    
+  </a>
+  <a name="VERB_GROUP">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">VERB_GROUP</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L324">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.INSTANCE_HYPONYM">
+    
+  </a>
+  <a name="INSTANCE_HYPONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">INSTANCE_HYPONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L325">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.INSTANCE_HYPERNYM">
+    
+  </a>
+  <a name="INSTANCE_HYPERNYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">INSTANCE_HYPERNYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L326">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.CAUSE">
+    
+  </a>
+  <a name="CAUSE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">CAUSE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L327">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.ALSO_SEE">
+    
+  </a>
+  <a name="ALSO_SEE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ALSO_SEE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L328">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.SIMILAR">
+    
+  </a>
+  <a name="SIMILAR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SIMILAR</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L329">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.ENTAILMENT">
+    
+  </a>
+  <a name="ENTAILMENT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ENTAILMENT</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L330">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.ANTONYM">
+    
+  </a>
+  <a name="ANTONYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ANTONYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L331">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.FRAMES">
+    
+  </a>
+  <a name="FRAMES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">FRAMES</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L332">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.PERTAINYM">
+    
+  </a>
+  <a name="PERTAINYM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PERTAINYM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L333">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.CLASS_CATEGORY">
+    
+  </a>
+  <a name="CLASS_CATEGORY">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">CLASS_CATEGORY</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L335">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.CLASS_USAGE">
+    
+  </a>
+  <a name="CLASS_USAGE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">CLASS_USAGE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L336">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.DERIVATIONALLY_RELATED_FORM">
+    
+  </a>
+  <a name="DERIVATIONALLY_RELATED_FORM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DERIVATIONALLY_RELATED_FORM</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L341">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.INDIRECT_HYPERNYMS">
+    
+  </a>
+  <a name="INDIRECT_HYPERNYMS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">INDIRECT_HYPERNYMS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L343">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.lemma_property">
+    
+  </a>
+  <a name="lemma_property">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lemma_property</span>(word, synset, func):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L346">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.rebuild_tree">
+    
+  </a>
+  <a name="rebuild_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rebuild_tree</span>(orig_tree):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L356">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.get_relations_data">
+    
+  </a>
+  <a name="get_relations_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_relations_data</span>(word, synset):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L362">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Get synset relations data for a synset.  Note that this doesn't
+yet support things such as full hyponym vs direct hyponym.</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.html_header">
+    
+  </a>
+  <a name="html_header">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">html_header</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L442">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.html_trailer">
+    
+  </a>
+  <a name="html_trailer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">html_trailer</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L454">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.explanation">
+    
+  </a>
+  <a name="explanation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">explanation</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L459">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._bold">
+    
+  </a>
+  <a name="_bold">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_bold</span>(txt):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L483">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._center">
+    
+  </a>
+  <a name="_center">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_center</span>(txt):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L487">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._hlev">
+    
+  </a>
+  <a name="_hlev">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_hlev</span>(n, txt):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L491">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._italic">
+    
+  </a>
+  <a name="_italic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_italic</span>(txt):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L495">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._li">
+    
+  </a>
+  <a name="_li">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_li</span>(txt):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L499">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.pg">
+    
+  </a>
+  <a name="pg">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pg</span>(word, body):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L503">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a HTML page of NLTK Browser format constructed from the
+word and body
+
+:param word: The word that the body corresponds to
+:type word: str
+:param body: The HTML body corresponding to the word
+:type body: str
+:return: a HTML page for the word-body combination
+:rtype: str</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._ul">
+    
+  </a>
+  <a name="_ul">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ul</span>(txt):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L518">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._abbc">
+    
+  </a>
+  <a name="_abbc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_abbc</span>(txt):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L522">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">abbc = asterisks, breaks, bold, center</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.app 0.wordnet_app.full_hyponym_cont_text">
+    
+  </a>
+  <a name="full_hyponym_cont_text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">full_hyponym_cont_text</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L529">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._get_synset">
+    
+  </a>
+  <a name="_get_synset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_synset</span>(synset_key):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L532">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">The synset key is the unique name of the synset, this can be
+retrived via synset.name()</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._collect_one_synset">
+    
+  </a>
+  <a name="_collect_one_synset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_collect_one_synset</span>(word, synset, synset_relations):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L540">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the HTML string for one synset or word
+
+:param word: the current word
+:type word: str
+:param synset: a synset
+:type synset: synset
+:param synset_relations: information about which synset relations
+to display.
+:type synset_relations: dict(synset_key, set(relation_id))
+:return: The HTML string built for this synset
+:rtype: str</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._collect_all_synsets">
+    
+  </a>
+  <a name="_collect_all_synsets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_collect_all_synsets</span>(word, pos, synset_relations=dict()):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L585">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a HTML unordered list of synsets for the given word and
+part of speech.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.app 0.wordnet_app._synset_relations">
+    
+  </a>
+  <a name="_synset_relations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_synset_relations</span>(word, synset, synset_relations):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L598">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Builds the HTML string for the relations of a synset
+
+:param word: The current word
+:type word: str
+:param synset: The synset for which we're building the relations.
+:type synset: Synset
+:param synset_relations: synset keys and relation types for which to display relations.
+:type synset_relations: dict(synset_key, set(relation_type))
+:return: The HTML for a synset's relations
+:rtype: str</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.make_lookup_link">
+    
+  </a>
+  <a name="make_lookup_link">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">make_lookup_link</span>(ref, label):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L727">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.page_from_word">
+    
+  </a>
+  <a name="page_from_word">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">page_from_word</span>(word):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L731">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a HTML page for the given word.
+
+:type word: str
+:param word: The currently active word
+:return: A tuple (page,word), where page is the new current HTML page
+    to be sent to the browser and
+    word is the new current word
+:rtype: A tuple (str,str)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.page_from_href">
+    
+  </a>
+  <a name="page_from_href">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">page_from_href</span>(href):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L745">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns a tuple of the HTML page built and the new current word
+
+:param href: The hypertext reference to be solved
+:type href: str
+:return: A tuple (page,word), where page is the new current HTML page
+         to be sent to the browser and
+         word is the new current word
+:rtype: A tuple (str,str)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.page_from_reference">
+    
+  </a>
+  <a name="page_from_reference">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">page_from_reference</span>(href):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L759">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns a tuple of the HTML page built and the new current word
+
+:param href: The hypertext reference to be solved
+:type href: str
+:return: A tuple (page,word), where page is the new current HTML page
+         to be sent to the browser and
+         word is the new current word
+:rtype: A tuple (str,str)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.get_static_page_by_path">
+    
+  </a>
+  <a name="get_static_page_by_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_static_page_by_path</span>(path):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L806">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a static HTML page from the path given.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.get_static_web_help_page">
+    
+  </a>
+  <a name="get_static_web_help_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_static_web_help_page</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L828">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the static web help page.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.get_static_welcome_message">
+    
+  </a>
+  <a name="get_static_welcome_message">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_static_welcome_message</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L874">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Get the static welcome page.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.get_static_index_page">
+    
+  </a>
+  <a name="get_static_index_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_static_index_page</span>(with_shutdown):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L898">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Get the static index page.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.get_static_upper_page">
+    
+  </a>
+  <a name="get_static_upper_page">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_static_upper_page</span>(with_shutdown):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L928">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the upper frame page,
+
+If with_shutdown is True then a 'shutdown' button is also provided
+to shutdown the server.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">usage</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L967">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Display the command line help message.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.app 0.wordnet_app.app">
+    
+  </a>
+  <a name="app">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">app</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/app/wordnet_app.py#L974">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

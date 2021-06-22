@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tag.brill_trainer.BrillTaggerTrainer : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tag.html">tag</a></code>.<code><a href="nltk.tag.brill_trainer.html">brill_trainer</a></code>.<code><a href="nltk.tag.brill_trainer.BrillTaggerTrainer.html">BrillTaggerTrainer</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BrillTaggerTrainer</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L22">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.tag.brill_trainer.BrillTaggerTrainer">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A trainer for tbl taggers.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1546">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a Brill tagger from a baseline tagger and a set of templates</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#train">train</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_initial_tagger">_initial_tagger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_templates">_templates</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_trace">_trace</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_deterministic">_deterministic</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_ruleformat">_ruleformat</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tag_positions">_tag_positions</a></code></td>
+    <td><span>Mapping from tags to lists of positions that use that tag.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rules_by_position">_rules_by_position</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_positions_by_rule">_positions_by_rule</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rules_by_score">_rules_by_score</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rule_scores">_rule_scores</a></code></td>
+    <td><span>Mapping from rules to upper bounds on their effects on the overall score.  This is the inverse mapping to _rules_by_score. Invariant: ruleScores[r] = sum(_positions_by_rule[r])</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_first_unknown_position">_first_unknown_position</a></code></td>
+    <td><span>Mapping from rules to the first position where we're unsure if the rule applies.  This records the next position we need to check to see if the rule messed anything up.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_mappings">_init_mappings</a></code></td>
+    <td><span>Initialize the tag position mapping &amp; the rule related mappings.  For each error in test_sents, find new rules that would correct them, and add them to the rule mappings.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_clean">_clean</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_find_rules">_find_rules</a></code></td>
+    <td><span>Use the templates to find rules that apply at index *wordnum* in the sentence *sent* and generate the tag *new_tag*.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_rule_applies">_update_rule_applies</a></code></td>
+    <td><span>Update the rule data tables to reflect the fact that *rule* applies at the position *(sentnum, wordnum)*.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_rule_not_applies">_update_rule_not_applies</a></code></td>
+    <td><span>Update the rule data tables to reflect the fact that *rule* does not apply at the position *(sentnum, wordnum)*.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_best_rule">_best_rule</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_apply_rule">_apply_rule</a></code></td>
+    <td><span>Update *test_sents* by applying *rule* everywhere where its conditions are met.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_tag_positions">_update_tag_positions</a></code></td>
+    <td><span>Update _tag_positions to reflect the changes to tags that are made by *rule*.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_rules">_update_rules</a></code></td>
+    <td><span>Check if we should add or remove any rules from consideration, given the changes made by *rule*.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_trace_header">_trace_header</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_trace_rule">_trace_rule</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_trace_apply">_trace_apply</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_trace_update_rules">_trace_update_rules</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, initial_tagger, templates, trace=0, deterministic=None, ruleformat='str'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L27">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a Brill tagger from a baseline tagger and a
+set of templates
+
+:param initial_tagger: the baseline tagger
+:type initial_tagger: Tagger
+:param templates: templates to be used in training
+:type templates: list of Templates
+:param trace: verbosity level
+:type trace: int
+:param deterministic: if True, adjudicate ties deterministically
+:type deterministic: bool
+:param ruleformat: format of reported Rules
+:type ruleformat: str
+:return: An untrained BrillTagger
+:rtype: BrillTagger</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._initial_tagger">
+    
+  </a>
+  <a name="_initial_tagger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_initial_tagger</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._templates">
+    
+  </a>
+  <a name="_templates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_templates</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L51">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._trace">
+    
+  </a>
+  <a name="_trace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_trace</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L52">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._deterministic">
+    
+  </a>
+  <a name="_deterministic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_deterministic</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._ruleformat">
+    
+  </a>
+  <a name="_ruleformat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ruleformat</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L54">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._tag_positions">
+    
+  </a>
+  <a name="_tag_positions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tag_positions</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Mapping from tags to lists of positions that use that tag.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._rules_by_position">
+    
+  </a>
+  <a name="_rules_by_position">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rules_by_position</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L59">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Mapping from positions to the set of rules that are known
+to occur at that position.  Position is (sentnum, wordnum).
+Initially, this will only contain positions where each rule
+applies in a helpful way; but when we examine a rule, we'll
+extend this list to also include positions where each rule
+applies in a harmful or neutral way.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._positions_by_rule">
+    
+  </a>
+  <a name="_positions_by_rule">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_positions_by_rule</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Mapping from rule to position to effect, specifying the
+effect that each rule has on the overall score, at each
+position.  Position is (sentnum, wordnum); and effect is
+-1, 0, or 1.  As with _rules_by_position, this mapping starts
+out only containing rules with positive effects; but when
+we examine a rule, we'll extend this mapping to include
+the positions where the rule is harmful or neutral.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._rules_by_score">
+    
+  </a>
+  <a name="_rules_by_score">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rules_by_score</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Mapping from scores to the set of rules whose effect on the
+overall score is upper bounded by that score.  Invariant:
+rulesByScore[s] will contain r iff the sum of
+_positions_by_rule[r] is s.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._rule_scores">
+    
+  </a>
+  <a name="_rule_scores">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rule_scores</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L82">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Mapping from rules to upper bounds on their effects on the
+overall score.  This is the inverse mapping to _rules_by_score.
+Invariant: ruleScores[r] = sum(_positions_by_rule[r])</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._first_unknown_position">
+    
+  </a>
+  <a name="_first_unknown_position">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_first_unknown_position</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">Mapping from rules to the first position where we're unsure
+if the rule applies.  This records the next position we
+need to check to see if the rule messed anything up.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer.train">
+    
+  </a>
+  <a name="train">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, train_sents, max_rules=200, min_score=2, min_acc=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L94">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Trains the Brill tagger on the corpus *train_sents*,
+producing at most *max_rules* transformations, each of which
+reduces the net number of errors in the corpus by at least
+*min_score*, and each of which has accuracy not lower than
+*min_acc*.
+
+#imports
+&gt;&gt;&gt; from nltk.tbl.template import Template
+&gt;&gt;&gt; from nltk.tag.brill import Pos, Word
+&gt;&gt;&gt; from nltk.tag import untag, RegexpTagger, BrillTaggerTrainer
+
+#some data
+&gt;&gt;&gt; from nltk.corpus import treebank
+&gt;&gt;&gt; training_data = treebank.tagged_sents()[:100]
+&gt;&gt;&gt; baseline_data = treebank.tagged_sents()[100:200]
+&gt;&gt;&gt; gold_data = treebank.tagged_sents()[200:300]
+&gt;&gt;&gt; testing_data = [untag(s) for s in gold_data]
+
+&gt;&gt;&gt; backoff = RegexpTagger([
+... (r'^-?[0-9]+(.[0-9]+)?$', 'CD'),   # cardinal numbers
+... (r'(The|the|A|a|An|an)$', 'AT'),   # articles
+... (r'.*able$', 'JJ'),                # adjectives
+... (r'.*ness$', 'NN'),                # nouns formed from adjectives
+... (r'.*ly$', 'RB'),                  # adverbs
+... (r'.*s$', 'NNS'),                  # plural nouns
+... (r'.*ing$', 'VBG'),                # gerunds
+... (r'.*ed$', 'VBD'),                 # past tense verbs
+... (r'.*', 'NN')                      # nouns (default)
+... ])
+
+&gt;&gt;&gt; baseline = backoff #see NOTE1
+
+&gt;&gt;&gt; baseline.evaluate(gold_data) #doctest: +ELLIPSIS
+0.2450142...
+
+#templates
+&gt;&gt;&gt; Template._cleartemplates() #clear any templates created in earlier tests
+&gt;&gt;&gt; templates = [Template(Pos([-1])), Template(Pos([-1]), Word([0]))]
+
+#construct a BrillTaggerTrainer
+&gt;&gt;&gt; tt = BrillTaggerTrainer(baseline, templates, trace=3)
+
+&gt;&gt;&gt; tagger1 = tt.train(training_data, max_rules=10)
+TBL train (fast) (seqs: 100; tokens: 2417; tpls: 2; min score: 2; min acc: None)
+Finding initial useful rules...
+    Found 845 useful rules.
+&lt;BLANKLINE&gt;
+           B      |
+   S   F   r   O  |        Score = Fixed - Broken
+   c   i   o   t  |  R     Fixed = num tags changed incorrect -&gt; correct
+   o   x   k   h  |  u     Broken = num tags changed correct -&gt; incorrect
+   r   e   e   e  |  l     Other = num tags changed incorrect -&gt; incorrect
+   e   d   n   r  |  e
+------------------+-------------------------------------------------------
+ 132 132   0   0  | AT-&gt;DT if Pos:NN@[-1]
+  85  85   0   0  | NN-&gt;, if Pos:NN@[-1] &amp; Word:,@[0]
+  69  69   0   0  | NN-&gt;. if Pos:NN@[-1] &amp; Word:.@[0]
+  51  51   0   0  | NN-&gt;IN if Pos:NN@[-1] &amp; Word:of@[0]
+  47  63  16 161  | NN-&gt;IN if Pos:NNS@[-1]
+  33  33   0   0  | NN-&gt;TO if Pos:NN@[-1] &amp; Word:to@[0]
+  26  26   0   0  | IN-&gt;. if Pos:NNS@[-1] &amp; Word:.@[0]
+  24  24   0   0  | IN-&gt;, if Pos:NNS@[-1] &amp; Word:,@[0]
+  22  27   5  24  | NN-&gt;-NONE- if Pos:VBD@[-1]
+  17  17   0   0  | NN-&gt;CC if Pos:NN@[-1] &amp; Word:and@[0]
+
+&gt;&gt;&gt; tagger1.rules()[1:3]
+(Rule('001', 'NN', ',', [(Pos([-1]),'NN'), (Word([0]),',')]), Rule('001', 'NN', '.', [(Pos([-1]),'NN'), (Word([0]),'.')]))
+
+&gt;&gt;&gt; train_stats = tagger1.train_stats()
+&gt;&gt;&gt; [train_stats[stat] for stat in ['initialerrors', 'finalerrors', 'rulescores']]
+[1775, 1269, [132, 85, 69, 51, 47, 33, 26, 24, 22, 17]]
+
+&gt;&gt;&gt; tagger1.print_template_statistics(printunused=False)
+TEMPLATE STATISTICS (TRAIN)  2 templates, 10 rules)
+TRAIN (   2417 tokens) initial  1775 0.2656 final:  1269 0.4750
+#ID | Score (train) |  #Rules     | Template
+--------------------------------------------
+001 |   305   0.603 |   7   0.700 | Template(Pos([-1]),Word([0]))
+000 |   201   0.397 |   3   0.300 | Template(Pos([-1]))
+&lt;BLANKLINE&gt;
+&lt;BLANKLINE&gt;
+
+&gt;&gt;&gt; tagger1.evaluate(gold_data) # doctest: +ELLIPSIS
+0.43996...
+
+&gt;&gt;&gt; tagged, test_stats = tagger1.batch_tag_incremental(testing_data, gold_data)
+
+&gt;&gt;&gt; tagged[33][12:] == [('foreign', 'IN'), ('debt', 'NN'), ('of', 'IN'), ('$', 'NN'), ('64', 'CD'),
+... ('billion', 'NN'), ('*U*', 'NN'), ('--', 'NN'), ('the', 'DT'), ('third-highest', 'NN'), ('in', 'NN'),
+... ('the', 'DT'), ('developing', 'VBG'), ('world', 'NN'), ('.', '.')]
+True
+
+&gt;&gt;&gt; [test_stats[stat] for stat in ['initialerrors', 'finalerrors', 'rulescores']]
+[1855, 1376, [100, 85, 67, 58, 27, 36, 27, 16, 31, 32]]
+
+# a high-accuracy tagger
+&gt;&gt;&gt; tagger2 = tt.train(training_data, max_rules=10, min_acc=0.99)
+TBL train (fast) (seqs: 100; tokens: 2417; tpls: 2; min score: 2; min acc: 0.99)
+Finding initial useful rules...
+    Found 845 useful rules.
+&lt;BLANKLINE&gt;
+           B      |
+   S   F   r   O  |        Score = Fixed - Broken
+   c   i   o   t  |  R     Fixed = num tags changed incorrect -&gt; correct
+   o   x   k   h  |  u     Broken = num tags changed correct -&gt; incorrect
+   r   e   e   e  |  l     Other = num tags changed incorrect -&gt; incorrect
+   e   d   n   r  |  e
+------------------+-------------------------------------------------------
+ 132 132   0   0  | AT-&gt;DT if Pos:NN@[-1]
+  85  85   0   0  | NN-&gt;, if Pos:NN@[-1] &amp; Word:,@[0]
+  69  69   0   0  | NN-&gt;. if Pos:NN@[-1] &amp; Word:.@[0]
+  51  51   0   0  | NN-&gt;IN if Pos:NN@[-1] &amp; Word:of@[0]
+  36  36   0   0  | NN-&gt;TO if Pos:NN@[-1] &amp; Word:to@[0]
+  26  26   0   0  | NN-&gt;. if Pos:NNS@[-1] &amp; Word:.@[0]
+  24  24   0   0  | NN-&gt;, if Pos:NNS@[-1] &amp; Word:,@[0]
+  19  19   0   6  | NN-&gt;VB if Pos:TO@[-1]
+  18  18   0   0  | CD-&gt;-NONE- if Pos:NN@[-1] &amp; Word:0@[0]
+  18  18   0   0  | NN-&gt;CC if Pos:NN@[-1] &amp; Word:and@[0]
+
+&gt;&gt;&gt; tagger2.evaluate(gold_data)  # doctest: +ELLIPSIS
+0.44159544...
+&gt;&gt;&gt; tagger2.rules()[2:4]
+(Rule('001', 'NN', '.', [(Pos([-1]),'NN'), (Word([0]),'.')]), Rule('001', 'NN', 'IN', [(Pos([-1]),'NN'), (Word([0]),'of')]))
+
+# NOTE1: (!!FIXME) A far better baseline uses nltk.tag.UnigramTagger,
+# with a RegexpTagger only as backoff. For instance,
+# &gt;&gt;&gt; baseline = UnigramTagger(baseline_data, backoff=backoff)
+# However, as of Nov 2013, nltk.tag.UnigramTagger does not yield consistent results
+# between python versions. The simplistic backoff above is a workaround to make doctests
+# get consistent input.
+
+:param train_sents: training data
+:type train_sents: list(list(tuple))
+:param max_rules: output at most max_rules rules
+:type max_rules: int
+:param min_score: stop training when no rules better than min_score can be found
+:type min_score: int
+:param min_acc: discard any rule with lower accuracy than min_acc
+:type min_acc: float or None
+:return: the learned tagger
+:rtype: BrillTagger</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._init_mappings">
+    
+  </a>
+  <a name="_init_mappings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_mappings</span>(self, test_sents, train_sents):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L334">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Initialize the tag position mapping &amp; the rule related
+mappings.  For each error in test_sents, find new rules that
+would correct them, and add them to the rule mappings.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._clean">
+    
+  </a>
+  <a name="_clean">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_clean</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L360">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._find_rules">
+    
+  </a>
+  <a name="_find_rules">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_rules</span>(self, sent, wordnum, new_tag):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L368">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Use the templates to find rules that apply at index *wordnum*
+in the sentence *sent* and generate the tag *new_tag*.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._update_rule_applies">
+    
+  </a>
+  <a name="_update_rule_applies">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_rule_applies</span>(self, rule, sentnum, wordnum, train_sents):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L377">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Update the rule data tables to reflect the fact that
+*rule* applies at the position *(sentnum, wordnum)*.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._update_rule_not_applies">
+    
+  </a>
+  <a name="_update_rule_not_applies">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_rule_not_applies</span>(self, rule, sentnum, wordnum):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L409">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Update the rule data tables to reflect the fact that *rule*
+does not apply at the position *(sentnum, wordnum)*.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._best_rule">
+    
+  </a>
+  <a name="_best_rule">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_best_rule</span>(self, train_sents, test_sents, min_score, min_acc):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L431">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Find the next best rule.  This is done by repeatedly taking a
+rule with the highest score and stepping through the corpus to
+see where it applies.  When it makes an error (decreasing its
+score) it's bumped down, and we try a new rule with the
+highest score.  When we find a rule which has the highest
+score *and* which has been tested against the entire corpus, we
+can conclude that it's the next best rule.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._apply_rule">
+    
+  </a>
+  <a name="_apply_rule">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_apply_rule</span>(self, rule, test_sents):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L486">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Update *test_sents* by applying *rule* everywhere where its
+conditions are met.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._update_tag_positions">
+    
+  </a>
+  <a name="_update_tag_positions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_tag_positions</span>(self, rule):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L502">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Update _tag_positions to reflect the changes to tags that are
+made by *rule*.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._update_rules">
+    
+  </a>
+  <a name="_update_rules">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_rules</span>(self, rule, train_sents, test_sents):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L517">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Check if we should add or remove any rules from consideration,
+given the changes made by *rule*.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._trace_header">
+    
+  </a>
+  <a name="_trace_header">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_header</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L578">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._trace_rule">
+    
+  </a>
+  <a name="_trace_rule">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_rule</span>(self, rule):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L591">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._trace_apply">
+    
+  </a>
+  <a name="_trace_apply">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_apply</span>(self, num_updates):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L616">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tag.brill_trainer.BrillTaggerTrainer._trace_update_rules">
+    
+  </a>
+  <a name="_trace_update_rules">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_trace_update_rules</span>(self, num_obsolete, num_new, num_unseen):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/brill_trainer.py#L621">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

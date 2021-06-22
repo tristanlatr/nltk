@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.collections.AbstractLazySequence : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.collections.html">collections</a></code>.<code><a href="nltk.collections.AbstractLazySequence.html">AbstractLazySequence</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AbstractLazySequence</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L119">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.collections.LazyConcatenation.html">nltk.collections.LazyConcatenation</a></code>, <code><a href="nltk.collections.LazyIteratorList.html">nltk.collections.LazyIteratorList</a></code>, <code><a href="nltk.collections.LazyMap.html">nltk.collections.LazyMap</a></code>, <code><a href="nltk.collections.LazySubsequence.html">nltk.collections.LazySubsequence</a></code></p>
+        <p><a href="classIndex.html#nltk.collections.AbstractLazySequence">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">An abstract base class for read-only sequences whose values are
+computed as needed.  Lazy sequences act like tuples -- they can be
+indexed, sliced, and iterated over; but they may not be modified.
+
+The most common application of lazy sequences in NLTK is for
+corpus view objects, which provide access to the contents of a
+corpus without loading the entire corpus into memory, by loading
+pieces of the corpus from disk as needed.
+
+The result of modifying a mutable element of a lazy sequence is
+undefined.  In particular, the modifications made to the element
+may or may not persist, depending on whether and when the lazy
+sequence caches that element's value or reconstructs it from
+scratch.
+
+Subclasses are required to define two methods: ``__len__()``
+and ``iterate_from()``.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id202">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__len__">__len__</a></code></td>
+    <td><span>Return the number of tokens in the corpus file underlying this corpus view.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#iterate_from">iterate_from</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__getitem__">__getitem__</a></code></td>
+    <td><span>Return the *i* th token in the corpus file underlying this corpus view.  Negative indices and spans are both supported.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__iter__">__iter__</a></code></td>
+    <td><span>Return an iterator that generates the tokens in the corpus file underlying this corpus view.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#count">count</a></code></td>
+    <td><span>Return the number of times this list contains ``value``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#index">index</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__contains__">__contains__</a></code></td>
+    <td><span>Return true if this list contains ``value``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__add__">__add__</a></code></td>
+    <td><span>Return a list concatenating self with other.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__radd__">__radd__</a></code></td>
+    <td><span>Return a list concatenating other with self.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__mul__">__mul__</a></code></td>
+    <td><span>Return a list concatenating self with itself ``count`` times.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__rmul__">__rmul__</a></code></td>
+    <td><span>Return a list concatenating self with itself ``count`` times.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span>Return a string representation for this corpus view that is similar to a list's representation; but if it would be more than 60 characters long, it is truncated.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__ne__">__ne__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__lt__">__lt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__hash__">__hash__</a></code></td>
+    <td><span>:raise ValueError: Corpus view objects are unhashable.</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_MAX_REPR_SIZE">_MAX_REPR_SIZE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__len__">
+    
+  </a>
+  <a name="__len__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L141">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.collections.LazyConcatenation.html">nltk.collections.LazyConcatenation</a></code>, <code><a href="nltk.collections.LazyIteratorList.html">nltk.collections.LazyIteratorList</a></code>, <code><a href="nltk.collections.LazyMap.html">nltk.collections.LazyMap</a></code>, <code><a href="nltk.collections.LazySubsequence.html">nltk.collections.LazySubsequence</a></code></div>
+    
+    <div><p class="pre">Return the number of tokens in the corpus file underlying this
+corpus view.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.iterate_from">
+    
+  </a>
+  <a name="iterate_from">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iterate_from</span>(self, start):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L148">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.collections.LazyConcatenation.html">nltk.collections.LazyConcatenation</a></code>, <code><a href="nltk.collections.LazyIteratorList.html">nltk.collections.LazyIteratorList</a></code>, <code><a href="nltk.collections.LazyMap.html">nltk.collections.LazyMap</a></code>, <code><a href="nltk.collections.LazySubsequence.html">nltk.collections.LazySubsequence</a></code></div>
+    
+    <div><p class="pre">Return an iterator that generates the tokens in the corpus
+file underlying this corpus view, starting at the token number
+``start``.  If ``start&gt;=len(self)``, then this iterator will
+generate no tokens.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__getitem__">
+    
+  </a>
+  <a name="__getitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, i):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L157">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.collections.LazyMap.html">nltk.collections.LazyMap</a></code></div>
+    
+    <div><p class="pre">Return the *i* th token in the corpus file underlying this
+corpus view.  Negative indices and spans are both supported.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__iter__">
+    
+  </a>
+  <a name="__iter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L177">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return an iterator that generates the tokens in the corpus
+file underlying this corpus view.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.count">
+    
+  </a>
+  <a name="count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">count</span>(self, value):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L182">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the number of times this list contains ``value``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">index</span>(self, value, start=None, stop=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L186">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the index of the first occurrence of ``value`` in this
+list that is greater than or equal to ``start`` and less than
+``stop``.  Negative start and stop values are treated like negative
+slice bounds -- i.e., they count from the end of the list.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__contains__">
+    
+  </a>
+  <a name="__contains__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__contains__</span>(self, value):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L197">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return true if this list contains ``value``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__add__">
+    
+  </a>
+  <a name="__add__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__add__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L201">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.collections.LazyIteratorList.html">nltk.collections.LazyIteratorList</a></code></div>
+    
+    <div><p class="pre">Return a list concatenating self with other.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__radd__">
+    
+  </a>
+  <a name="__radd__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__radd__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L205">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.collections.LazyIteratorList.html">nltk.collections.LazyIteratorList</a></code></div>
+    
+    <div><p class="pre">Return a list concatenating other with self.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__mul__">
+    
+  </a>
+  <a name="__mul__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__mul__</span>(self, count):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L209">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a list concatenating self with itself ``count`` times.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__rmul__">
+    
+  </a>
+  <a name="__rmul__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__rmul__</span>(self, count):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L213">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a list concatenating self with itself ``count`` times.</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.collections.AbstractLazySequence._MAX_REPR_SIZE">
+    
+  </a>
+  <a name="_MAX_REPR_SIZE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MAX_REPR_SIZE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L217">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L219">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a string representation for this corpus view that is
+similar to a list's representation; but if it would be more
+than 60 characters long, it is truncated.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L234">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__ne__">
+    
+  </a>
+  <a name="__ne__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L237">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__lt__">
+    
+  </a>
+  <a name="__lt__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L240">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.collections.AbstractLazySequence.__hash__">
+    
+  </a>
+  <a name="__hash__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/collections.py#L245">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:raise ValueError: Corpus view objects are unhashable.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.probability.ConditionalProbDistI : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.probability.html">probability</a></code>.<code><a href="nltk.probability.ConditionalProbDistI.html">ConditionalProbDistI</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConditionalProbDistI</span>(<a href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict">dict</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2137">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.probability.ConditionalProbDist.html">nltk.probability.ConditionalProbDist</a></code>, <code><a href="nltk.probability.DictionaryConditionalProbDist.html">nltk.probability.DictionaryConditionalProbDist</a></code></p>
+        <p><a href="classIndex.html#nltk.probability.ConditionalProbDistI">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A collection of probability distributions for a single experiment
+run under different conditions.  Conditional probability
+distributions are used to estimate the likelihood of each sample,
+given the condition under which the experiment was run.  For
+example, a conditional probability distribution could be used to
+estimate the probability of each word type in a document, given
+the length of the word type.  Formally, a conditional probability
+distribution can be defined as a function that maps from each
+condition to the ``ProbDist`` for the experiment under that
+condition.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1157">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Classes inheriting from ConditionalProbDistI should implement __init__.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#conditions">conditions</a></code></td>
+    <td><span>Return a list of the conditions that are represented by this ``ConditionalProbDist``.  Use the indexing operator to access the probability distribution for a given condition.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span>Return a string representation of this ``ConditionalProbDist``.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalProbDistI.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2151">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.probability.ConditionalProbDist.html">nltk.probability.ConditionalProbDist</a></code>, <code><a href="nltk.probability.DictionaryConditionalProbDist.html">nltk.probability.DictionaryConditionalProbDist</a></code></div>
+    
+    <div><p class="pre">Classes inheriting from ConditionalProbDistI should implement __init__.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalProbDistI.conditions">
+    
+  </a>
+  <a name="conditions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">conditions</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2157">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a list of the conditions that are represented by
+this ``ConditionalProbDist``.  Use the indexing operator to
+access the probability distribution for a given condition.
+
+:rtype: list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.probability.ConditionalProbDistI.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/probability.py#L2167">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a string representation of this ``ConditionalProbDist``.
+
+:rtype: str</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

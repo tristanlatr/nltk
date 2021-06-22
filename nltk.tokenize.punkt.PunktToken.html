@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tokenize.punkt.PunktToken : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tokenize.html">tokenize</a></code>.<code><a href="nltk.tokenize.punkt.html">punkt</a></code>.<code><a href="nltk.tokenize.punkt.PunktToken.html">PunktToken</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PunktToken</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L389">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.tokenize.punkt.PunktToken">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Stores a token of text with annotations produced during
+sentence boundary detection.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1792">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#__slots__">__slots__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#tok">tok</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#type">type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#period_final">period_final</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#type_no_period">type_no_period</a></code></td>
+    <td><span>The type with its final period removed if it has one.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#type_no_sentperiod">type_no_sentperiod</a></code></td>
+    <td><span>The type with its final period removed if it is marked as a sentence break.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#first_upper">first_upper</a></code></td>
+    <td><span>True if the token's first character is uppercase.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#first_lower">first_lower</a></code></td>
+    <td><span>True if the token's first character is lowercase.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#first_case">first_case</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#is_ellipsis">is_ellipsis</a></code></td>
+    <td><span>True if the token text is that of an ellipsis.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#is_number">is_number</a></code></td>
+    <td><span>True if the token text is that of a number.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#is_initial">is_initial</a></code></td>
+    <td><span>True if the token text is that of an initial.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#is_alpha">is_alpha</a></code></td>
+    <td><span>True if the token text is all alphabetic.</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#is_non_punct">is_non_punct</a></code></td>
+    <td><span>True if the token is either a number or is alphabetic.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span>A string representation of the token that can reproduce it with eval(), which lists all the token's non-default annotations.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td><span>A string representation akin to that used by Kiss and Strunk.</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_properties">_properties</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_RE_ELLIPSIS">_RE_ELLIPSIS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_RE_NUMERIC">_RE_NUMERIC</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_RE_INITIAL">_RE_INITIAL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_RE_ALPHA">_RE_ALPHA</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_type">_get_type</a></code></td>
+    <td><span>Returns a case-normalized representation of the token.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable private">
+  
+  <a name="nltk.tokenize.punkt.PunktToken._properties">
+    
+  </a>
+  <a name="_properties">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_properties</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L393">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.__slots__">
+    
+  </a>
+  <a name="__slots__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__slots__</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L394">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tok, **params):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L396">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.tok">
+    
+  </a>
+  <a name="tok">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tok</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L397">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.type">
+    
+  </a>
+  <a name="type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">type</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L398">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.period_final">
+    
+  </a>
+  <a name="period_final">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">period_final</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L399">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.tokenize.punkt.PunktToken._RE_ELLIPSIS">
+    
+  </a>
+  <a name="_RE_ELLIPSIS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_RE_ELLIPSIS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L410">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.tokenize.punkt.PunktToken._RE_NUMERIC">
+    
+  </a>
+  <a name="_RE_NUMERIC">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_RE_NUMERIC</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L411">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.tokenize.punkt.PunktToken._RE_INITIAL">
+    
+  </a>
+  <a name="_RE_INITIAL">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_RE_INITIAL</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L412">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.tokenize.punkt.PunktToken._RE_ALPHA">
+    
+  </a>
+  <a name="_RE_ALPHA">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_RE_ALPHA</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L413">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tokenize.punkt.PunktToken._get_type">
+    
+  </a>
+  <a name="_get_type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_type</span>(self, tok):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L419">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns a case-normalized representation of the token.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.type_no_period">
+    
+  </a>
+  <a name="type_no_period">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">type_no_period</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L423">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The type with its final period removed if it has one.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.type_no_sentperiod">
+    
+  </a>
+  <a name="type_no_sentperiod">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">type_no_sentperiod</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L432">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">The type with its final period removed if it is marked as a
+sentence break.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.first_upper">
+    
+  </a>
+  <a name="first_upper">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">first_upper</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L442">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">True if the token's first character is uppercase.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.first_lower">
+    
+  </a>
+  <a name="first_lower">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">first_lower</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L447">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">True if the token's first character is lowercase.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.first_case">
+    
+  </a>
+  <a name="first_case">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">first_case</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L452">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.is_ellipsis">
+    
+  </a>
+  <a name="is_ellipsis">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">is_ellipsis</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L460">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">True if the token text is that of an ellipsis.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.is_number">
+    
+  </a>
+  <a name="is_number">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">is_number</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L465">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">True if the token text is that of a number.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.is_initial">
+    
+  </a>
+  <a name="is_initial">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">is_initial</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L470">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">True if the token text is that of an initial.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.is_alpha">
+    
+  </a>
+  <a name="is_alpha">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">is_alpha</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L475">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">True if the token text is all alphabetic.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.is_non_punct">
+    
+  </a>
+  <a name="is_non_punct">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">is_non_punct</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L480">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">True if the token is either a number or is alphabetic.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L489">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">A string representation of the token that can reproduce it
+with eval(), which lists all the token's non-default
+annotations.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tokenize.punkt.PunktToken.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/punkt.py#L510">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">A string representation akin to that used by Kiss and Strunk.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

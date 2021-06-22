@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.ccg.lexicon : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.ccg.html">ccg</a></code>.<code><a href="nltk.ccg.lexicon.html">lexicon</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">CCG Lexicons</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id84">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PRIM_RE">PRIM_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#NEXTPRIM_RE">NEXTPRIM_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#APP_RE">APP_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#LEX_RE">LEX_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#RHS_RE">RHS_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SEMANTICS_RE">SEMANTICS_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#COMMENTS_RE">COMMENTS_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.ccg.lexicon.Token.html">Token</a></code></td>
+    <td><span>Class representing a token.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.ccg.lexicon.CCGLexicon.html">CCGLexicon</a></code></td>
+    <td><span>Class representing a lexicon for CCG grammars.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#matchBrackets">matchBrackets</a></code></td>
+    <td><span>Separate the contents matching the first set of brackets from the rest of the input.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#nextCategory">nextCategory</a></code></td>
+    <td><span>Separate the string for the next portion of the category from the rest of the string</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parseApplication">parseApplication</a></code></td>
+    <td><span>Parse an application operator</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parseSubscripts">parseSubscripts</a></code></td>
+    <td><span>Parse the subscripts for a primitive category</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parsePrimitiveCategory">parsePrimitiveCategory</a></code></td>
+    <td><span>Parse a primitive category</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#augParseCategory">augParseCategory</a></code></td>
+    <td><span>Parse a string representing a category, and returns a tuple with (possibly) the CCG variable for the category</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fromstring">fromstring</a></code></td>
+    <td><span>Convert string representation into a lexicon for CCGs.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parseLexicon">parseLexicon</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#openccg_tinytiny">openccg_tinytiny</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="nltk.ccg.lexicon.PRIM_RE">
+    
+  </a>
+  <a name="PRIM_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PRIM_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L24">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.ccg.lexicon.NEXTPRIM_RE">
+    
+  </a>
+  <a name="NEXTPRIM_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NEXTPRIM_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L28">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.ccg.lexicon.APP_RE">
+    
+  </a>
+  <a name="APP_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">APP_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L31">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.ccg.lexicon.LEX_RE">
+    
+  </a>
+  <a name="LEX_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">LEX_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L34">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.ccg.lexicon.RHS_RE">
+    
+  </a>
+  <a name="RHS_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">RHS_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L37">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.ccg.lexicon.SEMANTICS_RE">
+    
+  </a>
+  <a name="SEMANTICS_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SEMANTICS_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L40">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.ccg.lexicon.COMMENTS_RE">
+    
+  </a>
+  <a name="COMMENTS_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">COMMENTS_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L43">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.ccg.lexicon.matchBrackets">
+    
+  </a>
+  <a name="matchBrackets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">matchBrackets</span>(string):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L134">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Separate the contents matching the first set of brackets from the rest of
+the input.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.ccg.lexicon.nextCategory">
+    
+  </a>
+  <a name="nextCategory">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">nextCategory</span>(string):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L154">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Separate the string for the next portion of the category from the rest
+of the string</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.ccg.lexicon.parseApplication">
+    
+  </a>
+  <a name="parseApplication">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parseApplication</span>(app):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L164">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Parse an application operator</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.ccg.lexicon.parseSubscripts">
+    
+  </a>
+  <a name="parseSubscripts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parseSubscripts</span>(subscr):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L171">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Parse the subscripts for a primitive category</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.ccg.lexicon.parsePrimitiveCategory">
+    
+  </a>
+  <a name="parsePrimitiveCategory">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parsePrimitiveCategory</span>(chunks, primitives, families, var):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L180">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Parse a primitive category
+
+If the primitive is the special category 'var', replace it with the
+correct `CCGVar`.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.ccg.lexicon.augParseCategory">
+    
+  </a>
+  <a name="augParseCategory">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">augParseCategory</span>(line, primitives, families, var=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L210">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Parse a string representing a category, and returns a tuple with
+(possibly) the CCG variable for the category</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.ccg.lexicon.fromstring">
+    
+  </a>
+  <a name="fromstring">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fromstring</span>(lex_str, include_semantics=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L242">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Convert string representation into a lexicon for CCGs.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.ccg.lexicon.parseLexicon">
+    
+  </a>
+  <a name="parseLexicon">
+    
+  </a>
+  <div class="functionHeader">
+    @deprecated('Use fromstring() instead.')<br />
+    <span class="py-keyword">def</span> <span class="py-defname">parseLexicon</span>(lex_str):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L291">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.ccg.lexicon.openccg_tinytiny">
+    
+  </a>
+  <a name="openccg_tinytiny">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">openccg_tinytiny</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/lexicon.py#L296">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

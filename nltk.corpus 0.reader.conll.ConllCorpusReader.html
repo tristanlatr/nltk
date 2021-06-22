@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.corpus 0.reader.conll.ConllCorpusReader : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.corpus%200.html">corpus 0</a></code>.<code><a href="nltk.corpus%200.reader.html">reader</a></code>.<code><a href="nltk.corpus%200.reader.conll.html">conll</a></code>.<code><a href="nltk.corpus%200.reader.conll.ConllCorpusReader.html">ConllCorpusReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConllCorpusReader</span>(<a href="nltk.corpus%200.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L23">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus%200.reader.conll.ConllChunkCorpusReader.html">nltk.corpus 0.reader.conll.ConllChunkCorpusReader</a></code></p>
+        <p><a href="classIndex.html#nltk.corpus 0.reader.conll.ConllCorpusReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A corpus reader for CoNLL-style files.  These files consist of a
+series of sentences, separated by blank lines.  Each sentence is
+encoded using a table (or "grid") of values, where each line
+corresponds to a single word, and each column corresponds to an
+annotation type.  The set of columns used by CoNLL-style files can
+vary from corpus to corpus; the ``ConllCorpusReader`` constructor
+therefore takes an argument, ``columntypes``, which is used to
+specify the columns that are used by a given corpus. By default
+columns are split by consecutive whitespaces, with the
+``separator`` argument you can set a string to split by (e.g.
+``' '``).
+
+
+@todo: Add support for reading from corpora where different
+    parallel files contain different columns.
+@todo: Possibly add caching of the grid corpus view?  This would
+    allow the same grid view to be used by different data access
+    methods (eg words() and parsed_sents() could both share the
+    same grid corpus view object).
+@todo: Better support for -DOCSTART-.  Currently, we just ignore
+    it, but it could be used to define methods that retrieve a
+    document at a time (eg parsed_documents()).</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id289">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#WORDS">WORDS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#POS">POS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#TREE">TREE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#CHUNK">CHUNK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#NE">NE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#SRL">SRL</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#IGNORE">IGNORE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#COLUMN_TYPES">COLUMN_TYPES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#sep">sep</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#raw">raw</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#words">words</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sents">sents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tagged_words">tagged_words</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tagged_sents">tagged_sents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#chunked_words">chunked_words</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#chunked_sents">chunked_sents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#parsed_sents">parsed_sents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#srl_spans">srl_spans</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#srl_instances">srl_instances</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#iob_words">iob_words</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#iob_sents">iob_sents</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_chunk_types">_chunk_types</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_colmap">_colmap</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_pos_in_tree">_pos_in_tree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_root_label">_root_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_srl_includes_roleset">_srl_includes_roleset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tree_class">_tree_class</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tagset">_tagset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_grids">_grids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_read_grid_block">_read_grid_block</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_words">_get_words</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_tagged_words">_get_tagged_words</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_iob_words">_get_iob_words</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_chunked_words">_get_chunked_words</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_parsed_sent">_get_parsed_sent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_srl_spans">_get_srl_spans</a></code></td>
+    <td><span>list of list of (start, end), tag) tuples</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_srl_instances">_get_srl_instances</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_require">_require</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#_get_column">_get_column</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.corpus%200.reader.api.CorpusReader.html">CorpusReader</a></code>:
+          </p>
+          <table class="children sortable" id="id290">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#ensure_loaded">ensure_loaded</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#readme">readme</a></code></td>
+    <td><span>Return the contents of the corpus README file, if it exists.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#license">license</a></code></td>
+    <td><span>Return the contents of the corpus LICENSE file, if it exists.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#citation">citation</a></code></td>
+    <td><span>Return the contents of the corpus citation.bib file, if it exists.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#fileids">fileids</a></code></td>
+    <td><span>Return a list of file identifiers for the fileids that make up this corpus.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#abspath">abspath</a></code></td>
+    <td><span>Return the absolute path for the given file.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#abspaths">abspaths</a></code></td>
+    <td><span>Return a list of the absolute paths for all fileids in this corpus; or for the given list of fileids, if specified.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#open">open</a></code></td>
+    <td><span>Return an open stream that can be used to read the given file. If the file's encoding is not None, then the stream will automatically decode the file's contents into unicode.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#encoding">encoding</a></code></td>
+    <td><span>Return the unicode encoding for the given corpus file, if known. If the encoding is unknown, or if the given file should be processed using byte strings (str), then return None.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#root">root</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_fileids">_fileids</a></code></td>
+    <td><span>A list of the relative paths for the fileids that make up this corpus.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_root">_root</a></code></td>
+    <td><span>The root directory for this corpus.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_get_root">_get_root</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.WORDS">
+    
+  </a>
+  <a name="WORDS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">WORDS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.POS">
+    
+  </a>
+  <a name="POS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">POS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L54">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.TREE">
+    
+  </a>
+  <a name="TREE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TREE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L55">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.CHUNK">
+    
+  </a>
+  <a name="CHUNK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">CHUNK</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.NE">
+    
+  </a>
+  <a name="NE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L57">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.SRL">
+    
+  </a>
+  <a name="SRL">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SRL</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L58">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.IGNORE">
+    
+  </a>
+  <a name="IGNORE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">IGNORE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L59">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.COLUMN_TYPES">
+    
+  </a>
+  <a name="COLUMN_TYPES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">COLUMN_TYPES</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L62">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, columntypes, chunk_types=None, root_label='S', pos_in_tree=False, srl_includes_roleset=True, encoding='utf8', tree_class=Tree, tagset=None, separator=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L68">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus%200.reader.api.CorpusReader.html#__init__">nltk.corpus 0.reader.api.CorpusReader.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.corpus%200.reader.conll.ConllChunkCorpusReader.html">nltk.corpus 0.reader.conll.ConllChunkCorpusReader</a></code></div>
+    
+    <div><p class="pre">:type root: PathPointer or str
+:param root: A path pointer identifying the root directory for
+    this corpus.  If a string is specified, then it will be
+    converted to a ``PathPointer`` automatically.
+:param fileids: A list of the files that make up this corpus.
+    This list can either be specified explicitly, as a list of
+    strings; or implicitly, as a regular expression over file
+    paths.  The absolute path for each file will be constructed
+    by joining the reader's root to each file name.
+:param encoding: The default unicode encoding for the files
+    that make up the corpus.  The value of ``encoding`` can be any
+    of the following:
+    - A string: ``encoding`` is the encoding name for all files.
+    - A dictionary: ``encoding[file_id]`` is the encoding
+      name for the file whose identifier is ``file_id``.  If
+      ``file_id`` is not in ``encoding``, then the file
+      contents will be processed using non-unicode byte strings.
+    - A list: ``encoding`` should be a list of ``(regexp, encoding)``
+      tuples.  The encoding for a file whose identifier is ``file_id``
+      will be the ``encoding`` value for the first tuple whose
+      ``regexp`` matches the ``file_id``.  If no tuple's ``regexp``
+      matches the ``file_id``, the file contents will be processed
+      using non-unicode byte strings.
+    - None: the file contents of all files will be
+      processed using non-unicode byte strings.
+:param tagset: The name of the tagset used by this corpus, to be used
+      for normalizing or converting the POS tags returned by the
+      tagged_...() methods.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._chunk_types">
+    
+  </a>
+  <a name="_chunk_types">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_chunk_types</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._colmap">
+    
+  </a>
+  <a name="_colmap">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_colmap</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L88">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._pos_in_tree">
+    
+  </a>
+  <a name="_pos_in_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pos_in_tree</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L89">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._root_label">
+    
+  </a>
+  <a name="_root_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_root_label</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L90">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._srl_includes_roleset">
+    
+  </a>
+  <a name="_srl_includes_roleset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_srl_includes_roleset</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L91">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._tree_class">
+    
+  </a>
+  <a name="_tree_class">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tree_class</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L92">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._tagset">
+    
+  </a>
+  <a name="_tagset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tagset</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L94">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.corpus%200.reader.api.CorpusReader.html#_tagset">nltk.corpus 0.reader.api.CorpusReader._tagset</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.sep">
+    
+  </a>
+  <a name="sep">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sep</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L95">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.raw">
+    
+  </a>
+  <a name="raw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L101">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.words">
+    
+  </a>
+  <a name="words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L108">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.sents">
+    
+  </a>
+  <a name="sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L112">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.tagged_words">
+    
+  </a>
+  <a name="tagged_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L116">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.tagged_sents">
+    
+  </a>
+  <a name="tagged_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L124">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.chunked_words">
+    
+  </a>
+  <a name="chunked_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">chunked_words</span>(self, fileids=None, chunk_types=None, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L132">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.chunked_sents">
+    
+  </a>
+  <a name="chunked_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">chunked_sents</span>(self, fileids=None, chunk_types=None, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L142">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.parsed_sents">
+    
+  </a>
+  <a name="parsed_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parsed_sents</span>(self, fileids=None, pos_in_tree=None, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L152">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.srl_spans">
+    
+  </a>
+  <a name="srl_spans">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">srl_spans</span>(self, fileids=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L162">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.srl_instances">
+    
+  </a>
+  <a name="srl_instances">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">srl_instances</span>(self, fileids=None, pos_in_tree=None, flatten=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L166">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.iob_words">
+    
+  </a>
+  <a name="iob_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iob_words</span>(self, fileids=None, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L179">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: a list of word/tag/IOB tuples
+:rtype: list(tuple)
+:param fileids: the list of fileids that make up this corpus
+:type fileids: None or str or list</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader.iob_sents">
+    
+  </a>
+  <a name="iob_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">iob_sents</span>(self, fileids=None, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L193">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: a list of lists of word/tag/IOB tuples
+:rtype: list(list)
+:param fileids: the list of fileids that make up this corpus
+:type fileids: None or str or list</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._grids">
+    
+  </a>
+  <a name="_grids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_grids</span>(self, fileids=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L211">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._read_grid_block">
+    
+  </a>
+  <a name="_read_grid_block">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_read_grid_block</span>(self, stream):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L222">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._get_words">
+    
+  </a>
+  <a name="_get_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_words</span>(self, grid):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L249">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._get_tagged_words">
+    
+  </a>
+  <a name="_get_tagged_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_tagged_words</span>(self, grid, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L252">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._get_iob_words">
+    
+  </a>
+  <a name="_get_iob_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_iob_words</span>(self, grid, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L258">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._get_chunked_words">
+    
+  </a>
+  <a name="_get_chunked_words">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_chunked_words</span>(self, grid, chunk_types, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L270">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._get_parsed_sent">
+    
+  </a>
+  <a name="_get_parsed_sent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_parsed_sent</span>(self, grid, pos_in_tree, tagset=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L304">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._get_srl_spans">
+    
+  </a>
+  <a name="_get_srl_spans">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_srl_spans</span>(self, grid):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L341">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">list of list of (start, end), tag) tuples</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._get_srl_instances">
+    
+  </a>
+  <a name="_get_srl_instances">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_srl_instances</span>(self, grid, pos_in_tree):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L373">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._require">
+    
+  </a>
+  <a name="_require">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_require</span>(self, *columntypes):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L409">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="nltk.corpus 0.reader.conll.ConllCorpusReader._get_column">
+    
+  </a>
+  <a name="_get_column">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_column</span>(grid, column_index):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/conll.py#L416">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

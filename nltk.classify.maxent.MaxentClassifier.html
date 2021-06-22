@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.classify.maxent.MaxentClassifier : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.classify.html">classify</a></code>.<code><a href="nltk.classify.maxent.html">maxent</a></code>.<code><a href="nltk.classify.maxent.MaxentClassifier.html">MaxentClassifier</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MaxentClassifier</span>(<a href="nltk.classify.api.ClassifierI.html" title="nltk.classify.api.ClassifierI">ClassifierI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L79">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.classify.maxent.TadmMaxentClassifier.html">nltk.classify.maxent.TadmMaxentClassifier</a></code></p>
+        <p><a href="classIndex.html#nltk.classify.maxent.MaxentClassifier">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A maximum entropy classifier (also known as a "conditional
+exponential classifier").  This classifier is parameterized by a
+set of "weights", which are used to combine the joint-features
+that are generated from a featureset by an "encoding".  In
+particular, the encoding maps each ``(featureset, label)`` pair to
+a vector.  The probability of each label is then computed using
+the following equation::
+
+                            dotprod(weights, encode(fs,label))
+  prob(fs|label) = ---------------------------------------------------
+                   sum(dotprod(weights, encode(fs,l)) for l in labels)
+
+Where ``dotprod`` is the dot product::
+
+  dotprod(a,b) = sum(x*y for (x,y) in zip(a,b))</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id138">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a new maxent classifier model.  Typically, new classifier models are created using the ``train()`` method.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#labels">labels</a></code></td>
+    <td><span>:return: the list of category labels used by this classifier. :rtype: list of (immutable)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_weights">set_weights</a></code></td>
+    <td><span>Set the feature weight vector for this classifier. :param new_weights: The new feature weight vector. :type new_weights: list of float</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#weights">weights</a></code></td>
+    <td><span>:return: The feature weight vector for this classifier. :rtype: list of float</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#classify">classify</a></code></td>
+    <td><span>:return: the most appropriate label for the given featureset. :rtype: label</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#prob_classify">prob_classify</a></code></td>
+    <td><span>:return: a probability distribution over labels for the given featureset. :rtype: ProbDistI</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#explain">explain</a></code></td>
+    <td><span>Print a table showing the effect of each of the features in the given feature set, and how they combine to determine the probabilities of each label for that featureset.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#most_informative_features">most_informative_features</a></code></td>
+    <td><span>Generates the ranked list of informative features from most to least.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_most_informative_features">show_most_informative_features</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#ALGORITHMS">ALGORITHMS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#train">train</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_encoding">_encoding</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_weights">_weights</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_logarithmic">_logarithmic</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_most_informative_features">_most_informative_features</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.classify.api.ClassifierI.html">ClassifierI</a></code>:
+          </p>
+          <table class="children sortable" id="id139">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.classify.api.ClassifierI.html#classify_many">classify_many</a></code></td>
+    <td><span>Apply ``self.classify()`` to each element of ``featuresets``.  I.e.:</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.classify.api.ClassifierI.html#prob_classify_many">prob_classify_many</a></code></td>
+    <td><span>Apply ``self.prob_classify()`` to each element of ``featuresets``.  I.e.:</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, encoding, weights, logarithmic=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L98">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a new maxent classifier model.  Typically, new
+classifier models are created using the ``train()`` method.
+
+:type encoding: MaxentFeatureEncodingI
+:param encoding: An encoding that is used to convert the
+    featuresets that are given to the ``classify`` method into
+    joint-feature vectors, which are used by the maxent
+    classifier model.
+
+:type weights: list of float
+:param weights:  The feature weight vector for this classifier.
+
+:type logarithmic: bool
+:param logarithmic: If false, then use non-logarithmic weights.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier._encoding">
+    
+  </a>
+  <a name="_encoding">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_encoding</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L115">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier._weights">
+    
+  </a>
+  <a name="_weights">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_weights</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L116">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier._logarithmic">
+    
+  </a>
+  <a name="_logarithmic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_logarithmic</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L117">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.labels">
+    
+  </a>
+  <a name="labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">labels</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L121">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#labels">nltk.classify.api.ClassifierI.labels</a></code></div>
+    
+    <div><p class="pre">:return: the list of category labels used by this classifier.
+:rtype: list of (immutable)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.set_weights">
+    
+  </a>
+  <a name="set_weights">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_weights</span>(self, new_weights):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L124">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Set the feature weight vector for this classifier.
+:param new_weights: The new feature weight vector.
+:type new_weights: list of float</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.weights">
+    
+  </a>
+  <a name="weights">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">weights</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L133">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: The feature weight vector for this classifier.
+:rtype: list of float</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.classify">
+    
+  </a>
+  <a name="classify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">classify</span>(self, featureset):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L140">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#classify">nltk.classify.api.ClassifierI.classify</a></code></div>
+    
+    <div><p class="pre">:return: the most appropriate label for the given featureset.
+:rtype: label</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.prob_classify">
+    
+  </a>
+  <a name="prob_classify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prob_classify</span>(self, featureset):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L143">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#prob_classify">nltk.classify.api.ClassifierI.prob_classify</a></code></div>
+    
+    <div><p class="pre">:return: a probability distribution over labels for the given
+    featureset.
+:rtype: ProbDistI</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.explain">
+    
+  </a>
+  <a name="explain">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">explain</span>(self, featureset, columns=4):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L163">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Print a table showing the effect of each of the features in
+the given feature set, and how they combine to determine the
+probabilities of each label for that featureset.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.most_informative_features">
+    
+  </a>
+  <a name="most_informative_features">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">most_informative_features</span>(self, n=10):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L207">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Generates the ranked list of informative features from most to least.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier._most_informative_features">
+    
+  </a>
+  <a name="_most_informative_features">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_most_informative_features</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L214">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.show_most_informative_features">
+    
+  </a>
+  <a name="show_most_informative_features">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_most_informative_features</span>(self, n=10, show='all'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L221">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:param show: all, neg, or pos (for negative-only or positive-only)
+:type show: str
+:param n: The no. of top features
+:type n: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L237">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.ALGORITHMS">
+    
+  </a>
+  <a name="ALGORITHMS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ALGORITHMS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L245">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="nltk.classify.maxent.MaxentClassifier.train">
+    
+  </a>
+  <a name="train">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">train</span>(cls, train_toks, algorithm=None, trace=3, encoding=None, labels=None, gaussian_prior_sigma=0, **cutoffs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/maxent.py#L247">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.classify.maxent.TadmMaxentClassifier.html">nltk.classify.maxent.TadmMaxentClassifier</a></code></div>
+    
+    <div><p class="pre">Train a new maxent classifier based on the given corpus of
+training samples.  This classifier will have its weights
+chosen to maximize entropy while remaining empirically
+consistent with the training corpus.
+
+:rtype: MaxentClassifier
+:return: The new maxent classifier
+
+:type train_toks: list
+:param train_toks: Training data, represented as a list of
+    pairs, the first member of which is a featureset,
+    and the second of which is a classification label.
+
+:type algorithm: str
+:param algorithm: A case-insensitive string, specifying which
+    algorithm should be used to train the classifier.  The
+    following algorithms are currently available.
+
+    - Iterative Scaling Methods: Generalized Iterative Scaling (``'GIS'``),
+      Improved Iterative Scaling (``'IIS'``)
+    - External Libraries (requiring megam):
+      LM-BFGS algorithm, with training performed by Megam (``'megam'``)
+
+    The default algorithm is ``'IIS'``.
+
+:type trace: int
+:param trace: The level of diagnostic tracing output to produce.
+    Higher values produce more verbose output.
+:type encoding: MaxentFeatureEncodingI
+:param encoding: A feature encoding, used to convert featuresets
+    into feature vectors.  If none is specified, then a
+    ``BinaryMaxentFeatureEncoding`` will be built based on the
+    features that are attested in the training corpus.
+:type labels: list(str)
+:param labels: The set of possible labels.  If none is given, then
+    the set of all labels attested in the training data will be
+    used instead.
+:param gaussian_prior_sigma: The sigma value for a gaussian
+    prior on model weights.  Currently, this is supported by
+    ``megam``. For other algorithms, its value is ignored.
+:param cutoffs: Arguments specifying various conditions under
+    which the training should be halted.  (Some of the cutoff
+    conditions are not supported by some algorithms.)
+
+    - ``max_iter=v``: Terminate after ``v`` iterations.
+    - ``min_ll=v``: Terminate after the negative average
+      log-likelihood drops under ``v``.
+    - ``min_lldelta=v``: Terminate if a single iteration improves
+      log likelihood by less than ``v``.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

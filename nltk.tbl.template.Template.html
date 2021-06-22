@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tbl.template.Template : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tbl.html">tbl</a></code>.<code><a href="nltk.tbl.template.html">template</a></code>.<code><a href="nltk.tbl.template.Template.html">Template</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Template</span>(<a href="nltk.tbl.template.BrillTemplateI.html" title="nltk.tbl.template.BrillTemplateI">BrillTemplateI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L62">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.tbl.template.Template">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A tbl Template that generates a list of L{Rule}s that apply at a given sentence
+position.  In particular, each C{Template} is parameterized by a list of
+independent features (a combination of a specific
+property to extract and a list C{L} of relative positions at which to extract
+it) and generates all Rules that:
+
+  - use the given features, each at its own independent position; and
+  - are applicable to the given token.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1634">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#ALLTEMPLATES">ALLTEMPLATES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a Template for generating Rules.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#id">id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#applicable_rules">applicable_rules</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_neighborhood">get_neighborhood</a></code></td>
+    <td><span>Returns the set of indices *i* such that ``applicable_rules(token, i, ...)`` depends on the value of the *index*th token of *token*.</span></td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#expand">expand</a></code></td>
+    <td><span>Factory method to mass generate Templates from a list L of lists of  Features.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_features">_features</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_applicable_conditions">_applicable_conditions</a></code></td>
+    <td><span>:returns: A set of all conditions for rules that are applicable to C{tokens[index]}.</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_cleartemplates">_cleartemplates</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_poptemplate">_poptemplate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  <a name="nltk.tbl.template.Template.ALLTEMPLATES">
+    
+  </a>
+  <a name="ALLTEMPLATES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ALLTEMPLATES</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L74">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.template.Template.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, *features):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L78">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a Template for generating Rules.
+
+Takes a list of Features. A C{Feature} is a combination
+of a specific property and its relative positions and should be
+a subclass of L{nltk.tbl.feature.Feature}.
+
+An alternative calling convention (kept for backwards compatibility,
+but less expressive as it only permits one feature type) is
+Template(Feature, (start1, end1), (start2, end2), ...)
+In new code, that would be better written
+Template(Feature(start1, end1), Feature(start2, end2), ...)
+
+#For instance, importing some features
+&gt;&gt;&gt; from nltk.tbl.template import Template
+&gt;&gt;&gt; from nltk.tag.brill import Word, Pos
+
+#create some features
+
+&gt;&gt;&gt; wfeat1, wfeat2, pfeat = (Word([-1]), Word([1,2]), Pos([-2,-1]))
+
+#Create a single-feature template
+&gt;&gt;&gt; Template(wfeat1)
+Template(Word([-1]))
+
+#or a two-feature one
+&gt;&gt;&gt; Template(wfeat1, wfeat2)
+Template(Word([-1]),Word([1, 2]))
+
+#or a three-feature one with two different feature types
+&gt;&gt;&gt; Template(wfeat1, wfeat2, pfeat)
+Template(Word([-1]),Word([1, 2]),Pos([-2, -1]))
+
+#deprecated api: Feature subclass, followed by list of (start,end) pairs
+#(permits only a single Feature)
+&gt;&gt;&gt; Template(Word, (-2,-1), (0,0))
+Template(Word([-2, -1]),Word([0]))
+
+#incorrect specification raises TypeError
+&gt;&gt;&gt; Template(Word, (-2,-1), Pos, (0,0))
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+  File "nltk/tag/tbl/template.py", line 143, in __init__
+    raise TypeError(
+TypeError: expected either Feature1(args), Feature2(args), ... or Feature, (start1, end1), (start2, end2), ...
+
+:type features: list of Features
+:param features: the features to build this Template on</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.tbl.template.Template._features">
+    
+  </a>
+  <a name="_features">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_features</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L133">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tbl.template.Template.id">
+    
+  </a>
+  <a name="id">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L142">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.template.Template.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L145">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.template.Template.applicable_rules">
+    
+  </a>
+  <a name="applicable_rules">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">applicable_rules</span>(self, tokens, index, correct_tag):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L151">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.tbl.template.BrillTemplateI.html#applicable_rules">nltk.tbl.template.BrillTemplateI.applicable_rules</a></code></div>
+    
+    <div><p class="pre">Return a list of the transformational rules that would correct
+the *i*th subtoken's tag in the given token.  In particular,
+return a list of zero or more rules that would change
+*tokens*[i][1] to *correctTag*, if applied to *token*[i].
+
+If the *i*th token already has the correct tag (i.e., if
+tagged_tokens[i][1] == correctTag), then
+``applicable_rules()`` should return the empty list.
+
+:param tokens: The tagged tokens being tagged.
+:type tokens: list(tuple)
+:param i: The index of the token whose tag should be corrected.
+:type i: int
+:param correctTag: The correct tag for the *i*th token.
+:type correctTag: any
+:rtype: list(BrillRule)</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.tbl.template.Template._applicable_conditions">
+    
+  </a>
+  <a name="_applicable_conditions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_applicable_conditions</span>(self, tokens, index):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L164">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:returns: A set of all conditions for rules
+that are applicable to C{tokens[index]}.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tbl.template.Template.get_neighborhood">
+    
+  </a>
+  <a name="get_neighborhood">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_neighborhood</span>(self, tokens, index):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L180">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.tbl.template.BrillTemplateI.html#get_neighborhood">nltk.tbl.template.BrillTemplateI.get_neighborhood</a></code></div>
+    
+    <div><p class="pre">Returns the set of indices *i* such that
+``applicable_rules(token, i, ...)`` depends on the value of
+the *index*th token of *token*.
+
+This method is used by the "fast" Brill tagger trainer.
+
+:param token: The tokens being tagged.
+:type token: list(tuple)
+:param index: The index whose neighborhood should be returned.
+:type index: int
+:rtype: set</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  <a name="nltk.tbl.template.Template.expand">
+    
+  </a>
+  <a name="expand">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">expand</span>(cls, featurelists, combinations=None, skipintersecting=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L197">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Factory method to mass generate Templates from a list L of lists of  Features.
+
+#With combinations=(k1, k2), the function will in all possible ways choose k1 ... k2
+#of the sublists in L; it will output all Templates formed by the Cartesian product
+#of this selection, with duplicates and other semantically equivalent
+#forms removed. Default for combinations is (1, len(L)).
+
+The feature lists may have been specified
+manually, or generated from Feature.expand(). For instance,
+
+&gt;&gt;&gt; from nltk.tbl.template import Template
+&gt;&gt;&gt; from nltk.tag.brill import Word, Pos
+
+#creating some features
+&gt;&gt;&gt; (wd_0, wd_01) = (Word([0]), Word([0,1]))
+
+&gt;&gt;&gt; (pos_m2, pos_m33) = (Pos([-2]), Pos([3-2,-1,0,1,2,3]))
+
+&gt;&gt;&gt; list(Template.expand([[wd_0], [pos_m2]]))
+[Template(Word([0])), Template(Pos([-2])), Template(Pos([-2]),Word([0]))]
+
+&gt;&gt;&gt; list(Template.expand([[wd_0, wd_01], [pos_m2]]))
+[Template(Word([0])), Template(Word([0, 1])), Template(Pos([-2])), Template(Pos([-2]),Word([0])), Template(Pos([-2]),Word([0, 1]))]
+
+#note: with Feature.expand(), it is very easy to generate more templates
+#than your system can handle -- for instance,
+&gt;&gt;&gt; wordtpls = Word.expand([-2,-1,0,1], [1,2], excludezero=False)
+&gt;&gt;&gt; len(wordtpls)
+7
+
+&gt;&gt;&gt; postpls = Pos.expand([-3,-2,-1,0,1,2], [1,2,3], excludezero=True)
+&gt;&gt;&gt; len(postpls)
+9
+
+#and now the Cartesian product of all non-empty combinations of two wordtpls and
+#two postpls, with semantic equivalents removed
+&gt;&gt;&gt; templates = list(Template.expand([wordtpls, wordtpls, postpls, postpls]))
+&gt;&gt;&gt; len(templates)
+713
+
+
+  will return a list of eight templates
+      Template(Word([0])),
+      Template(Word([0, 1])),
+      Template(Pos([-2])),
+      Template(Pos([-1])),
+      Template(Pos([-2]),Word([0])),
+      Template(Pos([-1]),Word([0])),
+      Template(Pos([-2]),Word([0, 1])),
+      Template(Pos([-1]),Word([0, 1]))]
+
+
+#Templates where one feature is a subset of another, such as
+#Template(Word([0,1]), Word([1]), will not appear in the output.
+#By default, this non-subset constraint is tightened to disjointness:
+#Templates of type Template(Word([0,1]), Word([1,2]) will also be filtered out.
+#With skipintersecting=False, then such Templates are allowed
+
+WARNING: this method makes it very easy to fill all your memory when training
+generated templates on any real-world corpus
+
+:param featurelists: lists of Features, whose Cartesian product will return a set of Templates
+:type featurelists: list of (list of Features)
+:param combinations: given n featurelists: if combinations=k, all generated Templates will have
+        k features; if combinations=(k1,k2) they will have k1..k2 features; if None, defaults to 1..n
+:type combinations: None, int, or (int, int)
+:param skipintersecting: if True, do not output intersecting Templates (non-disjoint positions for some feature)
+:type skipintersecting: bool
+:returns: generator of Templates</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  <a name="nltk.tbl.template.Template._cleartemplates">
+    
+  </a>
+  <a name="_cleartemplates">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_cleartemplates</span>(cls):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L313">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  <a name="nltk.tbl.template.Template._poptemplate">
+    
+  </a>
+  <a name="_poptemplate">
+    
+  </a>
+  <div class="functionHeader">
+    @classmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_poptemplate</span>(cls):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/template.py#L317">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

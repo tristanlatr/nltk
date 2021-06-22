@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tbl.demo : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tbl.html">tbl</a></code>.<code><a href="nltk.tbl.demo.html">demo</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1624">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo">demo</a></code></td>
+    <td><span>Run a demo with defaults. See source comments for details, or docstrings of any of the more specific demo_* functions.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_repr_rule_format">demo_repr_rule_format</a></code></td>
+    <td><span>Exemplify repr(Rule) (see also str(Rule) and Rule.format("verbose"))</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_str_rule_format">demo_str_rule_format</a></code></td>
+    <td><span>Exemplify repr(Rule) (see also str(Rule) and Rule.format("verbose"))</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_verbose_rule_format">demo_verbose_rule_format</a></code></td>
+    <td><span>Exemplify Rule.format("verbose")</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_multiposition_feature">demo_multiposition_feature</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_multifeature_template">demo_multifeature_template</a></code></td>
+    <td><span>Templates can have more than a single feature.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_template_statistics">demo_template_statistics</a></code></td>
+    <td><span>Show aggregate statistics per template. Little used templates are candidates for deletion, much used templates may possibly be refined.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_generated_templates">demo_generated_templates</a></code></td>
+    <td><span>Template.expand and Feature.expand are class methods facilitating generating large amounts of templates. See their documentation for details.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_learning_curve">demo_learning_curve</a></code></td>
+    <td><span>Plot a learning curve -- the contribution on tagging accuracy of the individual rules. Note: requires matplotlib</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_error_analysis">demo_error_analysis</a></code></td>
+    <td><span>Writes a file with context for each erroneous word after tagging testing data</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_serialize_tagger">demo_serialize_tagger</a></code></td>
+    <td><span>Serializes the learned tagger to a file in pickle format; reloads it and validates the process.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo_high_accuracy_rules">demo_high_accuracy_rules</a></code></td>
+    <td><span>Discard rules with low accuracy. This may hurt performance a bit, but will often produce rules which are more interesting read to a human.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#postag">postag</a></code></td>
+    <td><span>Brill Tagger Demonstration :param templates: how many sentences of training and testing data to use :type templates: list of Template</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#NN_CD_TAGGER">NN_CD_TAGGER</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#REGEXP_TAGGER">REGEXP_TAGGER</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#corpus_size">corpus_size</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_demo_prepare_data">_demo_prepare_data</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_demo_plot">_demo_plot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo">
+    
+  </a>
+  <a name="demo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L24">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Run a demo with defaults. See source comments for details,
+or docstrings of any of the more specific demo_* functions.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_repr_rule_format">
+    
+  </a>
+  <a name="demo_repr_rule_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_repr_rule_format</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L32">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Exemplify repr(Rule) (see also str(Rule) and Rule.format("verbose"))</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_str_rule_format">
+    
+  </a>
+  <a name="demo_str_rule_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_str_rule_format</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L39">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Exemplify repr(Rule) (see also str(Rule) and Rule.format("verbose"))</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_verbose_rule_format">
+    
+  </a>
+  <a name="demo_verbose_rule_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_verbose_rule_format</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L46">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Exemplify Rule.format("verbose")</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_multiposition_feature">
+    
+  </a>
+  <a name="demo_multiposition_feature">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_multiposition_feature</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">The feature/s of a template takes a list of positions
+relative to the current word where the feature should be
+looked for, conceptually joined by logical OR. For instance,
+Pos([-1, 1]), given a value V, will hold whenever V is found
+one step to the left and/or one step to the right.
+
+For contiguous ranges, a 2-arg form giving inclusive end
+points can also be used: Pos(-3, -1) is the same as the arg
+below.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_multifeature_template">
+    
+  </a>
+  <a name="demo_multifeature_template">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_multifeature_template</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L68">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Templates can have more than a single feature.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_template_statistics">
+    
+  </a>
+  <a name="demo_template_statistics">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_template_statistics</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L75">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Show aggregate statistics per template. Little used templates are
+candidates for deletion, much used templates may possibly be refined.
+
+Deleting unused templates is mostly about saving time and/or space:
+training is basically O(T) in the number of templates T
+(also in terms of memory usage, which often will be the limiting factor).</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_generated_templates">
+    
+  </a>
+  <a name="demo_generated_templates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_generated_templates</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L87">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Template.expand and Feature.expand are class methods facilitating
+generating large amounts of templates. See their documentation for
+details.
+
+Note: training with 500 templates can easily fill all available
+even on relatively small corpora</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_learning_curve">
+    
+  </a>
+  <a name="demo_learning_curve">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_learning_curve</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L107">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Plot a learning curve -- the contribution on tagging accuracy of
+the individual rules.
+Note: requires matplotlib</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_error_analysis">
+    
+  </a>
+  <a name="demo_error_analysis">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_error_analysis</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Writes a file with context for each erroneous word after tagging testing data</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_serialize_tagger">
+    
+  </a>
+  <a name="demo_serialize_tagger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_serialize_tagger</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L127">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Serializes the learned tagger to a file in pickle format; reloads it
+and validates the process.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.demo_high_accuracy_rules">
+    
+  </a>
+  <a name="demo_high_accuracy_rules">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo_high_accuracy_rules</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L135">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Discard rules with low accuracy. This may hurt performance a bit,
+but will often produce rules which are more interesting read to a human.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.postag">
+    
+  </a>
+  <a name="postag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">postag</span>(templates=None, tagged_data=None, num_sents=1000, max_rules=300, min_score=3, min_acc=None, train=0.8, trace=3, randomize=False, ruleformat='str', incremental_stats=False, template_stats=False, error_output=None, serialize_output=None, learning_curve_output=None, learning_curve_take=300, baseline_backoff_tagger=None, separate_baseline_data=False, cache_baseline_tagger=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L143">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Brill Tagger Demonstration
+:param templates: how many sentences of training and testing data to use
+:type templates: list of Template
+
+:param tagged_data: maximum number of rule instances to create
+:type tagged_data: C{int}
+
+:param num_sents: how many sentences of training and testing data to use
+:type num_sents: C{int}
+
+:param max_rules: maximum number of rule instances to create
+:type max_rules: C{int}
+
+:param min_score: the minimum score for a rule in order for it to be considered
+:type min_score: C{int}
+
+:param min_acc: the minimum score for a rule in order for it to be considered
+:type min_acc: C{float}
+
+:param train: the fraction of the the corpus to be used for training (1=all)
+:type train: C{float}
+
+:param trace: the level of diagnostic tracing output to produce (0-4)
+:type trace: C{int}
+
+:param randomize: whether the training data should be a random subset of the corpus
+:type randomize: C{bool}
+
+:param ruleformat: rule output format, one of "str", "repr", "verbose"
+:type ruleformat: C{str}
+
+:param incremental_stats: if true, will tag incrementally and collect stats for each rule (rather slow)
+:type incremental_stats: C{bool}
+
+:param template_stats: if true, will print per-template statistics collected in training and (optionally) testing
+:type template_stats: C{bool}
+
+:param error_output: the file where errors will be saved
+:type error_output: C{string}
+
+:param serialize_output: the file where the learned tbl tagger will be saved
+:type serialize_output: C{string}
+
+:param learning_curve_output: filename of plot of learning curve(s) (train and also test, if available)
+:type learning_curve_output: C{string}
+
+:param learning_curve_take: how many rules plotted
+:type learning_curve_take: C{int}
+
+:param baseline_backoff_tagger: the file where rules will be saved
+:type baseline_backoff_tagger: tagger
+
+:param separate_baseline_data: use a fraction of the training data exclusively for training baseline
+:type separate_baseline_data: C{bool}
+
+:param cache_baseline_tagger: cache baseline tagger to this file (only interesting as a temporary workaround to get
+                              deterministic output from the baseline unigram tagger between python versions)
+:type cache_baseline_tagger: C{string}
+
+
+Note on separate_baseline_data: if True, reuse training data both for baseline and rule learner. This
+is fast and fine for a demo, but is likely to generalize worse on unseen data.
+Also cannot be sensibly used for learning curves on training data (the baseline will be artificially high).</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.tbl.demo._demo_prepare_data">
+    
+  </a>
+  <a name="_demo_prepare_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_demo_prepare_data</span>(tagged_data, train, num_sents, randomize, separate_baseline_data):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L342">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.tbl.demo._demo_plot">
+    
+  </a>
+  <a name="_demo_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_demo_plot</span>(learning_curve_output, teststats, trainstats=None, take=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L382">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.tbl.demo.NN_CD_TAGGER">
+    
+  </a>
+  <a name="NN_CD_TAGGER">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NN_CD_TAGGER</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L401">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.tbl.demo.REGEXP_TAGGER">
+    
+  </a>
+  <a name="REGEXP_TAGGER">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">REGEXP_TAGGER</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L403">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tbl.demo.corpus_size">
+    
+  </a>
+  <a name="corpus_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">corpus_size</span>(seqs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tbl/demo.py#L418">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

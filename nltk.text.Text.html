@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.text.Text : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.text.html">text</a></code>.<code><a href="nltk.text.Text.html">Text</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Text</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L311">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.text.TextCollection.html">nltk.text.TextCollection</a></code></p>
+        <p><a href="classIndex.html#nltk.text.Text">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A wrapper around a sequence of simple (string) tokens, which is
+intended to support initial exploration of texts (via the
+interactive console).  Its methods perform a variety of analyses
+on the text's contexts (e.g., counting, concordancing, collocation
+discovery), and display the results.  If you wish to write a
+program which makes use of these analyses, then you should bypass
+the ``Text`` class, and use the appropriate analysis function or
+class directly instead.
+
+A ``Text`` is typically initialized from a given document or
+corpus.  E.g.:
+
+&gt;&gt;&gt; import nltk.corpus
+&gt;&gt;&gt; from nltk.text import Text
+&gt;&gt;&gt; moby = Text(nltk.corpus.gutenberg.words('melville-moby_dick.txt'))</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1767">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Create a Text object.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#tokens">tokens</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#name">name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__len__">__len__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#concordance">concordance</a></code></td>
+    <td><span>Prints a concordance for ``word`` with the specified context window. Word matching is not case-sensitive.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#concordance_list">concordance_list</a></code></td>
+    <td><span>Generate a concordance for ``word`` with the specified context window. Word matching is not case-sensitive.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#collocation_list">collocation_list</a></code></td>
+    <td><span>Return collocations derived from the text, ignoring stopwords.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#collocations">collocations</a></code></td>
+    <td><span>Print collocations derived from the text, ignoring stopwords.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#count">count</a></code></td>
+    <td><span>Count the number of times this word appears in the text.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#index">index</a></code></td>
+    <td><span>Find the index of the first occurrence of the word in the text.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#readability">readability</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#similar">similar</a></code></td>
+    <td><span>Distributional similarity: find other words which appear in the same contexts as the specified word; list most similar words first.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#common_contexts">common_contexts</a></code></td>
+    <td><span>Find contexts where the specified words appear; list most frequent common contexts first.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dispersion_plot">dispersion_plot</a></code></td>
+    <td><span>Produce a plot showing the distribution of the words through the text. Requires pylab to be installed.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#generate">generate</a></code></td>
+    <td><span>Print random text, generated using a trigram language model. See also `help(nltk.lm)`.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#plot">plot</a></code></td>
+    <td><span>See documentation for FreqDist.plot() :seealso: nltk.prob.FreqDist.plot()</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#vocab">vocab</a></code></td>
+    <td><span>:seealso: nltk.prob.FreqDist</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#findall">findall</a></code></td>
+    <td><span>Find instances of the regular expression in the text. The text is a list of tokens, and a regexp pattern to match a single token must be surrounded by angle brackets.  E.g.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_COPY_TOKENS">_COPY_TOKENS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_concordance_index">_concordance_index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_num">_num</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_window_size">_window_size</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_collocations">_collocations</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_word_context_index">_word_context_index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_train_default_ngram_lm">_train_default_ngram_lm</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tokenized_sents">_tokenized_sents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_trigram_model">_trigram_model</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_vocab">_vocab</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_token_searcher">_token_searcher</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_CONTEXT_RE">_CONTEXT_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_context">_context</a></code></td>
+    <td><span>One left &amp; one right token, both case-normalized.  Skip over non-sentence-final punctuation.  Used by the ``ContextIndex`` that is created for ``similar()`` and ``common_contexts()``.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable private">
+  
+  <a name="nltk.text.Text._COPY_TOKENS">
+    
+  </a>
+  <a name="_COPY_TOKENS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_COPY_TOKENS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L335">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tokens, name=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L337">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.text.TextCollection.html">nltk.text.TextCollection</a></code></div>
+    
+    <div><p class="pre">Create a Text object.
+
+:param tokens: The source text.
+:type tokens: sequence of str</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.text.Text.tokens">
+    
+  </a>
+  <a name="tokens">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tokens</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L346">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.text.Text.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L349">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.__getitem__">
+    
+  </a>
+  <a name="__getitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, i):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L360">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.__len__">
+    
+  </a>
+  <a name="__len__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L363">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.concordance">
+    
+  </a>
+  <a name="concordance">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">concordance</span>(self, word, width=79, lines=25):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L370">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Prints a concordance for ``word`` with the specified context window.
+Word matching is not case-sensitive.
+
+:param word: The target word or phrase (a list of strings)
+:type word: str or list
+:param width: The width of each line, in characters (default=80)
+:type width: int
+:param lines: The number of lines to display (default=25)
+:type lines: int
+
+:seealso: ``ConcordanceIndex``</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._concordance_index">
+    
+  </a>
+  <a name="_concordance_index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_concordance_index</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L385">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.concordance_list">
+    
+  </a>
+  <a name="concordance_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">concordance_list</span>(self, word, width=79, lines=25):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L391">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Generate a concordance for ``word`` with the specified context window.
+Word matching is not case-sensitive.
+
+:param word: The target word or phrase (a list of strings)
+:type word: str or list
+:param width: The width of each line, in characters (default=80)
+:type width: int
+:param lines: The number of lines to display (default=25)
+:type lines: int
+
+:seealso: ``ConcordanceIndex``</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.collocation_list">
+    
+  </a>
+  <a name="collocation_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">collocation_list</span>(self, num=20, window_size=2):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L411">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return collocations derived from the text, ignoring stopwords.
+
+    &gt;&gt;&gt; from nltk.book import text4
+    &gt;&gt;&gt; text4.collocation_list()[:2]
+    [('United', 'States'), ('fellow', 'citizens')]
+
+:param num: The maximum number of collocations to return.
+:type num: int
+:param window_size: The number of tokens spanned by a collocation (default=2)
+:type window_size: int
+:rtype: list(tuple(str, str))</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._num">
+    
+  </a>
+  <a name="_num">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_num</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L430">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._window_size">
+    
+  </a>
+  <a name="_window_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_window_size</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L431">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._collocations">
+    
+  </a>
+  <a name="_collocations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_collocations</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L441">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.collocations">
+    
+  </a>
+  <a name="collocations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">collocations</span>(self, num=20, window_size=2):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L444">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Print collocations derived from the text, ignoring stopwords.
+
+    &gt;&gt;&gt; from nltk.book import text4
+    &gt;&gt;&gt; text4.collocations() # doctest: +ELLIPSIS
+    United States; fellow citizens; four years; ...
+
+:param num: The maximum number of collocations to print.
+:type num: int
+:param window_size: The number of tokens spanned by a collocation (default=2)
+:type window_size: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.count">
+    
+  </a>
+  <a name="count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">count</span>(self, word):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L463">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Count the number of times this word appears in the text.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">index</span>(self, word):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L469">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Find the index of the first occurrence of the word in the text.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.readability">
+    
+  </a>
+  <a name="readability">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">readability</span>(self, method):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L475">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.similar">
+    
+  </a>
+  <a name="similar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">similar</span>(self, word, num=20):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L479">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Distributional similarity: find other words which appear in the
+same contexts as the specified word; list most similar words first.
+
+:param word: The word used to seed the similarity search
+:type word: str
+:param num: The number of words to generate (default=20)
+:type num: int
+:seealso: ContextIndex.similar_words()</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._word_context_index">
+    
+  </a>
+  <a name="_word_context_index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_word_context_index</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L492">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.common_contexts">
+    
+  </a>
+  <a name="common_contexts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">common_contexts</span>(self, words, num=20):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L513">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Find contexts where the specified words appear; list
+most frequent common contexts first.
+
+:param words: The words used to seed the similarity search
+:type words: str
+:param num: The number of words to generate (default=20)
+:type num: int
+:seealso: ContextIndex.common_contexts()</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.dispersion_plot">
+    
+  </a>
+  <a name="dispersion_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dispersion_plot</span>(self, words):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L541">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Produce a plot showing the distribution of the words through the text.
+Requires pylab to be installed.
+
+:param words: The words to be plotted
+:type words: list(str)
+:seealso: nltk.draw.dispersion_plot()</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.text.Text._train_default_ngram_lm">
+    
+  </a>
+  <a name="_train_default_ngram_lm">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_train_default_ngram_lm</span>(self, tokenized_sents, n=3):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L554">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.generate">
+    
+  </a>
+  <a name="generate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generate</span>(self, length=100, text_seed=None, random_seed=42):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L560">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Print random text, generated using a trigram language model.
+See also `help(nltk.lm)`.
+
+:param length: The length of text to generate (default=100)
+:type length: int
+
+:param text_seed: Generation can be conditioned on preceding context.
+:type text_seed: list(str)
+
+:param random_seed: A random seed or an instance of `random.Random`. If provided,
+makes the random sampling part of generation reproducible. (default=42)
+:type random_seed: int</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._tokenized_sents">
+    
+  </a>
+  <a name="_tokenized_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tokenized_sents</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L577">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._trigram_model">
+    
+  </a>
+  <a name="_trigram_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_trigram_model</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L582">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot</span>(self, *args):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L607">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">See documentation for FreqDist.plot()
+:seealso: nltk.prob.FreqDist.plot()</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.vocab">
+    
+  </a>
+  <a name="vocab">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">vocab</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L614">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:seealso: nltk.prob.FreqDist</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._vocab">
+    
+  </a>
+  <a name="_vocab">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_vocab</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L620">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.findall">
+    
+  </a>
+  <a name="findall">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">findall</span>(self, regexp):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L623">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Find instances of the regular expression in the text.
+The text is a list of tokens, and a regexp pattern to match
+a single token must be surrounded by angle brackets.  E.g.
+
+&gt;&gt;&gt; print('hack'); from nltk.book import text1, text5, text9
+hack...
+&gt;&gt;&gt; text5.findall("&lt;.*&gt;&lt;.*&gt;&lt;bro&gt;")
+you rule bro; telling you bro; u twizted bro
+&gt;&gt;&gt; text1.findall("&lt;a&gt;(&lt;.*&gt;)&lt;man&gt;")
+monied; nervous; dangerous; white; white; white; pious; queer; good;
+mature; white; Cape; great; wise; wise; butterless; white; fiendish;
+pale; furious; better; certain; complete; dismasted; younger; brave;
+brave; brave; brave
+&gt;&gt;&gt; text9.findall("&lt;th.*&gt;{3,}")
+thread through those; the thought that; that the thing; the thing
+that; that that thing; through these than through; them that the;
+through the thick; them that they; thought that the
+
+:param regexp: A regular expression
+:type regexp: str</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.text.Text._token_searcher">
+    
+  </a>
+  <a name="_token_searcher">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_token_searcher</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L648">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.text.Text._CONTEXT_RE">
+    
+  </a>
+  <a name="_CONTEXT_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_CONTEXT_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L658">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.text.Text._context">
+    
+  </a>
+  <a name="_context">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_context</span>(self, tokens, i):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L660">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">One left &amp; one right token, both case-normalized.  Skip over
+non-sentence-final punctuation.  Used by the ``ContextIndex``
+that is created for ``similar()`` and ``common_contexts()``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L684">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.text.Text.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/text.py#L687">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

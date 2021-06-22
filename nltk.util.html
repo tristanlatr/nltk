@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.util : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.util.html">util</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1955">
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#usage">usage</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#in_idle">in_idle</a></code></td>
+    <td><span>Return True if this function is run within idle.  Tkinter programs that are run in idle should never call ``Tk.mainloop``; so this function should be used to gate all calls to ``Tk.mainloop``.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#pr">pr</a></code></td>
+    <td><span>Pretty print a sequence of data items</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#print_string">print_string</a></code></td>
+    <td><span>Pretty print a string, breaking lines on whitespace</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#tokenwrap">tokenwrap</a></code></td>
+    <td><span>Pretty print a list of text tokens, breaking lines on whitespace</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#py25">py25</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.util.Index.html">Index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#re_show">re_show</a></code></td>
+    <td><span>Return a string with markers surrounding the matched substrings. Search str for substrings matching ``regexp`` and wrap the matches with braces.  This is convenient for learning about regular expressions.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filestring">filestring</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#breadth_first">breadth_first</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#acyclic_breadth_first">acyclic_breadth_first</a></code></td>
+    <td><span>Traverse the nodes of a tree in breadth-first order, discarding eventual cycles.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#acyclic_depth_first">acyclic_depth_first</a></code></td>
+    <td><span>Traverse the nodes of a tree in depth-first order, discarding eventual cycles within any branch, adding cut_mark (when specified) if cycles were truncated.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#acyclic_branches_depth_first">acyclic_branches_depth_first</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#guess_encoding">guess_encoding</a></code></td>
+    <td><span>Given a byte string, attempt to decode it. Tries the standard 'UTF8' and 'latin-1' encodings, Plus several gathered from locale information.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#unique_list">unique_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#invert_dict">invert_dict</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#transitive_closure">transitive_closure</a></code></td>
+    <td><span>Calculate the transitive closure of a directed graph, optionally the reflexive transitive closure.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#invert_graph">invert_graph</a></code></td>
+    <td><span>Inverts a directed graph.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#clean_html">clean_html</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#clean_url">clean_url</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#flatten">flatten</a></code></td>
+    <td><span>Flatten a list.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#pad_sequence">pad_sequence</a></code></td>
+    <td><span>Returns a padded sequence of items before ngram extraction.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ngrams">ngrams</a></code></td>
+    <td><span>Return the ngrams generated from a sequence of items, as an iterator. For example:</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#bigrams">bigrams</a></code></td>
+    <td><span>Return the bigrams generated from a sequence of items, as an iterator. For example:</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#trigrams">trigrams</a></code></td>
+    <td><span>Return the trigrams generated from a sequence of items, as an iterator. For example:</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#everygrams">everygrams</a></code></td>
+    <td><span>Returns all possible ngrams generated from a sequence of items, as an iterator.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#skipgrams">skipgrams</a></code></td>
+    <td><span>Returns all possible skipgrams generated from a sequence of items, as an iterator. Skipgrams are ngrams that allows tokens to be skipped. Refer to http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#binary_search_file">binary_search_file</a></code></td>
+    <td><span>Return the line from the file with first word key. Searches through a sorted file using the binary search algorithm.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_proxy">set_proxy</a></code></td>
+    <td><span>Set the HTTP proxy for Python to download through.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#elementtree_indent">elementtree_indent</a></code></td>
+    <td><span>Recursive function to indent an ElementTree._ElementInterface used for pretty printing. Run indent on elem and then output in the normal way.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#choose">choose</a></code></td>
+    <td><span>This function is a fast way to calculate binomial coefficients, commonly known as nCk, i.e. the number of combinations of n things taken k at a time. (https://en.wikipedia.org/wiki/Binomial_coefficient).</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#pairwise">pairwise</a></code></td>
+    <td><span>s -&gt; (s0,s1), (s1,s2), (s2, s3), ...</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parallelize_preprocess">parallelize_preprocess</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.util.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">usage</span>(obj, selfname='self'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L42">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.in_idle">
+    
+  </a>
+  <a name="in_idle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">in_idle</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return True if this function is run within idle.  Tkinter
+programs that are run in idle should never call ``Tk.mainloop``; so
+this function should be used to gate all calls to ``Tk.mainloop``.
+
+:warning: This function works by checking ``sys.stdin``.  If the
+    user has modified ``sys.stdin``, then it may return incorrect
+    results.
+:rtype: bool</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.pr">
+    
+  </a>
+  <a name="pr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pr</span>(data, start=0, end=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Pretty print a sequence of data items
+
+:param data: the data stream to print
+:type data: sequence or iter
+:param start: the start position
+:type start: int
+:param end: the end position
+:type end: int</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.print_string">
+    
+  </a>
+  <a name="print_string">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print_string</span>(s, width=70):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Pretty print a string, breaking lines on whitespace
+
+:param s: the string to print, consisting of words and spaces
+:type s: str
+:param width: the display width
+:type width: int</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.tokenwrap">
+    
+  </a>
+  <a name="tokenwrap">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tokenwrap</span>(tokens, separator=' ', width=70):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L126">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Pretty print a list of text tokens, breaking lines on whitespace
+
+:param tokens: the tokens to print
+:type tokens: list
+:param separator: the string to use to separate tokens
+:type separator: str
+:param width: the display width (default=70)
+:type width: int</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.py25">
+    
+  </a>
+  <a name="py25">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">py25</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L145">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.re_show">
+    
+  </a>
+  <a name="re_show">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">re_show</span>(regexp, string, left='{', right='}'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L166">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a string with markers surrounding the matched substrings.
+Search str for substrings matching ``regexp`` and wrap the matches
+with braces.  This is convenient for learning about regular expressions.
+
+:param regexp: The regular expression.
+:type regexp: str
+:param string: The string being matched.
+:type string: str
+:param left: The left delimiter (printed before the matched substring)
+:type left: str
+:param right: The right delimiter (printed after the matched substring)
+:type right: str
+:rtype: str</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.filestring">
+    
+  </a>
+  <a name="filestring">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filestring</span>(f):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L190">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.breadth_first">
+    
+  </a>
+  <a name="breadth_first">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">breadth_first</span>(tree, children=iter, maxdepth=-1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L205">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Traverse the nodes of a tree in breadth-first order.
+(No check for cycles.)
+The first argument should be the tree root;
+children should be a function taking as argument a tree node
+and returning an iterator of the node's children.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.acyclic_breadth_first">
+    
+  </a>
+  <a name="acyclic_breadth_first">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">acyclic_breadth_first</span>(tree, children=iter, maxdepth=-1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L231">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Traverse the nodes of a tree in breadth-first order,
+discarding eventual cycles.
+
+The first argument should be the tree root;
+children should be a function taking as argument a tree node
+and returning an iterator of the node's children.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.acyclic_depth_first">
+    
+  </a>
+  <a name="acyclic_depth_first">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">acyclic_depth_first</span>(tree, children=iter, depth=-1, cut_mark=None, traversed=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L256">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Traverse the nodes of a tree in depth-first order,
+discarding eventual cycles within any branch,
+adding cut_mark (when specified) if cycles were truncated.
+
+The first argument should be the tree root;
+children should be a function taking as argument a tree node
+and returning an iterator of the node's children.
+
+Catches all cycles:
+
+&gt;&gt;&gt; import nltk
+&gt;&gt;&gt; from nltk.util import acyclic_depth_first as acyclic_tree
+&gt;&gt;&gt; wn=nltk.corpus.wordnet
+&gt;&gt;&gt; from pprint import pprint
+&gt;&gt;&gt; pprint(acyclic_tree(wn.synset('dog.n.01'), lambda s:s.hypernyms(),cut_mark='...'))
+[Synset('dog.n.01'),
+ [Synset('canine.n.02'),
+  [Synset('carnivore.n.01'),
+   [Synset('placental.n.01'),
+    [Synset('mammal.n.01'),
+     [Synset('vertebrate.n.01'),
+      [Synset('chordate.n.01'),
+       [Synset('animal.n.01'),
+        [Synset('organism.n.01'),
+         [Synset('living_thing.n.01'),
+          [Synset('whole.n.02'),
+           [Synset('object.n.01'),
+            [Synset('physical_entity.n.01'),
+             [Synset('entity.n.01')]]]]]]]]]]]]],
+ [Synset('domestic_animal.n.01'), "Cycle(Synset('animal.n.01'),-3,...)"]]</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.acyclic_branches_depth_first">
+    
+  </a>
+  <a name="acyclic_branches_depth_first">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">acyclic_branches_depth_first</span>(tree, children=iter, depth=-1, cut_mark=None, traversed=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L309">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Traverse the nodes of a tree in depth-first order,
+discarding eventual cycles within the same branch,
+but keep duplicate pathes in different branches.
+Add cut_mark (when defined) if cycles were truncated.
+
+The first argument should be the tree root;
+children should be a function taking as argument a tree node
+and returning an iterator of the node's children.
+
+Catches only only cycles within the same branch,
+but keeping cycles from different branches:
+
+&gt;&gt;&gt; import nltk
+&gt;&gt;&gt; from nltk.util import acyclic_branches_depth_first as tree
+&gt;&gt;&gt; wn=nltk.corpus.wordnet
+&gt;&gt;&gt; from pprint import pprint
+&gt;&gt;&gt; pprint(tree(wn.synset('certified.a.01'), lambda s:s.also_sees(), cut_mark='...', depth=4))
+[Synset('certified.a.01'),
+ [Synset('authorized.a.01'),
+  [Synset('lawful.a.01'),
+   [Synset('legal.a.01'),
+    "Cycle(Synset('lawful.a.01'),0,...)",
+    [Synset('legitimate.a.01'), '...']],
+   [Synset('straight.a.06'),
+    [Synset('honest.a.01'), '...'],
+    "Cycle(Synset('lawful.a.01'),0,...)"]],
+  [Synset('legitimate.a.01'),
+   "Cycle(Synset('authorized.a.01'),1,...)",
+   [Synset('legal.a.01'),
+    [Synset('lawful.a.01'), '...'],
+    "Cycle(Synset('legitimate.a.01'),0,...)"],
+   [Synset('valid.a.01'),
+    "Cycle(Synset('legitimate.a.01'),0,...)",
+    [Synset('reasonable.a.01'), '...']]],
+  [Synset('official.a.01'), "Cycle(Synset('authorized.a.01'),1,...)"]],
+ [Synset('documented.a.01')]]</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.guess_encoding">
+    
+  </a>
+  <a name="guess_encoding">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">guess_encoding</span>(data):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L375">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Given a byte string, attempt to decode it.
+Tries the standard 'UTF8' and 'latin-1' encodings,
+Plus several gathered from locale information.
+
+The calling program *must* first call::
+
+    locale.setlocale(locale.LC_ALL, '')
+
+If successful it returns ``(decoded_unicode, successful_encoding)``.
+If unsuccessful it raises a ``UnicodeError``.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.unique_list">
+    
+  </a>
+  <a name="unique_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unique_list</span>(xs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L436">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.invert_dict">
+    
+  </a>
+  <a name="invert_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">invert_dict</span>(d):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L447">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.transitive_closure">
+    
+  </a>
+  <a name="transitive_closure">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">transitive_closure</span>(graph, reflexive=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L464">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Calculate the transitive closure of a directed graph,
+optionally the reflexive transitive closure.
+
+The algorithm is a slight modification of the "Marking Algorithm" of
+Ioannidis &amp; Ramakrishnan (1998) "Efficient Transitive Closure Algorithms".
+
+:param graph: the initial graph, represented as a dictionary of sets
+:type graph: dict(set)
+:param reflexive: if set, also make the closure reflexive
+:type reflexive: bool
+:rtype: dict(set)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.invert_graph">
+    
+  </a>
+  <a name="invert_graph">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">invert_graph</span>(graph):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L498">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Inverts a directed graph.
+
+:param graph: the graph, represented as a dictionary of sets
+:type graph: dict(set)
+:return: the inverted graph
+:rtype: dict(set)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.clean_html">
+    
+  </a>
+  <a name="clean_html">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clean_html</span>(html):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L519">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.clean_url">
+    
+  </a>
+  <a name="clean_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clean_url</span>(url):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L525">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.flatten">
+    
+  </a>
+  <a name="flatten">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">flatten</span>(*args):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L536">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Flatten a list.
+
+    &gt;&gt;&gt; from nltk.util import flatten
+    &gt;&gt;&gt; flatten(1, 2, ['b', 'a' , ['c', 'd']], 3)
+    [1, 2, 'b', 'a', 'c', 'd', 3]
+
+:param args: items and lists to be combined into a single list
+:rtype: list</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.pad_sequence">
+    
+  </a>
+  <a name="pad_sequence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pad_sequence</span>(sequence, n, pad_left=False, pad_right=False, left_pad_symbol=None, right_pad_symbol=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L565">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns a padded sequence of items before ngram extraction.
+
+    &gt;&gt;&gt; list(pad_sequence([1,2,3,4,5], 2, pad_left=True, pad_right=True, left_pad_symbol='&lt;s&gt;', right_pad_symbol='&lt;/s&gt;'))
+    ['&lt;s&gt;', 1, 2, 3, 4, 5, '&lt;/s&gt;']
+    &gt;&gt;&gt; list(pad_sequence([1,2,3,4,5], 2, pad_left=True, left_pad_symbol='&lt;s&gt;'))
+    ['&lt;s&gt;', 1, 2, 3, 4, 5]
+    &gt;&gt;&gt; list(pad_sequence([1,2,3,4,5], 2, pad_right=True, right_pad_symbol='&lt;/s&gt;'))
+    [1, 2, 3, 4, 5, '&lt;/s&gt;']
+
+:param sequence: the source data to be padded
+:type sequence: sequence or iter
+:param n: the degree of the ngrams
+:type n: int
+:param pad_left: whether the ngrams should be left-padded
+:type pad_left: bool
+:param pad_right: whether the ngrams should be right-padded
+:type pad_right: bool
+:param left_pad_symbol: the symbol to use for left padding (default is None)
+:type left_pad_symbol: any
+:param right_pad_symbol: the symbol to use for right padding (default is None)
+:type right_pad_symbol: any
+:rtype: sequence or iter</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.ngrams">
+    
+  </a>
+  <a name="ngrams">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ngrams</span>(sequence, n, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L608">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the ngrams generated from a sequence of items, as an iterator.
+For example:
+
+    &gt;&gt;&gt; from nltk.util import ngrams
+    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 3))
+    [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
+
+Wrap with list for a list version of this function.  Set pad_left
+or pad_right to true in order to get additional ngrams:
+
+    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 2, pad_right=True))
+    [(1, 2), (2, 3), (3, 4), (4, 5), (5, None)]
+    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 2, pad_right=True, right_pad_symbol='&lt;/s&gt;'))
+    [(1, 2), (2, 3), (3, 4), (4, 5), (5, '&lt;/s&gt;')]
+    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 2, pad_left=True, left_pad_symbol='&lt;s&gt;'))
+    [('&lt;s&gt;', 1), (1, 2), (2, 3), (3, 4), (4, 5)]
+    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 2, pad_left=True, pad_right=True, left_pad_symbol='&lt;s&gt;', right_pad_symbol='&lt;/s&gt;'))
+    [('&lt;s&gt;', 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, '&lt;/s&gt;')]
+
+
+:param sequence: the source data to be converted into ngrams
+:type sequence: sequence or iter
+:param n: the degree of the ngrams
+:type n: int
+:param pad_left: whether the ngrams should be left-padded
+:type pad_left: bool
+:param pad_right: whether the ngrams should be right-padded
+:type pad_right: bool
+:param left_pad_symbol: the symbol to use for left padding (default is None)
+:type left_pad_symbol: any
+:param right_pad_symbol: the symbol to use for right padding (default is None)
+:type right_pad_symbol: any
+:rtype: sequence or iter</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.bigrams">
+    
+  </a>
+  <a name="bigrams">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bigrams</span>(sequence, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L656">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the bigrams generated from a sequence of items, as an iterator.
+For example:
+
+    &gt;&gt;&gt; from nltk.util import bigrams
+    &gt;&gt;&gt; list(bigrams([1,2,3,4,5]))
+    [(1, 2), (2, 3), (3, 4), (4, 5)]
+
+Use bigrams for a list version of this function.
+
+:param sequence: the source data to be converted into bigrams
+:type sequence: sequence or iter
+:rtype: iter(tuple)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.trigrams">
+    
+  </a>
+  <a name="trigrams">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">trigrams</span>(sequence, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L676">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the trigrams generated from a sequence of items, as an iterator.
+For example:
+
+    &gt;&gt;&gt; from nltk.util import trigrams
+    &gt;&gt;&gt; list(trigrams([1,2,3,4,5]))
+    [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
+
+Use trigrams for a list version of this function.
+
+:param sequence: the source data to be converted into trigrams
+:type sequence: sequence or iter
+:rtype: iter(tuple)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.everygrams">
+    
+  </a>
+  <a name="everygrams">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">everygrams</span>(sequence, min_len=1, max_len=-1, pad_left=False, pad_right=False, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L696">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns all possible ngrams generated from a sequence of items, as an iterator.
+
+    &gt;&gt;&gt; sent = 'a b c'.split()
+
+New version outputs for everygrams.
+    &gt;&gt;&gt; list(everygrams(sent))
+    [('a',), ('a', 'b'), ('a', 'b', 'c'), ('b',), ('b', 'c'), ('c',)]
+
+Old version outputs for everygrams.
+    &gt;&gt;&gt; sorted(everygrams(sent), key=len)
+    [('a',), ('b',), ('c',), ('a', 'b'), ('b', 'c'), ('a', 'b', 'c')]
+
+    &gt;&gt;&gt; list(everygrams(sent, max_len=2))
+    [('a',), ('a', 'b'), ('b',), ('b', 'c'), ('c',)]
+
+:param sequence: the source data to be converted into ngrams. If max_len is
+    not provided, this sequence will be loaded into memory
+:type sequence: sequence or iter
+:param min_len: minimum length of the ngrams, aka. n-gram order/degree of ngram
+:type  min_len: int
+:param max_len: maximum length of the ngrams (set to length of sequence by default)
+:type  max_len: int
+:param pad_left: whether the ngrams should be left-padded
+:type pad_left: bool
+:param pad_right: whether the ngrams should be right-padded
+:type pad_right: bool
+:rtype: iter(tuple)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.skipgrams">
+    
+  </a>
+  <a name="skipgrams">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">skipgrams</span>(sequence, n, k, **kwargs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L756">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns all possible skipgrams generated from a sequence of items, as an iterator.
+Skipgrams are ngrams that allows tokens to be skipped.
+Refer to http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf
+
+    &gt;&gt;&gt; sent = "Insurgents killed in ongoing fighting".split()
+    &gt;&gt;&gt; list(skipgrams(sent, 2, 2))
+    [('Insurgents', 'killed'), ('Insurgents', 'in'), ('Insurgents', 'ongoing'), ('killed', 'in'), ('killed', 'ongoing'), ('killed', 'fighting'), ('in', 'ongoing'), ('in', 'fighting'), ('ongoing', 'fighting')]
+    &gt;&gt;&gt; list(skipgrams(sent, 3, 2))
+    [('Insurgents', 'killed', 'in'), ('Insurgents', 'killed', 'ongoing'), ('Insurgents', 'killed', 'fighting'), ('Insurgents', 'in', 'ongoing'), ('Insurgents', 'in', 'fighting'), ('Insurgents', 'ongoing', 'fighting'), ('killed', 'in', 'ongoing'), ('killed', 'in', 'fighting'), ('killed', 'ongoing', 'fighting'), ('in', 'ongoing', 'fighting')]
+
+:param sequence: the source data to be converted into trigrams
+:type sequence: sequence or iter
+:param n: the degree of the ngrams
+:type n: int
+:param k: the skip distance
+:type  k: int
+:rtype: iter(tuple)</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.binary_search_file">
+    
+  </a>
+  <a name="binary_search_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">binary_search_file</span>(file, key, cache={}, cacheDepth=-1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L799">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the line from the file with first word key.
+Searches through a sorted file using the binary search algorithm.
+
+:type file: file
+:param file: the file to be searched through.
+:type key: str
+:param key: the identifier we are searching for.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.set_proxy">
+    
+  </a>
+  <a name="set_proxy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_proxy</span>(proxy, user=None, password=''):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L873">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Set the HTTP proxy for Python to download through.
+
+If ``proxy`` is None then tries to set proxy from environment or system
+settings.
+
+:param proxy: The HTTP proxy server to use. For example:
+    'http://proxy.example.com:3128/'
+:param user: The username to authenticate with. Use None to disable
+    authentication.
+:param password: The password to authenticate with.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.elementtree_indent">
+    
+  </a>
+  <a name="elementtree_indent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">elementtree_indent</span>(elem, level=0):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L913">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Recursive function to indent an ElementTree._ElementInterface
+used for pretty printing. Run indent on elem and then output
+in the normal way.
+
+:param elem: element to be indented. will be modified.
+:type elem: ElementTree._ElementInterface
+:param level: level of indentation for this element
+:type level: nonnegative integer
+:rtype:   ElementTree._ElementInterface
+:return:  Contents of elem indented to reflect its structure</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.choose">
+    
+  </a>
+  <a name="choose">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">choose</span>(n, k):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L945">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This function is a fast way to calculate binomial coefficients, commonly
+known as nCk, i.e. the number of combinations of n things taken k at a time.
+(https://en.wikipedia.org/wiki/Binomial_coefficient).
+
+This is the *scipy.special.comb()* with long integer computation but this
+approximation is faster, see https://github.com/nltk/nltk/issues/1181
+
+    &gt;&gt;&gt; choose(4, 2)
+    6
+    &gt;&gt;&gt; choose(6, 2)
+    15
+
+:param n: The number of things.
+:type n: int
+:param r: The number of times a thing is taken.
+:type r: int</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.pairwise">
+    
+  </a>
+  <a name="pairwise">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pairwise</span>(iterable):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L980">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">s -&gt; (s0,s1), (s1,s2), (s2, s3), ...</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.util.parallelize_preprocess">
+    
+  </a>
+  <a name="parallelize_preprocess">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parallelize_preprocess</span>(func, iterator, processes, progress_bar=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/util.py#L991">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

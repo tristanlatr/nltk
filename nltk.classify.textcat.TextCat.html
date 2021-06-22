@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.classify.textcat.TextCat : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.classify.html">classify</a></code>.<code><a href="nltk.classify.textcat.html">textcat</a></code>.<code><a href="nltk.classify.textcat.TextCat.html">TextCat</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextCat</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L48">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.classify.textcat.TextCat">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id172">
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#fingerprints">fingerprints</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#last_distances">last_distances</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove_punctuation">remove_punctuation</a></code></td>
+    <td><span>Get rid of punctuation except apostrophes</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#profile">profile</a></code></td>
+    <td><span>Create FreqDist of trigrams within text</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#calc_dist">calc_dist</a></code></td>
+    <td><span>Calculate the "out-of-place" measure between the text and language profile for a single trigram</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lang_dists">lang_dists</a></code></td>
+    <td><span>Calculate the "out-of-place" measure between the text and all languages</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#guess_language">guess_language</a></code></td>
+    <td><span>Find the language with the min distance to the text and return its ISO 639-3 code</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_corpus">_corpus</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_START_CHAR">_START_CHAR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_END_CHAR">_END_CHAR</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseinstancevariable private">
+  
+  <a name="nltk.classify.textcat.TextCat._corpus">
+    
+  </a>
+  <a name="_corpus">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_corpus</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L50">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="nltk.classify.textcat.TextCat.fingerprints">
+    
+  </a>
+  <a name="fingerprints">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">fingerprints</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L51">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.classify.textcat.TextCat._START_CHAR">
+    
+  </a>
+  <a name="_START_CHAR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_START_CHAR</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L52">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseclassvariable private">
+  
+  <a name="nltk.classify.textcat.TextCat._END_CHAR">
+    
+  </a>
+  <a name="_END_CHAR">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_END_CHAR</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L53">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.classify.textcat.TextCat.last_distances">
+    
+  </a>
+  <a name="last_distances">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">last_distances</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L55">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.textcat.TextCat.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L57">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.textcat.TextCat.remove_punctuation">
+    
+  </a>
+  <a name="remove_punctuation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove_punctuation</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L73">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Get rid of punctuation except apostrophes </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.textcat.TextCat.profile">
+    
+  </a>
+  <a name="profile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">profile</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Create FreqDist of trigrams within text </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.textcat.TextCat.calc_dist">
+    
+  </a>
+  <a name="calc_dist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">calc_dist</span>(self, lang, trigram, text_profile):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L97">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Calculate the "out-of-place" measure between the
+text and language profile for a single trigram </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.textcat.TextCat.lang_dists">
+    
+  </a>
+  <a name="lang_dists">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lang_dists</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Calculate the "out-of-place" measure between
+the text and all languages </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.classify.textcat.TextCat.guess_language">
+    
+  </a>
+  <a name="guess_language">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">guess_language</span>(self, text):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/textcat.py#L136">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Find the language with the min distance
+to the text and return its ISO 639-3 code </p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

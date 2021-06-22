@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.data : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.data.html">data</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Functions to find and load NLTK resource files, such as corpora,
+grammars, and saved processing objects.  Resource files are identified
+using URLs, such as ``nltk:corpora/abc/rural.txt`` or
+``http://nltk.org/sample/toy.cfg``.  The following URL protocols are
+supported:
+
+  - ``file:path``: Specifies the file whose path is *path*.
+    Both relative and absolute paths may be used.
+
+  - ``http://host/path``: Specifies the file stored on the web
+    server *host* at path *path*.
+
+  - ``nltk:path``: Specifies the file stored in the NLTK data
+    package at *path*.  NLTK will search for these files in the
+    directories specified by ``nltk.data.path``.
+
+If no protocol is specified, then the default protocol ``nltk:`` will
+be used.
+
+This module provides to functions that can be used to access a
+resource file, given its URL: ``load()`` loads a given resource, and
+adds it to a resource cache; and ``retrieve()`` copies a given resource
+to a local file.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id538">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#textwrap_indent">textwrap_indent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#path">path</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#gzip_open_unicode">gzip_open_unicode</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#split_resource_url">split_resource_url</a></code></td>
+    <td><span>Splits a resource url into "&lt;protocol&gt;:&lt;path&gt;".</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#normalize_resource_url">normalize_resource_url</a></code></td>
+    <td><span>Normalizes a resource url</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#normalize_resource_name">normalize_resource_name</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.data.PathPointer.html">PathPointer</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.data.FileSystemPathPointer.html">FileSystemPathPointer</a></code></td>
+    <td><span>A path pointer that identifies a file which can be accessed directly via a given absolute path.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.data.BufferedGzipFile.html">BufferedGzipFile</a></code></td>
+    <td><span>A ``GzipFile`` subclass for compatibility with older nltk releases.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.data.GzipFileSystemPathPointer.html">GzipFileSystemPathPointer</a></code></td>
+    <td><span>A subclass of ``FileSystemPathPointer`` that identifies a gzip-compressed file located at a given absolute path.  ``GzipFileSystemPathPointer`` is appropriate for loading large gzip-compressed pickle objects efficiently.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.data.ZipFilePathPointer.html">ZipFilePathPointer</a></code></td>
+    <td><span>A path pointer that identifies a file contained within a zipfile, which can be accessed by reading that zipfile.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#find">find</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#retrieve">retrieve</a></code></td>
+    <td><span>Copy the given resource to a local file.  If no filename is specified, then use the URL's filename.  If there is already a file named ``filename``, then raise a ``ValueError``.</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#FORMATS">FORMATS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#AUTO_FORMATS">AUTO_FORMATS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#load">load</a></code></td>
+    <td><span>Load a given resource from the NLTK data package.  The following resource formats are currently supported:</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#show_cfg">show_cfg</a></code></td>
+    <td><span>Write out a grammar file, ignoring escaped and empty lines.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#clear_cache">clear_cache</a></code></td>
+    <td><span>Remove all objects from the resource cache. :see: load()</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.data.LazyLoader.html">LazyLoader</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.data.OpenOnDemandZipFile.html">OpenOnDemandZipFile</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.data.SeekableUnicodeStreamReader.html">SeekableUnicodeStreamReader</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_paths_from_env">_paths_from_env</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_resource_cache">_resource_cache</a></code></td>
+    <td><span>A dictionary used to cache resources so that they won't need to be loaded more than once.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_open">_open</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="nltk.data.textwrap_indent">
+    
+  </a>
+  <a name="textwrap_indent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">textwrap_indent</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L58">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.data.path">
+    
+  </a>
+  <a name="path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">path</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L64">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A list of directories where the NLTK data package might reside.
+These directories will be checked in order when looking for a
+resource in the data package.  Note that this allows users to
+substitute in their own versions of resources, if they have them
+(e.g., in their home directory under ~/nltk_data).</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.data._paths_from_env">
+    
+  </a>
+  <a name="_paths_from_env">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_paths_from_env</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L72">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.gzip_open_unicode">
+    
+  </a>
+  <a name="gzip_open_unicode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gzip_open_unicode</span>(filename, mode='rb', compresslevel=9, encoding='utf-8', fileobj=None, errors=None, newline=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L106">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.split_resource_url">
+    
+  </a>
+  <a name="split_resource_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">split_resource_url</span>(resource_url):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L120">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Splits a resource url into "&lt;protocol&gt;:&lt;path&gt;".
+
+&gt;&gt;&gt; windows = sys.platform.startswith('win')
+&gt;&gt;&gt; split_resource_url('nltk:home/nltk')
+('nltk', 'home/nltk')
+&gt;&gt;&gt; split_resource_url('nltk:/home/nltk')
+('nltk', '/home/nltk')
+&gt;&gt;&gt; split_resource_url('file:/home/nltk')
+('file', '/home/nltk')
+&gt;&gt;&gt; split_resource_url('file:///home/nltk')
+('file', '/home/nltk')
+&gt;&gt;&gt; split_resource_url('file:///C:/home/nltk')
+('file', '/C:/home/nltk')</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.normalize_resource_url">
+    
+  </a>
+  <a name="normalize_resource_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">normalize_resource_url</span>(resource_url):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L147">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Normalizes a resource url
+
+&gt;&gt;&gt; windows = sys.platform.startswith('win')
+&gt;&gt;&gt; os.path.normpath(split_resource_url(normalize_resource_url('file:grammar.fcfg'))[1]) == \
+... ('\\' if windows else '') + os.path.abspath(os.path.join(os.curdir, 'grammar.fcfg'))
+True
+&gt;&gt;&gt; not windows or normalize_resource_url('file:C:/dir/file') == 'file:///C:/dir/file'
+True
+&gt;&gt;&gt; not windows or normalize_resource_url('file:C:\\dir\\file') == 'file:///C:/dir/file'
+True
+&gt;&gt;&gt; not windows or normalize_resource_url('file:C:\\dir/file') == 'file:///C:/dir/file'
+True
+&gt;&gt;&gt; not windows or normalize_resource_url('file://C:/dir/file') == 'file:///C:/dir/file'
+True
+&gt;&gt;&gt; not windows or normalize_resource_url('file:////C:/dir/file') == 'file:///C:/dir/file'
+True
+&gt;&gt;&gt; not windows or normalize_resource_url('nltk:C:/dir/file') == 'file:///C:/dir/file'
+True
+&gt;&gt;&gt; not windows or normalize_resource_url('nltk:C:\\dir\\file') == 'file:///C:/dir/file'
+True
+&gt;&gt;&gt; windows or normalize_resource_url('file:/dir/file/toy.cfg') == 'file:///dir/file/toy.cfg'
+True
+&gt;&gt;&gt; normalize_resource_url('nltk:home/nltk')
+'nltk:home/nltk'
+&gt;&gt;&gt; windows or normalize_resource_url('nltk:/home/nltk') == 'file:///home/nltk'
+True
+&gt;&gt;&gt; normalize_resource_url('http://example.com/dir/file')
+'http://example.com/dir/file'
+&gt;&gt;&gt; normalize_resource_url('dir/file')
+'nltk:dir/file'</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.normalize_resource_name">
+    
+  </a>
+  <a name="normalize_resource_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">normalize_resource_name</span>(resource_name, allow_relative=True, relative_path=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L203">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:type resource_name: str or unicode
+:param resource_name: The name of the resource to search for.
+    Resource names are posix-style relative path names, such as
+    ``corpora/brown``.  Directory names will automatically
+    be converted to a platform-appropriate path separator.
+    Directory trailing slashes are preserved
+
+&gt;&gt;&gt; windows = sys.platform.startswith('win')
+&gt;&gt;&gt; normalize_resource_name('.', True)
+'./'
+&gt;&gt;&gt; normalize_resource_name('./', True)
+'./'
+&gt;&gt;&gt; windows or normalize_resource_name('dir/file', False, '/') == '/dir/file'
+True
+&gt;&gt;&gt; not windows or normalize_resource_name('C:/file', False, '/') == '/C:/file'
+True
+&gt;&gt;&gt; windows or normalize_resource_name('/dir/file', False, '/') == '/dir/file'
+True
+&gt;&gt;&gt; windows or normalize_resource_name('../dir/file', False, '/') == '/dir/file'
+True
+&gt;&gt;&gt; not windows or normalize_resource_name('/dir/file', True, '/') == 'dir/file'
+True
+&gt;&gt;&gt; windows or normalize_resource_name('/dir/file', True, '/') == '/dir/file'
+True</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.data._resource_cache">
+    
+  </a>
+  <a name="_resource_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_resource_cache</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L466">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="pre">A dictionary used to cache resources so that they won't
+need to be loaded more than once.</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.find">
+    
+  </a>
+  <a name="find">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find</span>(resource_name, paths=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L471">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Find the given resource by searching through the directories and
+zip files in paths, where a None or empty string specifies an absolute path.
+Returns a corresponding path name.  If the given resource is not
+found, raise a ``LookupError``, whose message gives a pointer to
+the installation instructions for the NLTK downloader.
+
+Zip File Handling:
+
+  - If ``resource_name`` contains a component with a ``.zip``
+    extension, then it is assumed to be a zipfile; and the
+    remaining path components are used to look inside the zipfile.
+
+  - If any element of ``nltk.data.path`` has a ``.zip`` extension,
+    then it is assumed to be a zipfile.
+
+  - If a given resource name that does not contain any zipfile
+    component is not found initially, then ``find()`` will make a
+    second attempt to find that resource, by replacing each
+    component *p* in the path with *p.zip/p*.  For example, this
+    allows ``find()`` to map the resource name
+    ``corpora/chat80/cities.pl`` to a zip file path pointer to
+    ``corpora/chat80.zip/chat80/cities.pl``.
+
+  - When using ``find()`` to locate a directory contained in a
+    zipfile, the resource name must end with the forward slash
+    character.  Otherwise, ``find()`` will not locate the
+    directory.
+
+:type resource_name: str or unicode
+:param resource_name: The name of the resource to search for.
+    Resource names are posix-style relative path names, such as
+    ``corpora/brown``.  Directory names will be
+    automatically converted to a platform-appropriate path separator.
+:rtype: str</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.retrieve">
+    
+  </a>
+  <a name="retrieve">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">retrieve</span>(resource_url, filename=None, verbose=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L586">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Copy the given resource to a local file.  If no filename is
+specified, then use the URL's filename.  If there is already a
+file named ``filename``, then raise a ``ValueError``.
+
+:type resource_url: str
+:param resource_url: A URL specifying where the resource should be
+    loaded from.  The default protocol is "nltk:", which searches
+    for the file in the the NLTK data package.</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.data.FORMATS">
+    
+  </a>
+  <a name="FORMATS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">FORMATS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L627">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.data.AUTO_FORMATS">
+    
+  </a>
+  <a name="AUTO_FORMATS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">AUTO_FORMATS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L647">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.load">
+    
+  </a>
+  <a name="load">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">load</span>(resource_url, format='auto', cache=True, verbose=False, logic_parser=None, fstruct_reader=None, encoding=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L662">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Load a given resource from the NLTK data package.  The following
+resource formats are currently supported:
+
+  - ``pickle``
+  - ``json``
+  - ``yaml``
+  - ``cfg`` (context free grammars)
+  - ``pcfg`` (probabilistic CFGs)
+  - ``fcfg`` (feature-based CFGs)
+  - ``fol`` (formulas of First Order Logic)
+  - ``logic`` (Logical formulas to be parsed by the given logic_parser)
+  - ``val`` (valuation of First Order Logic model)
+  - ``text`` (the file contents as a unicode string)
+  - ``raw`` (the raw file contents as a byte string)
+
+If no format is specified, ``load()`` will attempt to determine a
+format based on the resource name's file extension.  If that
+fails, ``load()`` will raise a ``ValueError`` exception.
+
+For all text formats (everything except ``pickle``, ``json``, ``yaml`` and ``raw``),
+it tries to decode the raw contents using UTF-8, and if that doesn't
+work, it tries with ISO-8859-1 (Latin-1), unless the ``encoding``
+is specified.
+
+:type resource_url: str
+:param resource_url: A URL specifying where the resource should be
+    loaded from.  The default protocol is "nltk:", which searches
+    for the file in the the NLTK data package.
+:type cache: bool
+:param cache: If true, add this resource to a cache.  If load()
+    finds a resource in its cache, then it will return it from the
+    cache rather than loading it.
+:type verbose: bool
+:param verbose: If true, print a message when loading a resource.
+    Messages are not displayed when a resource is retrieved from
+    the cache.
+:type logic_parser: LogicParser
+:param logic_parser: The parser that will be used to parse logical
+    expressions.
+:type fstruct_reader: FeatStructReader
+:param fstruct_reader: The parser that will be used to parse the
+    feature structure of an fcfg.
+:type encoding: str
+:param encoding: the encoding of the input; only used for text formats.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.show_cfg">
+    
+  </a>
+  <a name="show_cfg">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_cfg</span>(resource_url, escape='##'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L827">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Write out a grammar file, ignoring escaped and empty lines.
+
+:type resource_url: str
+:param resource_url: A URL specifying where the resource should be
+    loaded from.  The default protocol is "nltk:", which searches
+    for the file in the the NLTK data package.
+:type escape: str
+:param escape: Prepended string that signals lines to be ignored</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.data.clear_cache">
+    
+  </a>
+  <a name="clear_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clear_cache</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L849">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Remove all objects from the resource cache.
+:see: load()</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.data._open">
+    
+  </a>
+  <a name="_open">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_open</span>(resource_url):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/data.py#L857">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper function that returns an open file object for a resource,
+given its resource URL.  If the given resource URL uses the "nltk:"
+protocol, or uses no protocol, then use ``nltk.data.find`` to find
+its path, and open it with the given mode; if the resource URL
+uses the 'file' protocol, then open the file with the given mode;
+otherwise, delegate to ``urllib2.urlopen``.
+
+:type resource_url: str
+:param resource_url: A URL specifying where the resource should be
+    loaded from.  The default protocol is "nltk:", which searches
+    for the file in the the NLTK data package.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

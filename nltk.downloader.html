@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.downloader : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.downloader.html">downloader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">The NLTK corpus and module downloader.  This module defines several
+interfaces which can be used to download corpora, models, and other
+data packages that can be used with NLTK.
+
+Downloading Packages
+====================
+If called with no arguments, ``download()`` will display an interactive
+interface which can be used to download and install new packages.
+If Tkinter is available, then a graphical interface will be shown,
+otherwise a simple text interface will be provided.
+
+Individual packages can be downloaded by calling the ``download()``
+function with a single argument, giving the package identifier for the
+package that should be downloaded:
+
+    &gt;&gt;&gt; download('treebank') # doctest: +SKIP
+    [nltk_data] Downloading package 'treebank'...
+    [nltk_data]   Unzipping corpora/treebank.zip.
+
+NLTK also provides a number of "package collections", consisting of
+a group of related packages.  To download all packages in a
+colleciton, simply call ``download()`` with the collection's
+identifier:
+
+    &gt;&gt;&gt; download('all-corpora') # doctest: +SKIP
+    [nltk_data] Downloading package 'abc'...
+    [nltk_data]   Unzipping corpora/abc.zip.
+    [nltk_data] Downloading package 'alpino'...
+    [nltk_data]   Unzipping corpora/alpino.zip.
+      ...
+    [nltk_data] Downloading package 'words'...
+    [nltk_data]   Unzipping corpora/words.zip.
+
+Download Directory
+==================
+By default, packages are installed in either a system-wide directory
+(if Python has sufficient access to write to it); or in the current
+user's home directory.  However, the ``download_dir`` argument may be
+used to specify a different installation target, if desired.
+
+See ``Downloader.default_download_dir()`` for more a detailed
+description of how the default download directory is chosen.
+
+NLTK Download Server
+====================
+Before downloading any packages, the corpus and module downloader
+contacts the NLTK download server, to retrieve an index file
+describing the available packages.  By default, this index file is
+loaded from ``https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml``.
+If necessary, it is possible to create a new ``Downloader`` object,
+specifying a different URL for the package index file.
+
+Usage::
+
+    python nltk/downloader.py [-d DATADIR] [-q] [-f] [-k] PACKAGE_IDS
+
+or::
+
+    python -m nltk.downloader [-d DATADIR] [-q] [-f] [-k] PACKAGE_IDS</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id549">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TKINTER">TKINTER</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.Package.html">Package</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.Collection.html">Collection</a></code></td>
+    <td><span>A directory entry for a collection of downloadable packages. These entries are extracted from the XML index file that is downloaded by ``Downloader``.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.DownloaderMessage.html">DownloaderMessage</a></code></td>
+    <td><span>A status message object, used by ``incr_download`` to communicate its progress.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.StartCollectionMessage.html">StartCollectionMessage</a></code></td>
+    <td><span>Data server has started working on a collection of packages.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.FinishCollectionMessage.html">FinishCollectionMessage</a></code></td>
+    <td><span>Data server has finished working on a collection of packages.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.StartPackageMessage.html">StartPackageMessage</a></code></td>
+    <td><span>Data server has started working on a package.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.FinishPackageMessage.html">FinishPackageMessage</a></code></td>
+    <td><span>Data server has finished working on a package.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.StartDownloadMessage.html">StartDownloadMessage</a></code></td>
+    <td><span>Data server has started downloading a package.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.FinishDownloadMessage.html">FinishDownloadMessage</a></code></td>
+    <td><span>Data server has finished downloading a package.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.StartUnzipMessage.html">StartUnzipMessage</a></code></td>
+    <td><span>Data server has started unzipping a package.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.FinishUnzipMessage.html">FinishUnzipMessage</a></code></td>
+    <td><span>Data server has finished unzipping a package.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.UpToDateMessage.html">UpToDateMessage</a></code></td>
+    <td><span>The package download file is already up-to-date</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.StaleMessage.html">StaleMessage</a></code></td>
+    <td><span>The package download file is out-of-date or corrupt</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.ErrorMessage.html">ErrorMessage</a></code></td>
+    <td><span>Data server encountered an error</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.ProgressMessage.html">ProgressMessage</a></code></td>
+    <td><span>Indicates how much progress the data server has made</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.SelectDownloadDirMessage.html">SelectDownloadDirMessage</a></code></td>
+    <td><span>Indicates what download directory the data server is using</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.Downloader.html">Downloader</a></code></td>
+    <td><span>A class used to access the NLTK data server, which can be used to download corpora and other data packages.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.DownloaderShell.html">DownloaderShell</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.downloader.DownloaderGUI.html">DownloaderGUI</a></code></td>
+    <td><span>Graphical interface for downloading packages from the NLTK data server.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#md5_hexdigest">md5_hexdigest</a></code></td>
+    <td><span>Calculate and return the MD5 checksum for a given file. ``file`` may either be a filename or an open stream.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#unzip">unzip</a></code></td>
+    <td><span>Extract the contents of the zip file ``filename`` into the directory ``root``.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#build_index">build_index</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#download_shell">download_shell</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#download_gui">download_gui</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#update">update</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#parser">parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#options">options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#args">args</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#downloader">downloader</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#rv">rv</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_md5_hexdigest">_md5_hexdigest</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_unzip_iter">_unzip_iter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_indent_xml">_indent_xml</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_check_package">_check_package</a></code></td>
+    <td><span>Helper for ``build_index()``: Perform some checks to make sure that the given package is consistent.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_svn_revision">_svn_revision</a></code></td>
+    <td><span>Helper for ``build_index()``: Calculate the subversion revision number for a given file (by using ``subprocess`` to run ``svn``).</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_find_collections">_find_collections</a></code></td>
+    <td><span>Helper for ``build_index()``: Yield a list of ElementTree.Element objects, each holding the xml for a single package collection.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_find_packages">_find_packages</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_downloader">_downloader</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="nltk.downloader.TKINTER">
+    
+  </a>
+  <a name="TKINTER">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TKINTER</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L167">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>)
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.downloader.md5_hexdigest">
+    
+  </a>
+  <a name="md5_hexdigest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">md5_hexdigest</span>(file):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2204">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Calculate and return the MD5 checksum for a given file.
+``file`` may either be a filename or an open stream.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.downloader._md5_hexdigest">
+    
+  </a>
+  <a name="_md5_hexdigest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_md5_hexdigest</span>(fp):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2215">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.downloader.unzip">
+    
+  </a>
+  <a name="unzip">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unzip</span>(filename, root, verbose=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2228">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Extract the contents of the zip file ``filename`` into the
+directory ``root``.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.downloader._unzip_iter">
+    
+  </a>
+  <a name="_unzip_iter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_unzip_iter</span>(filename, root, verbose=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2238">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.downloader.build_index">
+    
+  </a>
+  <a name="build_index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_index</span>(root, base_url):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2264">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Create a new data.xml index file, by combining the xml description
+files for various packages and collections.  ``root`` should be the
+path to a directory containing the package xml and zip files; and
+the collection xml files.  The ``root`` directory is expected to
+have the following subdirectories::
+
+  root/
+    packages/ .................. subdirectory for packages
+      corpora/ ................. zip &amp; xml files for corpora
+      grammars/ ................ zip &amp; xml files for grammars
+      taggers/ ................. zip &amp; xml files for taggers
+      tokenizers/ .............. zip &amp; xml files for tokenizers
+      etc.
+    collections/ ............... xml files for collections
+
+For each package, there should be two files: ``package.zip``
+(where *package* is the package name)
+which contains the package itself as a compressed zip file; and
+``package.xml``, which is an xml description of the package.  The
+zipfile ``package.zip`` should expand to a single subdirectory
+named ``package/``.  The base filename ``package`` must match
+the identifier given in the package's xml file.
+
+For each collection, there should be a single file ``collection.zip``
+describing the collection, where *collection* is the name of the collection.
+
+All identifiers (for both packages and collections) must be unique.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.downloader._indent_xml">
+    
+  </a>
+  <a name="_indent_xml">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_indent_xml</span>(xml, prefix=''):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2336">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper for ``build_index()``: Given an XML ``ElementTree``, modify it
+(and its descendents) ``text`` and ``tail`` attributes to generate
+an indented tree, where each nested element is indented by 2
+spaces with respect to its parent.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.downloader._check_package">
+    
+  </a>
+  <a name="_check_package">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_check_package</span>(pkg_xml, zipfilename, zf):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2352">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper for ``build_index()``: Perform some checks to make sure that
+the given package is consistent.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.downloader._svn_revision">
+    
+  </a>
+  <a name="_svn_revision">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_svn_revision</span>(filename):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2373">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper for ``build_index()``: Calculate the subversion revision
+number for a given file (by using ``subprocess`` to run ``svn``).</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.downloader._find_collections">
+    
+  </a>
+  <a name="_find_collections">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_collections</span>(root):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2392">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper for ``build_index()``: Yield a list of ElementTree.Element
+objects, each holding the xml for a single package collection.</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.downloader._find_packages">
+    
+  </a>
+  <a name="_find_packages">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_packages</span>(root):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2405">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Helper for ``build_index()``: Yield a list of tuples
+``(pkg_xml, zf, subdir)``, where:
+  - ``pkg_xml`` is an ``ElementTree.Element`` holding the xml for a
+    package
+  - ``zf`` is a ``zipfile.ZipFile`` for the package's contents.
+  - ``subdir`` is the subdirectory (relative to ``root``) where
+    the package was found (e.g. 'corpora' or 'grammars').</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.downloader._downloader">
+    
+  </a>
+  <a name="_downloader">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_downloader</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2472">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.downloader.download_shell">
+    
+  </a>
+  <a name="download_shell">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">download_shell</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2476">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.downloader.download_gui">
+    
+  </a>
+  <a name="download_gui">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">download_gui</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2480">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.downloader.update">
+    
+  </a>
+  <a name="update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2484">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.downloader.parser">
+    
+  </a>
+  <a name="parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">parser</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2491">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.downloader.options">
+    
+  </a>
+  <a name="options">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">options</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2531">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.downloader.args">
+    
+  </a>
+  <a name="args">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">args</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2531">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.downloader.downloader">
+    
+  </a>
+  <a name="downloader">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">downloader</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2533">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.downloader.rv">
+    
+  </a>
+  <a name="rv">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">rv</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/downloader.py#L2537">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

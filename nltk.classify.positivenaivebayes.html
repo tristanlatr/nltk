@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.classify.positivenaivebayes : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.classify.html">classify</a></code>.<code><a href="nltk.classify.positivenaivebayes.html">positivenaivebayes</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/positivenaivebayes.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A variant of the Naive Bayes Classifier that performs binary classification with
+partially-labeled training sets. In other words, assume we want to build a classifier
+that assigns each example to one of two complementary classes (e.g., male names and
+female names).
+If we have a training set with labeled examples for both classes, we can use a
+standard Naive Bayes Classifier. However, consider the case when we only have labeled
+examples for one of the classes, and other, unlabeled, examples.
+Then, assuming a prior distribution on the two labels, we can use the unlabeled set
+to estimate the frequencies of the various features.
+
+Let the two possible labels be 1 and 0, and let's say we only have examples labeled 1
+and unlabeled examples. We are also given an estimate of P(1).
+
+We compute P(feature|1) exactly as in the standard case.
+
+To compute P(feature|0), we first estimate P(feature) from the unlabeled set (we are
+assuming that the unlabeled examples are drawn according to the given prior distribution)
+and then express the conditional probability as:
+
+|                  P(feature) - P(feature|1) * P(1)
+|  P(feature|0) = ----------------------------------
+|                               P(0)
+
+Example:
+
+    &gt;&gt;&gt; from nltk.classify import PositiveNaiveBayesClassifier
+
+Some sentences about sports:
+
+    &gt;&gt;&gt; sports_sentences = [ 'The team dominated the game',
+    ...                      'They lost the ball',
+    ...                      'The game was intense',
+    ...                      'The goalkeeper catched the ball',
+    ...                      'The other team controlled the ball' ]
+
+Mixed topics, including sports:
+
+    &gt;&gt;&gt; various_sentences = [ 'The President did not comment',
+    ...                       'I lost the keys',
+    ...                       'The team won the game',
+    ...                       'Sara has two kids',
+    ...                       'The ball went off the court',
+    ...                       'They had the ball for the whole game',
+    ...                       'The show is over' ]
+
+The features of a sentence are simply the words it contains:
+
+    &gt;&gt;&gt; def features(sentence):
+    ...     words = sentence.lower().split()
+    ...     return dict(('contains(%s)' % w, True) for w in words)
+
+We use the sports sentences as positive examples, the mixed ones ad unlabeled examples:
+
+    &gt;&gt;&gt; positive_featuresets = map(features, sports_sentences)
+    &gt;&gt;&gt; unlabeled_featuresets = map(features, various_sentences)
+    &gt;&gt;&gt; classifier = PositiveNaiveBayesClassifier.train(positive_featuresets,
+    ...                                                 unlabeled_featuresets)
+
+Is the following sentence about sports?
+
+    &gt;&gt;&gt; classifier.classify(features('The cat is on the table'))
+    False
+
+What about this one?
+
+    &gt;&gt;&gt; classifier.classify(features('My team lost the game'))
+    True</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id156">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier.html">PositiveNaiveBayesClassifier</a></code></td>
+    <td><span class="undocumented">No class docstring; 1/1 static methods documented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo">demo</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.classify.positivenaivebayes.demo">
+    
+  </a>
+  <a name="demo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/classify/positivenaivebayes.py#L177">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

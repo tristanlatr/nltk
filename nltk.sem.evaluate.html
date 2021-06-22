@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.sem.evaluate : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.sem.html">sem</a></code>.<code><a href="nltk.sem.evaluate.html">evaluate</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">This module provides data structures for representing first-order
+models.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1317">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.evaluate.Error.html">Error</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.evaluate.Undefined.html">Undefined</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#trace">trace</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_rel">is_rel</a></code></td>
+    <td><span>Check whether a set represents a relation (of any arity).</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set2rel">set2rel</a></code></td>
+    <td><span>Convert a set containing individuals (strings or numbers) into a set of unary tuples. Any tuples of strings already in the set are passed through unchanged.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#arity">arity</a></code></td>
+    <td><span>Check the arity of a relation. :type rel: set of tuples :rtype: int of tuple of str</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.evaluate.Valuation.html">Valuation</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_valuation">read_valuation</a></code></td>
+    <td><span>Convert a valuation string into a valuation.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.evaluate.Assignment.html">Assignment</a></code></td>
+    <td><span>A dictionary which represents an assignment of values to variables.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.sem.evaluate.Model.html">Model</a></code></td>
+    <td><span>A first order model is a domain *D* of discourse and a valuation *V*.</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#mult">mult</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#propdemo">propdemo</a></code></td>
+    <td><span>Example of a propositional model.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#folmodel">folmodel</a></code></td>
+    <td><span>Example of a first-order model.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#foldemo">foldemo</a></code></td>
+    <td><span>Interpretation of closed expressions in a first-order model.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#satdemo">satdemo</a></code></td>
+    <td><span>Satisfiers of an open formula in a first order model.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#demo">demo</a></code></td>
+    <td><span>Run exists demos.</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_VAL_SPLIT_RE">_VAL_SPLIT_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_ELEMENT_SPLIT_RE">_ELEMENT_SPLIT_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_TUPLES_RE">_TUPLES_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_read_valuation_line">_read_valuation_line</a></code></td>
+    <td><span>Read a line in a valuation file.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.trace">
+    
+  </a>
+  <a name="trace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">trace</span>(f, *args, **kw):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L52">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.is_rel">
+    
+  </a>
+  <a name="is_rel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_rel</span>(s):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L62">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Check whether a set represents a relation (of any arity).
+
+:param s: a set containing tuples of str elements
+:type s: set
+:rtype: bool
+    </p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.set2rel">
+    
+  </a>
+  <a name="set2rel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set2rel</span>(s):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L80">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Convert a set containing individuals (strings or numbers) into a set of
+unary tuples. Any tuples of strings already in the set are passed through
+unchanged.
+
+For example:
+  - set(['a', 'b']) =&gt; set([('a',), ('b',)])
+  - set([3, 27]) =&gt; set([('3',), ('27',)])
+
+:type s: set
+:rtype: set of tuple of str</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.arity">
+    
+  </a>
+  <a name="arity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">arity</span>(rel):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L104">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Check the arity of a relation.
+:type rel: set of tuples
+:rtype: int of tuple of str</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.sem.evaluate._VAL_SPLIT_RE">
+    
+  </a>
+  <a name="_VAL_SPLIT_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_VAL_SPLIT_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L181">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.sem.evaluate._ELEMENT_SPLIT_RE">
+    
+  </a>
+  <a name="_ELEMENT_SPLIT_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ELEMENT_SPLIT_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L182">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable private">
+  
+  <a name="nltk.sem.evaluate._TUPLES_RE">
+    
+  </a>
+  <a name="_TUPLES_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_TUPLES_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L183">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.sem.evaluate._read_valuation_line">
+    
+  </a>
+  <a name="_read_valuation_line">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_read_valuation_line</span>(s):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L191">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Read a line in a valuation file.
+
+Lines are expected to be of the form::
+
+  noosa =&gt; n
+  girl =&gt; {g1, g2}
+  chase =&gt; {(b1, g1), (b2, g1), (g1, d1), (g2, d2)}
+
+:param s: input line
+:type s: str
+:return: a pair (symbol, value)
+:rtype: tuple</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.read_valuation">
+    
+  </a>
+  <a name="read_valuation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_valuation</span>(s, encoding=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L226">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Convert a valuation string into a valuation.
+
+:param s: a valuation string
+:type s: str
+:param encoding: the encoding of the input string, if it is binary
+:type encoding: str
+:return: a ``nltk.sem`` valuation
+:rtype: Valuation</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.sem.evaluate.mult">
+    
+  </a>
+  <a name="mult">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">mult</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L600">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code>)
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.propdemo">
+    
+  </a>
+  <a name="propdemo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">propdemo</span>(trace=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L604">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Example of a propositional model.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.folmodel">
+    
+  </a>
+  <a name="folmodel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">folmodel</span>(quiet=False, trace=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L653">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Example of a first-order model.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.foldemo">
+    
+  </a>
+  <a name="foldemo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">foldemo</span>(trace=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L713">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Interpretation of closed expressions in a first-order model.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.satdemo">
+    
+  </a>
+  <a name="satdemo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">satdemo</span>(trace=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L757">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Satisfiers of an open formula in a first order model.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.sem.evaluate.demo">
+    
+  </a>
+  <a name="demo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">demo</span>(num=0, trace=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/sem/evaluate.py#L803">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Run exists demos.
+
+ - num = 1: propositional logic demo
+ - num = 2: first order model demo (only if trace is set)
+ - num = 3: first order sentences demo
+ - num = 4: satisfaction of open formulas demo
+ - any other value: run all the demos
+
+:param trace: trace = 1, or trace = 2 for more verbose tracing</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

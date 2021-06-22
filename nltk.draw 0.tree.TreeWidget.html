@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.draw 0.tree.TreeWidget : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.draw%200.html">draw 0</a></code>.<code><a href="nltk.draw%200.tree.html">tree</a></code>.<code><a href="nltk.draw%200.tree.TreeWidget.html">TreeWidget</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreeWidget</span>(<span title="nltk.draw.util.CanvasWidget">CanvasWidget</span>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L509">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.draw 0.tree.TreeWidget">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A canvas widget that displays a single Tree.
+``TreeWidget`` manages a group of ``TreeSegmentWidgets`` that are
+used to display a Tree.
+
+Attributes:
+
+  - ``node_attr``: Sets the attribute ``attr`` on all of the
+    node widgets for this ``TreeWidget``.
+  - ``node_attr``: Sets the attribute ``attr`` on all of the
+    leaf widgets for this ``TreeWidget``.
+  - ``loc_attr``: Sets the attribute ``attr`` on all of the
+    location widgets for this ``TreeWidget`` (if it was built from
+    a Tree).  Note that a location widget is a ``TextWidget``.
+
+  - ``xspace``: The amount of horizontal space to leave between
+    subtrees when managing this widget.  Default value is 10.
+  - ``yspace``: The amount of space to place between the node and
+    its children when managing this widget.  Default value is 15.
+
+  - ``line_color``: The color of the lines connecting each expanded
+    node to its subtrees.
+  - ``roof_color``: The color of the outline of the triangular roof
+    for collapsed trees.
+  - ``roof_fill``: The fill color for the triangular roof for
+    collapsed trees.
+  - ``width``
+
+  - ``orientation``: Determines whether the tree branches downwards
+    or rightwards.  Possible values are ``'horizontal'`` and
+    ``'vertical'``.  The default value is ``'vertical'`` (i.e.,
+    branch downwards).
+
+  - ``shapeable``: whether the subtrees can be independently
+    dragged by the user.  THIS property simply sets the
+    ``DRAGGABLE`` property on all of the ``TreeWidget``'s tree
+    segments.
+  - ``draggable``: whether the widget can be dragged by the user.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id580">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#expanded_tree">expanded_tree</a></code></td>
+    <td><span>Return the ``TreeSegmentWidget`` for the specified subtree.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#collapsed_tree">collapsed_tree</a></code></td>
+    <td><span>Return the ``TreeSegmentWidget`` for the specified subtree.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#bind_click_trees">bind_click_trees</a></code></td>
+    <td><span>Add a binding to all tree segments.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#bind_drag_trees">bind_drag_trees</a></code></td>
+    <td><span>Add a binding to all tree segments.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#bind_click_leaves">bind_click_leaves</a></code></td>
+    <td><span>Add a binding to all leaves.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#bind_drag_leaves">bind_drag_leaves</a></code></td>
+    <td><span>Add a binding to all leaves.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#bind_click_nodes">bind_click_nodes</a></code></td>
+    <td><span>Add a binding to all nodes.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#bind_drag_nodes">bind_drag_nodes</a></code></td>
+    <td><span>Add a binding to all nodes.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__setitem__">__setitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#toggle_collapsed">toggle_collapsed</a></code></td>
+    <td><span>Collapse/expand a tree.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_make_node">_make_node</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_make_leaf">_make_leaf</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_tree">_tree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_nodeattribs">_nodeattribs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_leafattribs">_leafattribs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_locattribs">_locattribs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_line_color">_line_color</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_line_width">_line_width</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_roof_color">_roof_color</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_roof_fill">_roof_fill</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_shapeable">_shapeable</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_xspace">_xspace</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_yspace">_yspace</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_orientation">_orientation</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_ordered">_ordered</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_keys">_keys</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_expanded_trees">_expanded_trees</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_collapsed_trees">_collapsed_trees</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_nodes">_nodes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_leaves">_leaves</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_treeseg">_treeseg</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_make_collapsed_trees">_make_collapsed_trees</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_make_expanded_tree">_make_expanded_tree</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_tags">_tags</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_manage">_manage</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, canvas, t, make_node=TextWidget, make_leaf=TextWidget, **attribs):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L550">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._make_node">
+    
+  </a>
+  <a name="_make_node">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_make_node</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L554">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._make_leaf">
+    
+  </a>
+  <a name="_make_leaf">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_make_leaf</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L555">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._tree">
+    
+  </a>
+  <a name="_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_tree</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L556">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._nodeattribs">
+    
+  </a>
+  <a name="_nodeattribs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_nodeattribs</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L559">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._leafattribs">
+    
+  </a>
+  <a name="_leafattribs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_leafattribs</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L560">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._locattribs">
+    
+  </a>
+  <a name="_locattribs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_locattribs</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L561">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._line_color">
+    
+  </a>
+  <a name="_line_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_line_color</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L562">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._line_width">
+    
+  </a>
+  <a name="_line_width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_line_width</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L563">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._roof_color">
+    
+  </a>
+  <a name="_roof_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_roof_color</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L564">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._roof_fill">
+    
+  </a>
+  <a name="_roof_fill">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_roof_fill</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L565">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._shapeable">
+    
+  </a>
+  <a name="_shapeable">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_shapeable</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L566">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._xspace">
+    
+  </a>
+  <a name="_xspace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_xspace</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L567">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._yspace">
+    
+  </a>
+  <a name="_yspace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_yspace</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L568">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._orientation">
+    
+  </a>
+  <a name="_orientation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_orientation</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L569">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._ordered">
+    
+  </a>
+  <a name="_ordered">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ordered</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L570">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._keys">
+    
+  </a>
+  <a name="_keys">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_keys</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L573">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._expanded_trees">
+    
+  </a>
+  <a name="_expanded_trees">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_expanded_trees</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L574">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._collapsed_trees">
+    
+  </a>
+  <a name="_collapsed_trees">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_collapsed_trees</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L575">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._nodes">
+    
+  </a>
+  <a name="_nodes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_nodes</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L576">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._leaves">
+    
+  </a>
+  <a name="_leaves">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_leaves</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L577">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._treeseg">
+    
+  </a>
+  <a name="_treeseg">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_treeseg</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L580">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.expanded_tree">
+    
+  </a>
+  <a name="expanded_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">expanded_tree</span>(self, *path_to_tree):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L585">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the ``TreeSegmentWidget`` for the specified subtree.
+
+:param path_to_tree: A list of indices i1, i2, ..., in, where
+    the desired widget is the widget corresponding to
+    ``tree.children()[i1].children()[i2]....children()[in]``.
+    For the root, the path is ``()``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.collapsed_tree">
+    
+  </a>
+  <a name="collapsed_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">collapsed_tree</span>(self, *path_to_tree):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L596">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the ``TreeSegmentWidget`` for the specified subtree.
+
+:param path_to_tree: A list of indices i1, i2, ..., in, where
+    the desired widget is the widget corresponding to
+    ``tree.children()[i1].children()[i2]....children()[in]``.
+    For the root, the path is ``()``.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.bind_click_trees">
+    
+  </a>
+  <a name="bind_click_trees">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bind_click_trees</span>(self, callback, button=1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L607">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Add a binding to all tree segments.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.bind_drag_trees">
+    
+  </a>
+  <a name="bind_drag_trees">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bind_drag_trees</span>(self, callback, button=1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L616">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Add a binding to all tree segments.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.bind_click_leaves">
+    
+  </a>
+  <a name="bind_click_leaves">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bind_click_leaves</span>(self, callback, button=1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L625">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Add a binding to all leaves.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.bind_drag_leaves">
+    
+  </a>
+  <a name="bind_drag_leaves">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bind_drag_leaves</span>(self, callback, button=1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L634">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Add a binding to all leaves.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.bind_click_nodes">
+    
+  </a>
+  <a name="bind_click_nodes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bind_click_nodes</span>(self, callback, button=1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L643">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Add a binding to all nodes.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.bind_drag_nodes">
+    
+  </a>
+  <a name="bind_drag_nodes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bind_drag_nodes</span>(self, callback, button=1):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L652">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Add a binding to all nodes.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._make_collapsed_trees">
+    
+  </a>
+  <a name="_make_collapsed_trees">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_collapsed_trees</span>(self, canvas, t, key):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L661">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._make_expanded_tree">
+    
+  </a>
+  <a name="_make_expanded_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_expanded_tree</span>(self, canvas, t, key):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L691">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.__setitem__">
+    
+  </a>
+  <a name="__setitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, attr, value):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L714">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.__getitem__">
+    
+  </a>
+  <a name="__getitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, attr):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L777">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._tags">
+    
+  </a>
+  <a name="_tags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_tags</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L803">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.tree.TreeWidget._manage">
+    
+  </a>
+  <a name="_manage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_manage</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L806">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.tree.TreeWidget.toggle_collapsed">
+    
+  </a>
+  <a name="toggle_collapsed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">toggle_collapsed</span>(self, treeseg):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/tree.py#L816">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Collapse/expand a tree.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

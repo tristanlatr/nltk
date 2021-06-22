@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.metrics.paice.Paice : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.metrics.html">metrics</a></code>.<code><a href="nltk.metrics.paice.html">paice</a></code>.<code><a href="nltk.metrics.paice.Paice.html">Paice</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Paice</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L216">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.metrics.paice.Paice">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Class for storing lemmas, stems and evaluation metrics.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id819">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#lemmas">lemmas</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#stems">stems</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#coords">coords</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#gumt">gumt</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#gdmt">gdmt</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#gwmt">gwmt</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#gdnt">gdnt</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ui">ui</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#oi">oi</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#sw">sw</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#errt">errt</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update">update</a></code></td>
+    <td><span>Update statistics after lemmas and stems have been set.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_truncation_indexes">_get_truncation_indexes</a></code></td>
+    <td><span>Count (UI, OI) when stemming is done by truncating words at 'cutlength'.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_truncation_coordinates">_get_truncation_coordinates</a></code></td>
+    <td><span>Count (UI, OI) pairs for truncation points until we find the segment where (ui, oi) crosses the truncation line.</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_errt">_errt</a></code></td>
+    <td><span>Count Error-Rate Relative to Truncation (ERRT).</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.metrics.paice.Paice.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, lemmas, stems):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L219">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:param lemmas: A dictionary where keys are lemmas and values are sets
+or lists of words corresponding to that lemma.
+:param stems: A dictionary where keys are stems and values are sets
+or lists of words corresponding to that stem.
+:type lemmas: dict(str): list(str)
+:type stems: dict(str): set(str)</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.lemmas">
+    
+  </a>
+  <a name="lemmas">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">lemmas</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L228">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.stems">
+    
+  </a>
+  <a name="stems">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stems</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L229">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.coords">
+    
+  </a>
+  <a name="coords">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">coords</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L230">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.gumt">
+    
+  </a>
+  <a name="gumt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gumt</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L231">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.gdmt">
+    
+  </a>
+  <a name="gdmt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gdmt</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L231">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.gwmt">
+    
+  </a>
+  <a name="gwmt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gwmt</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L231">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.gdnt">
+    
+  </a>
+  <a name="gdnt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gdnt</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L231">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.ui">
+    
+  </a>
+  <a name="ui">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ui</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L232">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.oi">
+    
+  </a>
+  <a name="oi">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">oi</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L232">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.sw">
+    
+  </a>
+  <a name="sw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sw</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L232">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.metrics.paice.Paice.errt">
+    
+  </a>
+  <a name="errt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">errt</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L233">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.metrics.paice.Paice.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L236">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.metrics.paice.Paice._get_truncation_indexes">
+    
+  </a>
+  <a name="_get_truncation_indexes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_truncation_indexes</span>(self, words, cutlength):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L249">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Count (UI, OI) when stemming is done by truncating words at 'cutlength'.
+
+:param words: Words used for the analysis
+:param cutlength: Words are stemmed by cutting them at this length
+:type words: set(str) or list(str)
+:type cutlength: int
+:return: Understemming and overstemming indexes
+:rtype: tuple(int, int)</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.metrics.paice.Paice._get_truncation_coordinates">
+    
+  </a>
+  <a name="_get_truncation_coordinates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_truncation_coordinates</span>(self, cutlength=0):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L265">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Count (UI, OI) pairs for truncation points until we find the segment where (ui, oi) crosses the truncation line.
+
+:param cutlength: Optional parameter to start counting from (ui, oi)
+coordinates gotten by stemming at this length. Useful for speeding up
+the calculations when you know the approximate location of the
+intersection.
+:type cutlength: int
+:return: List of coordinate pairs that define the truncation line
+:rtype: list(tuple(float, float))</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.metrics.paice.Paice._errt">
+    
+  </a>
+  <a name="_errt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_errt</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L304">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Count Error-Rate Relative to Truncation (ERRT).
+
+:return: ERRT, length of the line from origo to (UI, OI) divided by
+the length of the line from origo to the point defined by the same
+line when extended until the truncation line.
+:rtype: float</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.metrics.paice.Paice.update">
+    
+  </a>
+  <a name="update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/metrics/paice.py#L336">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Update statistics after lemmas and stems have been set.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

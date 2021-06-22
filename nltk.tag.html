@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tag : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tag.html">tag</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/__init__.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">NLTK Taggers
+
+This package contains classes and interfaces for part-of-speech
+tagging, or simply "tagging".
+
+A "tag" is a case-sensitive string that specifies some property of a token,
+such as its part of speech.  Tagged tokens are encoded as tuples
+``(tag, token)``.  For example, the following tagged token combines
+the word ``'fly'`` with a noun part of speech tag (``'NN'``):
+
+    &gt;&gt;&gt; tagged_tok = ('fly', 'NN')
+
+An off-the-shelf tagger is available for English. It uses the Penn Treebank tagset:
+
+    &gt;&gt;&gt; from nltk import pos_tag, word_tokenize
+    &gt;&gt;&gt; pos_tag(word_tokenize("John's big idea isn't all that bad."))
+    [('John', 'NNP'), ("'s", 'POS'), ('big', 'JJ'), ('idea', 'NN'), ('is', 'VBZ'),
+    ("n't", 'RB'), ('all', 'PDT'), ('that', 'DT'), ('bad', 'JJ'), ('.', '.')]
+
+A Russian tagger is also available if you specify lang="rus". It uses
+the Russian National Corpus tagset:
+
+    &gt;&gt;&gt; pos_tag(word_tokenize("Илья оторопел и дважды перечитал бумажку."), lang='rus')    # doctest: +SKIP
+    [('Илья', 'S'), ('оторопел', 'V'), ('и', 'CONJ'), ('дважды', 'ADV'), ('перечитал', 'V'),
+    ('бумажку', 'S'), ('.', 'NONLEX')]
+
+This package defines several taggers, which take a list of tokens,
+assign a tag to each one, and return the resulting list of tagged tokens.
+Most of the taggers are built automatically based on a training corpus.
+For example, the unigram tagger tags each word *w* by checking what
+the most frequent tag for *w* was in a training corpus:
+
+    &gt;&gt;&gt; from nltk.corpus import brown
+    &gt;&gt;&gt; from nltk.tag import UnigramTagger
+    &gt;&gt;&gt; tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
+    &gt;&gt;&gt; sent = ['Mitchell', 'decried', 'the', 'high', 'rate', 'of', 'unemployment']
+    &gt;&gt;&gt; for word, tag in tagger.tag(sent):
+    ...     print(word, '-&gt;', tag)
+    Mitchell -&gt; NP
+    decried -&gt; None
+    the -&gt; AT
+    high -&gt; JJ
+    rate -&gt; NN
+    of -&gt; IN
+    unemployment -&gt; None
+
+Note that words that the tagger has not seen during training receive a tag
+of ``None``.
+
+We evaluate a tagger on data that was not seen during training:
+
+    &gt;&gt;&gt; tagger.evaluate(brown.tagged_sents(categories='news')[500:600])
+    0.7...
+
+For more information, please consult chapter 5 of the NLTK Book.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1536">
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.api.html">api</a></code></td>
+    <td><span>Interface for tagging each token in a sentence with supplementary information, such as its part of speech.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.brill.html">brill</a></code></td>
+    <td><span class="undocumented">No module docstring; 3/3 classes, 5/5 functions documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.brill_trainer.html">brill_trainer</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/1 classes documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.crf.html">crf</a></code></td>
+    <td><span>A module for POS tagging using CRFSuite</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.hmm.html">hmm</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.hunpos.html">hunpos</a></code></td>
+    <td><span>A module for interfacing with the HunPos open-source POS-tagger.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.mapping.html">mapping</a></code></td>
+    <td><span>Interface for converting POS tags from various treebanks to the universal tagset of Petrov, Das, &amp; McDonald.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.perceptron.html">perceptron</a></code></td>
+    <td><span class="undocumented">No module docstring; 2/2 classes, 0/3 functions, 0/1 variables documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.senna.html">senna</a></code></td>
+    <td><span>Senna POS tagger, NER Tagger, Chunk Tagger</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.sequential.html">sequential</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.stanford.html">stanford</a></code></td>
+    <td><span>A module for interfacing with the Stanford taggers.</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.tnt.html">tnt</a></code></td>
+    <td><span>Implementation of 'TnT - A Statisical Part of Speech Tagger' by Thorsten Brants</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="nltk.tag.util.html">util</a></code></td>
+    <td><span class="undocumented">No module docstring; 3/3 functions documented</span></td>
+  </tr>
+</table>
+        
+
+          <p class="fromInitPy">From the <code>__init__.py</code> module:</p><table class="children sortable" id="id1537">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="nltk.tag.html#RUS_PICKLE">RUS_PICKLE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="nltk.tag.html#pos_tag">pos_tag</a></code></td>
+    <td><span>Use NLTK's currently recommended part of speech tagger to tag the given list of tokens.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="nltk.tag.html#pos_tag_sents">pos_tag_sents</a></code></td>
+    <td><span>Use NLTK's currently recommended part of speech tagger to tag the given list of sentences, each consisting of a list of tokens.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="nltk.tag.html#_get_tagger">_get_tagger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="nltk.tag.html#_pos_tag">_pos_tag</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  <a name="nltk.tag.RUS_PICKLE">
+    
+  </a>
+  <a name="RUS_PICKLE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">RUS_PICKLE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/__init__.py#L95">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>)
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.tag._get_tagger">
+    
+  </a>
+  <a name="_get_tagger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_tagger</span>(lang=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/__init__.py#L100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.tag._pos_tag">
+    
+  </a>
+  <a name="_pos_tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_pos_tag</span>(tokens, tagset=None, tagger=None, lang=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/__init__.py#L110">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tag.pos_tag">
+    
+  </a>
+  <a name="pos_tag">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pos_tag</span>(tokens, tagset=None, lang='eng'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/__init__.py#L135">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Use NLTK's currently recommended part of speech tagger to
+tag the given list of tokens.
+
+    &gt;&gt;&gt; from nltk.tag import pos_tag
+    &gt;&gt;&gt; from nltk.tokenize import word_tokenize
+    &gt;&gt;&gt; pos_tag(word_tokenize("John's big idea isn't all that bad."))
+    [('John', 'NNP'), ("'s", 'POS'), ('big', 'JJ'), ('idea', 'NN'), ('is', 'VBZ'),
+    ("n't", 'RB'), ('all', 'PDT'), ('that', 'DT'), ('bad', 'JJ'), ('.', '.')]
+    &gt;&gt;&gt; pos_tag(word_tokenize("John's big idea isn't all that bad."), tagset='universal')
+    [('John', 'NOUN'), ("'s", 'PRT'), ('big', 'ADJ'), ('idea', 'NOUN'), ('is', 'VERB'),
+    ("n't", 'ADV'), ('all', 'DET'), ('that', 'DET'), ('bad', 'ADJ'), ('.', '.')]
+
+NB. Use `pos_tag_sents()` for efficient tagging of more than one sentence.
+
+:param tokens: Sequence of tokens to be tagged
+:type tokens: list(str)
+:param tagset: the tagset to be used, e.g. universal, wsj, brown
+:type tagset: str
+:param lang: the ISO 639 code of the language, e.g. 'eng' for English, 'rus' for Russian
+:type lang: str
+:return: The tagged tokens
+:rtype: list(tuple(str, str))</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.tag.pos_tag_sents">
+    
+  </a>
+  <a name="pos_tag_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pos_tag_sents</span>(sentences, tagset=None, lang='eng'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tag/__init__.py#L164">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Use NLTK's currently recommended part of speech tagger to tag the
+given list of sentences, each consisting of a list of tokens.
+
+:param sentences: List of sentences to be tagged
+:type sentences: list(list(str))
+:param tagset: the tagset to be used, e.g. universal, wsj, brown
+:type tagset: str
+:param lang: the ISO 639 code of the language, e.g. 'eng' for English, 'rus' for Russian
+:type lang: str
+:return: The list of tagged sentences
+:rtype: list(list(tuple(str, str)))</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.chunk.regexp.StripRule : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.chunk.html">chunk</a></code>.<code><a href="nltk.chunk.regexp.html">regexp</a></code>.<code><a href="nltk.chunk.regexp.StripRule.html">StripRule</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StripRule</span>(<a href="nltk.chunk.regexp.RegexpChunkRule.html" title="nltk.chunk.regexp.RegexpChunkRule">RegexpChunkRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L440">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.chunk.regexp.StripRule">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A rule specifying how to remove strips to a ``ChunkString``,
+using a matching tag pattern.  When applied to a
+``ChunkString``, it will find any substring that matches this
+tag pattern and that is contained in a chunk, and remove it
+from that chunk, thus creating two new chunks.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id110">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a new ``StripRule``.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__">__repr__</a></code></td>
+    <td><span>Return a string representation of this rule.  It has the form::</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_pattern">_pattern</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.chunk.regexp.RegexpChunkRule.html">RegexpChunkRule</a></code>:
+          </p>
+          <table class="children sortable" id="id111">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.chunk.regexp.RegexpChunkRule.html#apply">apply</a></code></td>
+    <td><span>Apply this rule to the given ``ChunkString``.  See the class reference documentation for a description of what it means to apply a rule.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.chunk.regexp.RegexpChunkRule.html#descr">descr</a></code></td>
+    <td><span>Return a short description of the purpose and/or effect of this rule.</span></td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="nltk.chunk.regexp.RegexpChunkRule.html#fromstring">fromstring</a></code></td>
+    <td><span>Create a RegexpChunkRule from a string description. Currently, the following formats are supported::</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.chunk.regexp.RegexpChunkRule.html#_repl">_repl</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.chunk.regexp.RegexpChunkRule.html#_descr">_descr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.chunk.regexp.RegexpChunkRule.html#_regexp">_regexp</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.chunk.regexp.StripRule.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tag_pattern, descr):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L449">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.chunk.regexp.RegexpChunkRule.html#__init__">nltk.chunk.regexp.RegexpChunkRule.__init__</a></code></div>
+    
+    <div><p class="pre">Construct a new ``StripRule``.
+
+:type tag_pattern: str
+:param tag_pattern: This rule's tag pattern.  When
+    applied to a ``ChunkString``, this rule will
+    find any substring that matches this tag pattern and that
+    is contained in a chunk, and remove it from that chunk,
+    thus creating two new chunks.
+:type descr: str
+:param descr: A short description of the purpose and/or effect
+    of this rule.</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.chunk.regexp.StripRule._pattern">
+    
+  </a>
+  <a name="_pattern">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pattern</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L463">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.chunk.regexp.StripRule.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/chunk/regexp.py#L470">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.chunk.regexp.RegexpChunkRule.html#__repr__">nltk.chunk.regexp.RegexpChunkRule.__repr__</a></code></div>
+    
+    <div><p class="pre">Return a string representation of this rule.  It has the form::
+
+    &lt;StripRule: '&lt;IN|VB.*&gt;'&gt;
+
+Note that this representation does not include the
+description string; that string can be accessed
+separately with the ``descr()`` method.
+
+:rtype: str</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

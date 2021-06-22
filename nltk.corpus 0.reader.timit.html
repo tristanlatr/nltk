@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.corpus 0.reader.timit : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.corpus%200.html">corpus 0</a></code>.<code><a href="nltk.corpus%200.reader.html">reader</a></code>.<code><a href="nltk.corpus%200.reader.timit.html">timit</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/timit.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Read tokens, phonemes and audio data from the NLTK TIMIT Corpus.
+
+This corpus contains selected portion of the TIMIT corpus.
+
+ - 16 speakers from 8 dialect regions
+ - 1 male and 1 female from each dialect region
+ - total 130 sentences (10 sentences per speaker.  Note that some
+   sentences are shared among other speakers, especially sa1 and sa2
+   are spoken by all speakers.)
+ - total 160 recording of sentences (10 recordings per speaker)
+ - audio format: NIST Sphere, single channel, 16kHz sampling,
+  16 bit sample, PCM encoding
+
+
+Module contents
+===============
+
+The timit corpus reader provides 4 functions and 4 data items.
+
+ - utterances
+
+   List of utterances in the corpus.  There are total 160 utterances,
+   each of which corresponds to a unique utterance of a speaker.
+   Here's an example of an utterance identifier in the list::
+
+       dr1-fvmh0/sx206
+         - _----  _---
+         | |  |   | |
+         | |  |   | |
+         | |  |   | `--- sentence number
+         | |  |   `----- sentence type (a:all, i:shared, x:exclusive)
+         | |  `--------- speaker ID
+         | `------------ sex (m:male, f:female)
+         `-------------- dialect region (1..8)
+
+ - speakers
+
+   List of speaker IDs.  An example of speaker ID::
+
+       dr1-fvmh0
+
+   Note that if you split an item ID with colon and take the first element of
+   the result, you will get a speaker ID.
+
+       &gt;&gt;&gt; itemid = 'dr1-fvmh0/sx206'
+       &gt;&gt;&gt; spkrid , sentid = itemid.split('/')
+       &gt;&gt;&gt; spkrid
+       'dr1-fvmh0'
+
+   The second element of the result is a sentence ID.
+
+ - dictionary()
+
+   Phonetic dictionary of words contained in this corpus.  This is a Python
+   dictionary from words to phoneme lists.
+
+ - spkrinfo()
+
+   Speaker information table.  It's a Python dictionary from speaker IDs to
+   records of 10 fields.  Speaker IDs the same as the ones in timie.speakers.
+   Each record is a dictionary from field names to values, and the fields are
+   as follows::
+
+     id         speaker ID as defined in the original TIMIT speaker info table
+     sex        speaker gender (M:male, F:female)
+     dr         speaker dialect region (1:new england, 2:northern,
+                3:north midland, 4:south midland, 5:southern, 6:new york city,
+                7:western, 8:army brat (moved around))
+     use        corpus type (TRN:training, TST:test)
+                in this sample corpus only TRN is available
+     recdate    recording date
+     birthdate  speaker birth date
+     ht         speaker height
+     race       speaker race (WHT:white, BLK:black, AMR:american indian,
+                SPN:spanish-american, ORN:oriental,???:unknown)
+     edu        speaker education level (HS:high school, AS:associate degree,
+                BS:bachelor's degree (BS or BA), MS:master's degree (MS or MA),
+                PHD:doctorate degree (PhD,JD,MD), ??:unknown)
+     comments   comments by the recorder
+
+The 4 functions are as follows.
+
+ - tokenized(sentences=items, offset=False)
+
+   Given a list of items, returns an iterator of a list of word lists,
+   each of which corresponds to an item (sentence).  If offset is set to True,
+   each element of the word list is a tuple of word(string), start offset and
+   end offset, where offset is represented as a number of 16kHz samples.
+
+ - phonetic(sentences=items, offset=False)
+
+   Given a list of items, returns an iterator of a list of phoneme lists,
+   each of which corresponds to an item (sentence).  If offset is set to True,
+   each element of the phoneme list is a tuple of word(string), start offset
+   and end offset, where offset is represented as a number of 16kHz samples.
+
+ - audiodata(item, start=0, end=None)
+
+   Given an item, returns a chunk of audio samples formatted into a string.
+   When the fuction is called, if start and end are omitted, the entire
+   samples of the recording will be returned.  If only end is omitted,
+   samples from the start offset to the end of the recording will be returned.
+
+ - play(data)
+
+   Play the given audio samples. The audio samples can be obtained from the
+   timit.audiodata function.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id475">
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus%200.reader.timit.TimitCorpusReader.html">TimitCorpusReader</a></code></td>
+    <td><span>Reader for the TIMIT corpus (or any other corpus with the same file layout and use of file formats).  The corpus root directory should contain the following files:</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus%200.reader.timit.SpeakerInfo.html">SpeakerInfo</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_timit_block">read_timit_block</a></code></td>
+    <td><span>Block reader for timit tagged sentences, which are preceded by a sentence number that will be ignored.</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.timit.read_timit_block">
+    
+  </a>
+  <a name="read_timit_block">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_timit_block</span>(stream):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/timit.py#L484">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Block reader for timit tagged sentences, which are preceded by a sentence
+number that will be ignored.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

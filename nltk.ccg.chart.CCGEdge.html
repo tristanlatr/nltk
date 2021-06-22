@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.ccg.chart.CCGEdge : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.ccg.html">ccg</a></code>.<code><a href="nltk.ccg.chart.html">chart</a></code>.<code><a href="nltk.ccg.chart.CCGEdge.html">CCGEdge</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CCGEdge</span>(<a href="nltk.parse.chart.EdgeI.html" title="nltk.parse.chart.EdgeI">EdgeI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L59">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.ccg.chart.CCGEdge">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id62">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#lhs">lhs</a></code></td>
+    <td><span>Return this edge's left-hand side, which specifies what kind of structure is hypothesized by this edge.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#span">span</a></code></td>
+    <td><span>Return a tuple ``(s, e)``, where ``tokens[s:e]`` is the portion of the sentence that is consistent with this edge's structure.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#start">start</a></code></td>
+    <td><span>Return the start index of this edge's span.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#end">end</a></code></td>
+    <td><span>Return the end index of this edge's span.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#length">length</a></code></td>
+    <td><span>Return the length of this edge's span.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#rhs">rhs</a></code></td>
+    <td><span>Return this edge's right-hand side, which specifies the content of the structure hypothesized by this edge.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dot">dot</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#is_complete">is_complete</a></code></td>
+    <td><span>Return True if this edge's structure is fully consistent with the text.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#is_incomplete">is_incomplete</a></code></td>
+    <td><span>Return True if this edge's structure is partially consistent with the text.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#nextsym">nextsym</a></code></td>
+    <td><span>Return the element of this edge's right-hand side that immediately follows its dot.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#categ">categ</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#rule">rule</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_span">_span</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_categ">_categ</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rule">_rule</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_comparison_key">_comparison_key</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.parse.chart.EdgeI.html">EdgeI</a></code>:
+          </p>
+          <table class="children sortable" id="id63">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.EdgeI.html#__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.EdgeI.html#__ne__">__ne__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.EdgeI.html#__lt__">__lt__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.parse.chart.EdgeI.html#__hash__">__hash__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.parse.chart.EdgeI.html#_hash">_hash</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, span, categ, rule):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L60">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#__init__">nltk.parse.chart.EdgeI.__init__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.ccg.chart.CCGEdge._span">
+    
+  </a>
+  <a name="_span">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_span</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L61">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.ccg.chart.CCGEdge._categ">
+    
+  </a>
+  <a name="_categ">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_categ</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L62">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.ccg.chart.CCGEdge._rule">
+    
+  </a>
+  <a name="_rule">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rule</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.ccg.chart.CCGEdge._comparison_key">
+    
+  </a>
+  <a name="_comparison_key">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_comparison_key</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L64">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.lhs">
+    
+  </a>
+  <a name="lhs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lhs</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#lhs">nltk.parse.chart.EdgeI.lhs</a></code></div>
+    
+    <div><p class="pre">Return this edge's left-hand side, which specifies what kind
+of structure is hypothesized by this edge.
+
+:see: ``TreeEdge`` and ``LeafEdge`` for a description of
+    the left-hand side values for each edge type.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.span">
+    
+  </a>
+  <a name="span">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">span</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L70">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#span">nltk.parse.chart.EdgeI.span</a></code></div>
+    
+    <div><p class="pre">Return a tuple ``(s, e)``, where ``tokens[s:e]`` is the
+portion of the sentence that is consistent with this
+edge's structure.
+
+:rtype: tuple(int, int)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.start">
+    
+  </a>
+  <a name="start">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">start</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L73">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#start">nltk.parse.chart.EdgeI.start</a></code></div>
+    
+    <div><p class="pre">Return the start index of this edge's span.
+
+:rtype: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.end">
+    
+  </a>
+  <a name="end">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">end</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#end">nltk.parse.chart.EdgeI.end</a></code></div>
+    
+    <div><p class="pre">Return the end index of this edge's span.
+
+:rtype: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.length">
+    
+  </a>
+  <a name="length">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">length</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#length">nltk.parse.chart.EdgeI.length</a></code></div>
+    
+    <div><p class="pre">Return the length of this edge's span.
+
+:rtype: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.rhs">
+    
+  </a>
+  <a name="rhs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rhs</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L82">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#rhs">nltk.parse.chart.EdgeI.rhs</a></code></div>
+    
+    <div><p class="pre">Return this edge's right-hand side, which specifies
+the content of the structure hypothesized by this edge.
+
+:see: ``TreeEdge`` and ``LeafEdge`` for a description of
+    the right-hand side values for each edge type.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.dot">
+    
+  </a>
+  <a name="dot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dot</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L85">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#dot">nltk.parse.chart.EdgeI.dot</a></code></div>
+    
+    <div><p class="pre">Return this edge's dot position, which indicates how much of
+the hypothesized structure is consistent with the
+sentence.  In particular, ``self.rhs[:dot]`` is consistent
+with ``tokens[self.start():self.end()]``.
+
+:rtype: int</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.is_complete">
+    
+  </a>
+  <a name="is_complete">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_complete</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L88">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#is_complete">nltk.parse.chart.EdgeI.is_complete</a></code></div>
+    
+    <div><p class="pre">Return True if this edge's structure is fully consistent
+with the text.
+
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.is_incomplete">
+    
+  </a>
+  <a name="is_incomplete">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_incomplete</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L91">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#is_incomplete">nltk.parse.chart.EdgeI.is_incomplete</a></code></div>
+    
+    <div><p class="pre">Return True if this edge's structure is partially consistent
+with the text.
+
+:rtype: bool</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.nextsym">
+    
+  </a>
+  <a name="nextsym">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">nextsym</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L94">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#nextsym">nltk.parse.chart.EdgeI.nextsym</a></code></div>
+    
+    <div><p class="pre">Return the element of this edge's right-hand side that
+immediately follows its dot.
+
+:rtype: Nonterminal or terminal or None</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.categ">
+    
+  </a>
+  <a name="categ">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">categ</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L97">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.ccg.chart.CCGEdge.rule">
+    
+  </a>
+  <a name="rule">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rule</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/ccg/chart.py#L100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

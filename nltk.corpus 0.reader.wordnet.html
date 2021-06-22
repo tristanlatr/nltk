@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.corpus 0.reader.wordnet : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.corpus%200.html">corpus 0</a></code>.<code><a href="nltk.corpus%200.reader.html">reader</a></code>.<code><a href="nltk.corpus%200.reader.wordnet.html">wordnet</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py">(source)</a>
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">An NLTK interface for WordNet
+
+WordNet is a lexical database of English.
+Using synsets, helps find conceptual relationships between words
+such as hypernyms, hyponyms, synonyms, antonyms etc.
+
+For details about WordNet see:
+http://wordnet.princeton.edu/
+
+This module also allows you to find lemmas in languages
+other than English from the Open Multilingual Wordnet
+http://compling.hss.ntu.edu.sg/omw/</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id513">
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ADJ">ADJ</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ADJ_SAT">ADJ_SAT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ADV">ADV</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#NOUN">NOUN</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#VERB">VERB</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#POS_LIST">POS_LIST</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#VERB_FRAME_STRINGS">VERB_FRAME_STRINGS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#SENSENUM_RE">SENSENUM_RE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus%200.reader.wordnet.WordNetError.html">WordNetError</a></code></td>
+    <td><span>An exception class for wordnet-related errors.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus%200.reader.wordnet.Lemma.html">Lemma</a></code></td>
+    <td><span>The lexical entry for a single morphological form of a sense-disambiguated word.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus%200.reader.wordnet.Synset.html">Synset</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus%200.reader.wordnet.WordNetCorpusReader.html">WordNetCorpusReader</a></code></td>
+    <td><span>A corpus reader used to access wordnet or its variants.</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus%200.reader.wordnet.WordNetICCorpusReader.html">WordNetICCorpusReader</a></code></td>
+    <td><span>A corpus reader for the WordNet information content corpus.</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#path_similarity">path_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#lch_similarity">lch_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#wup_similarity">wup_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#res_similarity">res_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#jcn_similarity">jcn_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#lin_similarity">lin_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#information_content">information_content</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#teardown_module">teardown_module</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_INF">_INF</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><code><a href="nltk.corpus%200.reader.wordnet._WordNetObject.html">_WordNetObject</a></code></td>
+    <td><span>A common base class for lemmas and synsets.</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_lcs_ic">_lcs_ic</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_pos">_get_pos</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable private">
+  
+  <a name="nltk.corpus 0.reader.wordnet._INF">
+    
+  </a>
+  <a name="_INF">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_INF</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L64">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.corpus 0.reader.wordnet.ADJ">
+    
+  </a>
+  <a name="ADJ">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ADJ</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.corpus 0.reader.wordnet.ADJ_SAT">
+    
+  </a>
+  <a name="ADJ_SAT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ADJ_SAT</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.corpus 0.reader.wordnet.ADV">
+    
+  </a>
+  <a name="ADV">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ADV</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.corpus 0.reader.wordnet.NOUN">
+    
+  </a>
+  <a name="NOUN">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">NOUN</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.corpus 0.reader.wordnet.VERB">
+    
+  </a>
+  <a name="VERB">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">VERB</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L67">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.corpus 0.reader.wordnet.POS_LIST">
+    
+  </a>
+  <a name="POS_LIST">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">POS_LIST</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L70">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.corpus 0.reader.wordnet.VERB_FRAME_STRINGS">
+    
+  </a>
+  <a name="VERB_FRAME_STRINGS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">VERB_FRAME_STRINGS</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L73">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a></code>)
+  </div>
+</div><div class="basevariable">
+  
+  <a name="nltk.corpus 0.reader.wordnet.SENSENUM_RE">
+    
+  </a>
+  <a name="SENSENUM_RE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SENSENUM_RE</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L112">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.wordnet.path_similarity">
+    
+  </a>
+  <a name="path_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">path_similarity</span>(synset1, synset2, verbose=False, simulate_root=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2098">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.wordnet.lch_similarity">
+    
+  </a>
+  <a name="lch_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lch_similarity</span>(synset1, synset2, verbose=False, simulate_root=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.wordnet.wup_similarity">
+    
+  </a>
+  <a name="wup_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">wup_similarity</span>(synset1, synset2, verbose=False, simulate_root=True):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2106">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.wordnet.res_similarity">
+    
+  </a>
+  <a name="res_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">res_similarity</span>(synset1, synset2, ic, verbose=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2110">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.wordnet.jcn_similarity">
+    
+  </a>
+  <a name="jcn_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">jcn_similarity</span>(synset1, synset2, ic, verbose=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2114">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.wordnet.lin_similarity">
+    
+  </a>
+  <a name="lin_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">lin_similarity</span>(synset1, synset2, ic, verbose=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2118">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.corpus 0.reader.wordnet._lcs_ic">
+    
+  </a>
+  <a name="_lcs_ic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_lcs_ic</span>(synset1, synset2, ic, verbose=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2130">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Get the information content of the least common subsumer that has
+the highest information content value.  If two nodes have no
+explicit common subsumer, assume that they share an artificial
+root node that is the hypernym of all explicit roots.
+
+:type synset1: Synset
+:param synset1: First input synset.
+:type synset2: Synset
+:param synset2: Second input synset.  Must be the same part of
+speech as the first synset.
+:type  ic: dict
+:param ic: an information content object (as returned by ``load_ic()``).
+:return: The information content of the two synsets and their most
+informative subsumer</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.wordnet.information_content">
+    
+  </a>
+  <a name="information_content">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">information_content</span>(synset, ic):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2170">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  <a name="nltk.corpus 0.reader.wordnet._get_pos">
+    
+  </a>
+  <a name="_get_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_pos</span>(field):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2188">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  <a name="nltk.corpus 0.reader.wordnet.teardown_module">
+    
+  </a>
+  <a name="teardown_module">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">teardown_module</span>(module=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/wordnet.py#L2202">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

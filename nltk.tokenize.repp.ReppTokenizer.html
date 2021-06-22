@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.tokenize.repp.ReppTokenizer : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.tokenize.html">tokenize</a></code>.<code><a href="nltk.tokenize.repp.html">repp</a></code>.<code><a href="nltk.tokenize.repp.ReppTokenizer.html">ReppTokenizer</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ReppTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L23">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.tokenize.repp.ReppTokenizer">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">A class for word tokenization using the REPP parser described in
+Rebecca Dridan and Stephan Oepen (2012) Tokenization: Returning to a
+Long Solved Problem - A Survey, Contrastive  Experiment, Recommendations,
+and Toolkit. In ACL. http://anthology.aclweb.org/P/P12/P12-2.pdf#page=406
+
+&gt;&gt;&gt; sents = ['Tokenization is widely regarded as a solved problem due to the high accuracy that rulebased tokenizers achieve.' ,
+... 'But rule-based tokenizers are hard to maintain and their rules language specific.' ,
+... 'We evaluated our method on three languages and obtained error rates of 0.27% (English), 0.35% (Dutch) and 0.76% (Italian) for our best models.'
+... ]
+&gt;&gt;&gt; tokenizer = ReppTokenizer('/home/alvas/repp/') # doctest: +SKIP
+&gt;&gt;&gt; for sent in sents:                             # doctest: +SKIP
+...     tokenizer.tokenize(sent)                   # doctest: +SKIP
+...
+(u'Tokenization', u'is', u'widely', u'regarded', u'as', u'a', u'solved', u'problem', u'due', u'to', u'the', u'high', u'accuracy', u'that', u'rulebased', u'tokenizers', u'achieve', u'.')
+(u'But', u'rule-based', u'tokenizers', u'are', u'hard', u'to', u'maintain', u'and', u'their', u'rules', u'language', u'specific', u'.')
+(u'We', u'evaluated', u'our', u'method', u'on', u'three', u'languages', u'and', u'obtained', u'error', u'rates', u'of', u'0.27', u'%', u'(', u'English', u')', u',', u'0.35', u'%', u'(', u'Dutch', u')', u'and', u'0.76', u'%', u'(', u'Italian', u')', u'for', u'our', u'best', u'models', u'.')
+
+&gt;&gt;&gt; for sent in tokenizer.tokenize_sents(sents): # doctest: +SKIP
+...     print(sent)                              # doctest: +SKIP
+...
+(u'Tokenization', u'is', u'widely', u'regarded', u'as', u'a', u'solved', u'problem', u'due', u'to', u'the', u'high', u'accuracy', u'that', u'rulebased', u'tokenizers', u'achieve', u'.')
+(u'But', u'rule-based', u'tokenizers', u'are', u'hard', u'to', u'maintain', u'and', u'their', u'rules', u'language', u'specific', u'.')
+(u'We', u'evaluated', u'our', u'method', u'on', u'three', u'languages', u'and', u'obtained', u'error', u'rates', u'of', u'0.27', u'%', u'(', u'English', u')', u',', u'0.35', u'%', u'(', u'Dutch', u')', u'and', u'0.76', u'%', u'(', u'Italian', u')', u'for', u'our', u'best', u'models', u'.')
+&gt;&gt;&gt; for sent in tokenizer.tokenize_sents(sents, keep_token_positions=True): # doctest: +SKIP
+...     print(sent)                                                         # doctest: +SKIP
+...
+[(u'Tokenization', 0, 12), (u'is', 13, 15), (u'widely', 16, 22), (u'regarded', 23, 31), (u'as', 32, 34), (u'a', 35, 36), (u'solved', 37, 43), (u'problem', 44, 51), (u'due', 52, 55), (u'to', 56, 58), (u'the', 59, 62), (u'high', 63, 67), (u'accuracy', 68, 76), (u'that', 77, 81), (u'rulebased', 82, 91), (u'tokenizers', 92, 102), (u'achieve', 103, 110), (u'.', 110, 111)]
+[(u'But', 0, 3), (u'rule-based', 4, 14), (u'tokenizers', 15, 25), (u'are', 26, 29), (u'hard', 30, 34), (u'to', 35, 37), (u'maintain', 38, 46), (u'and', 47, 50), (u'their', 51, 56), (u'rules', 57, 62), (u'language', 63, 71), (u'specific', 72, 80), (u'.', 80, 81)]
+[(u'We', 0, 2), (u'evaluated', 3, 12), (u'our', 13, 16), (u'method', 17, 23), (u'on', 24, 26), (u'three', 27, 32), (u'languages', 33, 42), (u'and', 43, 46), (u'obtained', 47, 55), (u'error', 56, 61), (u'rates', 62, 67), (u'of', 68, 70), (u'0.27', 71, 75), (u'%', 75, 76), (u'(', 77, 78), (u'English', 78, 85), (u')', 85, 86), (u',', 86, 87), (u'0.35', 88, 92), (u'%', 92, 93), (u'(', 94, 95), (u'Dutch', 95, 100), (u')', 100, 101), (u'and', 102, 105), (u'0.76', 106, 110), (u'%', 110, 111), (u'(', 112, 113), (u'Italian', 113, 120), (u')', 120, 121), (u'for', 122, 125), (u'our', 126, 129), (u'best', 130, 134), (u'models', 135, 141), (u'.', 141, 142)]</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1812">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#repp_dir">repp_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#working_dir">working_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#encoding">encoding</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tokenize">tokenize</a></code></td>
+    <td><span>Use Repp to tokenize a single sentence.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tokenize_sents">tokenize_sents</a></code></td>
+    <td><span>Tokenize multiple sentences using Repp.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#generate_repp_command">generate_repp_command</a></code></td>
+    <td><span>This module generates the REPP command to be used at the terminal.</span></td>
+  </tr><tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#parse_repp_outputs">parse_repp_outputs</a></code></td>
+    <td><span>This module parses the tri-tuple format that REPP outputs using the "--format triple" option and returns an generator with tuple of string tokens.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_repptokenizer">find_repptokenizer</a></code></td>
+    <td><span>A module to find REPP tokenizer binary and its *repp.set* config file.</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#_execute">_execute</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
+          </p>
+          <table class="children sortable" id="id1813">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
+    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
+    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, repp_dir, encoding='utf8'):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L56">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.repp_dir">
+    
+  </a>
+  <a name="repp_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">repp_dir</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L57">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.working_dir">
+    
+  </a>
+  <a name="working_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">working_dir</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L59">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.encoding">
+    
+  </a>
+  <a name="encoding">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">encoding</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L61">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.tokenize">
+    
+  </a>
+  <a name="tokenize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, sentence):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
+    
+    <div><p class="pre">Use Repp to tokenize a single sentence.
+
+:param sentence: A single sentence string.
+:type sentence: str
+:return: A tuple of tokens.
+:rtype: tuple(str)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.tokenize_sents">
+    
+  </a>
+  <a name="tokenize_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tokenize_sents</span>(self, sentences, keep_token_positions=False):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L74">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">nltk.tokenize.api.TokenizerI.tokenize_sents</a></code></div>
+    
+    <div><p class="pre">Tokenize multiple sentences using Repp.
+
+:param sentences: A list of sentence strings.
+:type sentences: list(str)
+:return: A list of tuples of tokens
+:rtype: iter(tuple(str))</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.generate_repp_command">
+    
+  </a>
+  <a name="generate_repp_command">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generate_repp_command</span>(self, inputfilename):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L100">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This module generates the REPP command to be used at the terminal.
+
+:param inputfilename: path to the input file
+:type inputfilename: str</p></div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer._execute">
+    
+  </a>
+  <a name="_execute">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_execute</span>(cmd):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L113">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.parse_repp_outputs">
+    
+  </a>
+  <a name="parse_repp_outputs">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">parse_repp_outputs</span>(repp_output):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L119">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">This module parses the tri-tuple format that REPP outputs using the
+"--format triple" option and returns an generator with tuple of string
+tokens.
+
+:param repp_output:
+:type repp_output: type
+:return: an iterable of the tokenized sentences as tuples of strings
+:rtype: iter(tuple)</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.tokenize.repp.ReppTokenizer.find_repptokenizer">
+    
+  </a>
+  <a name="find_repptokenizer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find_repptokenizer</span>(self, repp_dirname):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/tokenize/repp.py#L140">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">A module to find REPP tokenizer binary and its *repp.set* config file.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.lm.MLE : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.lm.html">lm</a></code>.<code><a href="nltk.lm.MLE.html">MLE</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MLE</span>(<a href="nltk.lm.api.LanguageModel.html" title="nltk.lm.api.LanguageModel">LanguageModel</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/models.py#L13">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.lm.MLE">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Class for providing MLE ngram model scores.
+
+Inherits initialization from BaseNgramModel.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id773">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#unmasked_score">unmasked_score</a></code></td>
+    <td><span>Returns the MLE score for a word given a context.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.lm.api.LanguageModel.html">LanguageModel</a></code>:
+          </p>
+          <table class="children sortable" id="id774">
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#__init__">__init__</a></code></td>
+    <td><span>Creates new LanguageModel.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#order">order</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#vocab">vocab</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#counts">counts</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#fit">fit</a></code></td>
+    <td><span>Trains the model on a text.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#score">score</a></code></td>
+    <td><span>Masks out of vocab (OOV) words and computes their model score.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#logscore">logscore</a></code></td>
+    <td><span>Evaluate the log score of this word in this context.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#context_counts">context_counts</a></code></td>
+    <td><span>Helper method for retrieving counts for a given context.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#entropy">entropy</a></code></td>
+    <td><span>Calculate cross-entropy of model for given evaluation text.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#perplexity">perplexity</a></code></td>
+    <td><span>Calculates the perplexity of the given text.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="nltk.lm.api.LanguageModel.html#generate">generate</a></code></td>
+    <td><span>Generate words from the model.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.lm.MLE.unmasked_score">
+    
+  </a>
+  <a name="unmasked_score">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unmasked_score</span>(self, word, context=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/lm/models.py#L19">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="nltk.lm.api.LanguageModel.html#unmasked_score">nltk.lm.api.LanguageModel.unmasked_score</a></code></div>
+    
+    <div><p class="pre">Returns the MLE score for a word given a context.
+
+Args:
+- word is expected to be a string
+- context is expected to be something reasonably convertible to a tuple</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

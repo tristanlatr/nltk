@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.corpus 0.reader.lin.LinThesaurusCorpusReader : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.corpus%200.html">corpus 0</a></code>.<code><a href="nltk.corpus%200.reader.html">reader</a></code>.<code><a href="nltk.corpus%200.reader.lin.html">lin</a></code>.<code><a href="nltk.corpus%200.reader.lin.LinThesaurusCorpusReader.html">LinThesaurusCorpusReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LinThesaurusCorpusReader</span>(<span title="nltk.corpus.reader.CorpusReader">CorpusReader</span>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L15">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.corpus 0.reader.lin.LinThesaurusCorpusReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Wrapper for the LISP-formatted thesauruses distributed by Dekang Lin. </p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id334">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Initialize the thesaurus.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#similarity">similarity</a></code></td>
+    <td><span>Returns the similarity score for two ngrams.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#scored_synonyms">scored_synonyms</a></code></td>
+    <td><span>Returns a list of scored synonyms (tuples of synonyms and scores) for the current ngram</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#synonyms">synonyms</a></code></td>
+    <td><span>Returns a list of synonyms for the current ngram.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__contains__">__contains__</a></code></td>
+    <td><span>Determines whether or not the given ngram is in the thesaurus.</span></td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_key_re">_key_re</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#__defaultdict_factory">__defaultdict_factory</a></code></td>
+    <td><span>Factory for creating defaultdict of defaultdict(dict)s</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_thesaurus">_thesaurus</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_badscore">_badscore</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable private">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader._key_re">
+    
+  </a>
+  <a name="_key_re">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_key_re</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L20">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basestaticmethod private">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader.__defaultdict_factory">
+    
+  </a>
+  <a name="__defaultdict_factory">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">__defaultdict_factory</span>():
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L22">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Factory for creating defaultdict of defaultdict(dict)s </p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, badscore=0.0):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L27">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Initialize the thesaurus.
+
+:param root: root directory containing thesaurus LISP files
+:type root: C{string}
+:param badscore: the score to give to words which do not appear in each other's sets of synonyms
+:type badscore: C{float}</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader._thesaurus">
+    
+  </a>
+  <a name="_thesaurus">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_thesaurus</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L38">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader._badscore">
+    
+  </a>
+  <a name="_badscore">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_badscore</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L39">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader.similarity">
+    
+  </a>
+  <a name="similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">similarity</span>(self, ngram1, ngram2, fileid=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L63">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns the similarity score for two ngrams.
+
+:param ngram1: first ngram to compare
+:type ngram1: C{string}
+:param ngram2: second ngram to compare
+:type ngram2: C{string}
+:param fileid: thesaurus fileid to search in. If None, search all fileids.
+:type fileid: C{string}
+:return: If fileid is specified, just the score for the two ngrams; otherwise,
+         list of tuples of fileids and scores.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader.scored_synonyms">
+    
+  </a>
+  <a name="scored_synonyms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">scored_synonyms</span>(self, ngram, fileid=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L102">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns a list of scored synonyms (tuples of synonyms and scores) for the current ngram
+
+:param ngram: ngram to lookup
+:type ngram: C{string}
+:param fileid: thesaurus fileid to search in. If None, search all fileids.
+:type fileid: C{string}
+:return: If fileid is specified, list of tuples of scores and synonyms; otherwise,
+         list of tuples of fileids and lists, where inner lists consist of tuples of
+         scores and synonyms.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader.synonyms">
+    
+  </a>
+  <a name="synonyms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">synonyms</span>(self, ngram, fileid=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L122">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Returns a list of synonyms for the current ngram.
+
+:param ngram: ngram to lookup
+:type ngram: C{string}
+:param fileid: thesaurus fileid to search in. If None, search all fileids.
+:type fileid: C{string}
+:return: If fileid is specified, list of synonyms; otherwise, list of tuples of fileids and
+         lists, where inner lists contain synonyms.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.corpus 0.reader.lin.LinThesaurusCorpusReader.__contains__">
+    
+  </a>
+  <a name="__contains__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__contains__</span>(self, ngram):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/corpus/reader/lin.py#L141">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Determines whether or not the given ngram is in the thesaurus.
+
+:param ngram: ngram to lookup
+:type ngram: C{string}
+:return: whether the given ngram is in the thesaurus.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

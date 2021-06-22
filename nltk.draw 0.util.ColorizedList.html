@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.draw 0.util.ColorizedList : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.draw%200.html">draw 0</a></code>.<code><a href="nltk.draw%200.util.html">util</a></code>.<code><a href="nltk.draw%200.util.ColorizedList.html">ColorizedList</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ColorizedList</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2170">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.draw 0.util.ColorizedList">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">An abstract base class for displaying a colorized list of items.
+Subclasses should define:
+  - ``_init_colortags``, which sets up Text color tags that
+    will be used by the list.
+  - ``_item_repr``, which returns a list of (text,colortag)
+    tuples that make up the colorized representation of the
+    item.
+:note: Typically, you will want to register a callback for
+    ``'select'`` that calls ``mark`` on the given item.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id614">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>Construct a new list.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get">get</a></code></td>
+    <td><span>:return: A list of the items contained by this list.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set">set</a></code></td>
+    <td><span>Modify the list of items contained by this list.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#unmark">unmark</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mark">mark</a></code></td>
+    <td><span>Highlight the given item. :raise ValueError: If ``item`` is not contained in the list.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#markonly">markonly</a></code></td>
+    <td><span>Remove any current highlighting, and mark the given item. :raise ValueError: If ``item`` is not contained in the list.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#view">view</a></code></td>
+    <td><span>Adjust the view such that the given item is visible.  If the item is already visible, then do nothing.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_callback">add_callback</a></code></td>
+    <td><span>Register a callback function with the list.  This function will be called whenever the given event occurs.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove_callback">remove_callback</a></code></td>
+    <td><span>Deregister a callback function.  If ``func`` is none, then all callbacks are removed for the given event.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pack">pack</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#grid">grid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#focus">focus</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_parent">_parent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_callbacks">_callbacks</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_marks">_marks</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_items">_items</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_colortags">_init_colortags</a></code></td>
+    <td><span>Set up any colortags that will be used by this colorized list. E.g.: &gt;&gt;&gt; textwidget.tag_config('terminal', foreground='black')</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_item_repr">_item_repr</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_itemframe">_init_itemframe</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_itemframe">_itemframe</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_textwidget">_textwidget</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_textscroll">_textscroll</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_fire_callback">_fire_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_buttonpress">_buttonpress</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_keypress">_keypress</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parent, items=[], **options):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2183">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Construct a new list.
+
+:param parent: The Tk widget that contains the colorized list
+:param items: The initial contents of the colorized list.
+:param options:</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._parent">
+    
+  </a>
+  <a name="_parent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_parent</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2191">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._callbacks">
+    
+  </a>
+  <a name="_callbacks">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_callbacks</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2192">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._marks">
+    
+  </a>
+  <a name="_marks">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_marks</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2195">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div> (type: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>)
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._items">
+    
+  </a>
+  <a name="_items">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_items</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2205">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._init_colortags">
+    
+  </a>
+  <a name="_init_colortags">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_init_colortags</span>(self, textwidget, options):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2211">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Set up any colortags that will be used by this colorized list.
+E.g.:
+    &gt;&gt;&gt; textwidget.tag_config('terminal', foreground='black')</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._item_repr">
+    
+  </a>
+  <a name="_item_repr">
+    
+  </a>
+  <div class="functionHeader">
+    @abstractmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_item_repr</span>(self, item):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2219">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return a list of (text, colortag) tuples that make up the
+colorized representation of the item.  Colorized
+representations may not span multiple lines.  I.e., the text
+strings returned may not contain newline characters.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.get">
+    
+  </a>
+  <a name="get">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get</span>(self, index=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2232">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:return: A list of the items contained by this list.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.set">
+    
+  </a>
+  <a name="set">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set</span>(self, items):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2241">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Modify the list of items contained by this list.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.unmark">
+    
+  </a>
+  <a name="unmark">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">unmark</span>(self, item=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2264">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Remove highlighting from the given item; or from every item,
+if no item is given.
+:raise ValueError: If ``item`` is not contained in the list.
+:raise KeyError: If ``item`` is not marked.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.mark">
+    
+  </a>
+  <a name="mark">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mark</span>(self, item):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2280">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Highlight the given item.
+:raise ValueError: If ``item`` is not contained in the list.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.markonly">
+    
+  </a>
+  <a name="markonly">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">markonly</span>(self, item):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2290">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Remove any current highlighting, and mark the given item.
+:raise ValueError: If ``item`` is not contained in the list.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.view">
+    
+  </a>
+  <a name="view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">view</span>(self, item):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2298">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Adjust the view such that the given item is visible.  If
+the item is already visible, then do nothing.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.add_callback">
+    
+  </a>
+  <a name="add_callback">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_callback</span>(self, event, func):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2310">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Register a callback function with the list.  This function
+will be called whenever the given event occurs.
+
+:param event: The event that will trigger the callback
+    function.  Valid events are: click1, click2, click3,
+    space, return, select, up, down, next, prior, move
+:param func: The function that should be called when
+    the event occurs.  ``func`` will be called with a
+    single item as its argument.  (The item selected
+    or the item moved to).</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.remove_callback">
+    
+  </a>
+  <a name="remove_callback">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove_callback</span>(self, event, func=None):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2333">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Deregister a callback function.  If ``func`` is none, then
+all callbacks are removed for the given event.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.pack">
+    
+  </a>
+  <a name="pack">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pack</span>(self, cnf={}, **kw):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2360">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.grid">
+    
+  </a>
+  <a name="grid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">grid</span>(self, cnf={}, **kw):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2364">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.draw 0.util.ColorizedList.focus">
+    
+  </a>
+  <a name="focus">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">focus</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2368">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._init_itemframe">
+    
+  </a>
+  <a name="_init_itemframe">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_itemframe</span>(self, options):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2376">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._itemframe">
+    
+  </a>
+  <a name="_itemframe">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_itemframe</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2377">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._textwidget">
+    
+  </a>
+  <a name="_textwidget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_textwidget</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2381">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._textscroll">
+    
+  </a>
+  <a name="_textscroll">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_textscroll</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2382">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._fire_callback">
+    
+  </a>
+  <a name="_fire_callback">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_fire_callback</span>(self, event, itemnum):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2401">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._buttonpress">
+    
+  </a>
+  <a name="_buttonpress">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_buttonpress</span>(self, event):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2411">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.draw 0.util.ColorizedList._keypress">
+    
+  </a>
+  <a name="_keypress">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_keypress</span>(self, event):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/draw/util.py#L2417">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

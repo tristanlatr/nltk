@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>nltk.parse.evaluate.DependencyEvaluator : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="nltk.html">nltk</a></code>.<code><a href="nltk.parse.html">parse</a></code>.<code><a href="nltk.parse.evaluate.html">evaluate</a></code>.<code><a href="nltk.parse.evaluate.DependencyEvaluator.html">DependencyEvaluator</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DependencyEvaluator</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/evaluate.py#L12">(source)</a></code></p>
+        <p><a href="classIndex.html#nltk.parse.evaluate.DependencyEvaluator">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="pre">Class for measuring labelled and unlabelled attachment score for
+dependency parsing. Note that the evaluation ignores punctuation.
+
+&gt;&gt;&gt; from nltk.parse import DependencyGraph, DependencyEvaluator
+
+&gt;&gt;&gt; gold_sent = DependencyGraph("""
+... Pierre  NNP     2       NMOD
+... Vinken  NNP     8       SUB
+... ,       ,       2       P
+... 61      CD      5       NMOD
+... years   NNS     6       AMOD
+... old     JJ      2       NMOD
+... ,       ,       2       P
+... will    MD      0       ROOT
+... join    VB      8       VC
+... the     DT      11      NMOD
+... board   NN      9       OBJ
+... as      IN      9       VMOD
+... a       DT      15      NMOD
+... nonexecutive    JJ      15      NMOD
+... director        NN      12      PMOD
+... Nov.    NNP     9       VMOD
+... 29      CD      16      NMOD
+... .       .       9       VMOD
+... """)
+
+&gt;&gt;&gt; parsed_sent = DependencyGraph("""
+... Pierre  NNP     8       NMOD
+... Vinken  NNP     1       SUB
+... ,       ,       3       P
+... 61      CD      6       NMOD
+... years   NNS     6       AMOD
+... old     JJ      2       NMOD
+... ,       ,       3       AMOD
+... will    MD      0       ROOT
+... join    VB      8       VC
+... the     DT      11      AMOD
+... board   NN      9       OBJECT
+... as      IN      9       NMOD
+... a       DT      15      NMOD
+... nonexecutive    JJ      15      NMOD
+... director        NN      12      PMOD
+... Nov.    NNP     9       VMOD
+... 29      CD      16      NMOD
+... .       .       9       VMOD
+... """)
+
+&gt;&gt;&gt; de = DependencyEvaluator([parsed_sent],[gold_sent])
+&gt;&gt;&gt; las, uas = de.eval()
+&gt;&gt;&gt; las
+0.6...
+&gt;&gt;&gt; uas
+0.8...
+&gt;&gt;&gt; abs(uas - 0.8) &lt; 0.00001
+True</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1003">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td><span>:param parsed_sents: the list of parsed_sents as the output of parser :type parsed_sents: list(DependencyGraph)</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#eval">eval</a></code></td>
+    <td><span>Return the Labeled Attachment Score (LAS) and Unlabeled Attachment Score (UAS)</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_parsed_sents">_parsed_sents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_gold_sents">_gold_sents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_remove_punct">_remove_punct</a></code></td>
+    <td><span>Function to remove punctuation from Unicode string. :param input: the input string :return: Unicode string after remove all punctuation</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="nltk.parse.evaluate.DependencyEvaluator.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parsed_sents, gold_sents):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/evaluate.py#L71">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">:param parsed_sents: the list of parsed_sents as the output of parser
+:type parsed_sents: list(DependencyGraph)</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.evaluate.DependencyEvaluator._parsed_sents">
+    
+  </a>
+  <a name="_parsed_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_parsed_sents</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/evaluate.py#L76">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  <a name="nltk.parse.evaluate.DependencyEvaluator._gold_sents">
+    
+  </a>
+  <a name="_gold_sents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_gold_sents</span> =
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/evaluate.py#L77">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  <a name="nltk.parse.evaluate.DependencyEvaluator._remove_punct">
+    
+  </a>
+  <a name="_remove_punct">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_remove_punct</span>(self, inStr):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/evaluate.py#L79">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Function to remove punctuation from Unicode string.
+:param input: the input string
+:return: Unicode string after remove all punctuation</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="nltk.parse.evaluate.DependencyEvaluator.eval">
+    
+  </a>
+  <a name="eval">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">eval</span>(self):
+    <a class="functionSourceLink" href="https://github.com/tristanlatr/nltk/tree/cab27f08bc0f78151e7dd16ec110d324f8c05a72/nltk/parse/evaluate.py#L88">
+      
+      (source)
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Return the Labeled Attachment Score (LAS) and Unlabeled Attachment Score (UAS)
+
+:return : tuple(float,float)</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk">Natural Language Toolkit</a>, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 2021-06-22 02:47:44.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
