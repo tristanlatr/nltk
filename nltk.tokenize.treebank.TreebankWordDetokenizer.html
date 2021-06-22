@@ -65,78 +65,88 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreebankWordDetokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L193" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreebankWordDetokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L193" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.treebank.TreebankWordDetokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The Treebank detokenizer uses the reverse regex operations corresponding to
-the Treebank tokenizer's regexes.
-
-Note:
-- There're additional assumption mades when undoing the padding of [;@#$%&amp;]
-  punctuation symbols that isn't presupposed in the TreebankTokenizer.
-- There're additional regexes added in reversing the parentheses tokenization,
-   - the r'([\]\)\}\&gt;])\s([:;,.])' removes the additional right padding added
-     to the closing parentheses precedding [:;,.].
-- It's not possible to return the original whitespaces as they were because
-  there wasn't explicit records of where '\n', '\t' or '\s' were removed at
-  the text.split() operation.
-
-    &gt;&gt;&gt; from nltk.tokenize.treebank import TreebankWordTokenizer, TreebankWordDetokenizer
-    &gt;&gt;&gt; s = '''Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks.'''
-    &gt;&gt;&gt; d = TreebankWordDetokenizer()
-    &gt;&gt;&gt; t = TreebankWordTokenizer()
-    &gt;&gt;&gt; toks = t.tokenize(s)
-    &gt;&gt;&gt; d.detokenize(toks)
-    'Good muffins cost $3.88 in New York. Please buy me two of them. Thanks.'
-
-The MXPOST parentheses substitution can be undone using the `convert_parentheses`
-parameter:
-
-&gt;&gt;&gt; s = '''Good muffins cost $3.88\nin New (York).  Please (buy) me\ntwo of them.\n(Thanks).'''
-&gt;&gt;&gt; expected_tokens = ['Good', 'muffins', 'cost', '$', '3.88', 'in',
-... 'New', '-LRB-', 'York', '-RRB-', '.', 'Please', '-LRB-', 'buy',
-... '-RRB-', 'me', 'two', 'of', 'them.', '-LRB-', 'Thanks', '-RRB-', '.']
-&gt;&gt;&gt; expected_tokens == t.tokenize(s, convert_parentheses=True)
-True
-&gt;&gt;&gt; expected_detoken = 'Good muffins cost $3.88 in New (York). Please (buy) me two of them. (Thanks).'
-&gt;&gt;&gt; expected_detoken == d.detokenize(t.tokenize(s, convert_parentheses=True), convert_parentheses=True)
-True
-
-During tokenization it's safe to add more spaces but during detokenization,
-simply undoing the padding doesn't really help.
-
-- During tokenization, left and right pad is added to [!?], when
-  detokenizing, only left shift the [!?] is needed.
-  Thus (re.compile(r'\s([?!])'), r'\g&lt;1&gt;')
-
-- During tokenization [:,] are left and right padded but when detokenizing,
-  only left shift is necessary and we keep right pad after comma/colon
-  if the string after is a non-digit.
-  Thus (re.compile(r'\s([:,])\s([^\d])'), r'\1 \2')
-
-&gt;&gt;&gt; from nltk.tokenize.treebank import TreebankWordDetokenizer
-&gt;&gt;&gt; toks = ['hello', ',', 'i', 'ca', "n't", 'feel', 'my', 'feet', '!', 'Help', '!', '!']
-&gt;&gt;&gt; twd = TreebankWordDetokenizer()
-&gt;&gt;&gt; twd.detokenize(toks)
-"hello, i can't feel my feet! Help!!"
-
-&gt;&gt;&gt; toks = ['hello', ',', 'i', "can't", 'feel', ';', 'my', 'feet', '!',
-... 'Help', '!', '!', 'He', 'said', ':', 'Help', ',', 'help', '?', '!']
-&gt;&gt;&gt; twd.detokenize(toks)
-"hello, i can't feel; my feet! Help!! He said: Help, help?!"</p></div>
+        <div><p>The Treebank detokenizer uses the reverse regex operations corresponding to
+the Treebank tokenizer's regexes.</p>
+<p>Note:
+- There're additional assumption mades when undoing the padding of [;@#$%&amp;]</p>
+<blockquote>
+punctuation symbols that isn't presupposed in the TreebankTokenizer.</blockquote>
+<ul>
+<li><dl class="rst-first rst-docutils">
+<dt>There're additional regexes added in reversing the parentheses tokenization,</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>the r'([])}&gt;])s([:;,.])' removes the additional right padding added
+to the closing parentheses precedding [:;,.].</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="rst-first">It's not possible to return the original whitespaces as they were because
+there wasn't explicit records of where 'n', 't' or 's' were removed at
+the text.split() operation.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize.treebank <span class="py-keyword">import</span> TreebankWordTokenizer, TreebankWordDetokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">'''Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks.'''</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>d = TreebankWordDetokenizer()
+<span class="py-prompt">&gt;&gt;&gt; </span>t = TreebankWordTokenizer()
+<span class="py-prompt">&gt;&gt;&gt; </span>toks = t.tokenize(s)
+<span class="py-prompt">&gt;&gt;&gt; </span>d.detokenize(toks)
+<span class="py-output">'Good muffins cost $3.88 in New York. Please buy me two of them. Thanks.'</span>
+</pre></blockquote>
+</li>
+</ul>
+<p>The MXPOST parentheses substitution can be undone using the <code>convert_parentheses</code>
+parameter:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">'''Good muffins cost $3.88\nin New (York).  Please (buy) me\ntwo of them.\n(Thanks).'''</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>expected_tokens = [<span class="py-string">'Good'</span>, <span class="py-string">'muffins'</span>, <span class="py-string">'cost'</span>, <span class="py-string">'$'</span>, <span class="py-string">'3.88'</span>, <span class="py-string">'in'</span>,
+<span class="py-more">... </span><span class="py-string">'New'</span>, <span class="py-string">'-LRB-'</span>, <span class="py-string">'York'</span>, <span class="py-string">'-RRB-'</span>, <span class="py-string">'.'</span>, <span class="py-string">'Please'</span>, <span class="py-string">'-LRB-'</span>, <span class="py-string">'buy'</span>,
+<span class="py-more">... </span><span class="py-string">'-RRB-'</span>, <span class="py-string">'me'</span>, <span class="py-string">'two'</span>, <span class="py-string">'of'</span>, <span class="py-string">'them.'</span>, <span class="py-string">'-LRB-'</span>, <span class="py-string">'Thanks'</span>, <span class="py-string">'-RRB-'</span>, <span class="py-string">'.'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>expected_tokens == t.tokenize(s, convert_parentheses=<span class="py-builtin">True</span>)
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>expected_detoken = <span class="py-string">'Good muffins cost $3.88 in New (York). Please (buy) me two of them. (Thanks).'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>expected_detoken == d.detokenize(t.tokenize(s, convert_parentheses=<span class="py-builtin">True</span>), convert_parentheses=<span class="py-builtin">True</span>)
+<span class="py-output">True</span>
+</pre><p>During tokenization it's safe to add more spaces but during detokenization,
+simply undoing the padding doesn't really help.</p>
+<ul class="rst-simple">
+<li>During tokenization, left and right pad is added to [!?], when
+detokenizing, only left shift the [!?] is needed.
+Thus (re.compile(r's([?!])'), r'g&lt;1&gt;')</li>
+<li>During tokenization [:,] are left and right padded but when detokenizing,
+only left shift is necessary and we keep right pad after comma/colon
+if the string after is a non-digit.
+Thus (re.compile(r's([:,])s([^d])'), r'1 2')</li>
+</ul>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize.treebank <span class="py-keyword">import</span> TreebankWordDetokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>toks = [<span class="py-string">'hello'</span>, <span class="py-string">','</span>, <span class="py-string">'i'</span>, <span class="py-string">'ca'</span>, <span class="py-string">"n't"</span>, <span class="py-string">'feel'</span>, <span class="py-string">'my'</span>, <span class="py-string">'feet'</span>, <span class="py-string">'!'</span>, <span class="py-string">'Help'</span>, <span class="py-string">'!'</span>, <span class="py-string">'!'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>twd = TreebankWordDetokenizer()
+<span class="py-prompt">&gt;&gt;&gt; </span>twd.detokenize(toks)
+<span class="py-output">"hello, i can't feel my feet! Help!!"</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>toks = [<span class="py-string">'hello'</span>, <span class="py-string">','</span>, <span class="py-string">'i'</span>, <span class="py-string">"can't"</span>, <span class="py-string">'feel'</span>, <span class="py-string">';'</span>, <span class="py-string">'my'</span>, <span class="py-string">'feet'</span>, <span class="py-string">'!'</span>,
+<span class="py-more">... </span><span class="py-string">'Help'</span>, <span class="py-string">'!'</span>, <span class="py-string">'!'</span>, <span class="py-string">'He'</span>, <span class="py-string">'said'</span>, <span class="py-string">':'</span>, <span class="py-string">'Help'</span>, <span class="py-string">','</span>, <span class="py-string">'help'</span>, <span class="py-string">'?'</span>, <span class="py-string">'!'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>twd.detokenize(toks)
+<span class="py-output">"hello, i can't feel; my feet! Help!! He said: Help, help?!"</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1853">
+        <table class="children sortable" id="id1857">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#detokenize">detokenize</a></code></td>
-    <td><span>Duck-typing the abstract *tokenize()*.</span></td>
+    <td><span>Duck-typing the abstract <em>tokenize()</em>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -193,24 +203,24 @@ simply undoing the padding doesn't really help.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1854">
+          <table class="children sortable" id="id1858">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -232,7 +242,7 @@ simply undoing the padding doesn't really help.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">detokenize</span>(self, tokens, convert_parentheses=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L369">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L369">
       
       (source)
     </a>
@@ -240,7 +250,7 @@ simply undoing the padding doesn't really help.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Duck-typing the abstract *tokenize()*.</p></div>
+    <div>Duck-typing the abstract <em>tokenize()</em>.</div>
   </div>
 </div><div class="basemethod">
   
@@ -254,7 +264,7 @@ simply undoing the padding doesn't really help.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, tokens, convert_parentheses=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L323">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L323">
       
       (source)
     </a>
@@ -262,12 +272,8 @@ simply undoing the padding doesn't really help.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Treebank detokenizer, created by undoing the regexes from
-the TreebankWordTokenizer.tokenize.
-
-:param tokens: A list of strings, i.e. tokenized text.
-:type tokens: list(str)
-:return: str</p></div>
+    <div>Treebank detokenizer, created by undoing the regexes from
+the TreebankWordTokenizer.tokenize.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(str)</td><td class="fieldArgDesc">A list of strings, i.e. tokenized text.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">convert_parentheses</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">str</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -281,7 +287,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">CONTRACTIONS2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L254">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L254">
       
       (source)
     </a>
@@ -303,7 +309,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">CONTRACTIONS3</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L258">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L258">
       
       (source)
     </a>
@@ -325,7 +331,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">CONVERT_PARENTHESES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L279">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L279">
       
       (source)
     </a>
@@ -347,7 +353,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">DOUBLE_DASHES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L276">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L276">
       
       (source)
     </a>
@@ -369,7 +375,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">ENDING_QUOTES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L264">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L264">
       
       (source)
     </a>
@@ -391,7 +397,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">PARENS_BRACKETS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L289">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L289">
       
       (source)
     </a>
@@ -413,7 +419,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">PUNCTUATION</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L296">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L296">
       
       (source)
     </a>
@@ -435,7 +441,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">STARTING_QUOTES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L317">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L317">
       
       (source)
     </a>
@@ -457,7 +463,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="functionHeader">
     
     <span class="py-defname">_contractions</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L253">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L253">
       
       (source)
     </a>
@@ -477,7 +483,7 @@ the TreebankWordTokenizer.tokenize.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

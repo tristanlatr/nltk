@@ -65,28 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NonprojectiveDependencyParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L562" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NonprojectiveDependencyParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L562" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.nonprojectivedependencyparser.NonprojectiveDependencyParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A non-projective, rule-based, dependency parser.  This parser
+        <div>A non-projective, rule-based, dependency parser.  This parser
 will return the set of all possible non-projective parses based on
 the word-to-word relations defined in the parser's dependency
 grammar, and will allow the branches of the parse tree to cross
 in order to capture a variety of linguistic phenomena that a
-projective parser will not.</p></div>
+projective parser will not.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1061">
+        <table class="children sortable" id="id1065">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Creates a new ``NonprojectiveDependencyParser``.</span></td>
+    <td><span>Creates a new <tt class="rst-docutils literal">NonprojectiveDependencyParser</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -123,7 +123,7 @@ projective parser will not.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, dependency_grammar):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L572">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L572">
       
       (source)
     </a>
@@ -131,10 +131,7 @@ projective parser will not.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Creates a new ``NonprojectiveDependencyParser``.
-
-:param dependency_grammar: a grammar of word-to-word relations.
-:type dependency_grammar: DependencyGrammar</p></div>
+    <div>Creates a new <tt class="rst-docutils literal">NonprojectiveDependencyParser</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dependency_grammar:</span>DependencyGrammar</td><td class="fieldArgDesc">a grammar of word-to-word relations.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -148,7 +145,7 @@ projective parser will not.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L581">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L581">
       
       (source)
     </a>
@@ -156,18 +153,18 @@ projective parser will not.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Parses the input tokens with respect to the parser's grammar.  Parsing
+    <div><p>Parses the input tokens with respect to the parser's grammar.  Parsing
 is accomplished by representing the search-space of possible parses as
 a fully-connected directed graph.  Arcs that would lead to ungrammatical
 parses are removed and a lattice is constructed of length n, where n is
 the number of input tokens, to represent all possible grammatical
 traversals.  All possible paths through the lattice are then enumerated
-to produce the set of non-projective parses.
-
-param tokens: A list of tokens to parse.
+to produce the set of non-projective parses.</p>
+<p>param tokens: A list of tokens to parse.
 type tokens: list(str)
 return: An iterator of non-projective parses.
-rtype: iter(DependencyGraph)</p></div>
+rtype: iter(DependencyGraph)</p>
+</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -181,7 +178,7 @@ rtype: iter(DependencyGraph)</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_grammar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L579">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L579">
       
       (source)
     </a>
@@ -203,7 +200,7 @@ rtype: iter(DependencyGraph)</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_graph</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L597">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L597">
       
       (source)
     </a>
@@ -223,7 +220,7 @@ rtype: iter(DependencyGraph)</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

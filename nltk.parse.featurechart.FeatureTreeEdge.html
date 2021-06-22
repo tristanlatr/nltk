@@ -65,24 +65,24 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">FeatureTreeEdge</span>(<a href="nltk.parse.chart.TreeEdge.html" title="nltk.parse.chart.TreeEdge">TreeEdge</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L47" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">FeatureTreeEdge</span>(<a href="nltk.parse.chart.TreeEdge.html" title="nltk.parse.chart.TreeEdge">TreeEdge</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L47" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.featurechart.FeatureTreeEdge">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A specialized tree edge that allows shared variable bindings
-between nonterminals on the left-hand side and right-hand side.
-
-Each ``FeatureTreeEdge`` contains a set of ``bindings``, i.e., a
+        <div><p>A specialized tree edge that allows shared variable bindings
+between nonterminals on the left-hand side and right-hand side.</p>
+<p>Each <tt class="rst-docutils literal">FeatureTreeEdge</tt> contains a set of <tt class="rst-docutils literal">bindings</tt>, i.e., a
 dictionary mapping from variables to values.  If the edge is not
 complete, then these bindings are simply stored.  However, if the
 edge is complete, then the constructor applies these bindings to
 every nonterminal in the edge whose symbol implements the
-interface ``SubstituteBindingsI``.</p></div>
+interface <tt class="rst-docutils literal">SubstituteBindingsI</tt>.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1009">
+        <table class="children sortable" id="id1013">
   
   
   <tr class="staticmethod">
@@ -119,7 +119,7 @@ interface ``SubstituteBindingsI``.</p></div>
     
     <td>Method</td>
     <td><code><a href="#variables">variables</a></code></td>
-    <td><span>:return: The set of variables used by this edge. :rtype: set(Variable)</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -141,7 +141,7 @@ interface ``SubstituteBindingsI``.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.TreeEdge.html">TreeEdge</a></code>:
           </p>
-          <table class="children sortable" id="id1010">
+          <table class="children sortable" id="id1014">
   
   
   <tr class="basemethod">
@@ -193,7 +193,7 @@ interface ``SubstituteBindingsI``.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.TreeEdge.html#span">span</a></code></td>
-    <td><span>Return a tuple ``(s, e)``, where ``tokens[s:e]`` is the portion of the sentence that is consistent with this edge's structure.</span></td>
+    <td><span>Return a tuple <tt class="rst-docutils literal">(s, e)</tt>, where <tt class="rst-docutils literal">tokens[s:e]</tt> is the portion of the sentence that is consistent with this edge's structure.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -225,7 +225,7 @@ interface ``SubstituteBindingsI``.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.EdgeI.html">EdgeI</a></code> (via <code><a href="nltk.parse.chart.TreeEdge.html">TreeEdge</a></code>):
           </p>
-          <table class="children sortable" id="id1011">
+          <table class="children sortable" id="id1015">
   
   
   <tr class="basemethod">
@@ -274,7 +274,7 @@ interface ``SubstituteBindingsI``.</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">from_production</span>(production, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L87">
       
       (source)
     </a>
@@ -282,11 +282,10 @@ interface ``SubstituteBindingsI``.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.TreeEdge.html#from_production">nltk.parse.chart.TreeEdge.from_production</a></code></div>
     
-    <div><p class="pre">:return: A new ``TreeEdge`` formed from the given production.
-    The new edge's left-hand side and right-hand side will
-    be taken from ``production``; its span will be
-    ``(index,index)``; and its dot position will be ``0``.
-:rtype: TreeEdge</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">TreeEdge</td><td class="fieldArgDesc">A new <tt class="rst-docutils literal">TreeEdge</tt> formed from the given production.
+The new edge's left-hand side and right-hand side will
+be taken from <tt class="rst-docutils literal">production</tt>; its span will be
+<tt class="rst-docutils literal">(index,index)</tt>; and its dot position will be <tt class="rst-docutils literal">0</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -300,7 +299,7 @@ interface ``SubstituteBindingsI``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, span, lhs, rhs, dot=0, bindings=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L60">
       
       (source)
     </a>
@@ -308,12 +307,12 @@ interface ``SubstituteBindingsI``.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.TreeEdge.html#__init__">nltk.parse.chart.TreeEdge.__init__</a></code></div>
     
-    <div><p class="pre">Construct a new edge.  If the edge is incomplete (i.e., if
-``dot&lt;len(rhs)``), then store the bindings as-is.  If the edge
-is complete (i.e., if ``dot==len(rhs)``), then apply the
-bindings to all nonterminals in ``lhs`` and ``rhs``, and then
-clear the bindings.  See ``TreeEdge`` for a description of
-the other arguments.</p></div>
+    <div>Construct a new edge.  If the edge is incomplete (i.e., if
+<tt class="rst-docutils literal">dot&lt;len(rhs)</tt>), then store the bindings as-is.  If the edge
+is complete (i.e., if <tt class="rst-docutils literal"><span class="pre">dot==len(rhs)</span></tt>), then apply the
+bindings to all nonterminals in <tt class="rst-docutils literal">lhs</tt> and <tt class="rst-docutils literal">rhs</tt>, and then
+clear the bindings.  See <tt class="rst-docutils literal">TreeEdge</tt> for a description of
+the other arguments.</div>
   </div>
 </div><div class="basemethod">
   
@@ -327,7 +326,7 @@ the other arguments.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L146">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L146">
       
       (source)
     </a>
@@ -349,7 +348,7 @@ the other arguments.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bindings</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L127">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L127">
       
       (source)
     </a>
@@ -357,7 +356,7 @@ the other arguments.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a copy of this edge's bindings dictionary.</p></div>
+    <div>Return a copy of this edge's bindings dictionary.</div>
   </div>
 </div><div class="basemethod">
   
@@ -371,7 +370,7 @@ the other arguments.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">move_dot_forward</span>(self, new_end, bindings=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L100">
       
       (source)
     </a>
@@ -379,14 +378,9 @@ the other arguments.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.TreeEdge.html#move_dot_forward">nltk.parse.chart.TreeEdge.move_dot_forward</a></code></div>
     
-    <div><p class="pre">:return: A new ``FeatureTreeEdge`` formed from this edge.
-    The new edge's dot position is increased by ``1``,
-    and its end index will be replaced by ``new_end``.
-:rtype: FeatureTreeEdge
-:param new_end: The new end index.
-:type new_end: int
-:param bindings: Bindings for the new edge.
-:type bindings: dict</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new_end:</span>int</td><td class="fieldArgDesc">The new end index.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bindings:</span>dict</td><td class="fieldArgDesc">Bindings for the new edge.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">FeatureTreeEdge</td><td class="fieldArgDesc">A new <tt class="rst-docutils literal">FeatureTreeEdge</tt> formed from this edge.
+The new edge's dot position is increased by <tt class="rst-docutils literal">1</tt>,
+and its end index will be replaced by <tt class="rst-docutils literal">new_end</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -400,7 +394,7 @@ the other arguments.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">next_with_bindings</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L124">
       
       (source)
     </a>
@@ -422,7 +416,7 @@ the other arguments.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">variables</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L133">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L133">
       
       (source)
     </a>
@@ -430,8 +424,7 @@ the other arguments.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The set of variables used by this edge.
-:rtype: set(Variable)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(Variable)</td><td class="fieldArgDesc">The set of variables used by this edge.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -445,7 +438,7 @@ the other arguments.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_bind</span>(self, nt, bindings):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L119">
       
       (source)
     </a>
@@ -467,7 +460,7 @@ the other arguments.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_bindings</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L84">
       
       (source)
     </a>
@@ -489,7 +482,7 @@ the other arguments.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_comparison_key</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L85">
       
       (source)
     </a>
@@ -509,7 +502,7 @@ the other arguments.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

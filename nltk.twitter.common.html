@@ -65,17 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Utility functions for the :module:`twitterclient` module which do not require
-the `twython` library to have been installed.</p></div>
+        <div>Utility functions for the <a href="#id1"><span class="rst-problematic" id="rst-id2">:module:`twitterclient`</span></a> module which do not require
+the <code>twython</code> library to have been installed.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1945">
+        <table class="children sortable" id="id1949">
   
   
   <tr class="function">
@@ -159,7 +159,7 @@ the `twython` library to have been installed.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">extract_fields</span>(tweet, fields):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L23">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L23">
       
       (source)
     </a>
@@ -167,11 +167,7 @@ the `twython` library to have been installed.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extract field values from a full tweet and return them as a list
-
-:param json tweet: The tweet in JSON format
-:param list fields: The fields to be extracted from the tweet
-:rtype: list(str)</p></div>
+    <div>Extract field values from a full tweet and return them as a list<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tweet</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fields</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">json tweet</span></td><td class="fieldArgDesc">The tweet in JSON format</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list fields</span></td><td class="fieldArgDesc">The fields to be extracted from the tweet</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -185,7 +181,7 @@ the `twython` library to have been installed.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_header_field_list</span>(main_fields, entity_type, entity_fields):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L221">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L221">
       
       (source)
     </a>
@@ -207,7 +203,7 @@ the `twython` library to have been installed.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">json2csv</span>(fp, outfile, fields, encoding='utf8', errors='replace', gzip_compress=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L90">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L90">
       
       (source)
     </a>
@@ -215,28 +211,16 @@ the `twython` library to have been installed.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extract selected fields from a file of line-separated JSON tweets and
-write to a file in CSV format.
-
-This utility function allows a file of full tweets to be easily converted
+    <div><p>Extract selected fields from a file of line-separated JSON tweets and
+write to a file in CSV format.</p>
+<p>This utility function allows a file of full tweets to be easily converted
 to a CSV file for easier processing. For example, just TweetIDs or
-just the text content of the Tweets can be extracted.
-
-Additionally, the function allows combinations of fields of other Twitter
-objects (mainly the users, see below).
-
-For Twitter entities (e.g. hashtags of a Tweet), and for geolocation, see
-`json2csv_entities`
-
-:param str infile: The name of the file containing full tweets
-
-:param str outfile: The name of the text file where results should be    written
-
-:param list fields: The list of fields to be extracted. Useful examples    are 'id_str' for the tweetID and 'text' for the text of the tweet. See    &lt;https://dev.twitter.com/overview/api/tweets&gt; for a full list of fields.    e. g.: ['id_str'], ['id', 'text', 'favorite_count', 'retweet_count']    Additionally, it allows IDs from other Twitter objects, e. g.,    ['id', 'text', 'user.id', 'user.followers_count', 'user.friends_count']
-
-:param error: Behaviour for encoding errors, see    https://docs.python.org/3/library/codecs.html#codec-base-classes
-
-:param gzip_compress: if `True`, output files are compressed with gzip</p></div>
+just the text content of the Tweets can be extracted.</p>
+<p>Additionally, the function allows combinations of fields of other Twitter
+objects (mainly the users, see below).</p>
+<p>For Twitter entities (e.g. hashtags of a Tweet), and for geolocation, see
+<code><a href="#json2csv_entities">json2csv_entities</a></code></p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fp</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outfile</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fields</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">errors</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gzip_compress</span></td><td class="fieldArgDesc">if <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, output files are compressed with gzip</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str infile</span></td><td class="fieldArgDesc">The name of the file containing full tweets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str outfile</span></td><td class="fieldArgDesc">The name of the text file where results should be    written</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list fields</span></td><td class="fieldArgDesc">The list of fields to be extracted. Useful examples    are 'id_str' for the tweetID and 'text' for the text of the tweet. See    &lt;<a class="rst-reference external" href="https://dev.twitter.com/overview/api/tweets" target="_top">https://dev.twitter.com/overview/api/tweets</a>&gt; for a full list of fields.    e. g.: ['id_str'], ['id', 'text', 'favorite_count', 'retweet_count']    Additionally, it allows IDs from other Twitter objects, e. g.,    ['id', 'text', 'user.id', 'user.followers_count', 'user.friends_count']</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">error</span></td><td class="fieldArgDesc">Behaviour for encoding errors, see    <a class="rst-reference external" href="https://docs.python.org/3/library/codecs.html#codec-base-classes" target="_top">https://docs.python.org/3/library/codecs.html#codec-base-classes</a></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -250,7 +234,7 @@ For Twitter entities (e.g. hashtags of a Tweet), and for geolocation, see
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">json2csv_entities</span>(tweets_file, outfile, main_fields, entity_type, entity_fields, encoding='utf8', errors='replace', gzip_compress=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L150">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L150">
       
       (source)
     </a>
@@ -258,31 +242,16 @@ For Twitter entities (e.g. hashtags of a Tweet), and for geolocation, see
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extract selected fields from a file of line-separated JSON tweets and
-write to a file in CSV format.
-
-This utility function allows a file of full Tweets to be easily converted
+    <div><p>Extract selected fields from a file of line-separated JSON tweets and
+write to a file in CSV format.</p>
+<p>This utility function allows a file of full Tweets to be easily converted
 to a CSV file for easier processing of Twitter entities. For example, the
-hashtags or media elements of a tweet can be extracted.
-
-It returns one line per entity of a Tweet, e.g. if a tweet has two hashtags
-there will be two lines in the output file, one per hashtag
-
-:param tweets_file: the file-like object containing full Tweets
-
-:param str outfile: The path of the text file where results should be    written
-
-:param list main_fields: The list of fields to be extracted from the main    object, usually the tweet. Useful examples: 'id_str' for the tweetID. See    &lt;https://dev.twitter.com/overview/api/tweets&gt; for a full list of fields.
-e. g.: ['id_str'], ['id', 'text', 'favorite_count', 'retweet_count']
-If `entity_type` is expressed with hierarchy, then it is the list of    fields of the object that corresponds to the key of the entity_type,    (e.g., for entity_type='user.urls', the fields in the main_fields list    belong to the user object; for entity_type='place.bounding_box', the    files in the main_field list belong to the place object of the tweet).
-
-:param list entity_type: The name of the entity: 'hashtags', 'media',    'urls' and 'user_mentions' for the tweet object. For a user object,    this needs to be expressed with a hierarchy: `'user.urls'`. For the    bounding box of the Tweet location, use `'place.bounding_box'`.
-
-:param list entity_fields: The list of fields to be extracted from the    entity. E.g. `['text']` (of the Tweet)
-
-:param error: Behaviour for encoding errors, see    https://docs.python.org/3/library/codecs.html#codec-base-classes
-
-:param gzip_compress: if `True`, ouput files are compressed with gzip</p></div>
+hashtags or media elements of a tweet can be extracted.</p>
+<p>It returns one line per entity of a Tweet, e.g. if a tweet has two hashtags
+there will be two lines in the output file, one per hashtag</p>
+<p>e. g.: ['id_str'], ['id', 'text', 'favorite_count', 'retweet_count']
+If <code>entity_type</code> is expressed with hierarchy, then it is the list of    fields of the object that corresponds to the key of the entity_type,    (e.g., for entity_type='user.urls', the fields in the main_fields list    belong to the user object; for entity_type='place.bounding_box', the    files in the main_field list belong to the place object of the tweet).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tweets_file</span></td><td class="fieldArgDesc">the file-like object containing full Tweets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outfile</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">main_fields</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">entity_type</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">entity_fields</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">errors</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gzip_compress</span></td><td class="fieldArgDesc">if <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, ouput files are compressed with gzip</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str outfile</span></td><td class="fieldArgDesc">The path of the text file where results should be    written</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list main_fields</span></td><td class="fieldArgDesc">The list of fields to be extracted from the main    object, usually the tweet. Useful examples: 'id_str' for the tweetID. See    &lt;<a class="rst-reference external" href="https://dev.twitter.com/overview/api/tweets" target="_top">https://dev.twitter.com/overview/api/tweets</a>&gt; for a full list of fields.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list entity_type</span></td><td class="fieldArgDesc">The name of the entity: 'hashtags', 'media',    'urls' and 'user_mentions' for the tweet object. For a user object,    this needs to be expressed with a hierarchy: <code>'user.urls'</code>. For the    bounding box of the Tweet location, use <code>'place.bounding_box'</code>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list entity_fields</span></td><td class="fieldArgDesc">The list of fields to be extracted from the    entity. E.g. <code>['text']</code> (of the Tweet)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">error</span></td><td class="fieldArgDesc">Behaviour for encoding errors, see    <a class="rst-reference external" href="https://docs.python.org/3/library/codecs.html#codec-base-classes" target="_top">https://docs.python.org/3/library/codecs.html#codec-base-classes</a></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -296,7 +265,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="functionHeader">
     @deprecated('Use open() and csv.writer() directly instead.')<br />
     <span class="py-keyword">def</span> <span class="py-defname">outf_writer_compat</span>(outfile, encoding, errors, gzip_compress=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L135">
       
       (source)
     </a>
@@ -304,7 +273,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Get a CSV writer with optional compression.</p></div>
+    <div>Get a CSV writer with optional compression.</div>
   </div>
 </div><div class="basevariable">
   
@@ -318,7 +287,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="functionHeader">
     
     <span class="py-defname">HIER_SEPARATOR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L20">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L20">
       
       (source)
     </a>
@@ -340,7 +309,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_add_field_to_out</span>(json, field, out):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L42">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L42">
       
       (source)
     </a>
@@ -362,7 +331,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_entity_recursive</span>(json, entity):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L64">
       
       (source)
     </a>
@@ -384,7 +353,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_key_value_composed</span>(field):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L56">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L56">
       
       (source)
     </a>
@@ -406,7 +375,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_is_composed_key</span>(field):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L50">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L50">
       
       (source)
     </a>
@@ -428,7 +397,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_outf_writer</span>(outfile, encoding, errors, gzip_compress=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L141">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L141">
       
       (source)
     </a>
@@ -450,7 +419,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_write_to_file</span>(object_fields, items, entity_fields, writer):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/common.py#L238">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/common.py#L238">
       
       (source)
     </a>
@@ -470,7 +439,7 @@ If `entity_type` is expressed with hierarchy, then it is the list of    fields o
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

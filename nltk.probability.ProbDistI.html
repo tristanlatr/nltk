@@ -65,25 +65,25 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbDistI</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L486" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.probability.CrossValidationProbDist.html">nltk.probability.CrossValidationProbDist</a></code>, <code><a href="nltk.probability.DictionaryProbDist.html">nltk.probability.DictionaryProbDist</a></code>, <code><a href="nltk.probability.HeldoutProbDist.html">nltk.probability.HeldoutProbDist</a></code>, <code><a href="nltk.probability.KneserNeyProbDist.html">nltk.probability.KneserNeyProbDist</a></code>, <code><a href="nltk.probability.LidstoneProbDist.html">nltk.probability.LidstoneProbDist</a></code>, <code><a href="nltk.probability.MLEProbDist.html">nltk.probability.MLEProbDist</a></code>, <code><a href="nltk.probability.MutableProbDist.html">nltk.probability.MutableProbDist</a></code>, <code><a href="nltk.probability.RandomProbDist.html">nltk.probability.RandomProbDist</a></code>, <code><a href="nltk.probability.SimpleGoodTuringProbDist.html">nltk.probability.SimpleGoodTuringProbDist</a></code>, <code><a href="nltk.probability.UniformProbDist.html">nltk.probability.UniformProbDist</a></code>, <code><a href="nltk.probability.WittenBellProbDist.html">nltk.probability.WittenBellProbDist</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbDistI</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L486" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.probability.CrossValidationProbDist.html">nltk.probability.CrossValidationProbDist</a></code>, <code><a href="nltk.probability.DictionaryProbDist.html">nltk.probability.DictionaryProbDist</a></code>, <code><a href="nltk.probability.HeldoutProbDist.html">nltk.probability.HeldoutProbDist</a></code>, <code><a href="nltk.probability.KneserNeyProbDist.html">nltk.probability.KneserNeyProbDist</a></code>, <code><a href="nltk.probability.LidstoneProbDist.html">nltk.probability.LidstoneProbDist</a></code>, <code><a href="nltk.probability.MLEProbDist.html">nltk.probability.MLEProbDist</a></code>, <code><a href="nltk.probability.MutableProbDist.html">nltk.probability.MutableProbDist</a></code>, <code><a href="nltk.probability.RandomProbDist.html">nltk.probability.RandomProbDist</a></code>, <code><a href="nltk.probability.SimpleGoodTuringProbDist.html">nltk.probability.SimpleGoodTuringProbDist</a></code>, <code><a href="nltk.probability.UniformProbDist.html">nltk.probability.UniformProbDist</a></code>, <code><a href="nltk.probability.WittenBellProbDist.html">nltk.probability.WittenBellProbDist</a></code></p>
         <p><a href="classIndex.html#nltk.probability.ProbDistI">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A probability distribution for the outcomes of an experiment.  A
+        <div>A probability distribution for the outcomes of an experiment.  A
 probability distribution specifies how likely it is that an
 experiment will have any given outcome.  For example, a
 probability distribution could be used to predict the probability
 that a token in a document will have a given type.  Formally, a
 probability distribution can be defined as a function mapping from
 samples to nonnegative real numbers, such that the sum of every
-number in the function's range is 1.0.  A ``ProbDist`` is often
+number in the function's range is 1.0.  A <tt class="rst-docutils literal">ProbDist</tt> is often
 used to model the probability distribution of the experiment used
-to generate a frequency distribution.</p></div>
+to generate a frequency distribution.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1131">
+        <table class="children sortable" id="id1135">
   
   
   <tr class="method">
@@ -100,7 +100,7 @@ to generate a frequency distribution.</p></div>
     
     <td>Method</td>
     <td><code><a href="#generate">generate</a></code></td>
-    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
+    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample <tt class="rst-docutils literal">samp</tt> is equal to <tt class="rst-docutils literal">self.prob(samp)</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -120,7 +120,7 @@ to generate a frequency distribution.</p></div>
     
     <td>Method</td>
     <td><code><a href="#samples">samples</a></code></td>
-    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
+    <td><span>Return a list of all samples that have nonzero probabilities. Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -147,7 +147,7 @@ to generate a frequency distribution.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L504">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L504">
       
       (source)
     </a>
@@ -155,7 +155,7 @@ to generate a frequency distribution.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.CrossValidationProbDist.html">nltk.probability.CrossValidationProbDist</a></code>, <code><a href="nltk.probability.DictionaryProbDist.html">nltk.probability.DictionaryProbDist</a></code>, <code><a href="nltk.probability.HeldoutProbDist.html">nltk.probability.HeldoutProbDist</a></code>, <code><a href="nltk.probability.KneserNeyProbDist.html">nltk.probability.KneserNeyProbDist</a></code>, <code><a href="nltk.probability.LidstoneProbDist.html">nltk.probability.LidstoneProbDist</a></code>, <code><a href="nltk.probability.MLEProbDist.html">nltk.probability.MLEProbDist</a></code>, <code><a href="nltk.probability.MutableProbDist.html">nltk.probability.MutableProbDist</a></code>, <code><a href="nltk.probability.RandomProbDist.html">nltk.probability.RandomProbDist</a></code>, <code><a href="nltk.probability.SimpleGoodTuringProbDist.html">nltk.probability.SimpleGoodTuringProbDist</a></code>, <code><a href="nltk.probability.UniformProbDist.html">nltk.probability.UniformProbDist</a></code>, <code><a href="nltk.probability.WittenBellProbDist.html">nltk.probability.WittenBellProbDist</a></code></div>
     
-    <div><p class="pre">Classes inheriting from ProbDistI should implement __init__.</p></div>
+    <div>Classes inheriting from ProbDistI should implement __init__.</div>
   </div>
 </div><div class="basemethod">
   
@@ -169,7 +169,7 @@ to generate a frequency distribution.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">discount</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L555">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L555">
       
       (source)
     </a>
@@ -177,9 +177,7 @@ to generate a frequency distribution.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.CrossValidationProbDist.html">nltk.probability.CrossValidationProbDist</a></code>, <code><a href="nltk.probability.HeldoutProbDist.html">nltk.probability.HeldoutProbDist</a></code>, <code><a href="nltk.probability.KneserNeyProbDist.html">nltk.probability.KneserNeyProbDist</a></code>, <code><a href="nltk.probability.LidstoneProbDist.html">nltk.probability.LidstoneProbDist</a></code>, <code><a href="nltk.probability.SimpleGoodTuringProbDist.html">nltk.probability.SimpleGoodTuringProbDist</a></code>, <code><a href="nltk.probability.WittenBellProbDist.html">nltk.probability.WittenBellProbDist</a></code></div>
     
-    <div><p class="pre">Return the ratio by which counts are discounted on average: c*/c
-
-:rtype: float</p></div>
+    <div>Return the ratio by which counts are discounted on average: c*/c<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -193,7 +191,7 @@ to generate a frequency distribution.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">generate</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L565">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L565">
       
       (source)
     </a>
@@ -201,9 +199,9 @@ to generate a frequency distribution.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a randomly selected sample from this probability distribution.
-The probability of returning each sample ``samp`` is equal to
-``self.prob(samp)``.</p></div>
+    <div>Return a randomly selected sample from this probability distribution.
+The probability of returning each sample <tt class="rst-docutils literal">samp</tt> is equal to
+<tt class="rst-docutils literal">self.prob(samp)</tt>.</div>
   </div>
 </div><div class="basemethod">
   
@@ -217,7 +215,7 @@ The probability of returning each sample ``samp`` is equal to
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">logprob</span>(self, sample):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L522">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L522">
       
       (source)
     </a>
@@ -225,12 +223,8 @@ The probability of returning each sample ``samp`` is equal to
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.DictionaryProbDist.html">nltk.probability.DictionaryProbDist</a></code>, <code><a href="nltk.probability.MutableProbDist.html">nltk.probability.MutableProbDist</a></code></div>
     
-    <div><p class="pre">Return the base 2 logarithm of the probability for a given sample.
-
-:param sample: The sample whose probability
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+    <div>Return the base 2 logarithm of the probability for a given sample.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">The sample whose probability
+should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -244,7 +238,7 @@ The probability of returning each sample ``samp`` is equal to
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">max</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L535">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L535">
       
       (source)
     </a>
@@ -252,11 +246,9 @@ The probability of returning each sample ``samp`` is equal to
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.DictionaryProbDist.html">nltk.probability.DictionaryProbDist</a></code>, <code><a href="nltk.probability.HeldoutProbDist.html">nltk.probability.HeldoutProbDist</a></code>, <code><a href="nltk.probability.KneserNeyProbDist.html">nltk.probability.KneserNeyProbDist</a></code>, <code><a href="nltk.probability.LidstoneProbDist.html">nltk.probability.LidstoneProbDist</a></code>, <code><a href="nltk.probability.MLEProbDist.html">nltk.probability.MLEProbDist</a></code>, <code><a href="nltk.probability.MutableProbDist.html">nltk.probability.MutableProbDist</a></code>, <code><a href="nltk.probability.RandomProbDist.html">nltk.probability.RandomProbDist</a></code>, <code><a href="nltk.probability.SimpleGoodTuringProbDist.html">nltk.probability.SimpleGoodTuringProbDist</a></code>, <code><a href="nltk.probability.UniformProbDist.html">nltk.probability.UniformProbDist</a></code>, <code><a href="nltk.probability.WittenBellProbDist.html">nltk.probability.WittenBellProbDist</a></code></div>
     
-    <div><p class="pre">Return the sample with the greatest probability.  If two or
+    <div>Return the sample with the greatest probability.  If two or
 more samples have the same probability, return one of them;
-which sample is returned is undefined.
-
-:rtype: any</p></div>
+which sample is returned is undefined.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">any</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -270,7 +262,7 @@ which sample is returned is undefined.
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self, sample):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L510">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L510">
       
       (source)
     </a>
@@ -278,13 +270,9 @@ which sample is returned is undefined.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.CrossValidationProbDist.html">nltk.probability.CrossValidationProbDist</a></code>, <code><a href="nltk.probability.DictionaryProbDist.html">nltk.probability.DictionaryProbDist</a></code>, <code><a href="nltk.probability.HeldoutProbDist.html">nltk.probability.HeldoutProbDist</a></code>, <code><a href="nltk.probability.KneserNeyProbDist.html">nltk.probability.KneserNeyProbDist</a></code>, <code><a href="nltk.probability.LidstoneProbDist.html">nltk.probability.LidstoneProbDist</a></code>, <code><a href="nltk.probability.MLEProbDist.html">nltk.probability.MLEProbDist</a></code>, <code><a href="nltk.probability.MutableProbDist.html">nltk.probability.MutableProbDist</a></code>, <code><a href="nltk.probability.RandomProbDist.html">nltk.probability.RandomProbDist</a></code>, <code><a href="nltk.probability.SimpleGoodTuringProbDist.html">nltk.probability.SimpleGoodTuringProbDist</a></code>, <code><a href="nltk.probability.UniformProbDist.html">nltk.probability.UniformProbDist</a></code>, <code><a href="nltk.probability.WittenBellProbDist.html">nltk.probability.WittenBellProbDist</a></code></div>
     
-    <div><p class="pre">Return the probability for a given sample.  Probabilities
-are always real numbers in the range [0, 1].
-
-:param sample: The sample whose probability
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+    <div>Return the probability for a given sample.  Probabilities
+are always real numbers in the range [0, 1].<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">The sample whose probability
+should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -298,7 +286,7 @@ are always real numbers in the range [0, 1].
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">samples</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L545">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L545">
       
       (source)
     </a>
@@ -306,10 +294,8 @@ are always real numbers in the range [0, 1].
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.CrossValidationProbDist.html">nltk.probability.CrossValidationProbDist</a></code>, <code><a href="nltk.probability.DictionaryProbDist.html">nltk.probability.DictionaryProbDist</a></code>, <code><a href="nltk.probability.HeldoutProbDist.html">nltk.probability.HeldoutProbDist</a></code>, <code><a href="nltk.probability.KneserNeyProbDist.html">nltk.probability.KneserNeyProbDist</a></code>, <code><a href="nltk.probability.LidstoneProbDist.html">nltk.probability.LidstoneProbDist</a></code>, <code><a href="nltk.probability.MLEProbDist.html">nltk.probability.MLEProbDist</a></code>, <code><a href="nltk.probability.MutableProbDist.html">nltk.probability.MutableProbDist</a></code>, <code><a href="nltk.probability.RandomProbDist.html">nltk.probability.RandomProbDist</a></code>, <code><a href="nltk.probability.SimpleGoodTuringProbDist.html">nltk.probability.SimpleGoodTuringProbDist</a></code>, <code><a href="nltk.probability.UniformProbDist.html">nltk.probability.UniformProbDist</a></code>, <code><a href="nltk.probability.WittenBellProbDist.html">nltk.probability.WittenBellProbDist</a></code></div>
     
-    <div><p class="pre">Return a list of all samples that have nonzero probabilities.
-Use ``prob`` to find the probability of each sample.
-
-:rtype: list</p></div>
+    <div>Return a list of all samples that have nonzero probabilities.
+Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -323,7 +309,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">SUM_TO_ONE</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L500">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L500">
       
       (source)
     </a>
@@ -331,8 +317,8 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.CrossValidationProbDist.html">nltk.probability.CrossValidationProbDist</a></code>, <code><a href="nltk.probability.HeldoutProbDist.html">nltk.probability.HeldoutProbDist</a></code>, <code><a href="nltk.probability.LidstoneProbDist.html">nltk.probability.LidstoneProbDist</a></code>, <code><a href="nltk.probability.SimpleGoodTuringProbDist.html">nltk.probability.SimpleGoodTuringProbDist</a></code></div>
     
-    <div><p class="pre">True if the probabilities of the samples in this probability
-distribution will always sum to one.</p></div>
+    <div>True if the probabilities of the samples in this probability
+distribution will always sum to one.</div>
   </div>
 </div>
 
@@ -344,7 +330,7 @@ distribution will always sum to one.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

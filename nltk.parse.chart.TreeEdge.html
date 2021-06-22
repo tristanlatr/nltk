@@ -65,35 +65,36 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreeEdge</span>(<a href="nltk.parse.chart.EdgeI.html" title="nltk.parse.chart.EdgeI">EdgeI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L228" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.featurechart.FeatureTreeEdge.html">nltk.parse.featurechart.FeatureTreeEdge</a></code>, <code><a href="nltk.parse.pchart.ProbabilisticTreeEdge.html">nltk.parse.pchart.ProbabilisticTreeEdge</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreeEdge</span>(<a href="nltk.parse.chart.EdgeI.html" title="nltk.parse.chart.EdgeI">EdgeI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L228" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.featurechart.FeatureTreeEdge.html">nltk.parse.featurechart.FeatureTreeEdge</a></code>, <code><a href="nltk.parse.pchart.ProbabilisticTreeEdge.html">nltk.parse.pchart.ProbabilisticTreeEdge</a></code></p>
         <p><a href="classIndex.html#nltk.parse.chart.TreeEdge">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An edge that records the fact that a tree is (partially)
-consistent with the sentence.  A tree edge consists of:
-
-- A span, indicating what part of the sentence is
-  consistent with the hypothesized tree.
-- A left-hand side, specifying the hypothesized tree's node
-  value.
-- A right-hand side, specifying the hypothesized tree's
-  children.  Each element of the right-hand side is either a
-  terminal, specifying a token with that terminal as its leaf
-  value; or a nonterminal, specifying a subtree with that
-  nonterminal's symbol as its node value.
-- A dot position, indicating which children are consistent
-  with part of the sentence.  In particular, if ``dot`` is the
-  dot position, ``rhs`` is the right-hand size, ``(start,end)``
-  is the span, and ``sentence`` is the list of tokens in the
-  sentence, then ``tokens[start:end]`` can be spanned by the
-  children specified by ``rhs[:dot]``.
-
-For more information about edges, see the ``EdgeI`` interface.</p></div>
+        <div><p>An edge that records the fact that a tree is (partially)
+consistent with the sentence.  A tree edge consists of:</p>
+<ul class="rst-simple">
+<li>A span, indicating what part of the sentence is
+consistent with the hypothesized tree.</li>
+<li>A left-hand side, specifying the hypothesized tree's node
+value.</li>
+<li>A right-hand side, specifying the hypothesized tree's
+children.  Each element of the right-hand side is either a
+terminal, specifying a token with that terminal as its leaf
+value; or a nonterminal, specifying a subtree with that
+nonterminal's symbol as its node value.</li>
+<li>A dot position, indicating which children are consistent
+with part of the sentence.  In particular, if <tt class="rst-docutils literal">dot</tt> is the
+dot position, <tt class="rst-docutils literal">rhs</tt> is the right-hand size, <tt class="rst-docutils literal">(start,end)</tt>
+is the span, and <tt class="rst-docutils literal">sentence</tt> is the list of tokens in the
+sentence, then <tt class="rst-docutils literal">tokens[start:end]</tt> can be spanned by the
+children specified by <tt class="rst-docutils literal"><span class="pre">rhs[:dot]</span></tt>.</li>
+</ul>
+<p>For more information about edges, see the <tt class="rst-docutils literal">EdgeI</tt> interface.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id842">
+        <table class="children sortable" id="id845">
   
   
   <tr class="staticmethod">
@@ -105,7 +106,7 @@ For more information about edges, see the ``EdgeI`` interface.</p></div>
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Construct a new ``TreeEdge``.</span></td>
+    <td><span>Construct a new <tt class="rst-docutils literal">TreeEdge</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -150,7 +151,7 @@ For more information about edges, see the ``EdgeI`` interface.</p></div>
     
     <td>Method</td>
     <td><code><a href="#move_dot_forward">move_dot_forward</a></code></td>
-    <td><span>Return a new ``TreeEdge`` formed from this edge. The new edge's dot position is increased by ``1``, and its end index will be replaced by ``new_end``.</span></td>
+    <td><span>Return a new <tt class="rst-docutils literal">TreeEdge</tt> formed from this edge. The new edge's dot position is increased by <tt class="rst-docutils literal">1</tt>, and its end index will be replaced by <tt class="rst-docutils literal">new_end</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -165,7 +166,7 @@ For more information about edges, see the ``EdgeI`` interface.</p></div>
     
     <td>Method</td>
     <td><code><a href="#span">span</a></code></td>
-    <td><span>Return a tuple ``(s, e)``, where ``tokens[s:e]`` is the portion of the sentence that is consistent with this edge's structure.</span></td>
+    <td><span>Return a tuple <tt class="rst-docutils literal">(s, e)</tt>, where <tt class="rst-docutils literal">tokens[s:e]</tt> is the portion of the sentence that is consistent with this edge's structure.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -202,7 +203,7 @@ For more information about edges, see the ``EdgeI`` interface.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.EdgeI.html">EdgeI</a></code>:
           </p>
-          <table class="children sortable" id="id843">
+          <table class="children sortable" id="id846">
   
   
   <tr class="basemethod">
@@ -251,7 +252,7 @@ For more information about edges, see the ``EdgeI`` interface.</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">from_production</span>(production, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L281">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L281">
       
       (source)
     </a>
@@ -259,12 +260,10 @@ For more information about edges, see the ``EdgeI`` interface.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.featurechart.FeatureTreeEdge.html">nltk.parse.featurechart.FeatureTreeEdge</a></code>, <code><a href="nltk.parse.pchart.ProbabilisticTreeEdge.html">nltk.parse.pchart.ProbabilisticTreeEdge</a></code></div>
     
-    <div><p class="pre">Return a new ``TreeEdge`` formed from the given production.
+    <div>Return a new <tt class="rst-docutils literal">TreeEdge</tt> formed from the given production.
 The new edge's left-hand side and right-hand side will
-be taken from ``production``; its span will be
-``(index,index)``; and its dot position will be ``0``.
-
-:rtype: TreeEdge</p></div>
+be taken from <tt class="rst-docutils literal">production</tt>; its span will be
+<tt class="rst-docutils literal">(index,index)</tt>; and its dot position will be <tt class="rst-docutils literal">0</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">TreeEdge</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -278,7 +277,7 @@ be taken from ``production``; its span will be
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, span, lhs, rhs, dot=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L252">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L252">
       
       (source)
     </a>
@@ -286,25 +285,16 @@ be taken from ``production``; its span will be
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#__init__">nltk.parse.chart.EdgeI.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.featurechart.FeatureTreeEdge.html">nltk.parse.featurechart.FeatureTreeEdge</a></code>, <code><a href="nltk.parse.pchart.ProbabilisticTreeEdge.html">nltk.parse.pchart.ProbabilisticTreeEdge</a></code></div>
     
-    <div><p class="pre">Construct a new ``TreeEdge``.
-
-:type span: tuple(int, int)
-:param span: A tuple ``(s, e)``, where ``tokens[s:e]`` is the
-    portion of the sentence that is consistent with the new
-    edge's structure.
-:type lhs: Nonterminal
-:param lhs: The new edge's left-hand side, specifying the
-    hypothesized tree's node value.
-:type rhs: list(Nonterminal and str)
-:param rhs: The new edge's right-hand side, specifying the
-    hypothesized tree's children.
-:type dot: int
-:param dot: The position of the new edge's dot.  This position
-    specifies what prefix of the production's right hand side
-    is consistent with the text.  In particular, if
-    ``sentence`` is the list of tokens in the sentence, then
-    ``okens[span[0]:span[1]]`` can be spanned by the
-    children specified by ``rhs[:dot]``.</p></div>
+    <div>Construct a new <tt class="rst-docutils literal">TreeEdge</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">span:</span>tuple(int, int)</td><td class="fieldArgDesc">A tuple <tt class="rst-docutils literal">(s, e)</tt>, where <tt class="rst-docutils literal">tokens[s:e]</tt> is the
+portion of the sentence that is consistent with the new
+edge's structure.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lhs:</span>Nonterminal</td><td class="fieldArgDesc">The new edge's left-hand side, specifying the
+hypothesized tree's node value.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rhs:</span>list(Nonterminal and str)</td><td class="fieldArgDesc">The new edge's right-hand side, specifying the
+hypothesized tree's children.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dot:</span>int</td><td class="fieldArgDesc">The position of the new edge's dot.  This position
+specifies what prefix of the production's right hand side
+is consistent with the text.  In particular, if
+<tt class="rst-docutils literal">sentence</tt> is the list of tokens in the sentence, then
+<tt class="rst-docutils literal"><span class="pre">okens[span[0]:span[1]]</span></tt> can be spanned by the
+children specified by <tt class="rst-docutils literal"><span class="pre">rhs[:dot]</span></tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -318,7 +308,7 @@ be taken from ``production``; its span will be
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L359">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L359">
       
       (source)
     </a>
@@ -340,7 +330,7 @@ be taken from ``production``; its span will be
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L347">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L347">
       
       (source)
     </a>
@@ -362,7 +352,7 @@ be taken from ``production``; its span will be
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dot</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L331">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L331">
       
       (source)
     </a>
@@ -370,12 +360,10 @@ be taken from ``production``; its span will be
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#dot">nltk.parse.chart.EdgeI.dot</a></code></div>
     
-    <div><p class="pre">Return this edge's dot position, which indicates how much of
+    <div>Return this edge's dot position, which indicates how much of
 the hypothesized structure is consistent with the
-sentence.  In particular, ``self.rhs[:dot]`` is consistent
-with ``tokens[self.start():self.end()]``.
-
-:rtype: int</p></div>
+sentence.  In particular, <tt class="rst-docutils literal"><span class="pre">self.rhs[:dot]</span></tt> is consistent
+with <tt class="rst-docutils literal"><span class="pre">tokens[self.start():self.end()]</span></tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -389,7 +377,7 @@ with ``tokens[self.start():self.end()]``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">end</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L322">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L322">
       
       (source)
     </a>
@@ -397,9 +385,7 @@ with ``tokens[self.start():self.end()]``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#end">nltk.parse.chart.EdgeI.end</a></code></div>
     
-    <div><p class="pre">Return the end index of this edge's span.
-
-:rtype: int</p></div>
+    <div>Return the end index of this edge's span.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -413,7 +399,7 @@ with ``tokens[self.start():self.end()]``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_complete</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L334">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L334">
       
       (source)
     </a>
@@ -421,10 +407,8 @@ with ``tokens[self.start():self.end()]``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#is_complete">nltk.parse.chart.EdgeI.is_complete</a></code></div>
     
-    <div><p class="pre">Return True if this edge's structure is fully consistent
-with the text.
-
-:rtype: bool</p></div>
+    <div>Return True if this edge's structure is fully consistent
+with the text.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -438,7 +422,7 @@ with the text.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_incomplete</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L337">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L337">
       
       (source)
     </a>
@@ -446,10 +430,8 @@ with the text.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#is_incomplete">nltk.parse.chart.EdgeI.is_incomplete</a></code></div>
     
-    <div><p class="pre">Return True if this edge's structure is partially consistent
-with the text.
-
-:rtype: bool</p></div>
+    <div>Return True if this edge's structure is partially consistent
+with the text.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -463,7 +445,7 @@ with the text.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">length</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L325">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L325">
       
       (source)
     </a>
@@ -471,9 +453,7 @@ with the text.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#length">nltk.parse.chart.EdgeI.length</a></code></div>
     
-    <div><p class="pre">Return the length of this edge's span.
-
-:rtype: int</p></div>
+    <div>Return the length of this edge's span.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -487,7 +467,7 @@ with the text.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">lhs</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L313">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L313">
       
       (source)
     </a>
@@ -495,11 +475,9 @@ with the text.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#lhs">nltk.parse.chart.EdgeI.lhs</a></code></div>
     
-    <div><p class="pre">Return this edge's left-hand side, which specifies what kind
-of structure is hypothesized by this edge.
-
-:see: ``TreeEdge`` and ``LeafEdge`` for a description of
-    the left-hand side values for each edge type.</p></div>
+    <div>Return this edge's left-hand side, which specifies what kind
+of structure is hypothesized by this edge.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">TreeEdge</tt> and <tt class="rst-docutils literal">LeafEdge</tt> for a description of
+the left-hand side values for each edge type.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -513,7 +491,7 @@ of structure is hypothesized by this edge.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">move_dot_forward</span>(self, new_end):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L295">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L295">
       
       (source)
     </a>
@@ -521,13 +499,9 @@ of structure is hypothesized by this edge.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.featurechart.FeatureTreeEdge.html">nltk.parse.featurechart.FeatureTreeEdge</a></code></div>
     
-    <div><p class="pre">Return a new ``TreeEdge`` formed from this edge.
-The new edge's dot position is increased by ``1``,
-and its end index will be replaced by ``new_end``.
-
-:param new_end: The new end index.
-:type new_end: int
-:rtype: TreeEdge</p></div>
+    <div>Return a new <tt class="rst-docutils literal">TreeEdge</tt> formed from this edge.
+The new edge's dot position is increased by <tt class="rst-docutils literal">1</tt>,
+and its end index will be replaced by <tt class="rst-docutils literal">new_end</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new_end:</span>int</td><td class="fieldArgDesc">The new end index.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">TreeEdge</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -541,7 +515,7 @@ and its end index will be replaced by ``new_end``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">nextsym</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L340">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L340">
       
       (source)
     </a>
@@ -549,10 +523,8 @@ and its end index will be replaced by ``new_end``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#nextsym">nltk.parse.chart.EdgeI.nextsym</a></code></div>
     
-    <div><p class="pre">Return the element of this edge's right-hand side that
-immediately follows its dot.
-
-:rtype: Nonterminal or terminal or None</p></div>
+    <div>Return the element of this edge's right-hand side that
+immediately follows its dot.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Nonterminal or terminal or None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -566,7 +538,7 @@ immediately follows its dot.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">rhs</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L328">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L328">
       
       (source)
     </a>
@@ -574,11 +546,9 @@ immediately follows its dot.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#rhs">nltk.parse.chart.EdgeI.rhs</a></code></div>
     
-    <div><p class="pre">Return this edge's right-hand side, which specifies
-the content of the structure hypothesized by this edge.
-
-:see: ``TreeEdge`` and ``LeafEdge`` for a description of
-    the right-hand side values for each edge type.</p></div>
+    <div>Return this edge's right-hand side, which specifies
+the content of the structure hypothesized by this edge.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">TreeEdge</tt> and <tt class="rst-docutils literal">LeafEdge</tt> for a description of
+the right-hand side values for each edge type.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -592,7 +562,7 @@ the content of the structure hypothesized by this edge.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">span</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L316">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L316">
       
       (source)
     </a>
@@ -600,11 +570,9 @@ the content of the structure hypothesized by this edge.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#span">nltk.parse.chart.EdgeI.span</a></code></div>
     
-    <div><p class="pre">Return a tuple ``(s, e)``, where ``tokens[s:e]`` is the
+    <div>Return a tuple <tt class="rst-docutils literal">(s, e)</tt>, where <tt class="rst-docutils literal">tokens[s:e]</tt> is the
 portion of the sentence that is consistent with this
-edge's structure.
-
-:rtype: tuple(int, int)</p></div>
+edge's structure.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">tuple(int, int)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -618,7 +586,7 @@ edge's structure.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">start</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L319">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L319">
       
       (source)
     </a>
@@ -626,9 +594,7 @@ edge's structure.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.EdgeI.html#start">nltk.parse.chart.EdgeI.start</a></code></div>
     
-    <div><p class="pre">Return the start index of this edge's span.
-
-:rtype: int</p></div>
+    <div>Return the start index of this edge's span.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -642,7 +608,7 @@ edge's structure.
   <div class="functionHeader">
     
     <span class="py-defname">_comparison_key</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L279">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L279">
       
       (source)
     </a>
@@ -664,7 +630,7 @@ edge's structure.
   <div class="functionHeader">
     
     <span class="py-defname">_dot</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L278">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L278">
       
       (source)
     </a>
@@ -686,7 +652,7 @@ edge's structure.
   <div class="functionHeader">
     
     <span class="py-defname">_lhs</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L275">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L275">
       
       (source)
     </a>
@@ -708,7 +674,7 @@ edge's structure.
   <div class="functionHeader">
     
     <span class="py-defname">_rhs</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L277">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L277">
       
       (source)
     </a>
@@ -730,7 +696,7 @@ edge's structure.
   <div class="functionHeader">
     
     <span class="py-defname">_span</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L274">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L274">
       
       (source)
     </a>
@@ -750,7 +716,7 @@ edge's structure.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

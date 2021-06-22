@@ -65,60 +65,54 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">BottomUpProbabilisticChartParser</span>(<a href="nltk.parse.api.ParserI.html" title="nltk.parse.api.ParserI">ParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L157" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.pchart.InsideChartParser.html">nltk.parse.pchart.InsideChartParser</a></code>, <code><a href="nltk.parse.pchart.LongestChartParser.html">nltk.parse.pchart.LongestChartParser</a></code>, <code><a href="nltk.parse.pchart.RandomChartParser.html">nltk.parse.pchart.RandomChartParser</a></code>, <code><a href="nltk.parse.pchart.UnsortedChartParser.html">nltk.parse.pchart.UnsortedChartParser</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BottomUpProbabilisticChartParser</span>(<a href="nltk.parse.api.ParserI.html" title="nltk.parse.api.ParserI">ParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L157" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.pchart.InsideChartParser.html">nltk.parse.pchart.InsideChartParser</a></code>, <code><a href="nltk.parse.pchart.LongestChartParser.html">nltk.parse.pchart.LongestChartParser</a></code>, <code><a href="nltk.parse.pchart.RandomChartParser.html">nltk.parse.pchart.RandomChartParser</a></code>, <code><a href="nltk.parse.pchart.UnsortedChartParser.html">nltk.parse.pchart.UnsortedChartParser</a></code></p>
         <p><a href="classIndex.html#nltk.parse.pchart.BottomUpProbabilisticChartParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract bottom-up parser for ``PCFG`` grammars that uses a ``Chart`` to
-record partial results.  ``BottomUpProbabilisticChartParser`` maintains
+        <div><p>An abstract bottom-up parser for <tt class="rst-docutils literal">PCFG</tt> grammars that uses a <tt class="rst-docutils literal">Chart</tt> to
+record partial results.  <tt class="rst-docutils literal">BottomUpProbabilisticChartParser</tt> maintains
 a queue of edges that can be added to the chart.  This queue is
 initialized with edges for each token in the text that is being
-parsed.  ``BottomUpProbabilisticChartParser`` inserts these edges into
+parsed.  <tt class="rst-docutils literal">BottomUpProbabilisticChartParser</tt> inserts these edges into
 the chart one at a time, starting with the most likely edges, and
 proceeding to less likely edges.  For each edge that is added to
 the chart, it may become possible to insert additional edges into
 the chart; these are added to the queue.  This process continues
 until enough complete parses have been generated, or until the
-queue is empty.
-
-The sorting order for the queue is not specified by
-``BottomUpProbabilisticChartParser``.  Different sorting orders will
+queue is empty.</p>
+<p>The sorting order for the queue is not specified by
+<tt class="rst-docutils literal">BottomUpProbabilisticChartParser</tt>.  Different sorting orders will
 result in different search strategies.  The sorting order for the
-queue is defined by the method ``sort_queue``; subclasses are required
-to provide a definition for this method.
-
-:type _grammar: PCFG
-:ivar _grammar: The grammar used to parse sentences.
-:type _trace: int
-:ivar _trace: The level of tracing output that should be generated
-    when parsing a text.</p></div>
+queue is defined by the method <tt class="rst-docutils literal">sort_queue</tt>; subclasses are required
+to provide a definition for this method.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1077">
+        <table class="children sortable" id="id1081">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new ``BottomUpProbabilisticChartParser``, that uses ``grammar`` to parse texts.</span></td>
+    <td><span>Create a new <tt class="rst-docutils literal">BottomUpProbabilisticChartParser</tt>, that uses <tt class="rst-docutils literal">grammar</tt> to parse texts.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#sort_queue">sort_queue</a></code></td>
-    <td><span>Sort the given queue of ``Edge`` objects, placing the edge that should be tried first at the beginning of the queue.  This method will be called after each ``Edge`` is added to the queue.</span></td>
+    <td><span>Sort the given queue of <tt class="rst-docutils literal">Edge</tt> objects, placing the edge that should be tried first at the beginning of the queue.  This method will be called after each <tt class="rst-docutils literal">Edge</tt> is added to the queue.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -143,36 +137,37 @@ to provide a definition for this method.
     
     <td>Instance Variable</td>
     <td><code><a href="#_grammar">_grammar</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The grammar used to parse sentences.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_trace">_trace</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The level of tracing output that should be generated
+when parsing a text.</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code>:
           </p>
-          <table class="children sortable" id="id1078">
+          <table class="children sortable" id="id1082">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_sents">parse_sents</a></code></td>
-    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.parse()</tt> to each element of <tt class="rst-docutils literal">sents</tt>. :rtype: iter(iter(Tree))</span></td>
   </tr>
 </table>
           
@@ -194,7 +189,7 @@ to provide a definition for this method.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, grammar, beam_size=0, trace=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L184">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L184">
       
       (source)
     </a>
@@ -202,18 +197,11 @@ to provide a definition for this method.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a new ``BottomUpProbabilisticChartParser``, that uses
-``grammar`` to parse texts.
-
-:type grammar: PCFG
-:param grammar: The grammar used to parse texts.
-:type beam_size: int
-:param beam_size: The maximum length for the parser's edge queue.
-:type trace: int
-:param trace: The level of tracing that should be used when
-    parsing a text.  ``0`` will generate no tracing output;
-    and higher numbers will produce more verbose tracing
-    output.</p></div>
+    <div>Create a new <tt class="rst-docutils literal">BottomUpProbabilisticChartParser</tt>, that uses
+<tt class="rst-docutils literal">grammar</tt> to parse texts.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar:</span>PCFG</td><td class="fieldArgDesc">The grammar used to parse texts.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beam_size:</span>int</td><td class="fieldArgDesc">The maximum length for the parser's edge queue.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace:</span>int</td><td class="fieldArgDesc">The level of tracing that should be used when
+parsing a text.  <tt class="rst-docutils literal">0</tt> will generate no tracing output;
+and higher numbers will produce more verbose tracing
+output.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -227,7 +215,7 @@ to provide a definition for this method.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">grammar</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L205">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L205">
       
       (source)
     </a>
@@ -235,7 +223,7 @@ to provide a definition for this method.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.api.ParserI.html#grammar">nltk.parse.api.ParserI.grammar</a></code></div>
     
-    <div><p class="pre">:return: The grammar used by this parser.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">The grammar used by this parser.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -249,7 +237,7 @@ to provide a definition for this method.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L222">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L222">
       
       (source)
     </a>
@@ -257,12 +245,7 @@ to provide a definition for this method.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.api.ParserI.html#parse">nltk.parse.api.ParserI.parse</a></code></div>
     
-    <div><p class="pre">:return: An iterator that generates parse trees for the sentence.
-When possible this list is sorted from most likely to least likely.
-
-:param sent: The sentence to be parsed
-:type sent: list(str)
-:rtype: iter(Tree)</p></div>
+    <div>When possible this list is sorted from most likely to least likely.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent:</span>list(str)</td><td class="fieldArgDesc">The sentence to be parsed</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(Tree)</td><td class="fieldArgDesc">An iterator that generates parse trees for the sentence.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -276,7 +259,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sort_queue</span>(self, queue, chart):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L301">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L301">
       
       (source)
     </a>
@@ -284,19 +267,13 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.pchart.InsideChartParser.html">nltk.parse.pchart.InsideChartParser</a></code>, <code><a href="nltk.parse.pchart.LongestChartParser.html">nltk.parse.pchart.LongestChartParser</a></code>, <code><a href="nltk.parse.pchart.RandomChartParser.html">nltk.parse.pchart.RandomChartParser</a></code>, <code><a href="nltk.parse.pchart.UnsortedChartParser.html">nltk.parse.pchart.UnsortedChartParser</a></code></div>
     
-    <div><p class="pre">Sort the given queue of ``Edge`` objects, placing the edge that should
+    <div>Sort the given queue of <tt class="rst-docutils literal">Edge</tt> objects, placing the edge that should
 be tried first at the beginning of the queue.  This method
-will be called after each ``Edge`` is added to the queue.
-
-:param queue: The queue of ``Edge`` objects to sort.  Each edge in
-    this queue is an edge that could be added to the chart by
-    the fundamental rule; but that has not yet been added.
-:type queue: list(Edge)
-:param chart: The chart being used to parse the text.  This
-    chart can be used to provide extra information for sorting
-    the queue.
-:type chart: Chart
-:rtype: None</p></div>
+will be called after each <tt class="rst-docutils literal">Edge</tt> is added to the queue.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">queue:</span>list(Edge)</td><td class="fieldArgDesc">The queue of <tt class="rst-docutils literal">Edge</tt> objects to sort.  Each edge in
+this queue is an edge that could be added to the chart by
+the fundamental rule; but that has not yet been added.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart:</span>Chart</td><td class="fieldArgDesc">The chart being used to parse the text.  This
+chart can be used to provide extra information for sorting
+the queue.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -310,7 +287,7 @@ will be called after each ``Edge`` is added to the queue.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">trace</span>(self, trace=2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L208">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L208">
       
       (source)
     </a>
@@ -318,14 +295,10 @@ will be called after each ``Edge`` is added to the queue.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Set the level of tracing output that should be generated when
-parsing a text.
-
-:type trace: int
-:param trace: The trace level.  A trace level of ``0`` will
-    generate no tracing output; and higher trace levels will
-    produce more verbose tracing output.
-:rtype: None</p></div>
+    <div>Set the level of tracing output that should be generated when
+parsing a text.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace:</span>int</td><td class="fieldArgDesc">The trace level.  A trace level of <tt class="rst-docutils literal">0</tt> will
+generate no tracing output; and higher trace levels will
+produce more verbose tracing output.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -339,7 +312,7 @@ parsing a text.
   <div class="functionHeader">
     
     <span class="py-defname">beam_size</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L202">
       
       (source)
     </a>
@@ -361,7 +334,7 @@ parsing a text.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_prune</span>(self, queue, chart):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L319">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L319">
       
       (source)
     </a>
@@ -369,7 +342,7 @@ parsing a text.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Discard items in the queue if the queue is longer than the beam.</p></div>
+    <div>Discard items in the queue if the queue is longer than the beam.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -383,7 +356,7 @@ parsing a text.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_setprob</span>(self, tree, prod_probs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L279">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L279">
       
       (source)
     </a>
@@ -404,8 +377,8 @@ parsing a text.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_grammar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L201">
+    <span class="py-defname">_grammar</span>: PCFG =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L177">
       
       (source)
     </a>
@@ -413,7 +386,7 @@ parsing a text.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The grammar used to parse sentences.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -426,8 +399,8 @@ parsing a text.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_trace</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L203">
+    <span class="py-defname">_trace</span>: int =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L179">
       
       (source)
     </a>
@@ -435,7 +408,8 @@ parsing a text.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The level of tracing output that should be generated
+when parsing a text.</div>
   </div>
 </div>
 
@@ -447,7 +421,7 @@ parsing a text.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

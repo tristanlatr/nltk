@@ -65,39 +65,40 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">FreqDist</span>(<a href="https://docs.python.org/3/library/collections.html#collections.Counter" title="collections.Counter">Counter</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L59" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">FreqDist</span>(<a href="https://docs.python.org/3/library/collections.html#collections.Counter" title="collections.Counter">Counter</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L59" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.FreqDist">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A frequency distribution for the outcomes of an experiment.  A
+        <div><p>A frequency distribution for the outcomes of an experiment.  A
 frequency distribution records the number of times each outcome of
 an experiment has occurred.  For example, a frequency distribution
 could be used to record the frequency of each word type in a
 document.  Formally, a frequency distribution can be defined as a
 function mapping from each sample to the number of times that
-sample occurred as an outcome.
-
-Frequency distributions are generally constructed by running a
+sample occurred as an outcome.</p>
+<p>Frequency distributions are generally constructed by running a
 number of experiments, and incrementing the count for a sample
 every time it is an outcome of an experiment.  For example, the
 following code will produce a frequency distribution that encodes
-how often each word occurs in a text:
-
-    &gt;&gt;&gt; from nltk.tokenize import word_tokenize
-    &gt;&gt;&gt; from nltk.probability import FreqDist
-    &gt;&gt;&gt; sent = 'This is an example sentence'
-    &gt;&gt;&gt; fdist = FreqDist()
-    &gt;&gt;&gt; for word in word_tokenize(sent):
-    ...    fdist[word.lower()] += 1
-
-An equivalent way to do this is with the initializer:
-
-    &gt;&gt;&gt; fdist = FreqDist(word.lower() for word in word_tokenize(sent))</p></div>
+how often each word occurs in a text:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> word_tokenize
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.probability <span class="py-keyword">import</span> FreqDist
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = <span class="py-string">'This is an example sentence'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>fdist = FreqDist()
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> word <span class="py-keyword">in</span> word_tokenize(sent):
+<span class="py-more">... </span>   fdist[word.lower()] += 1</pre></blockquote>
+<p>An equivalent way to do this is with the initializer:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>fdist = FreqDist(word.lower() <span class="py-keyword">for</span> word <span class="py-keyword">in</span> word_tokenize(sent))</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1130">
+        <table class="children sortable" id="id1134">
   
   
   <tr class="method">
@@ -114,7 +115,7 @@ An equivalent way to do this is with the initializer:
     
     <td>Method</td>
     <td><code><a href="#__delitem__">__delitem__</a></code></td>
-    <td><span>Override ``Counter.__delitem__()`` to invalidate the cached N</span></td>
+    <td><span>Override <tt class="rst-docutils literal">Counter.__delitem__()</tt> to invalidate the cached N</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -149,7 +150,7 @@ An equivalent way to do this is with the initializer:
     
     <td>Method</td>
     <td><code><a href="#__setitem__">__setitem__</a></code></td>
-    <td><span>Override ``Counter.__setitem__()`` to invalidate the cached N</span></td>
+    <td><span>Override <tt class="rst-docutils literal">Counter.__setitem__()</tt> to invalidate the cached N</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -219,7 +220,7 @@ An equivalent way to do this is with the initializer:
     
     <td>Method</td>
     <td><code><a href="#setdefault">setdefault</a></code></td>
-    <td><span>Override ``Counter.setdefault()`` to invalidate the cached N</span></td>
+    <td><span>Override <tt class="rst-docutils literal">Counter.setdefault()</tt> to invalidate the cached N</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -229,7 +230,7 @@ An equivalent way to do this is with the initializer:
     
     <td>Method</td>
     <td><code><a href="#update">update</a></code></td>
-    <td><span>Override ``Counter.update()`` to invalidate the cached N</span></td>
+    <td><span>Override <tt class="rst-docutils literal">Counter.update()</tt> to invalidate the cached N</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -271,7 +272,7 @@ An equivalent way to do this is with the initializer:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__add__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L349">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L349">
       
       (source)
     </a>
@@ -279,10 +280,11 @@ An equivalent way to do this is with the initializer:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add counts from two counters.
-
-&gt;&gt;&gt; FreqDist('abbb') + FreqDist('bcc')
-FreqDist({'b': 4, 'c': 2, 'a': 1})</p></div>
+    <div><p>Add counts from two counters.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>FreqDist(<span class="py-string">'abbb'</span>) + FreqDist(<span class="py-string">'bcc'</span>)
+<span class="py-output">FreqDist({'b': 4, 'c': 2, 'a': 1})</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -296,7 +298,7 @@ FreqDist({'b': 4, 'c': 2, 'a': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__and__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L379">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L379">
       
       (source)
     </a>
@@ -304,10 +306,11 @@ FreqDist({'b': 4, 'c': 2, 'a': 1})</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Intersection is the minimum of corresponding counts.
-
-&gt;&gt;&gt; FreqDist('abbb') &amp; FreqDist('bcc')
-FreqDist({'b': 1})</p></div>
+    <div><p>Intersection is the minimum of corresponding counts.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>FreqDist(<span class="py-string">'abbb'</span>) &amp; FreqDist(<span class="py-string">'bcc'</span>)
+<span class="py-output">FreqDist({'b': 1})</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -321,7 +324,7 @@ FreqDist({'b': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__delitem__</span>(self, key):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L130">
       
       (source)
     </a>
@@ -329,7 +332,7 @@ FreqDist({'b': 1})</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Override ``Counter.__delitem__()`` to invalidate the cached N</p></div>
+    <div>Override <tt class="rst-docutils literal">Counter.__delitem__()</tt> to invalidate the cached N</div>
   </div>
 </div><div class="basemethod">
   
@@ -343,7 +346,7 @@ FreqDist({'b': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ge__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L422">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L422">
       
       (source)
     </a>
@@ -365,7 +368,7 @@ FreqDist({'b': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, samples=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L88">
       
       (source)
     </a>
@@ -373,19 +376,16 @@ FreqDist({'b': 1})</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new frequency distribution.  If ``samples`` is
+    <div><p>Construct a new frequency distribution.  If <tt class="rst-docutils literal">samples</tt> is
 given, then the frequency distribution will be initialized
-with the count of each object in ``samples``; otherwise, it
-will be initialized to be empty.
-
-In particular, ``FreqDist()`` returns an empty frequency
-distribution; and ``FreqDist(samples)`` first creates an empty
-frequency distribution, and then calls ``update`` with the
-list ``samples``.
-
-:param samples: The samples to initialize the frequency
-    distribution with.
-:type samples: Sequence</p></div>
+with the count of each object in <tt class="rst-docutils literal">samples</tt>; otherwise, it
+will be initialized to be empty.</p>
+<p>In particular, <tt class="rst-docutils literal">FreqDist()</tt> returns an empty frequency
+distribution; and <tt class="rst-docutils literal">FreqDist(samples)</tt> first creates an empty
+frequency distribution, and then calls <tt class="rst-docutils literal">update</tt> with the
+list <tt class="rst-docutils literal">samples</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples:</span>Sequence</td><td class="fieldArgDesc">The samples to initialize the frequency
+distribution with.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -399,7 +399,7 @@ list ``samples``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L471">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L471">
       
       (source)
     </a>
@@ -407,9 +407,7 @@ list ``samples``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return an iterator which yields tokens ordered by frequency.
-
-:rtype: iterator</p></div>
+    <div>Return an iterator which yields tokens ordered by frequency.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iterator</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -423,7 +421,7 @@ list ``samples``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__le__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L389">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L389">
       
       (source)
     </a>
@@ -431,30 +429,30 @@ list ``samples``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns True if this frequency distribution is a subset of the other
+    <div><p>Returns True if this frequency distribution is a subset of the other
 and for no key the value exceeds the value of the same key from
-the other frequency distribution.
-
-The &lt;= operator forms partial order and satisfying the axioms
-reflexivity, antisymmetry and transitivity.
-
-&gt;&gt;&gt; FreqDist('a') &lt;= FreqDist('a')
-True
-&gt;&gt;&gt; a = FreqDist('abc')
-&gt;&gt;&gt; b = FreqDist('aabc')
-&gt;&gt;&gt; (a &lt;= b, b &lt;= a)
-(True, False)
-&gt;&gt;&gt; FreqDist('a') &lt;= FreqDist('abcd')
-True
-&gt;&gt;&gt; FreqDist('abc') &lt;= FreqDist('xyz')
-False
-&gt;&gt;&gt; FreqDist('xyz') &lt;= FreqDist('abc')
-False
-&gt;&gt;&gt; c = FreqDist('a')
-&gt;&gt;&gt; d = FreqDist('aa')
-&gt;&gt;&gt; e = FreqDist('aaa')
-&gt;&gt;&gt; c &lt;= d and d &lt;= e and c &lt;= e
-True</p></div>
+the other frequency distribution.</p>
+<p>The &lt;= operator forms partial order and satisfying the axioms
+reflexivity, antisymmetry and transitivity.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>FreqDist(<span class="py-string">'a'</span>) &lt;= FreqDist(<span class="py-string">'a'</span>)
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>a = FreqDist(<span class="py-string">'abc'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>b = FreqDist(<span class="py-string">'aabc'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>(a &lt;= b, b &lt;= a)
+<span class="py-output">(True, False)</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>FreqDist(<span class="py-string">'a'</span>) &lt;= FreqDist(<span class="py-string">'abcd'</span>)
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>FreqDist(<span class="py-string">'abc'</span>) &lt;= FreqDist(<span class="py-string">'xyz'</span>)
+<span class="py-output">False</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>FreqDist(<span class="py-string">'xyz'</span>) &lt;= FreqDist(<span class="py-string">'abc'</span>)
+<span class="py-output">False</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>c = FreqDist(<span class="py-string">'a'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>d = FreqDist(<span class="py-string">'aa'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>e = FreqDist(<span class="py-string">'aaa'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>c &lt;= d <span class="py-keyword">and</span> d &lt;= e <span class="py-keyword">and</span> c &lt;= e
+<span class="py-output">True</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -468,7 +466,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__or__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L369">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L369">
       
       (source)
     </a>
@@ -476,10 +474,11 @@ True</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Union is the maximum of value in either of the input counters.
-
-&gt;&gt;&gt; FreqDist('abbb') | FreqDist('bcc')
-FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
+    <div><p>Union is the maximum of value in either of the input counters.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>FreqDist(<span class="py-string">'abbb'</span>) | FreqDist(<span class="py-string">'bcc'</span>)
+<span class="py-output">FreqDist({'b': 3, 'c': 2, 'a': 1})</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -493,7 +492,7 @@ FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L432">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L432">
       
       (source)
     </a>
@@ -501,9 +500,7 @@ FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation of this FreqDist.
-
-:rtype: string</p></div>
+    <div>Return a string representation of this FreqDist.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">string</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -517,7 +514,7 @@ FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, key, val):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L123">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L123">
       
       (source)
     </a>
@@ -525,7 +522,7 @@ FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Override ``Counter.__setitem__()`` to invalidate the cached N</p></div>
+    <div>Override <tt class="rst-docutils literal">Counter.__setitem__()</tt> to invalidate the cached N</div>
   </div>
 </div><div class="basemethod">
   
@@ -539,7 +536,7 @@ FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L463">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L463">
       
       (source)
     </a>
@@ -547,9 +544,7 @@ FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation of this FreqDist.
-
-:rtype: string</p></div>
+    <div>Return a string representation of this FreqDist.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">string</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -563,7 +558,7 @@ FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__sub__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L359">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L359">
       
       (source)
     </a>
@@ -571,10 +566,11 @@ FreqDist({'b': 3, 'c': 2, 'a': 1})</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Subtract count, but keep only results with positive counts.
-
-&gt;&gt;&gt; FreqDist('abbbc') - FreqDist('bccd')
-FreqDist({'b': 2, 'a': 1})</p></div>
+    <div><p>Subtract count, but keep only results with positive counts.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>FreqDist(<span class="py-string">'abbbc'</span>) - FreqDist(<span class="py-string">'bccd'</span>)
+<span class="py-output">FreqDist({'b': 2, 'a': 1})</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -588,7 +584,7 @@ FreqDist({'b': 2, 'a': 1})</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">B</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L151">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L151">
       
       (source)
     </a>
@@ -596,12 +592,10 @@ FreqDist({'b': 2, 'a': 1})</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the total number of sample values (or "bins") that
+    <div>Return the total number of sample values (or "bins") that
 have counts greater than zero.  For the total
-number of sample outcomes recorded, use ``FreqDist.N()``.
-(FreqDist.B() is the same as len(FreqDist).)
-
-:rtype: int</p></div>
+number of sample outcomes recorded, use <tt class="rst-docutils literal">FreqDist.N()</tt>.
+(FreqDist.B() is the same as len(FreqDist).)<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -615,7 +609,7 @@ number of sample outcomes recorded, use ``FreqDist.N()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">copy</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L339">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L339">
       
       (source)
     </a>
@@ -623,9 +617,7 @@ number of sample outcomes recorded, use ``FreqDist.N()``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a copy of this frequency distribution.
-
-:rtype: FreqDist</p></div>
+    <div>Create a copy of this frequency distribution.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">FreqDist</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -639,7 +631,7 @@ number of sample outcomes recorded, use ``FreqDist.N()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">freq</span>(self, sample):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L211">
       
       (source)
     </a>
@@ -647,18 +639,14 @@ number of sample outcomes recorded, use ``FreqDist.N()``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the frequency of a given sample.  The frequency of a
+    <div>Return the frequency of a given sample.  The frequency of a
 sample is defined as the count of that sample divided by the
 total number of sample outcomes that have been recorded by
 this FreqDist.  The count of a sample is defined as the
 number of times that sample outcome was recorded by this
 FreqDist.  Frequencies are always real numbers in the range
-[0, 1].
-
-:param sample: the sample whose frequency
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+[0, 1].<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">the sample whose frequency
+should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -672,7 +660,7 @@ FreqDist.  Frequencies are always real numbers in the range
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">hapaxes</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L162">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L162">
       
       (source)
     </a>
@@ -680,9 +668,7 @@ FreqDist.  Frequencies are always real numbers in the range
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of all samples that occur once (hapax legomena)
-
-:rtype: list</p></div>
+    <div>Return a list of all samples that occur once (hapax legomena)<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -696,7 +682,7 @@ FreqDist.  Frequencies are always real numbers in the range
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">max</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L231">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L231">
       
       (source)
     </a>
@@ -704,15 +690,12 @@ FreqDist.  Frequencies are always real numbers in the range
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the sample with the greatest number of outcomes in this
+    <div>Return the sample with the greatest number of outcomes in this
 frequency distribution.  If two or more samples have the same
 number of outcomes, return one of them; which sample is
 returned is undefined.  If no outcomes have occurred in this
-frequency distribution, return None.
-
-:return: The sample with the maximum number of outcomes in this
-        frequency distribution.
-:rtype: any or None</p></div>
+frequency distribution, return None.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">any or None</td><td class="fieldArgDesc">The sample with the maximum number of outcomes in this
+frequency distribution.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -726,7 +709,7 @@ frequency distribution, return None.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">N</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L109">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L109">
       
       (source)
     </a>
@@ -734,12 +717,10 @@ frequency distribution, return None.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the total number of sample outcomes that have been
+    <div>Return the total number of sample outcomes that have been
 recorded by this FreqDist.  For the number of unique
 sample values (or bins) with counts greater than zero, use
-``FreqDist.B()``.
-
-:rtype: int</p></div>
+<tt class="rst-docutils literal">FreqDist.B()</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -753,7 +734,7 @@ sample values (or bins) with counts greater than zero, use
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Nr</span>(self, r, bins=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L170">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L170">
       
       (source)
     </a>
@@ -775,7 +756,7 @@ sample values (or bins) with counts greater than zero, use
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pformat</span>(self, maxlen=10):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L450">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L450">
       
       (source)
     </a>
@@ -783,11 +764,7 @@ sample values (or bins) with counts greater than zero, use
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation of this FreqDist.
-
-:param maxlen: The maximum number of items to display
-:type maxlen: int
-:rtype: string</p></div>
+    <div>Return a string representation of this FreqDist.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">maxlen:</span>int</td><td class="fieldArgDesc">The maximum number of items to display</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">string</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -801,7 +778,7 @@ sample values (or bins) with counts greater than zero, use
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">plot</span>(self, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L249">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L249">
       
       (source)
     </a>
@@ -809,16 +786,11 @@ sample values (or bins) with counts greater than zero, use
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Plot samples from the frequency distribution
+    <div>Plot samples from the frequency distribution
 displaying the most frequent sample first.  If an integer
 parameter is supplied, stop after this many samples have been
 plotted.  For a cumulative plot, specify cumulative=True.
-(Requires Matplotlib to be installed.)
-
-:param title: The title for the graph
-:type title: str
-:param cumulative: A flag to specify whether the plot is cumulative (default = False)
-:type title: bool</p></div>
+(Requires Matplotlib to be installed.)<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">title:</span>bool</td><td class="fieldArgDesc">The title for the graph</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cumulative</span></td><td class="fieldArgDesc">A flag to specify whether the plot is cumulative (default = False)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -832,7 +804,7 @@ plotted.  For a cumulative plot, specify cumulative=True.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pprint</span>(self, maxlen=10, stream=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L440">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L440">
       
       (source)
     </a>
@@ -840,11 +812,7 @@ plotted.  For a cumulative plot, specify cumulative=True.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print a string representation of this FreqDist to 'stream'
-
-:param maxlen: The maximum number of items to print
-:type maxlen: int
-:param stream: The stream to print to. stdout by default</p></div>
+    <div>Print a string representation of this FreqDist to 'stream'<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">maxlen:</span>int</td><td class="fieldArgDesc">The maximum number of items to print</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stream</span></td><td class="fieldArgDesc">The stream to print to. stdout by default</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -858,7 +826,7 @@ plotted.  For a cumulative plot, specify cumulative=True.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">r_Nr</span>(self, bins=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L173">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L173">
       
       (source)
     </a>
@@ -866,14 +834,10 @@ plotted.  For a cumulative plot, specify cumulative=True.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the dictionary mapping r to Nr, the number of samples with frequency r, where Nr &gt; 0.
-
-:type bins: int
-:param bins: The number of possible sample outcomes.  ``bins``
-    is used to calculate Nr(0).  In particular, Nr(0) is
-    ``bins-self.B()``.  If ``bins`` is not specified, it
-    defaults to ``self.B()`` (so Nr(0) will be 0).
-:rtype: int</p></div>
+    <div>Return the dictionary mapping r to Nr, the number of samples with frequency r, where Nr &gt; 0.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bins:</span>int</td><td class="fieldArgDesc">The number of possible sample outcomes.  <tt class="rst-docutils literal">bins</tt>
+is used to calculate Nr(0).  In particular, Nr(0) is
+<tt class="rst-docutils literal"><span class="pre">bins-self.B()</span></tt>.  If <tt class="rst-docutils literal">bins</tt> is not specified, it
+defaults to <tt class="rst-docutils literal">self.B()</tt> (so Nr(0) will be 0).</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -887,7 +851,7 @@ plotted.  For a cumulative plot, specify cumulative=True.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">setdefault</span>(self, key, val):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L144">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L144">
       
       (source)
     </a>
@@ -895,7 +859,7 @@ plotted.  For a cumulative plot, specify cumulative=True.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Override ``Counter.setdefault()`` to invalidate the cached N</p></div>
+    <div>Override <tt class="rst-docutils literal">Counter.setdefault()</tt> to invalidate the cached N</div>
   </div>
 </div><div class="basemethod">
   
@@ -909,7 +873,7 @@ plotted.  For a cumulative plot, specify cumulative=True.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tabulate</span>(self, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L306">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L306">
       
       (source)
     </a>
@@ -917,15 +881,10 @@ plotted.  For a cumulative plot, specify cumulative=True.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Tabulate the given samples from the frequency distribution (cumulative),
+    <div>Tabulate the given samples from the frequency distribution (cumulative),
 displaying the most frequent sample first.  If an integer
 parameter is supplied, stop after this many samples have been
-plotted.
-
-:param samples: The samples to plot (default is all samples)
-:type samples: list
-:param cumulative: A flag to specify whether the freqs are cumulative (default = False)
-:type title: bool</p></div>
+plotted.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples:</span>list</td><td class="fieldArgDesc">The samples to plot (default is all samples)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">title:</span>bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cumulative</span></td><td class="fieldArgDesc">A flag to specify whether the freqs are cumulative (default = False)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -939,7 +898,7 @@ plotted.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L137">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L137">
       
       (source)
     </a>
@@ -947,7 +906,7 @@ plotted.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Override ``Counter.update()`` to invalidate the cached N</p></div>
+    <div>Override <tt class="rst-docutils literal">Counter.update()</tt> to invalidate the cached N</div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -961,7 +920,7 @@ plotted.
   <div class="functionHeader">
     
     <span class="py-defname">__gt__</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L430">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L430">
       
       (source)
     </a>
@@ -983,7 +942,7 @@ plotted.
   <div class="functionHeader">
     
     <span class="py-defname">__lt__</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L429">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L429">
       
       (source)
     </a>
@@ -1005,7 +964,7 @@ plotted.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_cumulative_frequencies</span>(self, samples):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L194">
       
       (source)
     </a>
@@ -1013,13 +972,9 @@ plotted.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the cumulative frequencies of the specified samples.
+    <div>Return the cumulative frequencies of the specified samples.
 If no samples are specified, all counts are returned, starting
-with the largest.
-
-:param samples: the samples whose frequencies should be returned.
-:type samples: any
-:rtype: list(float)</p></div>
+with the largest.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples:</span>any</td><td class="fieldArgDesc">the samples whose frequencies should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(float)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1033,7 +988,7 @@ with the largest.
   <div class="functionHeader">
     
     <span class="py-defname">_N</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L107">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L107">
       
       (source)
     </a>
@@ -1053,7 +1008,7 @@ with the largest.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

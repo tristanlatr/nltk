@@ -65,43 +65,44 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">StanfordNeuralDependencyParser</span>(<a href="nltk.parse.stanford.GenericStanfordParser.html" title="nltk.parse.stanford.GenericStanfordParser">GenericStanfordParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L410" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StanfordNeuralDependencyParser</span>(<a href="nltk.parse.stanford.GenericStanfordParser.html" title="nltk.parse.stanford.GenericStanfordParser">GenericStanfordParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L410" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.stanford.StanfordNeuralDependencyParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">&gt;&gt;&gt; from nltk.parse.stanford import StanfordNeuralDependencyParser
-&gt;&gt;&gt; dep_parser=StanfordNeuralDependencyParser(java_options='-mx4g')
-
-&gt;&gt;&gt; [parse.tree() for parse in dep_parser.raw_parse("The quick brown fox jumps over the lazy dog.")] # doctest: +NORMALIZE_WHITESPACE
-[Tree('jumps', [Tree('fox', ['The', 'quick', 'brown']), Tree('dog', ['over', 'the', 'lazy']), '.'])]
-
-&gt;&gt;&gt; [list(parse.triples()) for parse in dep_parser.raw_parse("The quick brown fox jumps over the lazy dog.")] # doctest: +NORMALIZE_WHITESPACE
-[[((u'jumps', u'VBZ'), u'nsubj', (u'fox', u'NN')), ((u'fox', u'NN'), u'det',
-(u'The', u'DT')), ((u'fox', u'NN'), u'amod', (u'quick', u'JJ')), ((u'fox', u'NN'),
-u'amod', (u'brown', u'JJ')), ((u'jumps', u'VBZ'), u'nmod', (u'dog', u'NN')),
-((u'dog', u'NN'), u'case', (u'over', u'IN')), ((u'dog', u'NN'), u'det',
-(u'the', u'DT')), ((u'dog', u'NN'), u'amod', (u'lazy', u'JJ')), ((u'jumps', u'VBZ'),
-u'punct', (u'.', u'.'))]]
-
-&gt;&gt;&gt; sum([[parse.tree() for parse in dep_graphs] for dep_graphs in dep_parser.raw_parse_sents((
-...     "The quick brown fox jumps over the lazy dog.",
-...     "The quick grey wolf jumps over the lazy fox."
-... ))], []) # doctest: +NORMALIZE_WHITESPACE
-[Tree('jumps', [Tree('fox', ['The', 'quick', 'brown']), Tree('dog', ['over',
-'the', 'lazy']), '.']), Tree('jumps', [Tree('wolf', ['The', 'quick', 'grey']),
-Tree('fox', ['over', 'the', 'lazy']), '.'])]
-
-&gt;&gt;&gt; sum([[parse.tree() for parse in dep_graphs] for dep_graphs in dep_parser.parse_sents((
-...     "I 'm a dog".split(),
-...     "This is my friends ' cat ( the tabby )".split(),
-... ))], []) # doctest: +NORMALIZE_WHITESPACE
-[Tree('dog', ['I', "'m", 'a']), Tree('cat', ['This', 'is', Tree('friends',
-['my', "'"]), Tree('tabby', ['-LRB-', 'the', '-RRB-'])])]</p></div>
+        <div><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.parse.stanford <span class="py-keyword">import</span> StanfordNeuralDependencyParser
+<span class="py-prompt">&gt;&gt;&gt; </span>dep_parser=StanfordNeuralDependencyParser(java_options=<span class="py-string">'-mx4g'</span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>[parse.tree() <span class="py-keyword">for</span> parse <span class="py-keyword">in</span> dep_parser.raw_parse(<span class="py-string">"The quick brown fox jumps over the lazy dog."</span>)] <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">[Tree('jumps', [Tree('fox', ['The', 'quick', 'brown']), Tree('dog', ['over', 'the', 'lazy']), '.'])]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>[<span class="py-builtin">list</span>(parse.triples()) <span class="py-keyword">for</span> parse <span class="py-keyword">in</span> dep_parser.raw_parse(<span class="py-string">"The quick brown fox jumps over the lazy dog."</span>)] <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">[[((u'jumps', u'VBZ'), u'nsubj', (u'fox', u'NN')), ((u'fox', u'NN'), u'det',</span>
+<span class="py-output">(u'The', u'DT')), ((u'fox', u'NN'), u'amod', (u'quick', u'JJ')), ((u'fox', u'NN'),</span>
+<span class="py-output">u'amod', (u'brown', u'JJ')), ((u'jumps', u'VBZ'), u'nmod', (u'dog', u'NN')),</span>
+<span class="py-output">((u'dog', u'NN'), u'case', (u'over', u'IN')), ((u'dog', u'NN'), u'det',</span>
+<span class="py-output">(u'the', u'DT')), ((u'dog', u'NN'), u'amod', (u'lazy', u'JJ')), ((u'jumps', u'VBZ'),</span>
+<span class="py-output">u'punct', (u'.', u'.'))]]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sum</span>([[parse.tree() <span class="py-keyword">for</span> parse <span class="py-keyword">in</span> dep_graphs] <span class="py-keyword">for</span> dep_graphs <span class="py-keyword">in</span> dep_parser.raw_parse_sents((
+<span class="py-more">... </span>    <span class="py-string">"The quick brown fox jumps over the lazy dog."</span>,
+<span class="py-more">... </span>    <span class="py-string">"The quick grey wolf jumps over the lazy fox."</span>
+<span class="py-more">... </span>))], []) <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">[Tree('jumps', [Tree('fox', ['The', 'quick', 'brown']), Tree('dog', ['over',</span>
+<span class="py-output">'the', 'lazy']), '.']), Tree('jumps', [Tree('wolf', ['The', 'quick', 'grey']),</span>
+<span class="py-output">Tree('fox', ['over', 'the', 'lazy']), '.'])]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sum</span>([[parse.tree() <span class="py-keyword">for</span> parse <span class="py-keyword">in</span> dep_graphs] <span class="py-keyword">for</span> dep_graphs <span class="py-keyword">in</span> dep_parser.parse_sents((
+<span class="py-more">... </span>    <span class="py-string">"I 'm a dog"</span>.split(),
+<span class="py-more">... </span>    <span class="py-string">"This is my friends ' cat ( the tabby )"</span>.split(),
+<span class="py-more">... </span>))], []) <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">[Tree('dog', ['I', "'m", 'a']), Tree('cat', ['This', 'is', Tree('friends',</span>
+<span class="py-output">['my', "'"]), Tree('tabby', ['-LRB-', 'the', '-RRB-'])])]</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1117">
+        <table class="children sortable" id="id1121">
   
   
   <tr class="method">
@@ -155,7 +156,7 @@ Tree('fox', ['over', 'the', 'lazy']), '.'])]
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.stanford.GenericStanfordParser.html">GenericStanfordParser</a></code>:
           </p>
-          <table class="children sortable" id="id1118">
+          <table class="children sortable" id="id1122">
   
   
   <tr class="basemethod">
@@ -219,29 +220,29 @@ Tree('fox', ['over', 'the', 'lazy']), '.'])]
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code> (via <code><a href="nltk.parse.stanford.GenericStanfordParser.html">GenericStanfordParser</a></code>):
           </p>
-          <table class="children sortable" id="id1119">
+          <table class="children sortable" id="id1123">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr>
 </table>
           
@@ -263,7 +264,7 @@ Tree('fox', ['over', 'the', 'lazy']), '.'])]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L449">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L449">
       
       (source)
     </a>
@@ -285,7 +286,7 @@ Tree('fox', ['over', 'the', 'lazy']), '.'])]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_parse_sents</span>(self, sentences, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L460">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L460">
       
       (source)
     </a>
@@ -293,9 +294,9 @@ Tree('fox', ['over', 'the', 'lazy']), '.'])]
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.stanford.GenericStanfordParser.html#tagged_parse_sents">nltk.parse.stanford.GenericStanfordParser.tagged_parse_sents</a></code></div>
     
-    <div><p class="pre">Currently unimplemented because the neural dependency parser (and
+    <div>Currently unimplemented because the neural dependency parser (and
 the StanfordCoreNLP pipeline class) doesn't support passing in pre-
-tagged tokens.</p></div>
+tagged tokens.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -309,7 +310,7 @@ tagged tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_make_tree</span>(self, result):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L472">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L472">
       
       (source)
     </a>
@@ -331,7 +332,7 @@ tagged tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_DOUBLE_SPACED_OUTPUT</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L447">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L447">
       
       (source)
     </a>
@@ -353,7 +354,7 @@ tagged tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_JAR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L444">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L444">
       
       (source)
     </a>
@@ -375,7 +376,7 @@ tagged tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_MAIN_CLASS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L443">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L443">
       
       (source)
     </a>
@@ -397,7 +398,7 @@ tagged tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_MODEL_JAR_PATTERN</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L445">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L445">
       
       (source)
     </a>
@@ -419,7 +420,7 @@ tagged tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_OUTPUT_FORMAT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L442">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L442">
       
       (source)
     </a>
@@ -441,7 +442,7 @@ tagged tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_USE_STDIN</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/stanford.py#L446">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/stanford.py#L446">
       
       (source)
     </a>
@@ -461,7 +462,7 @@ tagged tokens.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

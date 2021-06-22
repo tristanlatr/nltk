@@ -65,135 +65,129 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Overview
-========
-
-Chat-80 was a natural language system which allowed the user to
+        <div><div class="rst-section" id="rst-overview">
+<h1 class="heading">Overview</h1>
+<p>Chat-80 was a natural language system which allowed the user to
 interrogate a Prolog knowledge base in the domain of world
 geography. It was developed in the early '80s by Warren and Pereira; see
-``http://www.aclweb.org/anthology/J82-3002.pdf`` for a description and
-``http://www.cis.upenn.edu/~pereira/oldies.html`` for the source
-files.
-
-This module contains functions to extract data from the Chat-80
+<tt class="rst-docutils literal"><span class="pre">http://www.aclweb.org/anthology/J82-3002.pdf</span></tt> for a description and
+<tt class="rst-docutils literal"><span class="pre">http://www.cis.upenn.edu/~pereira/oldies.html</span></tt> for the source
+files.</p>
+<p>This module contains functions to extract data from the Chat-80
 relation files ('the world database'), and convert then into a format
 that can be incorporated in the FOL models of
-``nltk.sem.evaluate``. The code assumes that the Prolog
-input files are available in the NLTK corpora directory.
-
-The Chat-80 World Database consists of the following files::
-
-    world0.pl
-    rivers.pl
-    cities.pl
-    countries.pl
-    contain.pl
-    borders.pl
-
-This module uses a slightly modified version of ``world0.pl``, in which
+<tt class="rst-docutils literal">nltk.sem.evaluate</tt>. The code assumes that the Prolog
+input files are available in the NLTK corpora directory.</p>
+<p>The Chat-80 World Database consists of the following files:</p>
+<pre class="rst-literal-block">
+world0.pl
+rivers.pl
+cities.pl
+countries.pl
+contain.pl
+borders.pl
+</pre>
+<p>This module uses a slightly modified version of <tt class="rst-docutils literal">world0.pl</tt>, in which
 a set of Prolog rules have been omitted. The modified file is named
-``world1.pl``. Currently, the file ``rivers.pl`` is not read in, since
-it uses a list rather than a string in the second field.
-
-Reading Chat-80 Files
-=====================
-
-Chat-80 relations are like tables in a relational database. The
+<tt class="rst-docutils literal">world1.pl</tt>. Currently, the file <tt class="rst-docutils literal">rivers.pl</tt> is not read in, since
+it uses a list rather than a string in the second field.</p>
+</div>
+<div class="rst-section" id="rst-reading-chat-80-files">
+<h1 class="heading">Reading Chat-80 Files</h1>
+<p>Chat-80 relations are like tables in a relational database. The
 relation acts as the name of the table; the first argument acts as the
 'primary key'; and subsequent arguments are further fields in the
 table. In general, the name of the table provides a label for a unary
 predicate whose extension is all the primary keys. For example,
-relations in ``cities.pl`` are of the following form::
-
-   'city(athens,greece,1368).'
-
-Here, ``'athens'`` is the key, and will be mapped to a member of the
-unary predicate *city*.
-
-The fields in the table are mapped to binary predicates. The first
+relations in <tt class="rst-docutils literal">cities.pl</tt> are of the following form:</p>
+<pre class="rst-literal-block">
+'city(athens,greece,1368).'
+</pre>
+<p>Here, <tt class="rst-docutils literal">'athens'</tt> is the key, and will be mapped to a member of the
+unary predicate <em>city</em>.</p>
+<p>The fields in the table are mapped to binary predicates. The first
 argument of the predicate is the primary key, while the second
 argument is the data in the relevant field. Thus, in the above
 example, the third field is mapped to the binary predicate
-*population_of*, whose extension is a set of pairs such as
-``'(athens, 1368)'``.
+<em>population_of</em>, whose extension is a set of pairs such as
+<tt class="rst-docutils literal">'(athens, 1368)'</tt>.</p>
+<p>An exception to this general framework is required by the relations in
+the files <tt class="rst-docutils literal">borders.pl</tt> and <tt class="rst-docutils literal">contains.pl</tt>. These contain facts of the
+following form:</p>
+<pre class="rst-literal-block">
+'borders(albania,greece).'
 
-An exception to this general framework is required by the relations in
-the files ``borders.pl`` and ``contains.pl``. These contain facts of the
-following form::
-
-    'borders(albania,greece).'
-
-    'contains0(africa,central_africa).'
-
-We do not want to form a unary concept out the element in
+'contains0(africa,central_africa).'
+</pre>
+<p>We do not want to form a unary concept out the element in
 the first field of these records, and we want the label of the binary
-relation just to be ``'border'``/``'contain'`` respectively.
-
-In order to drive the extraction process, we use 'relation metadata bundles'
-which are Python dictionaries such as the following::
-
-  city = {'label': 'city',
-          'closures': [],
-          'schema': ['city', 'country', 'population'],
-          'filename': 'cities.pl'}
-
-According to this, the file ``city['filename']`` contains a list of
+relation just to be <tt class="rst-docutils literal">'border'</tt>/<tt class="rst-docutils literal">'contain'</tt> respectively.</p>
+<p>In order to drive the extraction process, we use 'relation metadata bundles'
+which are Python dictionaries such as the following:</p>
+<pre class="rst-literal-block">
+city = {'label': 'city',
+        'closures': [],
+        'schema': ['city', 'country', 'population'],
+        'filename': 'cities.pl'}
+</pre>
+<p>According to this, the file <tt class="rst-docutils literal"><span class="pre">city['filename']</span></tt> contains a list of
 relational tuples (or more accurately, the corresponding strings in
-Prolog form) whose predicate symbol is ``city['label']`` and whose
-relational schema is ``city['schema']``. The notion of a ``closure`` is
-discussed in the next section.
-
-Concepts
-========
-In order to encapsulate the results of the extraction, a class of
-``Concept`` objects is introduced.  A ``Concept`` object has a number of
-attributes, in particular a ``prefLabel`` and ``extension``, which make
+Prolog form) whose predicate symbol is <tt class="rst-docutils literal"><span class="pre">city['label']</span></tt> and whose
+relational schema is <tt class="rst-docutils literal"><span class="pre">city['schema']</span></tt>. The notion of a <tt class="rst-docutils literal">closure</tt> is
+discussed in the next section.</p>
+</div>
+<div class="rst-section" id="rst-concepts">
+<h1 class="heading">Concepts</h1>
+<p>In order to encapsulate the results of the extraction, a class of
+<tt class="rst-docutils literal">Concept</tt> objects is introduced.  A <tt class="rst-docutils literal">Concept</tt> object has a number of
+attributes, in particular a <tt class="rst-docutils literal">prefLabel</tt> and <tt class="rst-docutils literal">extension</tt>, which make
 it easier to inspect the output of the extraction. In addition, the
-``extension`` can be further processed: in the case of the ``'border'``
+<tt class="rst-docutils literal">extension</tt> can be further processed: in the case of the <tt class="rst-docutils literal">'border'</tt>
 relation, we check that the relation is symmetric, and in the case
-of the ``'contain'`` relation, we carry out the transitive
+of the <tt class="rst-docutils literal">'contain'</tt> relation, we carry out the transitive
 closure. The closure properties associated with a concept is
-indicated in the relation metadata, as indicated earlier.
-
-The ``extension`` of a ``Concept`` object is then incorporated into a
-``Valuation`` object.
-
-Persistence
-===========
-The functions ``val_dump`` and ``val_load`` are provided to allow a
+indicated in the relation metadata, as indicated earlier.</p>
+<p>The <tt class="rst-docutils literal">extension</tt> of a <tt class="rst-docutils literal">Concept</tt> object is then incorporated into a
+<tt class="rst-docutils literal">Valuation</tt> object.</p>
+</div>
+<div class="rst-section" id="rst-persistence">
+<h1 class="heading">Persistence</h1>
+<p>The functions <tt class="rst-docutils literal">val_dump</tt> and <tt class="rst-docutils literal">val_load</tt> are provided to allow a
 valuation to be stored in a persistent database and re-loaded, rather
-than having to be re-computed each time.
-
-Individuals and Lexical Items
-=============================
-As well as deriving relations from the Chat-80 data, we also create a
+than having to be re-computed each time.</p>
+</div>
+<div class="rst-section" id="rst-individuals-and-lexical-items">
+<h1 class="heading">Individuals and Lexical Items</h1>
+<p>As well as deriving relations from the Chat-80 data, we also create a
 set of individual constants, one for each entity in the domain. The
 individual constants are string-identical to the entities. For
-example, given a data item such as ``'zloty'``, we add to the valuation
-a pair ``('zloty', 'zloty')``. In order to parse English sentences that
+example, given a data item such as <tt class="rst-docutils literal">'zloty'</tt>, we add to the valuation
+a pair <tt class="rst-docutils literal">('zloty', 'zloty')</tt>. In order to parse English sentences that
 refer to these entities, we also create a lexical item such as the
-following for each individual constant::
-
-   PropN[num=sg, sem=&lt;\P.(P zloty)&gt;] -&gt; 'Zloty'
-
-The set of rules is written to the file ``chat_pnames.cfg`` in the
-current directory.</p></div>
+following for each individual constant:</p>
+<pre class="rst-literal-block">
+PropN[num=sg, sem=&lt;\P.(P zloty)&gt;] -&gt; 'Zloty'
+</pre>
+<p>The set of rules is written to the file <tt class="rst-docutils literal">chat_pnames.cfg</tt> in the
+current directory.</p>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1211">
+        <table class="children sortable" id="id1215">
   
   
   <tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.sem.chat80.Concept.html">Concept</a></code></td>
-    <td><span>A Concept class, loosely based on SKOS (http://www.w3.org/TR/swbp-skos-core-guide/).</span></td>
+    <td><span>A Concept class, loosely based on SKOS (<a class="rst-reference external" href="http://www.w3.org/TR/swbp-skos-core-guide/" target="_top">http://www.w3.org/TR/swbp-skos-core-guide/</a>).</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -208,17 +202,17 @@ current directory.</p></div>
     
     <td>Function</td>
     <td><code><a href="#clause2concepts">clause2concepts</a></code></td>
-    <td><span>Convert a file of Prolog clauses into a list of ``Concept`` objects.</span></td>
+    <td><span>Convert a file of Prolog clauses into a list of <tt class="rst-docutils literal">Concept</tt> objects.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#concepts">concepts</a></code></td>
-    <td><span>Build a list of concepts corresponding to the relation names in ``items``.</span></td>
+    <td><span>Build a list of concepts corresponding to the relation names in <tt class="rst-docutils literal">items</tt>.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#label_indivs">label_indivs</a></code></td>
-    <td><span>Assign individual constants to the individuals in the domain of a ``Valuation``.</span></td>
+    <td><span>Assign individual constants to the individuals in the domain of a <tt class="rst-docutils literal">Valuation</tt>.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -233,7 +227,7 @@ current directory.</p></div>
     
     <td>Function</td>
     <td><code><a href="#make_valuation">make_valuation</a></code></td>
-    <td><span>Convert a list of ``Concept`` objects into a list of (label, extension) pairs; optionally create a ``Valuation`` object.</span></td>
+    <td><span>Convert a list of <tt class="rst-docutils literal">Concept</tt> objects into a list of (label, extension) pairs; optionally create a <tt class="rst-docutils literal">Valuation</tt> object.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -258,12 +252,12 @@ current directory.</p></div>
     
     <td>Function</td>
     <td><code><a href="#val_dump">val_dump</a></code></td>
-    <td><span>Make a ``Valuation`` from a list of relation metadata bundles and dump to persistent database.</span></td>
+    <td><span>Make a <tt class="rst-docutils literal">Valuation</tt> from a list of relation metadata bundles and dump to persistent database.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#val_load">val_load</a></code></td>
-    <td><span>Load a ``Valuation`` from a persistent database.</span></td>
+    <td><span>Load a <tt class="rst-docutils literal">Valuation</tt> from a persistent database.</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
@@ -360,7 +354,7 @@ current directory.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">binary_concept</span>(label, closures, subj, obj, records):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L506">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L506">
       
       (source)
     </a>
@@ -368,31 +362,16 @@ current directory.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Make a binary concept out of the primary key and another field in a record.
-
-A record is a list of entities in some relation, such as
-``['france', 'paris']``, where ``'france'`` is acting as the primary
-key, and ``'paris'`` stands in the ``'capital_of'`` relation to
-``'france'``.
-
-More generally, given a record such as ``['a', 'b', 'c']``, where
-label is bound to ``'B'``, and ``obj`` bound to 1, the derived
-binary concept will have label ``'B_of'``, and its extension will
-be a set of pairs such as ``('a', 'b')``.
-
-
-:param label: the base part of the preferred label for the concept
-:type label: str
-:param closures: closure properties for the extension of the concept
-:type closures: list
-:param subj: position in the record of the subject of the predicate
-:type subj: int
-:param obj: position in the record of the object of the predicate
-:type obj: int
-:param records: a list of records
-:type records: list of lists
-:return: ``Concept`` of arity 2
-:rtype: Concept</p></div>
+    <div><p>Make a binary concept out of the primary key and another field in a record.</p>
+<p>A record is a list of entities in some relation, such as
+<tt class="rst-docutils literal">['france', 'paris']</tt>, where <tt class="rst-docutils literal">'france'</tt> is acting as the primary
+key, and <tt class="rst-docutils literal">'paris'</tt> stands in the <tt class="rst-docutils literal">'capital_of'</tt> relation to
+<tt class="rst-docutils literal">'france'</tt>.</p>
+<p>More generally, given a record such as <tt class="rst-docutils literal">['a', 'b', 'c']</tt>, where
+label is bound to <tt class="rst-docutils literal">'B'</tt>, and <tt class="rst-docutils literal">obj</tt> bound to 1, the derived
+binary concept will have label <tt class="rst-docutils literal">'B_of'</tt>, and its extension will
+be a set of pairs such as <tt class="rst-docutils literal">('a', 'b')</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label:</span>str</td><td class="fieldArgDesc">the base part of the preferred label for the concept</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">closures:</span>list</td><td class="fieldArgDesc">closure properties for the extension of the concept</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">subj:</span>int</td><td class="fieldArgDesc">position in the record of the subject of the predicate</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">obj:</span>int</td><td class="fieldArgDesc">position in the record of the object of the predicate</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">records:</span>list of lists</td><td class="fieldArgDesc">a list of records</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Concept</td><td class="fieldArgDesc"><tt class="rst-docutils literal">Concept</tt> of arity 2</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -406,7 +385,7 @@ be a set of pairs such as ``('a', 'b')``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cities2table</span>(filename, rel_name, dbname, verbose=False, setup=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L404">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L404">
       
       (source)
     </a>
@@ -414,21 +393,14 @@ be a set of pairs such as ``('a', 'b')``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert a file of Prolog clauses into a database table.
-
-This is not generic, since it doesn't allow arbitrary
-schemas to be set as a parameter.
-
-Intended usage::
-
-    cities2table('cities.pl', 'city', 'city.db', verbose=True, setup=True)
-
-:param filename: filename containing the relations
-:type filename: str
-:param rel_name: name of the relation
-:type rel_name: str
-:param dbname: filename of persistent store
-:type schema: str</p></div>
+    <div><p>Convert a file of Prolog clauses into a database table.</p>
+<p>This is not generic, since it doesn't allow arbitrary
+schemas to be set as a parameter.</p>
+<p>Intended usage:</p>
+<pre class="rst-literal-block">
+cities2table('cities.pl', 'city', 'city.db', verbose=True, setup=True)
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filename:</span>str</td><td class="fieldArgDesc">filename containing the relations</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rel_name:</span>str</td><td class="fieldArgDesc">name of the relation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dbname</span></td><td class="fieldArgDesc">filename of persistent store</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">setup</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">schema:</span>str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -442,7 +414,7 @@ Intended usage::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">clause2concepts</span>(filename, rel_name, schema, closures=[]):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L364">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L364">
       
       (source)
     </a>
@@ -450,18 +422,7 @@ Intended usage::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert a file of Prolog clauses into a list of ``Concept`` objects.
-
-:param filename: filename containing the relations
-:type filename: str
-:param rel_name: name of the relation
-:type rel_name: str
-:param schema: the schema used in a set of relational tuples
-:type schema: list
-:param closures: closure properties for the extension of the concept
-:type closures: list
-:return: a list of ``Concept`` objects
-:rtype: list</p></div>
+    <div>Convert a file of Prolog clauses into a list of <tt class="rst-docutils literal">Concept</tt> objects.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filename:</span>str</td><td class="fieldArgDesc">filename containing the relations</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rel_name:</span>str</td><td class="fieldArgDesc">name of the relation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">schema:</span>list</td><td class="fieldArgDesc">the schema used in a set of relational tuples</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">closures:</span>list</td><td class="fieldArgDesc">closure properties for the extension of the concept</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc">a list of <tt class="rst-docutils literal">Concept</tt> objects</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -475,7 +436,7 @@ Intended usage::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">concepts</span>(items=items):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L719">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L719">
       
       (source)
     </a>
@@ -483,12 +444,7 @@ Intended usage::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Build a list of concepts corresponding to the relation names in ``items``.
-
-:param items: names of the Chat-80 relations to extract
-:type items: list(str)
-:return: the ``Concept`` objects which are extracted from the relations
-:rtype: list(Concept)</p></div>
+    <div>Build a list of concepts corresponding to the relation names in <tt class="rst-docutils literal">items</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">items:</span>list(str)</td><td class="fieldArgDesc">names of the Chat-80 relations to extract</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Concept)</td><td class="fieldArgDesc">the <tt class="rst-docutils literal">Concept</tt> objects which are extracted from the relations</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -502,7 +458,7 @@ Intended usage::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">label_indivs</span>(valuation, lexicon=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L660">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L660">
       
       (source)
     </a>
@@ -510,13 +466,10 @@ Intended usage::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Assign individual constants to the individuals in the domain of a ``Valuation``.
-
-Given a valuation with an entry of the form ``{'rel': {'a': True}}``,
-add a new entry ``{'a': 'a'}``.
-
-:type valuation: Valuation
-:rtype: Valuation</p></div>
+    <div><p>Assign individual constants to the individuals in the domain of a <tt class="rst-docutils literal">Valuation</tt>.</p>
+<p>Given a valuation with an entry of the form <tt class="rst-docutils literal">{'rel': {'a': True}}</tt>,
+add a new entry <tt class="rst-docutils literal">{'a': 'a'}</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">valuation:</span>Valuation</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lexicon</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Valuation</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -530,7 +483,7 @@ add a new entry ``{'a': 'a'}``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">main</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L740">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L740">
       
       (source)
     </a>
@@ -552,7 +505,7 @@ add a new entry ``{'a': 'a'}``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">make_lex</span>(symbols):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L684">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L684">
       
       (source)
     </a>
@@ -560,14 +513,10 @@ add a new entry ``{'a': 'a'}``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create lexical CFG rules for each individual symbol.
-
-Given a valuation with an entry of the form ``{'zloty': 'zloty'}``,
-create a lexical rule for the proper name 'Zloty'.
-
-:param symbols: a list of individual constants in the semantic representation
-:type symbols: sequence -- set(str)
-:rtype: list(str)</p></div>
+    <div><p>Create lexical CFG rules for each individual symbol.</p>
+<p>Given a valuation with an entry of the form <tt class="rst-docutils literal">{'zloty': 'zloty'}</tt>,
+create a lexical rule for the proper name 'Zloty'.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">symbols:</span>sequence -- set(str)</td><td class="fieldArgDesc">a list of individual constants in the semantic representation</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -581,7 +530,7 @@ create a lexical rule for the proper name 'Zloty'.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">make_valuation</span>(concepts, read=False, lexicon=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L573">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L573">
       
       (source)
     </a>
@@ -589,14 +538,8 @@ create a lexical rule for the proper name 'Zloty'.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert a list of ``Concept`` objects into a list of (label, extension) pairs;
-optionally create a ``Valuation`` object.
-
-:param concepts: concepts
-:type concepts: list(Concept)
-:param read: if ``True``, ``(symbol, set)`` pairs are read into a ``Valuation``
-:type read: bool
-:rtype: list or Valuation</p></div>
+    <div>Convert a list of <tt class="rst-docutils literal">Concept</tt> objects into a list of (label, extension) pairs;
+optionally create a <tt class="rst-docutils literal">Valuation</tt> object.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">concepts:</span>list(Concept)</td><td class="fieldArgDesc">concepts</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">read:</span>bool</td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt>, <tt class="rst-docutils literal">(symbol, set)</tt> pairs are read into a <tt class="rst-docutils literal">Valuation</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lexicon</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list or Valuation</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -610,7 +553,7 @@ optionally create a ``Valuation`` object.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">process_bundle</span>(rels):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L544">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L544">
       
       (source)
     </a>
@@ -618,13 +561,8 @@ optionally create a ``Valuation`` object.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a list of relation metadata bundles, make a corresponding
-dictionary of concepts, indexed by the relation name.
-
-:param rels: bundle of metadata needed for constructing a concept
-:type rels: list(dict)
-:return: a dictionary of concepts, indexed by the relation name.
-:rtype: dict(str): Concept</p></div>
+    <div>Given a list of relation metadata bundles, make a corresponding
+dictionary of concepts, indexed by the relation name.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rels:</span>list(dict)</td><td class="fieldArgDesc">bundle of metadata needed for constructing a concept</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">dict(str): Concept</td><td class="fieldArgDesc">a dictionary of concepts, indexed by the relation name.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -638,7 +576,7 @@ dictionary of concepts, indexed by the relation name.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sql_demo</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L845">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L845">
       
       (source)
     </a>
@@ -646,7 +584,7 @@ dictionary of concepts, indexed by the relation name.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print out every row from the 'city.db' database.</p></div>
+    <div>Print out every row from the 'city.db' database.</div>
   </div>
 </div><div class="basefunction">
   
@@ -660,7 +598,7 @@ dictionary of concepts, indexed by the relation name.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sql_query</span>(dbname, query):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L444">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L444">
       
       (source)
     </a>
@@ -668,11 +606,11 @@ dictionary of concepts, indexed by the relation name.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Execute an SQL query over a database.
+    <div>Execute an SQL query over a database.
 :param dbname: filename of persistent store
 :type schema: str
 :param query: SQL query
-:type rel_name: str</p></div>
+:type rel_name: str</div>
   </div>
 </div><div class="basefunction">
   
@@ -686,7 +624,7 @@ dictionary of concepts, indexed by the relation name.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unary_concept</span>(label, subj, records):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L483">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L483">
       
       (source)
     </a>
@@ -694,20 +632,11 @@ dictionary of concepts, indexed by the relation name.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Make a unary concept out of the primary key in a record.
-
-A record is a list of entities in some relation, such as
-``['france', 'paris']``, where ``'france'`` is acting as the primary
-key.
-
-:param label: the preferred label for the concept
-:type label: string
-:param subj: position in the record of the subject of the predicate
-:type subj: int
-:param records: a list of records
-:type records: list of lists
-:return: ``Concept`` of arity 1
-:rtype: Concept</p></div>
+    <div><p>Make a unary concept out of the primary key in a record.</p>
+<p>A record is a list of entities in some relation, such as
+<tt class="rst-docutils literal">['france', 'paris']</tt>, where <tt class="rst-docutils literal">'france'</tt> is acting as the primary
+key.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label:</span>string</td><td class="fieldArgDesc">the preferred label for the concept</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">subj:</span>int</td><td class="fieldArgDesc">position in the record of the subject of the predicate</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">records:</span>list of lists</td><td class="fieldArgDesc">a list of records</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Concept</td><td class="fieldArgDesc"><tt class="rst-docutils literal">Concept</tt> of arity 1</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -721,7 +650,7 @@ key.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">val_dump</span>(rels, db):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L602">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L602">
       
       (source)
     </a>
@@ -729,14 +658,9 @@ key.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Make a ``Valuation`` from a list of relation metadata bundles and dump to
-persistent database.
-
-:param rels: bundle of metadata needed for constructing a concept
-:type rels: list of dict
-:param db: name of file to which data is written.
-           The suffix '.db' will be automatically appended.
-:type db: str</p></div>
+    <div>Make a <tt class="rst-docutils literal">Valuation</tt> from a list of relation metadata bundles and dump to
+persistent database.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rels:</span>list of dict</td><td class="fieldArgDesc">bundle of metadata needed for constructing a concept</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">db:</span>str</td><td class="fieldArgDesc">name of file to which data is written.
+The suffix '.db' will be automatically appended.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -750,7 +674,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">val_load</span>(db):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L622">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L622">
       
       (source)
     </a>
@@ -758,11 +682,8 @@ persistent database.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Load a ``Valuation`` from a persistent database.
-
-:param db: name of file from which data is read.
-           The suffix '.db' should be omitted from the name.
-:type db: str</p></div>
+    <div>Load a <tt class="rst-docutils literal">Valuation</tt> from a persistent database.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">db:</span>str</td><td class="fieldArgDesc">name of file from which data is read.
+The suffix '.db' should be omitted from the name.</td></tr></table></div>
   </div>
 </div><div class="basevariable">
   
@@ -776,7 +697,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">borders</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L137">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L137">
       
       (source)
     </a>
@@ -798,7 +719,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">circle_of_lat</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L174">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L174">
       
       (source)
     </a>
@@ -820,7 +741,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">circle_of_long</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L181">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L181">
       
       (source)
     </a>
@@ -842,7 +763,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">city</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L151">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L151">
       
       (source)
     </a>
@@ -864,7 +785,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">contains</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L144">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L144">
       
       (source)
     </a>
@@ -886,7 +807,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">continent</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L188">
       
       (source)
     </a>
@@ -908,7 +829,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">country</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L158">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L158">
       
       (source)
     </a>
@@ -930,7 +851,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">item_metadata</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L226">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L226">
       
       (source)
     </a>
@@ -952,7 +873,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">items</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L212">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L212">
       
       (source)
     </a>
@@ -974,7 +895,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">not_unary</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L241">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L241">
       
       (source)
     </a>
@@ -996,7 +917,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">ocean</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L202">
       
       (source)
     </a>
@@ -1018,7 +939,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">region</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L195">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L195">
       
       (source)
     </a>
@@ -1040,7 +961,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">rels</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L239">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L239">
       
       (source)
     </a>
@@ -1062,7 +983,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-defname">sea</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L209">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L209">
       
       (source)
     </a>
@@ -1084,7 +1005,7 @@ persistent database.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_str2records</span>(filename, rel):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/chat80.py#L468">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/chat80.py#L468">
       
       (source)
     </a>
@@ -1092,7 +1013,7 @@ persistent database.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Read a file into memory and convert each relation clause into a list.</p></div>
+    <div>Read a file into memory and convert each relation clause into a list.</div>
   </div>
 </div>
 
@@ -1104,7 +1025,7 @@ persistent database.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

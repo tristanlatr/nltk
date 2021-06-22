@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gleu_score.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gleu_score.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">GLEU score implementation. </p></div>
+        <div>GLEU score implementation.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1874">
+        <table class="children sortable" id="id1878">
   
   
   <tr class="function">
@@ -108,7 +108,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">corpus_gleu</span>(list_of_references, hypotheses, min_len=1, max_len=4):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gleu_score.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gleu_score.py#L87">
       
       (source)
     </a>
@@ -116,62 +116,52 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate a single corpus-level GLEU score (aka. system-level GLEU) for all
-the hypotheses and their respective references.
-
-Instead of averaging the sentence level GLEU scores (i.e. macro-average
+    <div><p>Calculate a single corpus-level GLEU score (aka. system-level GLEU) for all
+the hypotheses and their respective references.</p>
+<p>Instead of averaging the sentence level GLEU scores (i.e. macro-average
 precision), Wu et al. (2016) sum up the matching tokens and the max of
 hypothesis and reference tokens for each sentence, then compute using the
-aggregate values.
-
-From Mike Schuster (via email):
-    "For the corpus, we just add up the two statistics n_match and
-     n_all = max(n_all_output, n_all_target) for all sentences, then
-     calculate gleu_score = n_match / n_all, so it is not just a mean of
-     the sentence gleu scores (in our case, longer sentences count more,
-     which I think makes sense as they are more difficult to translate)."
-
-&gt;&gt;&gt; hyp1 = ['It', 'is', 'a', 'guide', 'to', 'action', 'which',
-...         'ensures', 'that', 'the', 'military', 'always',
-...         'obeys', 'the', 'commands', 'of', 'the', 'party']
-&gt;&gt;&gt; ref1a = ['It', 'is', 'a', 'guide', 'to', 'action', 'that',
-...          'ensures', 'that', 'the', 'military', 'will', 'forever',
-...          'heed', 'Party', 'commands']
-&gt;&gt;&gt; ref1b = ['It', 'is', 'the', 'guiding', 'principle', 'which',
-...          'guarantees', 'the', 'military', 'forces', 'always',
-...          'being', 'under', 'the', 'command', 'of', 'the', 'Party']
-&gt;&gt;&gt; ref1c = ['It', 'is', 'the', 'practical', 'guide', 'for', 'the',
-...          'army', 'always', 'to', 'heed', 'the', 'directions',
-...          'of', 'the', 'party']
-
-&gt;&gt;&gt; hyp2 = ['he', 'read', 'the', 'book', 'because', 'he', 'was',
-...         'interested', 'in', 'world', 'history']
-&gt;&gt;&gt; ref2a = ['he', 'was', 'interested', 'in', 'world', 'history',
-...          'because', 'he', 'read', 'the', 'book']
-
-&gt;&gt;&gt; list_of_references = [[ref1a, ref1b, ref1c], [ref2a]]
-&gt;&gt;&gt; hypotheses = [hyp1, hyp2]
-&gt;&gt;&gt; corpus_gleu(list_of_references, hypotheses) # doctest: +ELLIPSIS
-0.5673...
-
-The example below show that corpus_gleu() is different from averaging
-sentence_gleu() for hypotheses
-
-&gt;&gt;&gt; score1 = sentence_gleu([ref1a], hyp1)
-&gt;&gt;&gt; score2 = sentence_gleu([ref2a], hyp2)
-&gt;&gt;&gt; (score1 + score2) / 2 # doctest: +ELLIPSIS
-0.6144...
-
-:param list_of_references: a list of reference sentences, w.r.t. hypotheses
-:type list_of_references: list(list(list(str)))
-:param hypotheses: a list of hypothesis sentences
-:type hypotheses: list(list(str))
-:param min_len: The minimum order of n-gram this function should extract.
-:type min_len: int
-:param max_len: The maximum order of n-gram this function should extract.
-:type max_len: int
-:return: The corpus-level GLEU score.
-:rtype: float</p></div>
+aggregate values.</p>
+<dl class="rst-docutils">
+<dt>From Mike Schuster (via email):</dt>
+<dd><dl class="rst-first rst-last rst-docutils">
+<dt>"For the corpus, we just add up the two statistics n_match and</dt>
+<dd>n_all = max(n_all_output, n_all_target) for all sentences, then
+calculate gleu_score = n_match / n_all, so it is not just a mean of
+the sentence gleu scores (in our case, longer sentences count more,
+which I think makes sense as they are more difficult to translate)."</dd>
+</dl>
+</dd>
+</dl>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp1 = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'a'</span>, <span class="py-string">'guide'</span>, <span class="py-string">'to'</span>, <span class="py-string">'action'</span>, <span class="py-string">'which'</span>,
+<span class="py-more">... </span>        <span class="py-string">'ensures'</span>, <span class="py-string">'that'</span>, <span class="py-string">'the'</span>, <span class="py-string">'military'</span>, <span class="py-string">'always'</span>,
+<span class="py-more">... </span>        <span class="py-string">'obeys'</span>, <span class="py-string">'the'</span>, <span class="py-string">'commands'</span>, <span class="py-string">'of'</span>, <span class="py-string">'the'</span>, <span class="py-string">'party'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>ref1a = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'a'</span>, <span class="py-string">'guide'</span>, <span class="py-string">'to'</span>, <span class="py-string">'action'</span>, <span class="py-string">'that'</span>,
+<span class="py-more">... </span>         <span class="py-string">'ensures'</span>, <span class="py-string">'that'</span>, <span class="py-string">'the'</span>, <span class="py-string">'military'</span>, <span class="py-string">'will'</span>, <span class="py-string">'forever'</span>,
+<span class="py-more">... </span>         <span class="py-string">'heed'</span>, <span class="py-string">'Party'</span>, <span class="py-string">'commands'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>ref1b = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'the'</span>, <span class="py-string">'guiding'</span>, <span class="py-string">'principle'</span>, <span class="py-string">'which'</span>,
+<span class="py-more">... </span>         <span class="py-string">'guarantees'</span>, <span class="py-string">'the'</span>, <span class="py-string">'military'</span>, <span class="py-string">'forces'</span>, <span class="py-string">'always'</span>,
+<span class="py-more">... </span>         <span class="py-string">'being'</span>, <span class="py-string">'under'</span>, <span class="py-string">'the'</span>, <span class="py-string">'command'</span>, <span class="py-string">'of'</span>, <span class="py-string">'the'</span>, <span class="py-string">'Party'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>ref1c = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'the'</span>, <span class="py-string">'practical'</span>, <span class="py-string">'guide'</span>, <span class="py-string">'for'</span>, <span class="py-string">'the'</span>,
+<span class="py-more">... </span>         <span class="py-string">'army'</span>, <span class="py-string">'always'</span>, <span class="py-string">'to'</span>, <span class="py-string">'heed'</span>, <span class="py-string">'the'</span>, <span class="py-string">'directions'</span>,
+<span class="py-more">... </span>         <span class="py-string">'of'</span>, <span class="py-string">'the'</span>, <span class="py-string">'party'</span>]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp2 = [<span class="py-string">'he'</span>, <span class="py-string">'read'</span>, <span class="py-string">'the'</span>, <span class="py-string">'book'</span>, <span class="py-string">'because'</span>, <span class="py-string">'he'</span>, <span class="py-string">'was'</span>,
+<span class="py-more">... </span>        <span class="py-string">'interested'</span>, <span class="py-string">'in'</span>, <span class="py-string">'world'</span>, <span class="py-string">'history'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>ref2a = [<span class="py-string">'he'</span>, <span class="py-string">'was'</span>, <span class="py-string">'interested'</span>, <span class="py-string">'in'</span>, <span class="py-string">'world'</span>, <span class="py-string">'history'</span>,
+<span class="py-more">... </span>         <span class="py-string">'because'</span>, <span class="py-string">'he'</span>, <span class="py-string">'read'</span>, <span class="py-string">'the'</span>, <span class="py-string">'book'</span>]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>list_of_references = [[ref1a, ref1b, ref1c], [ref2a]]
+<span class="py-prompt">&gt;&gt;&gt; </span>hypotheses = [hyp1, hyp2]
+<span class="py-prompt">&gt;&gt;&gt; </span>corpus_gleu(list_of_references, hypotheses) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.5673...</span>
+</pre><p>The example below show that corpus_gleu() is different from averaging
+sentence_gleu() for hypotheses</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>score1 = sentence_gleu([ref1a], hyp1)
+<span class="py-prompt">&gt;&gt;&gt; </span>score2 = sentence_gleu([ref2a], hyp2)
+<span class="py-prompt">&gt;&gt;&gt; </span>(score1 + score2) / 2 <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.6144...</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list_of_references:</span>list(list(list(str)))</td><td class="fieldArgDesc">a list of reference sentences, w.r.t. hypotheses</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypotheses:</span>list(list(str))</td><td class="fieldArgDesc">a list of hypothesis sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_len:</span>int</td><td class="fieldArgDesc">The minimum order of n-gram this function should extract.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_len:</span>int</td><td class="fieldArgDesc">The maximum order of n-gram this function should extract.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc">The corpus-level GLEU score.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -185,7 +175,7 @@ sentence_gleu() for hypotheses
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sentence_gleu</span>(references, hypothesis, min_len=1, max_len=4):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gleu_score.py#L17">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gleu_score.py#L17">
       
       (source)
     </a>
@@ -193,70 +183,65 @@ sentence_gleu() for hypotheses
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculates the sentence level GLEU (Google-BLEU) score described in
-
-    Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V. Le, Mohammad Norouzi,
-    Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey,
-    Jeff Klingner, Apurva Shah, Melvin Johnson, Xiaobing Liu, Lukasz Kaiser,
-    Stephan Gouws, Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens,
-    George Kurian, Nishant Patil, Wei Wang, Cliff Young, Jason Smith,
-    Jason Riesa, Alex Rudnick, Oriol Vinyals, Greg Corrado, Macduff Hughes,
-    Jeffrey Dean. (2016) Google’s Neural Machine Translation System:
-    Bridging the Gap between Human and Machine Translation.
-    eprint arXiv:1609.08144. https://arxiv.org/pdf/1609.08144v2.pdf
-    Retrieved on 27 Oct 2016.
-
-From Wu et al. (2016):
-    "The BLEU score has some undesirable properties when used for single
-     sentences, as it was designed to be a corpus measure. We therefore
-     use a slightly different score for our RL experiments which we call
-     the 'GLEU score'. For the GLEU score, we record all sub-sequences of
-     1, 2, 3 or 4 tokens in output and target sequence (n-grams). We then
-     compute a recall, which is the ratio of the number of matching n-grams
-     to the number of total n-grams in the target (ground truth) sequence,
-     and a precision, which is the ratio of the number of matching n-grams
-     to the number of total n-grams in the generated output sequence. Then
-     GLEU score is simply the minimum of recall and precision. This GLEU
-     score's range is always between 0 (no matches) and 1 (all match) and
-     it is symmetrical when switching output and target. According to
-     our experiments, GLEU score correlates quite well with the BLEU
-     metric on a corpus level but does not have its drawbacks for our per
-     sentence reward objective."
-
-Note: The initial implementation only allowed a single reference, but now
-      a list of references is required (which is consistent with
-      bleu_score.sentence_bleu()).
-
-The infamous "the the the ... " example
-
-    &gt;&gt;&gt; ref = 'the cat is on the mat'.split()
-    &gt;&gt;&gt; hyp = 'the the the the the the the'.split()
-    &gt;&gt;&gt; sentence_gleu([ref], hyp)  # doctest: +ELLIPSIS
-    0.0909...
-
-An example to evaluate normal machine translation outputs
-
-    &gt;&gt;&gt; ref1 = str('It is a guide to action that ensures that the military '
-    ...            'will forever heed Party commands').split()
-    &gt;&gt;&gt; hyp1 = str('It is a guide to action which ensures that the military '
-    ...            'always obeys the commands of the party').split()
-    &gt;&gt;&gt; hyp2 = str('It is to insure the troops forever hearing the activity '
-    ...            'guidebook that party direct').split()
-    &gt;&gt;&gt; sentence_gleu([ref1], hyp1) # doctest: +ELLIPSIS
-    0.4393...
-    &gt;&gt;&gt; sentence_gleu([ref1], hyp2) # doctest: +ELLIPSIS
-    0.1206...
-
-:param references: a list of reference sentences
-:type references: list(list(str))
-:param hypothesis: a hypothesis sentence
-:type hypothesis: list(str)
-:param min_len: The minimum order of n-gram this function should extract.
-:type min_len: int
-:param max_len: The maximum order of n-gram this function should extract.
-:type max_len: int
-:return: the sentence level GLEU score.
-:rtype: float</p></div>
+    <div><p>Calculates the sentence level GLEU (Google-BLEU) score described in</p>
+<blockquote>
+Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V. Le, Mohammad Norouzi,
+Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey,
+Jeff Klingner, Apurva Shah, Melvin Johnson, Xiaobing Liu, Lukasz Kaiser,
+Stephan Gouws, Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens,
+George Kurian, Nishant Patil, Wei Wang, Cliff Young, Jason Smith,
+Jason Riesa, Alex Rudnick, Oriol Vinyals, Greg Corrado, Macduff Hughes,
+Jeffrey Dean. (2016) Google’s Neural Machine Translation System:
+Bridging the Gap between Human and Machine Translation.
+eprint arXiv:1609.08144. https://arxiv.org/pdf/1609.08144v2.pdf
+Retrieved on 27 Oct 2016.</blockquote>
+<dl class="rst-docutils">
+<dt>From Wu et al. (2016):</dt>
+<dd><dl class="rst-first rst-last rst-docutils">
+<dt>"The BLEU score has some undesirable properties when used for single</dt>
+<dd>sentences, as it was designed to be a corpus measure. We therefore
+use a slightly different score for our RL experiments which we call
+the 'GLEU score'. For the GLEU score, we record all sub-sequences of
+1, 2, 3 or 4 tokens in output and target sequence (n-grams). We then
+compute a recall, which is the ratio of the number of matching n-grams
+to the number of total n-grams in the target (ground truth) sequence,
+and a precision, which is the ratio of the number of matching n-grams
+to the number of total n-grams in the generated output sequence. Then
+GLEU score is simply the minimum of recall and precision. This GLEU
+score's range is always between 0 (no matches) and 1 (all match) and
+it is symmetrical when switching output and target. According to
+our experiments, GLEU score correlates quite well with the BLEU
+metric on a corpus level but does not have its drawbacks for our per
+sentence reward objective."</dd>
+</dl>
+</dd>
+<dt>Note: The initial implementation only allowed a single reference, but now</dt>
+<dd>a list of references is required (which is consistent with
+bleu_score.sentence_bleu()).</dd>
+</dl>
+<p>The infamous "the the the ... " example</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ref = <span class="py-string">'the cat is on the mat'</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp = <span class="py-string">'the the the the the the the'</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_gleu([ref], hyp)  <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.0909...</span>
+</pre></blockquote>
+<p>An example to evaluate normal machine translation outputs</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ref1 = <span class="py-builtin">str</span>(<span class="py-string">'It is a guide to action that ensures that the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'will forever heed Party commands'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp1 = <span class="py-builtin">str</span>(<span class="py-string">'It is a guide to action which ensures that the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'always obeys the commands of the party'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp2 = <span class="py-builtin">str</span>(<span class="py-string">'It is to insure the troops forever hearing the activity '</span>
+<span class="py-more">... </span>           <span class="py-string">'guidebook that party direct'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_gleu([ref1], hyp1) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.4393...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_gleu([ref1], hyp2) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.1206...</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">references:</span>list(list(str))</td><td class="fieldArgDesc">a list of reference sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>list(str)</td><td class="fieldArgDesc">a hypothesis sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_len:</span>int</td><td class="fieldArgDesc">The minimum order of n-gram this function should extract.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_len:</span>int</td><td class="fieldArgDesc">The maximum order of n-gram this function should extract.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc">the sentence level GLEU score.</td></tr></table></div>
   </div>
 </div>
 
@@ -268,7 +253,7 @@ An example to evaluate normal machine translation outputs
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

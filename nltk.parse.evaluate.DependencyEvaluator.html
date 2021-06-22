@@ -65,77 +65,75 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">DependencyEvaluator</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/evaluate.py#L12" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DependencyEvaluator</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/evaluate.py#L12" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.evaluate.DependencyEvaluator">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Class for measuring labelled and unlabelled attachment score for
-dependency parsing. Note that the evaluation ignores punctuation.
-
-&gt;&gt;&gt; from nltk.parse import DependencyGraph, DependencyEvaluator
-
-&gt;&gt;&gt; gold_sent = DependencyGraph("""
-... Pierre  NNP     2       NMOD
-... Vinken  NNP     8       SUB
-... ,       ,       2       P
-... 61      CD      5       NMOD
-... years   NNS     6       AMOD
-... old     JJ      2       NMOD
-... ,       ,       2       P
-... will    MD      0       ROOT
-... join    VB      8       VC
-... the     DT      11      NMOD
-... board   NN      9       OBJ
-... as      IN      9       VMOD
-... a       DT      15      NMOD
-... nonexecutive    JJ      15      NMOD
-... director        NN      12      PMOD
-... Nov.    NNP     9       VMOD
-... 29      CD      16      NMOD
-... .       .       9       VMOD
-... """)
-
-&gt;&gt;&gt; parsed_sent = DependencyGraph("""
-... Pierre  NNP     8       NMOD
-... Vinken  NNP     1       SUB
-... ,       ,       3       P
-... 61      CD      6       NMOD
-... years   NNS     6       AMOD
-... old     JJ      2       NMOD
-... ,       ,       3       AMOD
-... will    MD      0       ROOT
-... join    VB      8       VC
-... the     DT      11      AMOD
-... board   NN      9       OBJECT
-... as      IN      9       NMOD
-... a       DT      15      NMOD
-... nonexecutive    JJ      15      NMOD
-... director        NN      12      PMOD
-... Nov.    NNP     9       VMOD
-... 29      CD      16      NMOD
-... .       .       9       VMOD
-... """)
-
-&gt;&gt;&gt; de = DependencyEvaluator([parsed_sent],[gold_sent])
-&gt;&gt;&gt; las, uas = de.eval()
-&gt;&gt;&gt; las
-0.6...
-&gt;&gt;&gt; uas
-0.8...
-&gt;&gt;&gt; abs(uas - 0.8) &lt; 0.00001
-True</p></div>
+        <div><p>Class for measuring labelled and unlabelled attachment score for
+dependency parsing. Note that the evaluation ignores punctuation.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.parse <span class="py-keyword">import</span> DependencyGraph, DependencyEvaluator</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>gold_sent = DependencyGraph(<span class="py-string">"""</span>
+<span class="py-more">... </span><span class="py-string">Pierre  NNP     2       NMOD</span>
+<span class="py-more">... </span><span class="py-string">Vinken  NNP     8       SUB</span>
+<span class="py-more">... </span><span class="py-string">,       ,       2       P</span>
+<span class="py-more">... </span><span class="py-string">61      CD      5       NMOD</span>
+<span class="py-more">... </span><span class="py-string">years   NNS     6       AMOD</span>
+<span class="py-more">... </span><span class="py-string">old     JJ      2       NMOD</span>
+<span class="py-more">... </span><span class="py-string">,       ,       2       P</span>
+<span class="py-more">... </span><span class="py-string">will    MD      0       ROOT</span>
+<span class="py-more">... </span><span class="py-string">join    VB      8       VC</span>
+<span class="py-more">... </span><span class="py-string">the     DT      11      NMOD</span>
+<span class="py-more">... </span><span class="py-string">board   NN      9       OBJ</span>
+<span class="py-more">... </span><span class="py-string">as      IN      9       VMOD</span>
+<span class="py-more">... </span><span class="py-string">a       DT      15      NMOD</span>
+<span class="py-more">... </span><span class="py-string">nonexecutive    JJ      15      NMOD</span>
+<span class="py-more">... </span><span class="py-string">director        NN      12      PMOD</span>
+<span class="py-more">... </span><span class="py-string">Nov.    NNP     9       VMOD</span>
+<span class="py-more">... </span><span class="py-string">29      CD      16      NMOD</span>
+<span class="py-more">... </span><span class="py-string">.       .       9       VMOD</span>
+<span class="py-more">... </span><span class="py-string">"""</span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>parsed_sent = DependencyGraph(<span class="py-string">"""</span>
+<span class="py-more">... </span><span class="py-string">Pierre  NNP     8       NMOD</span>
+<span class="py-more">... </span><span class="py-string">Vinken  NNP     1       SUB</span>
+<span class="py-more">... </span><span class="py-string">,       ,       3       P</span>
+<span class="py-more">... </span><span class="py-string">61      CD      6       NMOD</span>
+<span class="py-more">... </span><span class="py-string">years   NNS     6       AMOD</span>
+<span class="py-more">... </span><span class="py-string">old     JJ      2       NMOD</span>
+<span class="py-more">... </span><span class="py-string">,       ,       3       AMOD</span>
+<span class="py-more">... </span><span class="py-string">will    MD      0       ROOT</span>
+<span class="py-more">... </span><span class="py-string">join    VB      8       VC</span>
+<span class="py-more">... </span><span class="py-string">the     DT      11      AMOD</span>
+<span class="py-more">... </span><span class="py-string">board   NN      9       OBJECT</span>
+<span class="py-more">... </span><span class="py-string">as      IN      9       NMOD</span>
+<span class="py-more">... </span><span class="py-string">a       DT      15      NMOD</span>
+<span class="py-more">... </span><span class="py-string">nonexecutive    JJ      15      NMOD</span>
+<span class="py-more">... </span><span class="py-string">director        NN      12      PMOD</span>
+<span class="py-more">... </span><span class="py-string">Nov.    NNP     9       VMOD</span>
+<span class="py-more">... </span><span class="py-string">29      CD      16      NMOD</span>
+<span class="py-more">... </span><span class="py-string">.       .       9       VMOD</span>
+<span class="py-more">... </span><span class="py-string">"""</span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>de = DependencyEvaluator([parsed_sent],[gold_sent])
+<span class="py-prompt">&gt;&gt;&gt; </span>las, uas = de.eval()
+<span class="py-prompt">&gt;&gt;&gt; </span>las
+<span class="py-output">0.6...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>uas
+<span class="py-output">0.8...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">abs</span>(uas - 0.8) &lt; 0.00001
+<span class="py-output">True</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1007">
+        <table class="children sortable" id="id1011">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param parsed_sents: the list of parsed_sents as the output of parser :type parsed_sents: list(DependencyGraph)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -177,7 +175,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parsed_sents, gold_sents):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/evaluate.py#L71">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/evaluate.py#L71">
       
       (source)
     </a>
@@ -185,8 +183,7 @@ True</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param parsed_sents: the list of parsed_sents as the output of parser
-:type parsed_sents: list(DependencyGraph)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parsed_sents:</span>list(DependencyGraph)</td><td class="fieldArgDesc">the list of parsed_sents as the output of parser</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gold_sents</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -200,7 +197,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">eval</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/evaluate.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/evaluate.py#L88">
       
       (source)
     </a>
@@ -208,9 +205,9 @@ True</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the Labeled Attachment Score (LAS) and Unlabeled Attachment Score (UAS)
-
-:return : tuple(float,float)</p></div>
+    <div><p>Return the Labeled Attachment Score (LAS) and Unlabeled Attachment Score (UAS)</p>
+<p>:return : tuple(float,float)</p>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -224,7 +221,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_remove_punct</span>(self, inStr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/evaluate.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/evaluate.py#L79">
       
       (source)
     </a>
@@ -232,9 +229,9 @@ True</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Function to remove punctuation from Unicode string.
+    <div>Function to remove punctuation from Unicode string.
 :param input: the input string
-:return: Unicode string after remove all punctuation</p></div>
+:return: Unicode string after remove all punctuation</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -248,7 +245,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_gold_sents</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/evaluate.py#L77">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/evaluate.py#L77">
       
       (source)
     </a>
@@ -270,7 +267,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_parsed_sents</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/evaluate.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/evaluate.py#L76">
       
       (source)
     </a>
@@ -290,7 +287,7 @@ True</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

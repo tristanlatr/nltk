@@ -65,46 +65,52 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChartParser</span>(<a href="nltk.parse.api.ParserI.html" title="nltk.parse.api.ParserI">ParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1350" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.chart.BottomUpChartParser.html">nltk.parse.chart.BottomUpChartParser</a></code>, <code><a href="nltk.parse.chart.BottomUpLeftCornerChartParser.html">nltk.parse.chart.BottomUpLeftCornerChartParser</a></code>, <code><a href="nltk.parse.chart.LeftCornerChartParser.html">nltk.parse.chart.LeftCornerChartParser</a></code>, <code><a href="nltk.parse.chart.SteppingChartParser.html">nltk.parse.chart.SteppingChartParser</a></code>, <code><a href="nltk.parse.chart.TopDownChartParser.html">nltk.parse.chart.TopDownChartParser</a></code>, <code><a href="nltk.parse.earleychart.IncrementalChartParser.html">nltk.parse.earleychart.IncrementalChartParser</a></code>, <code><a href="nltk.parse.featurechart.FeatureChartParser.html">nltk.parse.featurechart.FeatureChartParser</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChartParser</span>(<a href="nltk.parse.api.ParserI.html" title="nltk.parse.api.ParserI">ParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1350" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.chart.BottomUpChartParser.html">nltk.parse.chart.BottomUpChartParser</a></code>, <code><a href="nltk.parse.chart.BottomUpLeftCornerChartParser.html">nltk.parse.chart.BottomUpLeftCornerChartParser</a></code>, <code><a href="nltk.parse.chart.LeftCornerChartParser.html">nltk.parse.chart.LeftCornerChartParser</a></code>, <code><a href="nltk.parse.chart.SteppingChartParser.html">nltk.parse.chart.SteppingChartParser</a></code>, <code><a href="nltk.parse.chart.TopDownChartParser.html">nltk.parse.chart.TopDownChartParser</a></code>, <code><a href="nltk.parse.earleychart.IncrementalChartParser.html">nltk.parse.earleychart.IncrementalChartParser</a></code>, <code><a href="nltk.parse.featurechart.FeatureChartParser.html">nltk.parse.featurechart.FeatureChartParser</a></code></p>
         <p><a href="classIndex.html#nltk.parse.chart.ChartParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A generic chart parser.  A "strategy", or list of
-``ChartRuleI`` instances, is used to decide what edges to add to
-the chart.  In particular, ``ChartParser`` uses the following
-algorithm to parse texts:
-
-| Until no new edges are added:
-|   For each *rule* in *strategy*:
-|     Apply *rule* to any applicable edges in the chart.
-| Return any complete parses in the chart</p></div>
+        <div><p>A generic chart parser.  A "strategy", or list of
+<tt class="rst-docutils literal">ChartRuleI</tt> instances, is used to decide what edges to add to
+the chart.  In particular, <tt class="rst-docutils literal">ChartParser</tt> uses the following
+algorithm to parse texts:</p>
+<div class="rst-line-block">
+<div class="rst-line">Until no new edges are added:</div>
+<div class="rst-line-block">
+<div class="rst-line">For each <em>rule</em> in <em>strategy</em>:</div>
+<div class="rst-line-block">
+<div class="rst-line">Apply <em>rule</em> to any applicable edges in the chart.</div>
+</div>
+</div>
+<div class="rst-line">Return any complete parses in the chart</div>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id874">
+        <table class="children sortable" id="id878">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new chart parser, that uses ``grammar`` to parse texts.</span></td>
+    <td><span>Create a new chart parser, that uses <tt class="rst-docutils literal">grammar</tt> to parse texts.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#chart_parse">chart_parse</a></code></td>
-    <td><span>Return the final parse ``Chart`` from which all possible parse trees can be extracted.</span></td>
+    <td><span>Return the final parse <tt class="rst-docutils literal">Chart</tt> from which all possible parse trees can be extracted.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -156,24 +162,24 @@ algorithm to parse texts:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code>:
           </p>
-          <table class="children sortable" id="id875">
+          <table class="children sortable" id="id879">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_sents">parse_sents</a></code></td>
-    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.parse()</tt> to each element of <tt class="rst-docutils literal">sents</tt>. :rtype: iter(iter(Tree))</span></td>
   </tr>
 </table>
           
@@ -195,7 +201,7 @@ algorithm to parse texts:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, grammar, strategy=BU_LC_STRATEGY, trace=0, trace_chart_width=50, use_agenda=True, chart_class=Chart):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1363">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1363">
       
       (source)
     </a>
@@ -203,28 +209,16 @@ algorithm to parse texts:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.chart.BottomUpChartParser.html">nltk.parse.chart.BottomUpChartParser</a></code>, <code><a href="nltk.parse.chart.BottomUpLeftCornerChartParser.html">nltk.parse.chart.BottomUpLeftCornerChartParser</a></code>, <code><a href="nltk.parse.chart.LeftCornerChartParser.html">nltk.parse.chart.LeftCornerChartParser</a></code>, <code><a href="nltk.parse.chart.SteppingChartParser.html">nltk.parse.chart.SteppingChartParser</a></code>, <code><a href="nltk.parse.chart.TopDownChartParser.html">nltk.parse.chart.TopDownChartParser</a></code>, <code><a href="nltk.parse.earleychart.IncrementalChartParser.html">nltk.parse.earleychart.IncrementalChartParser</a></code>, <code><a href="nltk.parse.featurechart.FeatureChartParser.html">nltk.parse.featurechart.FeatureChartParser</a></code></div>
     
-    <div><p class="pre">Create a new chart parser, that uses ``grammar`` to parse
-texts.
-
-:type grammar: CFG
-:param grammar: The grammar used to parse texts.
-:type strategy: list(ChartRuleI)
-:param strategy: A list of rules that should be used to decide
-    what edges to add to the chart (top-down strategy by default).
-:type trace: int
-:param trace: The level of tracing that should be used when
-    parsing a text.  ``0`` will generate no tracing output;
-    and higher numbers will produce more verbose tracing
-    output.
-:type trace_chart_width: int
-:param trace_chart_width: The default total width reserved for
-    the chart in trace output.  The remainder of each line will
-    be used to display edges.
-:type use_agenda: bool
-:param use_agenda: Use an optimized agenda-based algorithm,
-    if possible.
-:param chart_class: The class that should be used to create
-    the parse charts.</p></div>
+    <div>Create a new chart parser, that uses <tt class="rst-docutils literal">grammar</tt> to parse
+texts.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar:</span>CFG</td><td class="fieldArgDesc">The grammar used to parse texts.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">strategy:</span>list(ChartRuleI)</td><td class="fieldArgDesc">A list of rules that should be used to decide
+what edges to add to the chart (top-down strategy by default).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace:</span>int</td><td class="fieldArgDesc">The level of tracing that should be used when
+parsing a text.  <tt class="rst-docutils literal">0</tt> will generate no tracing output;
+and higher numbers will produce more verbose tracing
+output.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace_chart_width:</span>int</td><td class="fieldArgDesc">The default total width reserved for
+the chart in trace output.  The remainder of each line will
+be used to display edges.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">use_agenda:</span>bool</td><td class="fieldArgDesc">Use an optimized agenda-based algorithm,
+if possible.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart_class</span></td><td class="fieldArgDesc">The class that should be used to create
+the parse charts.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -238,7 +232,7 @@ texts.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chart_parse</span>(self, tokens, trace=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1428">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1428">
       
       (source)
     </a>
@@ -246,12 +240,8 @@ texts.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChartParser.html">nltk.parse.earleychart.IncrementalChartParser</a></code></div>
     
-    <div><p class="pre">Return the final parse ``Chart`` from which all possible
-parse trees can be extracted.
-
-:param tokens: The sentence to be parsed
-:type tokens: list(str)
-:rtype: Chart</p></div>
+    <div>Return the final parse <tt class="rst-docutils literal">Chart</tt> from which all possible
+parse trees can be extracted.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(str)</td><td class="fieldArgDesc">The sentence to be parsed</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Chart</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -265,7 +255,7 @@ parse trees can be extracted.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">grammar</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1415">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1415">
       
       (source)
     </a>
@@ -273,7 +263,7 @@ parse trees can be extracted.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.api.ParserI.html#grammar">nltk.parse.api.ParserI.grammar</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.chart.SteppingChartParser.html">nltk.parse.chart.SteppingChartParser</a></code></div>
     
-    <div><p class="pre">:return: The grammar used by this parser.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">The grammar used by this parser.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -287,7 +277,7 @@ parse trees can be extracted.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens, tree_class=Tree):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1483">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1483">
       
       (source)
     </a>
@@ -295,12 +285,7 @@ parse trees can be extracted.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.api.ParserI.html#parse">nltk.parse.api.ParserI.parse</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.chart.SteppingChartParser.html">nltk.parse.chart.SteppingChartParser</a></code></div>
     
-    <div><p class="pre">:return: An iterator that generates parse trees for the sentence.
-When possible this list is sorted from most likely to least likely.
-
-:param sent: The sentence to be parsed
-:type sent: list(str)
-:rtype: iter(Tree)</p></div>
+    <div>When possible this list is sorted from most likely to least likely.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tree_class</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent:</span>list(str)</td><td class="fieldArgDesc">The sentence to be parsed</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(Tree)</td><td class="fieldArgDesc">An iterator that generates parse trees for the sentence.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -314,7 +299,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_trace_new_edges</span>(self, chart, rule, new_edges, trace, edge_width):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1418">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1418">
       
       (source)
     </a>
@@ -336,7 +321,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-defname">_axioms</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1405">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1405">
       
       (source)
     </a>
@@ -358,7 +343,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-defname">_chart_class</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1403">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1403">
       
       (source)
     </a>
@@ -380,7 +365,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-defname">_grammar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1396">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1396">
       
       (source)
     </a>
@@ -402,7 +387,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-defname">_inference_rules</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1406">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1406">
       
       (source)
     </a>
@@ -424,7 +409,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-defname">_strategy</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1397">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1397">
       
       (source)
     </a>
@@ -446,7 +431,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-defname">_trace</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1398">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1398">
       
       (source)
     </a>
@@ -468,7 +453,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-defname">_trace_chart_width</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1399">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1399">
       
       (source)
     </a>
@@ -490,7 +475,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-defname">_use_agenda</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1402">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1402">
       
       (source)
     </a>
@@ -510,7 +495,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

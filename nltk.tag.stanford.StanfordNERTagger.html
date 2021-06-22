@@ -65,30 +65,33 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">StanfordNERTagger</span>(<a href="nltk.tag.stanford.StanfordTagger.html" title="nltk.tag.stanford.StanfordTagger">StanfordTagger</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/stanford.py#L175" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StanfordNERTagger</span>(<a href="nltk.tag.stanford.StanfordTagger.html" title="nltk.tag.stanford.StanfordTagger">StanfordTagger</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/stanford.py#L175" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.stanford.StanfordNERTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A class for Named-Entity Tagging with Stanford Tagger. The input is the paths to:
-
-- a model trained on training data
-- (optionally) the path to the stanford tagger jar file. If not specified here,
-  then this jar file must be specified in the CLASSPATH envinroment variable.
-- (optionally) the encoding of the training data (default: UTF-8)
-
-Example:
-
-    &gt;&gt;&gt; from nltk.tag import StanfordNERTagger
-    &gt;&gt;&gt; st = StanfordNERTagger('english.all.3class.distsim.crf.ser.gz') # doctest: +SKIP
-    &gt;&gt;&gt; st.tag('Rami Eid is studying at Stony Brook University in NY'.split()) # doctest: +SKIP
-    [('Rami', 'PERSON'), ('Eid', 'PERSON'), ('is', 'O'), ('studying', 'O'),
-     ('at', 'O'), ('Stony', 'ORGANIZATION'), ('Brook', 'ORGANIZATION'),
-     ('University', 'ORGANIZATION'), ('in', 'O'), ('NY', 'LOCATION')]</p></div>
+        <div><p>A class for Named-Entity Tagging with Stanford Tagger. The input is the paths to:</p>
+<ul class="rst-simple">
+<li>a model trained on training data</li>
+<li>(optionally) the path to the stanford tagger jar file. If not specified here,
+then this jar file must be specified in the CLASSPATH envinroment variable.</li>
+<li>(optionally) the encoding of the training data (default: UTF-8)</li>
+</ul>
+<p>Example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> StanfordNERTagger
+<span class="py-prompt">&gt;&gt;&gt; </span>st = StanfordNERTagger(<span class="py-string">'english.all.3class.distsim.crf.ser.gz'</span>) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.tag(<span class="py-string">'Rami Eid is studying at Stony Brook University in NY'</span>.split()) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('Rami', 'PERSON'), ('Eid', 'PERSON'), ('is', 'O'), ('studying', 'O'),</span>
+<span class="py-output"> ('at', 'O'), ('Stony', 'ORGANIZATION'), ('Brook', 'ORGANIZATION'),</span>
+<span class="py-output"> ('University', 'ORGANIZATION'), ('in', 'O'), ('NY', 'LOCATION')]</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1620">
+        <table class="children sortable" id="id1624">
   
   
   <tr class="method">
@@ -127,19 +130,19 @@ Example:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.stanford.StanfordTagger.html">StanfordTagger</a></code>:
           </p>
-          <table class="children sortable" id="id1621">
+          <table class="children sortable" id="id1625">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tag.stanford.StanfordTagger.html#tag">tag</a></code></td>
-    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple ``(token, tag)``.</span></td>
+    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tag.stanford.StanfordTagger.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
@@ -171,7 +174,7 @@ Example:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code> (via <code><a href="nltk.tag.stanford.StanfordTagger.html">StanfordTagger</a></code>):
           </p>
-          <table class="children sortable" id="id1622">
+          <table class="children sortable" id="id1626">
   
   
   <tr class="basemethod">
@@ -205,7 +208,7 @@ Example:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/stanford.py#L198">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/stanford.py#L198">
       
       (source)
     </a>
@@ -227,7 +230,7 @@ Example:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse_output</span>(self, text, sentences):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/stanford.py#L218">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/stanford.py#L218">
       
       (source)
     </a>
@@ -249,7 +252,7 @@ Example:
   <div class="functionHeader">
     
     <span class="py-defname">_FORMAT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/stanford.py#L196">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/stanford.py#L196">
       
       (source)
     </a>
@@ -271,7 +274,7 @@ Example:
   <div class="functionHeader">
     
     <span class="py-defname">_JAR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/stanford.py#L195">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/stanford.py#L195">
       
       (source)
     </a>
@@ -293,7 +296,7 @@ Example:
   <div class="functionHeader">
     
     <span class="py-defname">_SEPARATOR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/stanford.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/stanford.py#L194">
       
       (source)
     </a>
@@ -315,7 +318,7 @@ Example:
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">_cmd</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/stanford.py#L201">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/stanford.py#L201">
       
       (source)
     </a>
@@ -323,7 +326,7 @@ Example:
   <div class="functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.stanford.StanfordTagger.html#_cmd">nltk.tag.stanford.StanfordTagger._cmd</a></code></div>
     
-    <div><p class="pre">A property that returns the command that will be executed.</p></div>
+    <div>A property that returns the command that will be executed.</div>
   </div>
 </div>
 
@@ -335,7 +338,7 @@ Example:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

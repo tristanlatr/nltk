@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Query</span>(<span title="twython.Twython">Twython</span>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L125" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Query</span>(<span title="twython.Twython">Twython</span>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L125" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.twitter.twitterclient.Query">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Retrieve data from the Twitter REST API.</p></div>
+        <div>Retrieve data from the Twitter REST API.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1949">
+        <table class="children sortable" id="id1953">
   
   
   <tr class="method">
@@ -143,7 +143,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, app_key, app_secret, oauth_token, oauth_token_secret):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L130">
       
       (source)
     </a>
@@ -165,7 +165,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">expand_tweetids</span>(self, ids_f, verbose=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L143">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L143">
       
       (source)
     </a>
@@ -173,17 +173,13 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a file object containing a list of Tweet IDs, fetch the
-corresponding full Tweets from the Twitter API.
-
-The API call `statuses/lookup` will fail to retrieve a Tweet if the
-user has deleted it.
-
-This call to the Twitter API is rate-limited. See
-&lt;https://dev.twitter.com/rest/reference/get/statuses/lookup&gt; for details.
-
-:param ids_f: input file object consisting of Tweet IDs, one to a line
-:return: iterable of Tweet objects in JSON format</p></div>
+    <div><p>Given a file object containing a list of Tweet IDs, fetch the
+corresponding full Tweets from the Twitter API.</p>
+<p>The API call <code>statuses/lookup</code> will fail to retrieve a Tweet if the
+user has deleted it.</p>
+<p>This call to the Twitter API is rate-limited. See
+&lt;<a class="rst-reference external" href="https://dev.twitter.com/rest/reference/get/statuses/lookup" target="_top">https://dev.twitter.com/rest/reference/get/statuses/lookup</a>&gt; for details.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ids_f</span></td><td class="fieldArgDesc">input file object consisting of Tweet IDs, one to a line</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">iterable of Tweet objects in JSON format</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -197,7 +193,7 @@ This call to the Twitter API is rate-limited. See
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">register</span>(self, handler):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L135">
       
       (source)
     </a>
@@ -205,9 +201,7 @@ This call to the Twitter API is rate-limited. See
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Register a method for handling Tweets.
-
-:param TweetHandlerI handler: method for viewing or writing Tweets to a file.</p></div>
+    <div>Register a method for handling Tweets.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">handler</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">TweetHandlerI handler</span></td><td class="fieldArgDesc">method for viewing or writing Tweets to a file.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -221,7 +215,7 @@ This call to the Twitter API is rate-limited. See
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">search_tweets</span>(self, keywords, limit=100, lang='en', max_id=None, retries_after_twython_exception=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L190">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L190">
       
       (source)
     </a>
@@ -229,17 +223,9 @@ This call to the Twitter API is rate-limited. See
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Call the REST API ``'search/tweets'`` endpoint with some plausible
-defaults. See `the Twitter search documentation
-&lt;https://dev.twitter.com/rest/public/search&gt;`_ for more information
-about admissible search parameters.
-
-:param str keywords: A list of query terms to search for, written as        a comma-separated string
-:param int limit: Number of Tweets to process
-:param str lang: language
-:param int max_id: id of the last tweet fetched
-:param int retries_after_twython_exception: number of retries when        searching Tweets before raising an exception
-:rtype: python generator</p></div>
+    <div>Call the REST API <tt class="rst-docutils literal">'search/tweets'</tt> endpoint with some plausible
+defaults. See <a class="rst-reference external" href="https://dev.twitter.com/rest/public/search" target="_top">the Twitter search documentation</a> for more information
+about admissible search parameters.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">keywords</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lang</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_id</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">retries_after_twython_exception</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str keywords</span></td><td class="fieldArgDesc">A list of query terms to search for, written as        a comma-separated string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int limit</span></td><td class="fieldArgDesc">Number of Tweets to process</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str lang</span></td><td class="fieldArgDesc">language</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int max_id</span></td><td class="fieldArgDesc">id of the last tweet fetched</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int retries_after_twython_exception</span></td><td class="fieldArgDesc">number of retries when        searching Tweets before raising an exception</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">python generator</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -253,7 +239,7 @@ about admissible search parameters.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">user_info_from_id</span>(self, userids):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L278">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L278">
       
       (source)
     </a>
@@ -261,12 +247,9 @@ about admissible search parameters.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert a list of userIDs into a variety of information about the users.
-
-See &lt;https://dev.twitter.com/rest/reference/get/users/show&gt;.
-
-:param list userids: A list of integer strings corresponding to Twitter userIDs
-:rtype: list(json)</p></div>
+    <div><p>Convert a list of userIDs into a variety of information about the users.</p>
+<p>See &lt;<a class="rst-reference external" href="https://dev.twitter.com/rest/reference/get/users/show" target="_top">https://dev.twitter.com/rest/reference/get/users/show</a>&gt;.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">userids</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list userids</span></td><td class="fieldArgDesc">A list of integer strings corresponding to Twitter userIDs</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(json)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -280,7 +263,7 @@ See &lt;https://dev.twitter.com/rest/reference/get/users/show&gt;.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">user_tweets</span>(self, screen_name, limit, include_rts='false'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L289">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L289">
       
       (source)
     </a>
@@ -288,11 +271,7 @@ See &lt;https://dev.twitter.com/rest/reference/get/users/show&gt;.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a collection of the most recent Tweets posted by the user
-
-:param str user: The user's screen name; the initial '@' symbol        should be omitted
-:param int limit: The number of Tweets to recover; 200 is the maximum allowed
-:param str include_rts: Whether to include statuses which have been        retweeted by the user; possible values are 'true' and 'false'</p></div>
+    <div>Return a collection of the most recent Tweets posted by the user<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">screen_name</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include_rts</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str user</span></td><td class="fieldArgDesc">The user's screen name; the initial '@' symbol        should be omitted</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int limit</span></td><td class="fieldArgDesc">The number of Tweets to recover; 200 is the maximum allowed</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str include_rts</span></td><td class="fieldArgDesc">Whether to include statuses which have been        retweeted by the user; possible values are 'true' and 'false'</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -306,7 +285,7 @@ See &lt;https://dev.twitter.com/rest/reference/get/users/show&gt;.
   <div class="functionHeader">
     
     <span class="py-defname">do_continue</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L132">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L132">
       
       (source)
     </a>
@@ -328,7 +307,7 @@ See &lt;https://dev.twitter.com/rest/reference/get/users/show&gt;.
   <div class="functionHeader">
     
     <span class="py-defname">handler</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L131">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L131">
       
       (source)
     </a>
@@ -350,7 +329,7 @@ See &lt;https://dev.twitter.com/rest/reference/get/users/show&gt;.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_search_tweets</span>(self, keywords, limit=100, lang='en'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L170">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L170">
       
       (source)
     </a>
@@ -358,12 +337,8 @@ See &lt;https://dev.twitter.com/rest/reference/get/users/show&gt;.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Assumes that the handler has been informed. Fetches Tweets from
-search_tweets generator output and passses them to handler
-
-:param str keywords: A list of query terms to search for, written as        a comma-separated string.
-:param int limit: Number of Tweets to process
-:param str lang: language</p></div>
+    <div>Assumes that the handler has been informed. Fetches Tweets from
+search_tweets generator output and passses them to handler<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">keywords</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lang</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str keywords</span></td><td class="fieldArgDesc">A list of query terms to search for, written as        a comma-separated string.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int limit</span></td><td class="fieldArgDesc">Number of Tweets to process</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str lang</span></td><td class="fieldArgDesc">language</td></tr></table></div>
   </div>
 </div>
 
@@ -375,7 +350,7 @@ search_tweets generator output and passses them to handler
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

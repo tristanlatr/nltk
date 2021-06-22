@@ -65,42 +65,37 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Nonterminal</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L86" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.grammar.FeatStructNonterminal.html">nltk.grammar.FeatStructNonterminal</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Nonterminal</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L86" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.grammar.FeatStructNonterminal.html">nltk.grammar.FeatStructNonterminal</a></code></p>
         <p><a href="classIndex.html#nltk.grammar.Nonterminal">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A non-terminal symbol for a context free grammar.  ``Nonterminal``
-is a wrapper class for node values; it is used by ``Production``
+        <div>A non-terminal symbol for a context free grammar.  <tt class="rst-docutils literal">Nonterminal</tt>
+is a wrapper class for node values; it is used by <tt class="rst-docutils literal">Production</tt>
 objects to distinguish node values from leaf values.
-The node value that is wrapped by a ``Nonterminal`` is known as its
+The node value that is wrapped by a <tt class="rst-docutils literal">Nonterminal</tt> is known as its
 "symbol".  Symbols are typically strings representing phrasal
-categories (such as ``"NP"`` or ``"VP"``).  However, more complex
+categories (such as <tt class="rst-docutils literal">"NP"</tt> or <tt class="rst-docutils literal">"VP"</tt>).  However, more complex
 symbol types are sometimes used (e.g., for lexicalized grammars).
 Since symbols are node values, they must be immutable and
-hashable.  Two ``Nonterminals`` are considered equal if their
-symbols are equal.
-
-:see: ``CFG``, ``Production``
-:type _symbol: any
-:ivar _symbol: The node value corresponding to this
-    ``Nonterminal``.  This value must be immutable and hashable.</p></div>
+hashable.  Two <tt class="rst-docutils literal">Nonterminals</tt> are considered equal if their
+symbols are equal.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">CFG</tt>, <tt class="rst-docutils literal">Production</tt></td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id644">
+        <table class="children sortable" id="id647">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__div__">__div__</a></code></td>
-    <td><span>Return a new nonterminal whose symbol is ``A/B``, where ``A`` is the symbol for this nonterminal, and ``B`` is the symbol for rhs.</span></td>
+    <td><span>Return a new nonterminal whose symbol is <tt class="rst-docutils literal">A/B</tt>, where <tt class="rst-docutils literal">A</tt> is the symbol for this nonterminal, and <tt class="rst-docutils literal">B</tt> is the symbol for rhs.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__eq__">__eq__</a></code></td>
-    <td><span>Return True if this non-terminal is equal to ``other``.  In particular, return True if ``other`` is a ``Nonterminal`` and this non-terminal's symbol is equal to ``other`` 's symbol.</span></td>
+    <td><span>Return True if this non-terminal is equal to <tt class="rst-docutils literal">other</tt>.  In particular, return True if <tt class="rst-docutils literal">other</tt> is a <tt class="rst-docutils literal">Nonterminal</tt> and this non-terminal's symbol is equal to <tt class="rst-docutils literal">other</tt> 's symbol.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -125,12 +120,12 @@ symbols are equal.
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a string representation for this ``Nonterminal``.</span></td>
+    <td><span>Return a string representation for this <tt class="rst-docutils literal">Nonterminal</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__str__">__str__</a></code></td>
-    <td><span>Return a string representation for this ``Nonterminal``.</span></td>
+    <td><span>Return a string representation for this <tt class="rst-docutils literal">Nonterminal</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -140,12 +135,13 @@ symbols are equal.
     
     <td>Method</td>
     <td><code><a href="#symbol">symbol</a></code></td>
-    <td><span>Return the node value corresponding to this ``Nonterminal``.</span></td>
+    <td><span>Return the node value corresponding to this <tt class="rst-docutils literal">Nonterminal</tt>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_symbol">_symbol</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The node value corresponding to this
+<tt class="rst-docutils literal">Nonterminal</tt>.  This value must be immutable and hashable.</span></td>
   </tr>
 </table>
         
@@ -167,7 +163,7 @@ symbols are equal.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__div__</span>(self, rhs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L168">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L168">
       
       (source)
     </a>
@@ -175,13 +171,9 @@ symbols are equal.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a new nonterminal whose symbol is ``A/B``, where ``A`` is
-the symbol for this nonterminal, and ``B`` is the symbol for rhs.
-
-:param rhs: The nonterminal used to form the right hand side
-    of the new nonterminal.
-:type rhs: Nonterminal
-:rtype: Nonterminal</p></div>
+    <div>Return a new nonterminal whose symbol is <tt class="rst-docutils literal">A/B</tt>, where <tt class="rst-docutils literal">A</tt> is
+the symbol for this nonterminal, and <tt class="rst-docutils literal">B</tt> is the symbol for rhs.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rhs:</span>Nonterminal</td><td class="fieldArgDesc">The nonterminal used to form the right hand side
+of the new nonterminal.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Nonterminal</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -195,7 +187,7 @@ the symbol for this nonterminal, and ``B`` is the symbol for rhs.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L125">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L125">
       
       (source)
     </a>
@@ -203,11 +195,9 @@ the symbol for this nonterminal, and ``B`` is the symbol for rhs.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if this non-terminal is equal to ``other``.  In
-particular, return True if ``other`` is a ``Nonterminal``
-and this non-terminal's symbol is equal to ``other`` 's symbol.
-
-:rtype: bool</p></div>
+    <div>Return True if this non-terminal is equal to <tt class="rst-docutils literal">other</tt>.  In
+particular, return True if <tt class="rst-docutils literal">other</tt> is a <tt class="rst-docutils literal">Nonterminal</tt>
+and this non-terminal's symbol is equal to <tt class="rst-docutils literal">other</tt> 's symbol.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -221,7 +211,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L143">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L143">
       
       (source)
     </a>
@@ -243,7 +233,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, symbol):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L106">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L106">
       
       (source)
     </a>
@@ -251,12 +241,9 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new non-terminal from the given symbol.
-
-:type symbol: any
-:param symbol: The node value corresponding to this
-    ``Nonterminal``.  This value must be immutable and
-    hashable.</p></div>
+    <div>Construct a new non-terminal from the given symbol.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">symbol:</span>any</td><td class="fieldArgDesc">The node value corresponding to this
+<tt class="rst-docutils literal">Nonterminal</tt>.  This value must be immutable and
+hashable.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -270,7 +257,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L138">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L138">
       
       (source)
     </a>
@@ -292,7 +279,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L135">
       
       (source)
     </a>
@@ -314,7 +301,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L146">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L146">
       
       (source)
     </a>
@@ -322,9 +309,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation for this ``Nonterminal``.
-
-:rtype: str</p></div>
+    <div>Return a string representation for this <tt class="rst-docutils literal">Nonterminal</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -338,7 +323,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L157">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L157">
       
       (source)
     </a>
@@ -346,9 +331,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation for this ``Nonterminal``.
-
-:rtype: str</p></div>
+    <div>Return a string representation for this <tt class="rst-docutils literal">Nonterminal</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -362,7 +345,7 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__truediv__</span>(self, rhs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L180">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L180">
       
       (source)
     </a>
@@ -370,15 +353,11 @@ and this non-terminal's symbol is equal to ``other`` 's symbol.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a new nonterminal whose symbol is ``A/B``, where ``A`` is
-the symbol for this nonterminal, and ``B`` is the symbol for rhs.
-This function allows use of the slash ``/`` operator with
-the future import of division.
-
-:param rhs: The nonterminal used to form the right hand side
-    of the new nonterminal.
-:type rhs: Nonterminal
-:rtype: Nonterminal</p></div>
+    <div>Return a new nonterminal whose symbol is <tt class="rst-docutils literal">A/B</tt>, where <tt class="rst-docutils literal">A</tt> is
+the symbol for this nonterminal, and <tt class="rst-docutils literal">B</tt> is the symbol for rhs.
+This function allows use of the slash <tt class="rst-docutils literal">/</tt> operator with
+the future import of division.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rhs:</span>Nonterminal</td><td class="fieldArgDesc">The nonterminal used to form the right hand side
+of the new nonterminal.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Nonterminal</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -392,7 +371,7 @@ the future import of division.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">symbol</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L117">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L117">
       
       (source)
     </a>
@@ -400,9 +379,7 @@ the future import of division.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.FeatStructNonterminal.html">nltk.grammar.FeatStructNonterminal</a></code></div>
     
-    <div><p class="pre">Return the node value corresponding to this ``Nonterminal``.
-
-:rtype: (any)</p></div>
+    <div>Return the node value corresponding to this <tt class="rst-docutils literal">Nonterminal</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">(any)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -415,8 +392,8 @@ the future import of division.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_symbol</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L115">
+    <span class="py-defname">_symbol</span>: any =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L101">
       
       (source)
     </a>
@@ -424,7 +401,8 @@ the future import of division.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The node value corresponding to this
+<tt class="rst-docutils literal">Nonterminal</tt>.  This value must be immutable and hashable.</div>
   </div>
 </div>
 
@@ -436,7 +414,7 @@ the future import of division.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

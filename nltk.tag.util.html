@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/util.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/util.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1626">
+        <table class="children sortable" id="id1630">
   
   
   <tr class="function">
@@ -91,7 +91,7 @@
     
     <td>Function</td>
     <td><code><a href="#untag">untag</a></code></td>
-    <td><span>Given a tagged sentence, return an untagged version of that sentence.  I.e., return a list containing the first element of each tuple in *tagged_sentence*.</span></td>
+    <td><span>Given a tagged sentence, return an untagged version of that sentence.  I.e., return a list containing the first element of each tuple in <em>tagged_sentence</em>.</span></td>
   </tr>
 </table>
         
@@ -113,7 +113,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">str2tuple</span>(s, sep='/'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/util.py#L10">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/util.py#L10">
       
       (source)
     </a>
@@ -121,20 +121,18 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given the string representation of a tagged token, return the
+    <div><p>Given the string representation of a tagged token, return the
 corresponding tuple representation.  The rightmost occurrence of
-*sep* in *s* will be used to divide *s* into a word string and
-a tag string.  If *sep* does not occur in *s*, return (s, None).
-
-    &gt;&gt;&gt; from nltk.tag.util import str2tuple
-    &gt;&gt;&gt; str2tuple('fly/NN')
-    ('fly', 'NN')
-
-:type s: str
-:param s: The string representation of a tagged token.
-:type sep: str
-:param sep: The separator string used to separate word strings
-    from tags.</p></div>
+<em>sep</em> in <em>s</em> will be used to divide <em>s</em> into a word string and
+a tag string.  If <em>sep</em> does not occur in <em>s</em>, return (s, None).</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag.util <span class="py-keyword">import</span> str2tuple
+<span class="py-prompt">&gt;&gt;&gt; </span>str2tuple(<span class="py-string">'fly/NN'</span>)
+<span class="py-output">('fly', 'NN')</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">The string representation of a tagged token.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sep:</span>str</td><td class="fieldArgDesc">The separator string used to separate word strings
+from tags.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -148,7 +146,7 @@ a tag string.  If *sep* does not occur in *s*, return (s, None).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tuple2str</span>(tagged_token, sep='/'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/util.py#L34">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/util.py#L34">
       
       (source)
     </a>
@@ -156,22 +154,20 @@ a tag string.  If *sep* does not occur in *s*, return (s, None).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given the tuple representation of a tagged token, return the
+    <div><p>Given the tuple representation of a tagged token, return the
 corresponding string representation.  This representation is
 formed by concatenating the token's word string, followed by the
 separator, followed by the token's tag.  (If the tag is None,
-then just return the bare word string.)
-
-    &gt;&gt;&gt; from nltk.tag.util import tuple2str
-    &gt;&gt;&gt; tagged_token = ('fly', 'NN')
-    &gt;&gt;&gt; tuple2str(tagged_token)
-    'fly/NN'
-
-:type tagged_token: tuple(str, str)
-:param tagged_token: The tuple representation of a tagged token.
-:type sep: str
-:param sep: The separator string used to separate word strings
-    from tags.</p></div>
+then just return the bare word string.)</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag.util <span class="py-keyword">import</span> tuple2str
+<span class="py-prompt">&gt;&gt;&gt; </span>tagged_token = (<span class="py-string">'fly'</span>, <span class="py-string">'NN'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>tuple2str(tagged_token)
+<span class="py-output">'fly/NN'</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagged_token:</span>tuple(str, str)</td><td class="fieldArgDesc">The tuple representation of a tagged token.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sep:</span>str</td><td class="fieldArgDesc">The separator string used to separate word strings
+from tags.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -185,7 +181,7 @@ then just return the bare word string.)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">untag</span>(tagged_sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/util.py#L61">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/util.py#L61">
       
       (source)
     </a>
@@ -193,13 +189,16 @@ then just return the bare word string.)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a tagged sentence, return an untagged version of that
+    <div><p>Given a tagged sentence, return an untagged version of that
 sentence.  I.e., return a list containing the first element
-of each tuple in *tagged_sentence*.
-
-    &gt;&gt;&gt; from nltk.tag.util import untag
-    &gt;&gt;&gt; untag([('John', 'NNP'), ('saw', 'VBD'), ('Mary', 'NNP')])
-    ['John', 'saw', 'Mary']</p></div>
+of each tuple in <em>tagged_sentence</em>.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag.util <span class="py-keyword">import</span> untag
+<span class="py-prompt">&gt;&gt;&gt; </span>untag([(<span class="py-string">'John'</span>, <span class="py-string">'NNP'</span>), (<span class="py-string">'saw'</span>, <span class="py-string">'VBD'</span>), (<span class="py-string">'Mary'</span>, <span class="py-string">'NNP'</span>)])
+<span class="py-output">['John', 'saw', 'Mary']</span>
+</pre></blockquote>
+</div>
   </div>
 </div>
 
@@ -211,7 +210,7 @@ of each tuple in *tagged_sentence*.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

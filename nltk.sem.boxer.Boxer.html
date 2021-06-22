@@ -65,17 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Boxer</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L58" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Boxer</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L58" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.sem.boxer.Boxer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This class is an interface to Johan Bos's program Boxer, a wide-coverage
-semantic parser that produces Discourse Representation Structures (DRSs).</p></div>
+        <div>This class is an interface to Johan Bos's program Boxer, a wide-coverage
+semantic parser that produces Discourse Representation Structures (DRSs).</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1171">
+        <table class="children sortable" id="id1175">
   
   
   <tr class="method">
@@ -117,12 +117,12 @@ semantic parser that produces Discourse Representation Structures (DRSs).</p></d
     
     <td>Method</td>
     <td><code><a href="#_call_boxer">_call_boxer</a></code></td>
-    <td><span>Call the ``boxer`` binary with the given input.</span></td>
+    <td><span>Call the <tt class="rst-docutils literal">boxer</tt> binary with the given input.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_call_candc">_call_candc</a></code></td>
-    <td><span>Call the ``candc`` binary with the given input.</span></td>
+    <td><span>Call the <tt class="rst-docutils literal">candc</tt> binary with the given input.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -189,7 +189,7 @@ semantic parser that produces Discourse Representation Structures (DRSs).</p></d
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, boxer_drs_interpreter=None, elimeq=False, bin_dir=None, verbose=False, resolve=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L64">
       
       (source)
     </a>
@@ -197,15 +197,14 @@ semantic parser that produces Discourse Representation Structures (DRSs).</p></d
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param boxer_drs_interpreter: A class that converts from the
-``AbstractBoxerDrs`` object hierarchy to a different object.  The
-default is ``NltkDrtBoxerDrsInterpreter``, which converts to the NLTK
+    <div><tt class="rst-docutils literal">AbstractBoxerDrs</tt> object hierarchy to a different object.  The
+default is <tt class="rst-docutils literal">NltkDrtBoxerDrsInterpreter</tt>, which converts to the NLTK
 DRT hierarchy.
 :param elimeq: When set to true, Boxer removes all equalities from the
 DRSs and discourse referents standing in the equality relation are
 unified, but only if this can be done in a meaning-preserving manner.
 :param resolve: When set to true, Boxer will resolve all anaphoric DRSs and perform merge-reduction.
-Resolution follows Van der Sandt's theory of binding and accommodation.</p></div>
+Resolution follows Van der Sandt's theory of binding and accommodation.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">boxer_drs_interpreter</span></td><td class="fieldArgDesc">A class that converts from the</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">elimeq</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bin_dir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">resolve</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -219,7 +218,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">interpret</span>(self, input, discourse_id=None, question=False, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L99">
       
       (source)
     </a>
@@ -227,12 +226,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use Boxer to give a first order representation.
-
-:param input: str Input sentence to parse
-:param occur_index: bool Should predicates be occurrence indexed?
-:param discourse_id: str An identifier to be inserted to each occurrence-indexed predicate.
-:return: ``drt.DrtExpression``</p></div>
+    <div>Use Boxer to give a first order representation.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">input</span></td><td class="fieldArgDesc">str Input sentence to parse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">discourse_id</span></td><td class="fieldArgDesc">str An identifier to be inserted to each occurrence-indexed predicate.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">question</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">occur_index</span></td><td class="fieldArgDesc">bool Should predicates be occurrence indexed?</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">drt.DrtExpression</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -246,7 +240,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">interpret_multi</span>(self, input, discourse_id=None, question=False, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L114">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L114">
       
       (source)
     </a>
@@ -254,12 +248,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use Boxer to give a first order representation.
-
-:param input: list of str Input sentences to parse as a single discourse
-:param occur_index: bool Should predicates be occurrence indexed?
-:param discourse_id: str An identifier to be inserted to each occurrence-indexed predicate.
-:return: ``drt.DrtExpression``</p></div>
+    <div>Use Boxer to give a first order representation.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">input</span></td><td class="fieldArgDesc">list of str Input sentences to parse as a single discourse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">discourse_id</span></td><td class="fieldArgDesc">str An identifier to be inserted to each occurrence-indexed predicate.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">question</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">occur_index</span></td><td class="fieldArgDesc">bool Should predicates be occurrence indexed?</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">drt.DrtExpression</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -273,7 +262,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">interpret_multi_sents</span>(self, inputs, discourse_ids=None, question=False, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L144">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L144">
       
       (source)
     </a>
@@ -281,12 +270,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use Boxer to give a first order representation.
-
-:param inputs: list of list of str Input discourses to parse
-:param occur_index: bool Should predicates be occurrence indexed?
-:param discourse_ids: list of str Identifiers to be inserted to each occurrence-indexed predicate.
-:return: ``drt.DrtExpression``</p></div>
+    <div>Use Boxer to give a first order representation.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inputs</span></td><td class="fieldArgDesc">list of list of str Input discourses to parse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">discourse_ids</span></td><td class="fieldArgDesc">list of str Identifiers to be inserted to each occurrence-indexed predicate.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">question</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">occur_index</span></td><td class="fieldArgDesc">bool Should predicates be occurrence indexed?</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">drt.DrtExpression</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -300,7 +284,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">interpret_sents</span>(self, inputs, discourse_ids=None, question=False, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L129">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L129">
       
       (source)
     </a>
@@ -308,12 +292,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use Boxer to give a first order representation.
-
-:param inputs: list of str Input sentences to parse as individual discourses
-:param occur_index: bool Should predicates be occurrence indexed?
-:param discourse_ids: list of str Identifiers to be inserted to each occurrence-indexed predicate.
-:return: list of ``drt.DrtExpression``</p></div>
+    <div>Use Boxer to give a first order representation.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inputs</span></td><td class="fieldArgDesc">list of str Input sentences to parse as individual discourses</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">discourse_ids</span></td><td class="fieldArgDesc">list of str Identifiers to be inserted to each occurrence-indexed predicate.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">question</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">occur_index</span></td><td class="fieldArgDesc">bool Should predicates be occurrence indexed?</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of <tt class="rst-docutils literal">drt.DrtExpression</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -327,7 +306,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_bin_dir</span>(self, bin_dir, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L92">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L92">
       
       (source)
     </a>
@@ -349,7 +328,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_call</span>(self, input_str, binary, args=[], verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L251">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L251">
       
       (source)
     </a>
@@ -357,12 +336,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Call the binary with the given input.
-
-:param input_str: A string whose contents are used as stdin.
-:param binary: The location of the binary to call
-:param args: A list of command-line arguments.
-:return: stdout</p></div>
+    <div>Call the binary with the given input.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">input_str</span></td><td class="fieldArgDesc">A string whose contents are used as stdin.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">binary</span></td><td class="fieldArgDesc">The location of the binary to call</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">A list of command-line arguments.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">stdout</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -376,7 +350,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_call_boxer</span>(self, candc_out, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L202">
       
       (source)
     </a>
@@ -384,10 +358,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Call the ``boxer`` binary with the given input.
-
-:param candc_out: str output from C&amp;C parser
-:return: stdout</p></div>
+    <div>Call the <tt class="rst-docutils literal">boxer</tt> binary with the given input.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">candc_out</span></td><td class="fieldArgDesc">str output from C&amp;C parser</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">stdout</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -401,7 +372,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_call_candc</span>(self, inputs, discourse_ids, question, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L172">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L172">
       
       (source)
     </a>
@@ -409,12 +380,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Call the ``candc`` binary with the given input.
-
-:param inputs: list of list of str Input discourses to parse
-:param discourse_ids: list of str Identifiers to be inserted to each occurrence-indexed predicate.
-:param filename: str A filename for the output file
-:return: stdout</p></div>
+    <div>Call the <tt class="rst-docutils literal">candc</tt> binary with the given input.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inputs</span></td><td class="fieldArgDesc">list of list of str Input discourses to parse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">discourse_ids</span></td><td class="fieldArgDesc">list of str Identifiers to be inserted to each occurrence-indexed predicate.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">question</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filename</span></td><td class="fieldArgDesc">str A filename for the output file</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">stdout</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -428,7 +394,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_find_binary</span>(self, name, bin_dir, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L241">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L241">
       
       (source)
     </a>
@@ -450,7 +416,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse_drs</span>(self, drs_string, discourse_id, use_disc_id):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L334">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L334">
       
       (source)
     </a>
@@ -472,7 +438,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse_to_drs_dict</span>(self, boxer_out, use_disc_id):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L292">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L292">
       
       (source)
     </a>
@@ -494,7 +460,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">_boxer_bin</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L97">
       
       (source)
     </a>
@@ -516,7 +482,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">_boxer_drs_interpreter</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L85">
       
       (source)
     </a>
@@ -538,7 +504,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">_candc_bin</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L93">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L93">
       
       (source)
     </a>
@@ -560,7 +526,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">_candc_models_path</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L94">
       
       (source)
     </a>
@@ -582,7 +548,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">_elimeq</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L88">
       
       (source)
     </a>
@@ -604,7 +570,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">_resolve</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/boxer.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/boxer.py#L87">
       
       (source)
     </a>
@@ -624,7 +590,7 @@ Resolution follows Van der Sandt's theory of binding and accommodation.</p></div
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

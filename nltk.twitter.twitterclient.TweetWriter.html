@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TweetWriter</span>(<a href="nltk.twitter.api.TweetHandlerI.html" title="nltk.twitter.api.TweetHandlerI">TweetHandlerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L437" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TweetWriter</span>(<a href="nltk.twitter.api.TweetHandlerI.html" title="nltk.twitter.api.TweetHandlerI">TweetHandlerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L437" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.twitter.twitterclient.TweetWriter">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Handle data by writing it to a file.</p></div>
+        <div>Handle data by writing it to a file.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1954">
+        <table class="children sortable" id="id1958">
   
   
   <tr class="method">
@@ -86,7 +86,7 @@
     
     <td>Method</td>
     <td><code><a href="#do_continue">do_continue</a></code></td>
-    <td><span>Returns `False` if the client should stop fetching Tweets.</span></td>
+    <td><span>Returns <code><a href="https://docs.python.org/3/library/constants.html#False">False</a></code> if the client should stop fetching Tweets.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -101,7 +101,7 @@
     
     <td>Method</td>
     <td><code><a href="#timestamped_file">timestamped_file</a></code></td>
-    <td><span>:return: timestamped file name :rtype: str</span></td>
+    <td><span></span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -153,7 +153,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.twitter.api.TweetHandlerI.html">TweetHandlerI</a></code>:
           </p>
-          <table class="children sortable" id="id1955">
+          <table class="children sortable" id="id1959">
   
   
   <tr class="basemethod">
@@ -182,7 +182,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.twitter.api.BasicTweetHandler.html">BasicTweetHandler</a></code> (via <code><a href="nltk.twitter.api.TweetHandlerI.html">TweetHandlerI</a></code>):
           </p>
-          <table class="children sortable" id="id1956">
+          <table class="children sortable" id="id1960">
   
   
   <tr class="baseinstancevariable">
@@ -216,7 +216,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, limit=2000, upper_date_limit=None, lower_date_limit=None, fprefix='tweets', subdir='twitter-files', repeat=False, gzip_compress=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L442">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L442">
       
       (source)
     </a>
@@ -224,23 +224,9 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.twitter.api.TweetHandlerI.html#__init__">nltk.twitter.api.TweetHandlerI.__init__</a></code></div>
     
-    <div><p class="pre">The difference between the upper and lower date limits depends on
+    <div>The difference between the upper and lower date limits depends on
 whether Tweets are coming in an ascending date order (i.e. when
-streaming) or descending date order (i.e. when searching past Tweets).
-
-:param int limit: number of data items to process in the current        round of processing.
-
-:param tuple upper_date_limit: The date at which to stop collecting new        data. This should be entered as a tuple which can serve as the        argument to `datetime.datetime`. E.g. `upper_date_limit=(2015, 4, 1, 12,        40)` for 12:30 pm on April 1 2015.
-
-:param tuple lower_date_limit: The date at which to stop collecting new        data. See `upper_data_limit` for formatting.
-
-:param str fprefix: The prefix to use in creating file names for Tweet        collections.
-
-:param str subdir: The name of the directory where Tweet collection        files should be stored.
-
-:param bool repeat: flag to determine whether multiple files should be        written. If `True`, the length of each file will be set by the value        of `limit`. See also :py:func:`handle`.
-
-:param gzip_compress: if `True`, ouput files are compressed with gzip.</p></div>
+streaming) or descending date order (i.e. when searching past Tweets).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">upper_date_limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lower_date_limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fprefix</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">subdir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">repeat</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gzip_compress</span></td><td class="fieldArgDesc">if <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, ouput files are compressed with gzip.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int limit</span></td><td class="fieldArgDesc">number of data items to process in the current        round of processing.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tuple upper_date_limit</span></td><td class="fieldArgDesc">The date at which to stop collecting new        data. This should be entered as a tuple which can serve as the        argument to <code><a href="https://docs.python.org/3/library/datetime.html#datetime.datetime">datetime.datetime</a></code>. E.g. <code>upper_date_limit=(2015, 4, 1, 12,        40)</code> for 12:30 pm on April 1 2015.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tuple lower_date_limit</span></td><td class="fieldArgDesc">The date at which to stop collecting new        data. See <code>upper_data_limit</code> for formatting.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str fprefix</span></td><td class="fieldArgDesc">The prefix to use in creating file names for Tweet        collections.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str subdir</span></td><td class="fieldArgDesc">The name of the directory where Tweet collection        files should be stored.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bool repeat</span></td><td class="fieldArgDesc">flag to determine whether multiple files should be        written. If <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, the length of each file will be set by the value        of <code>limit</code>. See also <a href="#id1"><span class="rst-problematic" id="rst-id2">:py:func:`handle`</span></a>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -254,7 +240,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">do_continue</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L540">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L540">
       
       (source)
     </a>
@@ -262,7 +248,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.twitter.api.BasicTweetHandler.html#do_continue">nltk.twitter.api.BasicTweetHandler.do_continue</a></code></div>
     
-    <div><p class="pre">Returns `False` if the client should stop fetching Tweets.</p></div>
+    <div>Returns <code><a href="https://docs.python.org/3/library/constants.html#False">False</a></code> if the client should stop fetching Tweets.</div>
   </div>
 </div><div class="basemethod">
   
@@ -276,7 +262,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">handle</span>(self, data):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L509">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L509">
       
       (source)
     </a>
@@ -284,10 +270,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.twitter.api.TweetHandlerI.html#handle">nltk.twitter.api.TweetHandlerI.handle</a></code></div>
     
-    <div><p class="pre">Write Twitter data as line-delimited JSON into one or more files.
-
-:return: return `False` if processing should cease, otherwise return `True`.
-:param data: tweet object returned by Twitter API</p></div>
+    <div>Write Twitter data as line-delimited JSON into one or more files.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc">tweet object returned by Twitter API</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">return <code><a href="https://docs.python.org/3/library/constants.html#False">False</a></code> if processing should cease, otherwise return <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -301,7 +284,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">on_finish</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L535">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L535">
       
       (source)
     </a>
@@ -309,7 +292,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.twitter.api.TweetHandlerI.html#on_finish">nltk.twitter.api.TweetHandlerI.on_finish</a></code></div>
     
-    <div><p class="pre">Actions when the tweet limit has been reached</p></div>
+    <div>Actions when the tweet limit has been reached</div>
   </div>
 </div><div class="basemethod">
   
@@ -323,7 +306,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">timestamped_file</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L488">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L488">
       
       (source)
     </a>
@@ -331,8 +314,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: timestamped file name
-:rtype: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">timestamped file name</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -346,7 +328,7 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="functionHeader">
     
     <span class="py-defname">counter</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L558">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L558">
       
       (source)
     </a>
@@ -354,8 +336,8 @@ streaming) or descending date order (i.e. when searching past Tweets).
   <div class="functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.twitter.api.BasicTweetHandler.html#counter">nltk.twitter.api.BasicTweetHandler.counter</a></code></div>
     
-    <div><p class="pre">A flag to indicate to the client whether to stop fetching data given
-some condition (e.g., reaching a date limit).</p></div>
+    <div>A flag to indicate to the client whether to stop fetching data given
+some condition (e.g., reaching a date limit).</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -369,7 +351,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">fname</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L483">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L483">
       
       (source)
     </a>
@@ -391,7 +373,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">fprefix</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L480">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L480">
       
       (source)
     </a>
@@ -413,7 +395,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">gzip_compress</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L482">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L482">
       
       (source)
     </a>
@@ -435,7 +417,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">output</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L485">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L485">
       
       (source)
     </a>
@@ -457,7 +439,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">repeat</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L484">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L484">
       
       (source)
     </a>
@@ -479,7 +461,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">startingup</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L533">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L533">
       
       (source)
     </a>
@@ -501,7 +483,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">subdir</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L481">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L481">
       
       (source)
     </a>
@@ -523,7 +505,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_restart_file</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/twitterclient.py#L554">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/twitterclient.py#L554">
       
       (source)
     </a>
@@ -543,7 +525,7 @@ some condition (e.g., reaching a date limit).</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

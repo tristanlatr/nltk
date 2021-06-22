@@ -65,40 +65,38 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/rte.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/rte.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Corpus reader for the Recognizing Textual Entailment (RTE) Challenge Corpora.
+        <div><p>Corpus reader for the Recognizing Textual Entailment (RTE) Challenge Corpora.</p>
+<p>The files were taken from the RTE1, RTE2 and RTE3 datasets and the files
+were regularized.</p>
+<p>Filenames are of the form rte*_dev.xml and rte*_test.xml. The latter are the
+gold standard annotated files.</p>
+<p>Each entailment corpus is a list of 'text'/'hypothesis' pairs. The following
+example is taken from RTE3:</p>
+<pre class="rst-literal-block">
+&lt;pair id="1" entailment="YES" task="IE" length="short" &gt;
 
-The files were taken from the RTE1, RTE2 and RTE3 datasets and the files
-were regularized.
+   &lt;t&gt;The sale was made to pay Yukos' US$ 27.5 billion tax bill,
+   Yuganskneftegaz was originally sold for US$ 9.4 billion to a little known
+   company Baikalfinansgroup which was later bought by the Russian
+   state-owned oil company Rosneft .&lt;/t&gt;
 
-Filenames are of the form rte*_dev.xml and rte*_test.xml. The latter are the
-gold standard annotated files.
-
-Each entailment corpus is a list of 'text'/'hypothesis' pairs. The following
-example is taken from RTE3::
-
- &lt;pair id="1" entailment="YES" task="IE" length="short" &gt;
-
-    &lt;t&gt;The sale was made to pay Yukos' US$ 27.5 billion tax bill,
-    Yuganskneftegaz was originally sold for US$ 9.4 billion to a little known
-    company Baikalfinansgroup which was later bought by the Russian
-    state-owned oil company Rosneft .&lt;/t&gt;
-
-   &lt;h&gt;Baikalfinansgroup was sold to Rosneft.&lt;/h&gt;
- &lt;/pair&gt;
-
-In order to provide globally unique IDs for each pair, a new attribute
-``challenge`` has been added to the root element ``entailment-corpus`` of each
+  &lt;h&gt;Baikalfinansgroup was sold to Rosneft.&lt;/h&gt;
+&lt;/pair&gt;
+</pre>
+<p>In order to provide globally unique IDs for each pair, a new attribute
+<tt class="rst-docutils literal">challenge</tt> has been added to the root element <tt class="rst-docutils literal"><span class="pre">entailment-corpus</span></tt> of each
 file, taking values 1, 2 or 3. The GID is formatted 'm-n', where 'm' is the
-challenge number and 'n' is the pair ID.</p></div>
+challenge number and 'n' is the pair ID.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id428">
+        <table class="children sortable" id="id431">
   
   
   <tr class="class">
@@ -115,7 +113,7 @@ challenge number and 'n' is the pair ID.</p></div>
     
     <td>Function</td>
     <td><code><a href="#norm">norm</a></code></td>
-    <td><span>Normalize the string value in an RTE pair's ``value`` or ``entailment`` attribute as an integer (1, 0).</span></td>
+    <td><span>Normalize the string value in an RTE pair's <tt class="rst-docutils literal">value</tt> or <tt class="rst-docutils literal">entailment</tt> attribute as an integer (1, 0).</span></td>
   </tr>
 </table>
         
@@ -137,7 +135,7 @@ challenge number and 'n' is the pair ID.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">norm</span>(value_string):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/rte.py#L40">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/rte.py#L40">
       
       (source)
     </a>
@@ -145,12 +143,8 @@ challenge number and 'n' is the pair ID.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Normalize the string value in an RTE pair's ``value`` or ``entailment``
-attribute as an integer (1, 0).
-
-:param value_string: the label used to classify a text/hypothesis pair
-:type value_string: str
-:rtype: int</p></div>
+    <div>Normalize the string value in an RTE pair's <tt class="rst-docutils literal">value</tt> or <tt class="rst-docutils literal">entailment</tt>
+attribute as an integer (1, 0).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">value_string:</span>str</td><td class="fieldArgDesc">the label used to classify a text/hypothesis pair</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div>
 
@@ -162,7 +156,7 @@ attribute as an integer (1, 0).
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

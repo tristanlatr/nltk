@@ -65,34 +65,35 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">StanfordSegmenter</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L34" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StanfordSegmenter</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L34" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.stanford_segmenter.StanfordSegmenter">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Interface to the Stanford Segmenter
-
-If stanford-segmenter version is older than 2016-10-31, then path_to_slf4j
-should be provieded, for example::
-
-    seg = StanfordSegmenter(path_to_slf4j='/YOUR_PATH/slf4j-api.jar')
-
-&gt;&gt;&gt; from nltk.tokenize.stanford_segmenter import StanfordSegmenter
-&gt;&gt;&gt; seg = StanfordSegmenter()
-&gt;&gt;&gt; seg.default_config('zh')
-&gt;&gt;&gt; sent = u'这是斯坦福中文分词器测试'
-&gt;&gt;&gt; print(seg.segment(sent))
-这 是 斯坦福 中文 分词器 测试
-&lt;BLANKLINE&gt;
-&gt;&gt;&gt; seg.default_config('ar')
-&gt;&gt;&gt; sent = u'هذا هو تصنيف ستانفورد العربي للكلمات'
-&gt;&gt;&gt; print(seg.segment(sent.split()))
-هذا هو تصنيف ستانفورد العربي ل الكلمات
-&lt;BLANKLINE&gt;</p></div>
+        <div><p>Interface to the Stanford Segmenter</p>
+<p>If stanford-segmenter version is older than 2016-10-31, then path_to_slf4j
+should be provieded, for example:</p>
+<pre class="rst-literal-block">
+seg = StanfordSegmenter(path_to_slf4j='/YOUR_PATH/slf4j-api.jar')
+</pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize.stanford_segmenter <span class="py-keyword">import</span> StanfordSegmenter
+<span class="py-prompt">&gt;&gt;&gt; </span>seg = StanfordSegmenter()
+<span class="py-prompt">&gt;&gt;&gt; </span>seg.default_config(<span class="py-string">'zh'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = u<span class="py-string">'这是斯坦福中文分词器测试'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(seg.segment(sent))
+<span class="py-output">这 是 斯坦福 中文 分词器 测试</span>
+<span class="py-output">&lt;BLANKLINE&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>seg.default_config(<span class="py-string">'ar'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = u<span class="py-string">'هذا هو تصنيف ستانفورد العربي للكلمات'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(seg.segment(sent.split()))
+<span class="py-output">هذا هو تصنيف ستانفورد العربي ل الكلمات</span>
+<span class="py-output">&lt;BLANKLINE&gt;</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1840">
+        <table class="children sortable" id="id1844">
   
   
   <tr class="method">
@@ -124,7 +125,7 @@ should be provieded, for example::
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *s*.</span></td>
+    <td><span>Return a tokenized copy of <em>s</em>.</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -196,24 +197,24 @@ should be provieded, for example::
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1841">
+          <table class="children sortable" id="id1845">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -235,7 +236,7 @@ should be provieded, for example::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path_to_jar=None, path_to_slf4j=None, java_class=None, path_to_model=None, path_to_dict=None, path_to_sihan_corpora_dict=None, sihan_post_processing='false', keep_whitespaces='false', encoding='UTF-8', options=None, verbose=False, java_options='-mx2g'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L58">
       
       (source)
     </a>
@@ -257,7 +258,7 @@ should be provieded, for example::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">default_config</span>(self, lang):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L126">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L126">
       
       (source)
     </a>
@@ -265,8 +266,8 @@ should be provieded, for example::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Attempt to intialize Stanford Word Segmenter for the specified language
-using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
+    <div>Attempt to intialize Stanford Word Segmenter for the specified language
+using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</div>
   </div>
 </div><div class="basemethod">
   
@@ -280,7 +281,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">segment</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L230">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L230">
       
       (source)
     </a>
@@ -302,7 +303,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">segment_file</span>(self, input_file_path):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L202">
       
       (source)
     </a>
@@ -310,7 +311,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">        </p></div>
+    <div></div>
   </div>
 </div><div class="basemethod">
   
@@ -324,7 +325,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">segment_sents</span>(self, sentences):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L233">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L233">
       
       (source)
     </a>
@@ -332,7 +333,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">        </p></div>
+    <div></div>
   </div>
 </div><div class="basemethod">
   
@@ -346,7 +347,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L199">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L199">
       
       (source)
     </a>
@@ -354,9 +355,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Return a tokenized copy of *s*.
-
-:rtype: list of str</p></div>
+    <div>Return a tokenized copy of <em>s</em>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -370,7 +369,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">java_options</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L120">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L120">
       
       (source)
     </a>
@@ -392,7 +391,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_execute</span>(self, cmd, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L276">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L276">
       
       (source)
     </a>
@@ -414,7 +413,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_JAR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L56">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L56">
       
       (source)
     </a>
@@ -436,7 +435,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_dict</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L117">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L117">
       
       (source)
     </a>
@@ -458,7 +457,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_encoding</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L119">
       
       (source)
     </a>
@@ -480,7 +479,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_input_file_path</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L238">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L238">
       
       (source)
     </a>
@@ -502,7 +501,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_java_class</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L112">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L112">
       
       (source)
     </a>
@@ -524,7 +523,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_keep_whitespaces</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L116">
       
       (source)
     </a>
@@ -546,7 +545,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_model</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L113">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L113">
       
       (source)
     </a>
@@ -568,7 +567,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_options_cmd</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L122">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L122">
       
       (source)
     </a>
@@ -590,7 +589,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_sihan_corpora_dict</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L114">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L114">
       
       (source)
     </a>
@@ -612,7 +611,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_sihan_post_processing</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L115">
       
       (source)
     </a>
@@ -634,7 +633,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_stanford_jar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford_segmenter.py#L108">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford_segmenter.py#L108">
       
       (source)
     </a>
@@ -654,7 +653,7 @@ using the STANFORD_SEGMENTER and STANFORD_MODELS environment variables</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

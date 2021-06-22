@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">LeftCornerChartParser</span>(<a href="nltk.parse.chart.ChartParser.html" title="nltk.parse.chart.ChartParser">ChartParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1525" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LeftCornerChartParser</span>(<a href="nltk.parse.chart.ChartParser.html" title="nltk.parse.chart.ChartParser">ChartParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1525" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.chart.LeftCornerChartParser">View In Hierarchy</a></p>
       </div>
 
@@ -74,38 +74,38 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id885">
+        <table class="children sortable" id="id889">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new chart parser, that uses ``grammar`` to parse texts.</span></td>
+    <td><span>Create a new chart parser, that uses <tt class="rst-docutils literal">grammar</tt> to parse texts.</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.ChartParser.html">ChartParser</a></code>:
           </p>
-          <table class="children sortable" id="id886">
+          <table class="children sortable" id="id890">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.ChartParser.html#chart_parse">chart_parse</a></code></td>
-    <td><span>Return the final parse ``Chart`` from which all possible parse trees can be extracted.</span></td>
+    <td><span>Return the final parse <tt class="rst-docutils literal">Chart</tt> from which all possible parse trees can be extracted.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.ChartParser.html#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.ChartParser.html#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -157,24 +157,24 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code> (via <code><a href="nltk.parse.chart.ChartParser.html">ChartParser</a></code>):
           </p>
-          <table class="children sortable" id="id887">
+          <table class="children sortable" id="id891">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_sents">parse_sents</a></code></td>
-    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.parse()</tt> to each element of <tt class="rst-docutils literal">sents</tt>. :rtype: iter(iter(Tree))</span></td>
   </tr>
 </table>
           
@@ -196,7 +196,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, grammar, **parser_args):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1526">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1526">
       
       (source)
     </a>
@@ -204,28 +204,16 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.ChartParser.html#__init__">nltk.parse.chart.ChartParser.__init__</a></code></div>
     
-    <div><p class="pre">Create a new chart parser, that uses ``grammar`` to parse
-texts.
-
-:type grammar: CFG
-:param grammar: The grammar used to parse texts.
-:type strategy: list(ChartRuleI)
-:param strategy: A list of rules that should be used to decide
-    what edges to add to the chart (top-down strategy by default).
-:type trace: int
-:param trace: The level of tracing that should be used when
-    parsing a text.  ``0`` will generate no tracing output;
-    and higher numbers will produce more verbose tracing
-    output.
-:type trace_chart_width: int
-:param trace_chart_width: The default total width reserved for
-    the chart in trace output.  The remainder of each line will
-    be used to display edges.
-:type use_agenda: bool
-:param use_agenda: Use an optimized agenda-based algorithm,
-    if possible.
-:param chart_class: The class that should be used to create
-    the parse charts.</p></div>
+    <div>Create a new chart parser, that uses <tt class="rst-docutils literal">grammar</tt> to parse
+texts.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar:</span>CFG</td><td class="fieldArgDesc">The grammar used to parse texts.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parser_args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">strategy:</span>list(ChartRuleI)</td><td class="fieldArgDesc">A list of rules that should be used to decide
+what edges to add to the chart (top-down strategy by default).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace:</span>int</td><td class="fieldArgDesc">The level of tracing that should be used when
+parsing a text.  <tt class="rst-docutils literal">0</tt> will generate no tracing output;
+and higher numbers will produce more verbose tracing
+output.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace_chart_width:</span>int</td><td class="fieldArgDesc">The default total width reserved for
+the chart in trace output.  The remainder of each line will
+be used to display edges.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">use_agenda:</span>bool</td><td class="fieldArgDesc">Use an optimized agenda-based algorithm,
+if possible.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart_class</span></td><td class="fieldArgDesc">The class that should be used to create
+the parse charts.</td></tr></table></div>
   </div>
 </div>
 
@@ -237,7 +225,7 @@ texts.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

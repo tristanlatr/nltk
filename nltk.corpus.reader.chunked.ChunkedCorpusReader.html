@@ -65,30 +65,30 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChunkedCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L25" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChunkedCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L25" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.chunked.ChunkedCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for chunked (and optionally tagged) corpora.  Paragraphs
+        <div>Reader for chunked (and optionally tagged) corpora.  Paragraphs
 are split using a block reader.  They are then tokenized into
 sentences using a sentence tokenizer.  Finally, these sentences
 are parsed into chunk trees using a string-to-chunktree conversion
 function.  Each of these steps can be performed using a default
 function or a custom function.  By default, paragraphs are split
 on blank lines; sentences are listed one per line; and sentences
-are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
+are parsed into chunk trees using <tt class="rst-docutils literal">nltk.chunk.tagstr2tree</tt>.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id278">
+        <table class="children sortable" id="id281">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param root: The root directory for this corpus. :param fileids: A list or regexp specifying the fileids in this corpus.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -113,7 +113,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
     
     <td>Method</td>
     <td><code><a href="#raw">raw</a></code></td>
-    <td><span>:return: the given file(s) as a single string. :rtype: str</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -128,7 +128,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
     
     <td>Method</td>
     <td><code><a href="#tagged_sents">tagged_sents</a></code></td>
-    <td><span>:return: the given file(s) as a list of sentences, each encoded as a list of ``(word,tag)`` tuples.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -138,7 +138,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
     
     <td>Method</td>
     <td><code><a href="#words">words</a></code></td>
-    <td><span>:return: the given file(s) as a list of words and punctuation symbols. :rtype: list(str)</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -155,7 +155,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id279">
+          <table class="children sortable" id="id282">
   
   
   <tr class="basemethod">
@@ -222,7 +222,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -259,7 +259,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, extension='', str2chunktree=tagstr2tree, sent_tokenizer=RegexpTokenizer('\n', gaps=True), para_block_reader=read_blankline_block, encoding='utf8', tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L37">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L37">
       
       (source)
     </a>
@@ -267,8 +267,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:param root: The root directory for this corpus.
-:param fileids: A list or regexp specifying the fileids in this corpus.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list or regexp specifying the fileids in this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">extension</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str2chunktree</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent_tokenizer</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">para_block_reader</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -282,7 +281,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chunked_paras</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L193">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L193">
       
       (source)
     </a>
@@ -290,12 +289,11 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    paragraphs, each encoded as a list of sentences, which are
-    in turn encoded as a shallow Tree.  The leaves of these
-    trees are encoded as ``(word, tag)`` tuples (if the corpus
-    has tags) or word strings (if the corpus has no tags).
-:rtype: list(list(Tree))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(Tree))</td><td class="fieldArgDesc">the given file(s) as a list of
+paragraphs, each encoded as a list of sentences, which are
+in turn encoded as a shallow Tree.  The leaves of these
+trees are encoded as <tt class="rst-docutils literal">(word, tag)</tt> tuples (if the corpus
+has tags) or word strings (if the corpus has no tags).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -309,7 +307,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chunked_sents</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L175">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L175">
       
       (source)
     </a>
@@ -317,12 +315,11 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    sentences, each encoded as a shallow Tree.  The leaves
-    of these trees are encoded as ``(word, tag)`` tuples (if
-    the corpus has tags) or word strings (if the corpus has no
-    tags).
-:rtype: list(Tree)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Tree)</td><td class="fieldArgDesc">the given file(s) as a list of
+sentences, each encoded as a shallow Tree.  The leaves
+of these trees are encoded as <tt class="rst-docutils literal">(word, tag)</tt> tuples (if
+the corpus has tags) or word strings (if the corpus has no
+tags).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -336,7 +333,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chunked_words</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L157">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L157">
       
       (source)
     </a>
@@ -344,12 +341,11 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of tagged
-    words and chunks.  Words are encoded as ``(word, tag)``
-    tuples (if the corpus has tags) or word strings (if the
-    corpus has no tags).  Chunks are encoded as depth-one
-    trees over ``(word,tag)`` tuples or word strings.
-:rtype: list(tuple(str,str) and Tree)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(str,str) and Tree)</td><td class="fieldArgDesc">the given file(s) as a list of tagged
+words and chunks.  Words are encoded as <tt class="rst-docutils literal">(word, tag)</tt>
+tuples (if the corpus has tags) or word strings (if the
+corpus has no tags).  Chunks are encoded as depth-one
+trees over <tt class="rst-docutils literal">(word,tag)</tt> tuples or word strings.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -363,7 +359,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">paras</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L95">
       
       (source)
     </a>
@@ -371,10 +367,9 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    paragraphs, each encoded as a list of sentences, which are
-    in turn encoded as lists of word strings.
-:rtype: list(list(list(str)))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(list(str)))</td><td class="fieldArgDesc">the given file(s) as a list of
+paragraphs, each encoded as a list of sentences, which are
+in turn encoded as lists of word strings.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -388,7 +383,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L57">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L57">
       
       (source)
     </a>
@@ -396,8 +391,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a single string.
-:rtype: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">the given file(s) as a single string.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -411,7 +405,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L81">
       
       (source)
     </a>
@@ -419,10 +413,9 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    sentences or utterances, each encoded as a list of word
-    strings.
-:rtype: list(list(str))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(str))</td><td class="fieldArgDesc">the given file(s) as a list of
+sentences or utterances, each encoded as a list of word
+strings.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -436,7 +429,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_paras</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L141">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L141">
       
       (source)
     </a>
@@ -444,10 +437,9 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    paragraphs, each encoded as a list of sentences, which are
-    in turn encoded as lists of ``(word,tag)`` tuples.
-:rtype: list(list(list(tuple(str,str))))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(list(tuple(str,str))))</td><td class="fieldArgDesc">the given file(s) as a list of
+paragraphs, each encoded as a list of sentences, which are
+in turn encoded as lists of <tt class="rst-docutils literal">(word,tag)</tt> tuples.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -461,7 +453,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L125">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L125">
       
       (source)
     </a>
@@ -469,10 +461,8 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    sentences, each encoded as a list of ``(word,tag)`` tuples.
-
-:rtype: list(list(tuple(str,str)))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(tuple(str,str)))</td><td class="fieldArgDesc">the given file(s) as a list of
+sentences, each encoded as a list of <tt class="rst-docutils literal">(word,tag)</tt> tuples.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -486,7 +476,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L109">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L109">
       
       (source)
     </a>
@@ -494,10 +484,9 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of tagged
-    words and punctuation symbols, encoded as tuples
-    ``(word,tag)``.
-:rtype: list(tuple(str,str))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(str,str))</td><td class="fieldArgDesc">the given file(s) as a list of tagged
+words and punctuation symbols, encoded as tuples
+<tt class="rst-docutils literal">(word,tag)</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -511,7 +500,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L68">
       
       (source)
     </a>
@@ -519,9 +508,8 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of words
-    and punctuation symbols.
-:rtype: list(str)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file(s) as a list of words
+and punctuation symbols.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -535,7 +523,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L211">
       
       (source)
     </a>
@@ -557,7 +545,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_cv_args</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/chunked.py#L53">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/chunked.py#L53">
       
       (source)
     </a>
@@ -565,8 +553,8 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Arguments for corpus views generated by this corpus: a tuple
-(str2chunktree, sent_tokenizer, para_block_tokenizer)</p></div>
+    <div>Arguments for corpus views generated by this corpus: a tuple
+(str2chunktree, sent_tokenizer, para_block_tokenizer)</div>
   </div>
 </div>
 
@@ -578,7 +566,7 @@ are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L61" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L61" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.ibm_model.IBMModel">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Abstract base class for all IBM models</p></div>
+        <div>Abstract base class for all IBM models</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1895">
+        <table class="children sortable" id="id1899">
   
   
   <tr class="method">
@@ -91,7 +91,7 @@
     
     <td>Method</td>
     <td><code><a href="#hillclimb">hillclimb</a></code></td>
-    <td><span>Starting from the alignment in ``alignment_info``, look at neighboring alignments iteratively for the best one</span></td>
+    <td><span>Starting from the alignment in <tt class="rst-docutils literal">alignment_info</tt>, look at neighboring alignments iteratively for the best one</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -116,7 +116,7 @@
     
     <td>Method</td>
     <td><code><a href="#neighboring">neighboring</a></code></td>
-    <td><span>Determine the neighbors of ``alignment_info``, obtained by moving or swapping one alignment point</span></td>
+    <td><span>Determine the neighbors of <tt class="rst-docutils literal">alignment_info</tt>, obtained by moving or swapping one alignment point</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -151,12 +151,12 @@
     
     <td>Instance Variable</td>
     <td><code><a href="#alignment_table">alignment_table</a></code></td>
-    <td><span>dict[int][int][int][int]: float. Probability(i | j,l,m). Values accessed as ``alignment_table[i][j][l][m]``. Used in model 2 and hill climbing in models 3 and above</span></td>
+    <td><span>dict[int][int][int][int]: float. Probability(i | j,l,m). Values accessed as <tt class="rst-docutils literal"><span class="pre">alignment_table[i][j][l][m]</span></tt>. Used in model 2 and hill climbing in models 3 and above</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
     <td><code><a href="#fertility_table">fertility_table</a></code></td>
-    <td><span>dict[int][str]: float. Probability(fertility | source word). Values accessed as ``fertility_table[fertility][source_word]``. Used in model 3 and higher.</span></td>
+    <td><span>dict[int][str]: float. Probability(fertility | source word). Values accessed as <tt class="rst-docutils literal"><span class="pre">fertility_table[fertility][source_word]</span></tt>. Used in model 3 and higher.</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -171,7 +171,7 @@
     
     <td>Instance Variable</td>
     <td><code><a href="#translation_table">translation_table</a></code></td>
-    <td><span>dict[str][str]: float. Probability(target word | source word). Values accessed as ``translation_table[target_word][source_word]``.</span></td>
+    <td><span>dict[str][str]: float. Probability(target word | source word). Values accessed as <tt class="rst-docutils literal"><span class="pre">translation_table[target_word][source_word]</span></tt>.</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -198,7 +198,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, sentence_aligned_corpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L73">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L73">
       
       (source)
     </a>
@@ -220,7 +220,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">best_model2_alignment</span>(self, sentence_pair, j_pegged=None, i_pegged=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L184">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L184">
       
       (source)
     </a>
@@ -228,22 +228,13 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Finds the best alignment according to IBM Model 2
-
-Used as a starting point for hill climbing in Models 3 and
+    <div><p>Finds the best alignment according to IBM Model 2</p>
+<p>Used as a starting point for hill climbing in Models 3 and
 above, because it is easier to compute than the best alignments
-in higher models
-
-:param sentence_pair: Source and target language sentence pair
-    to be word-aligned
-:type sentence_pair: AlignedSent
-
-:param j_pegged: If specified, the alignment point of j_pegged
-    will be fixed to i_pegged
-:type j_pegged: int
-
-:param i_pegged: Alignment point to j_pegged
-:type i_pegged: int</p></div>
+in higher models</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence_pair:</span>AlignedSent</td><td class="fieldArgDesc">Source and target language sentence pair
+to be word-aligned</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">j_pegged:</span>int</td><td class="fieldArgDesc">If specified, the alignment point of j_pegged
+will be fixed to i_pegged</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">i_pegged:</span>int</td><td class="fieldArgDesc">Alignment point to j_pegged</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -257,7 +248,7 @@ in higher models
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">hillclimb</span>(self, alignment_info, j_pegged=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L238">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L238">
       
       (source)
     </a>
@@ -265,19 +256,13 @@ in higher models
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Starting from the alignment in ``alignment_info``, look at
-neighboring alignments iteratively for the best one
-
-There is no guarantee that the best alignment in the alignment
+    <div><p>Starting from the alignment in <tt class="rst-docutils literal">alignment_info</tt>, look at
+neighboring alignments iteratively for the best one</p>
+<p>There is no guarantee that the best alignment in the alignment
 space will be found, because the algorithm might be stuck in a
-local maximum.
-
-:param j_pegged: If specified, the search will be constrained to
-    alignments where ``j_pegged`` remains unchanged
-:type j_pegged: int
-
-:return: The best alignment found from hill climbing
-:rtype: AlignmentInfo</p></div>
+local maximum.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alignment_info</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">j_pegged:</span>int</td><td class="fieldArgDesc">If specified, the search will be constrained to
+alignments where <tt class="rst-docutils literal">j_pegged</tt> remains unchanged</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">AlignmentInfo</td><td class="fieldArgDesc">The best alignment found from hill climbing</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -291,7 +276,7 @@ local maximum.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">init_vocab</span>(self, sentence_aligned_corpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L119">
       
       (source)
     </a>
@@ -313,7 +298,7 @@ local maximum.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">maximize_fertility_probabilities</span>(self, counts):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L352">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L352">
       
       (source)
     </a>
@@ -335,7 +320,7 @@ local maximum.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">maximize_lexical_translation_probabilities</span>(self, counts):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L346">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L346">
       
       (source)
     </a>
@@ -357,7 +342,7 @@ local maximum.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">maximize_null_generation_probabilities</span>(self, counts):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L358">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L358">
       
       (source)
     </a>
@@ -379,7 +364,7 @@ local maximum.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">neighboring</span>(self, alignment_info, j_pegged=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L273">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L273">
       
       (source)
     </a>
@@ -387,16 +372,10 @@ local maximum.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Determine the neighbors of ``alignment_info``, obtained by
-moving or swapping one alignment point
-
-:param j_pegged: If specified, neighbors that have a different
-    alignment point from j_pegged will not be considered
-:type j_pegged: int
-
-:return: A set neighboring alignments represented by their
-    ``AlignmentInfo``
-:rtype: set(AlignmentInfo)</p></div>
+    <div>Determine the neighbors of <tt class="rst-docutils literal">alignment_info</tt>, obtained by
+moving or swapping one alignment point<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alignment_info</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">j_pegged:</span>int</td><td class="fieldArgDesc">If specified, neighbors that have a different
+alignment point from j_pegged will not be considered</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(AlignmentInfo)</td><td class="fieldArgDesc">A set neighboring alignments represented by their
+<tt class="rst-docutils literal">AlignmentInfo</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -410,7 +389,7 @@ moving or swapping one alignment point
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_of_alignments</span>(self, alignments):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L365">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L365">
       
       (source)
     </a>
@@ -432,7 +411,7 @@ moving or swapping one alignment point
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_t_a_given_s</span>(self, alignment_info):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L371">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L371">
       
       (source)
     </a>
@@ -440,13 +419,12 @@ moving or swapping one alignment point
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Probability of target sentence and an alignment given the
-source sentence
-
-All required information is assumed to be in ``alignment_info``
-and self.
-
-Derived classes should override this method</p></div>
+    <div><p>Probability of target sentence and an alignment given the
+source sentence</p>
+<p>All required information is assumed to be in <tt class="rst-docutils literal">alignment_info</tt>
+and self.</p>
+<p>Derived classes should override this method</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -460,7 +438,7 @@ Derived classes should override this method</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">reset_probabilities</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L77">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L77">
       
       (source)
     </a>
@@ -482,7 +460,7 @@ Derived classes should override this method</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sample</span>(self, sentence_pair):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L138">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L138">
       
       (source)
     </a>
@@ -490,26 +468,19 @@ Derived classes should override this method</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Sample the most probable alignments from the entire alignment
-space
-
-First, determine the best alignment according to IBM Model 2.
+    <div><p>Sample the most probable alignments from the entire alignment
+space</p>
+<p>First, determine the best alignment according to IBM Model 2.
 With this initial alignment, use hill climbing to determine the
 best alignment according to a higher IBM Model. Add this
 alignment and its neighbors to the sample set. Repeat this
 process with other initial alignments obtained by pegging an
-alignment point.
-
-Hill climbing may be stuck in a local maxima, hence the pegging
-and trying out of different alignments.
-
-:param sentence_pair: Source and target language sentence pair
-    to generate a sample of alignments from
-:type sentence_pair: AlignedSent
-
-:return: A set of best alignments represented by their ``AlignmentInfo``
-    and the best alignment of the set for convenience
-:rtype: set(AlignmentInfo), AlignmentInfo</p></div>
+alignment point.</p>
+<p>Hill climbing may be stuck in a local maxima, hence the pegging
+and trying out of different alignments.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence_pair:</span>AlignedSent</td><td class="fieldArgDesc">Source and target language sentence pair
+to generate a sample of alignments from</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(AlignmentInfo), AlignmentInfo</td><td class="fieldArgDesc">A set of best alignments represented by their <tt class="rst-docutils literal">AlignmentInfo</tt>
+and the best alignment of the set for convenience</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -523,7 +494,7 @@ and trying out of different alignments.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_uniform_probabilities</span>(self, sentence_aligned_corpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L111">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L111">
       
       (source)
     </a>
@@ -531,9 +502,9 @@ and trying out of different alignments.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Initialize probability tables to a uniform distribution
-
-Derived classes should implement this accordingly.</p></div>
+    <div><p>Initialize probability tables to a uniform distribution</p>
+<p>Derived classes should implement this accordingly.</p>
+</div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -547,7 +518,7 @@ Derived classes should implement this accordingly.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">MIN_PROB</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L71">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L71">
       
       (source)
     </a>
@@ -569,7 +540,7 @@ Derived classes should implement this accordingly.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">alignment_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L86">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L86">
       
       (source)
     </a>
@@ -577,9 +548,9 @@ Derived classes should implement this accordingly.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">dict[int][int][int][int]: float. Probability(i | j,l,m).
-Values accessed as ``alignment_table[i][j][l][m]``.
-Used in model 2 and hill climbing in models 3 and above</p></div>
+    <div>dict[int][int][int][int]: float. Probability(i | j,l,m).
+Values accessed as <tt class="rst-docutils literal"><span class="pre">alignment_table[i][j][l][m]</span></tt>.
+Used in model 2 and hill climbing in models 3 and above</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -593,7 +564,7 @@ Used in model 2 and hill climbing in models 3 and above</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">fertility_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L97">
       
       (source)
     </a>
@@ -601,9 +572,9 @@ Used in model 2 and hill climbing in models 3 and above</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">dict[int][str]: float. Probability(fertility | source word).
-Values accessed as ``fertility_table[fertility][source_word]``.
-Used in model 3 and higher.</p></div>
+    <div>dict[int][str]: float. Probability(fertility | source word).
+Values accessed as <tt class="rst-docutils literal"><span class="pre">fertility_table[fertility][source_word]</span></tt>.
+Used in model 3 and higher.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -617,7 +588,7 @@ Used in model 3 and higher.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">p1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L104">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L104">
       
       (source)
     </a>
@@ -625,9 +596,9 @@ Used in model 3 and higher.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Probability that a generated word requires another target word
+    <div>Probability that a generated word requires another target word
 that is aligned to NULL.
-Used in model 3 and higher.</p></div>
+Used in model 3 and higher.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -641,7 +612,7 @@ Used in model 3 and higher.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">src_vocab</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L128">
       
       (source)
     </a>
@@ -649,7 +620,7 @@ Used in model 3 and higher.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">set(str): All source language words used in training</p></div>
+    <div>set(str): All source language words used in training</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -663,7 +634,7 @@ Used in model 3 and higher.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">translation_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L78">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L78">
       
       (source)
     </a>
@@ -671,8 +642,8 @@ Used in model 3 and higher.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">dict[str][str]: float. Probability(target word | source word).
-Values accessed as ``translation_table[target_word][source_word]``.</p></div>
+    <div>dict[str][str]: float. Probability(target word | source word).
+Values accessed as <tt class="rst-docutils literal"><span class="pre">translation_table[target_word][source_word]</span></tt>.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -686,7 +657,7 @@ Values accessed as ``translation_table[target_word][source_word]``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">trg_vocab</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm_model.py#L133">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm_model.py#L133">
       
       (source)
     </a>
@@ -694,7 +665,7 @@ Values accessed as ``translation_table[target_word][source_word]``.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">set(str): All target language words used in training</p></div>
+    <div>set(str): All target language words used in training</div>
   </div>
 </div>
 
@@ -706,7 +677,7 @@ Values accessed as ``translation_table[target_word][source_word]``.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

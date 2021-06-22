@@ -65,39 +65,40 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NaiveBayesClassifier</span>(<a href="nltk.classify.api.ClassifierI.html" title="nltk.classify.api.ClassifierI">ClassifierI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L43" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier.html">nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NaiveBayesClassifier</span>(<a href="nltk.classify.api.ClassifierI.html" title="nltk.classify.api.ClassifierI">ClassifierI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L43" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier.html">nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier</a></code></p>
         <p><a href="classIndex.html#nltk.classify.naivebayes.NaiveBayesClassifier">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A Naive Bayes classifier.  Naive Bayes classifiers are
-paramaterized by two probability distributions:
-
-  - P(label) gives the probability that an input will receive each
-    label, given no information about the input's features.
-
-  - P(fname=fval|label) gives the probability that a given feature
-    (fname) will receive a given value (fval), given that the
-    label (label).
-
-If the classifier encounters an input with a feature that has
+        <div><p>A Naive Bayes classifier.  Naive Bayes classifiers are
+paramaterized by two probability distributions:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>P(label) gives the probability that an input will receive each
+label, given no information about the input's features.</li>
+<li>P(fname=fval|label) gives the probability that a given feature
+(fname) will receive a given value (fval), given that the
+label (label).</li>
+</ul>
+</blockquote>
+<p>If the classifier encounters an input with a feature that has
 never been seen with any label, then rather than assigning a
-probability of 0 to all labels, it will ignore that feature.
-
-The feature value 'None' is reserved for unseen feature values;
+probability of 0 to all labels, it will ignore that feature.</p>
+<p>The feature value 'None' is reserved for unseen feature values;
 you generally should not use 'None' as a feature value for one of
-your own features.</p></div>
+your own features.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id155">
+        <table class="children sortable" id="id158">
   
   
   <tr class="classmethod">
     
     <td>Class Method</td>
     <td><code><a href="#train">train</a></code></td>
-    <td><span>:param labeled_featuresets: A list of classified featuresets, i.e., a list of tuples ``(featureset, label)``.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -107,12 +108,12 @@ your own features.</p></div>
     
     <td>Method</td>
     <td><code><a href="#classify">classify</a></code></td>
-    <td><span>:return: the most appropriate label for the given featureset. :rtype: label</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#labels">labels</a></code></td>
-    <td><span>:return: the list of category labels used by this classifier. :rtype: list of (immutable)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -122,7 +123,7 @@ your own features.</p></div>
     
     <td>Method</td>
     <td><code><a href="#prob_classify">prob_classify</a></code></td>
-    <td><span>:return: a probability distribution over labels for the given featureset. :rtype: ProbDistI</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -154,19 +155,19 @@ your own features.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.classify.api.ClassifierI.html">ClassifierI</a></code>:
           </p>
-          <table class="children sortable" id="id156">
+          <table class="children sortable" id="id159">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.classify.api.ClassifierI.html#classify_many">classify_many</a></code></td>
-    <td><span>Apply ``self.classify()`` to each element of ``featuresets``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.classify()</tt> to each element of <tt class="rst-docutils literal">featuresets</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.classify.api.ClassifierI.html#prob_classify_many">prob_classify_many</a></code></td>
-    <td><span>Apply ``self.prob_classify()`` to each element of ``featuresets``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.prob_classify()</tt> to each element of <tt class="rst-docutils literal">featuresets</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -188,7 +189,7 @@ your own features.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(cls, labeled_featuresets, estimator=ELEProbDist):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L194">
       
       (source)
     </a>
@@ -196,8 +197,8 @@ your own features.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier.html">nltk.classify.positivenaivebayes.PositiveNaiveBayesClassifier</a></code></div>
     
-    <div><p class="pre">:param labeled_featuresets: A list of classified featuresets,
-    i.e., a list of tuples ``(featureset, label)``.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labeled_featuresets</span></td><td class="fieldArgDesc">A list of classified featuresets,
+i.e., a list of tuples <tt class="rst-docutils literal">(featureset, label)</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">estimator</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -211,7 +212,7 @@ your own features.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, label_probdist, feature_probdist):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L64">
       
       (source)
     </a>
@@ -219,20 +220,18 @@ your own features.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param label_probdist: P(label), the probability distribution
-    over labels.  It is expressed as a ``ProbDistI`` whose
-    samples are labels.  I.e., P(label) =
-    ``label_probdist.prob(label)``.
-
-:param feature_probdist: P(fname=fval|label), the probability
-    distribution for feature values, given labels.  It is
-    expressed as a dictionary whose keys are ``(label, fname)``
-    pairs and whose values are ``ProbDistI`` objects over feature
-    values.  I.e., P(fname=fval|label) =
-    ``feature_probdist[label,fname].prob(fval)``.  If a given
-    ``(label,fname)`` is not a key in ``feature_probdist``, then
-    it is assumed that the corresponding P(fname=fval|label)
-    is 0 for all values of ``fval``.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label_probdist</span></td><td class="fieldArgDesc">P(label), the probability distribution
+over labels.  It is expressed as a <tt class="rst-docutils literal">ProbDistI</tt> whose
+samples are labels.  I.e., P(label) =
+<tt class="rst-docutils literal">label_probdist.prob(label)</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">feature_probdist</span></td><td class="fieldArgDesc">P(fname=fval|label), the probability
+distribution for feature values, given labels.  It is
+expressed as a dictionary whose keys are <tt class="rst-docutils literal">(label, fname)</tt>
+pairs and whose values are <tt class="rst-docutils literal">ProbDistI</tt> objects over feature
+values.  I.e., P(fname=fval|label) =
+<tt class="rst-docutils literal"><span class="pre">feature_probdist[label,fname].prob(fval)</span></tt>.  If a given
+<tt class="rst-docutils literal">(label,fname)</tt> is not a key in <tt class="rst-docutils literal">feature_probdist</tt>, then
+it is assumed that the corresponding P(fname=fval|label)
+is 0 for all values of <tt class="rst-docutils literal">fval</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -246,7 +245,7 @@ your own features.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify</span>(self, featureset):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L88">
       
       (source)
     </a>
@@ -254,8 +253,7 @@ your own features.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#classify">nltk.classify.api.ClassifierI.classify</a></code></div>
     
-    <div><p class="pre">:return: the most appropriate label for the given featureset.
-:rtype: label</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">label</td><td class="fieldArgDesc">the most appropriate label for the given featureset.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -269,7 +267,7 @@ your own features.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">labels</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L85">
       
       (source)
     </a>
@@ -277,8 +275,7 @@ your own features.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#labels">nltk.classify.api.ClassifierI.labels</a></code></div>
     
-    <div><p class="pre">:return: the list of category labels used by this classifier.
-:rtype: list of (immutable)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of (immutable)</td><td class="fieldArgDesc">the list of category labels used by this classifier.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -292,7 +289,7 @@ your own features.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">most_informative_features</span>(self, n=100):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L156">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L156">
       
       (source)
     </a>
@@ -300,13 +297,15 @@ your own features.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of the 'most informative' features used by this
+    <div><p>Return a list of the 'most informative' features used by this
 classifier.  For the purpose of this function, the
-informativeness of a feature ``(fname,fval)`` is equal to the
+informativeness of a feature <tt class="rst-docutils literal">(fname,fval)</tt> is equal to the
 highest value of P(fname=fval|label), for any label, divided by
-the lowest value of P(fname=fval|label), for any label:
-
-|  max[ P(fname=fval|label1) / P(fname=fval|label2) ]</p></div>
+the lowest value of P(fname=fval|label), for any label:</p>
+<div class="rst-line-block">
+<div class="rst-line">max[ P(fname=fval|label1) / P(fname=fval|label2) ]</div>
+</div>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -320,7 +319,7 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_classify</span>(self, featureset):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L91">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L91">
       
       (source)
     </a>
@@ -328,9 +327,8 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.classify.api.ClassifierI.html#prob_classify">nltk.classify.api.ClassifierI.prob_classify</a></code></div>
     
-    <div><p class="pre">:return: a probability distribution over labels for the given
-    featureset.
-:rtype: ProbDistI</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">ProbDistI</td><td class="fieldArgDesc">a probability distribution over labels for the given
+featureset.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -344,7 +342,7 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">show_most_informative_features</span>(self, n=10):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L124">
       
       (source)
     </a>
@@ -366,7 +364,7 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="functionHeader">
     
     <span class="py-defname">_feature_probdist</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L82">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L82">
       
       (source)
     </a>
@@ -388,7 +386,7 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="functionHeader">
     
     <span class="py-defname">_label_probdist</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L81">
       
       (source)
     </a>
@@ -410,7 +408,7 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="functionHeader">
     
     <span class="py-defname">_labels</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L83">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L83">
       
       (source)
     </a>
@@ -432,7 +430,7 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="functionHeader">
     
     <span class="py-defname">_most_informative_features</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/naivebayes.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/naivebayes.py#L188">
       
       (source)
     </a>
@@ -452,7 +450,7 @@ the lowest value of P(fname=fval|label), for any label:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

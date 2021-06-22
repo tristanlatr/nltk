@@ -65,27 +65,22 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">HiddenMarkovModelTrainer</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hmm.py#L838" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HiddenMarkovModelTrainer</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hmm.py#L838" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.hmm.HiddenMarkovModelTrainer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Algorithms for learning HMM parameters from training data. These include
-both supervised learning (MLE) and unsupervised learning (Baum-Welch).
-
-Creates an HMM trainer to induce an HMM with the given states and
+        <div><p>Algorithms for learning HMM parameters from training data. These include
+both supervised learning (MLE) and unsupervised learning (Baum-Welch).</p>
+<p>Creates an HMM trainer to induce an HMM with the given states and
 output symbol alphabet. A supervised and unsupervised training
 method may be used. If either of the states or symbols are not given,
-these may be derived from supervised training.
-
-:param states:  the set of state labels
-:type states:   sequence of any
-:param symbols: the set of observation symbols
-:type symbols:  sequence of any</p></div>
+these may be derived from supervised training.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">states</span></td><td class="fieldArgDesc">the set of state labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">symbols</span></td><td class="fieldArgDesc">the set of observation symbols</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1557">
+        <table class="children sortable" id="id1561">
   
   
   <tr class="method">
@@ -144,7 +139,7 @@ these may be derived from supervised training.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, states=None, symbols=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hmm.py#L854">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hmm.py#L854">
       
       (source)
     </a>
@@ -166,7 +161,7 @@ these may be derived from supervised training.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, labeled_sequences=None, unlabeled_sequences=None, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hmm.py#L858">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hmm.py#L858">
       
       (source)
     </a>
@@ -174,20 +169,12 @@ these may be derived from supervised training.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Trains the HMM using both (or either of) supervised and unsupervised
-techniques.
-
-:return: the trained model
-:rtype: HiddenMarkovModelTagger
-:param labelled_sequences: the supervised training data, a set of
-    labelled sequences of observations
-    ex: [ (word_1, tag_1),...,(word_n,tag_n) ]
-:type labelled_sequences: list
-:param unlabeled_sequences: the unsupervised training data, a set of
-    sequences of observations
-    ex: [ word_1, ..., word_n ]
-:type unlabeled_sequences: list
-:param kwargs: additional arguments to pass to the training methods</p></div>
+    <div>Trains the HMM using both (or either of) supervised and unsupervised
+techniques.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labeled_sequences</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">unlabeled_sequences:</span>list</td><td class="fieldArgDesc">the unsupervised training data, a set of
+sequences of observations
+ex: [ word_1, ..., word_n ]</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc">additional arguments to pass to the training methods</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labelled_sequences:</span>list</td><td class="fieldArgDesc">the supervised training data, a set of
+labelled sequences of observations
+ex: [ (word_1, tag_1),...,(word_n,tag_n) ]</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">HiddenMarkovModelTagger</td><td class="fieldArgDesc">the trained model</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -201,7 +188,7 @@ techniques.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train_supervised</span>(self, labelled_sequences, estimator=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hmm.py#L1073">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hmm.py#L1073">
       
       (source)
     </a>
@@ -209,21 +196,15 @@ techniques.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Supervised training maximising the joint probability of the symbol and
+    <div>Supervised training maximising the joint probability of the symbol and
 state sequences. This is done via collecting frequencies of
 transitions between states, symbol observations while within each
 state and which states start a sentence. These frequency distributions
 are then normalised into probability estimates, which can be
-smoothed if desired.
-
-:return: the trained model
-:rtype: HiddenMarkovModelTagger
-:param labelled_sequences: the training data, a set of
-    labelled sequences of observations
-:type labelled_sequences: list
-:param estimator: a function taking
-    a FreqDist and a number of bins and returning a CProbDistI;
-    otherwise a MLE estimate is used</p></div>
+smoothed if desired.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labelled_sequences:</span>list</td><td class="fieldArgDesc">the training data, a set of
+labelled sequences of observations</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">estimator</span></td><td class="fieldArgDesc">a function taking
+a FreqDist and a number of bins and returning a CProbDistI;
+otherwise a MLE estimate is used</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">HiddenMarkovModelTagger</td><td class="fieldArgDesc">the trained model</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -237,7 +218,7 @@ smoothed if desired.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train_unsupervised</span>(self, unlabeled_sequences, update_outputs=True, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hmm.py#L931">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hmm.py#L931">
       
       (source)
     </a>
@@ -245,26 +226,17 @@ smoothed if desired.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Trains the HMM using the Baum-Welch algorithm to maximise the
+    <div><p>Trains the HMM using the Baum-Welch algorithm to maximise the
 probability of the data sequence. This is a variant of the EM
 algorithm, and is unsupervised in that it doesn't need the state
 sequences for the symbols. The code is based on 'A Tutorial on Hidden
 Markov Models and Selected Applications in Speech Recognition',
-Lawrence Rabiner, IEEE, 1989.
-
-:return: the trained model
-:rtype: HiddenMarkovModelTagger
-:param unlabeled_sequences: the training data, a set of
-    sequences of observations
-:type unlabeled_sequences: list
-
-kwargs may include following parameters:
-
-:param model: a HiddenMarkovModelTagger instance used to begin
-    the Baum-Welch algorithm
-:param max_iterations: the maximum number of EM iterations
-:param convergence_logprob: the maximum change in log probability to
-    allow convergence</p></div>
+Lawrence Rabiner, IEEE, 1989.</p>
+<p>kwargs may include following parameters:</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">unlabeled_sequences:</span>list</td><td class="fieldArgDesc">the training data, a set of
+sequences of observations</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">update_outputs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model</span></td><td class="fieldArgDesc">a HiddenMarkovModelTagger instance used to begin
+the Baum-Welch algorithm</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_iterations</span></td><td class="fieldArgDesc">the maximum number of EM iterations</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">convergence_logprob</span></td><td class="fieldArgDesc">the maximum change in log probability to
+allow convergence</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">HiddenMarkovModelTagger</td><td class="fieldArgDesc">the trained model</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -278,7 +250,7 @@ kwargs may include following parameters:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_baum_welch_step</span>(self, sequence, model, symbol_to_number):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hmm.py#L885">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hmm.py#L885">
       
       (source)
     </a>
@@ -300,7 +272,7 @@ kwargs may include following parameters:
   <div class="functionHeader">
     
     <span class="py-defname">_states</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hmm.py#L855">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hmm.py#L855">
       
       (source)
     </a>
@@ -322,7 +294,7 @@ kwargs may include following parameters:
   <div class="functionHeader">
     
     <span class="py-defname">_symbols</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hmm.py#L856">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hmm.py#L856">
       
       (source)
     </a>
@@ -342,7 +314,7 @@ kwargs may include following parameters:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,30 +65,27 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">AffixTagger</span>(<a href="nltk.tag.sequential.ContextTagger.html" title="nltk.tag.sequential.ContextTagger">ContextTagger</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L419" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AffixTagger</span>(<a href="nltk.tag.sequential.ContextTagger.html" title="nltk.tag.sequential.ContextTagger">ContextTagger</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L419" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.sequential.AffixTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A tagger that chooses a token's tag based on a leading or trailing
+        <div><p>A tagger that chooses a token's tag based on a leading or trailing
 substring of its word string.  (It is important to note that these
 substrings are not necessarily "true" morphological affixes).  In
 particular, a fixed-length substring of the word is looked up in a
 table, and the corresponding tag is returned.  Affix taggers are
-typically constructed by training them on a tagged corpus.
-
-Construct a new affix tagger.
-
-:param affix_length: The length of the affixes that should be
-    considered during training and tagging.  Use negative
-    numbers for suffixes.
-:param min_stem_length: Any words whose length is less than
-    min_stem_length+abs(affix_length) will be assigned a
-    tag of None by this tagger.</p></div>
+typically constructed by training them on a tagged corpus.</p>
+<p>Construct a new affix tagger.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">affix_length</span></td><td class="fieldArgDesc">The length of the affixes that should be
+considered during training and tagging.  Use negative
+numbers for suffixes.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_stem_length</span></td><td class="fieldArgDesc">Any words whose length is less than
+min_stem_length+abs(affix_length) will be assigned a
+tag of None by this tagger.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1598">
+        <table class="children sortable" id="id1602">
   
   
   <tr class="classmethod">
@@ -100,7 +97,7 @@ Construct a new affix tagger.
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param context_to_tag: A dictionary mapping contexts to tags. :param backoff: The backoff tagger that should be used for this tagger.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -132,7 +129,7 @@ Construct a new affix tagger.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.sequential.ContextTagger.html">ContextTagger</a></code>:
           </p>
-          <table class="children sortable" id="id1599">
+          <table class="children sortable" id="id1603">
   
   
   <tr class="basemethod">
@@ -149,7 +146,7 @@ Construct a new affix tagger.
     
     <td>Method</td>
     <td><code><a href="nltk.tag.sequential.ContextTagger.html#size">size</a></code></td>
-    <td><span>:return: The number of entries in the table used by this tagger to map from contexts to tags.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -159,21 +156,21 @@ Construct a new affix tagger.
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.tag.sequential.ContextTagger.html#_context_to_tag">_context_to_tag</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Dictionary mapping contexts to tags.</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">SequentialBackoffTagger</a></code> (via <code><a href="nltk.tag.sequential.ContextTagger.html">ContextTagger</a></code>):
           </p>
-          <table class="children sortable" id="id1600">
+          <table class="children sortable" id="id1604">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tag.sequential.SequentialBackoffTagger.html#tag">tag</a></code></td>
-    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple ``(token, tag)``.</span></td>
+    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -188,14 +185,15 @@ Construct a new affix tagger.
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.tag.sequential.SequentialBackoffTagger.html#_taggers">_taggers</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list of all the taggers that should be tried to
+tag a token (i.e., self and its backoff taggers).</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code> (via <code><a href="nltk.tag.sequential.ContextTagger.html">ContextTagger</a></code>, <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">SequentialBackoffTagger</a></code>):
           </p>
-          <table class="children sortable" id="id1601">
+          <table class="children sortable" id="id1605">
   
   
   <tr class="basemethod">
@@ -207,7 +205,7 @@ Construct a new affix tagger.
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -234,7 +232,7 @@ Construct a new affix tagger.
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">decode_json_obj</span>(cls, obj):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L470">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L470">
       
       (source)
     </a>
@@ -256,7 +254,7 @@ Construct a new affix tagger.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, train=None, model=None, affix_length=-3, min_stem_length=2, backoff=None, cutoff=0, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L441">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L441">
       
       (source)
     </a>
@@ -264,8 +262,7 @@ Construct a new affix tagger.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.sequential.ContextTagger.html#__init__">nltk.tag.sequential.ContextTagger.__init__</a></code></div>
     
-    <div><p class="pre">:param context_to_tag: A dictionary mapping contexts to tags.
-:param backoff: The backoff tagger that should be used for this tagger.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">train</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">affix_length</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_stem_length</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">backoff</span></td><td class="fieldArgDesc">The backoff tagger that should be used for this tagger.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cutoff</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">context_to_tag</span></td><td class="fieldArgDesc">A dictionary mapping contexts to tags.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -279,7 +276,7 @@ Construct a new affix tagger.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">context</span>(self, tokens, index, history):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L480">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L480">
       
       (source)
     </a>
@@ -287,10 +284,9 @@ Construct a new affix tagger.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.sequential.ContextTagger.html#context">nltk.tag.sequential.ContextTagger.context</a></code></div>
     
-    <div><p class="pre">:return: the context that should be used to look up the tag
-    for the specified token; or None if the specified token
-    should not be handled by this tagger.
-:rtype: (hashable)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">(hashable)</td><td class="fieldArgDesc">the context that should be used to look up the tag
+for the specified token; or None if the specified token
+should not be handled by this tagger.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -304,7 +300,7 @@ Construct a new affix tagger.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">encode_json_obj</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L462">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L462">
       
       (source)
     </a>
@@ -326,7 +322,7 @@ Construct a new affix tagger.
   <div class="functionHeader">
     
     <span class="py-defname">json_tag</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L439">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L439">
       
       (source)
     </a>
@@ -348,7 +344,7 @@ Construct a new affix tagger.
   <div class="functionHeader">
     
     <span class="py-defname">_affix_length</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L456">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L456">
       
       (source)
     </a>
@@ -370,7 +366,7 @@ Construct a new affix tagger.
   <div class="functionHeader">
     
     <span class="py-defname">_min_word_length</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L457">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L457">
       
       (source)
     </a>
@@ -390,7 +386,7 @@ Construct a new affix tagger.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

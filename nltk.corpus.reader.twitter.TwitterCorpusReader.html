@@ -65,54 +65,53 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TwitterCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/twitter.py#L22" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TwitterCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/twitter.py#L22" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.twitter.TwitterCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for corpora that consist of Tweets represented as a list of line-delimited JSON.
-
-Individual Tweets can be tokenized using the default tokenizer, or by a
-custom tokenizer specified as a parameter to the constructor.
-
-Construct a new Tweet corpus reader for a set of documents
-located at the given root directory.
-
-If you made your own tweet collection in a directory called
-`twitter-files`, then you can initialise the reader as::
-
-    from nltk.corpus import TwitterCorpusReader
-    reader = TwitterCorpusReader(root='/path/to/twitter-files', '.*\.json')
-
-However, the recommended approach is to set the relevant directory as the
-value of the environmental variable `TWITTER`, and then invoke the reader
-as follows::
-
-   root = os.environ['TWITTER']
-   reader = TwitterCorpusReader(root, '.*\.json')
-
-If you want to work directly with the raw Tweets, the `json` library can
-be used::
-
-   import json
-   for tweet in reader.docs():
-       print(json.dumps(tweet, indent=1, sort_keys=True))</p></div>
+        <div><p>Reader for corpora that consist of Tweets represented as a list of line-delimited JSON.</p>
+<p>Individual Tweets can be tokenized using the default tokenizer, or by a
+custom tokenizer specified as a parameter to the constructor.</p>
+<p>Construct a new Tweet corpus reader for a set of documents
+located at the given root directory.</p>
+<p>If you made your own tweet collection in a directory called
+<code>twitter-files</code>, then you can initialise the reader as:</p>
+<pre class="rst-literal-block">
+from nltk.corpus import TwitterCorpusReader
+reader = TwitterCorpusReader(root='/path/to/twitter-files', '.*\.json')
+</pre>
+<p>However, the recommended approach is to set the relevant directory as the
+value of the environmental variable <code>TWITTER</code>, and then invoke the reader
+as follows:</p>
+<pre class="rst-literal-block">
+root = os.environ['TWITTER']
+reader = TwitterCorpusReader(root, '.*\.json')
+</pre>
+<p>If you want to work directly with the raw Tweets, the <code><a href="https://docs.python.org/3/library/json.html#module-json">json</a></code> library can
+be used:</p>
+<pre class="rst-literal-block">
+import json
+for tweet in reader.docs():
+    print(json.dumps(tweet, indent=1, sort_keys=True))
+</pre>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id484">
+        <table class="children sortable" id="id487">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param root: The root directory for this corpus.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#docs">docs</a></code></td>
-    <td><span>Returns the full Tweet objects, as specified by `Twitter documentation on Tweets &lt;https://dev.twitter.com/docs/platform-objects/tweets&gt;`_</span></td>
+    <td><span>Returns the full Tweet objects, as specified by <a class="rst-reference external" href="https://dev.twitter.com/docs/platform-objects/tweets" target="_top">Twitter documentation on Tweets</a></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -127,12 +126,12 @@ be used::
     
     <td>Method</td>
     <td><code><a href="#tokenized">tokenized</a></code></td>
-    <td><span>:return: the given file(s) as a list of the text content of Tweets as as a list of words, screenanames, hashtags, URLs and punctuation symbols.</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_read_tweets">_read_tweets</a></code></td>
-    <td><span>Assumes that each line in ``stream`` is a JSON-serialised object.</span></td>
+    <td><span>Assumes that each line in <tt class="rst-docutils literal">stream</tt> is a JSON-serialised object.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -144,7 +143,7 @@ be used::
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id485">
+          <table class="children sortable" id="id488">
   
   
   <tr class="basemethod">
@@ -211,7 +210,7 @@ be used::
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -248,7 +247,7 @@ be used::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids=None, word_tokenizer=TweetTokenizer(), encoding='utf8'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/twitter.py#L59">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/twitter.py#L59">
       
       (source)
     </a>
@@ -256,12 +255,7 @@ be used::
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:param root: The root directory for this corpus.
-
-:param fileids: A list or regexp specifying the fileids in this corpus.
-
-:param word_tokenizer: Tokenizer for breaking the text of Tweets into
-smaller units, including but not limited to words.</p></div>
+    <div>smaller units, including but not limited to words.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list or regexp specifying the fileids in this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word_tokenizer</span></td><td class="fieldArgDesc">Tokenizer for breaking the text of Tweets into</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -275,7 +269,7 @@ smaller units, including but not limited to words.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">docs</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/twitter.py#L83">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/twitter.py#L83">
       
       (source)
     </a>
@@ -283,13 +277,11 @@ smaller units, including but not limited to words.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the full Tweet objects, as specified by `Twitter
-documentation on Tweets
-&lt;https://dev.twitter.com/docs/platform-objects/tweets&gt;`_
-
-:return: the given file(s) as a list of dictionaries deserialised
-from JSON.
-:rtype: list(dict)</p></div>
+    <div><p>Returns the full Tweet objects, as specified by <a class="rst-reference external" href="https://dev.twitter.com/docs/platform-objects/tweets" target="_top">Twitter
+documentation on Tweets</a></p>
+<p>from JSON.
+:rtype: list(dict)</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the given file(s) as a list of dictionaries deserialised</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -303,7 +295,7 @@ from JSON.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/twitter.py#L130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/twitter.py#L130">
       
       (source)
     </a>
@@ -311,7 +303,7 @@ from JSON.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the corpora in their raw form.</p></div>
+    <div>Return the corpora in their raw form.</div>
   </div>
 </div><div class="basemethod">
   
@@ -325,7 +317,7 @@ from JSON.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">strings</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/twitter.py#L100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/twitter.py#L100">
       
       (source)
     </a>
@@ -333,10 +325,7 @@ from JSON.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns only the text content of Tweets in the file(s)
-
-:return: the given file(s) as a list of Tweets.
-:rtype: list(str)</p></div>
+    <div>Returns only the text content of Tweets in the file(s)<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file(s) as a list of Tweets.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -350,7 +339,7 @@ from JSON.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenized</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/twitter.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/twitter.py#L119">
       
       (source)
     </a>
@@ -358,10 +347,7 @@ from JSON.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of the text content of Tweets as
-as a list of words, screenanames, hashtags, URLs and punctuation symbols.
-
-:rtype: list(list(str))</p></div>
+    <div>as a list of words, screenanames, hashtags, URLs and punctuation symbols.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(str))</td><td class="fieldArgDesc">the given file(s) as a list of the text content of Tweets as</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -375,7 +361,7 @@ as a list of words, screenanames, hashtags, URLs and punctuation symbols.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_tweets</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/twitter.py#L140">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/twitter.py#L140">
       
       (source)
     </a>
@@ -383,7 +369,7 @@ as a list of words, screenanames, hashtags, URLs and punctuation symbols.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Assumes that each line in ``stream`` is a JSON-serialised object.</p></div>
+    <div>Assumes that each line in <tt class="rst-docutils literal">stream</tt> is a JSON-serialised object.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -397,7 +383,7 @@ as a list of words, screenanames, hashtags, URLs and punctuation symbols.
   <div class="functionHeader">
     
     <span class="py-defname">_word_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/twitter.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/twitter.py#L81">
       
       (source)
     </a>
@@ -417,7 +403,7 @@ as a list of words, screenanames, hashtags, URLs and punctuation symbols.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

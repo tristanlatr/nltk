@@ -65,23 +65,23 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Trie</span>(<a href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict">dict</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collections.py#L617" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Trie</span>(<a href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict">dict</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collections.py#L617" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.collections.Trie">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A Trie implementation for strings</p></div>
+        <div>A Trie implementation for strings</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id219">
+        <table class="children sortable" id="id222">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Builds a Trie object, which is built around a ``dict``</span></td>
+    <td><span>Builds a Trie object, which is built around a <tt class="rst-docutils literal">dict</tt></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -91,7 +91,7 @@
     
     <td>Method</td>
     <td><code><a href="#insert">insert</a></code></td>
-    <td><span>Inserts ``string`` into the Trie</span></td>
+    <td><span>Inserts <tt class="rst-docutils literal">string</tt> into the Trie</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -118,7 +118,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, strings=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collections.py#L622">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collections.py#L622">
       
       (source)
     </a>
@@ -126,15 +126,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Builds a Trie object, which is built around a ``dict``
-
-If ``strings`` is provided, it will add the ``strings``, which
-consist of a ``list`` of ``strings``, to the Trie.
-Otherwise, it'll construct an empty Trie.
-
-:param strings: List of strings to insert into the trie
-    (Default is ``None``)
-:type strings: list(str)</p></div>
+    <div><p>Builds a Trie object, which is built around a <tt class="rst-docutils literal">dict</tt></p>
+<p>If <tt class="rst-docutils literal">strings</tt> is provided, it will add the <tt class="rst-docutils literal">strings</tt>, which
+consist of a <tt class="rst-docutils literal">list</tt> of <tt class="rst-docutils literal">strings</tt>, to the Trie.
+Otherwise, it'll construct an empty Trie.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">strings:</span>list(str)</td><td class="fieldArgDesc">List of strings to insert into the trie
+(Default is <tt class="rst-docutils literal">None</tt>)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -148,7 +145,7 @@ Otherwise, it'll construct an empty Trie.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__missing__</span>(self, key):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collections.py#L661">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collections.py#L661">
       
       (source)
     </a>
@@ -170,7 +167,7 @@ Otherwise, it'll construct an empty Trie.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">insert</span>(self, string):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collections.py#L639">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collections.py#L639">
       
       (source)
     </a>
@@ -178,18 +175,14 @@ Otherwise, it'll construct an empty Trie.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Inserts ``string`` into the Trie
-
-:param string: String to insert into the trie
-:type string: str
-
-:Example:
-
-&gt;&gt;&gt; from nltk.collections import Trie
-&gt;&gt;&gt; trie = Trie(["abc", "def"])
-&gt;&gt;&gt; expected = {'a': {'b': {'c': {True: None}}},                         'd': {'e': {'f': {True: None}}}}
-&gt;&gt;&gt; trie == expected
-True</p></div>
+    <div><p>Inserts <tt class="rst-docutils literal">string</tt> into the Trie</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.collections <span class="py-keyword">import</span> Trie
+<span class="py-prompt">&gt;&gt;&gt; </span>trie = Trie([<span class="py-string">"abc"</span>, <span class="py-string">"def"</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span>expected = {<span class="py-string">'a'</span>: {<span class="py-string">'b'</span>: {<span class="py-string">'c'</span>: {<span class="py-builtin">True</span>: <span class="py-builtin">None</span>}}},                         <span class="py-string">'d'</span>: {<span class="py-string">'e'</span>: {<span class="py-string">'f'</span>: {<span class="py-builtin">True</span>: <span class="py-builtin">None</span>}}}}
+<span class="py-prompt">&gt;&gt;&gt; </span>trie == expected
+<span class="py-output">True</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string:</span>str</td><td class="fieldArgDesc">String to insert into the trie</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -203,7 +196,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">LEAF</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collections.py#L620">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collections.py#L620">
       
       (source)
     </a>
@@ -223,7 +216,7 @@ True</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

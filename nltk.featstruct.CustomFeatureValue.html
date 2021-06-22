@@ -65,30 +65,32 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CustomFeatureValue</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L2115" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CustomFeatureValue</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L2115" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.featstruct.CustomFeatureValue">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract base class for base values that define a custom
+        <div><p>An abstract base class for base values that define a custom
 unification method.  The custom unification method of
-``CustomFeatureValue`` will be used during unification if:
-
-  - The ``CustomFeatureValue`` is unified with another base value.
-  - The ``CustomFeatureValue`` is not the value of a customized
-    ``Feature`` (which defines its own unification method).
-
-If two ``CustomFeatureValue`` objects are unified with one another
+<tt class="rst-docutils literal">CustomFeatureValue</tt> will be used during unification if:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>The <tt class="rst-docutils literal">CustomFeatureValue</tt> is unified with another base value.</li>
+<li>The <tt class="rst-docutils literal">CustomFeatureValue</tt> is not the value of a customized
+<tt class="rst-docutils literal">Feature</tt> (which defines its own unification method).</li>
+</ul>
+</blockquote>
+<p>If two <tt class="rst-docutils literal">CustomFeatureValue</tt> objects are unified with one another
 during feature structure unification, then the unified base values
-they return *must* be equal; otherwise, an ``AssertionError`` will
-be raised.
-
-Subclasses must define ``unify()``, ``__eq__()`` and ``__lt__()``.
-Subclasses may also wish to define ``__hash__()``.</p></div>
+they return <em>must</em> be equal; otherwise, an <tt class="rst-docutils literal">AssertionError</tt> will
+be raised.</p>
+<p>Subclasses must define <tt class="rst-docutils literal">unify()</tt>, <tt class="rst-docutils literal">__eq__()</tt> and <tt class="rst-docutils literal">__lt__()</tt>.
+Subclasses may also wish to define <tt class="rst-docutils literal">__hash__()</tt>.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id641">
+        <table class="children sortable" id="id644">
   
   
   <tr class="method">
@@ -115,7 +117,7 @@ Subclasses may also wish to define ``__hash__()``.</p></div>
     
     <td>Method</td>
     <td><code><a href="#unify">unify</a></code></td>
-    <td><span>If this base value unifies with ``other``, then return the unified value.  Otherwise, return ``UnificationFailure``.</span></td>
+    <td><span>If this base value unifies with <tt class="rst-docutils literal">other</tt>, then return the unified value.  Otherwise, return <tt class="rst-docutils literal">UnificationFailure</tt>.</span></td>
   </tr>
 </table>
         
@@ -137,7 +139,7 @@ Subclasses may also wish to define ``__hash__()``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L2142">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L2142">
       
       (source)
     </a>
@@ -159,7 +161,7 @@ Subclasses may also wish to define ``__hash__()``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L2151">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L2151">
       
       (source)
     </a>
@@ -181,7 +183,7 @@ Subclasses may also wish to define ``__hash__()``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L2148">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L2148">
       
       (source)
     </a>
@@ -203,7 +205,7 @@ Subclasses may also wish to define ``__hash__()``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L2145">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L2145">
       
       (source)
     </a>
@@ -225,7 +227,7 @@ Subclasses may also wish to define ``__hash__()``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unify</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L2135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L2135">
       
       (source)
     </a>
@@ -233,8 +235,8 @@ Subclasses may also wish to define ``__hash__()``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">If this base value unifies with ``other``, then return the
-unified value.  Otherwise, return ``UnificationFailure``.</p></div>
+    <div>If this base value unifies with <tt class="rst-docutils literal">other</tt>, then return the
+unified value.  Otherwise, return <tt class="rst-docutils literal">UnificationFailure</tt>.</div>
   </div>
 </div>
 
@@ -246,7 +248,7 @@ unified value.  Otherwise, return ``UnificationFailure``.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

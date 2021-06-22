@@ -65,26 +65,26 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">BrillTagger</span>(<span title="nltk.tag.TaggerI">TaggerI</span>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L191" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BrillTagger</span>(<span title="nltk.tag.TaggerI">TaggerI</span>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L191" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.brill.BrillTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Brill's transformational rule-based tagger.  Brill taggers use an
-initial tagger (such as ``tag.DefaultTagger``) to assign an initial
+        <div><p>Brill's transformational rule-based tagger.  Brill taggers use an
+initial tagger (such as <tt class="rst-docutils literal">tag.DefaultTagger</tt>) to assign an initial
 tag sequence to a text; and then apply an ordered list of
 transformational rules to correct the tags of individual tokens.
-These transformation rules are specified by the ``TagRule``
-interface.
-
-Brill taggers can be created directly, from an initial tagger and
+These transformation rules are specified by the <tt class="rst-docutils literal">TagRule</tt>
+interface.</p>
+<p>Brill taggers can be created directly, from an initial tagger and
 a list of transformational rules; but more often, Brill taggers
 are created by learning rules from a training corpus, using one
-of the TaggerTrainers available.</p></div>
+of the TaggerTrainers available.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1548">
+        <table class="children sortable" id="id1552">
   
   
   <tr class="classmethod">
@@ -96,7 +96,7 @@ of the TaggerTrainers available.</p></div>
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param initial_tagger: The initial tagger :type initial_tagger: TaggerI</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -168,7 +168,7 @@ of the TaggerTrainers available.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">decode_json_obj</span>(cls, obj):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L230">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L230">
       
       (source)
     </a>
@@ -190,7 +190,7 @@ of the TaggerTrainers available.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, initial_tagger, rules, training_stats=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L209">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L209">
       
       (source)
     </a>
@@ -198,16 +198,9 @@ of the TaggerTrainers available.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param initial_tagger: The initial tagger
-:type initial_tagger: TaggerI
-
-:param rules: An ordered list of transformation rules that
-    should be used to correct the initial tagging.
-:type rules: list(TagRule)
-
-:param training_stats: A dictionary of statistics collected
-    during training, for possible later use
-:type training_stats: dict</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">initial_tagger:</span>TaggerI</td><td class="fieldArgDesc">The initial tagger</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rules:</span>list(TagRule)</td><td class="fieldArgDesc">An ordered list of transformation rules that
+should be used to correct the initial tagging.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">training_stats:</span>dict</td><td class="fieldArgDesc">A dictionary of statistics collected
+during training, for possible later use</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -221,7 +214,7 @@ of the TaggerTrainers available.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">batch_tag_incremental</span>(self, sequences, gold):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L409">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L409">
       
       (source)
     </a>
@@ -229,19 +222,13 @@ of the TaggerTrainers available.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Tags by applying each rule to the entire corpus (rather than all rules to a
+    <div><p>Tags by applying each rule to the entire corpus (rather than all rules to a
 single sequence). The point is to collect statistics on the test set for
-individual rules.
-
-NOTE: This is inefficient (does not build any index, so will traverse the entire
+individual rules.</p>
+<p>NOTE: This is inefficient (does not build any index, so will traverse the entire
 corpus N times for N rules) -- usually you would not care about statistics for
-individual rules and thus use batch_tag() instead
-
-:param sequences: lists of token sequences (sentences, in some applications) to be tagged
-:type sequences: list of list of strings
-:param gold: the gold standard
-:type gold: list of list of strings
-:returns: tuple of (tagged_sequences, ordered list of rule scores (one for each rule))</p></div>
+individual rules and thus use batch_tag() instead</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequences:</span>list of list of strings</td><td class="fieldArgDesc">lists of token sequences (sentences, in some applications) to be tagged</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gold:</span>list of list of strings</td><td class="fieldArgDesc">the gold standard</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">tuple of (tagged_sequences, ordered list of rule scores (one for each rule))</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -255,7 +242,7 @@ individual rules and thus use batch_tag() instead
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">encode_json_obj</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L227">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L227">
       
       (source)
     </a>
@@ -277,7 +264,7 @@ individual rules and thus use batch_tag() instead
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">print_template_statistics</span>(self, test_stats=None, printunused=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L286">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L286">
       
       (source)
     </a>
@@ -285,21 +272,14 @@ individual rules and thus use batch_tag() instead
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print a list of all templates, ranked according to efficiency.
-
-If test_stats is available, the templates are ranked according to their
+    <div><p>Print a list of all templates, ranked according to efficiency.</p>
+<p>If test_stats is available, the templates are ranked according to their
 relative contribution (summed for all rules created from a given template,
 weighted by score) to the performance on the test set. If no test_stats, then
 statistics collected during training are used instead. There is also
 an unweighted measure (just counting the rules). This is less informative,
-though, as many low-score rules will appear towards end of training.
-
-:param test_stats: dictionary of statistics collected during testing
-:type test_stats: dict of str -&gt; any (but usually numbers)
-:param printunused: if True, print a list of all unused templates
-:type printunused: bool
-:return: None
-:rtype: None</p></div>
+though, as many low-score rules will appear towards end of training.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">test_stats:</span>dict of str -&gt; any (but usually numbers)</td><td class="fieldArgDesc">dictionary of statistics collected during testing</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">printunused:</span>bool</td><td class="fieldArgDesc">if True, print a list of all unused templates</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc">None</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -313,7 +293,7 @@ though, as many low-score rules will appear towards end of training.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">rules</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L235">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L235">
       
       (source)
     </a>
@@ -321,10 +301,7 @@ though, as many low-score rules will appear towards end of training.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the ordered list of  transformation rules that this tagger has learnt
-
-:return: the ordered list of transformation rules that correct the initial tagging
-:rtype: list of Rules</p></div>
+    <div>Return the ordered list of  transformation rules that this tagger has learnt<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of Rules</td><td class="fieldArgDesc">the ordered list of transformation rules that correct the initial tagging</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -338,7 +315,7 @@ though, as many low-score rules will appear towards end of training.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L259">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L259">
       
       (source)
     </a>
@@ -360,7 +337,7 @@ though, as many low-score rules will appear towards end of training.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train_stats</span>(self, statistic=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L244">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L244">
       
       (source)
     </a>
@@ -368,13 +345,8 @@ though, as many low-score rules will appear towards end of training.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a named statistic collected during training, or a dictionary of all
-available statistics if no name given
-
-:param statistic: name of statistic
-:type statistic: str
-:return: some statistic collected during training of this tagger
-:rtype: any (but usually a number)</p></div>
+    <div>Return a named statistic collected during training, or a dictionary of all
+available statistics if no name given<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">statistic:</span>str</td><td class="fieldArgDesc">name of statistic</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">any (but usually a number)</td><td class="fieldArgDesc">some statistic collected during training of this tagger</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -388,7 +360,7 @@ available statistics if no name given
   <div class="functionHeader">
     
     <span class="py-defname">json_tag</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L207">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L207">
       
       (source)
     </a>
@@ -410,7 +382,7 @@ available statistics if no name given
   <div class="functionHeader">
     
     <span class="py-defname">_initial_tagger</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L223">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L223">
       
       (source)
     </a>
@@ -432,7 +404,7 @@ available statistics if no name given
   <div class="functionHeader">
     
     <span class="py-defname">_rules</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L224">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L224">
       
       (source)
     </a>
@@ -454,7 +426,7 @@ available statistics if no name given
   <div class="functionHeader">
     
     <span class="py-defname">_training_stats</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/brill.py#L225">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/brill.py#L225">
       
       (source)
     </a>
@@ -474,7 +446,7 @@ available statistics if no name given
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

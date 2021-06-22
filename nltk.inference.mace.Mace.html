@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Mace</span>(<a href="nltk.inference.prover9.Prover9Parent.html" title="nltk.inference.prover9.Prover9Parent">Prover9Parent</a>, <a href="nltk.inference.api.ModelBuilder.html" title="nltk.inference.api.ModelBuilder">ModelBuilder</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/mace.py#L230" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Mace</span>(<a href="nltk.inference.prover9.Prover9Parent.html" title="nltk.inference.prover9.Prover9Parent">Prover9Parent</a>, <a href="nltk.inference.api.ModelBuilder.html" title="nltk.inference.api.ModelBuilder">ModelBuilder</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/mace.py#L230" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.inference.mace.Mace">View In Hierarchy</a></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id711">
+        <table class="children sortable" id="id714">
   
   
   <tr class="method">
@@ -91,7 +91,7 @@
     
     <td>Method</td>
     <td><code><a href="#_call_mace4">_call_mace4</a></code></td>
-    <td><span>Call the ``mace4`` binary with the given input.</span></td>
+    <td><span>Call the <tt class="rst-docutils literal">mace4</tt> binary with the given input.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -108,14 +108,14 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.inference.prover9.Prover9Parent.html">Prover9Parent</a></code>:
           </p>
-          <table class="children sortable" id="id712">
+          <table class="children sortable" id="id715">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.inference.prover9.Prover9Parent.html#binary_locations">binary_locations</a></code></td>
-    <td><span>A list of directories that should be searched for the prover9 executables.  This list is used by ``config_prover9`` when searching for the prover9 executables.</span></td>
+    <td><span>A list of directories that should be searched for the prover9 executables.  This list is used by <tt class="rst-docutils literal">config_prover9</tt> when searching for the prover9 executables.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -125,7 +125,7 @@
     
     <td>Method</td>
     <td><code><a href="nltk.inference.prover9.Prover9Parent.html#prover9_input">prover9_input</a></code></td>
-    <td><span>:return: The input string that should be provided to the prover9 binary.  This string is formed based on the goal, assumptions, and timeout value of this object.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -152,7 +152,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.inference.api.ModelBuilder.html">ModelBuilder</a></code>:
           </p>
-          <table class="children sortable" id="id713">
+          <table class="children sortable" id="id716">
   
   
   <tr class="basemethod">
@@ -181,7 +181,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, end_size=500):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/mace.py#L233">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/mace.py#L233">
       
       (source)
     </a>
@@ -203,7 +203,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_build_model</span>(self, goal=None, assumptions=None, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/mace.py#L238">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/mace.py#L238">
       
       (source)
     </a>
@@ -211,10 +211,9 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.inference.api.ModelBuilder.html#_build_model">nltk.inference.api.ModelBuilder._build_model</a></code></div>
     
-    <div><p class="pre">Use Mace4 to build a first order model.
-
-:return: ``True`` if a model was found (i.e. Mace returns value of 0),
-else ``False``</p></div>
+    <div><p>Use Mace4 to build a first order model.</p>
+<p>else <tt class="rst-docutils literal">False</tt></p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">True</tt> if a model was found (i.e. Mace returns value of 0),</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -228,7 +227,7 @@ else ``False``</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_call_mace4</span>(self, input_str, args=[], verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/mace.py#L253">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/mace.py#L253">
       
       (source)
     </a>
@@ -236,12 +235,7 @@ else ``False``</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Call the ``mace4`` binary with the given input.
-
-:param input_str: A string whose contents are used as stdin.
-:param args: A list of command-line arguments.
-:return: A tuple (stdout, returncode)
-:see: ``config_prover9``</p></div>
+    <div>Call the <tt class="rst-docutils literal">mace4</tt> binary with the given input.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">input_str</span></td><td class="fieldArgDesc">A string whose contents are used as stdin.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">A list of command-line arguments.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">A tuple (stdout, returncode)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">config_prover9</tt></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -255,7 +249,7 @@ else ``False``</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_end_size</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/mace.py#L234">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/mace.py#L234">
       
       (source)
     </a>
@@ -263,8 +257,8 @@ else ``False``</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The maximum model size that Mace will try before
-simply returning false. (Use -1 for no maximum.)</p></div>
+    <div>The maximum model size that Mace will try before
+simply returning false. (Use -1 for no maximum.)</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -278,7 +272,7 @@ simply returning false. (Use -1 for no maximum.)</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_mace4_bin</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/mace.py#L231">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/mace.py#L231">
       
       (source)
     </a>
@@ -298,7 +292,7 @@ simply returning false. (Use -1 for no maximum.)</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

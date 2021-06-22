@@ -65,29 +65,29 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NLTKWordTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L32" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NLTKWordTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L32" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.destructive.NLTKWordTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The NLTK tokenizer that has improved upon the TreebankWordTokenizer.
-
-The tokenizer is "destructive" such that the regexes applied will munge the
+        <div><p>The NLTK tokenizer that has improved upon the TreebankWordTokenizer.</p>
+<p>The tokenizer is "destructive" such that the regexes applied will munge the
 input string to a state beyond re-construction. It is possible to apply
-`TreebankWordDetokenizer.detokenize` to the tokenized outputs of
-`NLTKDestructiveWordTokenizer.tokenize` but there's no guarantees to
-revert to the original string.</p></div>
+<code><a href="nltk.tokenize.treebank.TreebankWordDetokenizer.html#detokenize">TreebankWordDetokenizer.detokenize</a></code> to the tokenized outputs of
+<code>NLTKDestructiveWordTokenizer.tokenize</code> but there's no guarantees to
+revert to the original string.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1785">
+        <table class="children sortable" id="id1789">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *s*.</span></td>
+    <td><span>Return a tokenized copy of <em>s</em>.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -139,24 +139,24 @@ revert to the original string.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1786">
+          <table class="children sortable" id="id1790">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -178,7 +178,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, text, convert_parentheses=False, return_str=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L106">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L106">
       
       (source)
     </a>
@@ -186,9 +186,7 @@ revert to the original string.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Return a tokenized copy of *s*.
-
-:rtype: list of str</p></div>
+    <div>Return a tokenized copy of <em>s</em>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -202,7 +200,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">CONTRACTIONS2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L103">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L103">
       
       (source)
     </a>
@@ -224,7 +222,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">CONTRACTIONS3</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L104">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L104">
       
       (source)
     </a>
@@ -246,7 +244,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">CONVERT_PARENTHESES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L90">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L90">
       
       (source)
     </a>
@@ -268,7 +266,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">DOUBLE_DASHES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L99">
       
       (source)
     </a>
@@ -290,7 +288,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">ENDING_QUOTES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L53">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L53">
       
       (source)
     </a>
@@ -312,7 +310,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PARENS_BRACKETS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L87">
       
       (source)
     </a>
@@ -334,7 +332,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PUNCTUATION</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L71">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L71">
       
       (source)
     </a>
@@ -356,7 +354,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">STARTING_QUOTES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L44">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L44">
       
       (source)
     </a>
@@ -378,7 +376,7 @@ revert to the original string.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_contractions</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/destructive.py#L102">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/destructive.py#L102">
       
       (source)
     </a>
@@ -398,7 +396,7 @@ revert to the original string.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

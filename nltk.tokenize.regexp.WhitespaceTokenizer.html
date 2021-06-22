@@ -65,23 +65,26 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">WhitespaceTokenizer</span>(<a href="nltk.tokenize.regexp.RegexpTokenizer.html" title="nltk.tokenize.regexp.RegexpTokenizer">RegexpTokenizer</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/regexp.py#L156" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">WhitespaceTokenizer</span>(<a href="nltk.tokenize.regexp.RegexpTokenizer.html" title="nltk.tokenize.regexp.RegexpTokenizer">RegexpTokenizer</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/regexp.py#L156" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.regexp.WhitespaceTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Tokenize a string on whitespace (space, tab, newline).
-In general, users should use the string ``split()`` method instead.
-
-    &gt;&gt;&gt; from nltk.tokenize import WhitespaceTokenizer
-    &gt;&gt;&gt; s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."
-    &gt;&gt;&gt; WhitespaceTokenizer().tokenize(s)
-    ['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York.',
-    'Please', 'buy', 'me', 'two', 'of', 'them.', 'Thanks.']</p></div>
+        <div><p>Tokenize a string on whitespace (space, tab, newline).
+In general, users should use the string <tt class="rst-docutils literal">split()</tt> method instead.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> WhitespaceTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">"Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>WhitespaceTokenizer().tokenize(s)
+<span class="py-output">['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York.',</span>
+<span class="py-output">'Please', 'buy', 'me', 'two', 'of', 'them.', 'Thanks.']</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1806">
+        <table class="children sortable" id="id1810">
   
   
   <tr class="method">
@@ -95,7 +98,7 @@ In general, users should use the string ``split()`` method instead.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.regexp.RegexpTokenizer.html">RegexpTokenizer</a></code>:
           </p>
-          <table class="children sortable" id="id1807">
+          <table class="children sortable" id="id1811">
   
   
   <tr class="basemethod">
@@ -107,12 +110,12 @@ In general, users should use the string ``split()`` method instead.
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.regexp.RegexpTokenizer.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.regexp.RegexpTokenizer.html#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *s*.</span></td>
+    <td><span>Return a tokenized copy of <em>s</em>.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -149,19 +152,19 @@ In general, users should use the string ``split()`` method instead.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code> (via <code><a href="nltk.tokenize.regexp.RegexpTokenizer.html">RegexpTokenizer</a></code>):
           </p>
-          <table class="children sortable" id="id1808">
+          <table class="children sortable" id="id1812">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -183,7 +186,7 @@ In general, users should use the string ``split()`` method instead.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/regexp.py#L168">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/regexp.py#L168">
       
       (source)
     </a>
@@ -203,7 +206,7 @@ In general, users should use the string ``split()`` method instead.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

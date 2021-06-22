@@ -65,23 +65,21 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">BottomUpPredictCombineRule</span>(<a href="nltk.parse.chart.BottomUpPredictRule.html" title="nltk.parse.chart.BottomUpPredictRule">BottomUpPredictRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1228" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.app.chartparser_app.BottomUpLeftCornerEdgeRule.html">nltk.app.chartparser_app.BottomUpLeftCornerEdgeRule</a></code>, <code><a href="nltk.parse.chart.FilteredBottomUpPredictCombineRule.html">nltk.parse.chart.FilteredBottomUpPredictCombineRule</a></code>, <code><a href="nltk.parse.featurechart.FeatureBottomUpPredictCombineRule.html">nltk.parse.featurechart.FeatureBottomUpPredictCombineRule</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BottomUpPredictCombineRule</span>(<a href="nltk.parse.chart.BottomUpPredictRule.html" title="nltk.parse.chart.BottomUpPredictRule">BottomUpPredictRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1228" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.app.chartparser_app.BottomUpLeftCornerEdgeRule.html">nltk.app.chartparser_app.BottomUpLeftCornerEdgeRule</a></code>, <code><a href="nltk.parse.chart.FilteredBottomUpPredictCombineRule.html">nltk.parse.chart.FilteredBottomUpPredictCombineRule</a></code>, <code><a href="nltk.parse.featurechart.FeatureBottomUpPredictCombineRule.html">nltk.parse.featurechart.FeatureBottomUpPredictCombineRule</a></code></p>
         <p><a href="classIndex.html#nltk.parse.chart.BottomUpPredictCombineRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A rule licensing any edge corresponding to a production whose
+        <div>A rule licensing any edge corresponding to a production whose
 right-hand side begins with a complete edge's left-hand side.  In
-particular, this rule specifies that ``[A -&gt; alpha \*]``
-licenses the edge ``[B -&gt; A \* beta]`` for each grammar
-production ``B -&gt; A beta``.
-
-:note: This is like ``BottomUpPredictRule``, but it also applies
-    the ``FundamentalRule`` to the resulting edge.</p></div>
+particular, this rule specifies that <tt class="rst-docutils literal">[A <span class="pre">-&gt;</span> alpha \*]</tt>
+licenses the edge <tt class="rst-docutils literal">[B <span class="pre">-&gt;</span> A \* beta]</tt> for each grammar
+production <tt class="rst-docutils literal">B <span class="pre">-&gt;</span> A beta</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">This is like <tt class="rst-docutils literal">BottomUpPredictRule</tt>, but it also applies
+the <tt class="rst-docutils literal">FundamentalRule</tt> to the resulting edge.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id864">
+        <table class="children sortable" id="id868">
   
   
   <tr class="method">
@@ -100,7 +98,7 @@ production ``B -&gt; A beta``.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.AbstractChartRule.html">AbstractChartRule</a></code> (via <code><a href="nltk.parse.chart.BottomUpPredictRule.html">BottomUpPredictRule</a></code>):
           </p>
-          <table class="children sortable" id="id865">
+          <table class="children sortable" id="id869">
   
   
   <tr class="basemethod">
@@ -134,7 +132,7 @@ production ``B -&gt; A beta``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply</span>(self, chart, grammar, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1242">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1242">
       
       (source)
     </a>
@@ -142,16 +140,12 @@ production ``B -&gt; A beta``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.BottomUpPredictRule.html#apply">nltk.parse.chart.BottomUpPredictRule.apply</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.chart.FilteredBottomUpPredictCombineRule.html">nltk.parse.chart.FilteredBottomUpPredictCombineRule</a></code>, <code><a href="nltk.parse.featurechart.FeatureBottomUpPredictCombineRule.html">nltk.parse.featurechart.FeatureBottomUpPredictCombineRule</a></code></div>
     
-    <div><p class="pre">Return a generator that will add edges licensed by this rule
+    <div>Return a generator that will add edges licensed by this rule
 and the given edges to the chart, one at a time.  Each
 time the generator is resumed, it will either add a new
-edge and yield that edge; or return.
-
-:type edges: list(EdgeI)
-:param edges: A set of existing edges.  The number of edges
-    that should be passed to ``apply()`` is specified by the
-    ``NUM_EDGES`` class variable.
-:rtype: iter(EdgeI)</p></div>
+edge and yield that edge; or return.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edges:</span>list(EdgeI)</td><td class="fieldArgDesc">A set of existing edges.  The number of edges
+that should be passed to <tt class="rst-docutils literal">apply()</tt> is specified by the
+<tt class="rst-docutils literal">NUM_EDGES</tt> class variable.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -165,7 +159,7 @@ edge and yield that edge; or return.
   <div class="functionHeader">
     
     <span class="py-defname">NUM_EDGES</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1240">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1240">
       
       (source)
     </a>
@@ -185,7 +179,7 @@ edge and yield that edge; or return.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

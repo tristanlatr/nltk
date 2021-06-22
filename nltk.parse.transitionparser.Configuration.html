@@ -65,32 +65,36 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Configuration</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L27" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Configuration</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L27" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.transitionparser.Configuration">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Class for holding configuration which is the partial analysis of the input sentence.
+        <div><p>Class for holding configuration which is the partial analysis of the input sentence.
 The transition based parser aims at finding set of operators that transfer the initial
-configuration to the terminal configuration.
-
-The configuration includes:
-    - Stack: for storing partially proceeded words
-    - Buffer: for storing remaining input words
-    - Set of arcs: for storing partially built dependency tree
-
-This class also provides a method to represent a configuration as list of features.</p></div>
+configuration to the terminal configuration.</p>
+<dl class="rst-docutils">
+<dt>The configuration includes:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>Stack: for storing partially proceeded words</li>
+<li>Buffer: for storing remaining input words</li>
+<li>Set of arcs: for storing partially built dependency tree</li>
+</ul>
+</dd>
+</dl>
+<p>This class also provides a method to represent a configuration as list of features.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1121">
+        <table class="children sortable" id="id1125">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param dep_graph: the representation of an input in the form of dependency graph. :type dep_graph: DependencyGraph where the dependencies are not specified.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -152,7 +156,7 @@ This class also provides a method to represent a configuration as list of featur
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, dep_graph):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L41">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L41">
       
       (source)
     </a>
@@ -160,8 +164,7 @@ This class also provides a method to represent a configuration as list of featur
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param dep_graph: the representation of an input in the form of dependency graph.
-:type dep_graph: DependencyGraph where the dependencies are not specified.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dep_graph:</span>DependencyGraph where the dependencies are not specified.</td><td class="fieldArgDesc">the representation of an input in the form of dependency graph.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -175,7 +178,7 @@ This class also provides a method to represent a configuration as list of featur
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L53">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L53">
       
       (source)
     </a>
@@ -197,7 +200,7 @@ This class also provides a method to represent a configuration as list of featur
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">extract_features</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L77">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L77">
       
       (source)
     </a>
@@ -205,10 +208,10 @@ This class also provides a method to represent a configuration as list of featur
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extract the set of features for the current configuration. Implement standard features as describe in
+    <div>Extract the set of features for the current configuration. Implement standard features as describe in
 Table 3.2 (page 31) in Dependency Parsing book by Sandra Kubler, Ryan McDonal, Joakim Nivre.
 Please note that these features are very basic.
-:return: list(str)</p></div>
+:return: list(str)</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -222,7 +225,7 @@ Please note that these features are very basic.
   <div class="functionHeader">
     
     <span class="py-defname">arcs</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L49">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L49">
       
       (source)
     </a>
@@ -244,7 +247,7 @@ Please note that these features are very basic.
   <div class="functionHeader">
     
     <span class="py-defname">buffer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L48">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L48">
       
       (source)
     </a>
@@ -266,7 +269,7 @@ Please note that these features are very basic.
   <div class="functionHeader">
     
     <span class="py-defname">stack</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/functions.html#int">int</a>]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L47">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L47">
       
       (source)
     </a>
@@ -288,7 +291,7 @@ Please note that these features are very basic.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_check_informative</span>(self, feat, flag=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L63">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L63">
       
       (source)
     </a>
@@ -296,8 +299,8 @@ Please note that these features are very basic.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Check whether a feature is informative
-The flag control whether "_" is informative or not</p></div>
+    <div>Check whether a feature is informative
+The flag control whether "_" is informative or not</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -311,7 +314,7 @@ The flag control whether "_" is informative or not</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_max_address</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L51">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L51">
       
       (source)
     </a>
@@ -333,7 +336,7 @@ The flag control whether "_" is informative or not</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tokens</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L50">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L50">
       
       (source)
     </a>
@@ -353,7 +356,7 @@ The flag control whether "_" is informative or not</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

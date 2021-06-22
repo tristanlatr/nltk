@@ -65,81 +65,69 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NgramCounter</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L18" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NgramCounter</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L18" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.lm.NgramCounter">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Class for counting ngrams.
-
-Will count any ngram sequence you give it ;)
-
-First we need to make sure we are feeding the counter sentences of ngrams.
-
-&gt;&gt;&gt; text = [["a", "b", "c", "d"], ["a", "c", "d", "c"]]
-&gt;&gt;&gt; from nltk.util import ngrams
-&gt;&gt;&gt; text_bigrams = [ngrams(sent, 2) for sent in text]
-&gt;&gt;&gt; text_unigrams = [ngrams(sent, 1) for sent in text]
-
-The counting itself is very simple.
-
-&gt;&gt;&gt; from nltk.lm import NgramCounter
-&gt;&gt;&gt; ngram_counts = NgramCounter(text_bigrams + text_unigrams)
-
-You can conveniently access ngram counts using standard python dictionary notation.
-String keys will give you unigram counts.
-
-&gt;&gt;&gt; ngram_counts['a']
-2
-&gt;&gt;&gt; ngram_counts['aliens']
-0
-
-If you want to access counts for higher order ngrams, use a list or a tuple.
+        <div><p>Class for counting ngrams.</p>
+<p>Will count any ngram sequence you give it ;)</p>
+<p>First we need to make sure we are feeding the counter sentences of ngrams.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>text = [[<span class="py-string">"a"</span>, <span class="py-string">"b"</span>, <span class="py-string">"c"</span>, <span class="py-string">"d"</span>], [<span class="py-string">"a"</span>, <span class="py-string">"c"</span>, <span class="py-string">"d"</span>, <span class="py-string">"c"</span>]]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.util <span class="py-keyword">import</span> ngrams
+<span class="py-prompt">&gt;&gt;&gt; </span>text_bigrams = [ngrams(sent, 2) <span class="py-keyword">for</span> sent <span class="py-keyword">in</span> text]
+<span class="py-prompt">&gt;&gt;&gt; </span>text_unigrams = [ngrams(sent, 1) <span class="py-keyword">for</span> sent <span class="py-keyword">in</span> text]</pre><p>The counting itself is very simple.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.lm <span class="py-keyword">import</span> NgramCounter
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts = NgramCounter(text_bigrams + text_unigrams)</pre><p>You can conveniently access ngram counts using standard python dictionary notation.
+String keys will give you unigram counts.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts[<span class="py-string">'a'</span>]
+<span class="py-output">2</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts[<span class="py-string">'aliens'</span>]
+<span class="py-output">0</span>
+</pre><p>If you want to access counts for higher order ngrams, use a list or a tuple.
 These are treated as "context" keys, so what you get is a frequency distribution
-over all continuations after the given context.
-
-&gt;&gt;&gt; sorted(ngram_counts[['a']].items())
-[('b', 1), ('c', 1)]
-&gt;&gt;&gt; sorted(ngram_counts[('a',)].items())
-[('b', 1), ('c', 1)]
-
-This is equivalent to specifying explicitly the order of the ngram (in this case
+over all continuations after the given context.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sorted</span>(ngram_counts[[<span class="py-string">'a'</span>]].items())
+<span class="py-output">[('b', 1), ('c', 1)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sorted</span>(ngram_counts[(<span class="py-string">'a'</span>,)].items())
+<span class="py-output">[('b', 1), ('c', 1)]</span>
+</pre><p>This is equivalent to specifying explicitly the order of the ngram (in this case
 2 for bigram) and indexing on the context.
 &gt;&gt;&gt; ngram_counts[2][('a',)] is ngram_counts[['a']]
-True
-
-Note that the keys in `ConditionalFreqDist` cannot be lists, only tuples!
+True</p>
+<p>Note that the keys in <code><a href="nltk.probability.ConditionalFreqDist.html">ConditionalFreqDist</a></code> cannot be lists, only tuples!
 It is generally advisable to use the less verbose and more flexible square
-bracket notation.
-
-To get the count of the full ngram "a b", do this:
-
-&gt;&gt;&gt; ngram_counts[['a']]['b']
-1
-
-Specifying the ngram order as a number can be useful for accessing all ngrams
-in that order.
-
-&gt;&gt;&gt; ngram_counts[2]
-&lt;ConditionalFreqDist with 4 conditions&gt;
-
-The keys of this `ConditionalFreqDist` are the contexts we discussed earlier.
-Unigrams can also be accessed with a human-friendly alias.
-
-&gt;&gt;&gt; ngram_counts.unigrams is ngram_counts[1]
-True
-
-Similarly to `collections.Counter`, you can update counts after initialization.
-
-&gt;&gt;&gt; ngram_counts['e']
-0
-&gt;&gt;&gt; ngram_counts.update([ngrams(["d", "e", "f"], 1)])
-&gt;&gt;&gt; ngram_counts['e']
-1</p></div>
+bracket notation.</p>
+<p>To get the count of the full ngram "a b", do this:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts[[<span class="py-string">'a'</span>]][<span class="py-string">'b'</span>]
+<span class="py-output">1</span>
+</pre><p>Specifying the ngram order as a number can be useful for accessing all ngrams
+in that order.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts[2]
+<span class="py-output">&lt;ConditionalFreqDist with 4 conditions&gt;</span>
+</pre><p>The keys of this <code><a href="nltk.probability.ConditionalFreqDist.html">ConditionalFreqDist</a></code> are the contexts we discussed earlier.
+Unigrams can also be accessed with a human-friendly alias.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts.unigrams <span class="py-keyword">is</span> ngram_counts[1]
+<span class="py-output">True</span>
+</pre><p>Similarly to <code><a href="https://docs.python.org/3/library/collections.html#collections.Counter">collections.Counter</a></code>, you can update counts after initialization.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts[<span class="py-string">'e'</span>]
+<span class="py-output">0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts.update([ngrams([<span class="py-string">"d"</span>, <span class="py-string">"e"</span>, <span class="py-string">"f"</span>], 1)])
+<span class="py-prompt">&gt;&gt;&gt; </span>ngram_counts[<span class="py-string">'e'</span>]
+<span class="py-output">1</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id804">
+        <table class="children sortable" id="id807">
   
   
   <tr class="method">
@@ -176,7 +164,7 @@ Similarly to `collections.Counter`, you can update counts after initialization.
     
     <td>Method</td>
     <td><code><a href="#update">update</a></code></td>
-    <td><span>Updates ngram counts from `ngram_text`.</span></td>
+    <td><span>Updates ngram counts from <code>ngram_text</code>.</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -208,7 +196,7 @@ Similarly to `collections.Counter`, you can update counts after initialization.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__contains__</span>(self, item):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L162">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L162">
       
       (source)
     </a>
@@ -230,7 +218,7 @@ Similarly to `collections.Counter`, you can update counts after initialization.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, item):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L145">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L145">
       
       (source)
     </a>
@@ -238,7 +226,7 @@ Similarly to `collections.Counter`, you can update counts after initialization.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">User-friendly access to ngram counts.</p></div>
+    <div>User-friendly access to ngram counts.</div>
   </div>
 </div><div class="basemethod">
   
@@ -252,7 +240,7 @@ Similarly to `collections.Counter`, you can update counts after initialization.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, ngram_text=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L88">
       
       (source)
     </a>
@@ -260,13 +248,10 @@ Similarly to `collections.Counter`, you can update counts after initialization.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Creates a new NgramCounter.
-
-If `ngram_text` is specified, counts ngrams from it, otherwise waits for
-`update` method to be called explicitly.
-
-:param ngram_text: Optional text containing senteces of ngrams, as for `update` method.
-:type ngram_text: Iterable(Iterable(tuple(str))) or None</p></div>
+    <div><p>Creates a new NgramCounter.</p>
+<p>If <code>ngram_text</code> is specified, counts ngrams from it, otherwise waits for
+<code><a href="#update">update</a></code> method to be called explicitly.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ngram_text:</span>Iterable(Iterable(tuple(str))) or None</td><td class="fieldArgDesc">Optional text containing senteces of ngrams, as for <code><a href="#update">update</a></code> method.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -280,7 +265,7 @@ If `ngram_text` is specified, counts ngrams from it, otherwise waits for
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L159">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L159">
       
       (source)
     </a>
@@ -302,7 +287,7 @@ If `ngram_text` is specified, counts ngrams from it, otherwise waits for
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L154">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L154">
       
       (source)
     </a>
@@ -324,7 +309,7 @@ If `ngram_text` is specified, counts ngrams from it, otherwise waits for
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">N</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L131">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L131">
       
       (source)
     </a>
@@ -332,15 +317,15 @@ If `ngram_text` is specified, counts ngrams from it, otherwise waits for
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns grand total number of ngrams stored.
-
-This includes ngrams from all orders, so some duplication is expected.
-:rtype: int
-
-&gt;&gt;&gt; from nltk.lm import NgramCounter
-&gt;&gt;&gt; counts = NgramCounter([[("a", "b"), ("c",), ("d", "e")]])
-&gt;&gt;&gt; counts.N()
-3</p></div>
+    <div><p>Returns grand total number of ngrams stored.</p>
+<p>This includes ngrams from all orders, so some duplication is expected.
+:rtype: int</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.lm <span class="py-keyword">import</span> NgramCounter
+<span class="py-prompt">&gt;&gt;&gt; </span>counts = NgramCounter([[(<span class="py-string">"a"</span>, <span class="py-string">"b"</span>), (<span class="py-string">"c"</span>,), (<span class="py-string">"d"</span>, <span class="py-string">"e"</span>)]])
+<span class="py-prompt">&gt;&gt;&gt; </span>counts.N()
+<span class="py-output">3</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -354,7 +339,7 @@ This includes ngrams from all orders, so some duplication is expected.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, ngram_text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L104">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L104">
       
       (source)
     </a>
@@ -362,13 +347,10 @@ This includes ngrams from all orders, so some duplication is expected.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Updates ngram counts from `ngram_text`.
-
-Expects `ngram_text` to be a sequence of sentences (sequences).
-Each sentence consists of ngrams as tuples of strings.
-
-:param Iterable(Iterable(tuple(str))) ngram_text: Text containing senteces of ngrams.
-:raises TypeError: if the ngrams are not tuples.</p></div>
+    <div><p>Updates ngram counts from <code>ngram_text</code>.</p>
+<p>Expects <code>ngram_text</code> to be a sequence of sentences (sequences).
+Each sentence consists of ngrams as tuples of strings.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ngram_text</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">Iterable(Iterable(tuple(str))) ngram_text</span></td><td class="fieldArgDesc">Text containing senteces of ngrams.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#TypeError">TypeError</a></code></td><td>if the ngrams are not tuples.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -382,7 +364,7 @@ Each sentence consists of ngrams as tuples of strings.
   <div class="functionHeader">
     
     <span class="py-defname">unigrams</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L99">
       
       (source)
     </a>
@@ -404,7 +386,7 @@ Each sentence consists of ngrams as tuples of strings.
   <div class="functionHeader">
     
     <span class="py-defname">_counts</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/counter.py#L98">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/counter.py#L98">
       
       (source)
     </a>
@@ -424,7 +406,7 @@ Each sentence consists of ngrams as tuples of strings.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

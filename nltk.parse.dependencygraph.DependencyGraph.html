@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">DependencyGraph</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L30" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DependencyGraph</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L30" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.dependencygraph.DependencyGraph">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A container for the nodes and labelled edges of a dependency structure.</p></div>
+        <div>A container for the nodes and labelled edges of a dependency structure.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id908">
+        <table class="children sortable" id="id912">
   
   
   <tr class="staticmethod">
@@ -141,7 +141,7 @@
     
     <td>Method</td>
     <td><code><a href="#nx_graph">nx_graph</a></code></td>
-    <td><span>Convert the data in a ``nodelist`` into a networkx labeled directed graph.</span></td>
+    <td><span>Convert the data in a <tt class="rst-docutils literal">nodelist</tt> into a networkx labeled directed graph.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -171,7 +171,7 @@
     
     <td>Method</td>
     <td><code><a href="#tree">tree</a></code></td>
-    <td><span>Starting with the ``root`` node, build a dependency tree using the NLTK ``Tree`` constructor. Dependency labels are omitted.</span></td>
+    <td><span>Starting with the <tt class="rst-docutils literal">root</tt> node, build a dependency tree using the NLTK <tt class="rst-docutils literal">Tree</tt> constructor. Dependency labels are omitted.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -248,7 +248,7 @@
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">load</span>(filename, zero_based=False, cell_separator=None, top_relation_label='ROOT'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L225">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L225">
       
       (source)
     </a>
@@ -256,15 +256,11 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param filename: a name of a file in Malt-TAB format
-:param zero_based: nodes in the input file are numbered starting from 0
-rather than 1 (as produced by, e.g., zpar)
+    <div>rather than 1 (as produced by, e.g., zpar)
 :param str cell_separator: the cell separator. If not provided, cells
 are split by whitespace.
 :param str top_relation_label: the label by which the top relation is
-identified, for examlple, `ROOT`, `null` or `TOP`.
-
-:return: a list of DependencyGraphs</p></div>
+identified, for examlple, <code>ROOT</code>, <code>null</code> or <code>TOP</code>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filename</span></td><td class="fieldArgDesc">a name of a file in Malt-TAB format</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">zero_based</span></td><td class="fieldArgDesc">nodes in the input file are numbered starting from 0</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cell_separator</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">top_relation_label</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of DependencyGraphs</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -278,7 +274,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tree_str=None, cell_extractor=None, zero_based=False, cell_separator=None, top_relation_label='ROOT'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L35">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L35">
       
       (source)
     </a>
@@ -286,21 +282,16 @@ identified, for examlple, `ROOT`, `null` or `TOP`.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Dependency graph.
-
-We place a dummy `TOP` node with the index 0, since the root node is
+    <div><p>Dependency graph.</p>
+<p>We place a dummy <code>TOP</code> node with the index 0, since the root node is
 often assigned 0 as its head. This also means that the indexing of the
-nodes corresponds directly to the Malt-TAB format, which starts at 1.
-
-If zero-based is True, then Malt-TAB-like input with node numbers
+nodes corresponds directly to the Malt-TAB format, which starts at 1.</p>
+<p>If zero-based is True, then Malt-TAB-like input with node numbers
 starting at 0 and the root node assigned -1 (as produced by, e.g.,
-zpar).
-
-:param str cell_separator: the cell separator. If not provided, cells
-are split by whitespace.
-
-:param str top_relation_label: the label by which the top relation is
-identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
+zpar).</p>
+<p>are split by whitespace.</p>
+<p>identified, for examlple, <code>ROOT</code>, <code>null</code> or <code>TOP</code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tree_str</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cell_extractor</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">zero_based</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cell_separator</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">top_relation_label</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str cell_separator</span></td><td class="fieldArgDesc">the cell separator. If not provided, cells</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str top_relation_label</span></td><td class="fieldArgDesc">the label by which the top relation is</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -314,7 +305,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L222">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L222">
       
       (source)
     </a>
@@ -336,7 +327,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L219">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L219">
       
       (source)
     </a>
@@ -358,7 +349,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_arc</span>(self, head_address, mod_address):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L108">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L108">
       
       (source)
     </a>
@@ -366,8 +357,8 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Adds an arc from the node specified by head_address to the
-node specified by the mod address.</p></div>
+    <div>Adds an arc from the node specified by head_address to the
+node specified by the mod address.</div>
   </div>
 </div><div class="basemethod">
   
@@ -381,7 +372,7 @@ node specified by the mod address.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_node</span>(self, node):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L270">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L270">
       
       (source)
     </a>
@@ -403,7 +394,7 @@ node specified by the mod address.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">connect_graph</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L118">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L118">
       
       (source)
     </a>
@@ -411,8 +402,8 @@ node specified by the mod address.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Fully connects all non-root nodes.  All nodes are set to be dependents
-of the root node.</p></div>
+    <div>Fully connects all non-root nodes.  All nodes are set to be dependents
+of the root node.</div>
   </div>
 </div><div class="basemethod">
   
@@ -426,7 +417,7 @@ of the root node.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">contains_address</span>(self, node_address):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L135">
       
       (source)
     </a>
@@ -434,8 +425,8 @@ of the root node.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns true if the graph contains a node with the given node
-address, false otherwise.</p></div>
+    <div>Returns true if the graph contains a node with the given node
+address, false otherwise.</div>
   </div>
 </div><div class="basemethod">
   
@@ -449,7 +440,7 @@ address, false otherwise.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">contains_cycle</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L458">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L458">
       
       (source)
     </a>
@@ -457,29 +448,29 @@ address, false otherwise.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Check whether there are cycles.
-
-&gt;&gt;&gt; dg = DependencyGraph(treebank_data)
-&gt;&gt;&gt; dg.contains_cycle()
-False
-
-&gt;&gt;&gt; cyclic_dg = DependencyGraph()
-&gt;&gt;&gt; top = {'word': None, 'deps': [1], 'rel': 'TOP', 'address': 0}
-&gt;&gt;&gt; child1 = {'word': None, 'deps': [2], 'rel': 'NTOP', 'address': 1}
-&gt;&gt;&gt; child2 = {'word': None, 'deps': [4], 'rel': 'NTOP', 'address': 2}
-&gt;&gt;&gt; child3 = {'word': None, 'deps': [1], 'rel': 'NTOP', 'address': 3}
-&gt;&gt;&gt; child4 = {'word': None, 'deps': [3], 'rel': 'NTOP', 'address': 4}
-&gt;&gt;&gt; cyclic_dg.nodes = {
-...     0: top,
-...     1: child1,
-...     2: child2,
-...     3: child3,
-...     4: child4,
-... }
-&gt;&gt;&gt; cyclic_dg.root = top
-
-&gt;&gt;&gt; cyclic_dg.contains_cycle()
-[3, 1, 2, 4]</p></div>
+    <div><p>Check whether there are cycles.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>dg = DependencyGraph(treebank_data)
+<span class="py-prompt">&gt;&gt;&gt; </span>dg.contains_cycle()
+<span class="py-output">False</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cyclic_dg = DependencyGraph()
+<span class="py-prompt">&gt;&gt;&gt; </span>top = {<span class="py-string">'word'</span>: <span class="py-builtin">None</span>, <span class="py-string">'deps'</span>: [1], <span class="py-string">'rel'</span>: <span class="py-string">'TOP'</span>, <span class="py-string">'address'</span>: 0}
+<span class="py-prompt">&gt;&gt;&gt; </span>child1 = {<span class="py-string">'word'</span>: <span class="py-builtin">None</span>, <span class="py-string">'deps'</span>: [2], <span class="py-string">'rel'</span>: <span class="py-string">'NTOP'</span>, <span class="py-string">'address'</span>: 1}
+<span class="py-prompt">&gt;&gt;&gt; </span>child2 = {<span class="py-string">'word'</span>: <span class="py-builtin">None</span>, <span class="py-string">'deps'</span>: [4], <span class="py-string">'rel'</span>: <span class="py-string">'NTOP'</span>, <span class="py-string">'address'</span>: 2}
+<span class="py-prompt">&gt;&gt;&gt; </span>child3 = {<span class="py-string">'word'</span>: <span class="py-builtin">None</span>, <span class="py-string">'deps'</span>: [1], <span class="py-string">'rel'</span>: <span class="py-string">'NTOP'</span>, <span class="py-string">'address'</span>: 3}
+<span class="py-prompt">&gt;&gt;&gt; </span>child4 = {<span class="py-string">'word'</span>: <span class="py-builtin">None</span>, <span class="py-string">'deps'</span>: [3], <span class="py-string">'rel'</span>: <span class="py-string">'NTOP'</span>, <span class="py-string">'address'</span>: 4}
+<span class="py-prompt">&gt;&gt;&gt; </span>cyclic_dg.nodes = {
+<span class="py-more">... </span>    0: top,
+<span class="py-more">... </span>    1: child1,
+<span class="py-more">... </span>    2: child2,
+<span class="py-more">... </span>    3: child3,
+<span class="py-more">... </span>    4: child4,
+<span class="py-more">... </span>}
+<span class="py-prompt">&gt;&gt;&gt; </span>cyclic_dg.root = top</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cyclic_dg.contains_cycle()
+<span class="py-output">[3, 1, 2, 4]</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -493,7 +484,7 @@ False
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_by_address</span>(self, node_address):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L131">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L131">
       
       (source)
     </a>
@@ -501,7 +492,7 @@ False
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the node with the given address.</p></div>
+    <div>Return the node with the given address.</div>
   </div>
 </div><div class="basemethod">
   
@@ -515,7 +506,7 @@ False
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_cycle_path</span>(self, curr_node, goal_node_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L508">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L508">
       
       (source)
     </a>
@@ -537,7 +528,7 @@ False
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">left_children</span>(self, node_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L252">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L252">
       
       (source)
     </a>
@@ -545,8 +536,8 @@ False
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the number of left children under the node specified
-by the given address.</p></div>
+    <div>Returns the number of left children under the node specified
+by the given address.</div>
   </div>
 </div><div class="basemethod">
   
@@ -560,7 +551,7 @@ by the given address.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">nx_graph</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L548">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L548">
       
       (source)
     </a>
@@ -568,7 +559,7 @@ by the given address.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert the data in a ``nodelist`` into a networkx labeled directed graph.</p></div>
+    <div>Convert the data in a <tt class="rst-docutils literal">nodelist</tt> into a networkx labeled directed graph.</div>
   </div>
 </div><div class="basemethod">
   
@@ -582,7 +573,7 @@ by the given address.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">redirect_arcs</span>(self, originals, redirect):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L94">
       
       (source)
     </a>
@@ -590,8 +581,8 @@ by the given address.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Redirects arcs to any of the nodes in the originals list
-to the redirect node address.</p></div>
+    <div>Redirects arcs to any of the nodes in the originals list
+to the redirect node address.</div>
   </div>
 </div><div class="basemethod">
   
@@ -605,7 +596,7 @@ to the redirect node address.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove_by_address</span>(self, address):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L87">
       
       (source)
     </a>
@@ -613,8 +604,8 @@ to the redirect node address.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Removes the node with the given address.  References
-to this node in others will still exist.</p></div>
+    <div>Removes the node with the given address.  References
+to this node in others will still exist.</div>
   </div>
 </div><div class="basemethod">
   
@@ -628,7 +619,7 @@ to this node in others will still exist.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">right_children</span>(self, node_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L261">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L261">
       
       (source)
     </a>
@@ -636,8 +627,8 @@ to this node in others will still exist.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the number of right children under the node specified
-by the given address.</p></div>
+    <div>Returns the number of right children under the node specified
+by the given address.</div>
   </div>
 </div><div class="basemethod">
   
@@ -651,7 +642,7 @@ by the given address.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">to_conll</span>(self, style):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L519">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L519">
       
       (source)
     </a>
@@ -659,11 +650,7 @@ by the given address.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">The dependency graph in CoNLL format.
-
-:param style: the style to use for the format (3, 4, 10 columns)
-:type style: int
-:rtype: str</p></div>
+    <div>The dependency graph in CoNLL format.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">style:</span>int</td><td class="fieldArgDesc">the style to use for the format (3, 4, 10 columns)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -677,7 +664,7 @@ by the given address.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">to_dot</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L142">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L142">
       
       (source)
     </a>
@@ -685,26 +672,27 @@ by the given address.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a dot representation suitable for using with Graphviz.
-
-&gt;&gt;&gt; dg = DependencyGraph(
-...     'John N 2\n'
-...     'loves V 0\n'
-...     'Mary N 2'
-... )
-&gt;&gt;&gt; print(dg.to_dot())
-digraph G{
-edge [dir=forward]
-node [shape=plaintext]
-&lt;BLANKLINE&gt;
-0 [label="0 (None)"]
-0 -&gt; 2 [label="ROOT"]
-1 [label="1 (John)"]
-2 [label="2 (loves)"]
-2 -&gt; 1 [label=""]
-2 -&gt; 3 [label=""]
-3 [label="3 (Mary)"]
-}</p></div>
+    <div><p>Return a dot representation suitable for using with Graphviz.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>dg = DependencyGraph(
+<span class="py-more">... </span>    <span class="py-string">'John N 2\n'</span>
+<span class="py-more">... </span>    <span class="py-string">'loves V 0\n'</span>
+<span class="py-more">... </span>    <span class="py-string">'Mary N 2'</span>
+<span class="py-more">... </span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(dg.to_dot())
+<span class="py-output">digraph G{</span>
+<span class="py-output">edge [dir=forward]</span>
+<span class="py-output">node [shape=plaintext]</span>
+<span class="py-output">&lt;BLANKLINE&gt;</span>
+<span class="py-output">0 [label="0 (None)"]</span>
+<span class="py-output">0 -&gt; 2 [label="ROOT"]</span>
+<span class="py-output">1 [label="1 (John)"]</span>
+<span class="py-output">2 [label="2 (loves)"]</span>
+<span class="py-output">2 -&gt; 1 [label=""]</span>
+<span class="py-output">2 -&gt; 3 [label=""]</span>
+<span class="py-output">3 [label="3 (Mary)"]</span>
+<span class="py-output">}</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -718,7 +706,7 @@ node [shape=plaintext]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tree</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L418">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L418">
       
       (source)
     </a>
@@ -726,8 +714,8 @@ node [shape=plaintext]
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Starting with the ``root`` node, build a dependency tree using the NLTK
-``Tree`` constructor. Dependency labels are omitted.</p></div>
+    <div>Starting with the <tt class="rst-docutils literal">root</tt> node, build a dependency tree using the NLTK
+<tt class="rst-docutils literal">Tree</tt> constructor. Dependency labels are omitted.</div>
   </div>
 </div><div class="basemethod">
   
@@ -741,7 +729,7 @@ node [shape=plaintext]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">triples</span>(self, node=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L429">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L429">
       
       (source)
     </a>
@@ -749,8 +737,8 @@ node [shape=plaintext]
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extract dependency triples of the form:
-((head word, head tag), rel, (dep word, dep tag))</p></div>
+    <div>Extract dependency triples of the form:
+((head word, head tag), rel, (dep word, dep tag))</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -764,7 +752,7 @@ node [shape=plaintext]
   <div class="functionHeader">
     
     <span class="py-defname">nodes</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L60">
       
       (source)
     </a>
@@ -786,7 +774,7 @@ node [shape=plaintext]
   <div class="functionHeader">
     
     <span class="py-defname">nx_labels</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L556">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L556">
       
       (source)
     </a>
@@ -808,7 +796,7 @@ node [shape=plaintext]
   <div class="functionHeader">
     
     <span class="py-defname">root</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L76">
       
       (source)
     </a>
@@ -830,7 +818,7 @@ node [shape=plaintext]
   <div class="functionHeader">
     
     <span class="py-defname">top_relation_label</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L390">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L390">
       
       (source)
     </a>
@@ -852,7 +840,7 @@ node [shape=plaintext]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_hd</span>(self, i):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L445">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L445">
       
       (source)
     </a>
@@ -874,7 +862,7 @@ node [shape=plaintext]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse</span>(self, input_, cell_extractor=None, zero_based=False, cell_separator=None, top_relation_label='ROOT'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L274">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L274">
       
       (source)
     </a>
@@ -882,17 +870,12 @@ node [shape=plaintext]
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Parse a sentence.
-
-:param extractor: a function that given a tuple of cells returns a
-7-tuple, where the values are ``word, lemma, ctag, tag, feats, head,
-rel``.
-
-:param str cell_separator: the cell separator. If not provided, cells
-are split by whitespace.
-
-:param str top_relation_label: the label by which the top relation is
-identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
+    <div><p>Parse a sentence.</p>
+<p>7-tuple, where the values are <tt class="rst-docutils literal">word, lemma, ctag, tag, feats, head,
+rel</tt>.</p>
+<p>are split by whitespace.</p>
+<p>identified, for examlple, <code>ROOT</code>, <code>null</code> or <code>TOP</code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">input_</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cell_extractor</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">zero_based</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cell_separator</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">top_relation_label</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">extractor</span></td><td class="fieldArgDesc">a function that given a tuple of cells returns a</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str cell_separator</span></td><td class="fieldArgDesc">the cell separator. If not provided, cells</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str top_relation_label</span></td><td class="fieldArgDesc">the label by which the top relation is</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -906,7 +889,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_rel</span>(self, i):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L451">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L451">
       
       (source)
     </a>
@@ -928,7 +911,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_repr_svg_</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L187">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L187">
       
       (source)
     </a>
@@ -936,15 +919,16 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Show SVG representation of the transducer (IPython magic).
-
-&gt;&gt;&gt; dg = DependencyGraph(
-...     'John N 2\n'
-...     'loves V 0\n'
-...     'Mary N 2'
-... )
-&gt;&gt;&gt; dg._repr_svg_().split('\n')[0]
-'&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;'</p></div>
+    <div><p>Show SVG representation of the transducer (IPython magic).</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>dg = DependencyGraph(
+<span class="py-more">... </span>    <span class="py-string">'John N 2\n'</span>
+<span class="py-more">... </span>    <span class="py-string">'loves V 0\n'</span>
+<span class="py-more">... </span>    <span class="py-string">'Mary N 2'</span>
+<span class="py-more">... </span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>dg._repr_svg_().split(<span class="py-string">'\n'</span>)[0]
+<span class="py-output">'&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;'</span>
+</pre></div>
   </div>
 </div><div class="basemethod private">
   
@@ -958,7 +942,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_tree</span>(self, i):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L403">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L403">
       
       (source)
     </a>
@@ -966,10 +950,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Turn dependency graphs into NLTK trees.
-
-:param int i: index of a node
-:return: either a word (if the indexed node is a leaf) or a ``Tree``.</p></div>
+    <div>Turn dependency graphs into NLTK trees.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">i</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int i</span></td><td class="fieldArgDesc">index of a node</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">either a word (if the indexed node is a leaf) or a <tt class="rst-docutils literal">Tree</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -983,7 +964,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_word</span>(self, node, filter=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/dependencygraph.py#L396">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/dependencygraph.py#L396">
       
       (source)
     </a>
@@ -1003,7 +984,7 @@ identified, for examlple, `ROOT`, `null` or `TOP`.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

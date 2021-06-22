@@ -65,47 +65,50 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">LancasterStemmer</span>(<a href="nltk.stem.api.StemmerI.html" title="nltk.stem.api.StemmerI">StemmerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L17" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LancasterStemmer</span>(<a href="nltk.stem.api.StemmerI.html" title="nltk.stem.api.StemmerI">StemmerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L17" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.stem.lancaster.LancasterStemmer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Lancaster Stemmer
-
-    &gt;&gt;&gt; from nltk.stem.lancaster import LancasterStemmer
-    &gt;&gt;&gt; st = LancasterStemmer()
-    &gt;&gt;&gt; st.stem('maximum')     # Remove "-um" when word is intact
-    'maxim'
-    &gt;&gt;&gt; st.stem('presumably')  # Don't remove "-um" when word is not intact
-    'presum'
-    &gt;&gt;&gt; st.stem('multiply')    # No action taken if word ends with "-ply"
-    'multiply'
-    &gt;&gt;&gt; st.stem('provision')   # Replace "-sion" with "-j" to trigger "j" set of rules
-    'provid'
-    &gt;&gt;&gt; st.stem('owed')        # Word starting with vowel must contain at least 2 letters
-    'ow'
-    &gt;&gt;&gt; st.stem('ear')         # ditto
-    'ear'
-    &gt;&gt;&gt; st.stem('saying')      # Words starting with consonant must contain at least 3
-    'say'
-    &gt;&gt;&gt; st.stem('crying')      #     letters and one of those letters must be a vowel
-    'cry'
-    &gt;&gt;&gt; st.stem('string')      # ditto
-    'string'
-    &gt;&gt;&gt; st.stem('meant')       # ditto
-    'meant'
-    &gt;&gt;&gt; st.stem('cement')      # ditto
-    'cem'
-    &gt;&gt;&gt; st_pre = LancasterStemmer(strip_prefix_flag=True)
-    &gt;&gt;&gt; st_pre.stem('kilometer') # Test Prefix
-    'met'
-    &gt;&gt;&gt; st_custom = LancasterStemmer(rule_tuple=("ssen4&gt;", "s1t."))
-    &gt;&gt;&gt; st_custom.stem("ness") # Change s to t
-    'nest'</p></div>
+        <div><p>Lancaster Stemmer</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.stem.lancaster <span class="py-keyword">import</span> LancasterStemmer
+<span class="py-prompt">&gt;&gt;&gt; </span>st = LancasterStemmer()
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'maximum'</span>)     <span class="py-comment"># Remove "-um" when word is intact</span>
+<span class="py-output">'maxim'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'presumably'</span>)  <span class="py-comment"># Don't remove "-um" when word is not intact</span>
+<span class="py-output">'presum'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'multiply'</span>)    <span class="py-comment"># No action taken if word ends with "-ply"</span>
+<span class="py-output">'multiply'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'provision'</span>)   <span class="py-comment"># Replace "-sion" with "-j" to trigger "j" set of rules</span>
+<span class="py-output">'provid'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'owed'</span>)        <span class="py-comment"># Word starting with vowel must contain at least 2 letters</span>
+<span class="py-output">'ow'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'ear'</span>)         <span class="py-comment"># ditto</span>
+<span class="py-output">'ear'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'saying'</span>)      <span class="py-comment"># Words starting with consonant must contain at least 3</span>
+<span class="py-output">'say'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'crying'</span>)      <span class="py-comment">#     letters and one of those letters must be a vowel</span>
+<span class="py-output">'cry'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'string'</span>)      <span class="py-comment"># ditto</span>
+<span class="py-output">'string'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'meant'</span>)       <span class="py-comment"># ditto</span>
+<span class="py-output">'meant'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st.stem(<span class="py-string">'cement'</span>)      <span class="py-comment"># ditto</span>
+<span class="py-output">'cem'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st_pre = LancasterStemmer(strip_prefix_flag=<span class="py-builtin">True</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>st_pre.stem(<span class="py-string">'kilometer'</span>) <span class="py-comment"># Test Prefix</span>
+<span class="py-output">'met'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>st_custom = LancasterStemmer(rule_tuple=(<span class="py-string">"ssen4&gt;"</span>, <span class="py-string">"s1t."</span>))
+<span class="py-prompt">&gt;&gt;&gt; </span>st_custom.stem(<span class="py-string">"ness"</span>) <span class="py-comment"># Change s to t</span>
+<span class="py-output">'nest'</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1473">
+        <table class="children sortable" id="id1477">
   
   
   <tr class="method">
@@ -194,7 +197,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, rule_tuple=None, strip_prefix_flag=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L172">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L172">
       
       (source)
     </a>
@@ -202,8 +205,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create an instance of the Lancaster stemmer.
-        </p></div>
+    <div>Create an instance of the Lancaster stemmer.</div>
   </div>
 </div><div class="basemethod">
   
@@ -217,7 +219,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L348">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L348">
       
       (source)
     </a>
@@ -239,7 +241,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parseRules</span>(self, rule_tuple=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L182">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L182">
       
       (source)
     </a>
@@ -247,11 +249,11 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Validate the set of rules used in this stemmer.
-
-If this function is called as an individual method, without using stem
+    <div><p>Validate the set of rules used in this stemmer.</p>
+<p>If this function is called as an individual method, without using stem
 method, rule_tuple argument will be compiled into self.rule_dictionary.
-If this function is called within stem, self._rule_tuple will be used.</p></div>
+If this function is called within stem, self._rule_tuple will be used.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -265,7 +267,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">stem</span>(self, word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L205">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L205">
       
       (source)
     </a>
@@ -273,8 +275,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.stem.api.StemmerI.html#stem">nltk.stem.api.StemmerI.stem</a></code></div>
     
-    <div><p class="pre">Stem a word using the Lancaster stemmer.
-        </p></div>
+    <div>Stem a word using the Lancaster stemmer.</div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -288,7 +289,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">default_rule_tuple</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L54">
       
       (source)
     </a>
@@ -310,7 +311,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">rule_dictionary</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L176">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L176">
       
       (source)
     </a>
@@ -332,7 +333,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__applyRule</span>(self, word, remove_total, append_string):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L315">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L315">
       
       (source)
     </a>
@@ -340,8 +341,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Apply the stemming rule to the word
-        </p></div>
+    <div>Apply the stemming rule to the word</div>
   </div>
 </div><div class="basemethod private">
   
@@ -355,7 +355,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__doStemming</span>(self, word, intact_word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L221">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L221">
       
       (source)
     </a>
@@ -363,8 +363,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Perform the actual word stemming
-        </p></div>
+    <div>Perform the actual word stemming</div>
   </div>
 </div><div class="basemethod private">
   
@@ -378,7 +377,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getLastLetter</span>(self, word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L286">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L286">
       
       (source)
     </a>
@@ -386,8 +385,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Get the zero-based index of the last alphabetic character in this string
-        </p></div>
+    <div>Get the zero-based index of the last alphabetic character in this string</div>
   </div>
 </div><div class="basemethod private">
   
@@ -401,7 +399,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__isAcceptable</span>(self, word, remove_total):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L297">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L297">
       
       (source)
     </a>
@@ -409,8 +407,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Determine if the word is acceptable for stemming.
-        </p></div>
+    <div>Determine if the word is acceptable for stemming.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -424,7 +421,7 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__stripPrefix</span>(self, word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L327">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L327">
       
       (source)
     </a>
@@ -432,9 +429,9 @@ If this function is called within stem, self._rule_tuple will be used.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove prefix from a word.
-
-This function originally taken from Whoosh.</p></div>
+    <div><p>Remove prefix from a word.</p>
+<p>This function originally taken from Whoosh.</p>
+</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -448,7 +445,7 @@ This function originally taken from Whoosh.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_rule_tuple</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L180">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L180">
       
       (source)
     </a>
@@ -470,7 +467,7 @@ This function originally taken from Whoosh.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_strip_prefix</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/lancaster.py#L178">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/lancaster.py#L178">
       
       (source)
     </a>
@@ -490,7 +487,7 @@ This function originally taken from Whoosh.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

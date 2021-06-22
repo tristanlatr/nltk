@@ -65,23 +65,23 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">DependencyScorerI</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L22" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.nonprojectivedependencyparser.DemoScorer.html">nltk.parse.nonprojectivedependencyparser.DemoScorer</a></code>, <code><a href="nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer.html">nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DependencyScorerI</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L22" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.nonprojectivedependencyparser.DemoScorer.html">nltk.parse.nonprojectivedependencyparser.DemoScorer</a></code>, <code><a href="nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer.html">nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer</a></code></p>
         <p><a href="classIndex.html#nltk.parse.nonprojectivedependencyparser.DependencyScorerI">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A scorer for calculated the weights on the edges of a weighted
+        <div>A scorer for calculated the weights on the edges of a weighted
 dependency graph.  This is used by a
-``ProbabilisticNonprojectiveParser`` to initialize the edge
-weights of a ``DependencyGraph``.  While typically this would be done
+<tt class="rst-docutils literal">ProbabilisticNonprojectiveParser</tt> to initialize the edge
+weights of a <tt class="rst-docutils literal">DependencyGraph</tt>.  While typically this would be done
 by training a binary classifier, any class that can return a
 multidimensional list representation of the edge weights can
 implement this interface.  As such, it has no necessary
-fields.</p></div>
+fields.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1056">
+        <table class="children sortable" id="id1060">
   
   
   <tr class="method">
@@ -120,7 +120,7 @@ fields.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L34">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L34">
       
       (source)
     </a>
@@ -142,7 +142,7 @@ fields.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">score</span>(self, graph):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L48">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L48">
       
       (source)
     </a>
@@ -150,26 +150,28 @@ fields.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.nonprojectivedependencyparser.DemoScorer.html">nltk.parse.nonprojectivedependencyparser.DemoScorer</a></code>, <code><a href="nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer.html">nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer</a></code></div>
     
-    <div><p class="pre">:type graph: DependencyGraph
-:param graph: A dependency graph whose set of edges need to be
-scored.
+    <div><p>scored.
 :rtype: A three-dimensional list of numbers.
 :return: The score is returned in a multidimensional(3) list, such
 that the outer-dimension refers to the head, and the
 inner-dimension refers to the dependencies.  For instance,
 scores[0][1] would reference the list of scores corresponding to
 arcs from node 0 to node 1.  The node's 'address' field can be used
-to determine its number identification.
-
-For further illustration, a score list corresponding to Fig.2 of
-Keith Hall's 'K-best Spanning Tree Parsing' paper:
-      scores = [[[], [5],  [1],  [1]],
-               [[], [],   [11], [4]],
-               [[], [10], [],   [5]],
-               [[], [8],  [8],  []]]
-When used in conjunction with a MaxEntClassifier, each score would
+to determine its number identification.</p>
+<p>For further illustration, a score list corresponding to Fig.2 of
+Keith Hall's 'K-best Spanning Tree Parsing' paper:</p>
+<blockquote>
+<dl class="rst-docutils">
+<dt>scores = [[[], [5],  [1],  [1]],</dt>
+<dd>[[], [],   [11], [4]],
+[[], [10], [],   [5]],
+[[], [8],  [8],  []]]</dd>
+</dl>
+</blockquote>
+<p>When used in conjunction with a MaxEntClassifier, each score would
 correspond to the confidence of a particular edge being classified
-with the positive training examples.</p></div>
+with the positive training examples.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graph:</span>DependencyGraph</td><td class="fieldArgDesc">A dependency graph whose set of edges need to be</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -183,7 +185,7 @@ with the positive training examples.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, graphs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L38">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L38">
       
       (source)
     </a>
@@ -191,11 +193,9 @@ with the positive training examples.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.nonprojectivedependencyparser.DemoScorer.html">nltk.parse.nonprojectivedependencyparser.DemoScorer</a></code>, <code><a href="nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer.html">nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer</a></code></div>
     
-    <div><p class="pre">:type graphs: list(DependencyGraph)
-:param graphs: A list of dependency graphs to train the scorer.
-Typically the edges present in the graphs can be used as
+    <div>Typically the edges present in the graphs can be used as
 positive training examples, and the edges not present as negative
-examples.</p></div>
+examples.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graphs:</span>list(DependencyGraph)</td><td class="fieldArgDesc">A list of dependency graphs to train the scorer.</td></tr></table></div>
   </div>
 </div>
 
@@ -207,7 +207,7 @@ examples.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

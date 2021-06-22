@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1898">
+        <table class="children sortable" id="id1902">
   
   
   <tr class="function">
@@ -158,7 +158,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">allign_words</span>(hypothesis, reference, stemmer=PorterStemmer(), wordnet=wordnet):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L243">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L243">
       
       (source)
     </a>
@@ -166,19 +166,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Aligns/matches words in the hypothesis to reference by sequentially
+    <div>Aligns/matches words in the hypothesis to reference by sequentially
 applying exact match, stemmed match and wordnet based synonym match.
 In case there are multiple matches the match which has the least number
-of crossing is chosen.
-
-:param hypothesis: hypothesis string
-:param reference: reference string
-:param stemmer: nltk.stem.api.StemmerI object (default PorterStemmer())
-:type stemmer: nltk.stem.api.StemmerI or any class that implements a stem method
-:param wordnet: a wordnet corpus reader object (default nltk.corpus.wordnet)
-:type wordnet: WordNetCorpusReader
-:return: sorted list of matched tuples, unmatched hypothesis list, unmatched reference list
-:rtype: list of tuples, list of tuples, list of tuples</p></div>
+of crossing is chosen.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis</span></td><td class="fieldArgDesc">hypothesis string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference</span></td><td class="fieldArgDesc">reference string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stemmer:</span>nltk.stem.api.StemmerI or any class that implements a stem method</td><td class="fieldArgDesc">nltk.stem.api.StemmerI object (default PorterStemmer())</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">wordnet:</span>WordNetCorpusReader</td><td class="fieldArgDesc">a wordnet corpus reader object (default nltk.corpus.wordnet)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of tuples, list of tuples, list of tuples</td><td class="fieldArgDesc">sorted list of matched tuples, unmatched hypothesis list, unmatched reference list</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -192,7 +183,7 @@ of crossing is chosen.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">exact_match</span>(hypothesis, reference):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L34">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L34">
       
       (source)
     </a>
@@ -200,17 +191,10 @@ of crossing is chosen.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">matches exact words in hypothesis and reference
+    <div>matches exact words in hypothesis and reference
 and returns a word mapping based on the enumerated
-word id between hypothesis and reference
-
-:param hypothesis: hypothesis string
-:type hypothesis: str
-:param reference: reference string
-:type reference: str
-:return: enumerated matched tuples, enumerated unmatched hypothesis tuples,
-         enumerated unmatched reference tuples
-:rtype: list of 2D tuples, list of 2D tuples,  list of 2D tuples</p></div>
+word id between hypothesis and reference<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>str</td><td class="fieldArgDesc">hypothesis string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference:</span>str</td><td class="fieldArgDesc">reference string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of 2D tuples, list of 2D tuples,  list of 2D tuples</td><td class="fieldArgDesc">enumerated matched tuples, enumerated unmatched hypothesis tuples,
+enumerated unmatched reference tuples</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -224,7 +208,7 @@ word id between hypothesis and reference
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">meteor_score</span>(references, hypothesis, preprocess=str.lower, stemmer=PorterStemmer(), wordnet=wordnet, alpha=0.9, beta=3, gamma=0.5):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L360">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L360">
       
       (source)
     </a>
@@ -232,53 +216,31 @@ word id between hypothesis and reference
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculates METEOR score for hypothesis with multiple references as
+    <div><p>Calculates METEOR score for hypothesis with multiple references as
 described in "Meteor: An Automatic Metric for MT Evaluation with
 HighLevels of Correlation with Human Judgments" by Alon Lavie and
 Abhaya Agarwal, in Proceedings of ACL.
-http://www.cs.cmu.edu/~alavie/METEOR/pdf/Lavie-Agarwal-2007-METEOR.pdf
-
-
-In case of multiple references the best score is chosen. This method
+<a class="rst-reference external" href="http://www.cs.cmu.edu/~alavie/METEOR/pdf/Lavie-Agarwal-2007-METEOR.pdf" target="_top">http://www.cs.cmu.edu/~alavie/METEOR/pdf/Lavie-Agarwal-2007-METEOR.pdf</a></p>
+<p>In case of multiple references the best score is chosen. This method
 iterates over single_meteor_score and picks the best pair among all
-the references for a given hypothesis
-
-&gt;&gt;&gt; hypothesis1 = 'It is a guide to action which ensures that the military always obeys the commands of the party'
-&gt;&gt;&gt; hypothesis2 = 'It is to insure the troops forever hearing the activity guidebook that party direct'
-
-&gt;&gt;&gt; reference1 = 'It is a guide to action that ensures that the military will forever heed Party commands'
-&gt;&gt;&gt; reference2 = 'It is the guiding principle which guarantees the military forces always being under the command of the Party'
-&gt;&gt;&gt; reference3 = 'It is the practical guide for the army always to heed the directions of the party'
-
-&gt;&gt;&gt; round(meteor_score([reference1, reference2, reference3], hypothesis1),4)
-0.7398
-
-    If there is no words match during the alignment the method returns the
-    score as 0. We can safely  return a zero instead of raising a
-    division by zero error as no match usually implies a bad translation.
-
-&gt;&gt;&gt; round(meteor_score(['this is a cat'], 'non matching hypothesis'),4)
-0.0
-
-:param references: reference sentences
-:type references: list(str)
-:param hypothesis: a hypothesis sentence
-:type hypothesis: str
-:param preprocess: preprocessing function (default str.lower)
-:type preprocess: method
-:param stemmer: nltk.stem.api.StemmerI object (default PorterStemmer())
-:type stemmer: nltk.stem.api.StemmerI or any class that implements a stem method
-:param wordnet: a wordnet corpus reader object (default nltk.corpus.wordnet)
-:type wordnet: WordNetCorpusReader
-:param alpha: parameter for controlling relative weights of precision and recall.
-:type alpha: float
-:param beta: parameter for controlling shape of penalty as a function
-             of as a function of fragmentation.
-:type beta: float
-:param gamma: relative weight assigned to fragmentation penality.
-:type gamma: float
-:return: The sentence-level METEOR score.
-:rtype: float</p></div>
+the references for a given hypothesis</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>hypothesis1 = <span class="py-string">'It is a guide to action which ensures that the military always obeys the commands of the party'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>hypothesis2 = <span class="py-string">'It is to insure the troops forever hearing the activity guidebook that party direct'</span></pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>reference1 = <span class="py-string">'It is a guide to action that ensures that the military will forever heed Party commands'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>reference2 = <span class="py-string">'It is the guiding principle which guarantees the military forces always being under the command of the Party'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>reference3 = <span class="py-string">'It is the practical guide for the army always to heed the directions of the party'</span></pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">round</span>(meteor_score([reference1, reference2, reference3], hypothesis1),4)
+<span class="py-output">0.7398</span>
+</pre><blockquote>
+If there is no words match during the alignment the method returns the
+score as 0. We can safely  return a zero instead of raising a
+division by zero error as no match usually implies a bad translation.</blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">round</span>(meteor_score([<span class="py-string">'this is a cat'</span>], <span class="py-string">'non matching hypothesis'</span>),4)
+<span class="py-output">0.0</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">references:</span>list(str)</td><td class="fieldArgDesc">reference sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>str</td><td class="fieldArgDesc">a hypothesis sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">preprocess:</span>method</td><td class="fieldArgDesc">preprocessing function (default str.lower)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stemmer:</span>nltk.stem.api.StemmerI or any class that implements a stem method</td><td class="fieldArgDesc">nltk.stem.api.StemmerI object (default PorterStemmer())</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">wordnet:</span>WordNetCorpusReader</td><td class="fieldArgDesc">a wordnet corpus reader object (default nltk.corpus.wordnet)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alpha:</span>float</td><td class="fieldArgDesc">parameter for controlling relative weights of precision and recall.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beta:</span>float</td><td class="fieldArgDesc">parameter for controlling shape of penalty as a function
+of as a function of fragmentation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gamma:</span>float</td><td class="fieldArgDesc">relative weight assigned to fragmentation penality.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc">The sentence-level METEOR score.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -292,7 +254,7 @@ the references for a given hypothesis
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">single_meteor_score</span>(reference, hypothesis, preprocess=str.lower, stemmer=PorterStemmer(), wordnet=wordnet, alpha=0.9, beta=3, gamma=0.5):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L288">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L288">
       
       (source)
     </a>
@@ -300,47 +262,25 @@ the references for a given hypothesis
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculates METEOR score for single hypothesis and reference as per
+    <div><p>Calculates METEOR score for single hypothesis and reference as per
 "Meteor: An Automatic Metric for MT Evaluation with HighLevels of
 Correlation with Human Judgments" by Alon Lavie and Abhaya Agarwal,
 in Proceedings of ACL.
-http://www.cs.cmu.edu/~alavie/METEOR/pdf/Lavie-Agarwal-2007-METEOR.pdf
-
-
-&gt;&gt;&gt; hypothesis1 = 'It is a guide to action which ensures that the military always obeys the commands of the party'
-
-&gt;&gt;&gt; reference1 = 'It is a guide to action that ensures that the military will forever heed Party commands'
-
-
-&gt;&gt;&gt; round(single_meteor_score(reference1, hypothesis1),4)
-0.7398
-
-    If there is no words match during the alignment the method returns the
-    score as 0. We can safely  return a zero instead of raising a
-    division by zero error as no match usually implies a bad translation.
-
-&gt;&gt;&gt; round(meteor_score('this is a cat', 'non matching hypothesis'),4)
-0.0
-
-:param references: reference sentences
-:type references: list(str)
-:param hypothesis: a hypothesis sentence
-:type hypothesis: str
-:param preprocess: preprocessing function (default str.lower)
-:type preprocess: method
-:param stemmer: nltk.stem.api.StemmerI object (default PorterStemmer())
-:type stemmer: nltk.stem.api.StemmerI or any class that implements a stem method
-:param wordnet: a wordnet corpus reader object (default nltk.corpus.wordnet)
-:type wordnet: WordNetCorpusReader
-:param alpha: parameter for controlling relative weights of precision and recall.
-:type alpha: float
-:param beta: parameter for controlling shape of penalty as a
-             function of as a function of fragmentation.
-:type beta: float
-:param gamma: relative weight assigned to fragmentation penality.
-:type gamma: float
-:return: The sentence-level METEOR score.
-:rtype: float</p></div>
+<a class="rst-reference external" href="http://www.cs.cmu.edu/~alavie/METEOR/pdf/Lavie-Agarwal-2007-METEOR.pdf" target="_top">http://www.cs.cmu.edu/~alavie/METEOR/pdf/Lavie-Agarwal-2007-METEOR.pdf</a></p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>hypothesis1 = <span class="py-string">'It is a guide to action which ensures that the military always obeys the commands of the party'</span></pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>reference1 = <span class="py-string">'It is a guide to action that ensures that the military will forever heed Party commands'</span></pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">round</span>(single_meteor_score(reference1, hypothesis1),4)
+<span class="py-output">0.7398</span>
+</pre><blockquote>
+If there is no words match during the alignment the method returns the
+score as 0. We can safely  return a zero instead of raising a
+division by zero error as no match usually implies a bad translation.</blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">round</span>(meteor_score(<span class="py-string">'this is a cat'</span>, <span class="py-string">'non matching hypothesis'</span>),4)
+<span class="py-output">0.0</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>str</td><td class="fieldArgDesc">a hypothesis sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">preprocess:</span>method</td><td class="fieldArgDesc">preprocessing function (default str.lower)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stemmer:</span>nltk.stem.api.StemmerI or any class that implements a stem method</td><td class="fieldArgDesc">nltk.stem.api.StemmerI object (default PorterStemmer())</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">wordnet:</span>WordNetCorpusReader</td><td class="fieldArgDesc">a wordnet corpus reader object (default nltk.corpus.wordnet)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alpha:</span>float</td><td class="fieldArgDesc">parameter for controlling relative weights of precision and recall.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beta:</span>float</td><td class="fieldArgDesc">parameter for controlling shape of penalty as a
+function of as a function of fragmentation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gamma:</span>float</td><td class="fieldArgDesc">relative weight assigned to fragmentation penality.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">references:</span>list(str)</td><td class="fieldArgDesc">reference sentences</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc">The sentence-level METEOR score.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -354,7 +294,7 @@ http://www.cs.cmu.edu/~alavie/METEOR/pdf/Lavie-Agarwal-2007-METEOR.pdf
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">stem_match</span>(hypothesis, reference, stemmer=PorterStemmer()):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L128">
       
       (source)
     </a>
@@ -362,19 +302,10 @@ http://www.cs.cmu.edu/~alavie/METEOR/pdf/Lavie-Agarwal-2007-METEOR.pdf
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Stems each word and matches them in hypothesis and reference
-and returns a word mapping between hypothesis and reference
-
-:param hypothesis:
-:type hypothesis:
-:param reference:
-:type reference:
-:param stemmer: nltk.stem.api.StemmerI object (default PorterStemmer())
-:type stemmer: nltk.stem.api.StemmerI or any class that
-               implements a stem method
-:return: enumerated matched tuples, enumerated unmatched hypothesis tuples,
-         enumerated unmatched reference tuples
-:rtype: list of 2D tuples, list of 2D tuples,  list of 2D tuples</p></div>
+    <div>Stems each word and matches them in hypothesis and reference
+and returns a word mapping between hypothesis and reference<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference:</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stemmer:</span>nltk.stem.api.StemmerI or any class that
+implements a stem method</td><td class="fieldArgDesc">nltk.stem.api.StemmerI object (default PorterStemmer())</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of 2D tuples, list of 2D tuples,  list of 2D tuples</td><td class="fieldArgDesc">enumerated matched tuples, enumerated unmatched hypothesis tuples,
+enumerated unmatched reference tuples</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -388,7 +319,7 @@ and returns a word mapping between hypothesis and reference
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">wordnetsyn_match</span>(hypothesis, reference, wordnet=wordnet):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L184">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L184">
       
       (source)
     </a>
@@ -396,15 +327,8 @@ and returns a word mapping between hypothesis and reference
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Matches each word in reference to a word in hypothesis if any synonym
-of a hypothesis word is the exact match to the reference word.
-
-:param hypothesis: hypothesis string
-:param reference: reference string
-:param wordnet: a wordnet corpus reader object (default nltk.corpus.wordnet)
-:type wordnet: WordNetCorpusReader
-:return: list of mapped tuples
-:rtype: list of tuples</p></div>
+    <div>Matches each word in reference to a word in hypothesis if any synonym
+of a hypothesis word is the exact match to the reference word.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis</span></td><td class="fieldArgDesc">hypothesis string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference</span></td><td class="fieldArgDesc">reference string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">wordnet:</span>WordNetCorpusReader</td><td class="fieldArgDesc">a wordnet corpus reader object (default nltk.corpus.wordnet)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of tuples</td><td class="fieldArgDesc">list of mapped tuples</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -418,7 +342,7 @@ of a hypothesis word is the exact match to the reference word.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_count_chunks</span>(matches):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L265">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L265">
       
       (source)
     </a>
@@ -426,13 +350,9 @@ of a hypothesis word is the exact match to the reference word.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Counts the fewest possible number of chunks such that matched unigrams
+    <div>Counts the fewest possible number of chunks such that matched unigrams
 of each chunk are adjacent to each other. This is used to caluclate the
-fragmentation part of the metric.
-
-:param matches: list containing a mapping of matched words (output of allign_words)
-:return: Number of chunks a sentence is divided into post allignment
-:rtype: int</p></div>
+fragmentation part of the metric.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">matches</span></td><td class="fieldArgDesc">list containing a mapping of matched words (output of allign_words)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc">Number of chunks a sentence is divided into post allignment</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -446,7 +366,7 @@ fragmentation part of the metric.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_enum_allign_words</span>(enum_hypothesis_list, enum_reference_list, stemmer=PorterStemmer(), wordnet=wordnet):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L202">
       
       (source)
     </a>
@@ -454,21 +374,12 @@ fragmentation part of the metric.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Aligns/matches words in the hypothesis to reference by sequentially
+    <div>Aligns/matches words in the hypothesis to reference by sequentially
 applying exact match, stemmed match and wordnet based synonym match.
 in case there are multiple matches the match which has the least number
 of crossing is chosen. Takes enumerated list as input instead of
-string input
-
-:param enum_hypothesis_list: enumerated hypothesis list
-:param enum_reference_list: enumerated reference list
-:param stemmer: nltk.stem.api.StemmerI object (default PorterStemmer())
-:type stemmer: nltk.stem.api.StemmerI or any class that implements a stem method
-:param wordnet: a wordnet corpus reader object (default nltk.corpus.wordnet)
-:type wordnet: WordNetCorpusReader
-:return: sorted list of matched tuples, unmatched hypothesis list,
-         unmatched reference list
-:rtype: list of tuples, list of tuples, list of tuples</p></div>
+string input<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enum_hypothesis_list</span></td><td class="fieldArgDesc">enumerated hypothesis list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enum_reference_list</span></td><td class="fieldArgDesc">enumerated reference list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stemmer:</span>nltk.stem.api.StemmerI or any class that implements a stem method</td><td class="fieldArgDesc">nltk.stem.api.StemmerI object (default PorterStemmer())</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">wordnet:</span>WordNetCorpusReader</td><td class="fieldArgDesc">a wordnet corpus reader object (default nltk.corpus.wordnet)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of tuples, list of tuples, list of tuples</td><td class="fieldArgDesc">sorted list of matched tuples, unmatched hypothesis list,
+unmatched reference list</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -482,7 +393,7 @@ string input
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_enum_stem_match</span>(enum_hypothesis_list, enum_reference_list, stemmer=PorterStemmer()):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L78">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L78">
       
       (source)
     </a>
@@ -490,20 +401,11 @@ string input
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Stems each word and matches them in hypothesis and reference
+    <div>Stems each word and matches them in hypothesis and reference
 and returns a word mapping between enum_hypothesis_list and
 enum_reference_list based on the enumerated word id. The function also
-returns a enumerated list of unmatched words for hypothesis and reference.
-
-:param enum_hypothesis_list:
-:type enum_hypothesis_list:
-:param enum_reference_list:
-:type enum_reference_list:
-:param stemmer: nltk.stem.api.StemmerI object (default PorterStemmer())
-:type stemmer: nltk.stem.api.StemmerI or any class that implements a stem method
-:return: enumerated matched tuples, enumerated unmatched hypothesis tuples,
-         enumerated unmatched reference tuples
-:rtype: list of 2D tuples, list of 2D tuples,  list of 2D tuples</p></div>
+returns a enumerated list of unmatched words for hypothesis and reference.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enum_hypothesis_list:</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enum_reference_list:</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stemmer:</span>nltk.stem.api.StemmerI or any class that implements a stem method</td><td class="fieldArgDesc">nltk.stem.api.StemmerI object (default PorterStemmer())</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of 2D tuples, list of 2D tuples,  list of 2D tuples</td><td class="fieldArgDesc">enumerated matched tuples, enumerated unmatched hypothesis tuples,
+enumerated unmatched reference tuples</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -517,7 +419,7 @@ returns a enumerated list of unmatched words for hypothesis and reference.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_enum_wordnetsyn_match</span>(enum_hypothesis_list, enum_reference_list, wordnet=wordnet):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L148">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L148">
       
       (source)
     </a>
@@ -525,16 +427,9 @@ returns a enumerated list of unmatched words for hypothesis and reference.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Matches each word in reference to a word in hypothesis
+    <div>Matches each word in reference to a word in hypothesis
 if any synonym of a hypothesis word is the exact match
-to the reference word.
-
-:param enum_hypothesis_list: enumerated hypothesis list
-:param enum_reference_list: enumerated reference list
-:param wordnet: a wordnet corpus reader object (default nltk.corpus.wordnet)
-:type wordnet: WordNetCorpusReader
-:return: list of matched tuples, unmatched hypothesis list, unmatched reference list
-:rtype:  list of tuples, list of tuples, list of tuples</p></div>
+to the reference word.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enum_hypothesis_list</span></td><td class="fieldArgDesc">enumerated hypothesis list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enum_reference_list</span></td><td class="fieldArgDesc">enumerated reference list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">wordnet:</span>WordNetCorpusReader</td><td class="fieldArgDesc">a wordnet corpus reader object (default nltk.corpus.wordnet)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of tuples, list of tuples, list of tuples</td><td class="fieldArgDesc">list of matched tuples, unmatched hypothesis list, unmatched reference list</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -548,7 +443,7 @@ to the reference word.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_generate_enums</span>(hypothesis, reference, preprocess=str.lower):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L15">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L15">
       
       (source)
     </a>
@@ -556,17 +451,8 @@ to the reference word.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Takes in string inputs for hypothesis and reference and returns
-enumerated word lists for each of them
-
-:param hypothesis: hypothesis string
-:type hypothesis: str
-:param reference: reference string
-:type reference: str
-:preprocess: preprocessing method (default str.lower)
-:type preprocess: method
-:return: enumerated words list
-:rtype: list of 2D tuples, list of 2D tuples</p></div>
+    <div>Takes in string inputs for hypothesis and reference and returns
+enumerated word lists for each of them<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>str</td><td class="fieldArgDesc">hypothesis string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference:</span>str</td><td class="fieldArgDesc">reference string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">preprocess:</span>method</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of 2D tuples, list of 2D tuples</td><td class="fieldArgDesc">enumerated words list</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: preprocess</td></tr><tr><td colspan="2">preprocessing method (default str.lower)</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -580,7 +466,7 @@ enumerated word lists for each of them
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_match_enums</span>(enum_hypothesis_list, enum_reference_list):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/meteor_score.py#L52">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/meteor_score.py#L52">
       
       (source)
     </a>
@@ -588,17 +474,10 @@ enumerated word lists for each of them
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">matches exact words in hypothesis and reference and returns
+    <div>matches exact words in hypothesis and reference and returns
 a word mapping between enum_hypothesis_list and enum_reference_list
-based on the enumerated word id.
-
-:param enum_hypothesis_list: enumerated hypothesis list
-:type enum_hypothesis_list: list of tuples
-:param enum_reference_list: enumerated reference list
-:type enum_reference_list: list of 2D tuples
-:return: enumerated matched tuples, enumerated unmatched hypothesis tuples,
-         enumerated unmatched reference tuples
-:rtype: list of 2D tuples, list of 2D tuples,  list of 2D tuples</p></div>
+based on the enumerated word id.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enum_hypothesis_list:</span>list of tuples</td><td class="fieldArgDesc">enumerated hypothesis list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enum_reference_list:</span>list of 2D tuples</td><td class="fieldArgDesc">enumerated reference list</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of 2D tuples, list of 2D tuples,  list of 2D tuples</td><td class="fieldArgDesc">enumerated matched tuples, enumerated unmatched hypothesis tuples,
+enumerated unmatched reference tuples</td></tr></table></div>
   </div>
 </div>
 
@@ -610,7 +489,7 @@ based on the enumerated word id.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

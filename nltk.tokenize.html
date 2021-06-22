@@ -65,64 +65,66 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/__init__.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/__init__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">NLTK Tokenizer Package
-
-Tokenizers divide strings into lists of substrings.  For example,
-tokenizers can be used to find the words and punctuation in a string:
-
-    &gt;&gt;&gt; from nltk.tokenize import word_tokenize
-    &gt;&gt;&gt; s = '''Good muffins cost $3.88\nin New York.  Please buy me
-    ... two of them.\n\nThanks.'''
-    &gt;&gt;&gt; word_tokenize(s)
-    ['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York', '.',
-    'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
-
-This particular tokenizer requires the Punkt sentence tokenization
+        <div><p>NLTK Tokenizer Package</p>
+<p>Tokenizers divide strings into lists of substrings.  For example,
+tokenizers can be used to find the words and punctuation in a string:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> word_tokenize
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">'''Good muffins cost $3.88\nin New York.  Please buy me</span>
+<span class="py-more">... </span><span class="py-string">two of them.\n\nThanks.'''</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>word_tokenize(s)
+<span class="py-output">['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York', '.',</span>
+<span class="py-output">'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']</span>
+</pre></blockquote>
+<p>This particular tokenizer requires the Punkt sentence tokenization
 models to be installed. NLTK also provides a simpler,
 regular-expression based tokenizer, which splits text on whitespace
-and punctuation:
-
-    &gt;&gt;&gt; from nltk.tokenize import wordpunct_tokenize
-    &gt;&gt;&gt; wordpunct_tokenize(s)
-    ['Good', 'muffins', 'cost', '$', '3', '.', '88', 'in', 'New', 'York', '.',
-    'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
-
-We can also operate at the level of sentences, using the sentence
-tokenizer directly as follows:
-
-    &gt;&gt;&gt; from nltk.tokenize import sent_tokenize, word_tokenize
-    &gt;&gt;&gt; sent_tokenize(s)
-    ['Good muffins cost $3.88\nin New York.', 'Please buy me\ntwo of them.', 'Thanks.']
-    &gt;&gt;&gt; [word_tokenize(t) for t in sent_tokenize(s)]
-    [['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York', '.'],
-    ['Please', 'buy', 'me', 'two', 'of', 'them', '.'], ['Thanks', '.']]
-
-Caution: when tokenizing a Unicode string, make sure you are not
+and punctuation:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> wordpunct_tokenize
+<span class="py-prompt">&gt;&gt;&gt; </span>wordpunct_tokenize(s)
+<span class="py-output">['Good', 'muffins', 'cost', '$', '3', '.', '88', 'in', 'New', 'York', '.',</span>
+<span class="py-output">'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']</span>
+</pre></blockquote>
+<p>We can also operate at the level of sentences, using the sentence
+tokenizer directly as follows:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> sent_tokenize, word_tokenize
+<span class="py-prompt">&gt;&gt;&gt; </span>sent_tokenize(s)
+<span class="py-output">['Good muffins cost $3.88\nin New York.', 'Please buy me\ntwo of them.', 'Thanks.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>[word_tokenize(t) <span class="py-keyword">for</span> t <span class="py-keyword">in</span> sent_tokenize(s)]
+<span class="py-output">[['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York', '.'],</span>
+<span class="py-output">['Please', 'buy', 'me', 'two', 'of', 'them', '.'], ['Thanks', '.']]</span>
+</pre></blockquote>
+<p>Caution: when tokenizing a Unicode string, make sure you are not
 using an encoded version of the string (it may be necessary to
-decode it first, e.g. with ``s.decode("utf8")``.
-
-NLTK tokenizers can produce token-spans, represented as tuples of integers
+decode it first, e.g. with <tt class="rst-docutils literal"><span class="pre">s.decode("utf8")</span></tt>.</p>
+<p>NLTK tokenizers can produce token-spans, represented as tuples of integers
 having the same semantics as string slices, to support efficient comparison
-of tokenizers.  (These methods are implemented as generators.)
-
-    &gt;&gt;&gt; from nltk.tokenize import WhitespaceTokenizer
-    &gt;&gt;&gt; list(WhitespaceTokenizer().span_tokenize(s))
-    [(0, 4), (5, 12), (13, 17), (18, 23), (24, 26), (27, 30), (31, 36), (38, 44),
-    (45, 48), (49, 51), (52, 55), (56, 58), (59, 64), (66, 73)]
-
-There are numerous ways to tokenize text.  If you need more control over
-tokenization, see the other methods provided in this package.
-
-For further information, please see Chapter 3 of the NLTK book.</p></div>
+of tokenizers.  (These methods are implemented as generators.)</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> WhitespaceTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(WhitespaceTokenizer().span_tokenize(s))
+<span class="py-output">[(0, 4), (5, 12), (13, 17), (18, 23), (24, 26), (27, 30), (31, 36), (38, 44),</span>
+<span class="py-output">(45, 48), (49, 51), (52, 55), (56, 58), (59, 64), (66, 73)]</span>
+</pre></blockquote>
+<p>There are numerous ways to tokenize text.  If you need more control over
+tokenization, see the other methods provided in this package.</p>
+<p>For further information, please see Chapter 3 of the NLTK book.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1775">
+        <table class="children sortable" id="id1779">
   
   
   <tr class="module">
@@ -214,7 +216,7 @@ For further information, please see Chapter 3 of the NLTK book.</p></div>
 </table>
         
 
-          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id1776">
+          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id1780">
   
   
   <tr class="function">
@@ -250,7 +252,7 @@ For further information, please see Chapter 3 of the NLTK book.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sent_tokenize</span>(text, language='english'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/__init__.py#L96">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/__init__.py#L96">
       
       (source)
     </a>
@@ -258,13 +260,10 @@ For further information, please see Chapter 3 of the NLTK book.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a sentence-tokenized copy of *text*,
+    <div>Return a sentence-tokenized copy of <em>text</em>,
 using NLTK's recommended sentence tokenizer
-(currently :class:`.PunktSentenceTokenizer`
-for the specified language).
-
-:param text: text to split into sentences
-:param language: the model name in the Punkt corpus</p></div>
+(currently <a href="#id1"><span class="rst-problematic" id="rst-id2">:class:`.PunktSentenceTokenizer`</span></a>
+for the specified language).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">text to split into sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">language</span></td><td class="fieldArgDesc">the model name in the Punkt corpus</td></tr></table></div>
   </div>
 </div><div class="basevariable private">
   
@@ -278,7 +277,7 @@ for the specified language).
   <div class="functionHeader">
     
     <span class="py-defname">_treebank_word_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/__init__.py#L111">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/__init__.py#L111">
       
       (source)
     </a>
@@ -300,7 +299,7 @@ for the specified language).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">word_tokenize</span>(text, language='english', preserve_line=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/__init__.py#L114">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/__init__.py#L114">
       
       (source)
     </a>
@@ -308,18 +307,11 @@ for the specified language).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a tokenized copy of *text*,
+    <div>Return a tokenized copy of <em>text</em>,
 using NLTK's recommended word tokenizer
-(currently an improved :class:`.TreebankWordTokenizer`
-along with :class:`.PunktSentenceTokenizer`
-for the specified language).
-
-:param text: text to split into words
-:type text: str
-:param language: the model name in the Punkt corpus
-:type language: str
-:param preserve_line: An option to keep the preserve the sentence and not sentence tokenize it.
-:type preserve_line: bool</p></div>
+(currently an improved <a href="#id1"><span class="rst-problematic" id="rst-id2">:class:`.TreebankWordTokenizer`</span></a>
+along with <a href="#id3"><span class="rst-problematic" id="rst-id4">:class:`.PunktSentenceTokenizer`</span></a>
+for the specified language).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text:</span>str</td><td class="fieldArgDesc">text to split into words</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">language:</span>str</td><td class="fieldArgDesc">the model name in the Punkt corpus</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">preserve_line:</span>bool</td><td class="fieldArgDesc">An option to keep the preserve the sentence and not sentence tokenize it.</td></tr></table></div>
   </div>
 </div>
 
@@ -331,7 +323,7 @@ for the specified language).
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,33 +65,29 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">LazyModule</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L25" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LazyModule</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L25" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.lazyimport.LazyModule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Lazy module class.
-
-Lazy modules are imported into the given namespaces whenever a
+        <div><p>Lazy module class.</p>
+<p>Lazy modules are imported into the given namespaces whenever a
 non-special attribute (there are some attributes like __doc__
 that class instances handle without calling __getattr__) is
 requested. The module is then registered under the given name
 in locals usually replacing the import wrapper instance. The
-import itself is done using globals as global namespace.
-
-Example of creating a lazy load module:
-
-ISO = LazyModule('ISO',locals(),globals())
-
-Later, requesting an attribute from ISO will load the module
+import itself is done using globals as global namespace.</p>
+<p>Example of creating a lazy load module:</p>
+<p>ISO = LazyModule('ISO',locals(),globals())</p>
+<p>Later, requesting an attribute from ISO will load the module
 automatically into the locals() namespace, overriding the
-LazyModule instance:
-
-t = ISO.Week(1998,1,1)</p></div>
+LazyModule instance:</p>
+<p>t = ISO.Week(1998,1,1)</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id774">
+        <table class="children sortable" id="id777">
   
   
   <tr class="method">
@@ -170,7 +166,7 @@ t = ISO.Week(1998,1,1)</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getattr__</span>(self, name):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L110">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L110">
       
       (source)
     </a>
@@ -178,8 +174,7 @@ t = ISO.Week(1998,1,1)</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Import the module on demand and get the attribute.
-        </p></div>
+    <div>Import the module on demand and get the attribute.</div>
   </div>
 </div><div class="basemethod">
   
@@ -193,7 +188,7 @@ t = ISO.Week(1998,1,1)</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, name, locals, globals=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L63">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L63">
       
       (source)
     </a>
@@ -201,12 +196,11 @@ t = ISO.Week(1998,1,1)</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a LazyModule instance wrapping module name.
-
-The module will later on be registered in locals under the
-given module name.
-
-globals is optional and defaults to locals.</p></div>
+    <div><p>Create a LazyModule instance wrapping module name.</p>
+<p>The module will later on be registered in locals under the
+given module name.</p>
+<p>globals is optional and defaults to locals.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -220,7 +214,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L143">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L143">
       
       (source)
     </a>
@@ -242,7 +236,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__setattr__</span>(self, name, value):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L124">
       
       (source)
     </a>
@@ -250,8 +244,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Import the module on demand and set the attribute.
-        </p></div>
+    <div>Import the module on demand and set the attribute.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -265,7 +258,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__name__</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L79">
       
       (source)
     </a>
@@ -287,7 +280,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__lazymodule_import</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L85">
       
       (source)
     </a>
@@ -295,8 +288,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Import the module now.
-        </p></div>
+    <div>Import the module now.</div>
   </div>
 </div><div class="baseclassvariable private">
   
@@ -310,7 +302,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__lazymodule_loaded</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L55">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L55">
       
       (source)
     </a>
@@ -332,7 +324,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__lazymodule_globals</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L61">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L61">
       
       (source)
     </a>
@@ -354,7 +346,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__lazymodule_init</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L49">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L49">
       
       (source)
     </a>
@@ -376,7 +368,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__lazymodule_locals</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L58">
       
       (source)
     </a>
@@ -398,7 +390,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__lazymodule_name</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lazyimport.py#L52">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lazyimport.py#L52">
       
       (source)
     </a>
@@ -418,7 +410,7 @@ globals is optional and defaults to locals.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

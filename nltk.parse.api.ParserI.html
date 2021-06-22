@@ -65,54 +65,61 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ParserI</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/api.py#L15" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.bllip.BllipParser.html">nltk.parse.bllip.BllipParser</a></code>, <code><a href="nltk.parse.chart.ChartParser.html">nltk.parse.chart.ChartParser</a></code>, <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">nltk.parse.corenlp.GenericCoreNLPParser</a></code>, <code><a href="nltk.parse.malt.MaltParser.html">nltk.parse.malt.MaltParser</a></code>, <code><a href="nltk.parse.pchart.BottomUpProbabilisticChartParser.html">nltk.parse.pchart.BottomUpProbabilisticChartParser</a></code>, <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html">nltk.parse.recursivedescent.RecursiveDescentParser</a></code>, <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html">nltk.parse.shiftreduce.ShiftReduceParser</a></code>, <code><a href="nltk.parse.stanford.GenericStanfordParser.html">nltk.parse.stanford.GenericStanfordParser</a></code>, <code><a href="nltk.parse.viterbi.ViterbiParser.html">nltk.parse.viterbi.ViterbiParser</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ParserI</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/api.py#L15" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.bllip.BllipParser.html">nltk.parse.bllip.BllipParser</a></code>, <code><a href="nltk.parse.chart.ChartParser.html">nltk.parse.chart.ChartParser</a></code>, <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">nltk.parse.corenlp.GenericCoreNLPParser</a></code>, <code><a href="nltk.parse.malt.MaltParser.html">nltk.parse.malt.MaltParser</a></code>, <code><a href="nltk.parse.pchart.BottomUpProbabilisticChartParser.html">nltk.parse.pchart.BottomUpProbabilisticChartParser</a></code>, <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html">nltk.parse.recursivedescent.RecursiveDescentParser</a></code>, <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html">nltk.parse.shiftreduce.ShiftReduceParser</a></code>, <code><a href="nltk.parse.stanford.GenericStanfordParser.html">nltk.parse.stanford.GenericStanfordParser</a></code>, <code><a href="nltk.parse.viterbi.ViterbiParser.html">nltk.parse.viterbi.ViterbiParser</a></code></p>
         <p><a href="classIndex.html#nltk.parse.api.ParserI">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A processing class for deriving trees that represent possible
+        <div><p>A processing class for deriving trees that represent possible
 structures for a sequence of tokens.  These tree structures are
 known as "parses".  Typically, parsers are used to derive syntax
 trees for sentences.  But parsers can also be used to derive other
 kinds of tree structure, such as morphological trees and discourse
-structures.
-
-Subclasses must define:
-  - at least one of: ``parse()``, ``parse_sents()``.
-
-Subclasses may define:
-  - ``grammar()``</p></div>
+structures.</p>
+<dl class="rst-docutils">
+<dt>Subclasses must define:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>at least one of: <tt class="rst-docutils literal">parse()</tt>, <tt class="rst-docutils literal">parse_sents()</tt>.</li>
+</ul>
+</dd>
+<dt>Subclasses may define:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><tt class="rst-docutils literal">grammar()</tt></li>
+</ul>
+</dd>
+</dl>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id836">
+        <table class="children sortable" id="id839">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse_sents">parse_sents</a></code></td>
-    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.parse()</tt> to each element of <tt class="rst-docutils literal">sents</tt>. :rtype: iter(iter(Tree))</span></td>
   </tr>
 </table>
         
@@ -134,7 +141,7 @@ Subclasses may define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">grammar</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/api.py#L31">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/api.py#L31">
       
       (source)
     </a>
@@ -142,7 +149,7 @@ Subclasses may define:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.chart.ChartParser.html">nltk.parse.chart.ChartParser</a></code>, <code><a href="nltk.parse.pchart.BottomUpProbabilisticChartParser.html">nltk.parse.pchart.BottomUpProbabilisticChartParser</a></code>, <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html">nltk.parse.recursivedescent.RecursiveDescentParser</a></code>, <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html">nltk.parse.shiftreduce.ShiftReduceParser</a></code>, <code><a href="nltk.parse.viterbi.ViterbiParser.html">nltk.parse.viterbi.ViterbiParser</a></code></div>
     
-    <div><p class="pre">:return: The grammar used by this parser.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">The grammar used by this parser.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -156,7 +163,7 @@ Subclasses may define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, sent, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/api.py#L37">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/api.py#L37">
       
       (source)
     </a>
@@ -164,12 +171,7 @@ Subclasses may define:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.bllip.BllipParser.html">nltk.parse.bllip.BllipParser</a></code>, <code><a href="nltk.parse.chart.ChartParser.html">nltk.parse.chart.ChartParser</a></code>, <code><a href="nltk.parse.pchart.BottomUpProbabilisticChartParser.html">nltk.parse.pchart.BottomUpProbabilisticChartParser</a></code>, <code><a href="nltk.parse.recursivedescent.RecursiveDescentParser.html">nltk.parse.recursivedescent.RecursiveDescentParser</a></code>, <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html">nltk.parse.shiftreduce.ShiftReduceParser</a></code>, <code><a href="nltk.parse.viterbi.ViterbiParser.html">nltk.parse.viterbi.ViterbiParser</a></code></div>
     
-    <div><p class="pre">:return: An iterator that generates parse trees for the sentence.
-When possible this list is sorted from most likely to least likely.
-
-:param sent: The sentence to be parsed
-:type sent: list(str)
-:rtype: iter(Tree)</p></div>
+    <div>When possible this list is sorted from most likely to least likely.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent:</span>list(str)</td><td class="fieldArgDesc">The sentence to be parsed</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(Tree)</td><td class="fieldArgDesc">An iterator that generates parse trees for the sentence.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -183,7 +185,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse_all</span>(self, sent, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/api.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/api.py#L66">
       
       (source)
     </a>
@@ -191,7 +193,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:rtype: list(Tree)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Tree)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -205,7 +207,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse_one</span>(self, sent, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/api.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/api.py#L70">
       
       (source)
     </a>
@@ -213,7 +215,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:rtype: Tree or None</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Tree or None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -227,7 +229,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse_sents</span>(self, sents, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/api.py#L59">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/api.py#L59">
       
       (source)
     </a>
@@ -235,8 +237,8 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">nltk.parse.corenlp.GenericCoreNLPParser</a></code>, <code><a href="nltk.parse.malt.MaltParser.html">nltk.parse.malt.MaltParser</a></code>, <code><a href="nltk.parse.stanford.GenericStanfordParser.html">nltk.parse.stanford.GenericStanfordParser</a></code></div>
     
-    <div><p class="pre">Apply ``self.parse()`` to each element of ``sents``.
-:rtype: iter(iter(Tree))</p></div>
+    <div>Apply <tt class="rst-docutils literal">self.parse()</tt> to each element of <tt class="rst-docutils literal">sents</tt>.
+:rtype: iter(iter(Tree))</div>
   </div>
 </div>
 
@@ -248,7 +250,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

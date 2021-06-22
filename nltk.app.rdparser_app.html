@@ -65,67 +65,69 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/rdparser_app.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/rdparser_app.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A graphical tool for exploring the recursive descent parser.
-
-The recursive descent parser maintains a tree, which records the
+        <div><p>A graphical tool for exploring the recursive descent parser.</p>
+<p>The recursive descent parser maintains a tree, which records the
 structure of the portion of the text that has been parsed.  It uses
 CFG productions to expand the fringe of the tree, and matches its
 leaves against the text.  Initially, the tree contains the start
 symbol ("S").  It is shown in the main canvas, to the right of the
-list of available expansions.
-
-The parser builds up a tree structure for the text using three
-operations:
-
-  - "expand" uses a CFG production to add children to a node on the
-    fringe of the tree.
-  - "match" compares a leaf in the tree to a text token.
-  - "backtrack" returns the tree to its state before the most recent
-    expand or match operation.
-
-The parser maintains a list of tree locations called a "frontier" to
+list of available expansions.</p>
+<p>The parser builds up a tree structure for the text using three
+operations:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>"expand" uses a CFG production to add children to a node on the
+fringe of the tree.</li>
+<li>"match" compares a leaf in the tree to a text token.</li>
+<li>"backtrack" returns the tree to its state before the most recent
+expand or match operation.</li>
+</ul>
+</blockquote>
+<p>The parser maintains a list of tree locations called a "frontier" to
 remember which nodes have not yet been expanded and which leaves have
 not yet been matched against the text.  The leftmost frontier node is
 shown in green, and the other frontier nodes are shown in blue.  The
 parser always performs expand and match operations on the leftmost
-element of the frontier.
-
-You can control the parser's operation by using the "expand," "match,"
+element of the frontier.</p>
+<p>You can control the parser's operation by using the "expand," "match,"
 and "backtrack" buttons; or you can use the "step" button to let the
 parser automatically decide which operation to apply.  The parser uses
-the following rules to decide which operation to apply:
-
-  - If the leftmost frontier element is a token, try matching it.
-  - If the leftmost frontier element is a node, try expanding it with
-    the first untried expansion.
-  - Otherwise, backtrack.
-
-The "expand" button applies the untried expansion whose CFG production
+the following rules to decide which operation to apply:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>If the leftmost frontier element is a token, try matching it.</li>
+<li>If the leftmost frontier element is a node, try expanding it with
+the first untried expansion.</li>
+<li>Otherwise, backtrack.</li>
+</ul>
+</blockquote>
+<p>The "expand" button applies the untried expansion whose CFG production
 is listed earliest in the grammar.  To manually choose which expansion
 to apply, click on a CFG production from the list of available
-expansions, on the left side of the main window.
-
-The "autostep" button will let the parser continue applying
+expansions, on the left side of the main window.</p>
+<p>The "autostep" button will let the parser continue applying
 applications to the tree until it reaches a complete parse.  You can
 cancel an autostep in progress at any time by clicking on the
-"autostep" button again.
-
-Keyboard Shortcuts::
-      [Space]    Perform the next expand, match, or backtrack operation
-      [a]        Step through operations until the next complete parse
-      [e]        Perform an expand operation
-      [m]        Perform a match operation
-      [b]        Perform a backtrack operation
-      [Delete]   Reset the parser
-      [g]        Show/hide available expansions list
-      [h]        Help
-      [Ctrl-p]   Print
-      [q]        Quit</p></div>
+"autostep" button again.</p>
+<dl class="rst-docutils">
+<dt>Keyboard Shortcuts::</dt>
+<dd>[Space]    Perform the next expand, match, or backtrack operation
+[a]        Step through operations until the next complete parse
+[e]        Perform an expand operation
+[m]        Perform a match operation
+[b]        Perform a backtrack operation
+[Delete]   Reset the parser
+[g]        Show/hide available expansions list
+[h]        Help
+[Ctrl-p]   Print
+[q]        Quit</dd>
+</dl>
+</div>
       </div>
 
       <div id="splitTables">
@@ -163,7 +165,7 @@ Keyboard Shortcuts::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">app</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/rdparser_app.py#L1021">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/rdparser_app.py#L1021">
       
       (source)
     </a>
@@ -171,8 +173,8 @@ Keyboard Shortcuts::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a recursive descent parser demo, using a simple grammar and
-text.</p></div>
+    <div>Create a recursive descent parser demo, using a simple grammar and
+text.</div>
   </div>
 </div>
 
@@ -184,7 +186,7 @@ text.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

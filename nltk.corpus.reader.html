@@ -65,58 +65,60 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/__init__.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/__init__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">NLTK corpus readers.  The modules in this package provide functions
+        <div><p>NLTK corpus readers.  The modules in this package provide functions
 that can be used to read corpus fileids in a variety of formats.  These
 functions can be used to read both the corpus fileids that are
 distributed in the NLTK corpus package, and corpus fileids that are part
-of external corpora.
-
-Corpus Reader Functions
-=======================
-Each corpus module defines one or more "corpus reader functions",
+of external corpora.</p>
+<div class="rst-section" id="rst-corpus-reader-functions">
+<h1 class="heading">Corpus Reader Functions</h1>
+<p>Each corpus module defines one or more "corpus reader functions",
 which can be used to read documents from that corpus.  These functions
-take an argument, ``item``, which is used to indicate which document
-should be read from the corpus:
-
-- If ``item`` is one of the unique identifiers listed in the corpus
-  module's ``items`` variable, then the corresponding document will
-  be loaded from the NLTK corpus package.
-- If ``item`` is a fileid, then that file will be read.
-
-Additionally, corpus reader functions can be given lists of item
+take an argument, <tt class="rst-docutils literal">item</tt>, which is used to indicate which document
+should be read from the corpus:</p>
+<ul class="rst-simple">
+<li>If <tt class="rst-docutils literal">item</tt> is one of the unique identifiers listed in the corpus
+module's <tt class="rst-docutils literal">items</tt> variable, then the corresponding document will
+be loaded from the NLTK corpus package.</li>
+<li>If <tt class="rst-docutils literal">item</tt> is a fileid, then that file will be read.</li>
+</ul>
+<p>Additionally, corpus reader functions can be given lists of item
 names; in which case, they will return a concatenation of the
-corresponding documents.
-
-Corpus reader functions are named based on the type of information
-they return.  Some common examples, and their return types, are:
-
-- words(): list of str
-- sents(): list of (list of str)
-- paras(): list of (list of (list of str))
-- tagged_words(): list of (str,str) tuple
-- tagged_sents(): list of (list of (str,str))
-- tagged_paras(): list of (list of (list of (str,str)))
-- chunked_sents(): list of (Tree w/ (str,str) leaves)
-- parsed_sents(): list of (Tree with str leaves)
-- parsed_paras(): list of (list of (Tree with str leaves))
-- xml(): A single xml ElementTree
-- raw(): unprocessed corpus contents
-
-For example, to read a list of the words in the Brown Corpus, use
-``nltk.corpus.brown.words()``:
-
-    &gt;&gt;&gt; from nltk.corpus import brown
-    &gt;&gt;&gt; print(", ".join(brown.words()))
-    The, Fulton, County, Grand, Jury, said, ...</p></div>
+corresponding documents.</p>
+<p>Corpus reader functions are named based on the type of information
+they return.  Some common examples, and their return types, are:</p>
+<ul class="rst-simple">
+<li>words(): list of str</li>
+<li>sents(): list of (list of str)</li>
+<li>paras(): list of (list of (list of str))</li>
+<li>tagged_words(): list of (str,str) tuple</li>
+<li>tagged_sents(): list of (list of (str,str))</li>
+<li>tagged_paras(): list of (list of (list of (str,str)))</li>
+<li>chunked_sents(): list of (Tree w/ (str,str) leaves)</li>
+<li>parsed_sents(): list of (Tree with str leaves)</li>
+<li>parsed_paras(): list of (list of (Tree with str leaves))</li>
+<li>xml(): A single xml ElementTree</li>
+<li>raw(): unprocessed corpus contents</li>
+</ul>
+<p>For example, to read a list of the words in the Brown Corpus, use
+<tt class="rst-docutils literal">nltk.corpus.brown.words()</tt>:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> brown
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">", "</span>.join(brown.words()))
+<span class="py-output">The, Fulton, County, Grand, Jury, said, ...</span>
+</pre></blockquote>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id232">
+        <table class="children sortable" id="id235">
   
   
   <tr class="module">
@@ -163,7 +165,7 @@ For example, to read a list of the words in the Brown Corpus, use
     
     <td>Module</td>
     <td><code><a href="nltk.corpus.reader.cmudict.html">cmudict</a></code></td>
-    <td><span>The Carnegie Mellon Pronouncing Dictionary [cmudict.0.6] ftp://ftp.cs.cmu.edu/project/speech/dict/ Copyright 1998 Carnegie Mellon University</span></td>
+    <td><span>The Carnegie Mellon Pronouncing Dictionary [cmudict.0.6] <a class="rst-reference external" href="ftp://ftp.cs.cmu.edu/project/speech/dict/" target="_top">ftp://ftp.cs.cmu.edu/project/speech/dict/</a> Copyright 1998 Carnegie Mellon University</span></td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -388,7 +390,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,56 +65,57 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Data classes and parser implementations for "chart parsers", which
+        <div><p>Data classes and parser implementations for "chart parsers", which
 use dynamic programming to efficiently parse a text.  A chart
 parser derives parse trees for a text by iteratively adding "edges"
 to a "chart."  Each edge represents a hypothesis about the tree
 structure for a subsequence of the text.  The chart is a
-"blackboard" for composing and combining these hypotheses.
-
-When a chart parser begins parsing a text, it creates a new (empty)
+"blackboard" for composing and combining these hypotheses.</p>
+<p>When a chart parser begins parsing a text, it creates a new (empty)
 chart, spanning the text.  It then incrementally adds new edges to the
 chart.  A set of "chart rules" specifies the conditions under which
 new edges should be added to the chart.  Once the chart reaches a
 stage where none of the chart rules adds any new edges, parsing is
-complete.
-
-Charts are encoded with the ``Chart`` class, and edges are encoded with
-the ``TreeEdge`` and ``LeafEdge`` classes.  The chart parser module
-defines three chart parsers:
-
-  - ``ChartParser`` is a simple and flexible chart parser.  Given a
-    set of chart rules, it will apply those rules to the chart until
-    no more edges are added.
-
-  - ``SteppingChartParser`` is a subclass of ``ChartParser`` that can
-    be used to step through the parsing process.</p></div>
+complete.</p>
+<p>Charts are encoded with the <tt class="rst-docutils literal">Chart</tt> class, and edges are encoded with
+the <tt class="rst-docutils literal">TreeEdge</tt> and <tt class="rst-docutils literal">LeafEdge</tt> classes.  The chart parser module
+defines three chart parsers:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">ChartParser</tt> is a simple and flexible chart parser.  Given a
+set of chart rules, it will apply those rules to the chart until
+no more edges are added.</li>
+<li><tt class="rst-docutils literal">SteppingChartParser</tt> is a subclass of <tt class="rst-docutils literal">ChartParser</tt> that can
+be used to step through the parsing process.</li>
+</ul>
+</blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id840">
+        <table class="children sortable" id="id843">
   
   
   <tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.parse.chart.AbstractChartRule.html">AbstractChartRule</a></code></td>
-    <td><span>An abstract base class for chart rules.  ``AbstractChartRule`` provides:</span></td>
+    <td><span>An abstract base class for chart rules.  <tt class="rst-docutils literal">AbstractChartRule</tt> provides:</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.parse.chart.BottomUpChartParser.html">BottomUpChartParser</a></code></td>
-    <td><span>A ``ChartParser`` using a bottom-up parsing strategy. See ``ChartParser`` for more information.</span></td>
+    <td><span>A <tt class="rst-docutils literal">ChartParser</tt> using a bottom-up parsing strategy. See <tt class="rst-docutils literal">ChartParser</tt> for more information.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.parse.chart.BottomUpLeftCornerChartParser.html">BottomUpLeftCornerChartParser</a></code></td>
-    <td><span>A ``ChartParser`` using a bottom-up left-corner parsing strategy. This strategy is often more efficient than standard bottom-up. See ``ChartParser`` for more information.</span></td>
+    <td><span>A <tt class="rst-docutils literal">ChartParser</tt> using a bottom-up left-corner parsing strategy. This strategy is often more efficient than standard bottom-up. See <tt class="rst-docutils literal">ChartParser</tt> for more information.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -199,7 +200,7 @@ defines three chart parsers:
     
     <td>Class</td>
     <td><code><a href="nltk.parse.chart.TopDownChartParser.html">TopDownChartParser</a></code></td>
-    <td><span>A ``ChartParser`` using a top-down parsing strategy. See ``ChartParser`` for more information.</span></td>
+    <td><span>A <tt class="rst-docutils literal">ChartParser</tt> using a top-down parsing strategy. See <tt class="rst-docutils literal">ChartParser</tt> for more information.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -271,7 +272,7 @@ defines three chart parsers:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>(choice=None, print_times=True, print_grammar=False, print_trees=True, trace=2, sent='I saw John with a dog with my cookie', numparses=5):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1733">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1733">
       
       (source)
     </a>
@@ -279,7 +280,7 @@ defines three chart parsers:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">A demonstration of the chart parsers.</p></div>
+    <div>A demonstration of the chart parsers.</div>
   </div>
 </div><div class="basefunction">
   
@@ -293,7 +294,7 @@ defines three chart parsers:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo_grammar</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1706">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1706">
       
       (source)
     </a>
@@ -315,7 +316,7 @@ defines three chart parsers:
   <div class="functionHeader">
     
     <span class="py-defname">BU_LC_STRATEGY</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1336">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1336">
       
       (source)
     </a>
@@ -337,7 +338,7 @@ defines three chart parsers:
   <div class="functionHeader">
     
     <span class="py-defname">BU_STRATEGY</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1330">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1330">
       
       (source)
     </a>
@@ -359,7 +360,7 @@ defines three chart parsers:
   <div class="functionHeader">
     
     <span class="py-defname">LC_STRATEGY</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1343">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1343">
       
       (source)
     </a>
@@ -381,7 +382,7 @@ defines three chart parsers:
   <div class="functionHeader">
     
     <span class="py-defname">TD_STRATEGY</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1324">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1324">
       
       (source)
     </a>
@@ -403,7 +404,7 @@ defines three chart parsers:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_bottomup_filter</span>(grammar, nexttoken, rhs, dot=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1310">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1310">
       
       (source)
     </a>
@@ -423,7 +424,7 @@ defines three chart parsers:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

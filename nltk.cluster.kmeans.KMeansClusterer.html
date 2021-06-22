@@ -65,22 +65,22 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">KMeansClusterer</span>(<a href="nltk.cluster.util.VectorSpaceClusterer.html" title="nltk.cluster.util.VectorSpaceClusterer">VectorSpaceClusterer</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L21" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">KMeansClusterer</span>(<a href="nltk.cluster.util.VectorSpaceClusterer.html" title="nltk.cluster.util.VectorSpaceClusterer">VectorSpaceClusterer</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L21" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.cluster.kmeans.KMeansClusterer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The K-means clusterer starts with k arbitrary chosen means then allocates
+        <div>The K-means clusterer starts with k arbitrary chosen means then allocates
 each vector to the cluster with the closest mean. It then recalculates the
 means of each cluster as the centroid of the vectors in the cluster. This
 process repeats until the cluster memberships stabilise. This is a
 hill-climbing algorithm which may converge to a local maximum. Hence the
 clustering is often repeated with random initial means and the most
-commonly occurring output means are chosen.</p></div>
+commonly occurring output means are chosen.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id193">
+        <table class="children sortable" id="id196">
   
   
   <tr class="method">
@@ -169,7 +169,7 @@ commonly occurring output means are chosen.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.cluster.util.VectorSpaceClusterer.html">VectorSpaceClusterer</a></code>:
           </p>
-          <table class="children sortable" id="id194">
+          <table class="children sortable" id="id197">
   
   
   <tr class="basemethod">
@@ -223,7 +223,7 @@ commonly occurring output means are chosen.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.cluster.api.ClusterI.html">ClusterI</a></code> (via <code><a href="nltk.cluster.util.VectorSpaceClusterer.html">VectorSpaceClusterer</a></code>):
           </p>
-          <table class="children sortable" id="id195">
+          <table class="children sortable" id="id198">
   
   
   <tr class="basemethod">
@@ -262,7 +262,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, num_means, distance, repeats=1, conv_test=1e-06, initial_means=None, normalise=False, svd_dimensions=None, rng=None, avoid_empty_clusters=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L32">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L32">
       
       (source)
     </a>
@@ -270,28 +270,11 @@ commonly occurring output means are chosen.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#__init__">nltk.cluster.util.VectorSpaceClusterer.__init__</a></code></div>
     
-    <div><p class="pre">:param  num_means:  the number of means to use (may use fewer)
-:type   num_means:  int
-:param  distance:   measure of distance between two vectors
-:type   distance:   function taking two vectors and returing a float
-:param  repeats:    number of randomised clustering trials to use
-:type   repeats:    int
-:param  conv_test:  maximum variation in mean differences before
-                    deemed convergent
-:type   conv_test:  number
-:param  initial_means: set of k initial means
-:type   initial_means: sequence of vectors
-:param  normalise:  should vectors be normalised to length 1
-:type   normalise:  boolean
-:param svd_dimensions: number of dimensions to use in reducing vector
-                       dimensionsionality with SVD
-:type svd_dimensions: int
-:param  rng:        random number generator (or None)
-:type   rng:        Random
-:param avoid_empty_clusters: include current centroid in computation
-                             of next one; avoids undefined behavior
-                             when clusters become empty
-:type avoid_empty_clusters: boolean</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">num_means:</span>int</td><td class="fieldArgDesc">the number of means to use (may use fewer)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">distance:</span>function taking two vectors and returing a float</td><td class="fieldArgDesc">measure of distance between two vectors</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">repeats:</span>int</td><td class="fieldArgDesc">number of randomised clustering trials to use</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">conv_test:</span>number</td><td class="fieldArgDesc">maximum variation in mean differences before
+deemed convergent</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">initial_means:</span>sequence of vectors</td><td class="fieldArgDesc">set of k initial means</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">normalise:</span>boolean</td><td class="fieldArgDesc">should vectors be normalised to length 1</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">svd_dimensions:</span>int</td><td class="fieldArgDesc">number of dimensions to use in reducing vector
+dimensionsionality with SVD</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rng:</span>Random</td><td class="fieldArgDesc">random number generator (or None)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">avoid_empty_clusters:</span>boolean</td><td class="fieldArgDesc">include current centroid in computation
+of next one; avoids undefined behavior
+when clusters become empty</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -305,7 +288,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L188">
       
       (source)
     </a>
@@ -327,7 +310,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify_vectorspace</span>(self, vector):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L141">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L141">
       
       (source)
     </a>
@@ -335,7 +318,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#classify_vectorspace">nltk.cluster.util.VectorSpaceClusterer.classify_vectorspace</a></code></div>
     
-    <div><p class="pre">Returns the index of the appropriate cluster for the vector.</p></div>
+    <div>Returns the index of the appropriate cluster for the vector.</div>
   </div>
 </div><div class="basemethod">
   
@@ -349,7 +332,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cluster_vectorspace</span>(self, vectors, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L81">
       
       (source)
     </a>
@@ -357,7 +340,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#cluster_vectorspace">nltk.cluster.util.VectorSpaceClusterer.cluster_vectorspace</a></code></div>
     
-    <div><p class="pre">Finds the clusters using the given set of vectors.</p></div>
+    <div>Finds the clusters using the given set of vectors.</div>
   </div>
 </div><div class="basemethod">
   
@@ -371,7 +354,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">means</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L158">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L158">
       
       (source)
     </a>
@@ -379,7 +362,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">The means used for clustering.</p></div>
+    <div>The means used for clustering.</div>
   </div>
 </div><div class="basemethod">
   
@@ -393,7 +376,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">num_clusters</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L152">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L152">
       
       (source)
     </a>
@@ -401,7 +384,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.api.ClusterI.html#num_clusters">nltk.cluster.api.ClusterI.num_clusters</a></code></div>
     
-    <div><p class="pre">Returns the number of clusters.</p></div>
+    <div>Returns the number of clusters.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -415,7 +398,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_centroid</span>(self, cluster, mean):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L170">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L170">
       
       (source)
     </a>
@@ -437,7 +420,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_cluster_vectorspace</span>(self, vectors, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L113">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L113">
       
       (source)
     </a>
@@ -459,7 +442,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_sum_distances</span>(self, vectors1, vectors2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L164">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L164">
       
       (source)
     </a>
@@ -481,7 +464,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_avoid_empty_clusters</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L79">
       
       (source)
     </a>
@@ -503,7 +486,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_distance</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L71">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L71">
       
       (source)
     </a>
@@ -525,7 +508,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_max_difference</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L72">
       
       (source)
     </a>
@@ -547,7 +530,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_means</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L74">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L74">
       
       (source)
     </a>
@@ -569,7 +552,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_num_means</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L70">
       
       (source)
     </a>
@@ -591,7 +574,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_repeats</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L77">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L77">
       
       (source)
     </a>
@@ -613,7 +596,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_rng</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/kmeans.py#L78">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/kmeans.py#L78">
       
       (source)
     </a>
@@ -633,7 +616,7 @@ commonly occurring output means are chosen.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

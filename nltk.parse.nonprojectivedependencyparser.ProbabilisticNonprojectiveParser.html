@@ -65,62 +65,57 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticNonprojectiveParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L202" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticNonprojectiveParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L202" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.nonprojectivedependencyparser.ProbabilisticNonprojectiveParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A probabilistic non-projective dependency parser.
-
-Nonprojective dependencies allows for "crossing branches" in the parse tree
+        <div><p>A probabilistic non-projective dependency parser.</p>
+<p>Nonprojective dependencies allows for "crossing branches" in the parse tree
 which is necessary for representing particular linguistic phenomena, or even
 typical parses in some languages.  This parser follows the MST parsing
 algorithm, outlined in McDonald(2005), which likens the search for the best
 non-projective parse to finding the maximum spanning tree in a weighted
-directed graph.
-
-&gt;&gt;&gt; class Scorer(DependencyScorerI):
-...     def train(self, graphs):
-...         pass
-...
-...     def score(self, graph):
-...         return [
-...             [[], [5],  [1],  [1]],
-...             [[], [],   [11], [4]],
-...             [[], [10], [],   [5]],
-...             [[], [8],  [8],  []],
-...         ]
-
-
-&gt;&gt;&gt; npp = ProbabilisticNonprojectiveParser()
-&gt;&gt;&gt; npp.train([], Scorer())
-
-&gt;&gt;&gt; parses = npp.parse(['v1', 'v2', 'v3'], [None, None, None])
-&gt;&gt;&gt; len(list(parses))
-1
-
-Rule based example
-------------------
-
-&gt;&gt;&gt; from nltk.grammar import DependencyGrammar
-
-&gt;&gt;&gt; grammar = DependencyGrammar.fromstring('''
-... 'taught' -&gt; 'play' | 'man'
-... 'man' -&gt; 'the' | 'in'
-... 'in' -&gt; 'corner'
-... 'corner' -&gt; 'the'
-... 'play' -&gt; 'golf' | 'dachshund' | 'to'
-... 'dachshund' -&gt; 'his'
-... ''')
-
-&gt;&gt;&gt; ndp = NonprojectiveDependencyParser(grammar)
-&gt;&gt;&gt; parses = ndp.parse(['the', 'man', 'in', 'the', 'corner', 'taught', 'his', 'dachshund', 'to', 'play', 'golf'])
-&gt;&gt;&gt; len(list(parses))
-4</p></div>
+directed graph.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">class</span> <span class="py-defname">Scorer</span>(DependencyScorerI):
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, graphs):
+<span class="py-more">... </span>        <span class="py-keyword">pass</span>
+<span class="py-more">...</span>
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">score</span>(self, graph):
+<span class="py-more">... </span>        <span class="py-keyword">return</span> [
+<span class="py-more">... </span>            [[], [5],  [1],  [1]],
+<span class="py-more">... </span>            [[], [],   [11], [4]],
+<span class="py-more">... </span>            [[], [10], [],   [5]],
+<span class="py-more">... </span>            [[], [8],  [8],  []],
+<span class="py-more">... </span>        ]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>npp = ProbabilisticNonprojectiveParser()
+<span class="py-prompt">&gt;&gt;&gt; </span>npp.train([], Scorer())</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>parses = npp.parse([<span class="py-string">'v1'</span>, <span class="py-string">'v2'</span>, <span class="py-string">'v3'</span>], [<span class="py-builtin">None</span>, <span class="py-builtin">None</span>, <span class="py-builtin">None</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(<span class="py-builtin">list</span>(parses))
+<span class="py-output">1</span>
+</pre><div class="rst-section" id="rst-rule-based-example">
+<h1 class="heading">Rule based example</h1>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.grammar <span class="py-keyword">import</span> DependencyGrammar</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>grammar = DependencyGrammar.fromstring(<span class="py-string">'''</span>
+<span class="py-more">... </span><span class="py-string">'taught' -&gt; 'play' | 'man'</span>
+<span class="py-more">... </span><span class="py-string">'man' -&gt; 'the' | 'in'</span>
+<span class="py-more">... </span><span class="py-string">'in' -&gt; 'corner'</span>
+<span class="py-more">... </span><span class="py-string">'corner' -&gt; 'the'</span>
+<span class="py-more">... </span><span class="py-string">'play' -&gt; 'golf' | 'dachshund' | 'to'</span>
+<span class="py-more">... </span><span class="py-string">'dachshund' -&gt; 'his'</span>
+<span class="py-more">... </span><span class="py-string">'''</span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ndp = NonprojectiveDependencyParser(grammar)
+<span class="py-prompt">&gt;&gt;&gt; </span>parses = ndp.parse([<span class="py-string">'the'</span>, <span class="py-string">'man'</span>, <span class="py-string">'in'</span>, <span class="py-string">'the'</span>, <span class="py-string">'corner'</span>, <span class="py-string">'taught'</span>, <span class="py-string">'his'</span>, <span class="py-string">'dachshund'</span>, <span class="py-string">'to'</span>, <span class="py-string">'play'</span>, <span class="py-string">'golf'</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(<span class="py-builtin">list</span>(parses))
+<span class="py-output">4</span>
+</pre></div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1060">
+        <table class="children sortable" id="id1064">
   
   
   <tr class="method">
@@ -152,7 +147,7 @@ Rule based example
     
     <td>Method</td>
     <td><code><a href="#initialize_edge_scores">initialize_edge_scores</a></code></td>
-    <td><span>Assigns a score to every edge in the ``DependencyGraph`` graph. These scores are generated via the parser's scorer which was assigned during the training process.</span></td>
+    <td><span>Assigns a score to every edge in the <tt class="rst-docutils literal">DependencyGraph</tt> graph. These scores are generated via the parser's scorer which was assigned during the training process.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -209,7 +204,7 @@ Rule based example
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L253">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L253">
       
       (source)
     </a>
@@ -217,7 +212,7 @@ Rule based example
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Creates a new non-projective parser.</p></div>
+    <div>Creates a new non-projective parser.</div>
   </div>
 </div><div class="basemethod">
   
@@ -231,7 +226,7 @@ Rule based example
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">best_incoming_arc</span>(self, node_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L391">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L391">
       
       (source)
     </a>
@@ -239,12 +234,10 @@ Rule based example
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the source of the best incoming arc to the
-node with address: node_index
-
-:type node_index: integer.
-:param node_index: The address of the 'destination' node,
-the node that is arced to.</p></div>
+    <div><p>Returns the source of the best incoming arc to the
+node with address: node_index</p>
+<p>the node that is arced to.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">node_index:</span>integer.</td><td class="fieldArgDesc">The address of the 'destination' node,</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -258,7 +251,7 @@ the node that is arced to.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">collapse_nodes</span>(self, new_node, cycle_path, g_graph, b_graph, c_graph):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L286">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L286">
       
       (source)
     </a>
@@ -266,16 +259,9 @@ the node that is arced to.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Takes a list of nodes that have been identified to belong to a cycle,
+    <div>Takes a list of nodes that have been identified to belong to a cycle,
 and collapses them into on larger node.  The arcs of all nodes in
-the graph must be updated to account for this.
-
-:type new_node: Node.
-:param new_node: A Node (Dictionary) to collapse the cycle nodes into.
-:type cycle_path: A list of integers.
-:param cycle_path: A list of node addresses, each of which is in the cycle.
-:type g_graph, b_graph, c_graph: DependencyGraph
-:param g_graph, b_graph, c_graph: Graphs which need to be updated.</p></div>
+the graph must be updated to account for this.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new_node:</span>Node.</td><td class="fieldArgDesc">A Node (Dictionary) to collapse the cycle nodes into.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cycle_path:</span>A list of integers.</td><td class="fieldArgDesc">A list of node addresses, each of which is in the cycle.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g_graph</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b_graph</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">c_graph</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g_graph, b_graph, c_graph:</span>DependencyGraph</td><td class="fieldArgDesc">Graphs which need to be updated.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -289,7 +275,7 @@ the graph must be updated to account for this.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">compute_max_subtract_score</span>(self, column_index, cycle_indexes):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L371">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L371">
       
       (source)
     </a>
@@ -297,16 +283,14 @@ the graph must be updated to account for this.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">When updating scores the score of the highest-weighted incoming
+    <div><p>When updating scores the score of the highest-weighted incoming
 arc is subtracted upon collapse.  This returns the correct
-amount to subtract from that edge.
-
-:type column_index: integer.
-:param column_index: A index representing the column of incoming arcs
-to a particular node being updated
+amount to subtract from that edge.</p>
+<p>to a particular node being updated
 :type cycle_indexes: A list of integers.
 :param cycle_indexes: Only arcs from cycle nodes are considered.  This
-is a list of such nodes addresses.</p></div>
+is a list of such nodes addresses.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">column_index:</span>integer.</td><td class="fieldArgDesc">A index representing the column of incoming arcs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cycle_indexes</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -320,7 +304,7 @@ is a list of such nodes addresses.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">compute_original_indexes</span>(self, new_indexes):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L344">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L344">
       
       (source)
     </a>
@@ -328,15 +312,13 @@ is a list of such nodes addresses.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">As nodes are collapsed into others, they are replaced
+    <div><p>As nodes are collapsed into others, they are replaced
 by the new node in the graph, but it's still necessary
 to keep track of what these original nodes were.  This
 takes a list of node addresses and replaces any collapsed
-node addresses with their original addresses.
-
-:type new_indexes: A list of integers.
-:param new_indexes: A list of node addresses to check for
-subsumed nodes.</p></div>
+node addresses with their original addresses.</p>
+<p>subsumed nodes.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new_indexes:</span>A list of integers.</td><td class="fieldArgDesc">A list of node addresses to check for</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -350,7 +332,7 @@ subsumed nodes.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">initialize_edge_scores</span>(self, graph):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L275">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L275">
       
       (source)
     </a>
@@ -358,12 +340,9 @@ subsumed nodes.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Assigns a score to every edge in the ``DependencyGraph`` graph.
+    <div>Assigns a score to every edge in the <tt class="rst-docutils literal">DependencyGraph</tt> graph.
 These scores are generated via the parser's scorer which
-was assigned during the training process.
-
-:type graph: DependencyGraph
-:param graph: A dependency graph to assign scores to.</p></div>
+was assigned during the training process.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graph:</span>DependencyGraph</td><td class="fieldArgDesc">A dependency graph to assign scores to.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -377,7 +356,7 @@ was assigned during the training process.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">original_best_arc</span>(self, node_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L423">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L423">
       
       (source)
     </a>
@@ -399,7 +378,7 @@ was assigned during the training process.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens, tags):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L438">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L438">
       
       (source)
     </a>
@@ -407,18 +386,11 @@ was assigned during the training process.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Parses a list of tokens in accordance to the MST parsing algorithm
+    <div>Parses a list of tokens in accordance to the MST parsing algorithm
 for non-projective dependency parses.  Assumes that the tokens to
 be parsed have already been tagged and those tags are provided.  Various
-scoring methods can be used by implementing the ``DependencyScorerI``
-interface and passing it to the training algorithm.
-
-:type tokens: list(str)
-:param tokens: A list of words or punctuation to be parsed.
-:type tags: list(str)
-:param tags: A list of tags corresponding by index to the words in the tokens list.
-:return: An iterator of non-projective parses.
-:rtype: iter(DependencyGraph)</p></div>
+scoring methods can be used by implementing the <tt class="rst-docutils literal">DependencyScorerI</tt>
+interface and passing it to the training algorithm.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(str)</td><td class="fieldArgDesc">A list of words or punctuation to be parsed.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags:</span>list(str)</td><td class="fieldArgDesc">A list of tags corresponding by index to the words in the tokens list.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(DependencyGraph)</td><td class="fieldArgDesc">An iterator of non-projective parses.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -432,7 +404,7 @@ interface and passing it to the training algorithm.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, graphs, dependency_scorer):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L259">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L259">
       
       (source)
     </a>
@@ -440,16 +412,11 @@ interface and passing it to the training algorithm.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Trains a ``DependencyScorerI`` from a set of ``DependencyGraph`` objects,
+    <div>Trains a <tt class="rst-docutils literal">DependencyScorerI</tt> from a set of <tt class="rst-docutils literal">DependencyGraph</tt> objects,
 and establishes this as the parser's scorer.  This is used to
-initialize the scores on a ``DependencyGraph`` during the parsing
-procedure.
-
-:type graphs: list(DependencyGraph)
-:param graphs: A list of dependency graphs to train the scorer.
-:type dependency_scorer: DependencyScorerI
-:param dependency_scorer: A scorer which implements the
-    ``DependencyScorerI`` interface.</p></div>
+initialize the scores on a <tt class="rst-docutils literal">DependencyGraph</tt> during the parsing
+procedure.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graphs:</span>list(DependencyGraph)</td><td class="fieldArgDesc">A list of dependency graphs to train the scorer.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dependency_scorer:</span>DependencyScorerI</td><td class="fieldArgDesc">A scorer which implements the
+<tt class="rst-docutils literal">DependencyScorerI</tt> interface.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -463,7 +430,7 @@ procedure.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update_edge_scores</span>(self, new_node, cycle_path):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L306">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L306">
       
       (source)
     </a>
@@ -471,13 +438,8 @@ procedure.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Updates the edge scores to reflect a collapse operation into
-new_node.
-
-:type new_node: A Node.
-:param new_node: The node which cycle nodes are collapsed into.
-:type cycle_path: A list of integers.
-:param cycle_path: A list of node addresses that belong to the cycle.</p></div>
+    <div>Updates the edge scores to reflect a collapse operation into
+new_node.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new_node:</span>A Node.</td><td class="fieldArgDesc">The node which cycle nodes are collapsed into.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cycle_path:</span>A list of integers.</td><td class="fieldArgDesc">A list of node addresses that belong to the cycle.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -491,7 +453,7 @@ new_node.
   <div class="functionHeader">
     
     <span class="py-defname">inner_nodes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L453">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L453">
       
       (source)
     </a>
@@ -513,7 +475,7 @@ new_node.
   <div class="functionHeader">
     
     <span class="py-defname">scores</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L284">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L284">
       
       (source)
     </a>
@@ -535,7 +497,7 @@ new_node.
   <div class="functionHeader">
     
     <span class="py-defname">_scorer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L272">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L272">
       
       (source)
     </a>
@@ -555,7 +517,7 @@ new_node.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

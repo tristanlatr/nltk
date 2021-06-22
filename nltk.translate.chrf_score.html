@@ -65,23 +65,23 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/chrf_score.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/chrf_score.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">ChrF score implementation </p></div>
+        <div>ChrF score implementation</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1870">
+        <table class="children sortable" id="id1874">
   
   
   <tr class="function">
     
     <td>Function</td>
     <td><code><a href="#chrf_precision_recall_fscore_support">chrf_precision_recall_fscore_support</a></code></td>
-    <td><span>This function computes the precision, recall and fscore from the ngram overlaps. It returns the `support` which is the true positive score.</span></td>
+    <td><span>This function computes the precision, recall and fscore from the ngram overlaps. It returns the <code>support</code> which is the true positive score.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -118,7 +118,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chrf_precision_recall_fscore_support</span>(reference, hypothesis, n, beta=3.0, epsilon=1e-16):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/chrf_score.py#L112">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/chrf_score.py#L112">
       
       (source)
     </a>
@@ -126,25 +126,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">This function computes the precision, recall and fscore from the ngram
-overlaps. It returns the `support` which is the true positive score.
-
-By underspecifying the input type, the function will be agnostic as to how
+    <div><p>This function computes the precision, recall and fscore from the ngram
+overlaps. It returns the <code>support</code> which is the true positive score.</p>
+<p>By underspecifying the input type, the function will be agnostic as to how
 it computes the ngrams and simply take the whichever element in the list;
-it could be either token or character.
-
-:param reference: The reference sentence.
-:type reference: list
-:param hypothesis: The hypothesis sentence.
-:type hypothesis: list
-:param n: Extract up to the n-th order ngrams
-:type n: int
-:param beta: The parameter to assign more importance to recall over precision.
-:type beta: float
-:param epsilon: The fallback value if the hypothesis or reference is empty.
-:type epsilon: float
-:return: Returns the precision, recall and f-score and support (true positive).
-:rtype: tuple(float)</p></div>
+it could be either token or character.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference:</span>list</td><td class="fieldArgDesc">The reference sentence.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>list</td><td class="fieldArgDesc">The hypothesis sentence.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">n:</span>int</td><td class="fieldArgDesc">Extract up to the n-th order ngrams</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beta:</span>float</td><td class="fieldArgDesc">The parameter to assign more importance to recall over precision.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">epsilon:</span>float</td><td class="fieldArgDesc">The fallback value if the hypothesis or reference is empty.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">tuple(float)</td><td class="fieldArgDesc">Returns the precision, recall and f-score and support (true positive).</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -158,7 +145,7 @@ it could be either token or character.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">corpus_chrf</span>(references, hypotheses, min_len=1, max_len=6, beta=3.0, ignore_whitespace=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/chrf_score.py#L155">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/chrf_score.py#L155">
       
       (source)
     </a>
@@ -166,37 +153,24 @@ it could be either token or character.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculates the corpus level CHRF (Character n-gram F-score), it is the
-macro-averaged value of the sentence/segment level CHRF score.
-
-This implementation of CHRF only supports a single reference at the moment.
-
-    &gt;&gt;&gt; ref1 = str('It is a guide to action that ensures that the military '
-    ...            'will forever heed Party commands').split()
-    &gt;&gt;&gt; ref2 = str('It is the guiding principle which guarantees the military '
-    ...            'forces always being under the command of the Party').split()
-    &gt;&gt;&gt;
-    &gt;&gt;&gt; hyp1 = str('It is a guide to action which ensures that the military '
-    ...            'always obeys the commands of the party').split()
-    &gt;&gt;&gt; hyp2 = str('It is to insure the troops forever hearing the activity '
-    ...            'guidebook that party direct')
-    &gt;&gt;&gt; corpus_chrf([ref1, ref2, ref1, ref2], [hyp1, hyp2, hyp2, hyp1]) # doctest: +ELLIPSIS
-    0.3910...
-
-:param references: a corpus of list of reference sentences, w.r.t. hypotheses
-:type references: list(list(str))
-:param hypotheses: a list of hypothesis sentences
-:type hypotheses: list(list(str))
-:param min_len: The minimum order of n-gram this function should extract.
-:type min_len: int
-:param max_len: The maximum order of n-gram this function should extract.
-:type max_len: int
-:param beta: the parameter to assign more importance to recall over precision
-:type beta: float
-:param ignore_whitespace: ignore whitespace characters in scoring
-:type ignore_whitespace: bool
-:return: the sentence level CHRF score.
-:rtype: float</p></div>
+    <div><p>Calculates the corpus level CHRF (Character n-gram F-score), it is the
+macro-averaged value of the sentence/segment level CHRF score.</p>
+<p>This implementation of CHRF only supports a single reference at the moment.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ref1 = <span class="py-builtin">str</span>(<span class="py-string">'It is a guide to action that ensures that the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'will forever heed Party commands'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt; </span>ref2 = <span class="py-builtin">str</span>(<span class="py-string">'It is the guiding principle which guarantees the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'forces always being under the command of the Party'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp1 = <span class="py-builtin">str</span>(<span class="py-string">'It is a guide to action which ensures that the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'always obeys the commands of the party'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp2 = <span class="py-builtin">str</span>(<span class="py-string">'It is to insure the troops forever hearing the activity '</span>
+<span class="py-more">... </span>           <span class="py-string">'guidebook that party direct'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>corpus_chrf([ref1, ref2, ref1, ref2], [hyp1, hyp2, hyp2, hyp1]) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.3910...</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">references:</span>list(list(str))</td><td class="fieldArgDesc">a corpus of list of reference sentences, w.r.t. hypotheses</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypotheses:</span>list(list(str))</td><td class="fieldArgDesc">a list of hypothesis sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_len:</span>int</td><td class="fieldArgDesc">The minimum order of n-gram this function should extract.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_len:</span>int</td><td class="fieldArgDesc">The maximum order of n-gram this function should extract.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beta:</span>float</td><td class="fieldArgDesc">the parameter to assign more importance to recall over precision</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ignore_whitespace:</span>bool</td><td class="fieldArgDesc">ignore whitespace characters in scoring</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc">the sentence level CHRF score.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -210,7 +184,7 @@ This implementation of CHRF only supports a single reference at the moment.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sentence_chrf</span>(reference, hypothesis, min_len=1, max_len=6, beta=3.0, ignore_whitespace=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/chrf_score.py#L17">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/chrf_score.py#L17">
       
       (source)
     </a>
@@ -218,76 +192,68 @@ This implementation of CHRF only supports a single reference at the moment.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculates the sentence level CHRF (Character n-gram F-score) described in
- - Maja Popovic. 2015. CHRF: Character n-gram F-score for Automatic MT Evaluation.
-   In Proceedings of the 10th Workshop on Machine Translation.
-   http://www.statmt.org/wmt15/pdf/WMT49.pdf
- - Maja Popovic. 2016. CHRF Deconstructed: β Parameters and n-gram Weights.
-   In Proceedings of the 1st Conference on Machine Translation.
-   http://www.statmt.org/wmt16/pdf/W16-2341.pdf
-
-This implementation of CHRF only supports a single reference at the moment.
-
-For details not reported in the paper, consult Maja Popovic's original
-implementation: https://github.com/m-popovic/chrF
-
-The code should output results equivalent to running CHRF++ with the
-following options: -nw 0 -b 3
-
-An example from the original BLEU paper
-http://www.aclweb.org/anthology/P02-1040.pdf
-
-    &gt;&gt;&gt; ref1 = str('It is a guide to action that ensures that the military '
-    ...            'will forever heed Party commands').split()
-    &gt;&gt;&gt; hyp1 = str('It is a guide to action which ensures that the military '
-    ...            'always obeys the commands of the party').split()
-    &gt;&gt;&gt; hyp2 = str('It is to insure the troops forever hearing the activity '
-    ...            'guidebook that party direct').split()
-    &gt;&gt;&gt; sentence_chrf(ref1, hyp1) # doctest: +ELLIPSIS
-    0.6349...
-    &gt;&gt;&gt; sentence_chrf(ref1, hyp2) # doctest: +ELLIPSIS
-    0.3330...
-
-The infamous "the the the ... " example
-
-    &gt;&gt;&gt; ref = 'the cat is on the mat'.split()
-    &gt;&gt;&gt; hyp = 'the the the the the the the'.split()
-    &gt;&gt;&gt; sentence_chrf(ref, hyp)  # doctest: +ELLIPSIS
-    0.1468...
-
-An example to show that this function allows users to use strings instead of
-tokens, i.e. list(str) as inputs.
-
-    &gt;&gt;&gt; ref1 = str('It is a guide to action that ensures that the military '
-    ...            'will forever heed Party commands')
-    &gt;&gt;&gt; hyp1 = str('It is a guide to action which ensures that the military '
-    ...            'always obeys the commands of the party')
-    &gt;&gt;&gt; sentence_chrf(ref1, hyp1) # doctest: +ELLIPSIS
-    0.6349...
-    &gt;&gt;&gt; type(ref1) == type(hyp1) == str
-    True
-    &gt;&gt;&gt; sentence_chrf(ref1.split(), hyp1.split()) # doctest: +ELLIPSIS
-    0.6349...
-
-To skip the unigrams and only use 2- to 3-grams:
-
-    &gt;&gt;&gt; sentence_chrf(ref1, hyp1, min_len=2, max_len=3) # doctest: +ELLIPSIS
-    0.6617...
-
-:param references: reference sentence
-:type references: list(str) / str
-:param hypothesis: a hypothesis sentence
-:type hypothesis: list(str) / str
-:param min_len: The minimum order of n-gram this function should extract.
-:type min_len: int
-:param max_len: The maximum order of n-gram this function should extract.
-:type max_len: int
-:param beta: the parameter to assign more importance to recall over precision
-:type beta: float
-:param ignore_whitespace: ignore whitespace characters in scoring
-:type ignore_whitespace: bool
-:return: the sentence level CHRF score.
-:rtype: float</p></div>
+    <div><dl class="rst-docutils">
+<dt>Calculates the sentence level CHRF (Character n-gram F-score) described in</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>Maja Popovic. 2015. CHRF: Character n-gram F-score for Automatic MT Evaluation.
+In Proceedings of the 10th Workshop on Machine Translation.
+<a class="rst-reference external" href="http://www.statmt.org/wmt15/pdf/WMT49.pdf" target="_top">http://www.statmt.org/wmt15/pdf/WMT49.pdf</a></li>
+<li>Maja Popovic. 2016. CHRF Deconstructed: β Parameters and n-gram Weights.
+In Proceedings of the 1st Conference on Machine Translation.
+<a class="rst-reference external" href="http://www.statmt.org/wmt16/pdf/W16-2341.pdf" target="_top">http://www.statmt.org/wmt16/pdf/W16-2341.pdf</a></li>
+</ul>
+</dd>
+</dl>
+<p>This implementation of CHRF only supports a single reference at the moment.</p>
+<p>For details not reported in the paper, consult Maja Popovic's original
+implementation: <a class="rst-reference external" href="https://github.com/m-popovic/chrF" target="_top">https://github.com/m-popovic/chrF</a></p>
+<p>The code should output results equivalent to running CHRF++ with the
+following options: -nw 0 -b 3</p>
+<p>An example from the original BLEU paper
+<a class="rst-reference external" href="http://www.aclweb.org/anthology/P02-1040.pdf" target="_top">http://www.aclweb.org/anthology/P02-1040.pdf</a></p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ref1 = <span class="py-builtin">str</span>(<span class="py-string">'It is a guide to action that ensures that the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'will forever heed Party commands'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp1 = <span class="py-builtin">str</span>(<span class="py-string">'It is a guide to action which ensures that the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'always obeys the commands of the party'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp2 = <span class="py-builtin">str</span>(<span class="py-string">'It is to insure the troops forever hearing the activity '</span>
+<span class="py-more">... </span>           <span class="py-string">'guidebook that party direct'</span>).split()
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_chrf(ref1, hyp1) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.6349...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_chrf(ref1, hyp2) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.3330...</span>
+</pre></blockquote>
+<p>The infamous "the the the ... " example</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ref = <span class="py-string">'the cat is on the mat'</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp = <span class="py-string">'the the the the the the the'</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_chrf(ref, hyp)  <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.1468...</span>
+</pre></blockquote>
+<p>An example to show that this function allows users to use strings instead of
+tokens, i.e. list(str) as inputs.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ref1 = <span class="py-builtin">str</span>(<span class="py-string">'It is a guide to action that ensures that the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'will forever heed Party commands'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>hyp1 = <span class="py-builtin">str</span>(<span class="py-string">'It is a guide to action which ensures that the military '</span>
+<span class="py-more">... </span>           <span class="py-string">'always obeys the commands of the party'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_chrf(ref1, hyp1) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.6349...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">type</span>(ref1) == <span class="py-builtin">type</span>(hyp1) == <span class="py-builtin">str</span>
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_chrf(ref1.split(), hyp1.split()) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.6349...</span>
+</pre></blockquote>
+<p>To skip the unigrams and only use 2- to 3-grams:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_chrf(ref1, hyp1, min_len=2, max_len=3) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">0.6617...</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>list(str) / str</td><td class="fieldArgDesc">a hypothesis sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_len:</span>int</td><td class="fieldArgDesc">The minimum order of n-gram this function should extract.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_len:</span>int</td><td class="fieldArgDesc">The maximum order of n-gram this function should extract.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beta:</span>float</td><td class="fieldArgDesc">the parameter to assign more importance to recall over precision</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ignore_whitespace:</span>bool</td><td class="fieldArgDesc">ignore whitespace characters in scoring</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">references:</span>list(str) / str</td><td class="fieldArgDesc">reference sentence</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc">the sentence level CHRF score.</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -301,7 +267,7 @@ To skip the unigrams and only use 2- to 3-grams:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_preprocess</span>(sent, ignore_whitespace):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/chrf_score.py#L102">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/chrf_score.py#L102">
       
       (source)
     </a>
@@ -321,7 +287,7 @@ To skip the unigrams and only use 2- to 3-grams:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,22 +65,22 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TokenSearcher</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L253" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TokenSearcher</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L253" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.text.TokenSearcher">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A class that makes it easier to use regular expressions to search
+        <div>A class that makes it easier to use regular expressions to search
 over tokenized strings.  The tokenized string is converted to a
 string where tokens are marked with angle brackets -- e.g.,
-``'&lt;the&gt;&lt;window&gt;&lt;is&gt;&lt;still&gt;&lt;open&gt;'``.  The regular expression
-passed to the ``findall()`` method is modified to treat angle
+<tt class="rst-docutils literal"><span class="pre">'&lt;the&gt;&lt;window&gt;&lt;is&gt;&lt;still&gt;&lt;open&gt;'</span></tt>.  The regular expression
+passed to the <tt class="rst-docutils literal">findall()</tt> method is modified to treat angle
 brackets as non-capturing parentheses, in addition to matching the
-token boundaries; and to have ``'.'`` not match the angle brackets.</p></div>
+token boundaries; and to have <tt class="rst-docutils literal">'.'</tt> not match the angle brackets.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1770">
+        <table class="children sortable" id="id1774">
   
   
   <tr class="method">
@@ -119,7 +119,7 @@ token boundaries; and to have ``'.'`` not match the angle brackets.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L264">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L264">
       
       (source)
     </a>
@@ -141,7 +141,7 @@ token boundaries; and to have ``'.'`` not match the angle brackets.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">findall</span>(self, regexp):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L267">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L267">
       
       (source)
     </a>
@@ -149,27 +149,25 @@ token boundaries; and to have ``'.'`` not match the angle brackets.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Find instances of the regular expression in the text.
+    <div><p>Find instances of the regular expression in the text.
 The text is a list of tokens, and a regexp pattern to match
-a single token must be surrounded by angle brackets.  E.g.
-
-&gt;&gt;&gt; from nltk.text import TokenSearcher
-&gt;&gt;&gt; print('hack'); from nltk.book import text1, text5, text9
-hack...
-&gt;&gt;&gt; text5.findall("&lt;.*&gt;&lt;.*&gt;&lt;bro&gt;")
-you rule bro; telling you bro; u twizted bro
-&gt;&gt;&gt; text1.findall("&lt;a&gt;(&lt;.*&gt;)&lt;man&gt;")
-monied; nervous; dangerous; white; white; white; pious; queer; good;
-mature; white; Cape; great; wise; wise; butterless; white; fiendish;
-pale; furious; better; certain; complete; dismasted; younger; brave;
-brave; brave; brave
-&gt;&gt;&gt; text9.findall("&lt;th.*&gt;{3,}")
-thread through those; the thought that; that the thing; the thing
-that; that that thing; through these than through; them that the;
-through the thick; them that they; thought that the
-
-:param regexp: A regular expression
-:type regexp: str</p></div>
+a single token must be surrounded by angle brackets.  E.g.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.text <span class="py-keyword">import</span> TokenSearcher
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'hack'</span>); <span class="py-keyword">from</span> nltk.book <span class="py-keyword">import</span> text1, text5, text9
+<span class="py-output">hack...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>text5.findall(<span class="py-string">"&lt;.*&gt;&lt;.*&gt;&lt;bro&gt;"</span>)
+<span class="py-output">you rule bro; telling you bro; u twizted bro</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>text1.findall(<span class="py-string">"&lt;a&gt;(&lt;.*&gt;)&lt;man&gt;"</span>)
+<span class="py-output">monied; nervous; dangerous; white; white; white; pious; queer; good;</span>
+<span class="py-output">mature; white; Cape; great; wise; wise; butterless; white; fiendish;</span>
+<span class="py-output">pale; furious; better; certain; complete; dismasted; younger; brave;</span>
+<span class="py-output">brave; brave; brave</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>text9.findall(<span class="py-string">"&lt;th.*&gt;{3,}"</span>)
+<span class="py-output">thread through those; the thought that; that the thing; the thing</span>
+<span class="py-output">that; that that thing; through these than through; them that the;</span>
+<span class="py-output">through the thick; them that they; thought that the</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">regexp:</span>str</td><td class="fieldArgDesc">A regular expression</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -183,7 +181,7 @@ through the thick; them that they; thought that the
   <div class="functionHeader">
     
     <span class="py-defname">_raw</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L265">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L265">
       
       (source)
     </a>
@@ -203,7 +201,7 @@ through the thick; them that they; thought that the
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

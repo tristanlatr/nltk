@@ -65,49 +65,49 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticMixIn</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2301" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.probability.ImmutableProbabilisticMixIn.html">nltk.probability.ImmutableProbabilisticMixIn</a></code>, <code><a href="nltk.tree.ImmutableProbabilisticTree.html">nltk.tree.ImmutableProbabilisticTree</a></code>, <code><a href="nltk.tree.ProbabilisticTree.html">nltk.tree.ProbabilisticTree</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticMixIn</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2301" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.probability.ImmutableProbabilisticMixIn.html">nltk.probability.ImmutableProbabilisticMixIn</a></code>, <code><a href="nltk.tree.ImmutableProbabilisticTree.html">nltk.tree.ImmutableProbabilisticTree</a></code>, <code><a href="nltk.tree.ProbabilisticTree.html">nltk.tree.ProbabilisticTree</a></code></p>
         <p><a href="classIndex.html#nltk.probability.ProbabilisticMixIn">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A mix-in class to associate probabilities with other classes
-(trees, rules, etc.).  To use the ``ProbabilisticMixIn`` class,
+        <div><p>A mix-in class to associate probabilities with other classes
+(trees, rules, etc.).  To use the <tt class="rst-docutils literal">ProbabilisticMixIn</tt> class,
 define a new class that derives from an existing class and from
 ProbabilisticMixIn.  You will need to define a new constructor for
 the new class, which explicitly calls the constructors of both its
-parent classes.  For example:
-
-    &gt;&gt;&gt; from nltk.probability import ProbabilisticMixIn
-    &gt;&gt;&gt; class A:
-    ...     def __init__(self, x, y): self.data = (x,y)
-    ...
-    &gt;&gt;&gt; class ProbabilisticA(A, ProbabilisticMixIn):
-    ...     def __init__(self, x, y, **prob_kwarg):
-    ...         A.__init__(self, x, y)
-    ...         ProbabilisticMixIn.__init__(self, **prob_kwarg)
-
-See the documentation for the ProbabilisticMixIn
-``constructor&lt;__init__&gt;`` for information about the arguments it
-expects.
-
-You should generally also redefine the string representation
-methods, the comparison methods, and the hashing method.</p></div>
+parent classes.  For example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.probability <span class="py-keyword">import</span> ProbabilisticMixIn
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">class</span> <span class="py-defname">A</span>:
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, x, y): self.data = (x,y)
+<span class="py-more">...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticA</span>(A, ProbabilisticMixIn):
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, x, y, **prob_kwarg):
+<span class="py-more">... </span>        A.__init__(self, x, y)
+<span class="py-more">... </span>        ProbabilisticMixIn.__init__(self, **prob_kwarg)</pre></blockquote>
+<p>See the documentation for the ProbabilisticMixIn
+<tt class="rst-docutils literal">constructor&lt;__init__&gt;</tt> for information about the arguments it
+expects.</p>
+<p>You should generally also redefine the string representation
+methods, the comparison methods, and the hashing method.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1166">
+        <table class="children sortable" id="id1170">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Initialize this object's probability.  This initializer should be called by subclass constructors.  ``prob`` should generally be the first argument for those constructors.</span></td>
+    <td><span>Initialize this object's probability.  This initializer should be called by subclass constructors.  <tt class="rst-docutils literal">prob</tt> should generally be the first argument for those constructors.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#logprob">logprob</a></code></td>
-    <td><span>Return ``log(p)``, where ``p`` is the probability associated with this object.</span></td>
+    <td><span>Return <tt class="rst-docutils literal">log(p)</tt>, where <tt class="rst-docutils literal">p</tt> is the probability associated with this object.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -117,12 +117,12 @@ methods, the comparison methods, and the hashing method.</p></div>
     
     <td>Method</td>
     <td><code><a href="#set_logprob">set_logprob</a></code></td>
-    <td><span>Set the log probability associated with this object to ``logprob``.  I.e., set the probability associated with this object to ``2**(logprob)``.</span></td>
+    <td><span>Set the log probability associated with this object to <tt class="rst-docutils literal">logprob</tt>.  I.e., set the probability associated with this object to <tt class="rst-docutils literal"><span class="pre">2**(logprob)</span></tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#set_prob">set_prob</a></code></td>
-    <td><span>Set the probability associated with this object to ``prob``.</span></td>
+    <td><span>Set the probability associated with this object to <tt class="rst-docutils literal">prob</tt>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -154,7 +154,7 @@ methods, the comparison methods, and the hashing method.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2327">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2327">
       
       (source)
     </a>
@@ -162,15 +162,10 @@ methods, the comparison methods, and the hashing method.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.ProbabilisticProduction.html">nltk.grammar.ProbabilisticProduction</a></code>, <code><a href="nltk.tree.ImmutableProbabilisticTree.html">nltk.tree.ImmutableProbabilisticTree</a></code>, <code><a href="nltk.tree.ProbabilisticTree.html">nltk.tree.ProbabilisticTree</a></code></div>
     
-    <div><p class="pre">Initialize this object's probability.  This initializer should
-be called by subclass constructors.  ``prob`` should generally be
-the first argument for those constructors.
-
-:param prob: The probability associated with the object.
-:type prob: float
-:param logprob: The log of the probability associated with
-    the object.
-:type logprob: float</p></div>
+    <div>Initialize this object's probability.  This initializer should
+be called by subclass constructors.  <tt class="rst-docutils literal">prob</tt> should generally be
+the first argument for those constructors.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prob:</span>float</td><td class="fieldArgDesc">The probability associated with the object.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">logprob:</span>float</td><td class="fieldArgDesc">The log of the probability associated with
+the object.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -184,7 +179,7 @@ the first argument for those constructors.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">logprob</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2383">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2383">
       
       (source)
     </a>
@@ -192,10 +187,8 @@ the first argument for those constructors.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return ``log(p)``, where ``p`` is the probability associated
-with this object.
-
-:rtype: float</p></div>
+    <div>Return <tt class="rst-docutils literal">log(p)</tt>, where <tt class="rst-docutils literal">p</tt> is the probability associated
+with this object.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -209,7 +202,7 @@ with this object.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2371">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2371">
       
       (source)
     </a>
@@ -217,9 +210,7 @@ with this object.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the probability associated with this object.
-
-:rtype: float</p></div>
+    <div>Return the probability associated with this object.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -233,7 +224,7 @@ with this object.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_logprob</span>(self, logprob):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2359">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2359">
       
       (source)
     </a>
@@ -241,12 +232,9 @@ with this object.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.ImmutableProbabilisticMixIn.html">nltk.probability.ImmutableProbabilisticMixIn</a></code></div>
     
-    <div><p class="pre">Set the log probability associated with this object to
-``logprob``.  I.e., set the probability associated with this
-object to ``2**(logprob)``.
-
-:param logprob: The new log probability
-:type logprob: float</p></div>
+    <div>Set the log probability associated with this object to
+<tt class="rst-docutils literal">logprob</tt>.  I.e., set the probability associated with this
+object to <tt class="rst-docutils literal"><span class="pre">2**(logprob)</span></tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">logprob:</span>float</td><td class="fieldArgDesc">The new log probability</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -260,7 +248,7 @@ object to ``2**(logprob)``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_prob</span>(self, prob):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2349">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2349">
       
       (source)
     </a>
@@ -268,10 +256,7 @@ object to ``2**(logprob)``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.probability.ImmutableProbabilisticMixIn.html">nltk.probability.ImmutableProbabilisticMixIn</a></code></div>
     
-    <div><p class="pre">Set the probability associated with this object to ``prob``.
-
-:param prob: The new probability
-:type prob: float</p></div>
+    <div>Set the probability associated with this object to <tt class="rst-docutils literal">prob</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prob:</span>float</td><td class="fieldArgDesc">The new probability</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -285,7 +270,7 @@ object to ``2**(logprob)``.
   <div class="functionHeader">
     
     <span class="py-defname">__logprob</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2347">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2347">
       
       (source)
     </a>
@@ -307,7 +292,7 @@ object to ``2**(logprob)``.
   <div class="functionHeader">
     
     <span class="py-defname">__prob</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2347">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2347">
       
       (source)
     </a>
@@ -327,7 +312,7 @@ object to ``2**(logprob)``.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

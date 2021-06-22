@@ -65,24 +65,25 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">StanfordTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L23" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StanfordTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L23" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.stanford.StanfordTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Interface to the Stanford Tokenizer
-
-&gt;&gt;&gt; from nltk.tokenize.stanford import StanfordTokenizer
-&gt;&gt;&gt; s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks."
-&gt;&gt;&gt; StanfordTokenizer().tokenize(s)
-['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York', '.', 'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
-&gt;&gt;&gt; s = "The colour of the wall is blue."
-&gt;&gt;&gt; StanfordTokenizer(options={"americanize": True}).tokenize(s)
-['The', 'color', 'of', 'the', 'wall', 'is', 'blue', '.']</p></div>
+        <div><p>Interface to the Stanford Tokenizer</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize.stanford <span class="py-keyword">import</span> StanfordTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">"Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks."</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>StanfordTokenizer().tokenize(s)
+<span class="py-output">['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York', '.', 'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">"The colour of the wall is blue."</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>StanfordTokenizer(options={<span class="py-string">"americanize"</span>: <span class="py-builtin">True</span>}).tokenize(s)
+<span class="py-output">['The', 'color', 'of', 'the', 'wall', 'is', 'blue', '.']</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1837">
+        <table class="children sortable" id="id1841">
   
   
   <tr class="method">
@@ -136,24 +137,24 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1838">
+          <table class="children sortable" id="id1842">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -175,7 +176,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path_to_jar=None, encoding='utf8', options=None, verbose=False, java_options='-mx1000m'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L38">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L38">
       
       (source)
     </a>
@@ -197,7 +198,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L78">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L78">
       
       (source)
     </a>
@@ -205,7 +206,7 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Use stanford tokenizer's PTBTokenizer to tokenize multiple sentences.</p></div>
+    <div>Use stanford tokenizer's PTBTokenizer to tokenize multiple sentences.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -219,7 +220,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">java_options</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L67">
       
       (source)
     </a>
@@ -241,7 +242,7 @@
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_parse_tokenized_output</span>(s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L74">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L74">
       
       (source)
     </a>
@@ -263,7 +264,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_execute</span>(self, cmd, input_, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L85">
       
       (source)
     </a>
@@ -285,7 +286,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_JAR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L36">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L36">
       
       (source)
     </a>
@@ -307,7 +308,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_encoding</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L66">
       
       (source)
     </a>
@@ -329,7 +330,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_options_cmd</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L70">
       
       (source)
     </a>
@@ -351,7 +352,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_stanford_jar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/stanford.py#L57">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/stanford.py#L57">
       
       (source)
     </a>
@@ -371,7 +372,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

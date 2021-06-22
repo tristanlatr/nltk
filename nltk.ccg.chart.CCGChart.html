@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CCGChart</span>(<a href="nltk.parse.chart.Chart.html" title="nltk.parse.chart.Chart">Chart</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L310" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CCGChart</span>(<a href="nltk.parse.chart.Chart.html" title="nltk.parse.chart.Chart">Chart</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L310" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.ccg.chart.CCGChart">View In Hierarchy</a></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id74">
+        <table class="children sortable" id="id77">
   
   
   <tr class="method">
@@ -86,14 +86,14 @@
     
     <td>Method</td>
     <td><code><a href="#_trees">_trees</a></code></td>
-    <td><span>A helper function for ``trees``.</span></td>
+    <td><span>A helper function for <tt class="rst-docutils literal">trees</tt>.</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.Chart.html">Chart</a></code>:
           </p>
-          <table class="children sortable" id="id75">
+          <table class="children sortable" id="id78">
   
   
   <tr class="basemethod">
@@ -110,7 +110,7 @@
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.Chart.html#edges">edges</a></code></td>
-    <td><span>Return a list of all edges in this chart.  New edges that are added to the chart after the call to edges() will *not* be contained in this list.</span></td>
+    <td><span>Return a list of all edges in this chart.  New edges that are added to the chart after the call to edges() will <em>not</em> be contained in this list.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -155,7 +155,7 @@
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.Chart.html#parses">parses</a></code></td>
-    <td><span>Return an iterator of the complete tree structures that span the entire chart, and whose root node is ``root``.</span></td>
+    <td><span>Return an iterator of the complete tree structures that span the entire chart, and whose root node is <tt class="rst-docutils literal">root</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -170,7 +170,7 @@
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.Chart.html#pretty_format_leaves">pretty_format_leaves</a></code></td>
-    <td><span>Return a pretty-printed string representation of this chart's leaves.  This string can be used as a header for calls to ``pretty_format_edge``.</span></td>
+    <td><span>Return a pretty-printed string representation of this chart's leaves.  This string can be used as a header for calls to <tt class="rst-docutils literal">pretty_format_edge</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -180,12 +180,12 @@
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.Chart.html#trees">trees</a></code></td>
-    <td><span>Return an iterator of the tree structures that are associated with ``edge``.</span></td>
+    <td><span>Return an iterator of the tree structures that are associated with <tt class="rst-docutils literal">edge</tt>.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.Chart.html#_add_index">_add_index</a></code></td>
-    <td><span>A helper function for ``select``, which creates a new index for a given set of attributes (aka restriction keys).</span></td>
+    <td><span>A helper function for <tt class="rst-docutils literal">select</tt>, which creates a new index for a given set of attributes (aka restriction keys).</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -195,32 +195,35 @@
     
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.Chart.html#_register_with_indexes">_register_with_indexes</a></code></td>
-    <td><span>A helper function for ``insert``, which registers the new edge with all existing indexes.</span></td>
+    <td><span>A helper function for <tt class="rst-docutils literal">insert</tt>, which registers the new edge with all existing indexes.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.parse.chart.Chart.html#_edge_to_cpls">_edge_to_cpls</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A dictionary mapping each edge to a set
+of child pointer lists that are associated with that edge.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.parse.chart.Chart.html#_edges">_edges</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list of the edges in the chart</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.parse.chart.Chart.html#_indexes">_indexes</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A dictionary mapping tuples of edge attributes
+to indices, where each index maps the corresponding edge
+attribute values to lists of edges.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.parse.chart.Chart.html#_num_leaves">_num_leaves</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The number of tokens.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.parse.chart.Chart.html#_tokens">_tokens</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The sentence that the chart covers.</span></td>
   </tr>
 </table>
           
@@ -242,7 +245,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L311">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L311">
       
       (source)
     </a>
@@ -250,11 +253,8 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#__init__">nltk.parse.chart.Chart.__init__</a></code></div>
     
-    <div><p class="pre">Construct a new chart. The chart is initialized with the
-leaf edges corresponding to the terminal leaves.
-
-:type tokens: list
-:param tokens: The sentence that this chart will be used to parse.</p></div>
+    <div>Construct a new chart. The chart is initialized with the
+leaf edges corresponding to the terminal leaves.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list</td><td class="fieldArgDesc">The sentence that this chart will be used to parse.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -268,7 +268,7 @@ leaf edges corresponding to the terminal leaves.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_trees</span>(self, edge, complete, memo, tree_class):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L317">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L317">
       
       (source)
     </a>
@@ -276,11 +276,9 @@ leaf edges corresponding to the terminal leaves.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.Chart.html#_trees">nltk.parse.chart.Chart._trees</a></code></div>
     
-    <div><p class="pre">A helper function for ``trees``.
-
-:param memo: A dictionary used to record the trees that we've
-    generated for each edge, so that when we see an edge more
-    than once, we can reuse the same trees.</p></div>
+    <div>A helper function for <tt class="rst-docutils literal">trees</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">complete</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">memo</span></td><td class="fieldArgDesc">A dictionary used to record the trees that we've
+generated for each edge, so that when we see an edge more
+than once, we can reuse the same trees.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tree_class</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div>
 
@@ -292,7 +290,7 @@ leaf edges corresponding to the terminal leaves.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

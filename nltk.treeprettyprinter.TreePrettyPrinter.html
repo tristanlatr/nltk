@@ -65,39 +65,35 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreePrettyPrinter</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L44" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreePrettyPrinter</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L44" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.treeprettyprinter.TreePrettyPrinter">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Pretty-print a tree in text format, either as ASCII or Unicode.
-The tree can be a normal tree, or discontinuous.
-
-``TreePrettyPrinter(tree, sentence=None, highlight=())``
-creates an object from which different visualizations can be created.
-
-:param tree: a Tree object.
-:param sentence: a list of words (strings). If `sentence` is given,
-    `tree` must contain integers as leaves, which are taken as indices
-    in `sentence`. Using this you can display a discontinuous tree.
-:param highlight: Optionally, a sequence of Tree objects in `tree` which
-    should be highlighted. Has the effect of only applying colors to nodes
-    in this sequence (nodes should be given as Tree objects, terminals as
-    indices).
-
-&gt;&gt;&gt; from nltk.tree import Tree
-&gt;&gt;&gt; tree = Tree.fromstring('(S (NP Mary) (VP walks))')
-&gt;&gt;&gt; print(TreePrettyPrinter(tree).text())
-... # doctest: +NORMALIZE_WHITESPACE
-      S
-  ____|____
- NP        VP
- |         |
-Mary     walks</p></div>
+        <div><p>Pretty-print a tree in text format, either as ASCII or Unicode.
+The tree can be a normal tree, or discontinuous.</p>
+<p><tt class="rst-docutils literal">TreePrettyPrinter(tree, sentence=None, <span class="pre">highlight=())</span></tt>
+creates an object from which different visualizations can be created.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tree <span class="py-keyword">import</span> Tree
+<span class="py-prompt">&gt;&gt;&gt; </span>tree = Tree.fromstring(<span class="py-string">'(S (NP Mary) (VP walks))'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(TreePrettyPrinter(tree).text())
+<span class="py-more">... </span><span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">      S</span>
+<span class="py-output">  ____|____</span>
+<span class="py-output"> NP        VP</span>
+<span class="py-output"> |         |</span>
+<span class="py-output">Mary     walks</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tree</span></td><td class="fieldArgDesc">a Tree object.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence</span></td><td class="fieldArgDesc">a list of words (strings). If <code>sentence</code> is given,
+<code><a href="nltk.tree.html">tree</a></code> must contain integers as leaves, which are taken as indices
+in <code>sentence</code>. Using this you can display a discontinuous tree.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">highlight</span></td><td class="fieldArgDesc">Optionally, a sequence of Tree objects in <code><a href="nltk.tree.html">tree</a></code> which
+should be highlighted. Has the effect of only applying colors to nodes
+in this sequence (nodes should be given as Tree objects, terminals as
+indices).</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1937">
+        <table class="children sortable" id="id1941">
   
   
   <tr class="staticmethod">
@@ -124,12 +120,12 @@ Mary     walks</p></div>
     
     <td>Method</td>
     <td><code><a href="#svg">svg</a></code></td>
-    <td><span>:return: SVG representation of a tree.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#text">text</a></code></td>
-    <td><span>:return: ASCII art for a discontinuous tree.</span></td>
+    <td><span></span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -171,7 +167,7 @@ Mary     walks</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">nodecoords</span>(tree, sentence, highlight):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L107">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L107">
       
       (source)
     </a>
@@ -179,37 +175,43 @@ Mary     walks</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Produce coordinates of nodes on a grid.
-
-Objective:
-
-- Produce coordinates for a non-overlapping placement of nodes and
-    horizontal lines.
-- Order edges so that crossing edges cross a minimal number of previous
-    horizontal lines (never vertical lines).
-
-Approach:
-
-- bottom up level order traversal (start at terminals)
-- at each level, identify nodes which cannot be on the same row
-- identify nodes which cannot be in the same column
-- place nodes into a grid at (row, column)
-- order child-parent edges with crossing edges last
-
-Coordinates are (row, column); the origin (0, 0) is at the top left;
+    <div><p>Produce coordinates of nodes on a grid.</p>
+<p>Objective:</p>
+<ul class="rst-simple">
+<li><dl class="rst-first rst-docutils">
+<dt>Produce coordinates for a non-overlapping placement of nodes and</dt>
+<dd>horizontal lines.</dd>
+</dl>
+</li>
+<li><dl class="rst-first rst-docutils">
+<dt>Order edges so that crossing edges cross a minimal number of previous</dt>
+<dd>horizontal lines (never vertical lines).</dd>
+</dl>
+</li>
+</ul>
+<p>Approach:</p>
+<ul class="rst-simple">
+<li>bottom up level order traversal (start at terminals)</li>
+<li>at each level, identify nodes which cannot be on the same row</li>
+<li>identify nodes which cannot be in the same column</li>
+<li>place nodes into a grid at (row, column)</li>
+<li>order child-parent edges with crossing edges last</li>
+</ul>
+<p>Coordinates are (row, column); the origin (0, 0) is at the top left;
 the root node is on row 0. Coordinates do not consider the size of a
 node (which depends on font, &amp;c), so the width of a column of the grid
 should be automatically determined by the element with the greatest
 width in that column. Alternatively, the integer coordinates could be
 converted to coordinates in which the distances between adjacent nodes
-are non-uniform.
-
-Produces tuple (nodes, coords, edges, highlighted) where:
-
-- nodes[id]: Tree object for the node with this integer id
-- coords[id]: (n, m) coordinate where to draw node with id in the grid
-- edges[id]: parent id of node with this id (ordered dictionary)
-- highlighted: set of ids that should be highlighted</p></div>
+are non-uniform.</p>
+<p>Produces tuple (nodes, coords, edges, highlighted) where:</p>
+<ul class="rst-simple">
+<li>nodes[id]: Tree object for the node with this integer id</li>
+<li>coords[id]: (n, m) coordinate where to draw node with id in the grid</li>
+<li>edges[id]: parent id of node with this id (ordered dictionary)</li>
+<li>highlighted: set of ids that should be highlighted</li>
+</ul>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -223,7 +225,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tree, sentence=None, highlight=()):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L72">
       
       (source)
     </a>
@@ -245,7 +247,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L104">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L104">
       
       (source)
     </a>
@@ -267,7 +269,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L101">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L101">
       
       (source)
     </a>
@@ -289,7 +291,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">svg</span>(self, nodecolor='blue', leafcolor='red', funccolor='green'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L493">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L493">
       
       (source)
     </a>
@@ -297,7 +299,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: SVG representation of a tree.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">SVG representation of a tree.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -311,7 +313,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">text</span>(self, nodedist=1, unicodelines=False, html=False, ansi=False, nodecolor='blue', leafcolor='red', funccolor='green', abbreviate=None, maxwidth=16):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L331">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L331">
       
       (source)
     </a>
@@ -319,19 +321,12 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: ASCII art for a discontinuous tree.
-
-:param unicodelines: whether to use Unicode line drawing characters
-    instead of plain (7-bit) ASCII.
-:param html: whether to wrap output in html code (default plain text).
-:param ansi: whether to produce colors with ANSI escape sequences
-    (only effective when html==False).
-:param leafcolor, nodecolor: specify colors of leaves and phrasal
-    nodes; effective when either html or ansi is True.
-:param abbreviate: if True, abbreviate labels longer than 5 characters.
-    If integer, abbreviate labels longer than `abbr` characters.
-:param maxwidth: maximum number of characters before a label starts to
-    wrap; pass None to disable.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nodedist</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">unicodelines</span></td><td class="fieldArgDesc">whether to use Unicode line drawing characters
+instead of plain (7-bit) ASCII.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">html</span></td><td class="fieldArgDesc">whether to wrap output in html code (default plain text).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ansi</span></td><td class="fieldArgDesc">whether to produce colors with ANSI escape sequences
+(only effective when html==False).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nodecolor</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">leafcolor</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">funccolor</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">abbreviate</span></td><td class="fieldArgDesc">if True, abbreviate labels longer than 5 characters.
+If integer, abbreviate labels longer than <code>abbr</code> characters.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">maxwidth</span></td><td class="fieldArgDesc">maximum number of characters before a label starts to
+wrap; pass None to disable.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">leafcolor, nodecolor</span></td><td class="fieldArgDesc">specify colors of leaves and phrasal
+nodes; effective when either html or ansi is True.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">ASCII art for a discontinuous tree.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -345,7 +340,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-defname">coords</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L97">
       
       (source)
     </a>
@@ -367,7 +362,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-defname">edges</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L97">
       
       (source)
     </a>
@@ -389,7 +384,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-defname">highlight</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L97">
       
       (source)
     </a>
@@ -411,7 +406,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="functionHeader">
     
     <span class="py-defname">nodes</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/treeprettyprinter.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/treeprettyprinter.py#L97">
       
       (source)
     </a>
@@ -431,7 +426,7 @@ Produces tuple (nodes, coords, edges, highlighted) where:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

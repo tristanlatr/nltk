@@ -65,48 +65,51 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/__init__.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/__init__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">NLTK Semantic Interpretation Package
-
-This package contains classes for representing semantic structure in
+        <div><p>NLTK Semantic Interpretation Package</p>
+<p>This package contains classes for representing semantic structure in
 formulas of first-order logic and for evaluating such formulas in
-set-theoretic models.
-
-    &gt;&gt;&gt; from nltk.sem import logic
-    &gt;&gt;&gt; logic._counter._value = 0
-
-The package has two main components:
-
- - ``logic`` provides support for analyzing expressions of First
-   Order Logic (FOL).
- - ``evaluate`` allows users to recursively determine truth in a
-   model for formulas of FOL.
-
-A model consists of a domain of discourse and a valuation function,
+set-theoretic models.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.sem <span class="py-keyword">import</span> logic
+<span class="py-prompt">&gt;&gt;&gt; </span>logic._counter._value = 0</pre></blockquote>
+<p>The package has two main components:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">logic</tt> provides support for analyzing expressions of First
+Order Logic (FOL).</li>
+<li><tt class="rst-docutils literal">evaluate</tt> allows users to recursively determine truth in a
+model for formulas of FOL.</li>
+</ul>
+</blockquote>
+<p>A model consists of a domain of discourse and a valuation function,
 which assigns values to non-logical constants. We assume that entities
-in the domain are represented as strings such as ``'b1'``, ``'g1'``,
-etc. A ``Valuation`` is initialized with a list of (symbol, value)
+in the domain are represented as strings such as <tt class="rst-docutils literal">'b1'</tt>, <tt class="rst-docutils literal">'g1'</tt>,
+etc. A <tt class="rst-docutils literal">Valuation</tt> is initialized with a list of (symbol, value)
 pairs, where values are entities, sets of entities or sets of tuples
 of entities.
 The domain of discourse can be inferred from the valuation, and model
-is then created with domain and valuation as parameters.
-
-    &gt;&gt;&gt; from nltk.sem import Valuation, Model
-    &gt;&gt;&gt; v = [('adam', 'b1'), ('betty', 'g1'), ('fido', 'd1'),
-    ... ('girl', set(['g1', 'g2'])), ('boy', set(['b1', 'b2'])),
-    ... ('dog', set(['d1'])),
-    ... ('love', set([('b1', 'g1'), ('b2', 'g2'), ('g1', 'b1'), ('g2', 'b1')]))]
-    &gt;&gt;&gt; val = Valuation(v)
-    &gt;&gt;&gt; dom = val.domain
-    &gt;&gt;&gt; m = Model(dom, val)</p></div>
+is then created with domain and valuation as parameters.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.sem <span class="py-keyword">import</span> Valuation, Model
+<span class="py-prompt">&gt;&gt;&gt; </span>v = [(<span class="py-string">'adam'</span>, <span class="py-string">'b1'</span>), (<span class="py-string">'betty'</span>, <span class="py-string">'g1'</span>), (<span class="py-string">'fido'</span>, <span class="py-string">'d1'</span>),
+<span class="py-more">... </span>(<span class="py-string">'girl'</span>, <span class="py-builtin">set</span>([<span class="py-string">'g1'</span>, <span class="py-string">'g2'</span>])), (<span class="py-string">'boy'</span>, <span class="py-builtin">set</span>([<span class="py-string">'b1'</span>, <span class="py-string">'b2'</span>])),
+<span class="py-more">... </span>(<span class="py-string">'dog'</span>, <span class="py-builtin">set</span>([<span class="py-string">'d1'</span>])),
+<span class="py-more">... </span>(<span class="py-string">'love'</span>, <span class="py-builtin">set</span>([(<span class="py-string">'b1'</span>, <span class="py-string">'g1'</span>), (<span class="py-string">'b2'</span>, <span class="py-string">'g2'</span>), (<span class="py-string">'g1'</span>, <span class="py-string">'b1'</span>), (<span class="py-string">'g2'</span>, <span class="py-string">'b1'</span>)]))]
+<span class="py-prompt">&gt;&gt;&gt; </span>val = Valuation(v)
+<span class="py-prompt">&gt;&gt;&gt; </span>dom = val.domain
+<span class="py-prompt">&gt;&gt;&gt; </span>m = Model(dom, val)</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1169">
+        <table class="children sortable" id="id1173">
   
   
   <tr class="module">
@@ -198,7 +201,7 @@ is then created with domain and valuation as parameters.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

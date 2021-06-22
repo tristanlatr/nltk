@@ -65,37 +65,38 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConllCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L23" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus.reader.conll.ConllChunkCorpusReader.html">nltk.corpus.reader.conll.ConllChunkCorpusReader</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConllCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L23" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus.reader.conll.ConllChunkCorpusReader.html">nltk.corpus.reader.conll.ConllChunkCorpusReader</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.conll.ConllCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A corpus reader for CoNLL-style files.  These files consist of a
+        <div><p>A corpus reader for CoNLL-style files.  These files consist of a
 series of sentences, separated by blank lines.  Each sentence is
 encoded using a table (or "grid") of values, where each line
 corresponds to a single word, and each column corresponds to an
 annotation type.  The set of columns used by CoNLL-style files can
-vary from corpus to corpus; the ``ConllCorpusReader`` constructor
-therefore takes an argument, ``columntypes``, which is used to
+vary from corpus to corpus; the <tt class="rst-docutils literal">ConllCorpusReader</tt> constructor
+therefore takes an argument, <tt class="rst-docutils literal">columntypes</tt>, which is used to
 specify the columns that are used by a given corpus. By default
 columns are split by consecutive whitespaces, with the
-``separator`` argument you can set a string to split by (e.g.
-``' '``).
-
-
-@todo: Add support for reading from corpora where different
-    parallel files contain different columns.
-@todo: Possibly add caching of the grid corpus view?  This would
-    allow the same grid view to be used by different data access
-    methods (eg words() and parsed_sents() could both share the
-    same grid corpus view object).
-@todo: Better support for -DOCSTART-.  Currently, we just ignore
-    it, but it could be used to define methods that retrieve a
-    document at a time (eg parsed_documents()).</p></div>
+<tt class="rst-docutils literal">separator</tt> argument you can set a string to split by (e.g.
+<tt class="rst-docutils literal">' '</tt>).</p>
+<dl class="rst-docutils">
+<dt>@todo: Add support for reading from corpora where different</dt>
+<dd>parallel files contain different columns.</dd>
+<dt>@todo: Possibly add caching of the grid corpus view?  This would</dt>
+<dd>allow the same grid view to be used by different data access
+methods (eg words() and parsed_sents() could both share the
+same grid corpus view object).</dd>
+<dt>@todo: Better support for -DOCSTART-.  Currently, we just ignore</dt>
+<dd>it, but it could be used to define methods that retrieve a
+document at a time (eg parsed_documents()).</dd>
+</dl>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id290">
+        <table class="children sortable" id="id293">
   
   
   <tr class="method">
@@ -304,7 +305,7 @@ columns are split by consecutive whitespaces, with the
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id291">
+          <table class="children sortable" id="id294">
   
   
   <tr class="basemethod">
@@ -371,7 +372,7 @@ columns are split by consecutive whitespaces, with the
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -403,7 +404,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, columntypes, chunk_types=None, root_label='S', pos_in_tree=False, srl_includes_roleset=True, encoding='utf8', tree_class=Tree, tagset=None, separator=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L68">
       
       (source)
     </a>
@@ -411,34 +412,34 @@ columns are split by consecutive whitespaces, with the
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.conll.ConllChunkCorpusReader.html">nltk.corpus.reader.conll.ConllChunkCorpusReader</a></code></div>
     
-    <div><p class="pre">:type root: PathPointer or str
-:param root: A path pointer identifying the root directory for
-    this corpus.  If a string is specified, then it will be
-    converted to a ``PathPointer`` automatically.
-:param fileids: A list of the files that make up this corpus.
-    This list can either be specified explicitly, as a list of
-    strings; or implicitly, as a regular expression over file
-    paths.  The absolute path for each file will be constructed
-    by joining the reader's root to each file name.
-:param encoding: The default unicode encoding for the files
-    that make up the corpus.  The value of ``encoding`` can be any
-    of the following:
-    - A string: ``encoding`` is the encoding name for all files.
-    - A dictionary: ``encoding[file_id]`` is the encoding
-      name for the file whose identifier is ``file_id``.  If
-      ``file_id`` is not in ``encoding``, then the file
-      contents will be processed using non-unicode byte strings.
-    - A list: ``encoding`` should be a list of ``(regexp, encoding)``
-      tuples.  The encoding for a file whose identifier is ``file_id``
-      will be the ``encoding`` value for the first tuple whose
-      ``regexp`` matches the ``file_id``.  If no tuple's ``regexp``
-      matches the ``file_id``, the file contents will be processed
-      using non-unicode byte strings.
-    - None: the file contents of all files will be
-      processed using non-unicode byte strings.
-:param tagset: The name of the tagset used by this corpus, to be used
-      for normalizing or converting the POS tags returned by the
-      tagged_...() methods.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root:</span>PathPointer or str</td><td class="fieldArgDesc">A path pointer identifying the root directory for
+this corpus.  If a string is specified, then it will be
+converted to a <tt class="rst-docutils literal">PathPointer</tt> automatically.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list of the files that make up this corpus.
+This list can either be specified explicitly, as a list of
+strings; or implicitly, as a regular expression over file
+paths.  The absolute path for each file will be constructed
+by joining the reader's root to each file name.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">columntypes</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chunk_types</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root_label</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pos_in_tree</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">srl_includes_roleset</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><p>The default unicode encoding for the files
+that make up the corpus.  The value of <tt class="rst-docutils literal">encoding</tt> can be any
+of the following:
+- A string: <tt class="rst-docutils literal">encoding</tt> is the encoding name for all files.
+- A dictionary: <tt class="rst-docutils literal">encoding[file_id]</tt> is the encoding</p>
+<blockquote>
+name for the file whose identifier is <tt class="rst-docutils literal">file_id</tt>.  If
+<tt class="rst-docutils literal">file_id</tt> is not in <tt class="rst-docutils literal">encoding</tt>, then the file
+contents will be processed using non-unicode byte strings.</blockquote>
+<ul class="rst-simple">
+<li>A list: <tt class="rst-docutils literal">encoding</tt> should be a list of <tt class="rst-docutils literal">(regexp, encoding)</tt>
+tuples.  The encoding for a file whose identifier is <tt class="rst-docutils literal">file_id</tt>
+will be the <tt class="rst-docutils literal">encoding</tt> value for the first tuple whose
+<tt class="rst-docutils literal">regexp</tt> matches the <tt class="rst-docutils literal">file_id</tt>.  If no tuple's <tt class="rst-docutils literal">regexp</tt>
+matches the <tt class="rst-docutils literal">file_id</tt>, the file contents will be processed
+using non-unicode byte strings.</li>
+<li>None: the file contents of all files will be
+processed using non-unicode byte strings.</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tree_class</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc">The name of the tagset used by this corpus, to be used
+for normalizing or converting the POS tags returned by the
+<a href="#id1"><span class="rst-problematic" id="rst-id2">tagged_</span></a>...() methods.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">separator</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -452,7 +453,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chunked_sents</span>(self, fileids=None, chunk_types=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L142">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L142">
       
       (source)
     </a>
@@ -474,7 +475,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chunked_words</span>(self, fileids=None, chunk_types=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L132">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L132">
       
       (source)
     </a>
@@ -496,7 +497,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">iob_sents</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L193">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L193">
       
       (source)
     </a>
@@ -504,10 +505,7 @@ columns are split by consecutive whitespaces, with the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a list of lists of word/tag/IOB tuples
-:rtype: list(list)
-:param fileids: the list of fileids that make up this corpus
-:type fileids: None or str or list</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids:</span>None or str or list</td><td class="fieldArgDesc">the list of fileids that make up this corpus</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list)</td><td class="fieldArgDesc">a list of lists of word/tag/IOB tuples</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -521,7 +519,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">iob_words</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L179">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L179">
       
       (source)
     </a>
@@ -529,10 +527,7 @@ columns are split by consecutive whitespaces, with the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a list of word/tag/IOB tuples
-:rtype: list(tuple)
-:param fileids: the list of fileids that make up this corpus
-:type fileids: None or str or list</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids:</span>None or str or list</td><td class="fieldArgDesc">the list of fileids that make up this corpus</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple)</td><td class="fieldArgDesc">a list of word/tag/IOB tuples</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -546,7 +541,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parsed_sents</span>(self, fileids=None, pos_in_tree=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L152">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L152">
       
       (source)
     </a>
@@ -568,7 +563,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L101">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L101">
       
       (source)
     </a>
@@ -590,7 +585,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L112">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L112">
       
       (source)
     </a>
@@ -612,7 +607,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">srl_instances</span>(self, fileids=None, pos_in_tree=None, flatten=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L166">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L166">
       
       (source)
     </a>
@@ -634,7 +629,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">srl_spans</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L162">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L162">
       
       (source)
     </a>
@@ -656,7 +651,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L124">
       
       (source)
     </a>
@@ -678,7 +673,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L116">
       
       (source)
     </a>
@@ -700,7 +695,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L108">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L108">
       
       (source)
     </a>
@@ -722,7 +717,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">CHUNK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L56">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L56">
       
       (source)
     </a>
@@ -744,7 +739,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">COLUMN_TYPES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L62">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L62">
       
       (source)
     </a>
@@ -766,7 +761,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">IGNORE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L59">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L59">
       
       (source)
     </a>
@@ -788,7 +783,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">NE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L57">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L57">
       
       (source)
     </a>
@@ -810,7 +805,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">POS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L54">
       
       (source)
     </a>
@@ -832,7 +827,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">SRL</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L58">
       
       (source)
     </a>
@@ -854,7 +849,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">TREE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L55">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L55">
       
       (source)
     </a>
@@ -876,7 +871,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">WORDS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L53">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L53">
       
       (source)
     </a>
@@ -898,7 +893,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">sep</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L95">
       
       (source)
     </a>
@@ -920,7 +915,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_get_column</span>(grid, column_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L416">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L416">
       
       (source)
     </a>
@@ -942,7 +937,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_chunked_words</span>(self, grid, chunk_types, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L270">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L270">
       
       (source)
     </a>
@@ -964,7 +959,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_iob_words</span>(self, grid, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L258">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L258">
       
       (source)
     </a>
@@ -986,7 +981,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_parsed_sent</span>(self, grid, pos_in_tree, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L304">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L304">
       
       (source)
     </a>
@@ -1008,7 +1003,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_srl_instances</span>(self, grid, pos_in_tree):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L373">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L373">
       
       (source)
     </a>
@@ -1030,7 +1025,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_srl_spans</span>(self, grid):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L341">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L341">
       
       (source)
     </a>
@@ -1038,7 +1033,7 @@ columns are split by consecutive whitespaces, with the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">list of list of (start, end), tag) tuples</p></div>
+    <div>list of list of (start, end), tag) tuples</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1052,7 +1047,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_tagged_words</span>(self, grid, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L252">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L252">
       
       (source)
     </a>
@@ -1074,7 +1069,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_words</span>(self, grid):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L249">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L249">
       
       (source)
     </a>
@@ -1096,7 +1091,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_grids</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L211">
       
       (source)
     </a>
@@ -1118,7 +1113,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_grid_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L222">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L222">
       
       (source)
     </a>
@@ -1140,7 +1135,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_require</span>(self, *columntypes):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L409">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L409">
       
       (source)
     </a>
@@ -1162,7 +1157,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">_chunk_types</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L87">
       
       (source)
     </a>
@@ -1184,7 +1179,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">_colmap</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L88">
       
       (source)
     </a>
@@ -1206,7 +1201,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">_pos_in_tree</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L89">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L89">
       
       (source)
     </a>
@@ -1228,7 +1223,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">_root_label</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L90">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L90">
       
       (source)
     </a>
@@ -1250,7 +1245,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">_srl_includes_roleset</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L91">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L91">
       
       (source)
     </a>
@@ -1272,7 +1267,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">_tagset</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L94">
       
       (source)
     </a>
@@ -1294,7 +1289,7 @@ columns are split by consecutive whitespaces, with the
   <div class="functionHeader">
     
     <span class="py-defname">_tree_class</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/conll.py#L92">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/conll.py#L92">
       
       (source)
     </a>
@@ -1314,7 +1309,7 @@ columns are split by consecutive whitespaces, with the
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

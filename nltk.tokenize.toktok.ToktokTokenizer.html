@@ -65,37 +65,38 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ToktokTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L29" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ToktokTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L29" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.toktok.ToktokTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This is a Python port of the tok-tok.pl from
-https://github.com/jonsafari/tok-tok/blob/master/tok-tok.pl
-
-&gt;&gt;&gt; toktok = ToktokTokenizer()
-&gt;&gt;&gt; text = u'Is 9.5 or 525,600 my favorite number?'
-&gt;&gt;&gt; print(toktok.tokenize(text, return_str=True))
-Is 9.5 or 525,600 my favorite number ?
-&gt;&gt;&gt; text = u'The https://github.com/jonsafari/tok-tok/blob/master/tok-tok.pl is a website with/and/or slashes and sort of weird : things'
-&gt;&gt;&gt; print(toktok.tokenize(text, return_str=True))
-The https://github.com/jonsafari/tok-tok/blob/master/tok-tok.pl is a website with/and/or slashes and sort of weird : things
-&gt;&gt;&gt; text = u'¡This, is a sentence with weird» symbols… appearing everywhere¿'
-&gt;&gt;&gt; expected = u'¡ This , is a sentence with weird » symbols … appearing everywhere ¿'
-&gt;&gt;&gt; assert toktok.tokenize(text, return_str=True) == expected
-&gt;&gt;&gt; toktok.tokenize(text) == [u'¡', u'This', u',', u'is', u'a', u'sentence', u'with', u'weird', u'»', u'symbols', u'…', u'appearing', u'everywhere', u'¿']
-True</p></div>
+        <div><p>This is a Python port of the tok-tok.pl from
+<a class="rst-reference external" href="https://github.com/jonsafari/tok-tok/blob/master/tok-tok.pl" target="_top">https://github.com/jonsafari/tok-tok/blob/master/tok-tok.pl</a></p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>toktok = ToktokTokenizer()
+<span class="py-prompt">&gt;&gt;&gt; </span>text = u<span class="py-string">'Is 9.5 or 525,600 my favorite number?'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(toktok.tokenize(text, return_str=<span class="py-builtin">True</span>))
+<span class="py-output">Is 9.5 or 525,600 my favorite number ?</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>text = u<span class="py-string">'The https://github.com/jonsafari/tok-tok/blob/master/tok-tok.pl is a website with/and/or slashes and sort of weird : things'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(toktok.tokenize(text, return_str=<span class="py-builtin">True</span>))
+<span class="py-output">The https://github.com/jonsafari/tok-tok/blob/master/tok-tok.pl is a website with/and/or slashes and sort of weird : things</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>text = u<span class="py-string">'¡This, is a sentence with weird» symbols… appearing everywhere¿'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>expected = u<span class="py-string">'¡ This , is a sentence with weird » symbols … appearing everywhere ¿'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> toktok.tokenize(text, return_str=<span class="py-builtin">True</span>) == expected
+<span class="py-prompt">&gt;&gt;&gt; </span>toktok.tokenize(text) == [u<span class="py-string">'¡'</span>, u<span class="py-string">'This'</span>, u<span class="py-string">','</span>, u<span class="py-string">'is'</span>, u<span class="py-string">'a'</span>, u<span class="py-string">'sentence'</span>, u<span class="py-string">'with'</span>, u<span class="py-string">'weird'</span>, u<span class="py-string">'»'</span>, u<span class="py-string">'symbols'</span>, u<span class="py-string">'…'</span>, u<span class="py-string">'appearing'</span>, u<span class="py-string">'everywhere'</span>, u<span class="py-string">'¿'</span>]
+<span class="py-output">True</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1848">
+        <table class="children sortable" id="id1852">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *s*.</span></td>
+    <td><span>Return a tokenized copy of <em>s</em>.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -252,24 +253,24 @@ True</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1849">
+          <table class="children sortable" id="id1853">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -291,7 +292,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, text, return_str=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L173">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L173">
       
       (source)
     </a>
@@ -299,9 +300,7 @@ True</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Return a tokenized copy of *s*.
-
-:rtype: list of str</p></div>
+    <div>Return a tokenized copy of <em>s</em>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -315,7 +314,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">AMPERCENT</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L59">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L59">
       
       (source)
     </a>
@@ -337,7 +336,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">CLOSE_PUNCT</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L102">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L102">
       
       (source)
     </a>
@@ -359,7 +358,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">CLOSE_PUNCT_RE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L126">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L126">
       
       (source)
     </a>
@@ -381,7 +380,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">COMMA_IN_NUM</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L64">
       
       (source)
     </a>
@@ -403,7 +402,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">CURRENCY_SYM</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L114">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L114">
       
       (source)
     </a>
@@ -425,7 +424,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">CURRENCY_SYM_RE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L128">
       
       (source)
     </a>
@@ -447,7 +446,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">EN_EM_DASHES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L56">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L56">
       
       (source)
     </a>
@@ -469,7 +468,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">FINAL_PERIOD_1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L76">
       
       (source)
     </a>
@@ -491,7 +490,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">FINAL_PERIOD_2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L79">
       
       (source)
     </a>
@@ -513,7 +512,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">FUNKY_PUNCT_1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L52">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L52">
       
       (source)
     </a>
@@ -535,7 +534,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">FUNKY_PUNCT_2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L54">
       
       (source)
     </a>
@@ -557,7 +556,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">LSTRIP</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L141">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L141">
       
       (source)
     </a>
@@ -579,7 +578,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">MULTI_COMMAS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L82">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L82">
       
       (source)
     </a>
@@ -601,7 +600,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">MULTI_DASHES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L84">
       
       (source)
     </a>
@@ -623,7 +622,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">MULTI_DOTS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L86">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L86">
       
       (source)
     </a>
@@ -645,7 +644,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">NON_BREAKING</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L49">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L49">
       
       (source)
     </a>
@@ -667,7 +666,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">ONE_SPACE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L144">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L144">
       
       (source)
     </a>
@@ -689,7 +688,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">OPEN_PUNCT</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L90">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L90">
       
       (source)
     </a>
@@ -711,7 +710,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">OPEN_PUNCT_RE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L124">
       
       (source)
     </a>
@@ -733,7 +732,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PIPE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L61">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L61">
       
       (source)
     </a>
@@ -755,7 +754,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PROB_SINGLE_QUOTES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L67">
       
       (source)
     </a>
@@ -777,7 +776,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">RSTRIP</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L142">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L142">
       
       (source)
     </a>
@@ -799,7 +798,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">STUPID_QUOTES_1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L69">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L69">
       
       (source)
     </a>
@@ -821,7 +820,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">STUPID_QUOTES_2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L70">
       
       (source)
     </a>
@@ -843,7 +842,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">TAB</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L60">
       
       (source)
     </a>
@@ -865,7 +864,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">TOKTOK_REGEXES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L146">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L146">
       
       (source)
     </a>
@@ -887,7 +886,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">URL_FOE_1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L131">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L131">
       
       (source)
     </a>
@@ -909,7 +908,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">URL_FOE_2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L132">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L132">
       
       (source)
     </a>
@@ -931,7 +930,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">URL_FOE_3</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L134">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L134">
       
       (source)
     </a>
@@ -953,7 +952,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">URL_FOE_4</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/toktok.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/toktok.py#L135">
       
       (source)
     </a>
@@ -973,7 +972,7 @@ True</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

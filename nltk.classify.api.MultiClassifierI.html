@@ -65,53 +65,60 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">MultiClassifierI</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/api.py#L92" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MultiClassifierI</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/api.py#L92" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.classify.api.MultiClassifierI">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A processing interface for labeling tokens with zero or more
+        <div><p>A processing interface for labeling tokens with zero or more
 category labels (or "labels").  Labels are typically strs
 or ints, but can be any immutable type.  The set of labels
-that the multi-classifier chooses from must be fixed and finite.
-
-Subclasses must define:
-  - ``labels()``
-  - either ``classify()`` or ``classify_many()`` (or both)
-
-Subclasses may define:
-  - either ``prob_classify()`` or ``prob_classify_many()`` (or both)</p></div>
+that the multi-classifier chooses from must be fixed and finite.</p>
+<dl class="rst-docutils">
+<dt>Subclasses must define:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><tt class="rst-docutils literal">labels()</tt></li>
+<li>either <tt class="rst-docutils literal">classify()</tt> or <tt class="rst-docutils literal">classify_many()</tt> (or both)</li>
+</ul>
+</dd>
+<dt>Subclasses may define:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>either <tt class="rst-docutils literal">prob_classify()</tt> or <tt class="rst-docutils literal">prob_classify_many()</tt> (or both)</li>
+</ul>
+</dd>
+</dl>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id134">
+        <table class="children sortable" id="id137">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#classify">classify</a></code></td>
-    <td><span>:return: the most appropriate set of labels for the given featureset. :rtype: set(label)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#classify_many">classify_many</a></code></td>
-    <td><span>Apply ``self.classify()`` to each element of ``featuresets``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.classify()</tt> to each element of <tt class="rst-docutils literal">featuresets</tt>.  I.e.:</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#labels">labels</a></code></td>
-    <td><span>:return: the list of category labels used by this classifier. :rtype: list of (immutable)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#prob_classify">prob_classify</a></code></td>
-    <td><span>:return: a probability distribution over sets of labels for the given featureset. :rtype: ProbDistI</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#prob_classify_many">prob_classify_many</a></code></td>
-    <td><span>Apply ``self.prob_classify()`` to each element of ``featuresets``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.prob_classify()</tt> to each element of <tt class="rst-docutils literal">featuresets</tt>.  I.e.:</span></td>
   </tr>
 </table>
         
@@ -133,7 +140,7 @@ Subclasses may define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify</span>(self, featureset):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/api.py#L114">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/api.py#L114">
       
       (source)
     </a>
@@ -141,8 +148,7 @@ Subclasses may define:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the most appropriate set of labels for the given featureset.
-:rtype: set(label)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(label)</td><td class="fieldArgDesc">the most appropriate set of labels for the given featureset.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -156,7 +162,7 @@ Subclasses may define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify_many</span>(self, featuresets):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/api.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/api.py#L135">
       
       (source)
     </a>
@@ -164,11 +170,10 @@ Subclasses may define:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Apply ``self.classify()`` to each element of ``featuresets``.  I.e.:
-
-    return [self.classify(fs) for fs in featuresets]
-
-:rtype: list(set(label))</p></div>
+    <div><p>Apply <tt class="rst-docutils literal">self.classify()</tt> to each element of <tt class="rst-docutils literal">featuresets</tt>.  I.e.:</p>
+<blockquote>
+return [self.classify(fs) for fs in featuresets]</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(set(label))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -182,7 +187,7 @@ Subclasses may define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">labels</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/api.py#L107">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/api.py#L107">
       
       (source)
     </a>
@@ -190,8 +195,7 @@ Subclasses may define:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the list of category labels used by this classifier.
-:rtype: list of (immutable)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of (immutable)</td><td class="fieldArgDesc">the list of category labels used by this classifier.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -205,7 +209,7 @@ Subclasses may define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_classify</span>(self, featureset):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/api.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/api.py#L124">
       
       (source)
     </a>
@@ -213,9 +217,8 @@ Subclasses may define:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a probability distribution over sets of labels for the
-    given featureset.
-:rtype: ProbDistI</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">ProbDistI</td><td class="fieldArgDesc">a probability distribution over sets of labels for the
+given featureset.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -229,7 +232,7 @@ Subclasses may define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_classify_many</span>(self, featuresets):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/api.py#L145">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/api.py#L145">
       
       (source)
     </a>
@@ -237,11 +240,10 @@ Subclasses may define:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Apply ``self.prob_classify()`` to each element of ``featuresets``.  I.e.:
-
-    return [self.prob_classify(fs) for fs in featuresets]
-
-:rtype: list(ProbDistI)</p></div>
+    <div><p>Apply <tt class="rst-docutils literal">self.prob_classify()</tt> to each element of <tt class="rst-docutils literal">featuresets</tt>.  I.e.:</p>
+<blockquote>
+return [self.prob_classify(fs) for fs in featuresets]</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(ProbDistI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div>
 
@@ -253,7 +255,7 @@ Subclasses may define:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

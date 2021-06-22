@@ -65,33 +65,31 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SExprTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/sexpr.py#L57" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SExprTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/sexpr.py#L57" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.sexpr.SExprTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A tokenizer that divides strings into s-expressions.
-An s-expresion can be either:
-
-  - a parenthesized expression, including any nested parenthesized
-    expressions, or
-  - a sequence of non-whitespace non-parenthesis characters.
-
-For example, the string ``(a (b c)) d e (f)`` consists of four
-s-expressions: ``(a (b c))``, ``d``, ``e``, and ``(f)``.
-
-By default, the characters ``(`` and ``)`` are treated as open and
-close parentheses, but alternative strings may be specified.
-
-:param parens: A two-element sequence specifying the open and close parentheses
-    that should be used to find sexprs.  This will typically be either a
-    two-character string, or a list of two strings.
-:type parens: str or list
-:param strict: If true, then raise an exception when tokenizing an ill-formed sexpr.</p></div>
+        <div><p>A tokenizer that divides strings into s-expressions.
+An s-expresion can be either:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>a parenthesized expression, including any nested parenthesized
+expressions, or</li>
+<li>a sequence of non-whitespace non-parenthesis characters.</li>
+</ul>
+</blockquote>
+<p>For example, the string <tt class="rst-docutils literal">(a (b c)) d e (f)</tt> consists of four
+s-expressions: <tt class="rst-docutils literal">(a (b c))</tt>, <tt class="rst-docutils literal">d</tt>, <tt class="rst-docutils literal">e</tt>, and <tt class="rst-docutils literal">(f)</tt>.</p>
+<p>By default, the characters <tt class="rst-docutils literal">(</tt> and <tt class="rst-docutils literal">)</tt> are treated as open and
+close parentheses, but alternative strings may be specified.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parens</span></td><td class="fieldArgDesc">A two-element sequence specifying the open and close parentheses
+that should be used to find sexprs.  This will typically be either a
+two-character string, or a list of two strings.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">strict</span></td><td class="fieldArgDesc">If true, then raise an exception when tokenizing an ill-formed sexpr.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1819">
+        <table class="children sortable" id="id1823">
   
   
   <tr class="method">
@@ -103,7 +101,7 @@ close parentheses, but alternative strings may be specified.
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a list of s-expressions extracted from *text*. For example:</span></td>
+    <td><span>Return a list of s-expressions extracted from <em>text</em>. For example:</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -130,24 +128,24 @@ close parentheses, but alternative strings may be specified.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1820">
+          <table class="children sortable" id="id1824">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -169,7 +167,7 @@ close parentheses, but alternative strings may be specified.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parens='()', strict=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/sexpr.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/sexpr.py#L79">
       
       (source)
     </a>
@@ -191,7 +189,7 @@ close parentheses, but alternative strings may be specified.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/sexpr.py#L89">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/sexpr.py#L89">
       
       (source)
     </a>
@@ -199,30 +197,29 @@ close parentheses, but alternative strings may be specified.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Return a list of s-expressions extracted from *text*.
-For example:
-
-    &gt;&gt;&gt; SExprTokenizer().tokenize('(a b (c d)) e f (g)')
-    ['(a b (c d))', 'e', 'f', '(g)']
-
-All parentheses are assumed to mark s-expressions.
+    <div><p>Return a list of s-expressions extracted from <em>text</em>.
+For example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>SExprTokenizer().tokenize(<span class="py-string">'(a b (c d)) e f (g)'</span>)
+<span class="py-output">['(a b (c d))', 'e', 'f', '(g)']</span>
+</pre></blockquote>
+<p>All parentheses are assumed to mark s-expressions.
 (No special processing is done to exclude parentheses that occur
-inside strings, or following backslash characters.)
-
-If the given expression contains non-matching parentheses,
-then the behavior of the tokenizer depends on the ``strict``
-parameter to the constructor.  If ``strict`` is ``True``, then
-raise a ``ValueError``.  If ``strict`` is ``False``, then any
+inside strings, or following backslash characters.)</p>
+<p>If the given expression contains non-matching parentheses,
+then the behavior of the tokenizer depends on the <tt class="rst-docutils literal">strict</tt>
+parameter to the constructor.  If <tt class="rst-docutils literal">strict</tt> is <tt class="rst-docutils literal">True</tt>, then
+raise a <tt class="rst-docutils literal">ValueError</tt>.  If <tt class="rst-docutils literal">strict</tt> is <tt class="rst-docutils literal">False</tt>, then any
 unmatched close parentheses will be listed as their own
 s-expression; and the last partial s-expression with unmatched open
-parentheses will be listed as its own s-expression:
-
-    &gt;&gt;&gt; SExprTokenizer(strict=False).tokenize('c) d) e (f (g')
-    ['c', ')', 'd', ')', 'e', '(f (g']
-
-:param text: the string to be tokenized
-:type text: str or iter(str)
-:rtype: iter(str)</p></div>
+parentheses will be listed as its own s-expression:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>SExprTokenizer(strict=<span class="py-builtin">False</span>).tokenize(<span class="py-string">'c) d) e (f (g'</span>)
+<span class="py-output">['c', ')', 'd', ')', 'e', '(f (g']</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text:</span>str or iter(str)</td><td class="fieldArgDesc">the string to be tokenized</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -236,7 +233,7 @@ parentheses will be listed as its own s-expression:
   <div class="functionHeader">
     
     <span class="py-defname">_close_paren</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/sexpr.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/sexpr.py#L84">
       
       (source)
     </a>
@@ -258,7 +255,7 @@ parentheses will be listed as its own s-expression:
   <div class="functionHeader">
     
     <span class="py-defname">_open_paren</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/sexpr.py#L83">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/sexpr.py#L83">
       
       (source)
     </a>
@@ -280,7 +277,7 @@ parentheses will be listed as its own s-expression:
   <div class="functionHeader">
     
     <span class="py-defname">_paren_regexp</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/sexpr.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/sexpr.py#L85">
       
       (source)
     </a>
@@ -302,7 +299,7 @@ parentheses will be listed as its own s-expression:
   <div class="functionHeader">
     
     <span class="py-defname">_strict</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/sexpr.py#L82">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/sexpr.py#L82">
       
       (source)
     </a>
@@ -322,7 +319,7 @@ parentheses will be listed as its own s-expression:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

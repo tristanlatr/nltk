@@ -65,44 +65,42 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">RegexpChunkRule</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L255" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.chunk.regexp.ChunkRule.html">nltk.chunk.regexp.ChunkRule</a></code>, <code><a href="nltk.chunk.regexp.ChunkRuleWithContext.html">nltk.chunk.regexp.ChunkRuleWithContext</a></code>, <code><a href="nltk.chunk.regexp.ExpandLeftRule.html">nltk.chunk.regexp.ExpandLeftRule</a></code>, <code><a href="nltk.chunk.regexp.ExpandRightRule.html">nltk.chunk.regexp.ExpandRightRule</a></code>, <code><a href="nltk.chunk.regexp.MergeRule.html">nltk.chunk.regexp.MergeRule</a></code>, <code><a href="nltk.chunk.regexp.SplitRule.html">nltk.chunk.regexp.SplitRule</a></code>, <code><a href="nltk.chunk.regexp.StripRule.html">nltk.chunk.regexp.StripRule</a></code>, <code><a href="nltk.chunk.regexp.UnChunkRule.html">nltk.chunk.regexp.UnChunkRule</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">RegexpChunkRule</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L255" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.chunk.regexp.ChunkRule.html">nltk.chunk.regexp.ChunkRule</a></code>, <code><a href="nltk.chunk.regexp.ChunkRuleWithContext.html">nltk.chunk.regexp.ChunkRuleWithContext</a></code>, <code><a href="nltk.chunk.regexp.ExpandLeftRule.html">nltk.chunk.regexp.ExpandLeftRule</a></code>, <code><a href="nltk.chunk.regexp.ExpandRightRule.html">nltk.chunk.regexp.ExpandRightRule</a></code>, <code><a href="nltk.chunk.regexp.MergeRule.html">nltk.chunk.regexp.MergeRule</a></code>, <code><a href="nltk.chunk.regexp.SplitRule.html">nltk.chunk.regexp.SplitRule</a></code>, <code><a href="nltk.chunk.regexp.StripRule.html">nltk.chunk.regexp.StripRule</a></code>, <code><a href="nltk.chunk.regexp.UnChunkRule.html">nltk.chunk.regexp.UnChunkRule</a></code></p>
         <p><a href="classIndex.html#nltk.chunk.regexp.RegexpChunkRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A rule specifying how to modify the chunking in a ``ChunkString``,
+        <div><p>A rule specifying how to modify the chunking in a <tt class="rst-docutils literal">ChunkString</tt>,
 using a transformational regular expression.  The
-``RegexpChunkRule`` class itself can be used to implement any
+<tt class="rst-docutils literal">RegexpChunkRule</tt> class itself can be used to implement any
 transformational rule based on regular expressions.  There are
 also a number of subclasses, which can be used to implement
-simpler types of rules, based on matching regular expressions.
-
-Each ``RegexpChunkRule`` has a regular expression and a
-replacement expression.  When a ``RegexpChunkRule`` is "applied"
-to a ``ChunkString``, it searches the ``ChunkString`` for any
+simpler types of rules, based on matching regular expressions.</p>
+<p>Each <tt class="rst-docutils literal">RegexpChunkRule</tt> has a regular expression and a
+replacement expression.  When a <tt class="rst-docutils literal">RegexpChunkRule</tt> is "applied"
+to a <tt class="rst-docutils literal">ChunkString</tt>, it searches the <tt class="rst-docutils literal">ChunkString</tt> for any
 substring that matches the regular expression, and replaces it
 using the replacement expression.  This search/replace operation
-has the same semantics as ``re.sub``.
-
-Each ``RegexpChunkRule`` also has a description string, which
+has the same semantics as <tt class="rst-docutils literal">re.sub</tt>.</p>
+<p>Each <tt class="rst-docutils literal">RegexpChunkRule</tt> also has a description string, which
 gives a short (typically less than 75 characters) description of
-the purpose of the rule.
-
-This transformation defined by this ``RegexpChunkRule`` should
-only add and remove braces; it should *not* modify the sequence
+the purpose of the rule.</p>
+<p>This transformation defined by this <tt class="rst-docutils literal">RegexpChunkRule</tt> should
+only add and remove braces; it should <em>not</em> modify the sequence
 of angle-bracket delimited tags.  Furthermore, this transformation
-may not result in nested or mismatched bracketing.</p></div>
+may not result in nested or mismatched bracketing.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id108">
+        <table class="children sortable" id="id111">
   
   
   <tr class="staticmethod">
     
     <td>Static Method</td>
     <td><code><a href="#fromstring">fromstring</a></code></td>
-    <td><span>Create a RegexpChunkRule from a string description. Currently, the following formats are supported::</span></td>
+    <td><span>Create a RegexpChunkRule from a string description. Currently, the following formats are supported:</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -112,12 +110,12 @@ may not result in nested or mismatched bracketing.</p></div>
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a string representation of this rule.  It has the form::</span></td>
+    <td><span>Return a string representation of this rule.  It has the form:</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#apply">apply</a></code></td>
-    <td><span>Apply this rule to the given ``ChunkString``.  See the class reference documentation for a description of what it means to apply a rule.</span></td>
+    <td><span>Apply this rule to the given <tt class="rst-docutils literal">ChunkString</tt>.  See the class reference documentation for a description of what it means to apply a rule.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -159,7 +157,7 @@ may not result in nested or mismatched bracketing.</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">fromstring</span>(s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L349">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L349">
       
       (source)
     </a>
@@ -167,21 +165,22 @@ may not result in nested or mismatched bracketing.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a RegexpChunkRule from a string description.
-Currently, the following formats are supported::
-
-  {regexp}         # chunk rule
-  }regexp{         # strip rule
-  regexp}{regexp   # split rule
-  regexp{}regexp   # merge rule
-
-Where ``regexp`` is a regular expression for the rule.  Any
-text following the comment marker (``#``) will be used as
-the rule's description:
-
-&gt;&gt;&gt; from nltk.chunk.regexp import RegexpChunkRule
-&gt;&gt;&gt; RegexpChunkRule.fromstring('{&lt;DT&gt;?&lt;NN.*&gt;+}')
-&lt;ChunkRule: '&lt;DT&gt;?&lt;NN.*&gt;+'&gt;</p></div>
+    <div><p>Create a RegexpChunkRule from a string description.
+Currently, the following formats are supported:</p>
+<pre class="rst-literal-block">
+{regexp}         # chunk rule
+}regexp{         # strip rule
+regexp}{regexp   # split rule
+regexp{}regexp   # merge rule
+</pre>
+<p>Where <tt class="rst-docutils literal">regexp</tt> is a regular expression for the rule.  Any
+text following the comment marker (<tt class="rst-docutils literal">#</tt>) will be used as
+the rule's description:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.chunk.regexp <span class="py-keyword">import</span> RegexpChunkRule
+<span class="py-prompt">&gt;&gt;&gt; </span>RegexpChunkRule.fromstring(<span class="py-string">'{&lt;DT&gt;?&lt;NN.*&gt;+}'</span>)
+<span class="py-output">&lt;ChunkRule: '&lt;DT&gt;?&lt;NN.*&gt;+'&gt;</span>
+</pre></div>
   </div>
 </div><div class="basemethod">
   
@@ -195,7 +194,7 @@ the rule's description:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, regexp, repl, descr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L281">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L281">
       
       (source)
     </a>
@@ -203,21 +202,14 @@ the rule's description:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.chunk.regexp.ChunkRule.html">nltk.chunk.regexp.ChunkRule</a></code>, <code><a href="nltk.chunk.regexp.ChunkRuleWithContext.html">nltk.chunk.regexp.ChunkRuleWithContext</a></code>, <code><a href="nltk.chunk.regexp.ExpandLeftRule.html">nltk.chunk.regexp.ExpandLeftRule</a></code>, <code><a href="nltk.chunk.regexp.ExpandRightRule.html">nltk.chunk.regexp.ExpandRightRule</a></code>, <code><a href="nltk.chunk.regexp.MergeRule.html">nltk.chunk.regexp.MergeRule</a></code>, <code><a href="nltk.chunk.regexp.SplitRule.html">nltk.chunk.regexp.SplitRule</a></code>, <code><a href="nltk.chunk.regexp.StripRule.html">nltk.chunk.regexp.StripRule</a></code>, <code><a href="nltk.chunk.regexp.UnChunkRule.html">nltk.chunk.regexp.UnChunkRule</a></code></div>
     
-    <div><p class="pre">Construct a new RegexpChunkRule.
-
-:type regexp: regexp or str
-:param regexp: The regular expression for this ``RegexpChunkRule``.
-    When this rule is applied to a ``ChunkString``, any
-    substring that matches ``regexp`` will be replaced using
-    the replacement string ``repl``.  Note that this must be a
-    normal regular expression, not a tag pattern.
-:type repl: str
-:param repl: The replacement expression for this ``RegexpChunkRule``.
-    When this rule is applied to a ``ChunkString``, any substring
-    that matches ``regexp`` will be replaced using ``repl``.
-:type descr: str
-:param descr: A short description of the purpose and/or effect
-    of this rule.</p></div>
+    <div>Construct a new RegexpChunkRule.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">regexp:</span>regexp or str</td><td class="fieldArgDesc">The regular expression for this <tt class="rst-docutils literal">RegexpChunkRule</tt>.
+When this rule is applied to a <tt class="rst-docutils literal">ChunkString</tt>, any
+substring that matches <tt class="rst-docutils literal">regexp</tt> will be replaced using
+the replacement string <tt class="rst-docutils literal">repl</tt>.  Note that this must be a
+normal regular expression, not a tag pattern.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">repl:</span>str</td><td class="fieldArgDesc">The replacement expression for this <tt class="rst-docutils literal">RegexpChunkRule</tt>.
+When this rule is applied to a <tt class="rst-docutils literal">ChunkString</tt>, any substring
+that matches <tt class="rst-docutils literal">regexp</tt> will be replaced using <tt class="rst-docutils literal">repl</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">descr:</span>str</td><td class="fieldArgDesc">A short description of the purpose and/or effect
+of this rule.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -231,7 +223,7 @@ the rule's description:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L329">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L329">
       
       (source)
     </a>
@@ -239,15 +231,14 @@ the rule's description:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.chunk.regexp.ChunkRule.html">nltk.chunk.regexp.ChunkRule</a></code>, <code><a href="nltk.chunk.regexp.ChunkRuleWithContext.html">nltk.chunk.regexp.ChunkRuleWithContext</a></code>, <code><a href="nltk.chunk.regexp.ExpandLeftRule.html">nltk.chunk.regexp.ExpandLeftRule</a></code>, <code><a href="nltk.chunk.regexp.ExpandRightRule.html">nltk.chunk.regexp.ExpandRightRule</a></code>, <code><a href="nltk.chunk.regexp.MergeRule.html">nltk.chunk.regexp.MergeRule</a></code>, <code><a href="nltk.chunk.regexp.SplitRule.html">nltk.chunk.regexp.SplitRule</a></code>, <code><a href="nltk.chunk.regexp.StripRule.html">nltk.chunk.regexp.StripRule</a></code>, <code><a href="nltk.chunk.regexp.UnChunkRule.html">nltk.chunk.regexp.UnChunkRule</a></code></div>
     
-    <div><p class="pre">Return a string representation of this rule.  It has the form::
-
-    &lt;RegexpChunkRule: '{&lt;IN|VB.*&gt;}'-&gt;'&lt;IN&gt;'&gt;
-
-Note that this representation does not include the
+    <div><p>Return a string representation of this rule.  It has the form:</p>
+<pre class="rst-literal-block">
+&lt;RegexpChunkRule: '{&lt;IN|VB.*&gt;}'-&gt;'&lt;IN&gt;'&gt;
+</pre>
+<p>Note that this representation does not include the
 description string; that string can be accessed
-separately with the ``descr()`` method.
-
-:rtype: str</p></div>
+separately with the <tt class="rst-docutils literal">descr()</tt> method.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -261,7 +252,7 @@ separately with the ``descr()`` method.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply</span>(self, chunkstr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L305">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L305">
       
       (source)
     </a>
@@ -269,15 +260,10 @@ separately with the ``descr()`` method.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Apply this rule to the given ``ChunkString``.  See the
+    <div>Apply this rule to the given <tt class="rst-docutils literal">ChunkString</tt>.  See the
 class reference documentation for a description of what it
-means to apply a rule.
-
-:type chunkstr: ChunkString
-:param chunkstr: The chunkstring to which this rule is applied.
-:rtype: None
-:raise ValueError: If this transformation generated an
-    invalid chunkstring.</p></div>
+means to apply a rule.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chunkstr:</span>ChunkString</td><td class="fieldArgDesc">The chunkstring to which this rule is applied.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>If this transformation generated an
+invalid chunkstring.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -291,7 +277,7 @@ means to apply a rule.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">descr</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L320">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L320">
       
       (source)
     </a>
@@ -299,10 +285,8 @@ means to apply a rule.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a short description of the purpose and/or effect of
-this rule.
-
-:rtype: str</p></div>
+    <div>Return a short description of the purpose and/or effect of
+this rule.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -316,7 +300,7 @@ this rule.
   <div class="functionHeader">
     
     <span class="py-defname">_descr</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L302">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L302">
       
       (source)
     </a>
@@ -338,7 +322,7 @@ this rule.
   <div class="functionHeader">
     
     <span class="py-defname">_regexp</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L303">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L303">
       
       (source)
     </a>
@@ -360,7 +344,7 @@ this rule.
   <div class="functionHeader">
     
     <span class="py-defname">_repl</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L301">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L301">
       
       (source)
     </a>
@@ -380,7 +364,7 @@ this rule.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

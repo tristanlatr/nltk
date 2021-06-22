@@ -65,43 +65,38 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">AlignedSent</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L15" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AlignedSent</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L15" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.api.AlignedSent">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Return an aligned sentence object, which encapsulates two sentences
-along with an ``Alignment`` between them.
-
-Typically used in machine translation to represent a sentence and
-its translation.
-
-    &gt;&gt;&gt; from nltk.translate import AlignedSent, Alignment
-    &gt;&gt;&gt; algnsent = AlignedSent(['klein', 'ist', 'das', 'Haus'],
-    ...     ['the', 'house', 'is', 'small'], Alignment.fromstring('0-3 1-2 2-0 3-1'))
-    &gt;&gt;&gt; algnsent.words
-    ['klein', 'ist', 'das', 'Haus']
-    &gt;&gt;&gt; algnsent.mots
-    ['the', 'house', 'is', 'small']
-    &gt;&gt;&gt; algnsent.alignment
-    Alignment([(0, 3), (1, 2), (2, 0), (3, 1)])
-    &gt;&gt;&gt; from nltk.corpus import comtrans
-    &gt;&gt;&gt; print(comtrans.aligned_sents()[54])
-    &lt;AlignedSent: 'Weshalb also sollten...' -&gt; 'So why should EU arm...'&gt;
-    &gt;&gt;&gt; print(comtrans.aligned_sents()[54].alignment)
-    0-0 0-1 1-0 2-2 3-4 3-5 4-7 5-8 6-3 7-9 8-9 9-10 9-11 10-12 11-6 12-6 13-13
-
-:param words: Words in the target language sentence
-:type words: list(str)
-:param mots: Words in the source language sentence
-:type mots: list(str)
-:param alignment: Word-level alignments between ``words`` and ``mots``.
-    Each alignment is represented as a 2-tuple (words_index, mots_index).
-:type alignment: Alignment</p></div>
+        <div><p>Return an aligned sentence object, which encapsulates two sentences
+along with an <tt class="rst-docutils literal">Alignment</tt> between them.</p>
+<p>Typically used in machine translation to represent a sentence and
+its translation.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.translate <span class="py-keyword">import</span> AlignedSent, Alignment
+<span class="py-prompt">&gt;&gt;&gt; </span>algnsent = AlignedSent([<span class="py-string">'klein'</span>, <span class="py-string">'ist'</span>, <span class="py-string">'das'</span>, <span class="py-string">'Haus'</span>],
+<span class="py-more">... </span>    [<span class="py-string">'the'</span>, <span class="py-string">'house'</span>, <span class="py-string">'is'</span>, <span class="py-string">'small'</span>], Alignment.fromstring(<span class="py-string">'0-3 1-2 2-0 3-1'</span>))
+<span class="py-prompt">&gt;&gt;&gt; </span>algnsent.words
+<span class="py-output">['klein', 'ist', 'das', 'Haus']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>algnsent.mots
+<span class="py-output">['the', 'house', 'is', 'small']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>algnsent.alignment
+<span class="py-output">Alignment([(0, 3), (1, 2), (2, 0), (3, 1)])</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> comtrans
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(comtrans.aligned_sents()[54])
+<span class="py-output">&lt;AlignedSent: 'Weshalb also sollten...' -&gt; 'So why should EU arm...'&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(comtrans.aligned_sents()[54].alignment)
+<span class="py-output">0-0 0-1 1-0 2-2 3-4 3-5 4-7 5-8 6-3 7-9 8-9 9-10 9-11 10-12 11-6 12-6 13-13</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">words</span></td><td class="fieldArgDesc">Words in the target language sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mots</span></td><td class="fieldArgDesc">Words in the source language sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alignment</span></td><td class="fieldArgDesc">Word-level alignments between <tt class="rst-docutils literal">words</tt> and <tt class="rst-docutils literal">mots</tt>.
+Each alignment is represented as a 2-tuple (words_index, mots_index).</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1865">
+        <table class="children sortable" id="id1869">
   
   
   <tr class="method">
@@ -113,12 +108,12 @@ its translation.
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a string representation for this ``AlignedSent``.</span></td>
+    <td><span>Return a string representation for this <tt class="rst-docutils literal">AlignedSent</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__str__">__str__</a></code></td>
-    <td><span>Return a human-readable string representation for this ``AlignedSent``.</span></td>
+    <td><span>Return a human-readable string representation for this <tt class="rst-docutils literal">AlignedSent</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -148,7 +143,7 @@ its translation.
     
     <td>Method</td>
     <td><code><a href="#_repr_svg_">_repr_svg_</a></code></td>
-    <td><span>Ipython magic : show SVG representation of this ``AlignedSent``.</span></td>
+    <td><span>Ipython magic : show SVG representation of this <tt class="rst-docutils literal">AlignedSent</tt>.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -195,7 +190,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, words, mots, alignment=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L47">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L47">
       
       (source)
     </a>
@@ -217,7 +212,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L73">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L73">
       
       (source)
     </a>
@@ -225,9 +220,7 @@ its translation.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation for this ``AlignedSent``.
-
-:rtype: str</p></div>
+    <div>Return a string representation for this <tt class="rst-docutils literal">AlignedSent</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -241,7 +234,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L143">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L143">
       
       (source)
     </a>
@@ -249,9 +242,7 @@ its translation.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a human-readable string representation for this ``AlignedSent``.
-
-:rtype: str</p></div>
+    <div>Return a human-readable string representation for this <tt class="rst-docutils literal">AlignedSent</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -265,7 +256,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">invert</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L153">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L153">
       
       (source)
     </a>
@@ -273,9 +264,7 @@ its translation.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the aligned sentence pair, reversing the directionality
-
-:rtype: AlignedSent</p></div>
+    <div>Return the aligned sentence pair, reversing the directionality<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">AlignedSent</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -288,8 +277,8 @@ its translation.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">alignment</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L51">
+    <span class="py-defname">alignment</span>: Alignment =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L44">
       
       (source)
     </a>
@@ -311,7 +300,7 @@ its translation.
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">mots</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L60">
       
       (source)
     </a>
@@ -333,7 +322,7 @@ its translation.
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">words</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L56">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L56">
       
       (source)
     </a>
@@ -355,7 +344,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_alignment</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L64">
       
       (source)
     </a>
@@ -377,7 +366,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_repr_svg_</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L124">
       
       (source)
     </a>
@@ -385,7 +374,7 @@ its translation.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Ipython magic : show SVG representation of this ``AlignedSent``.</p></div>
+    <div>Ipython magic : show SVG representation of this <tt class="rst-docutils literal">AlignedSent</tt>.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -399,7 +388,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_set_alignment</span>(self, alignment):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L67">
       
       (source)
     </a>
@@ -421,7 +410,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_to_dot</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L84">
       
       (source)
     </a>
@@ -429,7 +418,7 @@ its translation.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Dot representation of the aligned sentence</p></div>
+    <div>Dot representation of the aligned sentence</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -443,7 +432,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-defname">_alignment</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L69">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L69">
       
       (source)
     </a>
@@ -465,7 +454,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-defname">_mots</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L49">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L49">
       
       (source)
     </a>
@@ -487,7 +476,7 @@ its translation.
   <div class="functionHeader">
     
     <span class="py-defname">_words</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L48">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L48">
       
       (source)
     </a>
@@ -507,7 +496,7 @@ its translation.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

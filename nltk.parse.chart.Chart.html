@@ -65,40 +65,30 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Chart</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L433" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.ccg.chart.CCGChart.html">nltk.ccg.chart.CCGChart</a></code>, <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code>, <code><a href="nltk.parse.featurechart.FeatureChart.html">nltk.parse.featurechart.FeatureChart</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Chart</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L433" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.ccg.chart.CCGChart.html">nltk.ccg.chart.CCGChart</a></code>, <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code>, <code><a href="nltk.parse.featurechart.FeatureChart.html">nltk.parse.featurechart.FeatureChart</a></code></p>
         <p><a href="classIndex.html#nltk.parse.chart.Chart">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A blackboard for hypotheses about the syntactic constituents of a
+        <div><p>A blackboard for hypotheses about the syntactic constituents of a
 sentence.  A chart contains a set of edges, and each edge encodes
 a single hypothesis about the structure of some portion of the
-sentence.
-
-The ``select`` method can be used to select a specific collection
-of edges.  For example ``chart.select(is_complete=True, start=0)``
+sentence.</p>
+<p>The <tt class="rst-docutils literal">select</tt> method can be used to select a specific collection
+of edges.  For example <tt class="rst-docutils literal">chart.select(is_complete=True, start=0)</tt>
 yields all complete edges whose start indices are 0.  To ensure
-the efficiency of these selection operations, ``Chart`` dynamically
+the efficiency of these selection operations, <tt class="rst-docutils literal">Chart</tt> dynamically
 creates and maintains an index for each set of attributes that
-have been selected on.
-
-In order to reconstruct the trees that are represented by an edge,
+have been selected on.</p>
+<p>In order to reconstruct the trees that are represented by an edge,
 the chart associates each edge with a set of child pointer lists.
 A child pointer list is a list of the edges that license an
-edge's right-hand side.
-
-:ivar _tokens: The sentence that the chart covers.
-:ivar _num_leaves: The number of tokens.
-:ivar _edges: A list of the edges in the chart
-:ivar _edge_to_cpls: A dictionary mapping each edge to a set
-    of child pointer lists that are associated with that edge.
-:ivar _indexes: A dictionary mapping tuples of edge attributes
-    to indices, where each index maps the corresponding edge
-    attribute values to lists of edges.</p></div>
+edge's right-hand side.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id846">
+        <table class="children sortable" id="id849">
   
   
   <tr class="method">
@@ -120,7 +110,7 @@ edge's right-hand side.
     
     <td>Method</td>
     <td><code><a href="#edges">edges</a></code></td>
-    <td><span>Return a list of all edges in this chart.  New edges that are added to the chart after the call to edges() will *not* be contained in this list.</span></td>
+    <td><span>Return a list of all edges in this chart.  New edges that are added to the chart after the call to edges() will <em>not</em> be contained in this list.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -165,7 +155,7 @@ edge's right-hand side.
     
     <td>Method</td>
     <td><code><a href="#parses">parses</a></code></td>
-    <td><span>Return an iterator of the complete tree structures that span the entire chart, and whose root node is ``root``.</span></td>
+    <td><span>Return an iterator of the complete tree structures that span the entire chart, and whose root node is <tt class="rst-docutils literal">root</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -180,7 +170,7 @@ edge's right-hand side.
     
     <td>Method</td>
     <td><code><a href="#pretty_format_leaves">pretty_format_leaves</a></code></td>
-    <td><span>Return a pretty-printed string representation of this chart's leaves.  This string can be used as a header for calls to ``pretty_format_edge``.</span></td>
+    <td><span>Return a pretty-printed string representation of this chart's leaves.  This string can be used as a header for calls to <tt class="rst-docutils literal">pretty_format_edge</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -190,12 +180,12 @@ edge's right-hand side.
     
     <td>Method</td>
     <td><code><a href="#trees">trees</a></code></td>
-    <td><span>Return an iterator of the tree structures that are associated with ``edge``.</span></td>
+    <td><span>Return an iterator of the tree structures that are associated with <tt class="rst-docutils literal">edge</tt>.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_add_index">_add_index</a></code></td>
-    <td><span>A helper function for ``select``, which creates a new index for a given set of attributes (aka restriction keys).</span></td>
+    <td><span>A helper function for <tt class="rst-docutils literal">select</tt>, which creates a new index for a given set of attributes (aka restriction keys).</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -205,37 +195,40 @@ edge's right-hand side.
     
     <td>Method</td>
     <td><code><a href="#_register_with_indexes">_register_with_indexes</a></code></td>
-    <td><span>A helper function for ``insert``, which registers the new edge with all existing indexes.</span></td>
+    <td><span>A helper function for <tt class="rst-docutils literal">insert</tt>, which registers the new edge with all existing indexes.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_trees">_trees</a></code></td>
-    <td><span>A helper function for ``trees``.</span></td>
+    <td><span>A helper function for <tt class="rst-docutils literal">trees</tt>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_edge_to_cpls">_edge_to_cpls</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A dictionary mapping each edge to a set
+of child pointer lists that are associated with that edge.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_edges">_edges</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list of the edges in the chart</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_indexes">_indexes</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A dictionary mapping tuples of edge attributes
+to indices, where each index maps the corresponding edge
+attribute values to lists of edges.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_num_leaves">_num_leaves</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The number of tokens.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_tokens">_tokens</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The sentence that the chart covers.</span></td>
   </tr>
 </table>
         
@@ -257,7 +250,7 @@ edge's right-hand side.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L462">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L462">
       
       (source)
     </a>
@@ -265,11 +258,8 @@ edge's right-hand side.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.ccg.chart.CCGChart.html">nltk.ccg.chart.CCGChart</a></code>, <code><a href="nltk.parse.featurechart.InstantiateVarsChart.html">nltk.parse.featurechart.InstantiateVarsChart</a></code></div>
     
-    <div><p class="pre">Construct a new chart. The chart is initialized with the
-leaf edges corresponding to the terminal leaves.
-
-:type tokens: list
-:param tokens: The sentence that this chart will be used to parse.</p></div>
+    <div>Construct a new chart. The chart is initialized with the
+leaf edges corresponding to the terminal leaves.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list</td><td class="fieldArgDesc">The sentence that this chart will be used to parse.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -283,7 +273,7 @@ leaf edges corresponding to the terminal leaves.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">child_pointer_lists</span>(self, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L754">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L754">
       
       (source)
     </a>
@@ -291,11 +281,9 @@ leaf edges corresponding to the terminal leaves.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the set of child pointer lists for the given edge.
+    <div>Return the set of child pointer lists for the given edge.
 Each child pointer list is a list of edges that have
-been used to form this edge.
-
-:rtype: list(list(EdgeI))</p></div>
+been used to form this edge.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(EdgeI))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -309,7 +297,7 @@ been used to form this edge.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dot_digraph</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L846">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L846">
       
       (source)
     </a>
@@ -331,7 +319,7 @@ been used to form this edge.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">edges</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L524">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L524">
       
       (source)
     </a>
@@ -339,12 +327,9 @@ been used to form this edge.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code></div>
     
-    <div><p class="pre">Return a list of all edges in this chart.  New edges
+    <div>Return a list of all edges in this chart.  New edges
 that are added to the chart after the call to edges()
-will *not* be contained in this list.
-
-:rtype: list(EdgeI)
-:see: ``iteredges``, ``select``</p></div>
+will <em>not</em> be contained in this list.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">iteredges</tt>, <tt class="rst-docutils literal">select</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -358,7 +343,7 @@ will *not* be contained in this list.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">initialize</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L477">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L477">
       
       (source)
     </a>
@@ -366,7 +351,7 @@ will *not* be contained in this list.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code>, <code><a href="nltk.parse.featurechart.InstantiateVarsChart.html">nltk.parse.featurechart.InstantiateVarsChart</a></code></div>
     
-    <div><p class="pre">Clear the chart.</p></div>
+    <div>Clear the chart.</div>
   </div>
 </div><div class="basemethod">
   
@@ -380,7 +365,7 @@ will *not* be contained in this list.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">insert</span>(self, edge, *child_pointer_lists):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L634">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L634">
       
       (source)
     </a>
@@ -388,18 +373,12 @@ will *not* be contained in this list.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.featurechart.InstantiateVarsChart.html">nltk.parse.featurechart.InstantiateVarsChart</a></code></div>
     
-    <div><p class="pre">Add a new edge to the chart, and return True if this operation
+    <div>Add a new edge to the chart, and return True if this operation
 modified the chart.  In particular, return true iff the chart
-did not already contain ``edge``, or if it did not already associate
-``child_pointer_lists`` with ``edge``.
-
-:type edge: EdgeI
-:param edge: The new edge
-:type child_pointer_lists: sequence of tuple(EdgeI)
-:param child_pointer_lists: A sequence of lists of the edges that
-    were used to form this edge.  This list is used to reconstruct
-    the trees (or partial trees) that are associated with ``edge``.
-:rtype: bool</p></div>
+did not already contain <tt class="rst-docutils literal">edge</tt>, or if it did not already associate
+<tt class="rst-docutils literal">child_pointer_lists</tt> with <tt class="rst-docutils literal">edge</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edge:</span>EdgeI</td><td class="fieldArgDesc">The new edge</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">child_pointer_lists:</span>sequence of tuple(EdgeI)</td><td class="fieldArgDesc">A sequence of lists of the edges that
+were used to form this edge.  This list is used to reconstruct
+the trees (or partial trees) that are associated with <tt class="rst-docutils literal">edge</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -413,7 +392,7 @@ did not already contain ``edge``, or if it did not already associate
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">insert_with_backpointer</span>(self, new_edge, previous_edge, child_edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L626">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L626">
       
       (source)
     </a>
@@ -421,7 +400,7 @@ did not already contain ``edge``, or if it did not already associate
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a new edge to the chart, using a pointer to the previous edge.</p></div>
+    <div>Add a new edge to the chart, using a pointer to the previous edge.</div>
   </div>
 </div><div class="basemethod">
   
@@ -435,7 +414,7 @@ did not already contain ``edge``, or if it did not already associate
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">iteredges</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L535">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L535">
       
       (source)
     </a>
@@ -443,12 +422,9 @@ did not already contain ``edge``, or if it did not already associate
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code></div>
     
-    <div><p class="pre">Return an iterator over the edges in this chart.  It is
+    <div>Return an iterator over the edges in this chart.  It is
 not guaranteed that new edges which are added to the
-chart before the iterator is exhausted will also be generated.
-
-:rtype: iter(EdgeI)
-:see: ``edges``, ``select``</p></div>
+chart before the iterator is exhausted will also be generated.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">edges</tt>, <tt class="rst-docutils literal">select</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -462,7 +438,7 @@ chart before the iterator is exhausted will also be generated.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">leaf</span>(self, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L503">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L503">
       
       (source)
     </a>
@@ -470,9 +446,7 @@ chart before the iterator is exhausted will also be generated.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the leaf value of the word at the given index.
-
-:rtype: str</p></div>
+    <div>Return the leaf value of the word at the given index.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -486,7 +460,7 @@ chart before the iterator is exhausted will also be generated.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">leaves</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L511">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L511">
       
       (source)
     </a>
@@ -494,10 +468,8 @@ chart before the iterator is exhausted will also be generated.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of the leaf values of each word in the
-chart's sentence.
-
-:rtype: list(str)</p></div>
+    <div>Return a list of the leaf values of each word in the
+chart's sentence.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -511,7 +483,7 @@ chart's sentence.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">num_edges</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L549">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L549">
       
       (source)
     </a>
@@ -519,9 +491,7 @@ chart's sentence.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the number of edges contained in this chart.
-
-:rtype: int</p></div>
+    <div>Return the number of edges contained in this chart.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -535,7 +505,7 @@ chart's sentence.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">num_leaves</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L495">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L495">
       
       (source)
     </a>
@@ -543,9 +513,7 @@ chart's sentence.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the number of words in this chart's sentence.
-
-:rtype: int</p></div>
+    <div>Return the number of words in this chart's sentence.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -559,7 +527,7 @@ chart's sentence.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parses</span>(self, root, tree_class=Tree):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L674">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L674">
       
       (source)
     </a>
@@ -567,8 +535,8 @@ chart's sentence.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.featurechart.FeatureChart.html">nltk.parse.featurechart.FeatureChart</a></code></div>
     
-    <div><p class="pre">Return an iterator of the complete tree structures that span
-the entire chart, and whose root node is ``root``.</p></div>
+    <div>Return an iterator of the complete tree structures that span
+the entire chart, and whose root node is <tt class="rst-docutils literal">root</tt>.</div>
   </div>
 </div><div class="basemethod">
   
@@ -582,7 +550,7 @@ the entire chart, and whose root node is ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pretty_format</span>(self, width=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L821">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L821">
       
       (source)
     </a>
@@ -590,11 +558,8 @@ the entire chart, and whose root node is ``root``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a pretty-printed string representation of this chart.
-
-:param width: The number of characters allotted to each
-    index in the sentence.
-:rtype: str</p></div>
+    <div>Return a pretty-printed string representation of this chart.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">width</span></td><td class="fieldArgDesc">The number of characters allotted to each
+index in the sentence.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -608,7 +573,7 @@ the entire chart, and whose root node is ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pretty_format_edge</span>(self, edge, width=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L768">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L768">
       
       (source)
     </a>
@@ -616,12 +581,9 @@ the entire chart, and whose root node is ``root``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a pretty-printed string representation of a given edge
-in this chart.
-
-:rtype: str
-:param width: The number of characters allotted to each
-    index in the sentence.</p></div>
+    <div>Return a pretty-printed string representation of a given edge
+in this chart.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">width</span></td><td class="fieldArgDesc">The number of characters allotted to each
+index in the sentence.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -635,7 +597,7 @@ in this chart.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pretty_format_leaves</span>(self, width=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L802">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L802">
       
       (source)
     </a>
@@ -643,9 +605,9 @@ in this chart.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a pretty-printed string representation of this
+    <div>Return a pretty-printed string representation of this
 chart's leaves.  This string can be used as a header
-for calls to ``pretty_format_edge``.</p></div>
+for calls to <tt class="rst-docutils literal">pretty_format_edge</tt>.</div>
   </div>
 </div><div class="basemethod">
   
@@ -659,7 +621,7 @@ for calls to ``pretty_format_edge``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">select</span>(self, **restrictions):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L557">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L557">
       
       (source)
     </a>
@@ -667,26 +629,14 @@ for calls to ``pretty_format_edge``.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code>, <code><a href="nltk.parse.featurechart.FeatureChart.html">nltk.parse.featurechart.FeatureChart</a></code></div>
     
-    <div><p class="pre">Return an iterator over the edges in this chart.  Any
+    <div>Return an iterator over the edges in this chart.  Any
 new edges that are added to the chart before the iterator
-is exahusted will also be generated.  ``restrictions``
+is exahusted will also be generated.  <tt class="rst-docutils literal">restrictions</tt>
 can be used to restrict the set of edges that will be
-generated.
-
-:param span: Only generate edges ``e`` where ``e.span()==span``
-:param start: Only generate edges ``e`` where ``e.start()==start``
-:param end: Only generate edges ``e`` where ``e.end()==end``
-:param length: Only generate edges ``e`` where ``e.length()==length``
-:param lhs: Only generate edges ``e`` where ``e.lhs()==lhs``
-:param rhs: Only generate edges ``e`` where ``e.rhs()==rhs``
-:param nextsym: Only generate edges ``e`` where
-    ``e.nextsym()==nextsym``
-:param dot: Only generate edges ``e`` where ``e.dot()==dot``
-:param is_complete: Only generate edges ``e`` where
-    ``e.is_complete()==is_complete``
-:param is_incomplete: Only generate edges ``e`` where
-    ``e.is_incomplete()==is_incomplete``
-:rtype: iter(EdgeI)</p></div>
+generated.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">restrictions</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">span</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where <tt class="rst-docutils literal"><span class="pre">e.span()==span</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where <tt class="rst-docutils literal"><span class="pre">e.start()==start</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">end</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where <tt class="rst-docutils literal"><span class="pre">e.end()==end</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">length</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where <tt class="rst-docutils literal"><span class="pre">e.length()==length</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lhs</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where <tt class="rst-docutils literal"><span class="pre">e.lhs()==lhs</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rhs</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where <tt class="rst-docutils literal"><span class="pre">e.rhs()==rhs</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nextsym</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where
+<tt class="rst-docutils literal"><span class="pre">e.nextsym()==nextsym</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dot</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where <tt class="rst-docutils literal"><span class="pre">e.dot()==dot</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">is_complete</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where
+<tt class="rst-docutils literal"><span class="pre">e.is_complete()==is_complete</span></tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">is_incomplete</span></td><td class="fieldArgDesc">Only generate edges <tt class="rst-docutils literal">e</tt> where
+<tt class="rst-docutils literal"><span class="pre">e.is_incomplete()==is_incomplete</span></tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -700,7 +650,7 @@ generated.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">trees</span>(self, edge, tree_class=Tree, complete=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L683">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L683">
       
       (source)
     </a>
@@ -708,18 +658,15 @@ generated.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return an iterator of the tree structures that are associated
-with ``edge``.
-
-If ``edge`` is incomplete, then the unexpanded children will be
+    <div><p>Return an iterator of the tree structures that are associated
+with <tt class="rst-docutils literal">edge</tt>.</p>
+<p>If <tt class="rst-docutils literal">edge</tt> is incomplete, then the unexpanded children will be
 encoded as childless subtrees, whose node value is the
-corresponding terminal or nonterminal.
-
-:rtype: list(Tree)
-:note: If two trees share a common subtree, then the same
-    Tree may be used to encode that subtree in
-    both trees.  If you need to eliminate this subtree
-    sharing, then create a deep copy of each tree.</p></div>
+corresponding terminal or nonterminal.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Tree)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">If two trees share a common subtree, then the same
+Tree may be used to encode that subtree in
+both trees.  If you need to eliminate this subtree
+sharing, then create a deep copy of each tree.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -733,7 +680,7 @@ corresponding terminal or nonterminal.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_add_index</span>(self, restr_keys):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L595">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L595">
       
       (source)
     </a>
@@ -741,8 +688,8 @@ corresponding terminal or nonterminal.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code>, <code><a href="nltk.parse.featurechart.FeatureChart.html">nltk.parse.featurechart.FeatureChart</a></code></div>
     
-    <div><p class="pre">A helper function for ``select``, which creates a new index for
-a given set of attributes (aka restriction keys).</p></div>
+    <div>A helper function for <tt class="rst-docutils literal">select</tt>, which creates a new index for
+a given set of attributes (aka restriction keys).</div>
   </div>
 </div><div class="basemethod private">
   
@@ -756,7 +703,7 @@ a given set of attributes (aka restriction keys).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_append_edge</span>(self, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L667">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L667">
       
       (source)
     </a>
@@ -778,7 +725,7 @@ a given set of attributes (aka restriction keys).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_register_with_indexes</span>(self, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L613">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L613">
       
       (source)
     </a>
@@ -786,8 +733,8 @@ a given set of attributes (aka restriction keys).</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code>, <code><a href="nltk.parse.featurechart.FeatureChart.html">nltk.parse.featurechart.FeatureChart</a></code></div>
     
-    <div><p class="pre">A helper function for ``insert``, which registers the new
-edge with all existing indexes.</p></div>
+    <div>A helper function for <tt class="rst-docutils literal">insert</tt>, which registers the new
+edge with all existing indexes.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -801,7 +748,7 @@ edge with all existing indexes.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_trees</span>(self, edge, complete, memo, tree_class):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L700">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L700">
       
       (source)
     </a>
@@ -809,11 +756,9 @@ edge with all existing indexes.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.ccg.chart.CCGChart.html">nltk.ccg.chart.CCGChart</a></code></div>
     
-    <div><p class="pre">A helper function for ``trees``.
-
-:param memo: A dictionary used to record the trees that we've
-    generated for each edge, so that when we see an edge more
-    than once, we can reuse the same trees.</p></div>
+    <div>A helper function for <tt class="rst-docutils literal">trees</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">complete</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">memo</span></td><td class="fieldArgDesc">A dictionary used to record the trees that we've
+generated for each edge, so that when we see an edge more
+than once, we can reuse the same trees.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tree_class</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -827,7 +772,7 @@ edge with all existing indexes.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_edge_to_cpls</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L485">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L455">
       
       (source)
     </a>
@@ -835,7 +780,8 @@ edge with all existing indexes.</p></div>
   <div class="functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code></div>
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A dictionary mapping each edge to a set
+of child pointer lists that are associated with that edge.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -849,7 +795,7 @@ edge with all existing indexes.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_edges</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L482">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L454">
       
       (source)
     </a>
@@ -857,7 +803,7 @@ edge with all existing indexes.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A list of the edges in the chart</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -871,7 +817,7 @@ edge with all existing indexes.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_indexes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L489">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L457">
       
       (source)
     </a>
@@ -879,7 +825,9 @@ edge with all existing indexes.</p></div>
   <div class="functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.IncrementalChart.html">nltk.parse.earleychart.IncrementalChart</a></code></div>
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A dictionary mapping tuples of edge attributes
+to indices, where each index maps the corresponding edge
+attribute values to lists of edges.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -893,7 +841,7 @@ edge with all existing indexes.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_num_leaves</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L472">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L453">
       
       (source)
     </a>
@@ -901,7 +849,7 @@ edge with all existing indexes.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The number of tokens.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -915,7 +863,7 @@ edge with all existing indexes.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tokens</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L471">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L452">
       
       (source)
     </a>
@@ -923,7 +871,7 @@ edge with all existing indexes.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The sentence that the chart covers.</div>
   </div>
 </div>
 
@@ -935,7 +883,7 @@ edge with all existing indexes.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

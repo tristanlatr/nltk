@@ -65,36 +65,43 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreebankWordTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L25" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TreebankWordTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L25" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.treebank.TreebankWordTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The Treebank tokenizer uses regular expressions to tokenize text as in Penn Treebank.
-This is the method that is invoked by ``word_tokenize()``.  It assumes that the
-text has already been segmented into sentences, e.g. using ``sent_tokenize()``.
-
-This tokenizer performs the following steps:
-
-- split standard contractions, e.g. ``don't`` -&gt; ``do n't`` and ``they'll`` -&gt; ``they 'll``
-- treat most punctuation characters as separate tokens
-- split off commas and single quotes, when followed by whitespace
-- separate periods that appear at the end of line
-
-    &gt;&gt;&gt; from nltk.tokenize import TreebankWordTokenizer
-    &gt;&gt;&gt; s = '''Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks.'''
-    &gt;&gt;&gt; TreebankWordTokenizer().tokenize(s)
-    ['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York.', 'Please', 'buy', 'me', 'two', 'of', 'them.', 'Thanks', '.']
-    &gt;&gt;&gt; s = "They'll save and invest more."
-    &gt;&gt;&gt; TreebankWordTokenizer().tokenize(s)
-    ['They', "'ll", 'save', 'and', 'invest', 'more', '.']
-    &gt;&gt;&gt; s = "hi, my name can't hello,"
-    &gt;&gt;&gt; TreebankWordTokenizer().tokenize(s)
-    ['hi', ',', 'my', 'name', 'ca', "n't", 'hello', ',']</p></div>
+        <div><p>The Treebank tokenizer uses regular expressions to tokenize text as in Penn Treebank.
+This is the method that is invoked by <tt class="rst-docutils literal">word_tokenize()</tt>.  It assumes that the
+text has already been segmented into sentences, e.g. using <tt class="rst-docutils literal">sent_tokenize()</tt>.</p>
+<p>This tokenizer performs the following steps:</p>
+<ul>
+<li><p class="rst-first">split standard contractions, e.g. <tt class="rst-docutils literal">don't</tt> -&gt; <tt class="rst-docutils literal">do n't</tt> and <tt class="rst-docutils literal">they'll</tt> -&gt; <tt class="rst-docutils literal">they 'll</tt></p>
+</li>
+<li><p class="rst-first">treat most punctuation characters as separate tokens</p>
+</li>
+<li><p class="rst-first">split off commas and single quotes, when followed by whitespace</p>
+</li>
+<li><p class="rst-first">separate periods that appear at the end of line</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> TreebankWordTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">'''Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks.'''</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>TreebankWordTokenizer().tokenize(s)
+<span class="py-output">['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York.', 'Please', 'buy', 'me', 'two', 'of', 'them.', 'Thanks', '.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">"They'll save and invest more."</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>TreebankWordTokenizer().tokenize(s)
+<span class="py-output">['They', "'ll", 'save', 'and', 'invest', 'more', '.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">"hi, my name can't hello,"</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>TreebankWordTokenizer().tokenize(s)
+<span class="py-output">['hi', ',', 'my', 'name', 'ca', "n't", 'hello', ',']</span>
+</pre></blockquote>
+</li>
+</ul>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1851">
+        <table class="children sortable" id="id1855">
   
   
   <tr class="method">
@@ -106,7 +113,7 @@ This tokenizer performs the following steps:
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *s*.</span></td>
+    <td><span>Return a tokenized copy of <em>s</em>.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -158,19 +165,19 @@ This tokenizer performs the following steps:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1852">
+          <table class="children sortable" id="id1856">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -192,7 +199,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">span_tokenize</span>(self, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L136">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L136">
       
       (source)
     </a>
@@ -200,37 +207,39 @@ This tokenizer performs the following steps:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">nltk.tokenize.api.TokenizerI.span_tokenize</a></code></div>
     
-    <div><p class="pre">Uses the post-hoc nltk.tokens.align_tokens to return the offset spans.
-
-    &gt;&gt;&gt; from nltk.tokenize import TreebankWordTokenizer
-    &gt;&gt;&gt; s = '''Good muffins cost $3.88\nin New (York).  Please (buy) me\ntwo of them.\n(Thanks).'''
-    &gt;&gt;&gt; expected = [(0, 4), (5, 12), (13, 17), (18, 19), (19, 23),
-    ... (24, 26), (27, 30), (31, 32), (32, 36), (36, 37), (37, 38),
-    ... (40, 46), (47, 48), (48, 51), (51, 52), (53, 55), (56, 59),
-    ... (60, 62), (63, 68), (69, 70), (70, 76), (76, 77), (77, 78)]
-    &gt;&gt;&gt; list(TreebankWordTokenizer().span_tokenize(s)) == expected
-    True
-    &gt;&gt;&gt; expected = ['Good', 'muffins', 'cost', '$', '3.88', 'in',
-    ... 'New', '(', 'York', ')', '.', 'Please', '(', 'buy', ')',
-    ... 'me', 'two', 'of', 'them.', '(', 'Thanks', ')', '.']
-    &gt;&gt;&gt; [s[start:end] for start, end in TreebankWordTokenizer().span_tokenize(s)] == expected
-    True
-
-    Additional example
-    &gt;&gt;&gt; from nltk.tokenize import TreebankWordTokenizer
-    &gt;&gt;&gt; s = '''I said, "I'd like to buy some ''good muffins" which cost $3.88\n each in New (York)."'''
-    &gt;&gt;&gt; expected = [(0, 1), (2, 6), (6, 7), (8, 9), (9, 10), (10, 12),
-    ... (13, 17), (18, 20), (21, 24), (25, 29), (30, 32), (32, 36),
-    ... (37, 44), (44, 45), (46, 51), (52, 56), (57, 58), (58, 62),
-    ... (64, 68), (69, 71), (72, 75), (76, 77), (77, 81), (81, 82),
-    ... (82, 83), (83, 84)]
-    &gt;&gt;&gt; list(TreebankWordTokenizer().span_tokenize(s)) == expected
-    True
-    &gt;&gt;&gt; expected = ['I', 'said', ',', '"', 'I', "'d", 'like', 'to',
-    ... 'buy', 'some', "''", "good", 'muffins', '"', 'which', 'cost',
-    ... '$', '3.88', 'each', 'in', 'New', '(', 'York', ')', '.', '"']
-    &gt;&gt;&gt; [s[start:end] for start, end in TreebankWordTokenizer().span_tokenize(s)] == expected
-    True</p></div>
+    <div><p>Uses the post-hoc nltk.tokens.align_tokens to return the offset spans.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> TreebankWordTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">'''Good muffins cost $3.88\nin New (York).  Please (buy) me\ntwo of them.\n(Thanks).'''</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>expected = [(0, 4), (5, 12), (13, 17), (18, 19), (19, 23),
+<span class="py-more">... </span>(24, 26), (27, 30), (31, 32), (32, 36), (36, 37), (37, 38),
+<span class="py-more">... </span>(40, 46), (47, 48), (48, 51), (51, 52), (53, 55), (56, 59),
+<span class="py-more">... </span>(60, 62), (63, 68), (69, 70), (70, 76), (76, 77), (77, 78)]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(TreebankWordTokenizer().span_tokenize(s)) == expected
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>expected = [<span class="py-string">'Good'</span>, <span class="py-string">'muffins'</span>, <span class="py-string">'cost'</span>, <span class="py-string">'$'</span>, <span class="py-string">'3.88'</span>, <span class="py-string">'in'</span>,
+<span class="py-more">... </span><span class="py-string">'New'</span>, <span class="py-string">'('</span>, <span class="py-string">'York'</span>, <span class="py-string">')'</span>, <span class="py-string">'.'</span>, <span class="py-string">'Please'</span>, <span class="py-string">'('</span>, <span class="py-string">'buy'</span>, <span class="py-string">')'</span>,
+<span class="py-more">... </span><span class="py-string">'me'</span>, <span class="py-string">'two'</span>, <span class="py-string">'of'</span>, <span class="py-string">'them.'</span>, <span class="py-string">'('</span>, <span class="py-string">'Thanks'</span>, <span class="py-string">')'</span>, <span class="py-string">'.'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>[s[start:end] <span class="py-keyword">for</span> start, end <span class="py-keyword">in</span> TreebankWordTokenizer().span_tokenize(s)] == expected
+<span class="py-output">True</span>
+</pre><p>Additional example
+&gt;&gt;&gt; from nltk.tokenize import TreebankWordTokenizer
+&gt;&gt;&gt; s = '''I said, "I'd like to buy some ''good muffins" which cost $3.88n each in New (York)."'''
+&gt;&gt;&gt; expected = [(0, 1), (2, 6), (6, 7), (8, 9), (9, 10), (10, 12),
+... (13, 17), (18, 20), (21, 24), (25, 29), (30, 32), (32, 36),
+... (37, 44), (44, 45), (46, 51), (52, 56), (57, 58), (58, 62),
+... (64, 68), (69, 71), (72, 75), (76, 77), (77, 81), (81, 82),
+... (82, 83), (83, 84)]
+&gt;&gt;&gt; list(TreebankWordTokenizer().span_tokenize(s)) == expected
+True
+&gt;&gt;&gt; expected = ['I', 'said', ',', '"', 'I', "'d", 'like', 'to',
+... 'buy', 'some', "''", "good", 'muffins', '"', 'which', 'cost',
+... '$', '3.88', 'each', 'in', 'New', '(', 'York', ')', '.', '"']
+&gt;&gt;&gt; [s[start:end] for start, end in TreebankWordTokenizer().span_tokenize(s)] == expected
+True</p>
+</blockquote>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -244,7 +253,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, text, convert_parentheses=False, return_str=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L99">
       
       (source)
     </a>
@@ -252,9 +261,7 @@ This tokenizer performs the following steps:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Return a tokenized copy of *s*.
-
-:rtype: list of str</p></div>
+    <div>Return a tokenized copy of <em>s</em>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -268,7 +275,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">CONTRACTIONS2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L96">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L96">
       
       (source)
     </a>
@@ -290,7 +297,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">CONTRACTIONS3</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L97">
       
       (source)
     </a>
@@ -312,7 +319,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">CONVERT_PARENTHESES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L75">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L75">
       
       (source)
     </a>
@@ -334,7 +341,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">DOUBLE_DASHES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L84">
       
       (source)
     </a>
@@ -356,7 +363,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">ENDING_QUOTES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L87">
       
       (source)
     </a>
@@ -378,7 +385,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">PARENS_BRACKETS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L72">
       
       (source)
     </a>
@@ -400,7 +407,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">PUNCTUATION</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L58">
       
       (source)
     </a>
@@ -422,7 +429,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">STARTING_QUOTES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L51">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L51">
       
       (source)
     </a>
@@ -444,7 +451,7 @@ This tokenizer performs the following steps:
   <div class="functionHeader">
     
     <span class="py-defname">_contractions</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/treebank.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/treebank.py#L95">
       
       (source)
     </a>
@@ -464,7 +471,7 @@ This tokenizer performs the following steps:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

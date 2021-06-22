@@ -65,26 +65,30 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaggerI</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/api.py#L22" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.classify.senna.Senna.html">nltk.classify.senna.Senna</a></code>, <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">nltk.parse.corenlp.GenericCoreNLPParser</a></code>, <code><a href="nltk.tag.api.FeaturesetTaggerI.html">nltk.tag.api.FeaturesetTaggerI</a></code>, <code><a href="nltk.tag.crf.CRFTagger.html">nltk.tag.crf.CRFTagger</a></code>, <code><a href="nltk.tag.hmm.HiddenMarkovModelTagger.html">nltk.tag.hmm.HiddenMarkovModelTagger</a></code>, <code><a href="nltk.tag.hunpos.HunposTagger.html">nltk.tag.hunpos.HunposTagger</a></code>, <code><a href="nltk.tag.perceptron.PerceptronTagger.html">nltk.tag.perceptron.PerceptronTagger</a></code>, <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">nltk.tag.sequential.SequentialBackoffTagger</a></code>, <code><a href="nltk.tag.stanford.StanfordTagger.html">nltk.tag.stanford.StanfordTagger</a></code>, <code><a href="nltk.tag.tnt.TnT.html">nltk.tag.tnt.TnT</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaggerI</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/api.py#L22" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.classify.senna.Senna.html">nltk.classify.senna.Senna</a></code>, <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">nltk.parse.corenlp.GenericCoreNLPParser</a></code>, <code><a href="nltk.tag.api.FeaturesetTaggerI.html">nltk.tag.api.FeaturesetTaggerI</a></code>, <code><a href="nltk.tag.crf.CRFTagger.html">nltk.tag.crf.CRFTagger</a></code>, <code><a href="nltk.tag.hmm.HiddenMarkovModelTagger.html">nltk.tag.hmm.HiddenMarkovModelTagger</a></code>, <code><a href="nltk.tag.hunpos.HunposTagger.html">nltk.tag.hunpos.HunposTagger</a></code>, <code><a href="nltk.tag.perceptron.PerceptronTagger.html">nltk.tag.perceptron.PerceptronTagger</a></code>, <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">nltk.tag.sequential.SequentialBackoffTagger</a></code>, <code><a href="nltk.tag.stanford.StanfordTagger.html">nltk.tag.stanford.StanfordTagger</a></code>, <code><a href="nltk.tag.tnt.TnT.html">nltk.tag.tnt.TnT</a></code></p>
         <p><a href="classIndex.html#nltk.tag.api.TaggerI">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A processing interface for assigning a tag to each token in a list.
+        <div><p>A processing interface for assigning a tag to each token in a list.
 Tags are case sensitive strings that identify some property of each
-token, such as its part of speech or its sense.
-
-Some taggers require specific types for their tokens.  This is
-generally indicated by the use of a sub-interface to ``TaggerI``.
+token, such as its part of speech or its sense.</p>
+<p>Some taggers require specific types for their tokens.  This is
+generally indicated by the use of a sub-interface to <tt class="rst-docutils literal">TaggerI</tt>.
 For example, featureset taggers, which are subclassed from
-``FeaturesetTagger``, require that each token be a ``featureset``.
-
-Subclasses must define:
-  - either ``tag()`` or ``tag_sents()`` (or both)</p></div>
+<tt class="rst-docutils literal">FeaturesetTagger</tt>, require that each token be a <tt class="rst-docutils literal">featureset</tt>.</p>
+<dl class="rst-docutils">
+<dt>Subclasses must define:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>either <tt class="rst-docutils literal">tag()</tt> or <tt class="rst-docutils literal">tag_sents()</tt> (or both)</li>
+</ul>
+</dd>
+</dl>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1543">
+        <table class="children sortable" id="id1547">
   
   
   <tr class="method">
@@ -96,12 +100,12 @@ Subclasses must define:
     
     <td>Method</td>
     <td><code><a href="#tag">tag</a></code></td>
-    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple ``(token, tag)``.</span></td>
+    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -128,7 +132,7 @@ Subclasses must define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">evaluate</span>(self, gold):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/api.py#L57">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/api.py#L57">
       
       (source)
     </a>
@@ -136,13 +140,9 @@ Subclasses must define:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Score the accuracy of the tagger against the gold standard.
+    <div>Score the accuracy of the tagger against the gold standard.
 Strip the tags from the gold standard text, retag it using
-the tagger, then compute the accuracy score.
-
-:type gold: list(list(tuple(str, str)))
-:param gold: The list of tagged sentences to score the tagger on.
-:rtype: float</p></div>
+the tagger, then compute the accuracy score.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gold:</span>list(list(tuple(str, str)))</td><td class="fieldArgDesc">The list of tagged sentences to score the tagger on.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -156,7 +156,7 @@ the tagger, then compute the accuracy score.
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/api.py#L37">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/api.py#L37">
       
       (source)
     </a>
@@ -164,11 +164,9 @@ the tagger, then compute the accuracy score.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.classify.senna.Senna.html">nltk.classify.senna.Senna</a></code>, <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">nltk.parse.corenlp.GenericCoreNLPParser</a></code>, <code><a href="nltk.tag.crf.CRFTagger.html">nltk.tag.crf.CRFTagger</a></code>, <code><a href="nltk.tag.hmm.HiddenMarkovModelTagger.html">nltk.tag.hmm.HiddenMarkovModelTagger</a></code>, <code><a href="nltk.tag.hunpos.HunposTagger.html">nltk.tag.hunpos.HunposTagger</a></code>, <code><a href="nltk.tag.perceptron.PerceptronTagger.html">nltk.tag.perceptron.PerceptronTagger</a></code>, <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">nltk.tag.sequential.SequentialBackoffTagger</a></code>, <code><a href="nltk.tag.stanford.StanfordTagger.html">nltk.tag.stanford.StanfordTagger</a></code>, <code><a href="nltk.tag.tnt.TnT.html">nltk.tag.tnt.TnT</a></code></div>
     
-    <div><p class="pre">Determine the most appropriate tag sequence for the given
+    <div>Determine the most appropriate tag sequence for the given
 token sequence, and return a corresponding list of tagged
-tokens.  A tagged token is encoded as a tuple ``(token, tag)``.
-
-:rtype: list(tuple(str, str))</p></div>
+tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(str, str))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -182,7 +180,7 @@ tokens.  A tagged token is encoded as a tuple ``(token, tag)``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag_sents</span>(self, sentences):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/api.py#L49">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/api.py#L49">
       
       (source)
     </a>
@@ -190,9 +188,10 @@ tokens.  A tagged token is encoded as a tuple ``(token, tag)``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.classify.senna.Senna.html">nltk.classify.senna.Senna</a></code>, <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">nltk.parse.corenlp.GenericCoreNLPParser</a></code>, <code><a href="nltk.tag.crf.CRFTagger.html">nltk.tag.crf.CRFTagger</a></code>, <code><a href="nltk.tag.stanford.StanfordTagger.html">nltk.tag.stanford.StanfordTagger</a></code></div>
     
-    <div><p class="pre">Apply ``self.tag()`` to each element of *sentences*.  I.e.:
-
-    return [self.tag(sent) for sent in sentences]</p></div>
+    <div><p>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</p>
+<blockquote>
+return [self.tag(sent) for sent in sentences]</blockquote>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -206,7 +205,7 @@ tokens.  A tagged token is encoded as a tuple ``(token, tag)``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_check_params</span>(self, train, model):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/api.py#L73">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/api.py#L73">
       
       (source)
     </a>
@@ -226,7 +225,7 @@ tokens.  A tagged token is encoded as a tuple ``(token, tag)``.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

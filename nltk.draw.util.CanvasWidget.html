@@ -65,126 +65,103 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CanvasWidget</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L62" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.tree.TreeWidget.html">nltk.draw.tree.TreeWidget</a></code>, <code><a href="nltk.draw.util.AbstractContainerWidget.html">nltk.draw.util.AbstractContainerWidget</a></code>, <code><a href="nltk.draw.util.ScrollWatcherWidget.html">nltk.draw.util.ScrollWatcherWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.SpaceWidget.html">nltk.draw.util.SpaceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code>, <code><a href="nltk.draw.util.TextWidget.html">nltk.draw.util.TextWidget</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CanvasWidget</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L62" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.tree.TreeWidget.html">nltk.draw.tree.TreeWidget</a></code>, <code><a href="nltk.draw.util.AbstractContainerWidget.html">nltk.draw.util.AbstractContainerWidget</a></code>, <code><a href="nltk.draw.util.ScrollWatcherWidget.html">nltk.draw.util.ScrollWatcherWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.SpaceWidget.html">nltk.draw.util.SpaceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code>, <code><a href="nltk.draw.util.TextWidget.html">nltk.draw.util.TextWidget</a></code></p>
         <p><a href="classIndex.html#nltk.draw.util.CanvasWidget">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A collection of graphical elements and bindings used to display a
-complex object on a Tkinter ``Canvas``.  A canvas widget is
-responsible for managing the ``Canvas`` tags and callback bindings
+        <div><p>A collection of graphical elements and bindings used to display a
+complex object on a Tkinter <tt class="rst-docutils literal">Canvas</tt>.  A canvas widget is
+responsible for managing the <tt class="rst-docutils literal">Canvas</tt> tags and callback bindings
 necessary to display and interact with the object.  Canvas widgets
 are often organized into hierarchies, where parent canvas widgets
-control aspects of their child widgets.
-
-Each canvas widget is bound to a single ``Canvas``.  This ``Canvas``
-is specified as the first argument to the ``CanvasWidget``'s
-constructor.
-
-Attributes.  Each canvas widget can support a variety of
+control aspects of their child widgets.</p>
+<p>Each canvas widget is bound to a single <tt class="rst-docutils literal">Canvas</tt>.  This <tt class="rst-docutils literal">Canvas</tt>
+is specified as the first argument to the <tt class="rst-docutils literal">CanvasWidget</tt>'s
+constructor.</p>
+<p>Attributes.  Each canvas widget can support a variety of
 "attributes", which control how the canvas widget is displayed.
-Some typical examples attributes are ``color``, ``font``, and
-``radius``.  Each attribute has a default value.  This default
+Some typical examples attributes are <tt class="rst-docutils literal">color</tt>, <tt class="rst-docutils literal">font</tt>, and
+<tt class="rst-docutils literal">radius</tt>.  Each attribute has a default value.  This default
 value can be overridden in the constructor, using keyword
-arguments of the form ``attribute=value``:
-
-    &gt;&gt;&gt; from nltk.draw.util import TextWidget
-    &gt;&gt;&gt; cn = TextWidget(c, 'test', color='red')
-
-Attribute values can also be changed after a canvas widget has
-been constructed, using the ``__setitem__`` operator:
-
-    &gt;&gt;&gt; cn['font'] = 'times'
-
-The current value of an attribute value can be queried using the
-``__getitem__`` operator:
-
-    &gt;&gt;&gt; cn['color']
-    red
-
-For a list of the attributes supported by a type of canvas widget,
-see its class documentation.
-
-Interaction.  The attribute ``'draggable'`` controls whether the
+arguments of the form <tt class="rst-docutils literal">attribute=value</tt>:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.draw.util <span class="py-keyword">import</span> TextWidget
+<span class="py-prompt">&gt;&gt;&gt; </span>cn = TextWidget(c, <span class="py-string">'test'</span>, color=<span class="py-string">'red'</span>)</pre></blockquote>
+<p>Attribute values can also be changed after a canvas widget has
+been constructed, using the <tt class="rst-docutils literal">__setitem__</tt> operator:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cn[<span class="py-string">'font'</span>] = <span class="py-string">'times'</span></pre></blockquote>
+<p>The current value of an attribute value can be queried using the
+<tt class="rst-docutils literal">__getitem__</tt> operator:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cn[<span class="py-string">'color'</span>]
+<span class="py-output">red</span>
+</pre></blockquote>
+<p>For a list of the attributes supported by a type of canvas widget,
+see its class documentation.</p>
+<p>Interaction.  The attribute <tt class="rst-docutils literal">'draggable'</tt> controls whether the
 user can drag a canvas widget around the canvas.  By default,
-canvas widgets are not draggable.
-
-``CanvasWidget`` provides callback support for two types of user
-interaction: clicking and dragging.  The method ``bind_click``
+canvas widgets are not draggable.</p>
+<p><tt class="rst-docutils literal">CanvasWidget</tt> provides callback support for two types of user
+interaction: clicking and dragging.  The method <tt class="rst-docutils literal">bind_click</tt>
 registers a callback function that is called whenever the canvas
-widget is clicked.  The method ``bind_drag`` registers a callback
+widget is clicked.  The method <tt class="rst-docutils literal">bind_drag</tt> registers a callback
 function that is called after the canvas widget is dragged.  If
 the user clicks or drags a canvas widget with no registered
 callback function, then the interaction event will propagate to
 its parent.  For each canvas widget, only one callback function
 may be registered for an interaction event.  Callback functions
-can be deregistered with the ``unbind_click`` and ``unbind_drag``
-methods.
-
-Subclassing.  ``CanvasWidget`` is an abstract class.  Subclasses
-are required to implement the following methods:
-
-  - ``__init__``: Builds a new canvas widget.  It must perform the
-    following three tasks (in order):
-      - Create any new graphical elements.
-      - Call ``_add_child_widget`` on each child widget.
-      - Call the ``CanvasWidget`` constructor.
-  - ``_tags``: Returns a list of the canvas tags for all graphical
-    elements managed by this canvas widget, not including
-    graphical elements managed by its child widgets.
-  - ``_manage``: Arranges the child widgets of this canvas widget.
-    This is typically only called when the canvas widget is
-    created.
-  - ``_update``: Update this canvas widget in response to a
-    change in a single child.
-
-For a ``CanvasWidget`` with no child widgets, the default
-definitions for ``_manage`` and ``_update`` may be used.
-
-If a subclass defines any attributes, then it should implement
-``__getitem__`` and ``__setitem__``.  If either of these methods is
+can be deregistered with the <tt class="rst-docutils literal">unbind_click</tt> and <tt class="rst-docutils literal">unbind_drag</tt>
+methods.</p>
+<p>Subclassing.  <tt class="rst-docutils literal">CanvasWidget</tt> is an abstract class.  Subclasses
+are required to implement the following methods:</p>
+<blockquote>
+<ul>
+<li><p class="rst-first"><tt class="rst-docutils literal">__init__</tt>: Builds a new canvas widget.  It must perform the
+following three tasks (in order):</p>
+<blockquote>
+<ul class="rst-simple">
+<li>Create any new graphical elements.</li>
+<li>Call <tt class="rst-docutils literal">_add_child_widget</tt> on each child widget.</li>
+<li>Call the <tt class="rst-docutils literal">CanvasWidget</tt> constructor.</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="rst-first"><tt class="rst-docutils literal">_tags</tt>: Returns a list of the canvas tags for all graphical
+elements managed by this canvas widget, not including
+graphical elements managed by its child widgets.</p>
+</li>
+<li><p class="rst-first"><tt class="rst-docutils literal">_manage</tt>: Arranges the child widgets of this canvas widget.
+This is typically only called when the canvas widget is
+created.</p>
+</li>
+<li><p class="rst-first"><tt class="rst-docutils literal">_update</tt>: Update this canvas widget in response to a
+change in a single child.</p>
+</li>
+</ul>
+</blockquote>
+<p>For a <tt class="rst-docutils literal">CanvasWidget</tt> with no child widgets, the default
+definitions for <tt class="rst-docutils literal">_manage</tt> and <tt class="rst-docutils literal">_update</tt> may be used.</p>
+<p>If a subclass defines any attributes, then it should implement
+<tt class="rst-docutils literal">__getitem__</tt> and <tt class="rst-docutils literal">__setitem__</tt>.  If either of these methods is
 called with an unknown attribute, then they should propagate the
-request to ``CanvasWidget``.
-
-Most subclasses implement a number of additional methods that
-modify the ``CanvasWidget`` in some way.  These methods must call
-``parent.update(self)`` after making any changes to the canvas
+request to <tt class="rst-docutils literal">CanvasWidget</tt>.</p>
+<p>Most subclasses implement a number of additional methods that
+modify the <tt class="rst-docutils literal">CanvasWidget</tt> in some way.  These methods must call
+<tt class="rst-docutils literal">parent.update(self)</tt> after making any changes to the canvas
 widget's graphical elements.  The canvas widget must also call
-``parent.update(self)`` after changing any attribute value that
+<tt class="rst-docutils literal">parent.update(self)</tt> after changing any attribute value that
 affects the shape or position of the canvas widget's graphical
-elements.
-
-:type __canvas: Tkinter.Canvas
-:ivar __canvas: This ``CanvasWidget``'s canvas.
-
-:type __parent: CanvasWidget or None
-:ivar __parent: This ``CanvasWidget``'s hierarchical parent widget.
-:type __children: list(CanvasWidget)
-:ivar __children: This ``CanvasWidget``'s hierarchical child widgets.
-
-:type __updating: bool
-:ivar __updating: Is this canvas widget currently performing an
-    update?  If it is, then it will ignore any new update requests
-    from child widgets.
-
-:type __draggable: bool
-:ivar __draggable: Is this canvas widget draggable?
-:type __press: event
-:ivar __press: The ButtonPress event that we're currently handling.
-:type __drag_x: int
-:ivar __drag_x: Where it's been moved to (to find dx)
-:type __drag_y: int
-:ivar __drag_y: Where it's been moved to (to find dy)
-:type __callbacks: dictionary
-:ivar __callbacks: Registered callbacks.  Currently, four keys are
-    used: ``1``, ``2``, ``3``, and ``'drag'``.  The values are
-    callback functions.  Each callback function takes a single
-    argument, which is the ``CanvasWidget`` that triggered the
-    callback.</p></div>
+elements.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id587">
+        <table class="children sortable" id="id590">
   
   
   <tr class="method">
@@ -201,12 +178,12 @@ elements.
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>:return: a string representation of this canvas widget. :rtype: str</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__setitem__">__setitem__</a></code></td>
-    <td><span>Set the value of the attribute ``attr`` to ``value``.  See the class documentation for a list of attributes supported by this canvas widget.</span></td>
+    <td><span>Set the value of the attribute <tt class="rst-docutils literal">attr</tt> to <tt class="rst-docutils literal">value</tt>.  See the class documentation for a list of attributes supported by this canvas widget.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -216,17 +193,17 @@ elements.
     
     <td>Method</td>
     <td><code><a href="#bind_click">bind_click</a></code></td>
-    <td><span>Register a new callback that will be called whenever this ``CanvasWidget`` is clicked on.</span></td>
+    <td><span>Register a new callback that will be called whenever this <tt class="rst-docutils literal">CanvasWidget</tt> is clicked on.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#bind_drag">bind_drag</a></code></td>
-    <td><span>Register a new callback that will be called after this ``CanvasWidget`` is dragged.  This implicitly makes this ``CanvasWidget`` draggable.</span></td>
+    <td><span>Register a new callback that will be called after this <tt class="rst-docutils literal">CanvasWidget</tt> is dragged.  This implicitly makes this <tt class="rst-docutils literal">CanvasWidget</tt> draggable.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#canvas">canvas</a></code></td>
-    <td><span>:return: The canvas that this canvas widget is bound to. :rtype: Tkinter.Canvas</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -236,17 +213,17 @@ elements.
     
     <td>Method</td>
     <td><code><a href="#destroy">destroy</a></code></td>
-    <td><span>Remove this ``CanvasWidget`` from its ``Canvas``.  After a ``CanvasWidget`` has been destroyed, it should not be accessed.</span></td>
+    <td><span>Remove this <tt class="rst-docutils literal">CanvasWidget</tt> from its <tt class="rst-docutils literal">Canvas</tt>.  After a <tt class="rst-docutils literal">CanvasWidget</tt> has been destroyed, it should not be accessed.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#height">height</a></code></td>
-    <td><span>:return: The height of this canvas widget's bounding box, in its ``Canvas``'s coordinate space. :rtype: int</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#hidden">hidden</a></code></td>
-    <td><span>:return: True if this canvas widget is hidden. :rtype: bool</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -286,12 +263,12 @@ elements.
     
     <td>Method</td>
     <td><code><a href="#unbind_click">unbind_click</a></code></td>
-    <td><span>Remove a callback that was registered with ``bind_click``.</span></td>
+    <td><span>Remove a callback that was registered with <tt class="rst-docutils literal">bind_click</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#unbind_drag">unbind_drag</a></code></td>
-    <td><span>Remove a callback that was registered with ``bind_drag``.</span></td>
+    <td><span>Remove a callback that was registered with <tt class="rst-docutils literal">bind_drag</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -301,17 +278,17 @@ elements.
     
     <td>Method</td>
     <td><code><a href="#width">width</a></code></td>
-    <td><span>:return: The width of this canvas widget's bounding box, in its ``Canvas``'s coordinate space. :rtype: int</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#__click">__click</a></code></td>
-    <td><span>If this ``CanvasWidget`` has a drag callback, then call it; otherwise, find the closest ancestor with a click callback, and call it.  If no ancestors have a click callback, do nothing.</span></td>
+    <td><span>If this <tt class="rst-docutils literal">CanvasWidget</tt> has a drag callback, then call it; otherwise, find the closest ancestor with a click callback, and call it.  If no ancestors have a click callback, do nothing.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#__drag">__drag</a></code></td>
-    <td><span>If this ``CanvasWidget`` has a drag callback, then call it; otherwise, find the closest ancestor with a drag callback, and call it.  If no ancestors have a drag callback, do nothing.</span></td>
+    <td><span>If this <tt class="rst-docutils literal">CanvasWidget</tt> has a drag callback, then call it; otherwise, find the closest ancestor with a drag callback, and call it.  If no ancestors have a drag callback, do nothing.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -361,32 +338,36 @@ elements.
     
     <td>Instance Variable</td>
     <td><code><a href="#__callbacks">__callbacks</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Registered callbacks.  Currently, four keys are
+used: <tt class="rst-docutils literal">1</tt>, <tt class="rst-docutils literal">2</tt>, <tt class="rst-docutils literal">3</tt>, and <tt class="rst-docutils literal">'drag'</tt>.  The values are
+callback functions.  Each callback function takes a single
+argument, which is the <tt class="rst-docutils literal">CanvasWidget</tt> that triggered the
+callback.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#__canvas">__canvas</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>This <tt class="rst-docutils literal">CanvasWidget</tt>'s canvas.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#__children">__children</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>This <tt class="rst-docutils literal">CanvasWidget</tt>'s hierarchical child widgets.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#__drag_x">__drag_x</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Where it's been moved to (to find dx)</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#__drag_y">__drag_y</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Where it's been moved to (to find dy)</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#__draggable">__draggable</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Is this canvas widget draggable?</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -396,17 +377,19 @@ elements.
     
     <td>Instance Variable</td>
     <td><code><a href="#__parent">__parent</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>This <tt class="rst-docutils literal">CanvasWidget</tt>'s hierarchical parent widget.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#__press">__press</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The ButtonPress event that we're currently handling.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#__updating">__updating</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Is this canvas widget currently performing an
+update?  If it is, then it will ignore any new update requests
+from child widgets.</span></td>
   </tr>
 </table>
         
@@ -428,7 +411,7 @@ elements.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, attr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L441">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L441">
       
       (source)
     </a>
@@ -436,10 +419,9 @@ elements.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.tree.TreeWidget.html">nltk.draw.tree.TreeWidget</a></code>, <code><a href="nltk.draw.util.BoxWidget.html">nltk.draw.util.BoxWidget</a></code>, <code><a href="nltk.draw.util.BracketWidget.html">nltk.draw.util.BracketWidget</a></code>, <code><a href="nltk.draw.util.OvalWidget.html">nltk.draw.util.OvalWidget</a></code>, <code><a href="nltk.draw.util.ParenWidget.html">nltk.draw.util.ParenWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code>, <code><a href="nltk.draw.util.TextWidget.html">nltk.draw.util.TextWidget</a></code></div>
     
-    <div><p class="pre">:return: the value of the attribute ``attr``.  See the class
-    documentation for a list of attributes supported by this
-    canvas widget.
-:rtype: (any)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">(any)</td><td class="fieldArgDesc">the value of the attribute <tt class="rst-docutils literal">attr</tt>.  See the class
+documentation for a list of attributes supported by this
+canvas widget.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -453,7 +435,7 @@ elements.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, canvas, parent=None, **attribs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L177">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L177">
       
       (source)
     </a>
@@ -461,16 +443,10 @@ elements.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.tree.TreeWidget.html">nltk.draw.tree.TreeWidget</a></code>, <code><a href="nltk.draw.util.AbstractContainerWidget.html">nltk.draw.util.AbstractContainerWidget</a></code>, <code><a href="nltk.draw.util.ScrollWatcherWidget.html">nltk.draw.util.ScrollWatcherWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.SpaceWidget.html">nltk.draw.util.SpaceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code>, <code><a href="nltk.draw.util.TextWidget.html">nltk.draw.util.TextWidget</a></code></div>
     
-    <div><p class="pre">Create a new canvas widget.  This constructor should only be
+    <div>Create a new canvas widget.  This constructor should only be
 called by subclass constructors; and it should be called only
 "after" the subclass has constructed all graphical canvas
-objects and registered all child widgets.
-
-:param canvas: This canvas widget's canvas.
-:type canvas: Tkinter.Canvas
-:param parent: This canvas widget's hierarchical parent.
-:type parent: CanvasWidget
-:param attribs: The new canvas widget's attributes.</p></div>
+objects and registered all child widgets.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">canvas:</span>Tkinter.Canvas</td><td class="fieldArgDesc">This canvas widget's canvas.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parent:</span>CanvasWidget</td><td class="fieldArgDesc">This canvas widget's hierarchical parent.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">attribs</span></td><td class="fieldArgDesc">The new canvas widget's attributes.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -484,7 +460,7 @@ objects and registered all child widgets.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L453">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L453">
       
       (source)
     </a>
@@ -492,8 +468,7 @@ objects and registered all child widgets.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.util.AbstractContainerWidget.html">nltk.draw.util.AbstractContainerWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.SpaceWidget.html">nltk.draw.util.SpaceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code>, <code><a href="nltk.draw.util.TextWidget.html">nltk.draw.util.TextWidget</a></code></div>
     
-    <div><p class="pre">:return: a string representation of this canvas widget.
-:rtype: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">a string representation of this canvas widget.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -507,7 +482,7 @@ objects and registered all child widgets.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, attr, value):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L428">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L428">
       
       (source)
     </a>
@@ -515,11 +490,9 @@ objects and registered all child widgets.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.tree.TreeWidget.html">nltk.draw.tree.TreeWidget</a></code>, <code><a href="nltk.draw.util.BoxWidget.html">nltk.draw.util.BoxWidget</a></code>, <code><a href="nltk.draw.util.BracketWidget.html">nltk.draw.util.BracketWidget</a></code>, <code><a href="nltk.draw.util.OvalWidget.html">nltk.draw.util.OvalWidget</a></code>, <code><a href="nltk.draw.util.ParenWidget.html">nltk.draw.util.ParenWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code>, <code><a href="nltk.draw.util.TextWidget.html">nltk.draw.util.TextWidget</a></code></div>
     
-    <div><p class="pre">Set the value of the attribute ``attr`` to ``value``.  See the
+    <div>Set the value of the attribute <tt class="rst-docutils literal">attr</tt> to <tt class="rst-docutils literal">value</tt>.  See the
 class documentation for a list of attributes supported by this
-canvas widget.
-
-:rtype: None</p></div>
+canvas widget.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -533,7 +506,7 @@ canvas widget.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bbox</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L233">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L233">
       
       (source)
     </a>
@@ -541,12 +514,11 @@ canvas widget.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: A bounding box for this ``CanvasWidget``. The bounding
-    box is a tuple of four coordinates, *(xmin, ymin, xmax, ymax)*,
-    for a rectangle which encloses all of the canvas
-    widget's graphical elements.  Bounding box coordinates are
-    specified with respect to the coordinate space of the ``Canvas``.
-:rtype: tuple(int, int, int, int)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">tuple(int, int, int, int)</td><td class="fieldArgDesc">A bounding box for this <tt class="rst-docutils literal">CanvasWidget</tt>. The bounding
+box is a tuple of four coordinates, <em>(xmin, ymin, xmax, ymax)</em>,
+for a rectangle which encloses all of the canvas
+widget's graphical elements.  Bounding box coordinates are
+specified with respect to the coordinate space of the <tt class="rst-docutils literal">Canvas</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -560,7 +532,7 @@ canvas widget.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bind_click</span>(self, callback, button=1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L491">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L491">
       
       (source)
     </a>
@@ -568,17 +540,12 @@ canvas widget.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Register a new callback that will be called whenever this
-``CanvasWidget`` is clicked on.
-
-:type callback: function
-:param callback: The callback function that will be called
-    whenever this ``CanvasWidget`` is clicked.  This function
-    will be called with this ``CanvasWidget`` as its argument.
-:type button: int
-:param button: Which button the user should use to click on
-    this ``CanvasWidget``.  Typically, this should be 1 (left
-    button), 3 (right button), or 2 (middle button).</p></div>
+    <div>Register a new callback that will be called whenever this
+<tt class="rst-docutils literal">CanvasWidget</tt> is clicked on.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">callback:</span>function</td><td class="fieldArgDesc">The callback function that will be called
+whenever this <tt class="rst-docutils literal">CanvasWidget</tt> is clicked.  This function
+will be called with this <tt class="rst-docutils literal">CanvasWidget</tt> as its argument.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">button:</span>int</td><td class="fieldArgDesc">Which button the user should use to click on
+this <tt class="rst-docutils literal">CanvasWidget</tt>.  Typically, this should be 1 (left
+button), 3 (right button), or 2 (middle button).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -592,7 +559,7 @@ canvas widget.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bind_drag</span>(self, callback):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L507">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L507">
       
       (source)
     </a>
@@ -600,14 +567,11 @@ canvas widget.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Register a new callback that will be called after this
-``CanvasWidget`` is dragged.  This implicitly makes this
-``CanvasWidget`` draggable.
-
-:type callback: function
-:param callback: The callback function that will be called
-    whenever this ``CanvasWidget`` is clicked.  This function
-    will be called with this ``CanvasWidget`` as its argument.</p></div>
+    <div>Register a new callback that will be called after this
+<tt class="rst-docutils literal">CanvasWidget</tt> is dragged.  This implicitly makes this
+<tt class="rst-docutils literal">CanvasWidget</tt> draggable.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">callback:</span>function</td><td class="fieldArgDesc">The callback function that will be called
+whenever this <tt class="rst-docutils literal">CanvasWidget</tt> is clicked.  This function
+will be called with this <tt class="rst-docutils literal">CanvasWidget</tt> as its argument.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -621,7 +585,7 @@ canvas widget.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">canvas</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L288">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L288">
       
       (source)
     </a>
@@ -629,8 +593,7 @@ canvas widget.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The canvas that this canvas widget is bound to.
-:rtype: Tkinter.Canvas</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Tkinter.Canvas</td><td class="fieldArgDesc">The canvas that this canvas widget is bound to.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -644,7 +607,7 @@ canvas widget.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">child_widgets</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L279">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L279">
       
       (source)
     </a>
@@ -652,10 +615,9 @@ canvas widget.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: A list of the hierarchical children of this canvas
-    widget.  These children are considered part of ``self``
-    for purposes of user interaction.
-:rtype: list of CanvasWidget</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of CanvasWidget</td><td class="fieldArgDesc">A list of the hierarchical children of this canvas
+widget.  These children are considered part of <tt class="rst-docutils literal">self</tt>
+for purposes of user interaction.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -669,7 +631,7 @@ canvas widget.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">destroy</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L349">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L349">
       
       (source)
     </a>
@@ -677,17 +639,14 @@ canvas widget.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove this ``CanvasWidget`` from its ``Canvas``.  After a
-``CanvasWidget`` has been destroyed, it should not be accessed.
-
-Note that you only need to destroy a top-level
-``CanvasWidget``; its child widgets will be destroyed
+    <div><p>Remove this <tt class="rst-docutils literal">CanvasWidget</tt> from its <tt class="rst-docutils literal">Canvas</tt>.  After a
+<tt class="rst-docutils literal">CanvasWidget</tt> has been destroyed, it should not be accessed.</p>
+<p>Note that you only need to destroy a top-level
+<tt class="rst-docutils literal">CanvasWidget</tt>; its child widgets will be destroyed
 automatically.  If you destroy a non-top-level
-``CanvasWidget``, then the entire top-level widget will be
-destroyed.
-
-:raise ValueError: if this ``CanvasWidget`` has a parent.
-:rtype: None</p></div>
+<tt class="rst-docutils literal">CanvasWidget</tt>, then the entire top-level widget will be
+destroyed.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>if this <tt class="rst-docutils literal">CanvasWidget</tt> has a parent.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -701,7 +660,7 @@ destroyed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">height</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L259">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L259">
       
       (source)
     </a>
@@ -709,9 +668,8 @@ destroyed.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The height of this canvas widget's bounding box, in
-    its ``Canvas``'s coordinate space.
-:rtype: int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc">The height of this canvas widget's bounding box, in
+its <tt class="rst-docutils literal">Canvas</tt>'s coordinate space.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -725,7 +683,7 @@ destroyed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">hidden</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L480">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L480">
       
       (source)
     </a>
@@ -733,8 +691,7 @@ destroyed.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: True if this canvas widget is hidden.
-:rtype: bool</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc">True if this canvas widget is hidden.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -748,7 +705,7 @@ destroyed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">hide</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L460">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L460">
       
       (source)
     </a>
@@ -756,9 +713,7 @@ destroyed.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Temporarily hide this canvas widget.
-
-:rtype: None</p></div>
+    <div>Temporarily hide this canvas widget.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -772,7 +727,7 @@ destroyed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">manage</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L401">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L401">
       
       (source)
     </a>
@@ -780,9 +735,7 @@ destroyed.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Arrange this canvas widget and all of its descendants.
-
-:rtype: None</p></div>
+    <div>Arrange this canvas widget and all of its descendants.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -796,7 +749,7 @@ destroyed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">move</span>(self, dx, dy):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L295">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L295">
       
       (source)
     </a>
@@ -804,18 +757,12 @@ destroyed.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Move this canvas widget by a given distance.  In particular,
-shift the canvas widget right by ``dx`` pixels, and down by
-``dy`` pixels.  Both ``dx`` and ``dy`` may be negative, resulting
-in leftward or upward movement.
-
-:type dx: int
-:param dx: The number of pixels to move this canvas widget
-    rightwards.
-:type dy: int
-:param dy: The number of pixels to move this canvas widget
-    downwards.
-:rtype: None</p></div>
+    <div>Move this canvas widget by a given distance.  In particular,
+shift the canvas widget right by <tt class="rst-docutils literal">dx</tt> pixels, and down by
+<tt class="rst-docutils literal">dy</tt> pixels.  Both <tt class="rst-docutils literal">dx</tt> and <tt class="rst-docutils literal">dy</tt> may be negative, resulting
+in leftward or upward movement.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dx:</span>int</td><td class="fieldArgDesc">The number of pixels to move this canvas widget
+rightwards.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dy:</span>int</td><td class="fieldArgDesc">The number of pixels to move this canvas widget
+downwards.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -829,7 +776,7 @@ in leftward or upward movement.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">moveto</span>(self, x, y, anchor='NW'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L317">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L317">
       
       (source)
     </a>
@@ -837,17 +784,14 @@ in leftward or upward movement.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Move this canvas widget to the given location.  In particular,
+    <div>Move this canvas widget to the given location.  In particular,
 shift the canvas widget such that the corner or side of the
-bounding box specified by ``anchor`` is at location (``x``,
-``y``).
-
-:param x,y: The location that the canvas widget should be moved
-    to.
-:param anchor: The corner or side of the canvas widget that
-    should be moved to the specified location.  ``'N'``
-    specifies the top center; ``'NE'`` specifies the top right
-    corner; etc.</p></div>
+bounding box specified by <tt class="rst-docutils literal">anchor</tt> is at location (<tt class="rst-docutils literal">x</tt>,
+<tt class="rst-docutils literal">y</tt>).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">anchor</span></td><td class="fieldArgDesc">The corner or side of the canvas widget that
+should be moved to the specified location.  <tt class="rst-docutils literal">'N'</tt>
+specifies the top center; <tt class="rst-docutils literal">'NE'</tt> specifies the top right
+corner; etc.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x,y</span></td><td class="fieldArgDesc">The location that the canvas widget should be moved
+to.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -861,7 +805,7 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parent</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L270">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L270">
       
       (source)
     </a>
@@ -869,10 +813,9 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The hierarchical parent of this canvas widget.
-    ``self`` is considered a subpart of its parent for
-    purposes of user interaction.
-:rtype: CanvasWidget or None</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">CanvasWidget or None</td><td class="fieldArgDesc">The hierarchical parent of this canvas widget.
+<tt class="rst-docutils literal">self</tt> is considered a subpart of its parent for
+purposes of user interaction.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -886,7 +829,7 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">show</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L470">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L470">
       
       (source)
     </a>
@@ -894,9 +837,7 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Show a hidden canvas widget.
-
-:rtype: None</p></div>
+    <div>Show a hidden canvas widget.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -910,7 +851,7 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tags</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L413">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L413">
       
       (source)
     </a>
@@ -918,10 +859,9 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a list of the canvas tags for all graphical
-    elements managed by this canvas widget, including
-    graphical elements managed by its child widgets.
-:rtype: list of int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of int</td><td class="fieldArgDesc">a list of the canvas tags for all graphical
+elements managed by this canvas widget, including
+graphical elements managed by its child widgets.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -935,7 +875,7 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unbind_click</span>(self, button=1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L521">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L521">
       
       (source)
     </a>
@@ -943,12 +883,9 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove a callback that was registered with ``bind_click``.
-
-:type button: int
-:param button: Which button the user should use to click on
-    this ``CanvasWidget``.  Typically, this should be 1 (left
-    button), 3 (right button), or 2 (middle button).</p></div>
+    <div>Remove a callback that was registered with <tt class="rst-docutils literal">bind_click</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">button:</span>int</td><td class="fieldArgDesc">Which button the user should use to click on
+this <tt class="rst-docutils literal">CanvasWidget</tt>.  Typically, this should be 1 (left
+button), 3 (right button), or 2 (middle button).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -962,7 +899,7 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unbind_drag</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L535">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L535">
       
       (source)
     </a>
@@ -970,7 +907,7 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove a callback that was registered with ``bind_drag``.</p></div>
+    <div>Remove a callback that was registered with <tt class="rst-docutils literal">bind_drag</tt>.</div>
   </div>
 </div><div class="basemethod">
   
@@ -984,7 +921,7 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, child):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L374">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L374">
       
       (source)
     </a>
@@ -992,12 +929,9 @@ bounding box specified by ``anchor`` is at location (``x``,
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Update the graphical display of this canvas widget, and all of
+    <div>Update the graphical display of this canvas widget, and all of
 its ancestors, in response to a change in one of this canvas
-widget's children.
-
-:param child: The child widget that changed.
-:type child: CanvasWidget</p></div>
+widget's children.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">child:</span>CanvasWidget</td><td class="fieldArgDesc">The child widget that changed.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -1011,7 +945,7 @@ widget's children.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">width</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L248">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L248">
       
       (source)
     </a>
@@ -1019,9 +953,8 @@ widget's children.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The width of this canvas widget's bounding box, in
-    its ``Canvas``'s coordinate space.
-:rtype: int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc">The width of this canvas widget's bounding box, in
+its <tt class="rst-docutils literal">Canvas</tt>'s coordinate space.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -1035,7 +968,7 @@ widget's children.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__click</span>(self, button):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L647">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L647">
       
       (source)
     </a>
@@ -1043,9 +976,9 @@ widget's children.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">If this ``CanvasWidget`` has a drag callback, then call it;
+    <div>If this <tt class="rst-docutils literal">CanvasWidget</tt> has a drag callback, then call it;
 otherwise, find the closest ancestor with a click callback, and
-call it.  If no ancestors have a click callback, do nothing.</p></div>
+call it.  If no ancestors have a click callback, do nothing.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1059,7 +992,7 @@ call it.  If no ancestors have a click callback, do nothing.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__drag</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L631">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L631">
       
       (source)
     </a>
@@ -1067,9 +1000,9 @@ call it.  If no ancestors have a click callback, do nothing.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">If this ``CanvasWidget`` has a drag callback, then call it;
+    <div>If this <tt class="rst-docutils literal">CanvasWidget</tt> has a drag callback, then call it;
 otherwise, find the closest ancestor with a drag callback, and
-call it.  If no ancestors have a drag callback, do nothing.</p></div>
+call it.  If no ancestors have a drag callback, do nothing.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1083,7 +1016,7 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__motion_cb</span>(self, event):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L594">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L594">
       
       (source)
     </a>
@@ -1091,9 +1024,15 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Handle a motion event:
-  - move this object to the new location
-  - record the new drag coordinates</p></div>
+    <div><dl class="rst-docutils">
+<dt>Handle a motion event:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>move this object to the new location</li>
+<li>record the new drag coordinates</li>
+</ul>
+</dd>
+</dl>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1107,7 +1046,7 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__press_cb</span>(self, event):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L548">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L548">
       
       (source)
     </a>
@@ -1115,11 +1054,17 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Handle a button-press event:
-  - record the button press event in ``self.__press``
-  - register a button-release callback.
-  - if this CanvasWidget or any of its ancestors are
-    draggable, then register the appropriate motion callback.</p></div>
+    <div><dl class="rst-docutils">
+<dt>Handle a button-press event:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>record the button press event in <tt class="rst-docutils literal">self.__press</tt></li>
+<li>register a button-release callback.</li>
+<li>if this CanvasWidget or any of its ancestors are
+draggable, then register the appropriate motion callback.</li>
+</ul>
+</dd>
+</dl>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1133,7 +1078,7 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__release_cb</span>(self, event):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L604">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L604">
       
       (source)
     </a>
@@ -1141,10 +1086,16 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Handle a release callback:
-  - unregister motion &amp; button release callbacks.
-  - decide whether they clicked, dragged, or cancelled
-  - call the appropriate handler.</p></div>
+    <div><dl class="rst-docutils">
+<dt>Handle a release callback:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>unregister motion &amp; button release callbacks.</li>
+<li>decide whether they clicked, dragged, or cancelled</li>
+<li>call the appropriate handler.</li>
+</ul>
+</dd>
+</dl>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1158,7 +1109,7 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__start_drag</span>(self, event):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L584">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L584">
       
       (source)
     </a>
@@ -1166,9 +1117,15 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Begin dragging this object:
-  - register a motion callback
-  - record the drag coordinates</p></div>
+    <div><dl class="rst-docutils">
+<dt>Begin dragging this object:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>register a motion callback</li>
+<li>record the drag coordinates</li>
+</ul>
+</dd>
+</dl>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1182,7 +1139,7 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_add_child_widget</span>(self, child):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L667">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L667">
       
       (source)
     </a>
@@ -1190,16 +1147,18 @@ call it.  If no ancestors have a drag callback, do nothing.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Register a hierarchical child widget.  The child will be
+    <div><p>Register a hierarchical child widget.  The child will be
 considered part of this canvas widget for purposes of user
-interaction.  ``_add_child_widget`` has two direct effects:
-  - It sets ``child``'s parent to this canvas widget.
-  - It adds ``child`` to the list of canvas widgets returned by
-    the ``child_widgets`` member function.
-
-:param child: The new child widget.  ``child`` must not already
-    have a parent.
-:type child: CanvasWidget</p></div>
+interaction.  <tt class="rst-docutils literal">_add_child_widget</tt> has two direct effects:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>It sets <tt class="rst-docutils literal">child</tt>'s parent to this canvas widget.</li>
+<li>It adds <tt class="rst-docutils literal">child</tt> to the list of canvas widgets returned by
+the <tt class="rst-docutils literal">child_widgets</tt> member function.</li>
+</ul>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">child:</span>CanvasWidget</td><td class="fieldArgDesc">The new child widget.  <tt class="rst-docutils literal">child</tt> must not already
+have a parent.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -1213,7 +1172,7 @@ interaction.  ``_add_child_widget`` has two direct effects:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_manage</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L716">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L716">
       
       (source)
     </a>
@@ -1221,12 +1180,10 @@ interaction.  ``_add_child_widget`` has two direct effects:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.tree.TreeWidget.html">nltk.draw.tree.TreeWidget</a></code>, <code><a href="nltk.draw.util.AbstractContainerWidget.html">nltk.draw.util.AbstractContainerWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code></div>
     
-    <div><p class="pre">Arrange the child widgets of this canvas widget.  This method
+    <div>Arrange the child widgets of this canvas widget.  This method
 is called when the canvas widget is initially created.  It is
-also called if the user calls the ``manage`` method on this
-canvas widget or any of its ancestors.
-
-:rtype: None</p></div>
+also called if the user calls the <tt class="rst-docutils literal">manage</tt> method on this
+canvas widget or any of its ancestors.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -1240,7 +1197,7 @@ canvas widget or any of its ancestors.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_remove_child_widget</span>(self, child):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L687">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L687">
       
       (source)
     </a>
@@ -1248,16 +1205,18 @@ canvas widget or any of its ancestors.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove a hierarchical child widget.  This child will no longer
+    <div><p>Remove a hierarchical child widget.  This child will no longer
 be considered part of this canvas widget for purposes of user
-interaction.  ``_add_child_widget`` has two direct effects:
-  - It sets ``child``'s parent to None.
-  - It removes ``child`` from the list of canvas widgets
-    returned by the ``child_widgets`` member function.
-
-:param child: The child widget to remove.  ``child`` must be a
-    child of this canvas widget.
-:type child: CanvasWidget</p></div>
+interaction.  <tt class="rst-docutils literal">_add_child_widget</tt> has two direct effects:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>It sets <tt class="rst-docutils literal">child</tt>'s parent to None.</li>
+<li>It removes <tt class="rst-docutils literal">child</tt> from the list of canvas widgets
+returned by the <tt class="rst-docutils literal">child_widgets</tt> member function.</li>
+</ul>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">child:</span>CanvasWidget</td><td class="fieldArgDesc">The child widget to remove.  <tt class="rst-docutils literal">child</tt> must be a
+child of this canvas widget.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -1271,7 +1230,7 @@ interaction.  ``_add_child_widget`` has two direct effects:
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_tags</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L707">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L707">
       
       (source)
     </a>
@@ -1279,10 +1238,9 @@ interaction.  ``_add_child_widget`` has two direct effects:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.tree.TreeWidget.html">nltk.draw.tree.TreeWidget</a></code>, <code><a href="nltk.draw.util.BoxWidget.html">nltk.draw.util.BoxWidget</a></code>, <code><a href="nltk.draw.util.BracketWidget.html">nltk.draw.util.BracketWidget</a></code>, <code><a href="nltk.draw.util.OvalWidget.html">nltk.draw.util.OvalWidget</a></code>, <code><a href="nltk.draw.util.ParenWidget.html">nltk.draw.util.ParenWidget</a></code>, <code><a href="nltk.draw.util.ScrollWatcherWidget.html">nltk.draw.util.ScrollWatcherWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.SpaceWidget.html">nltk.draw.util.SpaceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code>, <code><a href="nltk.draw.util.TextWidget.html">nltk.draw.util.TextWidget</a></code></div>
     
-    <div><p class="pre">:return: a list of canvas tags for all graphical elements
-    managed by this canvas widget, not including graphical
-    elements managed by its child widgets.
-:rtype: list of int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of int</td><td class="fieldArgDesc">a list of canvas tags for all graphical elements
+managed by this canvas widget, not including graphical
+elements managed by its child widgets.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -1296,7 +1254,7 @@ interaction.  ``_add_child_widget`` has two direct effects:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_update</span>(self, child):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L726">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L726">
       
       (source)
     </a>
@@ -1304,12 +1262,8 @@ interaction.  ``_add_child_widget`` has two direct effects:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.draw.tree.TreeSegmentWidget.html">nltk.draw.tree.TreeSegmentWidget</a></code>, <code><a href="nltk.draw.util.BoxWidget.html">nltk.draw.util.BoxWidget</a></code>, <code><a href="nltk.draw.util.BracketWidget.html">nltk.draw.util.BracketWidget</a></code>, <code><a href="nltk.draw.util.OvalWidget.html">nltk.draw.util.OvalWidget</a></code>, <code><a href="nltk.draw.util.ParenWidget.html">nltk.draw.util.ParenWidget</a></code>, <code><a href="nltk.draw.util.ScrollWatcherWidget.html">nltk.draw.util.ScrollWatcherWidget</a></code>, <code><a href="nltk.draw.util.SequenceWidget.html">nltk.draw.util.SequenceWidget</a></code>, <code><a href="nltk.draw.util.StackWidget.html">nltk.draw.util.StackWidget</a></code></div>
     
-    <div><p class="pre">Update this canvas widget in response to a change in one of
-its children.
-
-:param child: The child that changed.
-:type child: CanvasWidget
-:rtype: None</p></div>
+    <div>Update this canvas widget in response to a change in one of
+its children.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">child:</span>CanvasWidget</td><td class="fieldArgDesc">The child that changed.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1322,8 +1276,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__callbacks</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L213">
+    <span class="py-defname">__callbacks</span>: dictionary =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L169">
       
       (source)
     </a>
@@ -1331,7 +1285,11 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Registered callbacks.  Currently, four keys are
+used: <tt class="rst-docutils literal">1</tt>, <tt class="rst-docutils literal">2</tt>, <tt class="rst-docutils literal">3</tt>, and <tt class="rst-docutils literal">'drag'</tt>.  The values are
+callback functions.  Each callback function takes a single
+argument, which is the <tt class="rst-docutils literal">CanvasWidget</tt> that triggered the
+callback.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1344,8 +1302,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__canvas</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L196">
+    <span class="py-defname">__canvas</span>: Tkinter.Canvas =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L148">
       
       (source)
     </a>
@@ -1353,7 +1311,7 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>This <tt class="rst-docutils literal">CanvasWidget</tt>'s canvas.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1366,8 +1324,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__children</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L202">
+    <span class="py-defname">__children</span>: list(CanvasWidget) =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L153">
       
       (source)
     </a>
@@ -1375,7 +1333,7 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>This <tt class="rst-docutils literal">CanvasWidget</tt>'s hierarchical child widgets.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1388,8 +1346,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__drag_x</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L212">
+    <span class="py-defname">__drag_x</span>: int =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L165">
       
       (source)
     </a>
@@ -1397,7 +1355,7 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Where it's been moved to (to find dx)</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1410,8 +1368,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__drag_y</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L212">
+    <span class="py-defname">__drag_y</span>: int =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L167">
       
       (source)
     </a>
@@ -1419,7 +1377,7 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Where it's been moved to (to find dy)</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1432,8 +1390,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__draggable</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L214">
+    <span class="py-defname">__draggable</span>: bool =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L161">
       
       (source)
     </a>
@@ -1441,7 +1399,7 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Is this canvas widget draggable?</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1455,7 +1413,7 @@ its children.
   <div class="functionHeader">
     
     <span class="py-defname">__hidden</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L205">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L205">
       
       (source)
     </a>
@@ -1476,8 +1434,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__parent</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L197">
+    <span class="py-defname">__parent</span>: CanvasWidget or None =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L151">
       
       (source)
     </a>
@@ -1485,7 +1443,7 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>This <tt class="rst-docutils literal">CanvasWidget</tt>'s hierarchical parent widget.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1498,8 +1456,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__press</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L211">
+    <span class="py-defname">__press</span>: event =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L163">
       
       (source)
     </a>
@@ -1507,7 +1465,7 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The ButtonPress event that we're currently handling.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1520,8 +1478,8 @@ its children.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">__updating</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L208">
+    <span class="py-defname">__updating</span>: bool =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L156">
       
       (source)
     </a>
@@ -1529,7 +1487,9 @@ its children.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Is this canvas widget currently performing an
+update?  If it is, then it will ignore any new update requests
+from child widgets.</div>
   </div>
 </div>
 
@@ -1541,7 +1501,7 @@ its children.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

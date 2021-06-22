@@ -65,19 +65,19 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">UnicharsCorpusReader</span>(<a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html" title="nltk.corpus.reader.wordlist.WordListCorpusReader">WordListCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordlist.py#L106" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">UnicharsCorpusReader</span>(<a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html" title="nltk.corpus.reader.wordlist.WordListCorpusReader">WordListCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/wordlist.py#L106" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.wordlist.UnicharsCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This class is used to read lists of characters from the Perl Unicode
-Properties (see http://perldoc.perl.org/perluniprops.html).
+        <div>This class is used to read lists of characters from the Perl Unicode
+Properties (see <a class="rst-reference external" href="http://perldoc.perl.org/perluniprops.html" target="_top">http://perldoc.perl.org/perluniprops.html</a>).
 The files in the perluniprop.zip are extracted using the Unicode::Tussle
-module from http://search.cpan.org/~bdfoy/Unicode-Tussle-1.11/lib/Unicode/Tussle.pm</p></div>
+module from http://search.cpan.org/~bdfoy/Unicode-Tussle-1.11/lib/Unicode/Tussle.pm</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id508">
+        <table class="children sortable" id="id511">
   
   
   <tr class="method">
@@ -96,7 +96,7 @@ module from http://search.cpan.org/~bdfoy/Unicode-Tussle-1.11/lib/Unicode/Tussle
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html">WordListCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id509">
+          <table class="children sortable" id="id512">
   
   
   <tr class="basemethod">
@@ -115,7 +115,7 @@ module from http://search.cpan.org/~bdfoy/Unicode-Tussle-1.11/lib/Unicode/Tussle
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html">WordListCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id510">
+          <table class="children sortable" id="id513">
   
   
   <tr class="basemethod">
@@ -187,7 +187,7 @@ module from http://search.cpan.org/~bdfoy/Unicode-Tussle-1.11/lib/Unicode/Tussle
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -224,7 +224,7 @@ module from http://search.cpan.org/~bdfoy/Unicode-Tussle-1.11/lib/Unicode/Tussle
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chars</span>(self, category=None, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordlist.py#L133">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/wordlist.py#L133">
       
       (source)
     </a>
@@ -232,18 +232,17 @@ module from http://search.cpan.org/~bdfoy/Unicode-Tussle-1.11/lib/Unicode/Tussle
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">This module returns a list of characters from  the Perl Unicode Properties.
-They are very useful when porting Perl tokenizers to Python.
-
-&gt;&gt;&gt; from nltk.corpus import perluniprops as pup
-&gt;&gt;&gt; pup.chars('Open_Punctuation')[:5] == [u'(', u'[', u'{', u'༺', u'༼']
-True
-&gt;&gt;&gt; pup.chars('Currency_Symbol')[:5] == [u'$', u'¢', u'£', u'¤', u'¥']
-True
-&gt;&gt;&gt; pup.available_categories
-['Close_Punctuation', 'Currency_Symbol', 'IsAlnum', 'IsAlpha', 'IsLower', 'IsN', 'IsSc', 'IsSo', 'IsUpper', 'Line_Separator', 'Number', 'Open_Punctuation', 'Punctuation', 'Separator', 'Symbol']
-
-:return: a list of characters given the specific unicode character category</p></div>
+    <div><p>This module returns a list of characters from  the Perl Unicode Properties.
+They are very useful when porting Perl tokenizers to Python.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> perluniprops <span class="py-keyword">as</span> pup
+<span class="py-prompt">&gt;&gt;&gt; </span>pup.chars(<span class="py-string">'Open_Punctuation'</span>)[:5] == [u<span class="py-string">'('</span>, u<span class="py-string">'['</span>, u<span class="py-string">'{'</span>, u<span class="py-string">'༺'</span>, u<span class="py-string">'༼'</span>]
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>pup.chars(<span class="py-string">'Currency_Symbol'</span>)[:5] == [u<span class="py-string">'$'</span>, u<span class="py-string">'¢'</span>, u<span class="py-string">'£'</span>, u<span class="py-string">'¤'</span>, u<span class="py-string">'¥'</span>]
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>pup.available_categories
+<span class="py-output">['Close_Punctuation', 'Currency_Symbol', 'IsAlnum', 'IsAlpha', 'IsLower', 'IsN', 'IsSc', 'IsSo', 'IsUpper', 'Line_Separator', 'Number', 'Open_Punctuation', 'Punctuation', 'Separator', 'Symbol']</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of characters given the specific unicode character category</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -257,7 +256,7 @@ True
   <div class="functionHeader">
     
     <span class="py-defname">available_categories</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordlist.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/wordlist.py#L115">
       
       (source)
     </a>
@@ -277,7 +276,7 @@ True
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,57 +65,55 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">StackDecoder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L50" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StackDecoder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L50" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.stack_decoder.StackDecoder">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Phrase-based stack decoder for machine translation
-
-&gt;&gt;&gt; from nltk.translate import PhraseTable
-&gt;&gt;&gt; phrase_table = PhraseTable()
-&gt;&gt;&gt; phrase_table.add(('niemand',), ('nobody',), log(0.8))
-&gt;&gt;&gt; phrase_table.add(('niemand',), ('no', 'one'), log(0.2))
-&gt;&gt;&gt; phrase_table.add(('erwartet',), ('expects',), log(0.8))
-&gt;&gt;&gt; phrase_table.add(('erwartet',), ('expecting',), log(0.2))
-&gt;&gt;&gt; phrase_table.add(('niemand', 'erwartet'), ('one', 'does', 'not', 'expect'), log(0.1))
-&gt;&gt;&gt; phrase_table.add(('die', 'spanische', 'inquisition'), ('the', 'spanish', 'inquisition'), log(0.8))
-&gt;&gt;&gt; phrase_table.add(('!',), ('!',), log(0.8))
-
-&gt;&gt;&gt; #  nltk.model should be used here once it is implemented
-&gt;&gt;&gt; from collections import defaultdict
-&gt;&gt;&gt; language_prob = defaultdict(lambda: -999.0)
-&gt;&gt;&gt; language_prob[('nobody',)] = log(0.5)
-&gt;&gt;&gt; language_prob[('expects',)] = log(0.4)
-&gt;&gt;&gt; language_prob[('the', 'spanish', 'inquisition')] = log(0.2)
-&gt;&gt;&gt; language_prob[('!',)] = log(0.1)
-&gt;&gt;&gt; language_model = type('',(object,),{'probability_change': lambda self, context, phrase: language_prob[phrase], 'probability': lambda self, phrase: language_prob[phrase]})()
-
-&gt;&gt;&gt; stack_decoder = StackDecoder(phrase_table, language_model)
-
-&gt;&gt;&gt; stack_decoder.translate(['niemand', 'erwartet', 'die', 'spanische', 'inquisition', '!'])
-['nobody', 'expects', 'the', 'spanish', 'inquisition', '!']</p></div>
+        <div><p>Phrase-based stack decoder for machine translation</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.translate <span class="py-keyword">import</span> PhraseTable
+<span class="py-prompt">&gt;&gt;&gt; </span>phrase_table = PhraseTable()
+<span class="py-prompt">&gt;&gt;&gt; </span>phrase_table.add((<span class="py-string">'niemand'</span>,), (<span class="py-string">'nobody'</span>,), log(0.8))
+<span class="py-prompt">&gt;&gt;&gt; </span>phrase_table.add((<span class="py-string">'niemand'</span>,), (<span class="py-string">'no'</span>, <span class="py-string">'one'</span>), log(0.2))
+<span class="py-prompt">&gt;&gt;&gt; </span>phrase_table.add((<span class="py-string">'erwartet'</span>,), (<span class="py-string">'expects'</span>,), log(0.8))
+<span class="py-prompt">&gt;&gt;&gt; </span>phrase_table.add((<span class="py-string">'erwartet'</span>,), (<span class="py-string">'expecting'</span>,), log(0.2))
+<span class="py-prompt">&gt;&gt;&gt; </span>phrase_table.add((<span class="py-string">'niemand'</span>, <span class="py-string">'erwartet'</span>), (<span class="py-string">'one'</span>, <span class="py-string">'does'</span>, <span class="py-string">'not'</span>, <span class="py-string">'expect'</span>), log(0.1))
+<span class="py-prompt">&gt;&gt;&gt; </span>phrase_table.add((<span class="py-string">'die'</span>, <span class="py-string">'spanische'</span>, <span class="py-string">'inquisition'</span>), (<span class="py-string">'the'</span>, <span class="py-string">'spanish'</span>, <span class="py-string">'inquisition'</span>), log(0.8))
+<span class="py-prompt">&gt;&gt;&gt; </span>phrase_table.add((<span class="py-string">'!'</span>,), (<span class="py-string">'!'</span>,), log(0.8))</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment">#  nltk.model should be used here once it is implemented</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> collections <span class="py-keyword">import</span> defaultdict
+<span class="py-prompt">&gt;&gt;&gt; </span>language_prob = defaultdict(<span class="py-keyword">lambda</span>: -999.0)
+<span class="py-prompt">&gt;&gt;&gt; </span>language_prob[(<span class="py-string">'nobody'</span>,)] = log(0.5)
+<span class="py-prompt">&gt;&gt;&gt; </span>language_prob[(<span class="py-string">'expects'</span>,)] = log(0.4)
+<span class="py-prompt">&gt;&gt;&gt; </span>language_prob[(<span class="py-string">'the'</span>, <span class="py-string">'spanish'</span>, <span class="py-string">'inquisition'</span>)] = log(0.2)
+<span class="py-prompt">&gt;&gt;&gt; </span>language_prob[(<span class="py-string">'!'</span>,)] = log(0.1)
+<span class="py-prompt">&gt;&gt;&gt; </span>language_model = <span class="py-builtin">type</span>(<span class="py-string">''</span>,(<span class="py-builtin">object</span>,),{<span class="py-string">'probability_change'</span>: <span class="py-keyword">lambda</span> self, context, phrase: language_prob[phrase], <span class="py-string">'probability'</span>: <span class="py-keyword">lambda</span> self, phrase: language_prob[phrase]})()</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>stack_decoder = StackDecoder(phrase_table, language_model)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>stack_decoder.translate([<span class="py-string">'niemand'</span>, <span class="py-string">'erwartet'</span>, <span class="py-string">'die'</span>, <span class="py-string">'spanische'</span>, <span class="py-string">'inquisition'</span>, <span class="py-string">'!'</span>])
+<span class="py-output">['nobody', 'expects', 'the', 'spanish', 'inquisition', '!']</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1904">
+        <table class="children sortable" id="id1908">
   
   
   <tr class="staticmethod">
     
     <td>Static Method</td>
     <td><code><a href="#valid_phrases">valid_phrases</a></code></td>
-    <td><span>Extract phrases from ``all_phrases_from`` that contains words that have not been translated by ``hypothesis``</span></td>
+    <td><span>Extract phrases from <tt class="rst-docutils literal">all_phrases_from</tt> that contains words that have not been translated by <tt class="rst-docutils literal">hypothesis</tt></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param phrase_table: Table of translations for source language phrases and the log probabilities for those translations. :type phrase_table: PhraseTable</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#compute_future_scores">compute_future_scores</a></code></td>
-    <td><span>Determines the approximate scores for translating every subsequence in ``src_sentence``</span></td>
+    <td><span>Determines the approximate scores for translating every subsequence in <tt class="rst-docutils literal">src_sentence</tt></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -130,7 +128,7 @@
     
     <td>Method</td>
     <td><code><a href="#expansion_score">expansion_score</a></code></td>
-    <td><span>Calculate the score of expanding ``hypothesis`` with ``translation_option``</span></td>
+    <td><span>Calculate the score of expanding <tt class="rst-docutils literal">hypothesis</tt> with <tt class="rst-docutils literal">translation_option</tt></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -140,12 +138,12 @@
     
     <td>Method</td>
     <td><code><a href="#future_score">future_score</a></code></td>
-    <td><span>Determines the approximate score for translating the untranslated words in ``hypothesis``</span></td>
+    <td><span>Determines the approximate score for translating the untranslated words in <tt class="rst-docutils literal">hypothesis</tt></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#translate">translate</a></code></td>
-    <td><span>:param src_sentence: Sentence to be translated :type src_sentence: list(str)</span></td>
+    <td><span></span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -212,7 +210,7 @@
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">valid_phrases</span>(all_phrases_from, hypothesis):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L305">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L305">
       
       (source)
     </a>
@@ -220,19 +218,11 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extract phrases from ``all_phrases_from`` that contains words
-that have not been translated by ``hypothesis``
-
-:param all_phrases_from: Phrases represented by their spans, in
-    the same format as the return value of
-    ``find_all_src_phrases``
-:type all_phrases_from: list(list(int))
-
-:type hypothesis: _Hypothesis
-
-:return: A list of phrases, represented by their spans, that
-    cover untranslated positions.
-:rtype: list(tuple(int, int))</p></div>
+    <div>Extract phrases from <tt class="rst-docutils literal">all_phrases_from</tt> that contains words
+that have not been translated by <tt class="rst-docutils literal">hypothesis</tt><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">all_phrases_from:</span>list(list(int))</td><td class="fieldArgDesc">Phrases represented by their spans, in
+the same format as the return value of
+<tt class="rst-docutils literal">find_all_src_phrases</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>_Hypothesis</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(int, int))</td><td class="fieldArgDesc">A list of phrases, represented by their spans, that
+cover untranslated positions.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -246,7 +236,7 @@ that have not been translated by ``hypothesis``
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, phrase_table, language_model):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L80">
       
       (source)
     </a>
@@ -254,17 +244,13 @@ that have not been translated by ``hypothesis``
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param phrase_table: Table of translations for source language
-    phrases and the log probabilities for those translations.
-:type phrase_table: PhraseTable
-
-:param language_model: Target language model. Must define a
-    ``probability_change`` method that calculates the change in
-    log probability of a sentence, if a given string is appended
-    to it.
-    This interface is experimental and will likely be replaced
-    with nltk.model once it is implemented.
-:type language_model: object</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">phrase_table:</span>PhraseTable</td><td class="fieldArgDesc">Table of translations for source language
+phrases and the log probabilities for those translations.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">language_model:</span>object</td><td class="fieldArgDesc">Target language model. Must define a
+<tt class="rst-docutils literal">probability_change</tt> method that calculates the change in
+log probability of a sentence, if a given string is appended
+to it.
+This interface is experimental and will likely be replaced
+with nltk.model once it is implemented.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -278,7 +264,7 @@ that have not been translated by ``hypothesis``
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">compute_future_scores</span>(self, src_sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L226">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L226">
       
       (source)
     </a>
@@ -286,18 +272,14 @@ that have not been translated by ``hypothesis``
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Determines the approximate scores for translating every
-subsequence in ``src_sentence``
-
-Future scores can be used a look-ahead to determine the
-difficulty of translating the remaining parts of a src_sentence.
-
-:type src_sentence: tuple(str)
-
-:return: Scores of subsequences referenced by their start and
-end positions. For example, result[2][5] is the score of the
+    <div><p>Determines the approximate scores for translating every
+subsequence in <tt class="rst-docutils literal">src_sentence</tt></p>
+<p>Future scores can be used a look-ahead to determine the
+difficulty of translating the remaining parts of a src_sentence.</p>
+<p>end positions. For example, result[2][5] is the score of the
 subsequence covering positions 2, 3, and 4.
-:rtype: dict(int: (dict(int): float))</p></div>
+:rtype: dict(int: (dict(int): float))</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">src_sentence:</span>tuple(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">Scores of subsequences referenced by their start and</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -311,7 +293,7 @@ subsequence covering positions 2, 3, and 4.
   <div class="functionHeader">
     @distortion_factor.setter<br />
     <span class="py-keyword">def</span> <span class="py-defname">distortion_factor</span>(self, d):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L132">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L132">
       
       (source)
     </a>
@@ -333,7 +315,7 @@ subsequence covering positions 2, 3, and 4.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">distortion_score</span>(self, hypothesis, next_src_phrase_span):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L297">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L297">
       
       (source)
     </a>
@@ -355,7 +337,7 @@ subsequence covering positions 2, 3, and 4.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">expansion_score</span>(self, hypothesis, translation_option, src_phrase_span):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L272">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L272">
       
       (source)
     </a>
@@ -363,17 +345,8 @@ subsequence covering positions 2, 3, and 4.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate the score of expanding ``hypothesis`` with
-``translation_option``
-
-:param hypothesis: Hypothesis being expanded
-:type hypothesis: _Hypothesis
-
-:param translation_option: Information about the proposed expansion
-:type translation_option: PhraseTableEntry
-
-:param src_phrase_span: Word position span of the source phrase
-:type src_phrase_span: tuple(int, int)</p></div>
+    <div>Calculate the score of expanding <tt class="rst-docutils literal">hypothesis</tt> with
+<tt class="rst-docutils literal">translation_option</tt><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>_Hypothesis</td><td class="fieldArgDesc">Hypothesis being expanded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">translation_option:</span>PhraseTableEntry</td><td class="fieldArgDesc">Information about the proposed expansion</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">src_phrase_span:</span>tuple(int, int)</td><td class="fieldArgDesc">Word position span of the source phrase</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -387,7 +360,7 @@ subsequence covering positions 2, 3, and 4.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_all_src_phrases</span>(self, src_sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L202">
       
       (source)
     </a>
@@ -395,18 +368,13 @@ subsequence covering positions 2, 3, and 4.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Finds all subsequences in src_sentence that have a phrase
-translation in the translation table
-
-:type src_sentence: tuple(str)
-
-:return: Subsequences that have a phrase translation,
-    represented as a table of lists of end positions.
-    For example, if result[2] is [5, 6, 9], then there are
-    three phrases starting from position 2 in ``src_sentence``,
-    ending at positions 5, 6, and 9 exclusive. The list of
-    ending positions are in ascending order.
-:rtype: list(list(int))</p></div>
+    <div>Finds all subsequences in src_sentence that have a phrase
+translation in the translation table<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">src_sentence:</span>tuple(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(int))</td><td class="fieldArgDesc">Subsequences that have a phrase translation,
+represented as a table of lists of end positions.
+For example, if result[2] is [5, 6, 9], then there are
+three phrases starting from position 2 in <tt class="rst-docutils literal">src_sentence</tt>,
+ending at positions 5, 6, and 9 exclusive. The list of
+ending positions are in ascending order.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -420,7 +388,7 @@ translation in the translation table
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">future_score</span>(self, hypothesis, future_score_table, sentence_length):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L262">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L262">
       
       (source)
     </a>
@@ -428,8 +396,8 @@ translation in the translation table
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Determines the approximate score for translating the
-untranslated words in ``hypothesis``</p></div>
+    <div>Determines the approximate score for translating the
+untranslated words in <tt class="rst-docutils literal">hypothesis</tt></div>
   </div>
 </div><div class="basemethod">
   
@@ -443,7 +411,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">translate</span>(self, src_sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L145">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L145">
       
       (source)
     </a>
@@ -451,11 +419,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param src_sentence: Sentence to be translated
-:type src_sentence: list(str)
-
-:return: Translated sentence
-:rtype: list(str)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">src_sentence:</span>list(str)</td><td class="fieldArgDesc">Sentence to be translated</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">Translated sentence</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -469,7 +433,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">beam_threshold</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L105">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L105">
       
       (source)
     </a>
@@ -477,9 +441,12 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">float: Hypotheses that score below this factor of the best
-    hypothesis in a stack are dropped from consideration.
-    Value between 0.0 and 1.0.</p></div>
+    <div><dl class="rst-docutils">
+<dt>float: Hypotheses that score below this factor of the best</dt>
+<dd>hypothesis in a stack are dropped from consideration.
+Value between 0.0 and 1.0.</dd>
+</dl>
+</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -493,7 +460,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">language_model</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L95">
       
       (source)
     </a>
@@ -515,7 +482,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">phrase_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L94">
       
       (source)
     </a>
@@ -537,7 +504,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">stack_size</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L112">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L112">
       
       (source)
     </a>
@@ -545,9 +512,12 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">int: Maximum number of hypotheses to consider in a stack.
-    Higher values increase the likelihood of a good translation,
-    but increases processing time.</p></div>
+    <div><dl class="rst-docutils">
+<dt>int: Maximum number of hypotheses to consider in a stack.</dt>
+<dd>Higher values increase the likelihood of a good translation,
+but increases processing time.</dd>
+</dl>
+</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -561,7 +531,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">word_penalty</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L97">
       
       (source)
     </a>
@@ -569,10 +539,13 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">float: Influences the translation length exponentially.
-    If positive, shorter translations are preferred.
-    If negative, longer translations are preferred.
-    If zero, no penalty is applied.</p></div>
+    <div><dl class="rst-docutils">
+<dt>float: Influences the translation length exponentially.</dt>
+<dd>If positive, shorter translations are preferred.
+If negative, longer translations are preferred.
+If zero, no penalty is applied.</dd>
+</dl>
+</div>
   </div>
 </div><div class="baseproperty">
   
@@ -586,7 +559,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">distortion_factor</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L122">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L122">
       
       (source)
     </a>
@@ -594,10 +567,13 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">float: Amount of reordering of source phrases.
-    Lower values favour monotone translation, suitable when
-    word order is similar for both source and target languages.
-    Value between 0.0 and 1.0. Default 0.5.</p></div>
+    <div><dl class="rst-docutils">
+<dt>float: Amount of reordering of source phrases.</dt>
+<dd>Lower values favour monotone translation, suitable when
+word order is similar for both source and target languages.
+Value between 0.0 and 1.0. Default 0.5.</dd>
+</dl>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -611,7 +587,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__compute_log_distortion</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L137">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L137">
       
       (source)
     </a>
@@ -633,7 +609,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__distortion_factor</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L119">
       
       (source)
     </a>
@@ -655,7 +631,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__log_distortion_factor</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L141">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L141">
       
       (source)
     </a>
@@ -675,7 +651,7 @@ untranslated words in ``hypothesis``</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

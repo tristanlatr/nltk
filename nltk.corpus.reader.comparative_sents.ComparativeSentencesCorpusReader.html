@@ -65,29 +65,32 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ComparativeSentencesCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L96" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ComparativeSentencesCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L96" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.comparative_sents.ComparativeSentencesCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for the Comparative Sentence Dataset by Jindal and Liu (2006).
-
-    &gt;&gt;&gt; from nltk.corpus import comparative_sentences
-    &gt;&gt;&gt; comparison = comparative_sentences.comparisons()[0]
-    &gt;&gt;&gt; comparison.text
-    ['its', 'fast-forward', 'and', 'rewind', 'work', 'much', 'more', 'smoothly',
-    'and', 'consistently', 'than', 'those', 'of', 'other', 'models', 'i', "'ve",
-    'had', '.']
-    &gt;&gt;&gt; comparison.entity_2
-    'models'
-    &gt;&gt;&gt; (comparison.feature, comparison.keyword)
-    ('rewind', 'more')
-    &gt;&gt;&gt; len(comparative_sentences.comparisons())
-    853</p></div>
+        <div><p>Reader for the Comparative Sentence Dataset by Jindal and Liu (2006).</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> comparative_sentences
+<span class="py-prompt">&gt;&gt;&gt; </span>comparison = comparative_sentences.comparisons()[0]
+<span class="py-prompt">&gt;&gt;&gt; </span>comparison.text
+<span class="py-output">['its', 'fast-forward', 'and', 'rewind', 'work', 'much', 'more', 'smoothly',</span>
+<span class="py-output">'and', 'consistently', 'than', 'those', 'of', 'other', 'models', 'i', "'ve",</span>
+<span class="py-output">'had', '.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>comparison.entity_2
+<span class="py-output">'models'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>(comparison.feature, comparison.keyword)
+<span class="py-output">('rewind', 'more')</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(comparative_sentences.comparisons())
+<span class="py-output">853</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id287">
+        <table class="children sortable" id="id290">
   
   
   <tr class="method">
@@ -166,7 +169,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id288">
+          <table class="children sortable" id="id291">
   
   
   <tr class="basemethod">
@@ -228,7 +231,7 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -265,7 +268,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, word_tokenizer=WhitespaceTokenizer(), sent_tokenizer=None, encoding='utf8'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L116">
       
       (source)
     </a>
@@ -273,12 +276,8 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:param root: The root directory for this corpus.
-:param fileids: a list or regexp specifying the fileids in this corpus.
-:param word_tokenizer: tokenizer for breaking sentences or paragraphs
-    into words. Default: `WhitespaceTokenizer`
-:param sent_tokenizer: tokenizer for breaking paragraphs into sentences.
-:param encoding: the encoding that should be used to read the corpus.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the fileids in this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word_tokenizer</span></td><td class="fieldArgDesc">tokenizer for breaking sentences or paragraphs
+into words. Default: <code><a href="nltk.tokenize.regexp.WhitespaceTokenizer.html">WhitespaceTokenizer</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent_tokenizer</span></td><td class="fieldArgDesc">tokenizer for breaking paragraphs into sentences.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc">the encoding that should be used to read the corpus.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -292,7 +291,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">comparisons</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L137">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L137">
       
       (source)
     </a>
@@ -300,12 +299,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all comparisons in the corpus.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    comparisons have to be returned.
-:return: the given file(s) as a list of Comparison objects.
-:rtype: list(Comparison)</p></div>
+    <div>Return all comparisons in the corpus.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+comparisons have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Comparison)</td><td class="fieldArgDesc">the given file(s) as a list of Comparison objects.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -319,7 +314,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">keywords</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L157">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L157">
       
       (source)
     </a>
@@ -327,12 +322,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a set of all keywords used in the corpus.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    keywords have to be returned.
-:return: the set of keywords and comparative phrases used in the corpus.
-:rtype: set(str)</p></div>
+    <div>Return a set of all keywords used in the corpus.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+keywords have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(str)</td><td class="fieldArgDesc">the set of keywords and comparative phrases used in the corpus.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -346,7 +337,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">keywords_readme</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L176">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L176">
       
       (source)
     </a>
@@ -354,8 +345,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the list of words and constituents considered as clues of a
-comparison (from listOfkeywords.txt).</p></div>
+    <div>Return the list of words and constituents considered as clues of a
+comparison (from listOfkeywords.txt).</div>
   </div>
 </div><div class="basemethod">
   
@@ -369,7 +360,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L189">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L189">
       
       (source)
     </a>
@@ -377,10 +368,8 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param fileids: a list or regexp specifying the fileids that have to be
-    returned as a raw string.
-:return: the given file(s) as a single string.
-:rtype: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the fileids that have to be
+returned as a raw string.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">the given file(s) as a single string.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -394,7 +383,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">readme</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L202">
       
       (source)
     </a>
@@ -402,7 +391,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#readme">nltk.corpus.reader.api.CorpusReader.readme</a></code></div>
     
-    <div><p class="pre">Return the contents of the corpus readme file.</p></div>
+    <div>Return the contents of the corpus readme file.</div>
   </div>
 </div><div class="basemethod">
   
@@ -416,7 +405,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L208">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L208">
       
       (source)
     </a>
@@ -424,13 +413,9 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all sentences in the corpus.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    sentences have to be returned.
-:return: all sentences of the corpus as lists of tokens (or as plain
-    strings, if no word tokenizer is specified).
-:rtype: list(list(str)) or list(str)</p></div>
+    <div>Return all sentences in the corpus.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+sentences have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(str)) or list(str)</td><td class="fieldArgDesc">all sentences of the corpus as lists of tokens (or as plain
+strings, if no word tokenizer is specified).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -444,7 +429,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L225">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L225">
       
       (source)
     </a>
@@ -452,12 +437,8 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all words and punctuation symbols in the corpus.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    words have to be returned.
-:return: the given file(s) as a list of words and punctuation symbols.
-:rtype: list(str)</p></div>
+    <div>Return all words and punctuation symbols in the corpus.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+words have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file(s) as a list of words and punctuation symbols.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -471,7 +452,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_comparison_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L241">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L241">
       
       (source)
     </a>
@@ -493,7 +474,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_keyword_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L294">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L294">
       
       (source)
     </a>
@@ -515,7 +496,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_sent_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L300">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L300">
       
       (source)
     </a>
@@ -537,7 +518,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_word_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L322">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L322">
       
       (source)
     </a>
@@ -559,7 +540,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_sent_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L135">
       
       (source)
     </a>
@@ -581,7 +562,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_word_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/comparative_sents.py#L134">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/comparative_sents.py#L134">
       
       (source)
     </a>
@@ -601,7 +582,7 @@ comparison (from listOfkeywords.txt).</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

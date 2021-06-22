@@ -65,29 +65,33 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TweetTokenizer</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/casual.py#L255" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TweetTokenizer</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/casual.py#L255" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.casual.TweetTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Tokenizer for tweets.
-
-    &gt;&gt;&gt; from nltk.tokenize import TweetTokenizer
-    &gt;&gt;&gt; tknzr = TweetTokenizer()
-    &gt;&gt;&gt; s0 = "This is a cooool #dummysmiley: :-) :-P &lt;3 and some arrows &lt; &gt; -&gt; &lt;--"
-    &gt;&gt;&gt; tknzr.tokenize(s0)
-    ['This', 'is', 'a', 'cooool', '#dummysmiley', ':', ':-)', ':-P', '&lt;3', 'and', 'some', 'arrows', '&lt;', '&gt;', '-&gt;', '&lt;--']
-
-Examples using `strip_handles` and `reduce_len parameters`:
-
-    &gt;&gt;&gt; tknzr = TweetTokenizer(strip_handles=True, reduce_len=True)
-    &gt;&gt;&gt; s1 = '@remy: This is waaaaayyyy too much for you!!!!!!'
-    &gt;&gt;&gt; tknzr.tokenize(s1)
-    [':', 'This', 'is', 'waaayyy', 'too', 'much', 'for', 'you', '!', '!', '!']</p></div>
+        <div><p>Tokenizer for tweets.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> TweetTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>tknzr = TweetTokenizer()
+<span class="py-prompt">&gt;&gt;&gt; </span>s0 = <span class="py-string">"This is a cooool #dummysmiley: :-) :-P &lt;3 and some arrows &lt; &gt; -&gt; &lt;--"</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>tknzr.tokenize(s0)
+<span class="py-output">['This', 'is', 'a', 'cooool', '#dummysmiley', ':', ':-)', ':-P', '&lt;3', 'and', 'some', 'arrows', '&lt;', '&gt;', '-&gt;', '&lt;--']</span>
+</pre></blockquote>
+<p>Examples using <code><a href="#strip_handles">strip_handles</a></code> and <code>reduce_len parameters</code>:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tknzr = TweetTokenizer(strip_handles=<span class="py-builtin">True</span>, reduce_len=<span class="py-builtin">True</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>s1 = <span class="py-string">'@remy: This is waaaaayyyy too much for you!!!!!!'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>tknzr.tokenize(s1)
+<span class="py-output">[':', 'This', 'is', 'waaayyy', 'too', 'much', 'for', 'you', '!', '!', '!']</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1782">
+        <table class="children sortable" id="id1786">
   
   
   <tr class="method">
@@ -99,7 +103,7 @@ Examples using `strip_handles` and `reduce_len parameters`:
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>:param text: str :rtype: list(str) :return: a tokenized list of strings; concatenating this list returns        the original string if `preserve_case=False`</span></td>
+    <td><span></span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -136,7 +140,7 @@ Examples using `strip_handles` and `reduce_len parameters`:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, preserve_case=True, reduce_len=False, strip_handles=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/casual.py#L273">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/casual.py#L273">
       
       (source)
     </a>
@@ -158,7 +162,7 @@ Examples using `strip_handles` and `reduce_len parameters`:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/casual.py#L278">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/casual.py#L278">
       
       (source)
     </a>
@@ -166,9 +170,7 @@ Examples using `strip_handles` and `reduce_len parameters`:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param text: str
-:rtype: list(str)
-:return: a tokenized list of strings; concatenating this list returns        the original string if `preserve_case=False`</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text</span></td><td class="fieldArgDesc">str</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">a tokenized list of strings; concatenating this list returns        the original string if <code>preserve_case=False</code></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -182,7 +184,7 @@ Examples using `strip_handles` and `reduce_len parameters`:
   <div class="functionHeader">
     
     <span class="py-defname">preserve_case</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/casual.py#L274">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/casual.py#L274">
       
       (source)
     </a>
@@ -204,7 +206,7 @@ Examples using `strip_handles` and `reduce_len parameters`:
   <div class="functionHeader">
     
     <span class="py-defname">reduce_len</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/casual.py#L275">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/casual.py#L275">
       
       (source)
     </a>
@@ -226,7 +228,7 @@ Examples using `strip_handles` and `reduce_len parameters`:
   <div class="functionHeader">
     
     <span class="py-defname">strip_handles</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/casual.py#L276">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/casual.py#L276">
       
       (source)
     </a>
@@ -246,7 +248,7 @@ Examples using `strip_handles` and `reduce_len parameters`:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

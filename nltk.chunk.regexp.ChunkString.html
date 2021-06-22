@@ -65,61 +65,44 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChunkString</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L19" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChunkString</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L19" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.chunk.regexp.ChunkString">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A string-based encoding of a particular chunking of a text.
-Internally, the ``ChunkString`` class uses a single string to
+        <div><p>A string-based encoding of a particular chunking of a text.
+Internally, the <tt class="rst-docutils literal">ChunkString</tt> class uses a single string to
 encode the chunking of the input text.  This string contains a
 sequence of angle-bracket delimited tags, with chunking indicated
-by braces.  An example of this encoding is::
-
-    {&lt;DT&gt;&lt;JJ&gt;&lt;NN&gt;}&lt;VBN&gt;&lt;IN&gt;{&lt;DT&gt;&lt;NN&gt;}&lt;.&gt;{&lt;DT&gt;&lt;NN&gt;}&lt;VBD&gt;&lt;.&gt;
-
-``ChunkString`` are created from tagged texts (i.e., lists of
-``tokens`` whose type is ``TaggedType``).  Initially, nothing is
-chunked.
-
-The chunking of a ``ChunkString`` can be modified with the ``xform()``
+by braces.  An example of this encoding is:</p>
+<pre class="rst-literal-block">
+{&lt;DT&gt;&lt;JJ&gt;&lt;NN&gt;}&lt;VBN&gt;&lt;IN&gt;{&lt;DT&gt;&lt;NN&gt;}&lt;.&gt;{&lt;DT&gt;&lt;NN&gt;}&lt;VBD&gt;&lt;.&gt;
+</pre>
+<p><tt class="rst-docutils literal">ChunkString</tt> are created from tagged texts (i.e., lists of
+<tt class="rst-docutils literal">tokens</tt> whose type is <tt class="rst-docutils literal">TaggedType</tt>).  Initially, nothing is
+chunked.</p>
+<p>The chunking of a <tt class="rst-docutils literal">ChunkString</tt> can be modified with the <tt class="rst-docutils literal">xform()</tt>
 method, which uses a regular expression to transform the string
 representation.  These transformations should only add and remove
-braces; they should *not* modify the sequence of angle-bracket
-delimited tags.
-
-:type _str: str
-:ivar _str: The internal string representation of the text's
-    encoding.  This string representation contains a sequence of
-    angle-bracket delimited tags, with chunking indicated by
-    braces.  An example of this encoding is::
-
-        {&lt;DT&gt;&lt;JJ&gt;&lt;NN&gt;}&lt;VBN&gt;&lt;IN&gt;{&lt;DT&gt;&lt;NN&gt;}&lt;.&gt;{&lt;DT&gt;&lt;NN&gt;}&lt;VBD&gt;&lt;.&gt;
-
-:type _pieces: list(tagged tokens and chunks)
-:ivar _pieces: The tagged tokens and chunks encoded by this ``ChunkString``.
-:ivar _debug: The debug level.  See the constructor docs.
-
-:cvar IN_CHUNK_PATTERN: A zero-width regexp pattern string that
-    will only match positions that are in chunks.
-:cvar IN_STRIP_PATTERN: A zero-width regexp pattern string that
-    will only match positions that are in strips.</p></div>
+braces; they should <em>not</em> modify the sequence of angle-bracket
+delimited tags.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id107">
+        <table class="children sortable" id="id110">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Construct a new ``ChunkString`` that encodes the chunking of the text ``tagged_tokens``.</span></td>
+    <td><span>Construct a new <tt class="rst-docutils literal">ChunkString</tt> that encodes the chunking of the text <tt class="rst-docutils literal">tagged_tokens</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a string representation of this ``ChunkString``. It has the form::</span></td>
+    <td><span>Return a string representation of this <tt class="rst-docutils literal">ChunkString</tt>. It has the form:</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -129,7 +112,7 @@ delimited tags.
     
     <td>Method</td>
     <td><code><a href="#to_chunkstruct">to_chunkstruct</a></code></td>
-    <td><span>Return the chunk structure encoded by this ``ChunkString``.</span></td>
+    <td><span>Return the chunk structure encoded by this <tt class="rst-docutils literal">ChunkString</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -149,12 +132,14 @@ delimited tags.
     
     <td>Class Variable</td>
     <td><code><a href="#IN_CHUNK_PATTERN">IN_CHUNK_PATTERN</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A zero-width regexp pattern string that
+will only match positions that are in chunks.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
     <td><code><a href="#IN_STRIP_PATTERN">IN_STRIP_PATTERN</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A zero-width regexp pattern string that
+will only match positions that are in strips.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -164,7 +149,7 @@ delimited tags.
     
     <td>Method</td>
     <td><code><a href="#_verify">_verify</a></code></td>
-    <td><span>Check to make sure that ``s`` still corresponds to some chunked version of ``_pieces``.</span></td>
+    <td><span>Check to make sure that <tt class="rst-docutils literal">s</tt> still corresponds to some chunked version of <tt class="rst-docutils literal">_pieces</tt>.</span></td>
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
@@ -194,12 +179,12 @@ delimited tags.
     
     <td>Instance Variable</td>
     <td><code><a href="#_debug">_debug</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The debug level.  See the constructor docs.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_pieces">_pieces</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The tagged tokens and chunks encoded by this <tt class="rst-docutils literal">ChunkString</tt>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -209,7 +194,10 @@ delimited tags.
     
     <td>Instance Variable</td>
     <td><code><a href="#_str">_str</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The internal string representation of the text's
+encoding.  This string representation contains a sequence of
+angle-bracket delimited tags, with chunking indicated by
+braces.  An example of this encoding is:</span></td>
   </tr>
 </table>
         
@@ -231,7 +219,7 @@ delimited tags.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, chunk_struct, debug_level=1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L70">
       
       (source)
     </a>
@@ -239,24 +227,30 @@ delimited tags.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new ``ChunkString`` that encodes the chunking of
-the text ``tagged_tokens``.
-
-:type chunk_struct: Tree
-:param chunk_struct: The chunk structure to be further chunked.
-:type debug_level: int
-:param debug_level: The level of debugging which should be
-    applied to transformations on the ``ChunkString``.  The
-    valid levels are:
-        - 0: no checks
-        - 1: full check on to_chunkstruct
-        - 2: full check on to_chunkstruct and cursory check after
-           each transformation.
-        - 3: full check on to_chunkstruct and full check after
-           each transformation.
-    We recommend you use at least level 1.  You should
-    probably use level 3 if you use any non-standard
-    subclasses of ``RegexpChunkRule``.</p></div>
+    <div>Construct a new <tt class="rst-docutils literal">ChunkString</tt> that encodes the chunking of
+the text <tt class="rst-docutils literal">tagged_tokens</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chunk_struct:</span>Tree</td><td class="fieldArgDesc">The chunk structure to be further chunked.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug_level:</span>int</td><td class="fieldArgDesc"><p>The level of debugging which should be
+applied to transformations on the <tt class="rst-docutils literal">ChunkString</tt>.  The
+valid levels are:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>0: no checks</li>
+<li>1: full check on to_chunkstruct</li>
+<li><dl class="rst-first rst-docutils">
+<dt>2: full check on to_chunkstruct and cursory check after</dt>
+<dd>each transformation.</dd>
+</dl>
+</li>
+<li><dl class="rst-first rst-docutils">
+<dt>3: full check on to_chunkstruct and full check after</dt>
+<dd>each transformation.</dd>
+</dl>
+</li>
+</ul>
+</blockquote>
+<p>We recommend you use at least level 1.  You should
+probably use level 3 if you use any non-standard
+subclasses of <tt class="rst-docutils literal">RegexpChunkRule</tt>.</p>
+</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -270,7 +264,7 @@ the text ``tagged_tokens``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L222">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L222">
       
       (source)
     </a>
@@ -278,12 +272,12 @@ the text ``tagged_tokens``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation of this ``ChunkString``.
-It has the form::
-
-    &lt;ChunkString: '{&lt;DT&gt;&lt;JJ&gt;&lt;NN&gt;}&lt;VBN&gt;&lt;IN&gt;{&lt;DT&gt;&lt;NN&gt;}'&gt;
-
-:rtype: str</p></div>
+    <div><p>Return a string representation of this <tt class="rst-docutils literal">ChunkString</tt>.
+It has the form:</p>
+<pre class="rst-literal-block">
+&lt;ChunkString: '{&lt;DT&gt;&lt;JJ&gt;&lt;NN&gt;}&lt;VBN&gt;&lt;IN&gt;{&lt;DT&gt;&lt;NN&gt;}'&gt;
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -297,7 +291,7 @@ It has the form::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L233">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L233">
       
       (source)
     </a>
@@ -305,13 +299,12 @@ It has the form::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre"> Return a formatted representation of this ``ChunkString``.
- This representation will include extra spaces to ensure that
- tags will line up with the representation of other
- ``ChunkStrings`` for the same text, regardless of the chunking.
-
-:rtype: str
- </p></div>
+    <div><blockquote>
+Return a formatted representation of this <tt class="rst-docutils literal">ChunkString</tt>.
+This representation will include extra spaces to ensure that
+tags will line up with the representation of other
+<tt class="rst-docutils literal">ChunkStrings</tt> for the same text, regardless of the chunking.</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -325,7 +318,7 @@ It has the form::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">to_chunkstruct</span>(self, chunk_label='CHUNK'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L149">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L149">
       
       (source)
     </a>
@@ -333,11 +326,8 @@ It has the form::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the chunk structure encoded by this ``ChunkString``.
-
-:rtype: Tree
-:raise ValueError: If a transformation has generated an
-    invalid chunkstring.</p></div>
+    <div>Return the chunk structure encoded by this <tt class="rst-docutils literal">ChunkString</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Tree</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>If a transformation has generated an
+invalid chunkstring.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -351,7 +341,7 @@ It has the form::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">xform</span>(self, regexp, repl):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L182">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L182">
       
       (source)
     </a>
@@ -359,28 +349,21 @@ It has the form::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Apply the given transformation to the string encoding of this
-``ChunkString``.  In particular, find all occurrences that match
-``regexp``, and replace them using ``repl`` (as done by
-``re.sub``).
-
-This transformation should only add and remove braces; it
-should *not* modify the sequence of angle-bracket delimited
+    <div><p>Apply the given transformation to the string encoding of this
+<tt class="rst-docutils literal">ChunkString</tt>.  In particular, find all occurrences that match
+<tt class="rst-docutils literal">regexp</tt>, and replace them using <tt class="rst-docutils literal">repl</tt> (as done by
+<tt class="rst-docutils literal">re.sub</tt>).</p>
+<p>This transformation should only add and remove braces; it
+should <em>not</em> modify the sequence of angle-bracket delimited
 tags.  Furthermore, this transformation may not result in
 improper bracketing.  Note, in particular, that bracketing may
-not be nested.
-
-:type regexp: str or regexp
-:param regexp: A regular expression matching the substring
-    that should be replaced.  This will typically include a
-    named group, which can be used by ``repl``.
-:type repl: str
-:param repl: An expression specifying what should replace the
-    matched substring.  Typically, this will include a named
-    replacement group, specified by ``regexp``.
-:rtype: None
-:raise ValueError: If this transformation generated an
-    invalid chunkstring.</p></div>
+not be nested.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">regexp:</span>str or regexp</td><td class="fieldArgDesc">A regular expression matching the substring
+that should be replaced.  This will typically include a
+named group, which can be used by <tt class="rst-docutils literal">repl</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">repl:</span>str</td><td class="fieldArgDesc">An expression specifying what should replace the
+matched substring.  Typically, this will include a named
+replacement group, specified by <tt class="rst-docutils literal">regexp</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>If this transformation generated an
+invalid chunkstring.</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -394,7 +377,7 @@ not be nested.
   <div class="functionHeader">
     
     <span class="py-defname">CHUNK_TAG</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L58">
       
       (source)
     </a>
@@ -416,7 +399,7 @@ not be nested.
   <div class="functionHeader">
     
     <span class="py-defname">CHUNK_TAG_CHAR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L57">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L57">
       
       (source)
     </a>
@@ -438,7 +421,7 @@ not be nested.
   <div class="functionHeader">
     
     <span class="py-defname">IN_CHUNK_PATTERN</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L51">
       
       (source)
     </a>
@@ -446,7 +429,8 @@ not be nested.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A zero-width regexp pattern string that
+will only match positions that are in chunks.</div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -460,7 +444,7 @@ not be nested.
   <div class="functionHeader">
     
     <span class="py-defname">IN_STRIP_PATTERN</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L61">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L53">
       
       (source)
     </a>
@@ -468,7 +452,8 @@ not be nested.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A zero-width regexp pattern string that
+will only match positions that are in strips.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -482,7 +467,7 @@ not be nested.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_tag</span>(self, tok):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L97">
       
       (source)
     </a>
@@ -504,7 +489,7 @@ not be nested.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_verify</span>(self, s, verify_tags):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L106">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L106">
       
       (source)
     </a>
@@ -512,19 +497,14 @@ not be nested.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Check to make sure that ``s`` still corresponds to some chunked
-version of ``_pieces``.
-
-:type verify_tags: bool
-:param verify_tags: Whether the individual tags should be
-    checked.  If this is false, ``_verify`` will check to make
-    sure that ``_str`` encodes a chunked version of *some*
-    list of tokens.  If this is true, then ``_verify`` will
-    check to make sure that the tags in ``_str`` match those in
-    ``_pieces``.
-
-:raise ValueError: if the internal string representation of
-    this ``ChunkString`` is invalid or not consistent with _pieces.</p></div>
+    <div>Check to make sure that <tt class="rst-docutils literal">s</tt> still corresponds to some chunked
+version of <tt class="rst-docutils literal">_pieces</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verify_tags:</span>bool</td><td class="fieldArgDesc">Whether the individual tags should be
+checked.  If this is false, <tt class="rst-docutils literal">_verify</tt> will check to make
+sure that <tt class="rst-docutils literal">_str</tt> encodes a chunked version of <em>some</em>
+list of tokens.  If this is true, then <tt class="rst-docutils literal">_verify</tt> will
+check to make sure that the tags in <tt class="rst-docutils literal">_str</tt> match those in
+<tt class="rst-docutils literal">_pieces</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>if the internal string representation of
+this <tt class="rst-docutils literal">ChunkString</tt> is invalid or not consistent with _pieces.</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable private">
   
@@ -538,7 +518,7 @@ version of ``_pieces``.
   <div class="functionHeader">
     
     <span class="py-defname">_BALANCED_BRACKETS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L68">
       
       (source)
     </a>
@@ -560,7 +540,7 @@ version of ``_pieces``.
   <div class="functionHeader">
     
     <span class="py-defname">_BRACKETS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L67">
       
       (source)
     </a>
@@ -582,7 +562,7 @@ version of ``_pieces``.
   <div class="functionHeader">
     
     <span class="py-defname">_CHUNK</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L64">
       
       (source)
     </a>
@@ -604,7 +584,7 @@ version of ``_pieces``.
   <div class="functionHeader">
     
     <span class="py-defname">_STRIP</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L65">
       
       (source)
     </a>
@@ -626,7 +606,7 @@ version of ``_pieces``.
   <div class="functionHeader">
     
     <span class="py-defname">_VALID</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L66">
       
       (source)
     </a>
@@ -648,7 +628,7 @@ version of ``_pieces``.
   <div class="functionHeader">
     
     <span class="py-defname">_debug</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L49">
       
       (source)
     </a>
@@ -656,7 +636,7 @@ version of ``_pieces``.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The debug level.  See the constructor docs.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -669,8 +649,8 @@ version of ``_pieces``.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_pieces</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L92">
+    <span class="py-defname">_pieces</span>: list(tagged tokens and chunks) =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L47">
       
       (source)
     </a>
@@ -678,7 +658,7 @@ version of ``_pieces``.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The tagged tokens and chunks encoded by this <tt class="rst-docutils literal">ChunkString</tt>.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -692,7 +672,7 @@ version of ``_pieces``.
   <div class="functionHeader">
     
     <span class="py-defname">_root_label</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L91">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L91">
       
       (source)
     </a>
@@ -713,8 +693,8 @@ version of ``_pieces``.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_str</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L94">
+    <span class="py-defname">_str</span>: str =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L39">
       
       (source)
     </a>
@@ -722,7 +702,14 @@ version of ``_pieces``.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p>The internal string representation of the text's
+encoding.  This string representation contains a sequence of
+angle-bracket delimited tags, with chunking indicated by
+braces.  An example of this encoding is:</p>
+<pre class="rst-literal-block">
+{&lt;DT&gt;&lt;JJ&gt;&lt;NN&gt;}&lt;VBN&gt;&lt;IN&gt;{&lt;DT&gt;&lt;NN&gt;}&lt;.&gt;{&lt;DT&gt;&lt;NN&gt;}&lt;VBD&gt;&lt;.&gt;
+</pre>
+</div>
   </div>
 </div>
 
@@ -734,7 +721,7 @@ version of ``_pieces``.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

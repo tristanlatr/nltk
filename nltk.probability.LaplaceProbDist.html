@@ -65,41 +65,41 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">LaplaceProbDist</span>(<a href="nltk.probability.LidstoneProbDist.html" title="nltk.probability.LidstoneProbDist">LidstoneProbDist</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L909" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LaplaceProbDist</span>(<a href="nltk.probability.LidstoneProbDist.html" title="nltk.probability.LidstoneProbDist">LidstoneProbDist</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L909" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.LaplaceProbDist">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The Laplace estimate for the probability distribution of the
+        <div>The Laplace estimate for the probability distribution of the
 experiment used to generate a frequency distribution.  The
 "Laplace estimate" approximates the probability of a sample with
-count *c* from an experiment with *N* outcomes and *B* bins as
-*(c+1)/(N+B)*.  This is equivalent to adding one to the count for
+count <em>c</em> from an experiment with <em>N</em> outcomes and <em>B</em> bins as
+<em>(c+1)/(N+B)</em>.  This is equivalent to adding one to the count for
 each bin, and taking the maximum likelihood estimate of the
-resulting frequency distribution.</p></div>
+resulting frequency distribution.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1142">
+        <table class="children sortable" id="id1146">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Use the Laplace estimate to create a probability distribution for the experiment used to generate ``freqdist``.</span></td>
+    <td><span>Use the Laplace estimate to create a probability distribution for the experiment used to generate <tt class="rst-docutils literal">freqdist</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>:rtype: str :return: A string representation of this ``ProbDist``.</span></td>
+    <td><span></span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.LidstoneProbDist.html">LidstoneProbDist</a></code>:
           </p>
-          <table class="children sortable" id="id1143">
+          <table class="children sortable" id="id1147">
   
   
   <tr class="basemethod">
@@ -126,7 +126,7 @@ resulting frequency distribution.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.probability.LidstoneProbDist.html#samples">samples</a></code></td>
-    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
+    <td><span>Return a list of all samples that have nonzero probabilities. Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.</span></td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
@@ -164,14 +164,14 @@ distribution will always sum to one.</span></td>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.ProbDistI.html">ProbDistI</a></code> (via <code><a href="nltk.probability.LidstoneProbDist.html">LidstoneProbDist</a></code>):
           </p>
-          <table class="children sortable" id="id1144">
+          <table class="children sortable" id="id1148">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.probability.ProbDistI.html#generate">generate</a></code></td>
-    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
+    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample <tt class="rst-docutils literal">samp</tt> is equal to <tt class="rst-docutils literal">self.prob(samp)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -198,7 +198,7 @@ distribution will always sum to one.</span></td>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, freqdist, bins=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L920">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L920">
       
       (source)
     </a>
@@ -206,18 +206,13 @@ distribution will always sum to one.</span></td>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.LidstoneProbDist.html#__init__">nltk.probability.LidstoneProbDist.__init__</a></code></div>
     
-    <div><p class="pre">Use the Laplace estimate to create a probability distribution
-for the experiment used to generate ``freqdist``.
-
-:type freqdist: FreqDist
-:param freqdist: The frequency distribution that the
-    probability estimates should be based on.
-:type bins: int
-:param bins: The number of sample values that can be generated
-    by the experiment that is described by the probability
-    distribution.  This value must be correctly set for the
-    probabilities of the sample values to sum to one.  If
-    ``bins`` is not specified, it defaults to ``freqdist.B()``.</p></div>
+    <div>Use the Laplace estimate to create a probability distribution
+for the experiment used to generate <tt class="rst-docutils literal">freqdist</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">freqdist:</span>FreqDist</td><td class="fieldArgDesc">The frequency distribution that the
+probability estimates should be based on.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bins:</span>int</td><td class="fieldArgDesc">The number of sample values that can be generated
+by the experiment that is described by the probability
+distribution.  This value must be correctly set for the
+probabilities of the sample values to sum to one.  If
+<tt class="rst-docutils literal">bins</tt> is not specified, it defaults to <tt class="rst-docutils literal">freqdist.B()</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -231,7 +226,7 @@ for the experiment used to generate ``freqdist``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L937">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L937">
       
       (source)
     </a>
@@ -239,8 +234,7 @@ for the experiment used to generate ``freqdist``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.LidstoneProbDist.html#__repr__">nltk.probability.LidstoneProbDist.__repr__</a></code></div>
     
-    <div><p class="pre">:rtype: str
-:return: A string representation of this ``ProbDist``.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">A string representation of this <tt class="rst-docutils literal">ProbDist</tt>.</td></tr></table></div>
   </div>
 </div>
 
@@ -252,7 +246,7 @@ for the experiment used to generate ``freqdist``.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,45 +65,49 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/senna.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/senna.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Senna POS tagger, NER Tagger, Chunk Tagger
-
-The input is:
-- path to the directory that contains SENNA executables. If the path is incorrect,
-   SennaTagger will automatically search for executable file specified in SENNA environment variable
-- (optionally) the encoding of the input data (default:utf-8)
-
-Note: Unit tests for this module can be found in test/unit/test_senna.py
-
-    &gt;&gt;&gt; from nltk.tag import SennaTagger
-    &gt;&gt;&gt; tagger = SennaTagger('/usr/share/senna-v3.0')
-    &gt;&gt;&gt; tagger.tag('What is the airspeed of an unladen swallow ?'.split()) # doctest: +SKIP
-    [('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'),
-    ('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'NN'), ('?', '.')]
-
-    &gt;&gt;&gt; from nltk.tag import SennaChunkTagger
-    &gt;&gt;&gt; chktagger = SennaChunkTagger('/usr/share/senna-v3.0')
-    &gt;&gt;&gt; chktagger.tag('What is the airspeed of an unladen swallow ?'.split()) # doctest: +SKIP
-    [('What', 'B-NP'), ('is', 'B-VP'), ('the', 'B-NP'), ('airspeed', 'I-NP'),
-    ('of', 'B-PP'), ('an', 'B-NP'), ('unladen', 'I-NP'), ('swallow', 'I-NP'),
-    ('?', 'O')]
-
-    &gt;&gt;&gt; from nltk.tag import SennaNERTagger
-    &gt;&gt;&gt; nertagger = SennaNERTagger('/usr/share/senna-v3.0')
-    &gt;&gt;&gt; nertagger.tag('Shakespeare theatre was in London .'.split()) # doctest: +SKIP
-    [('Shakespeare', 'B-PER'), ('theatre', 'O'), ('was', 'O'), ('in', 'O'),
-    ('London', 'B-LOC'), ('.', 'O')]
-    &gt;&gt;&gt; nertagger.tag('UN headquarters are in NY , USA .'.split()) # doctest: +SKIP
-    [('UN', 'B-ORG'), ('headquarters', 'O'), ('are', 'O'), ('in', 'O'),
-    ('NY', 'B-LOC'), (',', 'O'), ('USA', 'B-LOC'), ('.', 'O')]</p></div>
+        <div><p>Senna POS tagger, NER Tagger, Chunk Tagger</p>
+<p>The input is:
+- path to the directory that contains SENNA executables. If the path is incorrect,</p>
+<blockquote>
+SennaTagger will automatically search for executable file specified in SENNA environment variable</blockquote>
+<ul class="rst-simple">
+<li>(optionally) the encoding of the input data (default:utf-8)</li>
+</ul>
+<p>Note: Unit tests for this module can be found in test/unit/test_senna.py</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> SennaTagger
+<span class="py-prompt">&gt;&gt;&gt; </span>tagger = SennaTagger(<span class="py-string">'/usr/share/senna-v3.0'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>tagger.tag(<span class="py-string">'What is the airspeed of an unladen swallow ?'</span>.split()) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'),</span>
+<span class="py-output">('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'NN'), ('?', '.')]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> SennaChunkTagger
+<span class="py-prompt">&gt;&gt;&gt; </span>chktagger = SennaChunkTagger(<span class="py-string">'/usr/share/senna-v3.0'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>chktagger.tag(<span class="py-string">'What is the airspeed of an unladen swallow ?'</span>.split()) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('What', 'B-NP'), ('is', 'B-VP'), ('the', 'B-NP'), ('airspeed', 'I-NP'),</span>
+<span class="py-output">('of', 'B-PP'), ('an', 'B-NP'), ('unladen', 'I-NP'), ('swallow', 'I-NP'),</span>
+<span class="py-output">('?', 'O')]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> SennaNERTagger
+<span class="py-prompt">&gt;&gt;&gt; </span>nertagger = SennaNERTagger(<span class="py-string">'/usr/share/senna-v3.0'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>nertagger.tag(<span class="py-string">'Shakespeare theatre was in London .'</span>.split()) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('Shakespeare', 'B-PER'), ('theatre', 'O'), ('was', 'O'), ('in', 'O'),</span>
+<span class="py-output">('London', 'B-LOC'), ('.', 'O')]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>nertagger.tag(<span class="py-string">'UN headquarters are in NY , USA .'</span>.split()) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('UN', 'B-ORG'), ('headquarters', 'O'), ('are', 'O'), ('in', 'O'),</span>
+<span class="py-output">('NY', 'B-LOC'), (',', 'O'), ('USA', 'B-LOC'), ('.', 'O')]</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1566">
+        <table class="children sortable" id="id1570">
   
   
   <tr class="class">
@@ -147,7 +151,7 @@ Note: Unit tests for this module can be found in test/unit/test_senna.py
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">setup_module</span>(module):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/senna.py#L141">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/senna.py#L141">
       
       (source)
     </a>
@@ -167,7 +171,7 @@ Note: Unit tests for this module can be found in test/unit/test_senna.py
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

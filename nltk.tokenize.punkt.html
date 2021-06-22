@@ -65,102 +65,101 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Punkt Sentence Tokenizer
-
-This tokenizer divides a text into a list of sentences
+        <div><p>Punkt Sentence Tokenizer</p>
+<p>This tokenizer divides a text into a list of sentences
 by using an unsupervised algorithm to build a model for abbreviation
 words, collocations, and words that start sentences.  It must be
 trained on a large collection of plaintext in the target language
-before it can be used.
-
-The NLTK data package includes a pre-trained Punkt tokenizer for
-English.
-
-    &gt;&gt;&gt; import nltk.data
-    &gt;&gt;&gt; text = '''
-    ... Punkt knows that the periods in Mr. Smith and Johann S. Bach
-    ... do not mark sentence boundaries.  And sometimes sentences
-    ... can start with non-capitalized words.  i is a good variable
-    ... name.
-    ... '''
-    &gt;&gt;&gt; sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
-    &gt;&gt;&gt; print('\n-----\n'.join(sent_detector.tokenize(text.strip())))
-    Punkt knows that the periods in Mr. Smith and Johann S. Bach
-    do not mark sentence boundaries.
-    -----
-    And sometimes sentences
-    can start with non-capitalized words.
-    -----
-    i is a good variable
-    name.
-
-(Note that whitespace from the original text, including newlines, is
-retained in the output.)
-
-Punctuation following sentences is also included by default
+before it can be used.</p>
+<p>The NLTK data package includes a pre-trained Punkt tokenizer for
+English.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> nltk.data
+<span class="py-prompt">&gt;&gt;&gt; </span>text = <span class="py-string">'''</span>
+<span class="py-more">... </span><span class="py-string">Punkt knows that the periods in Mr. Smith and Johann S. Bach</span>
+<span class="py-more">... </span><span class="py-string">do not mark sentence boundaries.  And sometimes sentences</span>
+<span class="py-more">... </span><span class="py-string">can start with non-capitalized words.  i is a good variable</span>
+<span class="py-more">... </span><span class="py-string">name.</span>
+<span class="py-more">... </span><span class="py-string">'''</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>sent_detector = nltk.data.load(<span class="py-string">'tokenizers/punkt/english.pickle'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'\n-----\n'</span>.join(sent_detector.tokenize(text.strip())))
+<span class="py-output">Punkt knows that the periods in Mr. Smith and Johann S. Bach</span>
+<span class="py-output">do not mark sentence boundaries.</span>
+<span class="py-output">-----</span>
+<span class="py-output">And sometimes sentences</span>
+<span class="py-output">can start with non-capitalized words.</span>
+<span class="py-output">-----</span>
+<span class="py-output">i is a good variable</span>
+<span class="py-output">name.</span>
+</pre></blockquote>
+<p>(Note that whitespace from the original text, including newlines, is
+retained in the output.)</p>
+<p>Punctuation following sentences is also included by default
 (from NLTK 3.0 onwards). It can be excluded with the realign_boundaries
-flag.
-
-    &gt;&gt;&gt; text = '''
-    ... (How does it deal with this parenthesis?)  "It should be part of the
-    ... previous sentence." "(And the same with this one.)" ('And this one!')
-    ... "('(And (this)) '?)" [(and this. )]
-    ... '''
-    &gt;&gt;&gt; print('\n-----\n'.join(
-    ...     sent_detector.tokenize(text.strip())))
-    (How does it deal with this parenthesis?)
-    -----
-    "It should be part of the
-    previous sentence."
-    -----
-    "(And the same with this one.)"
-    -----
-    ('And this one!')
-    -----
-    "('(And (this)) '?)"
-    -----
-    [(and this. )]
-    &gt;&gt;&gt; print('\n-----\n'.join(
-    ...     sent_detector.tokenize(text.strip(), realign_boundaries=False)))
-    (How does it deal with this parenthesis?
-    -----
-    )  "It should be part of the
-    previous sentence.
-    -----
-    " "(And the same with this one.
-    -----
-    )" ('And this one!
-    -----
-    ')
-    "('(And (this)) '?
-    -----
-    )" [(and this.
-    -----
-    )]
-
-However, Punkt is designed to learn parameters (a list of abbreviations, etc.)
+flag.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>text = <span class="py-string">'''</span>
+<span class="py-more">... </span><span class="py-string">(How does it deal with this parenthesis?)  "It should be part of the</span>
+<span class="py-more">... </span><span class="py-string">previous sentence." "(And the same with this one.)" ('And this one!')</span>
+<span class="py-more">... </span><span class="py-string">"('(And (this)) '?)" [(and this. )]</span>
+<span class="py-more">... </span><span class="py-string">'''</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'\n-----\n'</span>.join(
+<span class="py-more">... </span>    sent_detector.tokenize(text.strip())))
+<span class="py-output">(How does it deal with this parenthesis?)</span>
+<span class="py-output">-----</span>
+<span class="py-output">"It should be part of the</span>
+<span class="py-output">previous sentence."</span>
+<span class="py-output">-----</span>
+<span class="py-output">"(And the same with this one.)"</span>
+<span class="py-output">-----</span>
+<span class="py-output">('And this one!')</span>
+<span class="py-output">-----</span>
+<span class="py-output">"('(And (this)) '?)"</span>
+<span class="py-output">-----</span>
+<span class="py-output">[(and this. )]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'\n-----\n'</span>.join(
+<span class="py-more">... </span>    sent_detector.tokenize(text.strip(), realign_boundaries=<span class="py-builtin">False</span>)))
+<span class="py-output">(How does it deal with this parenthesis?</span>
+<span class="py-output">-----</span>
+<span class="py-output">)  "It should be part of the</span>
+<span class="py-output">previous sentence.</span>
+<span class="py-output">-----</span>
+<span class="py-output">" "(And the same with this one.</span>
+<span class="py-output">-----</span>
+<span class="py-output">)" ('And this one!</span>
+<span class="py-output">-----</span>
+<span class="py-output">')</span>
+<span class="py-output">"('(And (this)) '?</span>
+<span class="py-output">-----</span>
+<span class="py-output">)" [(and this.</span>
+<span class="py-output">-----</span>
+<span class="py-output">)]</span>
+</pre></blockquote>
+<p>However, Punkt is designed to learn parameters (a list of abbreviations, etc.)
 unsupervised from a corpus similar to the target domain. The pre-packaged models
-may therefore be unsuitable: use ``PunktSentenceTokenizer(text)`` to learn
-parameters from the given text.
-
-:class:`.PunktTrainer` learns parameters such as a list of abbreviations
-(without supervision) from portions of text. Using a ``PunktTrainer`` directly
+may therefore be unsuitable: use <tt class="rst-docutils literal">PunktSentenceTokenizer(text)</tt> to learn
+parameters from the given text.</p>
+<p><a href="#id1"><span class="rst-problematic" id="rst-id2">:class:`.PunktTrainer`</span></a> learns parameters such as a list of abbreviations
+(without supervision) from portions of text. Using a <tt class="rst-docutils literal">PunktTrainer</tt> directly
 allows for incremental training and modification of the hyper-parameters used
-to decide what is considered an abbreviation, etc.
-
-The algorithm for this tokenizer is described in::
-
-  Kiss, Tibor and Strunk, Jan (2006): Unsupervised Multilingual Sentence
-    Boundary Detection.  Computational Linguistics 32: 485-525.</p></div>
+to decide what is considered an abbreviation, etc.</p>
+<p>The algorithm for this tokenizer is described in:</p>
+<pre class="rst-literal-block">
+Kiss, Tibor and Strunk, Jan (2006): Unsupervised Multilingual Sentence
+  Boundary Detection.  Computational Linguistics 32: 485-525.
+</pre>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1793">
+        <table class="children sortable" id="id1797">
   
   
   <tr class="class">
@@ -319,7 +318,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>(text, tok_cls=PunktSentenceTokenizer, train_cls=PunktTrainer):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L1653">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L1653">
       
       (source)
     </a>
@@ -327,7 +326,7 @@ The algorithm for this tokenizer is described in::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Builds a punkt model and applies it to the same text</p></div>
+    <div>Builds a punkt model and applies it to the same text</div>
   </div>
 </div><div class="basefunction">
   
@@ -341,7 +340,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">format_debug_decision</span>(d):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L1649">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L1649">
       
       (source)
     </a>
@@ -363,7 +362,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-defname">DEBUG_DECISION_FMT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L1636">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L1636">
       
       (source)
     </a>
@@ -385,7 +384,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-defname">REASON_ABBR_WITH_ORTHOGRAPHIC_HEURISTIC</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L165">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L165">
       
       (source)
     </a>
@@ -407,7 +406,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-defname">REASON_ABBR_WITH_SENTENCE_STARTER</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L166">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L166">
       
       (source)
     </a>
@@ -429,7 +428,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-defname">REASON_DEFAULT_DECISION</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L163">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L163">
       
       (source)
     </a>
@@ -451,7 +450,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-defname">REASON_INITIAL_WITH_ORTHOGRAPHIC_HEURISTIC</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L167">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L167">
       
       (source)
     </a>
@@ -473,7 +472,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-defname">REASON_INITIAL_WITH_SPECIAL_ORTHOGRAPHIC_HEURISTIC</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L169">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L169">
       
       (source)
     </a>
@@ -495,7 +494,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-defname">REASON_KNOWN_COLLOCATION</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L164">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L164">
       
       (source)
     </a>
@@ -517,7 +516,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-defname">REASON_NUMBER_WITH_ORTHOGRAPHIC_HEURISTIC</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L168">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L168">
       
       (source)
     </a>
@@ -539,7 +538,7 @@ The algorithm for this tokenizer is described in::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_pair_iter</span>(it):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L308">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L308">
       
       (source)
     </a>
@@ -547,9 +546,9 @@ The algorithm for this tokenizer is described in::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Yields pairs of tokens from the given iterator such that each input
+    <div>Yields pairs of tokens from the given iterator such that each input
 token will appear as the first element in a yielded tuple. The last
-pair will have None as its second element.</p></div>
+pair will have None as its second element.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -563,7 +562,7 @@ pair will have None as its second element.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_BEG_LC</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L130">
       
       (source)
     </a>
@@ -571,7 +570,7 @@ pair will have None as its second element.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Orthographic context: beginning of a sentence with lower case.</p></div>
+    <div>Orthographic context: beginning of a sentence with lower case.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -585,7 +584,7 @@ pair will have None as its second element.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_BEG_UC</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L121">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L121">
       
       (source)
     </a>
@@ -593,7 +592,7 @@ pair will have None as its second element.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Orthographic context: beginning of a sentence with upper case.</p></div>
+    <div>Orthographic context: beginning of a sentence with upper case.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -607,7 +606,7 @@ pair will have None as its second element.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_LC</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L142">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L142">
       
       (source)
     </a>
@@ -615,7 +614,7 @@ pair will have None as its second element.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Orthographic context: occurs with lower case.</p></div>
+    <div>Orthographic context: occurs with lower case.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -629,7 +628,7 @@ pair will have None as its second element.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_MAP</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L145">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L145">
       
       (source)
     </a>
@@ -637,8 +636,8 @@ pair will have None as its second element.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">A map from context position and first-letter case to the
-appropriate orthographic context flag.</p></div>
+    <div>A map from context position and first-letter case to the
+appropriate orthographic context flag.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -652,7 +651,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_MID_LC</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L133">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L133">
       
       (source)
     </a>
@@ -660,7 +659,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Orthographic context: middle of a sentence with lower case.</p></div>
+    <div>Orthographic context: middle of a sentence with lower case.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -674,7 +673,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_MID_UC</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L124">
       
       (source)
     </a>
@@ -682,7 +681,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Orthographic context: middle of a sentence with upper case.</p></div>
+    <div>Orthographic context: middle of a sentence with upper case.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -696,7 +695,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_UC</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L139">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L139">
       
       (source)
     </a>
@@ -704,7 +703,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Orthographic context: occurs with upper case.</p></div>
+    <div>Orthographic context: occurs with upper case.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -718,7 +717,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_UNK_LC</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L136">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L136">
       
       (source)
     </a>
@@ -726,7 +725,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Orthographic context: unknown position in a sentence with lower case.</p></div>
+    <div>Orthographic context: unknown position in a sentence with lower case.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -740,7 +739,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_ORTHO_UNK_UC</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L127">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L127">
       
       (source)
     </a>
@@ -748,7 +747,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Orthographic context: unknown position in a sentence with upper case.</p></div>
+    <div>Orthographic context: unknown position in a sentence with upper case.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -762,7 +761,7 @@ appropriate orthographic context flag.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_re_non_punct</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L294">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L294">
       
       (source)
     </a>
@@ -770,8 +769,8 @@ appropriate orthographic context flag.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Matches token types that are not merely punctuation. (Types for
-numeric tokens are changed to ##number## and hence contain alpha.)</p></div>
+    <div>Matches token types that are not merely punctuation. (Types for
+numeric tokens are changed to ##number## and hence contain alpha.)</div>
   </div>
 </div>
 
@@ -783,7 +782,7 @@ numeric tokens are changed to ##number## and hence contain alpha.)</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,52 +65,35 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextTilingTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L24" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextTilingTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L24" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.texttiling.TextTilingTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Tokenize a document into topical sections using the TextTiling algorithm.
+        <div><p>Tokenize a document into topical sections using the TextTiling algorithm.
 This algorithm detects subtopic shifts based on the analysis of lexical
-co-occurrence patterns.
-
-The process starts by tokenizing the text into pseudosentences of
+co-occurrence patterns.</p>
+<p>The process starts by tokenizing the text into pseudosentences of
 a fixed size w. Then, depending on the method used, similarity
 scores are assigned at sentence gaps. The algorithm proceeds by
 detecting the peak differences between these scores and marking
 them as boundaries. The boundaries are normalized to the closest
-paragraph break and the segmented text is returned.
-
-:param w: Pseudosentence size
-:type w: int
-:param k: Size (in sentences) of the block used in the block comparison method
-:type k: int
-:param similarity_method: The method used for determining similarity scores:
-   `BLOCK_COMPARISON` (default) or `VOCABULARY_INTRODUCTION`.
-:type similarity_method: constant
-:param stopwords: A list of stopwords that are filtered out (defaults to NLTK's stopwords corpus)
-:type stopwords: list(str)
-:param smoothing_method: The method used for smoothing the score plot:
-  `DEFAULT_SMOOTHING` (default)
-:type smoothing_method: constant
-:param smoothing_width: The width of the window used by the smoothing method
-:type smoothing_width: int
-:param smoothing_rounds: The number of smoothing passes
-:type smoothing_rounds: int
-:param cutoff_policy: The policy used to determine the number of boundaries:
-  `HC` (default) or `LC`
-:type cutoff_policy: constant
-
-&gt;&gt;&gt; from nltk.corpus import brown
-&gt;&gt;&gt; tt = TextTilingTokenizer(demo_mode=True)
-&gt;&gt;&gt; text = brown.raw()[:4000]
-&gt;&gt;&gt; s, ss, d, b = tt.tokenize(text)
-&gt;&gt;&gt; b
-[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0]</p></div>
+paragraph break and the segmented text is returned.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> brown
+<span class="py-prompt">&gt;&gt;&gt; </span>tt = TextTilingTokenizer(demo_mode=<span class="py-builtin">True</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>text = brown.raw()[:4000]
+<span class="py-prompt">&gt;&gt;&gt; </span>s, ss, d, b = tt.tokenize(text)
+<span class="py-prompt">&gt;&gt;&gt; </span>b
+<span class="py-output">[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0]</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">w</span></td><td class="fieldArgDesc">Pseudosentence size</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">k</span></td><td class="fieldArgDesc">Size (in sentences) of the block used in the block comparison method</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">similarity_method</span></td><td class="fieldArgDesc">The method used for determining similarity scores:
+<code><a href="nltk.tokenize.texttiling.html#BLOCK_COMPARISON">BLOCK_COMPARISON</a></code> (default) or <code><a href="nltk.tokenize.texttiling.html#VOCABULARY_INTRODUCTION">VOCABULARY_INTRODUCTION</a></code>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stopwords</span></td><td class="fieldArgDesc">A list of stopwords that are filtered out (defaults to NLTK's stopwords corpus)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">smoothing_method</span></td><td class="fieldArgDesc">The method used for smoothing the score plot:
+<code><a href="nltk.tokenize.texttiling.html#DEFAULT_SMOOTHING">DEFAULT_SMOOTHING</a></code> (default)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">smoothing_width</span></td><td class="fieldArgDesc">The width of the window used by the smoothing method</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">smoothing_rounds</span></td><td class="fieldArgDesc">The number of smoothing passes</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cutoff_policy</span></td><td class="fieldArgDesc">The policy used to determine the number of boundaries:
+<code><a href="nltk.tokenize.texttiling.html#HC">HC</a></code> (default) or <code><a href="nltk.tokenize.texttiling.html#LC">LC</a></code></td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1843">
+        <table class="children sortable" id="id1847">
   
   
   <tr class="method">
@@ -122,7 +105,7 @@ paragraph break and the segmented text is returned.
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *text*, where each "token" represents a separate topic.</span></td>
+    <td><span>Return a tokenized copy of <em>text</em>, where each "token" represents a separate topic.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -169,24 +152,24 @@ paragraph break and the segmented text is returned.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1844">
+          <table class="children sortable" id="id1848">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -208,7 +191,7 @@ paragraph break and the segmented text is returned.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, w=20, k=10, similarity_method=BLOCK_COMPARISON, stopwords=None, smoothing_method=DEFAULT_SMOOTHING, smoothing_width=2, smoothing_rounds=1, cutoff_policy=HC, demo_mode=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L64">
       
       (source)
     </a>
@@ -230,7 +213,7 @@ paragraph break and the segmented text is returned.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L84">
       
       (source)
     </a>
@@ -238,8 +221,8 @@ paragraph break and the segmented text is returned.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Return a tokenized copy of *text*, where each "token" represents
-a separate topic.</p></div>
+    <div>Return a tokenized copy of <em>text</em>, where each "token" represents
+a separate topic.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -253,7 +236,7 @@ a separate topic.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_block_comparison</span>(self, tokseqs, token_table):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L163">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L163">
       
       (source)
     </a>
@@ -261,7 +244,7 @@ a separate topic.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Implements the block comparison method</p></div>
+    <div>Implements the block comparison method</div>
   </div>
 </div><div class="basemethod private">
   
@@ -275,7 +258,7 @@ a separate topic.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_create_token_table</span>(self, token_sequences, par_breaks):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L237">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L237">
       
       (source)
     </a>
@@ -283,7 +266,7 @@ a separate topic.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Creates a table of TokenTableFields</p></div>
+    <div>Creates a table of TokenTableFields</div>
   </div>
 </div><div class="basemethod private">
   
@@ -297,7 +280,7 @@ a separate topic.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_depth_scores</span>(self, scores):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L317">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L317">
       
       (source)
     </a>
@@ -305,8 +288,8 @@ a separate topic.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculates the depth of each gap, i.e. the average difference
-between the left and right peaks and the gap's score</p></div>
+    <div>Calculates the depth of each gap, i.e. the average difference
+between the left and right peaks and the gap's score</div>
   </div>
 </div><div class="basemethod private">
   
@@ -320,7 +303,7 @@ between the left and right peaks and the gap's score</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_divide_to_tokensequences</span>(self, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L225">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L225">
       
       (source)
     </a>
@@ -328,7 +311,7 @@ between the left and right peaks and the gap's score</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Divides the text into pseudosentences of fixed size</p></div>
+    <div>Divides the text into pseudosentences of fixed size</div>
   </div>
 </div><div class="basemethod private">
   
@@ -342,7 +325,7 @@ between the left and right peaks and the gap's score</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_identify_boundaries</span>(self, depth_scores):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L287">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L287">
       
       (source)
     </a>
@@ -350,8 +333,8 @@ between the left and right peaks and the gap's score</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Identifies boundaries at the peaks of similarity score
-differences</p></div>
+    <div>Identifies boundaries at the peaks of similarity score
+differences</div>
   </div>
 </div><div class="basemethod private">
   
@@ -365,7 +348,7 @@ differences</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_mark_paragraph_breaks</span>(self, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L207">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L207">
       
       (source)
     </a>
@@ -373,8 +356,8 @@ differences</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Identifies indented text or line breaks as the beginning of
-paragraphs</p></div>
+    <div>Identifies indented text or line breaks as the beginning of
+paragraphs</div>
   </div>
 </div><div class="basemethod private">
   
@@ -388,7 +371,7 @@ paragraphs</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_normalize_boundaries</span>(self, text, boundaries, paragraph_breaks):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L347">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L347">
       
       (source)
     </a>
@@ -396,8 +379,8 @@ paragraphs</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Normalize the boundaries identified to the original text's
-paragraph breaks</p></div>
+    <div>Normalize the boundaries identified to the original text's
+paragraph breaks</div>
   </div>
 </div><div class="basemethod private">
   
@@ -411,7 +394,7 @@ paragraph breaks</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_smooth_scores</span>(self, gap_scores):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/texttiling.py#L201">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/texttiling.py#L201">
       
       (source)
     </a>
@@ -419,7 +402,7 @@ paragraph breaks</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Wraps the smooth function from the SciPy Cookbook</p></div>
+    <div>Wraps the smooth function from the SciPy Cookbook</div>
   </div>
 </div>
 
@@ -431,7 +414,7 @@ paragraph breaks</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

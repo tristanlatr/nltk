@@ -65,61 +65,51 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SnowballStemmer</span>(<a href="nltk.stem.api.StemmerI.html" title="nltk.stem.api.StemmerI">StemmerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L36" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SnowballStemmer</span>(<a href="nltk.stem.api.StemmerI.html" title="nltk.stem.api.StemmerI">StemmerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/snowball.py#L36" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.stem.snowball.SnowballStemmer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Snowball Stemmer
-
-The following languages are supported:
+        <div><p>Snowball Stemmer</p>
+<p>The following languages are supported:
 Arabic, Danish, Dutch, English, Finnish, French, German,
 Hungarian, Italian, Norwegian, Portuguese, Romanian, Russian,
-Spanish and Swedish.
-
-The algorithm for English is documented here:
-
-    Porter, M. "An algorithm for suffix stripping."
-    Program 14.3 (1980): 130-137.
-
-The algorithms have been developed by Martin Porter.
+Spanish and Swedish.</p>
+<p>The algorithm for English is documented here:</p>
+<blockquote>
+Porter, M. "An algorithm for suffix stripping."
+Program 14.3 (1980): 130-137.</blockquote>
+<p>The algorithms have been developed by Martin Porter.
 These stemmers are called Snowball, because Porter created
 a programming language with this name for creating
 new stemming algorithms. There is more information available
-at http://snowball.tartarus.org/
-
-The stemmer is invoked as shown below:
-
-&gt;&gt;&gt; from nltk.stem import SnowballStemmer
-&gt;&gt;&gt; print(" ".join(SnowballStemmer.languages)) # See which languages are supported
-arabic danish dutch english finnish french german hungarian
-italian norwegian porter portuguese romanian russian
-spanish swedish
-&gt;&gt;&gt; stemmer = SnowballStemmer("german") # Choose a language
-&gt;&gt;&gt; stemmer.stem("Autobahnen") # Stem a word
-'autobahn'
-
-Invoking the stemmers that way is useful if you do not know the
+at <a class="rst-reference external" href="http://snowball.tartarus.org/" target="_top">http://snowball.tartarus.org/</a></p>
+<p>The stemmer is invoked as shown below:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.stem <span class="py-keyword">import</span> SnowballStemmer
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">" "</span>.join(SnowballStemmer.languages)) <span class="py-comment"># See which languages are supported</span>
+<span class="py-output">arabic danish dutch english finnish french german hungarian</span>
+<span class="py-output">italian norwegian porter portuguese romanian russian</span>
+<span class="py-output">spanish swedish</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>stemmer = SnowballStemmer(<span class="py-string">"german"</span>) <span class="py-comment"># Choose a language</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>stemmer.stem(<span class="py-string">"Autobahnen"</span>) <span class="py-comment"># Stem a word</span>
+<span class="py-output">'autobahn'</span>
+</pre><p>Invoking the stemmers that way is useful if you do not know the
 language to be stemmed at runtime. Alternatively, if you already know
-the language, then you can invoke the language specific stemmer directly:
-
-&gt;&gt;&gt; from nltk.stem.snowball import GermanStemmer
-&gt;&gt;&gt; stemmer = GermanStemmer()
-&gt;&gt;&gt; stemmer.stem("Autobahnen")
-'autobahn'
-
-:param language: The language whose subclass is instantiated.
-:type language: str or unicode
-:param ignore_stopwords: If set to True, stopwords are
-                         not stemmed and returned unchanged.
-                         Set to False by default.
-:type ignore_stopwords: bool
-:raise ValueError: If there is no stemmer for the specified
-                       language, a ValueError is raised.</p></div>
+the language, then you can invoke the language specific stemmer directly:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.stem.snowball <span class="py-keyword">import</span> GermanStemmer
+<span class="py-prompt">&gt;&gt;&gt; </span>stemmer = GermanStemmer()
+<span class="py-prompt">&gt;&gt;&gt; </span>stemmer.stem(<span class="py-string">"Autobahnen"</span>)
+<span class="py-output">'autobahn'</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">language</span></td><td class="fieldArgDesc">The language whose subclass is instantiated.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ignore_stopwords</span></td><td class="fieldArgDesc">If set to True, stopwords are
+not stemmed and returned unchanged.
+Set to False by default.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>If there is no stemmer for the specified
+language, a ValueError is raised.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1481">
+        <table class="children sortable" id="id1485">
   
   
   <tr class="method">
@@ -168,7 +158,7 @@ the language, then you can invoke the language specific stemmer directly:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, language, ignore_stopwords=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L106">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/snowball.py#L106">
       
       (source)
     </a>
@@ -190,7 +180,7 @@ the language, then you can invoke the language specific stemmer directly:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">stem</span>(self, token):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L114">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/snowball.py#L114">
       
       (source)
     </a>
@@ -198,10 +188,7 @@ the language, then you can invoke the language specific stemmer directly:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.stem.api.StemmerI.html#stem">nltk.stem.api.StemmerI.stem</a></code></div>
     
-    <div><p class="pre">Strip affixes from the token and return the stem.
-
-:param token: The token that should be stemmed.
-:type token: str</p></div>
+    <div>Strip affixes from the token and return the stem.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">token:</span>str</td><td class="fieldArgDesc">The token that should be stemmed.</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -215,7 +202,7 @@ the language, then you can invoke the language specific stemmer directly:
   <div class="functionHeader">
     
     <span class="py-defname">languages</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/snowball.py#L87">
       
       (source)
     </a>
@@ -237,7 +224,7 @@ the language, then you can invoke the language specific stemmer directly:
   <div class="functionHeader">
     
     <span class="py-defname">stemmer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L110">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/snowball.py#L110">
       
       (source)
     </a>
@@ -259,7 +246,7 @@ the language, then you can invoke the language specific stemmer directly:
   <div class="functionHeader">
     
     <span class="py-defname">stopwords</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L112">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/snowball.py#L112">
       
       (source)
     </a>
@@ -279,7 +266,7 @@ the language, then you can invoke the language specific stemmer directly:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

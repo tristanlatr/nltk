@@ -65,30 +65,30 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NgramAssocMeasures</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L46" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.metrics.association.BigramAssocMeasures.html">nltk.metrics.association.BigramAssocMeasures</a></code>, <code><a href="nltk.metrics.association.QuadgramAssocMeasures.html">nltk.metrics.association.QuadgramAssocMeasures</a></code>, <code><a href="nltk.metrics.association.TrigramAssocMeasures.html">nltk.metrics.association.TrigramAssocMeasures</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NgramAssocMeasures</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L46" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.metrics.association.BigramAssocMeasures.html">nltk.metrics.association.BigramAssocMeasures</a></code>, <code><a href="nltk.metrics.association.QuadgramAssocMeasures.html">nltk.metrics.association.QuadgramAssocMeasures</a></code>, <code><a href="nltk.metrics.association.TrigramAssocMeasures.html">nltk.metrics.association.TrigramAssocMeasures</a></code></p>
         <p><a href="classIndex.html#nltk.metrics.association.NgramAssocMeasures">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract class defining a collection of generic association measures.
-Each public method returns a score, taking the following arguments::
-
-    score_fn(count_of_ngram,
-             (count_of_n-1gram_1, ..., count_of_n-1gram_j),
-             (count_of_n-2gram_1, ..., count_of_n-2gram_k),
-             ...,
-             (count_of_1gram_1, ..., count_of_1gram_n),
-             count_of_total_words)
-
-See ``BigramAssocMeasures`` and ``TrigramAssocMeasures``
-
-Inheriting classes should define a property _n, and a method _contingency
+        <div><p>An abstract class defining a collection of generic association measures.
+Each public method returns a score, taking the following arguments:</p>
+<pre class="rst-literal-block">
+score_fn(count_of_ngram,
+         (count_of_n-1gram_1, ..., count_of_n-1gram_j),
+         (count_of_n-2gram_1, ..., count_of_n-2gram_k),
+         ...,
+         (count_of_1gram_1, ..., count_of_1gram_n),
+         count_of_total_words)
+</pre>
+<p>See <tt class="rst-docutils literal">BigramAssocMeasures</tt> and <tt class="rst-docutils literal">TrigramAssocMeasures</tt></p>
+<p>Inheriting classes should define a property _n, and a method _contingency
 which calculates contingency values from marginals in order for all
-association measures defined here to be usable.</p></div>
+association measures defined here to be usable.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id811">
+        <table class="children sortable" id="id814">
   
   
   <tr class="classmethod">
@@ -172,7 +172,7 @@ association measures defined here to be usable.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">chi_sq</span>(cls, *marginals):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L115">
       
       (source)
     </a>
@@ -180,8 +180,8 @@ association measures defined here to be usable.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.metrics.association.BigramAssocMeasures.html">nltk.metrics.association.BigramAssocMeasures</a></code></div>
     
-    <div><p class="pre">Scores ngrams using Pearson's chi-square as in Manning and Schutze
-5.3.3.</p></div>
+    <div>Scores ngrams using Pearson's chi-square as in Manning and Schutze
+5.3.3.</div>
   </div>
 </div><div class="baseclassmethod">
   
@@ -195,7 +195,7 @@ association measures defined here to be usable.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">jaccard</span>(cls, *marginals):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L159">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L159">
       
       (source)
     </a>
@@ -203,7 +203,7 @@ association measures defined here to be usable.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Scores ngrams using the Jaccard index.</p></div>
+    <div>Scores ngrams using the Jaccard index.</div>
   </div>
 </div><div class="baseclassmethod">
   
@@ -217,7 +217,7 @@ association measures defined here to be usable.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">likelihood_ratio</span>(cls, *marginals):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L143">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L143">
       
       (source)
     </a>
@@ -225,8 +225,7 @@ association measures defined here to be usable.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Scores ngrams using likelihood ratios as in Manning and Schutze 5.3.4.
-        </p></div>
+    <div>Scores ngrams using likelihood ratios as in Manning and Schutze 5.3.4.</div>
   </div>
 </div><div class="baseclassmethod">
   
@@ -240,7 +239,7 @@ association measures defined here to be usable.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">pmi</span>(cls, *marginals):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L134">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L134">
       
       (source)
     </a>
@@ -248,8 +247,8 @@ association measures defined here to be usable.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Scores ngrams by pointwise mutual information, as in Manning and
-Schutze 5.4.</p></div>
+    <div>Scores ngrams by pointwise mutual information, as in Manning and
+Schutze 5.4.</div>
   </div>
 </div><div class="baseclassmethod">
   
@@ -263,7 +262,7 @@ Schutze 5.4.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">poisson_stirling</span>(cls, *marginals):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L153">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L153">
       
       (source)
     </a>
@@ -271,7 +270,7 @@ Schutze 5.4.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Scores ngrams using the Poisson-Stirling measure.</p></div>
+    <div>Scores ngrams using the Poisson-Stirling measure.</div>
   </div>
 </div><div class="baseclassmethod">
   
@@ -285,7 +284,7 @@ Schutze 5.4.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">student_t</span>(cls, *marginals):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L105">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L105">
       
       (source)
     </a>
@@ -293,8 +292,8 @@ Schutze 5.4.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Scores ngrams using Student's t test with independence hypothesis
-for unigrams, as in Manning and Schutze 5.3.1.</p></div>
+    <div>Scores ngrams using Student's t test with independence hypothesis
+for unigrams, as in Manning and Schutze 5.3.1.</div>
   </div>
 </div><div class="basestaticmethod">
   
@@ -308,7 +307,7 @@ for unigrams, as in Manning and Schutze 5.3.1.</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">mi_like</span>(*marginals, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L124">
       
       (source)
     </a>
@@ -316,9 +315,9 @@ for unigrams, as in Manning and Schutze 5.3.1.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Scores ngrams using a variant of mutual information. The keyword
+    <div>Scores ngrams using a variant of mutual information. The keyword
 argument power sets an exponent (default 3) for the numerator. No
-logarithm of the result is calculated.</p></div>
+logarithm of the result is calculated.</div>
   </div>
 </div><div class="basestaticmethod">
   
@@ -332,7 +331,7 @@ logarithm of the result is calculated.</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">raw_freq</span>(*marginals):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L100">
       
       (source)
     </a>
@@ -340,7 +339,7 @@ logarithm of the result is calculated.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Scores ngrams by their frequency</p></div>
+    <div>Scores ngrams by their frequency</div>
   </div>
 </div><div class="baseclassmethod private">
   
@@ -354,7 +353,7 @@ logarithm of the result is calculated.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_expected_values</span>(cls, cont):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L83">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L83">
       
       (source)
     </a>
@@ -362,7 +361,7 @@ logarithm of the result is calculated.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.metrics.association.BigramAssocMeasures.html">nltk.metrics.association.BigramAssocMeasures</a></code></div>
     
-    <div><p class="pre">Calculates expected values for a contingency table.</p></div>
+    <div>Calculates expected values for a contingency table.</div>
   </div>
 </div><div class="basestaticmethod private">
   
@@ -376,7 +375,7 @@ logarithm of the result is calculated.</p></div>
   <div class="functionHeader">
     @staticmethod<br />@abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_contingency</span>(*marginals):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L67">
       
       (source)
     </a>
@@ -384,7 +383,7 @@ logarithm of the result is calculated.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.metrics.association.BigramAssocMeasures.html">nltk.metrics.association.BigramAssocMeasures</a></code>, <code><a href="nltk.metrics.association.QuadgramAssocMeasures.html">nltk.metrics.association.QuadgramAssocMeasures</a></code>, <code><a href="nltk.metrics.association.TrigramAssocMeasures.html">nltk.metrics.association.TrigramAssocMeasures</a></code></div>
     
-    <div><p class="pre">Calculates values of a contingency table from marginal values.</p></div>
+    <div>Calculates values of a contingency table from marginal values.</div>
   </div>
 </div><div class="basestaticmethod private">
   
@@ -398,7 +397,7 @@ logarithm of the result is calculated.</p></div>
   <div class="functionHeader">
     @staticmethod<br />@abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_marginals</span>(*contingency):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L75">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L75">
       
       (source)
     </a>
@@ -406,7 +405,7 @@ logarithm of the result is calculated.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.metrics.association.BigramAssocMeasures.html">nltk.metrics.association.BigramAssocMeasures</a></code>, <code><a href="nltk.metrics.association.QuadgramAssocMeasures.html">nltk.metrics.association.QuadgramAssocMeasures</a></code>, <code><a href="nltk.metrics.association.TrigramAssocMeasures.html">nltk.metrics.association.TrigramAssocMeasures</a></code></div>
     
-    <div><p class="pre">Calculates values of contingency table marginals from its values.</p></div>
+    <div>Calculates values of contingency table marginals from its values.</div>
   </div>
 </div><div class="baseclassvariable private">
   
@@ -420,7 +419,7 @@ logarithm of the result is calculated.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_n</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/association.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/association.py#L65">
       
       (source)
     </a>
@@ -440,7 +439,7 @@ logarithm of the result is calculated.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

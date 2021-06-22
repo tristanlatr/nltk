@@ -65,33 +65,32 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">_Hypothesis</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L339" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">_Hypothesis</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L339" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.stack_decoder._Hypothesis">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Partial solution to a translation.
-
-Records the word positions of the phrase being translated, its
+        <div><p>Partial solution to a translation.</p>
+<p>Records the word positions of the phrase being translated, its
 translation, raw score, and the cost of the untranslated parts of
 the sentence. When the next phrase is selected to build upon the
 partial solution, a new _Hypothesis object is created, with a back
-pointer to the previous hypothesis.
-
-To find out which words have been translated so far, look at the
-``src_phrase_span`` in the hypothesis chain. Similarly, the
-translation output can be found by traversing up the chain.</p></div>
+pointer to the previous hypothesis.</p>
+<p>To find out which words have been translated so far, look at the
+<tt class="rst-docutils literal">src_phrase_span</tt> in the hypothesis chain. Similarly, the
+translation output can be found by traversing up the chain.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1905">
+        <table class="children sortable" id="id1909">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param raw_score: Likelihood of hypothesis so far. Higher is better. Does not account for untranslated words. :type raw_score: float</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -168,7 +167,7 @@ translation output can be found by traversing up the chain.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, raw_score=0.0, src_phrase_span=(), trg_phrase=(), previous=None, future_score=0.0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L354">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L354">
       
       (source)
     </a>
@@ -176,27 +175,14 @@ translation output can be found by traversing up the chain.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param raw_score: Likelihood of hypothesis so far.
-    Higher is better. Does not account for untranslated words.
-:type raw_score: float
-
-:param src_phrase_span: Span of word positions covered by the
-    source phrase in this hypothesis expansion. For example,
-    (2, 5) means that the phrase is from the second word up to,
-    but not including the fifth word in the source sentence.
-:type src_phrase_span: tuple(int)
-
-:param trg_phrase: Translation of the source phrase in this
-    hypothesis expansion
-:type trg_phrase: tuple(str)
-
-:param previous: Previous hypothesis before expansion to this one
-:type previous: _Hypothesis
-
-:param future_score: Approximate score for translating the
-    remaining words not covered by this hypothesis. Higher means
-    that the remaining words are easier to translate.
-:type future_score: float</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">raw_score:</span>float</td><td class="fieldArgDesc">Likelihood of hypothesis so far.
+Higher is better. Does not account for untranslated words.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">src_phrase_span:</span>tuple(int)</td><td class="fieldArgDesc">Span of word positions covered by the
+source phrase in this hypothesis expansion. For example,
+(2, 5) means that the phrase is from the second word up to,
+but not including the fifth word in the source sentence.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trg_phrase:</span>tuple(str)</td><td class="fieldArgDesc">Translation of the source phrase in this
+hypothesis expansion</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">previous:</span>_Hypothesis</td><td class="fieldArgDesc">Previous hypothesis before expansion to this one</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">future_score:</span>float</td><td class="fieldArgDesc">Approximate score for translating the
+remaining words not covered by this hypothesis. Higher means
+that the remaining words are easier to translate.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -210,7 +196,7 @@ translation output can be found by traversing up the chain.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">score</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L391">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L391">
       
       (source)
     </a>
@@ -218,8 +204,8 @@ translation output can be found by traversing up the chain.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Overall score of hypothesis after accounting for local and
-global features</p></div>
+    <div>Overall score of hypothesis after accounting for local and
+global features</div>
   </div>
 </div><div class="basemethod">
   
@@ -233,7 +219,7 @@ global features</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">total_translated_words</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L438">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L438">
       
       (source)
     </a>
@@ -255,7 +241,7 @@ global features</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">translated_positions</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L423">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L423">
       
       (source)
     </a>
@@ -263,10 +249,8 @@ global features</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">List of positions in the source sentence of words already
-translated. The list is not sorted.
-
-:rtype: list(int)</p></div>
+    <div>List of positions in the source sentence of words already
+translated. The list is not sorted.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(int)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -280,7 +264,7 @@ translated. The list is not sorted.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">translation_so_far</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L441">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L441">
       
       (source)
     </a>
@@ -302,7 +286,7 @@ translated. The list is not sorted.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">untranslated_spans</span>(self, sentence_length):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L398">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L398">
       
       (source)
     </a>
@@ -310,14 +294,9 @@ translated. The list is not sorted.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Starting from each untranslated word, find the longest
-continuous span of untranslated positions
-
-:param sentence_length: Length of source sentence being
-    translated by the hypothesis
-:type sentence_length: int
-
-:rtype: list(tuple(int, int))</p></div>
+    <div>Starting from each untranslated word, find the longest
+continuous span of untranslated positions<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence_length:</span>int</td><td class="fieldArgDesc">Length of source sentence being
+translated by the hypothesis</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(int, int))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -331,7 +310,7 @@ continuous span of untranslated positions
   <div class="functionHeader">
     
     <span class="py-defname">future_score</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L389">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L389">
       
       (source)
     </a>
@@ -353,7 +332,7 @@ continuous span of untranslated positions
   <div class="functionHeader">
     
     <span class="py-defname">previous</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L388">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L388">
       
       (source)
     </a>
@@ -375,7 +354,7 @@ continuous span of untranslated positions
   <div class="functionHeader">
     
     <span class="py-defname">raw_score</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L385">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L385">
       
       (source)
     </a>
@@ -397,7 +376,7 @@ continuous span of untranslated positions
   <div class="functionHeader">
     
     <span class="py-defname">src_phrase_span</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L386">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L386">
       
       (source)
     </a>
@@ -419,7 +398,7 @@ continuous span of untranslated positions
   <div class="functionHeader">
     
     <span class="py-defname">trg_phrase</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L387">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L387">
       
       (source)
     </a>
@@ -441,7 +420,7 @@ continuous span of untranslated positions
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__build_translation</span>(self, hypothesis, output):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/stack_decoder.py#L446">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/stack_decoder.py#L446">
       
       (source)
     </a>
@@ -461,7 +440,7 @@ continuous span of untranslated positions
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

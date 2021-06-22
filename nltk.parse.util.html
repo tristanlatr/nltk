@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/util.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/util.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Utility functions for parsers.</p></div>
+        <div>Utility functions for parsers.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1124">
+        <table class="children sortable" id="id1128">
   
   
   <tr class="class">
@@ -123,7 +123,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">extract_test_sentences</span>(string, comment_chars='#%;', encoding=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/util.py#L196">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/util.py#L196">
       
       (source)
     </a>
@@ -131,19 +131,19 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Parses a string with one test sentence per line.
-Lines can optionally begin with:
-  - a bool, saying if the sentence is grammatical or not, or
-  - an int, giving the number of parse trees is should have,
-The result information is followed by a colon, and then the sentence.
-Empty lines and lines beginning with a comment char are ignored.
-
-:return: a list of tuple of sentences and expected results,
-    where a sentence is a list of str,
-    and a result is None, or bool, or int
-
-:param comment_chars: ``str`` of possible comment characters.
-:param encoding: the encoding of the string, if it is binary</p></div>
+    <div><p>Parses a string with one test sentence per line.
+Lines can optionally begin with:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>a bool, saying if the sentence is grammatical or not, or</li>
+<li>an int, giving the number of parse trees is should have,</li>
+</ul>
+</blockquote>
+<p>The result information is followed by a colon, and then the sentence.
+Empty lines and lines beginning with a comment char are ignored.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">comment_chars</span></td><td class="fieldArgDesc"><tt class="rst-docutils literal">str</tt> of possible comment characters.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc">the encoding of the string, if it is binary</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of tuple of sentences and expected results,
+where a sentence is a list of str,
+and a result is None, or bool, or int</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -157,7 +157,7 @@ Empty lines and lines beginning with a comment char are ignored.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">load_parser</span>(grammar_url, trace=0, parser=None, chart_class=None, beam_size=0, **load_args):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/util.py#L22">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/util.py#L22">
       
       (source)
     </a>
@@ -165,35 +165,30 @@ Empty lines and lines beginning with a comment char are ignored.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Load a grammar from a file, and build a parser based on that grammar.
+    <div><p>Load a grammar from a file, and build a parser based on that grammar.
 The parser depends on the grammar format, and might also depend
-on properties of the grammar itself.
-
-The following grammar formats are currently supported:
-  - ``'cfg'``  (CFGs: ``CFG``)
-  - ``'pcfg'`` (probabilistic CFGs: ``PCFG``)
-  - ``'fcfg'`` (feature-based CFGs: ``FeatureGrammar``)
-
-:type grammar_url: str
-:param grammar_url: A URL specifying where the grammar is located.
-    The default protocol is ``"nltk:"``, which searches for the file
-    in the the NLTK data package.
-:type trace: int
-:param trace: The level of tracing that should be used when
-    parsing a text.  ``0`` will generate no tracing output;
-    and higher numbers will produce more verbose tracing output.
-:param parser: The class used for parsing; should be ``ChartParser``
-    or a subclass.
-    If None, the class depends on the grammar format.
-:param chart_class: The class used for storing the chart;
-    should be ``Chart`` or a subclass.
-    Only used for CFGs and feature CFGs.
-    If None, the chart class depends on the grammar format.
-:type beam_size: int
-:param beam_size: The maximum length for the parser's edge queue.
-    Only used for probabilistic CFGs.
-:param load_args: Keyword parameters used when loading the grammar.
-    See ``data.load`` for more information.</p></div>
+on properties of the grammar itself.</p>
+<dl class="rst-docutils">
+<dt>The following grammar formats are currently supported:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><tt class="rst-docutils literal">'cfg'</tt>  (CFGs: <tt class="rst-docutils literal">CFG</tt>)</li>
+<li><tt class="rst-docutils literal">'pcfg'</tt> (probabilistic CFGs: <tt class="rst-docutils literal">PCFG</tt>)</li>
+<li><tt class="rst-docutils literal">'fcfg'</tt> (feature-based CFGs: <tt class="rst-docutils literal">FeatureGrammar</tt>)</li>
+</ul>
+</dd>
+</dl>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar_url:</span>str</td><td class="fieldArgDesc">A URL specifying where the grammar is located.
+The default protocol is <tt class="rst-docutils literal">"nltk:"</tt>, which searches for the file
+in the the NLTK data package.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace:</span>int</td><td class="fieldArgDesc">The level of tracing that should be used when
+parsing a text.  <tt class="rst-docutils literal">0</tt> will generate no tracing output;
+and higher numbers will produce more verbose tracing output.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parser</span></td><td class="fieldArgDesc">The class used for parsing; should be <tt class="rst-docutils literal">ChartParser</tt>
+or a subclass.
+If None, the class depends on the grammar format.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart_class</span></td><td class="fieldArgDesc">The class used for storing the chart;
+should be <tt class="rst-docutils literal">Chart</tt> or a subclass.
+Only used for CFGs and feature CFGs.
+If None, the chart class depends on the grammar format.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beam_size:</span>int</td><td class="fieldArgDesc">The maximum length for the parser's edge queue.
+Only used for probabilistic CFGs.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">load_args</span></td><td class="fieldArgDesc">Keyword parameters used when loading the grammar.
+See <tt class="rst-docutils literal">data.load</tt> for more information.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -207,7 +202,7 @@ The following grammar formats are currently supported:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">taggedsent_to_conll</span>(sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/util.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/util.py#L79">
       
       (source)
     </a>
@@ -215,23 +210,19 @@ The following grammar formats are currently supported:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">A module to convert a single POS tagged sentence into CONLL format.
-
-&gt;&gt;&gt; from nltk import word_tokenize, pos_tag
-&gt;&gt;&gt; text = "This is a foobar sentence."
-&gt;&gt;&gt; for line in taggedsent_to_conll(pos_tag(word_tokenize(text))):
-...         print(line, end="")
-    1       This    _       DT      DT      _       0       a       _       _
-    2       is      _       VBZ     VBZ     _       0       a       _       _
-    3       a       _       DT      DT      _       0       a       _       _
-    4       foobar  _       JJ      JJ      _       0       a       _       _
-    5       sentence        _       NN      NN      _       0       a       _       _
-    6       .               _       .       .       _       0       a       _       _
-
-:param sentence: A single input sentence to parse
-:type sentence: list(tuple(str, str))
-:rtype: iter(str)
-:return: a generator yielding a single sentence in CONLL format.</p></div>
+    <div><p>A module to convert a single POS tagged sentence into CONLL format.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk <span class="py-keyword">import</span> word_tokenize, pos_tag
+<span class="py-prompt">&gt;&gt;&gt; </span>text = <span class="py-string">"This is a foobar sentence."</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> line <span class="py-keyword">in</span> taggedsent_to_conll(pos_tag(word_tokenize(text))):
+<span class="py-more">... </span>        <span class="py-builtin">print</span>(line, end=<span class="py-string">""</span>)
+<span class="py-output">    1       This    _       DT      DT      _       0       a       _       _</span>
+<span class="py-output">    2       is      _       VBZ     VBZ     _       0       a       _       _</span>
+<span class="py-output">    3       a       _       DT      DT      _       0       a       _       _</span>
+<span class="py-output">    4       foobar  _       JJ      JJ      _       0       a       _       _</span>
+<span class="py-output">    5       sentence        _       NN      NN      _       0       a       _       _</span>
+<span class="py-output">    6       .               _       .       .       _       0       a       _       _</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence:</span>list(tuple(str, str))</td><td class="fieldArgDesc">A single input sentence to parse</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(str)</td><td class="fieldArgDesc">a generator yielding a single sentence in CONLL format.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -245,7 +236,7 @@ The following grammar formats are currently supported:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">taggedsents_to_conll</span>(sentences):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/util.py#L105">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/util.py#L105">
       
       (source)
     </a>
@@ -253,36 +244,32 @@ The following grammar formats are currently supported:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">A module to convert the a POS tagged document stream
+    <div><p>A module to convert the a POS tagged document stream
 (i.e. list of list of tuples, a list of sentences) and yield lines
 in CONLL format. This module yields one line per word and two newlines
-for end of sentence.
-
-&gt;&gt;&gt; from nltk import word_tokenize, sent_tokenize, pos_tag
-&gt;&gt;&gt; text = "This is a foobar sentence. Is that right?"
-&gt;&gt;&gt; sentences = [pos_tag(word_tokenize(sent)) for sent in sent_tokenize(text)]
-&gt;&gt;&gt; for line in taggedsents_to_conll(sentences):
-...     if line:
-...         print(line, end="")
-1   This    _       DT      DT      _       0       a       _       _
-2   is      _       VBZ     VBZ     _       0       a       _       _
-3   a       _       DT      DT      _       0       a       _       _
-4   foobar  _       JJ      JJ      _       0       a       _       _
-5   sentence        _       NN      NN      _       0       a       _       _
-6   .               _       .       .       _       0       a       _       _
-&lt;BLANKLINE&gt;
-&lt;BLANKLINE&gt;
-1   Is      _       VBZ     VBZ     _       0       a       _       _
-2   that    _       IN      IN      _       0       a       _       _
-3   right   _       NN      NN      _       0       a       _       _
-4   ?       _       .       .       _       0       a       _       _
-&lt;BLANKLINE&gt;
-&lt;BLANKLINE&gt;
-
-:param sentences: Input sentences to parse
-:type sentence: list(list(tuple(str, str)))
-:rtype: iter(str)
-:return: a generator yielding sentences in CONLL format.</p></div>
+for end of sentence.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk <span class="py-keyword">import</span> word_tokenize, sent_tokenize, pos_tag
+<span class="py-prompt">&gt;&gt;&gt; </span>text = <span class="py-string">"This is a foobar sentence. Is that right?"</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>sentences = [pos_tag(word_tokenize(sent)) <span class="py-keyword">for</span> sent <span class="py-keyword">in</span> sent_tokenize(text)]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> line <span class="py-keyword">in</span> taggedsents_to_conll(sentences):
+<span class="py-more">... </span>    <span class="py-keyword">if</span> line:
+<span class="py-more">... </span>        <span class="py-builtin">print</span>(line, end=<span class="py-string">""</span>)
+<span class="py-output">1   This    _       DT      DT      _       0       a       _       _</span>
+<span class="py-output">2   is      _       VBZ     VBZ     _       0       a       _       _</span>
+<span class="py-output">3   a       _       DT      DT      _       0       a       _       _</span>
+<span class="py-output">4   foobar  _       JJ      JJ      _       0       a       _       _</span>
+<span class="py-output">5   sentence        _       NN      NN      _       0       a       _       _</span>
+<span class="py-output">6   .               _       .       .       _       0       a       _       _</span>
+<span class="py-output">&lt;BLANKLINE&gt;</span>
+<span class="py-output">&lt;BLANKLINE&gt;</span>
+<span class="py-output">1   Is      _       VBZ     VBZ     _       0       a       _       _</span>
+<span class="py-output">2   that    _       IN      IN      _       0       a       _       _</span>
+<span class="py-output">3   right   _       NN      NN      _       0       a       _       _</span>
+<span class="py-output">4   ?       _       .       .       _       0       a       _       _</span>
+<span class="py-output">&lt;BLANKLINE&gt;</span>
+<span class="py-output">&lt;BLANKLINE&gt;</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentences</span></td><td class="fieldArgDesc">Input sentences to parse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence:</span>list(list(tuple(str, str)))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(str)</td><td class="fieldArgDesc">a generator yielding sentences in CONLL format.</td></tr></table></div>
   </div>
 </div>
 
@@ -294,7 +281,7 @@ for end of sentence.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

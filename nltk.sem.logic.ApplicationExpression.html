@@ -65,40 +65,36 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ApplicationExpression</span>(<a href="nltk.sem.logic.Expression.html" title="nltk.sem.logic.Expression">Expression</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1208" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.sem.drt.DrtApplicationExpression.html">nltk.sem.drt.DrtApplicationExpression</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ApplicationExpression</span>(<a href="nltk.sem.logic.Expression.html" title="nltk.sem.logic.Expression">Expression</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1208" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.sem.drt.DrtApplicationExpression.html">nltk.sem.drt.DrtApplicationExpression</a></code></p>
         <p><a href="classIndex.html#nltk.sem.logic.ApplicationExpression">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This class is used to represent two related types of logical expressions.
-
-The first is a Predicate Expression, such as "P(x,y)".  A predicate
-expression is comprised of a ``FunctionVariableExpression`` or
-``ConstantExpression`` as the predicate and a list of Expressions as the
-arguments.
-
-The second is a an application of one expression to another, such as
-"(\x.dog(x))(fido)".
-
-The reason Predicate Expressions are treated as Application Expressions is
+        <div><p>This class is used to represent two related types of logical expressions.</p>
+<p>The first is a Predicate Expression, such as "P(x,y)".  A predicate
+expression is comprised of a <tt class="rst-docutils literal">FunctionVariableExpression</tt> or
+<tt class="rst-docutils literal">ConstantExpression</tt> as the predicate and a list of Expressions as the
+arguments.</p>
+<p>The second is a an application of one expression to another, such as
+"(x.dog(x))(fido)".</p>
+<p>The reason Predicate Expressions are treated as Application Expressions is
 that the Variable Expression predicate of the expression may be replaced
 with another Expression, such as a LambdaExpression, which would mean that
-the Predicate should be thought of as being applied to the arguments.
-
-The logical expression reader will always curry arguments in a application expression.
-So, "\x y.see(x,y)(john,mary)" will be represented internally as
-"((\x y.(see(x))(y))(john))(mary)".  This simplifies the internals since
-there will always be exactly one argument in an application.
-
-The str() method will usually print the curried forms of application
+the Predicate should be thought of as being applied to the arguments.</p>
+<p>The logical expression reader will always curry arguments in a application expression.
+So, "x y.see(x,y)(john,mary)" will be represented internally as
+"((x y.(see(x))(y))(john))(mary)".  This simplifies the internals since
+there will always be exactly one argument in an application.</p>
+<p>The str() method will usually print the curried forms of application
 expressions.  The one exception is when the the application expression is
 really a predicate expression (ie, underlying function is an
-``AbstractVariableExpression``).  This means that the example from above
-will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
+<tt class="rst-docutils literal">AbstractVariableExpression</tt>).  This means that the example from above
+will be returned as "(x y.see(x,y)(john))(mary)".</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1387">
+        <table class="children sortable" id="id1391">
   
   
   <tr class="method">
@@ -110,7 +106,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param function: ``Expression``, for the function expression :param argument: ``Expression``, for the argument</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -125,7 +121,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
     
     <td>Method</td>
     <td><code><a href="#constants">constants</a></code></td>
-    <td><span>:see: Expression.constants()</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -140,12 +136,12 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
     
     <td>Method</td>
     <td><code><a href="#predicates">predicates</a></code></td>
-    <td><span>:see: Expression.predicates()</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#simplify">simplify</a></code></td>
-    <td><span>:return: beta-converted version of this expression</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -155,7 +151,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
     
     <td>Method</td>
     <td><code><a href="#visit">visit</a></code></td>
-    <td><span>:see: Expression.visit()</span></td>
+    <td><span></span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -192,7 +188,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.sem.logic.Expression.html">Expression</a></code>:
           </p>
-          <table class="children sortable" id="id1388">
+          <table class="children sortable" id="id1392">
   
   
   <tr class="baseclassmethod">
@@ -254,7 +250,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.sem.logic.Expression.html#free">free</a></code></td>
-    <td><span>Return a set of all the free (non-bound) variables.  This includes both individual and predicate variables, but not constants. :return: set of ``Variable`` objects</span></td>
+    <td><span>Return a set of all the free (non-bound) variables.  This includes both individual and predicate variables, but not constants. :return: set of <tt class="rst-docutils literal">Variable</tt> objects</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -326,7 +322,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1334">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1334">
       
       (source)
     </a>
@@ -348,7 +344,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, function, argument):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1237">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1237">
       
       (source)
     </a>
@@ -356,8 +352,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param function: ``Expression``, for the function expression
-:param argument: ``Expression``, for the argument</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">function</span></td><td class="fieldArgDesc"><tt class="rst-docutils literal">Expression</tt>, for the function expression</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">argument</span></td><td class="fieldArgDesc"><tt class="rst-docutils literal">Expression</tt>, for the argument</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -371,7 +366,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1341">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1341">
       
       (source)
     </a>
@@ -393,7 +388,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1346">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1346">
       
       (source)
     </a>
@@ -415,7 +410,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">constants</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1314">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1314">
       
       (source)
     </a>
@@ -423,7 +418,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.sem.logic.Expression.html#constants">nltk.sem.logic.Expression.constants</a></code></div>
     
-    <div><p class="pre">:see: Expression.constants()</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2">Expression.constants()</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -437,7 +432,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">findtype</span>(self, variable):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1287">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1287">
       
       (source)
     </a>
@@ -445,7 +440,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.sem.logic.Expression.html#findtype">nltk.sem.logic.Expression.findtype</a></code></div>
     
-    <div><p class="pre">:see Expression.findtype()</p></div>
+    <div>:see Expression.findtype()</div>
   </div>
 </div><div class="basemethod">
   
@@ -459,7 +454,7 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_atom</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1402">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1402">
       
       (source)
     </a>
@@ -467,8 +462,8 @@ will be returned as "(\x y.see(x,y)(john))(mary)".</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Is this expression an atom (as opposed to a lambda expression applied
-to a term)?</p></div>
+    <div>Is this expression an atom (as opposed to a lambda expression applied
+to a term)?</div>
   </div>
 </div><div class="basemethod">
   
@@ -482,7 +477,7 @@ to a term)?</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">predicates</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1322">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1322">
       
       (source)
     </a>
@@ -490,7 +485,7 @@ to a term)?</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.sem.logic.Expression.html#predicates">nltk.sem.logic.Expression.predicates</a></code></div>
     
-    <div><p class="pre">:see: Expression.predicates()</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2">Expression.predicates()</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -504,7 +499,7 @@ to a term)?</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">simplify</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1247">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1247">
       
       (source)
     </a>
@@ -512,7 +507,7 @@ to a term)?</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.sem.logic.Expression.html#simplify">nltk.sem.logic.Expression.simplify</a></code></div>
     
-    <div><p class="pre">:return: beta-converted version of this expression</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">beta-converted version of this expression</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -526,7 +521,7 @@ to a term)?</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">uncurry</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1372">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1372">
       
       (source)
     </a>
@@ -534,9 +529,9 @@ to a term)?</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Uncurry this application expression
-
-return: A tuple (base-function, arg-list)</p></div>
+    <div><p>Uncurry this application expression</p>
+<p>return: A tuple (base-function, arg-list)</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -550,7 +545,7 @@ return: A tuple (base-function, arg-list)</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">visit</span>(self, function, combinator):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1330">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1330">
       
       (source)
     </a>
@@ -558,7 +553,7 @@ return: A tuple (base-function, arg-list)</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.sem.logic.Expression.html#visit">nltk.sem.logic.Expression.visit</a></code></div>
     
-    <div><p class="pre">:see: Expression.visit()</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2">Expression.visit()</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -572,7 +567,7 @@ return: A tuple (base-function, arg-list)</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">argument</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1245">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1245">
       
       (source)
     </a>
@@ -594,7 +589,7 @@ return: A tuple (base-function, arg-list)</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">function</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1244">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1244">
       
       (source)
     </a>
@@ -616,7 +611,7 @@ return: A tuple (base-function, arg-list)</p></div>
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">args</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1395">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1395">
       
       (source)
     </a>
@@ -624,7 +619,7 @@ return: A tuple (base-function, arg-list)</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Return uncurried arg-list</p></div>
+    <div>Return uncurried arg-list</div>
   </div>
 </div><div class="baseproperty">
   
@@ -638,7 +633,7 @@ return: A tuple (base-function, arg-list)</p></div>
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">pred</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1386">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1386">
       
       (source)
     </a>
@@ -646,9 +641,9 @@ return: A tuple (base-function, arg-list)</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Return uncurried base-function.
+    <div>Return uncurried base-function.
 If this is an atom, then the result will be a variable expression.
-Otherwise, it will be a lambda expression.</p></div>
+Otherwise, it will be a lambda expression.</div>
   </div>
 </div><div class="baseproperty">
   
@@ -662,7 +657,7 @@ Otherwise, it will be a lambda expression.</p></div>
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">type</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1255">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1255">
       
       (source)
     </a>
@@ -684,7 +679,7 @@ Otherwise, it will be a lambda expression.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_set_type</span>(self, other_type=ANY_TYPE, signature=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/logic.py#L1262">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/logic.py#L1262">
       
       (source)
     </a>
@@ -692,7 +687,7 @@ Otherwise, it will be a lambda expression.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.sem.logic.Expression.html#_set_type">nltk.sem.logic.Expression._set_type</a></code></div>
     
-    <div><p class="pre">:see Expression._set_type()</p></div>
+    <div>:see Expression._set_type()</div>
   </div>
 </div>
 
@@ -704,7 +699,7 @@ Otherwise, it will be a lambda expression.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

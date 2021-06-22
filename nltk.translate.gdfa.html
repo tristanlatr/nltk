@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gdfa.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gdfa.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1873">
+        <table class="children sortable" id="id1877">
   
   
   <tr class="function">
@@ -103,7 +103,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">grow_diag_final_and</span>(srclen, trglen, e2f, f2e):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gdfa.py#L12">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gdfa.py#L12">
       
       (source)
     </a>
@@ -111,59 +111,49 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">This module symmetrisatizes the source-to-target and target-to-source
-word alignment output and produces, aka. GDFA algorithm (Koehn, 2005).
-
-Step 1: Find the intersection of the bidirectional alignment.
-
-Step 2: Search for additional neighbor alignment points to be added, given
-        these criteria: (i) neighbor alignments points are not in the
-        intersection and (ii) neighbor alignments are in the union.
-
-Step 3: Add all other alignment points thats not in the intersection, not in
-        the neighboring alignments that met the criteria but in the original
-        foward/backward alignment outputs.
-
-    &gt;&gt;&gt; forw = ('0-0 2-1 9-2 21-3 10-4 7-5 11-6 9-7 12-8 1-9 3-10 '
-    ...         '4-11 17-12 17-13 25-14 13-15 24-16 11-17 28-18')
-    &gt;&gt;&gt; back = ('0-0 1-9 2-9 3-10 4-11 5-12 6-6 7-5 8-6 9-7 10-4 '
-    ...         '11-6 12-8 13-12 15-12 17-13 18-13 19-12 20-13 '
-    ...         '21-3 22-12 23-14 24-17 25-15 26-17 27-18 28-18')
-    &gt;&gt;&gt; srctext = ("この よう な ハロー 白色 わい 星 の Ｌ 関数 "
-    ...            "は Ｌ と 共 に 不連続 に 増加 する こと が "
-    ...            "期待 さ れる こと を 示し た 。")
-    &gt;&gt;&gt; trgtext = ("Therefore , we expect that the luminosity function "
-    ...            "of such halo white dwarfs increases discontinuously "
-    ...            "with the luminosity .")
-    &gt;&gt;&gt; srclen = len(srctext.split())
-    &gt;&gt;&gt; trglen = len(trgtext.split())
-    &gt;&gt;&gt;
-    &gt;&gt;&gt; gdfa = grow_diag_final_and(srclen, trglen, forw, back)
-    &gt;&gt;&gt; gdfa == sorted(set([(28, 18), (6, 6), (24, 17), (2, 1), (15, 12), (13, 12),
-    ...         (2, 9), (3, 10), (26, 17), (25, 15), (8, 6), (9, 7), (20,
-    ...         13), (18, 13), (0, 0), (10, 4), (13, 15), (23, 14), (7, 5),
-    ...         (25, 14), (1, 9), (17, 13), (4, 11), (11, 17), (9, 2), (22,
-    ...         12), (27, 18), (24, 16), (21, 3), (19, 12), (17, 12), (5,
-    ...         12), (11, 6), (12, 8)]))
-    True
-
-References:
+    <div><p>This module symmetrisatizes the source-to-target and target-to-source
+word alignment output and produces, aka. GDFA algorithm (Koehn, 2005).</p>
+<p>Step 1: Find the intersection of the bidirectional alignment.</p>
+<dl class="rst-docutils">
+<dt>Step 2: Search for additional neighbor alignment points to be added, given</dt>
+<dd>these criteria: (i) neighbor alignments points are not in the
+intersection and (ii) neighbor alignments are in the union.</dd>
+<dt>Step 3: Add all other alignment points thats not in the intersection, not in</dt>
+<dd><blockquote class="rst-first">
+the neighboring alignments that met the criteria but in the original
+foward/backward alignment outputs.</blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>forw = (<span class="py-string">'0-0 2-1 9-2 21-3 10-4 7-5 11-6 9-7 12-8 1-9 3-10 '</span>
+<span class="py-more">... </span>        <span class="py-string">'4-11 17-12 17-13 25-14 13-15 24-16 11-17 28-18'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>back = (<span class="py-string">'0-0 1-9 2-9 3-10 4-11 5-12 6-6 7-5 8-6 9-7 10-4 '</span>
+<span class="py-more">... </span>        <span class="py-string">'11-6 12-8 13-12 15-12 17-13 18-13 19-12 20-13 '</span>
+<span class="py-more">... </span>        <span class="py-string">'21-3 22-12 23-14 24-17 25-15 26-17 27-18 28-18'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>srctext = (<span class="py-string">"この よう な ハロー 白色 わい 星 の Ｌ 関数 "</span>
+<span class="py-more">... </span>           <span class="py-string">"は Ｌ と 共 に 不連続 に 増加 する こと が "</span>
+<span class="py-more">... </span>           <span class="py-string">"期待 さ れる こと を 示し た 。"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>trgtext = (<span class="py-string">"Therefore , we expect that the luminosity function "</span>
+<span class="py-more">... </span>           <span class="py-string">"of such halo white dwarfs increases discontinuously "</span>
+<span class="py-more">... </span>           <span class="py-string">"with the luminosity ."</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>srclen = <span class="py-builtin">len</span>(srctext.split())
+<span class="py-prompt">&gt;&gt;&gt; </span>trglen = <span class="py-builtin">len</span>(trgtext.split())
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>gdfa = grow_diag_final_and(srclen, trglen, forw, back)
+<span class="py-prompt">&gt;&gt;&gt; </span>gdfa == <span class="py-builtin">sorted</span>(<span class="py-builtin">set</span>([(28, 18), (6, 6), (24, 17), (2, 1), (15, 12), (13, 12),
+<span class="py-more">... </span>        (2, 9), (3, 10), (26, 17), (25, 15), (8, 6), (9, 7), (20,
+<span class="py-more">... </span>        13), (18, 13), (0, 0), (10, 4), (13, 15), (23, 14), (7, 5),
+<span class="py-more">... </span>        (25, 14), (1, 9), (17, 13), (4, 11), (11, 17), (9, 2), (22,
+<span class="py-more">... </span>        12), (27, 18), (24, 16), (21, 3), (19, 12), (17, 12), (5,
+<span class="py-more">... </span>        12), (11, 6), (12, 8)]))
+<span class="py-output">True</span>
+</pre></dd>
+</dl>
+<p>References:
 Koehn, P., A. Axelrod, A. Birch, C. Callison, M. Osborne, and D. Talbot.
 2005. Edinburgh System Description for the 2005 IWSLT Speech
-Translation Evaluation. In MT Eval Workshop.
-
-:type srclen: int
-:param srclen: the number of tokens in the source language
-:type trglen: int
-:param trglen: the number of tokens in the target language
-:type e2f: str
-:param e2f: the forward word alignment outputs from source-to-target
-            language (in pharaoh output format)
-:type f2e: str
-:param f2e: the backward word alignment outputs from target-to-source
-            language (in pharaoh output format)
-:rtype: set(tuple(int))
-:return: the symmetrized alignment points from the GDFA algorithm</p></div>
+Translation Evaluation. In MT Eval Workshop.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">srclen:</span>int</td><td class="fieldArgDesc">the number of tokens in the source language</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trglen:</span>int</td><td class="fieldArgDesc">the number of tokens in the target language</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">e2f:</span>str</td><td class="fieldArgDesc">the forward word alignment outputs from source-to-target
+language (in pharaoh output format)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f2e:</span>str</td><td class="fieldArgDesc">the backward word alignment outputs from target-to-source
+language (in pharaoh output format)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(tuple(int))</td><td class="fieldArgDesc">the symmetrized alignment points from the GDFA algorithm</td></tr></table></div>
   </div>
 </div>
 
@@ -175,7 +165,7 @@ Translation Evaluation. In MT Eval Workshop.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

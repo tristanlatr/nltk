@@ -65,21 +65,20 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ViterbiParser</span>(<a href="nltk.parse.api.ParserI.html" title="nltk.parse.api.ParserI">ParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L19" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ViterbiParser</span>(<a href="nltk.parse.api.ParserI.html" title="nltk.parse.api.ParserI">ParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L19" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.viterbi.ViterbiParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A bottom-up ``PCFG`` parser that uses dynamic programming to find
-the single most likely parse for a text.  The ``ViterbiParser`` parser
+        <div><p>A bottom-up <tt class="rst-docutils literal">PCFG</tt> parser that uses dynamic programming to find
+the single most likely parse for a text.  The <tt class="rst-docutils literal">ViterbiParser</tt> parser
 parses texts by filling in a "most likely constituent table".
 This table records the most probable tree representation for any
 given span and node value.  In particular, it has an entry for
 every start index, end index, and node value, recording the most
 likely subtree that spans from the start index to the end index,
-and has the given node value.
-
-The ``ViterbiParser`` parser fills in this table incrementally.  It starts
+and has the given node value.</p>
+<p>The <tt class="rst-docutils literal">ViterbiParser</tt> parser fills in this table incrementally.  It starts
 by filling in all entries for constituents that span one element
 of text (i.e., entries where the end index is one greater than the
 start index).  After it has filled in all table entries for
@@ -89,50 +88,56 @@ continues filling in the entries for constituents spanning larger
 and larger portions of the text, until the entire table has been
 filled.  Finally, it returns the table entry for a constituent
 spanning the entire text, whose node value is the grammar's start
-symbol.
-
-In order to find the most likely constituent with a given span and
-node value, the ``ViterbiParser`` parser considers all productions that
+symbol.</p>
+<p>In order to find the most likely constituent with a given span and
+node value, the <tt class="rst-docutils literal">ViterbiParser</tt> parser considers all productions that
 could produce that node value.  For each production, it finds all
 children that collectively cover the span and have the node values
 specified by the production's right hand side.  If the probability
 of the tree formed by applying the production to the children is
 greater than the probability of the current entry in the table,
-then the table is updated with this new tree.
-
-A pseudo-code description of the algorithm used by
-``ViterbiParser`` is:
-
-| Create an empty most likely constituent table, *MLC*.
-| For width in 1...len(text):
-|   For start in 1...len(text)-width:
-|     For prod in grammar.productions:
-|       For each sequence of subtrees [t[1], t[2], ..., t[n]] in MLC,
-|         where t[i].label()==prod.rhs[i],
-|         and the sequence covers [start:start+width]:
-|           old_p = MLC[start, start+width, prod.lhs]
-|           new_p = P(t[1])P(t[1])...P(t[n])P(prod)
-|           if new_p &gt; old_p:
-|             new_tree = Tree(prod.lhs, t[1], t[2], ..., t[n])
-|             MLC[start, start+width, prod.lhs] = new_tree
-| Return MLC[0, len(text), start_symbol]
-
-:type _grammar: PCFG
-:ivar _grammar: The grammar used to parse sentences.
-:type _trace: int
-:ivar _trace: The level of tracing output that should be generated
-    when parsing a text.</p></div>
+then the table is updated with this new tree.</p>
+<p>A pseudo-code description of the algorithm used by
+<tt class="rst-docutils literal">ViterbiParser</tt> is:</p>
+<div class="rst-line-block">
+<div class="rst-line">Create an empty most likely constituent table, <em>MLC</em>.</div>
+<div class="rst-line">For width in 1...len(text):</div>
+<div class="rst-line-block">
+<div class="rst-line">For start in 1...len(text)-width:</div>
+<div class="rst-line-block">
+<div class="rst-line">For prod in grammar.productions:</div>
+<div class="rst-line-block">
+<div class="rst-line">For each sequence of subtrees [t[1], t[2], ..., t[n]] in MLC,</div>
+<div class="rst-line-block">
+<div class="rst-line">where t[i].label()==prod.rhs[i],</div>
+<div class="rst-line">and the sequence covers [start:start+width]:</div>
+<div class="rst-line-block">
+<div class="rst-line">old_p = MLC[start, start+width, prod.lhs]</div>
+<div class="rst-line">new_p = P(t[1])P(t[1])...P(t[n])P(prod)</div>
+<div class="rst-line">if new_p &gt; old_p:</div>
+<div class="rst-line-block">
+<div class="rst-line">new_tree = Tree(prod.lhs, t[1], t[2], ..., t[n])</div>
+<div class="rst-line">MLC[start, start+width, prod.lhs] = new_tree</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="rst-line">Return MLC[0, len(text), start_symbol]</div>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1127">
+        <table class="children sortable" id="id1131">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new ``ViterbiParser`` parser, that uses ``grammar`` to parse texts.</span></td>
+    <td><span>Create a new <tt class="rst-docutils literal">ViterbiParser</tt> parser, that uses <tt class="rst-docutils literal">grammar</tt> to parse texts.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -142,12 +147,12 @@ A pseudo-code description of the algorithm used by
     
     <td>Method</td>
     <td><code><a href="#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -157,7 +162,7 @@ A pseudo-code description of the algorithm used by
     
     <td>Method</td>
     <td><code><a href="#_add_constituents_spanning">_add_constituents_spanning</a></code></td>
-    <td><span>Find any constituents that might cover ``span``, and add them to the most likely constituents table.</span></td>
+    <td><span>Find any constituents that might cover <tt class="rst-docutils literal">span</tt>, and add them to the most likely constituents table.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -167,7 +172,7 @@ A pseudo-code description of the algorithm used by
     
     <td>Method</td>
     <td><code><a href="#_match_rhs">_match_rhs</a></code></td>
-    <td><span>:return: a set of all the lists of children that cover ``span`` and that match ``rhs``. :rtype: list(list(ProbabilisticTree or token)</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -182,36 +187,37 @@ A pseudo-code description of the algorithm used by
     
     <td>Instance Variable</td>
     <td><code><a href="#_grammar">_grammar</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The grammar used to parse sentences.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_trace">_trace</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The level of tracing output that should be generated
+when parsing a text.</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code>:
           </p>
-          <table class="children sortable" id="id1128">
+          <table class="children sortable" id="id1132">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_sents">parse_sents</a></code></td>
-    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.parse()</tt> to each element of <tt class="rst-docutils literal">sents</tt>. :rtype: iter(iter(Tree))</span></td>
   </tr>
 </table>
           
@@ -233,7 +239,7 @@ A pseudo-code description of the algorithm used by
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, grammar, trace=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L75">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L75">
       
       (source)
     </a>
@@ -241,16 +247,11 @@ A pseudo-code description of the algorithm used by
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a new ``ViterbiParser`` parser, that uses ``grammar`` to
-parse texts.
-
-:type grammar: PCFG
-:param grammar: The grammar used to parse texts.
-:type trace: int
-:param trace: The level of tracing that should be used when
-    parsing a text.  ``0`` will generate no tracing output;
-    and higher numbers will produce more verbose tracing
-    output.</p></div>
+    <div>Create a new <tt class="rst-docutils literal">ViterbiParser</tt> parser, that uses <tt class="rst-docutils literal">grammar</tt> to
+parse texts.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar:</span>PCFG</td><td class="fieldArgDesc">The grammar used to parse texts.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace:</span>int</td><td class="fieldArgDesc">The level of tracing that should be used when
+parsing a text.  <tt class="rst-docutils literal">0</tt> will generate no tracing output;
+and higher numbers will produce more verbose tracing
+output.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -264,7 +265,7 @@ parse texts.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L322">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L322">
       
       (source)
     </a>
@@ -286,7 +287,7 @@ parse texts.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">grammar</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L91">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L91">
       
       (source)
     </a>
@@ -294,7 +295,7 @@ parse texts.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.api.ParserI.html#grammar">nltk.parse.api.ParserI.grammar</a></code></div>
     
-    <div><p class="pre">:return: The grammar used by this parser.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">The grammar used by this parser.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -308,7 +309,7 @@ parse texts.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L107">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L107">
       
       (source)
     </a>
@@ -316,12 +317,7 @@ parse texts.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.api.ParserI.html#parse">nltk.parse.api.ParserI.parse</a></code></div>
     
-    <div><p class="pre">:return: An iterator that generates parse trees for the sentence.
-When possible this list is sorted from most likely to least likely.
-
-:param sent: The sentence to be parsed
-:type sent: list(str)
-:rtype: iter(Tree)</p></div>
+    <div>When possible this list is sorted from most likely to least likely.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent:</span>list(str)</td><td class="fieldArgDesc">The sentence to be parsed</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(Tree)</td><td class="fieldArgDesc">An iterator that generates parse trees for the sentence.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -335,7 +331,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">trace</span>(self, trace=2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L94">
       
       (source)
     </a>
@@ -343,14 +339,10 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Set the level of tracing output that should be generated when
-parsing a text.
-
-:type trace: int
-:param trace: The trace level.  A trace level of ``0`` will
-    generate no tracing output; and higher trace levels will
-    produce more verbose tracing output.
-:rtype: None</p></div>
+    <div>Set the level of tracing output that should be generated when
+parsing a text.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace:</span>int</td><td class="fieldArgDesc">The trace level.  A trace level of <tt class="rst-docutils literal">0</tt> will
+generate no tracing output; and higher trace levels will
+produce more verbose tracing output.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -364,7 +356,7 @@ parsing a text.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_add_constituents_spanning</span>(self, span, constituents, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L150">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L150">
       
       (source)
     </a>
@@ -372,36 +364,26 @@ parsing a text.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Find any constituents that might cover ``span``, and add them
-to the most likely constituents table.
-
-:rtype: None
-:type span: tuple(int, int)
-:param span: The section of the text for which we are
-    trying to find possible constituents.  The span is
-    specified as a pair of integers, where the first integer
-    is the index of the first token that should be included in
-    the constituent; and the second integer is the index of
-    the first token that should not be included in the
-    constituent.  I.e., the constituent should cover
-    ``text[span[0]:span[1]]``, where ``text`` is the text
-    that we are parsing.
-
-:type constituents: dict(tuple(int,int,Nonterminal) -&gt; ProbabilisticToken or ProbabilisticTree)
-:param constituents: The most likely constituents table.  This
-    table records the most probable tree representation for
-    any given span and node value.  In particular,
-    ``constituents(s,e,nv)`` is the most likely
-    ``ProbabilisticTree`` that covers ``text[s:e]``
-    and has a node value ``nv.symbol()``, where ``text``
-    is the text that we are parsing.  When
-    ``_add_constituents_spanning`` is called, ``constituents``
-    should contain all possible constituents that are shorter
-    than ``span``.
-
-:type tokens: list of tokens
-:param tokens: The text we are parsing.  This is only used for
-    trace output.</p></div>
+    <div>Find any constituents that might cover <tt class="rst-docutils literal">span</tt>, and add them
+to the most likely constituents table.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">span:</span>tuple(int, int)</td><td class="fieldArgDesc">The section of the text for which we are
+trying to find possible constituents.  The span is
+specified as a pair of integers, where the first integer
+is the index of the first token that should be included in
+the constituent; and the second integer is the index of
+the first token that should not be included in the
+constituent.  I.e., the constituent should cover
+<tt class="rst-docutils literal"><span class="pre">text[span[0]:span[1]]</span></tt>, where <tt class="rst-docutils literal">text</tt> is the text
+that we are parsing.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">constituents:</span>dict(tuple(int,int,Nonterminal) -&gt; ProbabilisticToken or ProbabilisticTree)</td><td class="fieldArgDesc">The most likely constituents table.  This
+table records the most probable tree representation for
+any given span and node value.  In particular,
+<tt class="rst-docutils literal">constituents(s,e,nv)</tt> is the most likely
+<tt class="rst-docutils literal">ProbabilisticTree</tt> that covers <tt class="rst-docutils literal">text[s:e]</tt>
+and has a node value <tt class="rst-docutils literal">nv.symbol()</tt>, where <tt class="rst-docutils literal">text</tt>
+is the text that we are parsing.  When
+<tt class="rst-docutils literal">_add_constituents_spanning</tt> is called, <tt class="rst-docutils literal">constituents</tt>
+should contain all possible constituents that are shorter
+than <tt class="rst-docutils literal">span</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list of tokens</td><td class="fieldArgDesc">The text we are parsing.  This is only used for
+trace output.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -415,7 +397,7 @@ to the most likely constituents table.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_find_instantiations</span>(self, span, constituents):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L218">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L218">
       
       (source)
     </a>
@@ -423,27 +405,22 @@ to the most likely constituents table.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a list of the production instantiations that cover a
-    given span of the text.  A "production instantiation" is
-    a tuple containing a production and a list of children,
-    where the production's right hand side matches the list of
-    children; and the children cover ``span``.  :rtype: list
-    of ``pair`` of ``Production``, (list of
-    (``ProbabilisticTree`` or token.
-
-:type span: tuple(int, int)
-:param span: The section of the text for which we are
-    trying to find production instantiations.  The span is
-    specified as a pair of integers, where the first integer
-    is the index of the first token that should be covered by
-    the production instantiation; and the second integer is
-    the index of the first token that should not be covered by
-    the production instantiation.
-:type constituents: dict(tuple(int,int,Nonterminal) -&gt; ProbabilisticToken or ProbabilisticTree)
-:param constituents: The most likely constituents table.  This
-    table records the most probable tree representation for
-    any given span and node value.  See the module
-    documentation for more information.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">span:</span>tuple(int, int)</td><td class="fieldArgDesc">The section of the text for which we are
+trying to find production instantiations.  The span is
+specified as a pair of integers, where the first integer
+is the index of the first token that should be covered by
+the production instantiation; and the second integer is
+the index of the first token that should not be covered by
+the production instantiation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">constituents:</span>dict(tuple(int,int,Nonterminal) -&gt; ProbabilisticToken or ProbabilisticTree)</td><td class="fieldArgDesc">The most likely constituents table.  This
+table records the most probable tree representation for
+any given span and node value.  See the module
+documentation for more information.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of the production instantiations that cover a
+given span of the text.  A "production instantiation" is
+a tuple containing a production and a list of children,
+where the production's right hand side matches the list of
+children; and the children cover <tt class="rst-docutils literal">span</tt>.  :rtype: list
+of <tt class="rst-docutils literal">pair</tt> of <tt class="rst-docutils literal">Production</tt>, (list of
+(<tt class="rst-docutils literal">ProbabilisticTree</tt> or token.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -457,7 +434,7 @@ to the most likely constituents table.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_match_rhs</span>(self, rhs, span, constituents):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L250">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L250">
       
       (source)
     </a>
@@ -465,29 +442,21 @@ to the most likely constituents table.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a set of all the lists of children that cover ``span``
-    and that match ``rhs``.
-:rtype: list(list(ProbabilisticTree or token)
-
-:type rhs: list(Nonterminal or any)
-:param rhs: The list specifying what kinds of children need to
-    cover ``span``.  Each nonterminal in ``rhs`` specifies
-    that the corresponding child should be a tree whose node
-    value is that nonterminal's symbol.  Each terminal in ``rhs``
-    specifies that the corresponding child should be a token
-    whose type is that terminal.
-:type span: tuple(int, int)
-:param span: The section of the text for which we are
-    trying to find child lists.  The span is specified as a
-    pair of integers, where the first integer is the index of
-    the first token that should be covered by the child list;
-    and the second integer is the index of the first token
-    that should not be covered by the child list.
-:type constituents: dict(tuple(int,int,Nonterminal) -&gt; ProbabilisticToken or ProbabilisticTree)
-:param constituents: The most likely constituents table.  This
-    table records the most probable tree representation for
-    any given span and node value.  See the module
-    documentation for more information.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rhs:</span>list(Nonterminal or any)</td><td class="fieldArgDesc">The list specifying what kinds of children need to
+cover <tt class="rst-docutils literal">span</tt>.  Each nonterminal in <tt class="rst-docutils literal">rhs</tt> specifies
+that the corresponding child should be a tree whose node
+value is that nonterminal's symbol.  Each terminal in <tt class="rst-docutils literal">rhs</tt>
+specifies that the corresponding child should be a token
+whose type is that terminal.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">span:</span>tuple(int, int)</td><td class="fieldArgDesc">The section of the text for which we are
+trying to find child lists.  The span is specified as a
+pair of integers, where the first integer is the index of
+the first token that should be covered by the child list;
+and the second integer is the index of the first token
+that should not be covered by the child list.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">constituents:</span>dict(tuple(int,int,Nonterminal) -&gt; ProbabilisticToken or ProbabilisticTree)</td><td class="fieldArgDesc">The most likely constituents table.  This
+table records the most probable tree representation for
+any given span and node value.  See the module
+documentation for more information.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(ProbabilisticTree or token)</td><td class="fieldArgDesc">a set of all the lists of children that cover <tt class="rst-docutils literal">span</tt>
+and that match <tt class="rst-docutils literal">rhs</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -501,7 +470,7 @@ to the most likely constituents table.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_trace_lexical_insertion</span>(self, token, index, width):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L317">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L317">
       
       (source)
     </a>
@@ -523,7 +492,7 @@ to the most likely constituents table.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_trace_production</span>(self, production, p, span, width):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L294">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L294">
       
       (source)
     </a>
@@ -531,16 +500,8 @@ to the most likely constituents table.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print trace output indicating that a given production has been
-applied at a given location.
-
-:param production: The production that has been applied
-:type production: Production
-:param p: The probability of the tree produced by the production.
-:type p: float
-:param span: The span of the production
-:type span: tuple
-:rtype: None</p></div>
+    <div>Print trace output indicating that a given production has been
+applied at a given location.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">production:</span>Production</td><td class="fieldArgDesc">The production that has been applied</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">p:</span>float</td><td class="fieldArgDesc">The probability of the tree produced by the production.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">span:</span>tuple</td><td class="fieldArgDesc">The span of the production</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">width</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -553,8 +514,8 @@ applied at a given location.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_grammar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L88">
+    <span class="py-defname">_grammar</span>: PCFG =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L68">
       
       (source)
     </a>
@@ -562,7 +523,7 @@ applied at a given location.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The grammar used to parse sentences.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -575,8 +536,8 @@ applied at a given location.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_trace</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/viterbi.py#L89">
+    <span class="py-defname">_trace</span>: int =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/viterbi.py#L70">
       
       (source)
     </a>
@@ -584,7 +545,8 @@ applied at a given location.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The level of tracing output that should be generated
+when parsing a text.</div>
   </div>
 </div>
 
@@ -596,7 +558,7 @@ applied at a given location.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

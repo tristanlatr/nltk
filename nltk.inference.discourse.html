@@ -65,49 +65,47 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Module for incrementally developing simple discourses, and checking for semantic ambiguity,
-consistency and informativeness.
+        <div><p>Module for incrementally developing simple discourses, and checking for semantic ambiguity,
+consistency and informativeness.</p>
+<p>Many of the ideas are based on the CURT family of programs of Blackburn and Bos
+(see <a class="rst-reference external" href="http://homepages.inf.ed.ac.uk/jbos/comsem/book1.html" target="_top">http://homepages.inf.ed.ac.uk/jbos/comsem/book1.html</a>).</p>
+<p>Consistency checking is carried out  by using the <tt class="rst-docutils literal">mace</tt> module to call the Mace4 model builder.
+Informativeness checking is carried out with a call to <tt class="rst-docutils literal">Prover.prove()</tt> from
+the <tt class="rst-docutils literal">inference</tt>  module.</p>
+<p><tt class="rst-docutils literal">DiscourseTester</tt> is a constructor for discourses.
+The basic data structure is a list of sentences, stored as <tt class="rst-docutils literal">self._sentences</tt>. Each sentence in the list
+is assigned a "sentence ID" (<tt class="rst-docutils literal">sid</tt>) of the form <tt class="rst-docutils literal">s</tt><em>i</em>. For example:</p>
+<pre class="rst-literal-block">
+s0: A boxer walks
+s1: Every boxer chases a girl
+</pre>
+<p>Each sentence can be ambiguous between a number of readings, each of which receives a
+"reading ID" (<tt class="rst-docutils literal">rid</tt>) of the form <tt class="rst-docutils literal">s</tt><em>i</em> -<tt class="rst-docutils literal">r</tt><em>j</em>. For example:</p>
+<pre class="rst-literal-block">
+s0 readings:
 
-Many of the ideas are based on the CURT family of programs of Blackburn and Bos
-(see http://homepages.inf.ed.ac.uk/jbos/comsem/book1.html).
-
-Consistency checking is carried out  by using the ``mace`` module to call the Mace4 model builder.
-Informativeness checking is carried out with a call to ``Prover.prove()`` from
-the ``inference``  module.
-
-``DiscourseTester`` is a constructor for discourses.
-The basic data structure is a list of sentences, stored as ``self._sentences``. Each sentence in the list
-is assigned a "sentence ID" (``sid``) of the form ``s``\ *i*. For example::
-
-    s0: A boxer walks
-    s1: Every boxer chases a girl
-
-Each sentence can be ambiguous between a number of readings, each of which receives a
-"reading ID" (``rid``) of the form ``s``\ *i* -``r``\ *j*. For example::
-
-    s0 readings:
-
-    s0-r1: some x.(boxer(x) &amp; walk(x))
-    s0-r0: some x.(boxerdog(x) &amp; walk(x))
-
-A "thread" is a list of readings, represented as a list of ``rid``\ s.
-Each thread receives a "thread ID" (``tid``) of the form ``d``\ *i*.
-For example::
-
-    d0: ['s0-r0', 's1-r0']
-
-The set of all threads for a discourse is the Cartesian product of all the readings of the sequences of sentences.
-(This is not intended to scale beyond very short discourses!) The method ``readings(filter=True)`` will only show
-those threads which are consistent (taking into account any background assumptions).</p></div>
+s0-r1: some x.(boxer(x) &amp; walk(x))
+s0-r0: some x.(boxerdog(x) &amp; walk(x))
+</pre>
+<p>A "thread" is a list of readings, represented as a list of <tt class="rst-docutils literal">rid</tt>s.
+Each thread receives a "thread ID" (<tt class="rst-docutils literal">tid</tt>) of the form <tt class="rst-docutils literal">d</tt><em>i</em>.
+For example:</p>
+<pre class="rst-literal-block">
+d0: ['s0-r0', 's1-r0']
+</pre>
+<p>The set of all threads for a discourse is the Cartesian product of all the readings of the sequences of sentences.
+(This is not intended to scale beyond very short discourses!) The method <tt class="rst-docutils literal">readings(filter=True)</tt> will only show
+those threads which are consistent (taking into account any background assumptions).</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id699">
+        <table class="children sortable" id="id702">
   
   
   <tr class="class">
@@ -139,17 +137,17 @@ those threads which are consistent (taking into account any background assumptio
     
     <td>Function</td>
     <td><code><a href="#discourse_demo">discourse_demo</a></code></td>
-    <td><span>Illustrate the various methods of ``DiscourseTester``</span></td>
+    <td><span>Illustrate the various methods of <tt class="rst-docutils literal">DiscourseTester</tt></span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#drt_discourse_demo">drt_discourse_demo</a></code></td>
-    <td><span>Illustrate the various methods of ``DiscourseTester``</span></td>
+    <td><span>Illustrate the various methods of <tt class="rst-docutils literal">DiscourseTester</tt></span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#load_fol">load_fol</a></code></td>
-    <td><span>Temporarily duplicated from ``nltk.sem.util``. Convert a  file of first order formulas into a list of ``Expression`` objects.</span></td>
+    <td><span>Temporarily duplicated from <tt class="rst-docutils literal">nltk.sem.util</tt>. Convert a  file of first order formulas into a list of <tt class="rst-docutils literal">Expression</tt> objects.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -176,7 +174,7 @@ those threads which are consistent (taking into account any background assumptio
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L643">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L643">
       
       (source)
     </a>
@@ -198,7 +196,7 @@ those threads which are consistent (taking into account any background assumptio
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">discourse_demo</span>(reading_command=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L565">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L565">
       
       (source)
     </a>
@@ -206,7 +204,7 @@ those threads which are consistent (taking into account any background assumptio
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Illustrate the various methods of ``DiscourseTester``</p></div>
+    <div>Illustrate the various methods of <tt class="rst-docutils literal">DiscourseTester</tt></div>
   </div>
 </div><div class="basefunction">
   
@@ -220,7 +218,7 @@ those threads which are consistent (taking into account any background assumptio
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">drt_discourse_demo</span>(reading_command=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L623">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L623">
       
       (source)
     </a>
@@ -228,7 +226,7 @@ those threads which are consistent (taking into account any background assumptio
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Illustrate the various methods of ``DiscourseTester``</p></div>
+    <div>Illustrate the various methods of <tt class="rst-docutils literal">DiscourseTester</tt></div>
   </div>
 </div><div class="basefunction">
   
@@ -242,7 +240,7 @@ those threads which are consistent (taking into account any background assumptio
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">load_fol</span>(s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L539">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L539">
       
       (source)
     </a>
@@ -250,13 +248,8 @@ those threads which are consistent (taking into account any background assumptio
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Temporarily duplicated from ``nltk.sem.util``.
-Convert a  file of first order formulas into a list of ``Expression`` objects.
-
-:param s: the contents of the file
-:type s: str
-:return: a list of parsed formulas.
-:rtype: list(Expression)</p></div>
+    <div>Temporarily duplicated from <tt class="rst-docutils literal">nltk.sem.util</tt>.
+Convert a  file of first order formulas into a list of <tt class="rst-docutils literal">Expression</tt> objects.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">the contents of the file</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Expression)</td><td class="fieldArgDesc">a list of parsed formulas.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -270,7 +263,7 @@ Convert a  file of first order formulas into a list of ``Expression`` objects.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">spacer</span>(num=30):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L639">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L639">
       
       (source)
     </a>
@@ -290,7 +283,7 @@ Convert a  file of first order formulas into a list of ``Expression`` objects.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

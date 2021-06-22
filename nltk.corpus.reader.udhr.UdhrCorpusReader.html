@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">UdhrCorpusReader</span>(<a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html" title="nltk.corpus.reader.plaintext.PlaintextCorpusReader">PlaintextCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/udhr.py#L10" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">UdhrCorpusReader</span>(<a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html" title="nltk.corpus.reader.plaintext.PlaintextCorpusReader">PlaintextCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/udhr.py#L10" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.udhr.UdhrCorpusReader">View In Hierarchy</a></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id487">
+        <table class="children sortable" id="id490">
   
   
   <tr class="method">
@@ -98,7 +98,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html">PlaintextCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id488">
+          <table class="children sortable" id="id491">
   
   
   <tr class="basemethod">
@@ -110,7 +110,7 @@
     
     <td>Method</td>
     <td><code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html#raw">raw</a></code></td>
-    <td><span>:return: the given file(s) as a single string. :rtype: str</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -120,7 +120,7 @@
     
     <td>Method</td>
     <td><code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html#words">words</a></code></td>
-    <td><span>:return: the given file(s) as a list of words and punctuation symbols. :rtype: list(str)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -157,7 +157,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html">PlaintextCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id489">
+          <table class="children sortable" id="id492">
   
   
   <tr class="basemethod">
@@ -224,7 +224,7 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -261,7 +261,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root='udhr'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/udhr.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/udhr.py#L70">
       
       (source)
     </a>
@@ -269,20 +269,16 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html#__init__">nltk.corpus.reader.plaintext.PlaintextCorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">Construct a new plaintext corpus reader for a set of documents
-located at the given root directory.  Example usage:
-
-    &gt;&gt;&gt; root = '/usr/local/share/nltk_data/corpora/webtext/'
-    &gt;&gt;&gt; reader = PlaintextCorpusReader(root, '.*\.txt') # doctest: +SKIP
-
-:param root: The root directory for this corpus.
-:param fileids: A list or regexp specifying the fileids in this corpus.
-:param word_tokenizer: Tokenizer for breaking sentences or
-    paragraphs into words.
-:param sent_tokenizer: Tokenizer for breaking paragraphs
-    into words.
-:param para_block_reader: The block reader used to divide the
-    corpus into paragraph blocks.</p></div>
+    <div><p>Construct a new plaintext corpus reader for a set of documents
+located at the given root directory.  Example usage:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>root = <span class="py-string">'/usr/local/share/nltk_data/corpora/webtext/'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>reader = PlaintextCorpusReader(root, <span class="py-string">'.*\.txt'</span>) <span class="py-comment"># doctest: +SKIP</span></pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list or regexp specifying the fileids in this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word_tokenizer</span></td><td class="fieldArgDesc">Tokenizer for breaking sentences or
+paragraphs into words.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent_tokenizer</span></td><td class="fieldArgDesc">Tokenizer for breaking paragraphs
+into words.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">para_block_reader</span></td><td class="fieldArgDesc">The block reader used to divide the
+corpus into paragraph blocks.</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -296,7 +292,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-defname">ENCODINGS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/udhr.py#L12">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/udhr.py#L12">
       
       (source)
     </a>
@@ -318,7 +314,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-defname">SKIP</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/udhr.py#L33">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/udhr.py#L33">
       
       (source)
     </a>
@@ -338,7 +334,7 @@ located at the given root directory.  Example usage:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

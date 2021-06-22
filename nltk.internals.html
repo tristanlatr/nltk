@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id765">
+        <table class="children sortable" id="id768">
   
   
   <tr class="class">
@@ -161,7 +161,7 @@
     
     <td>Function</td>
     <td><code><a href="#java">java</a></code></td>
-    <td><span>Execute the given java command, by opening a subprocess that calls Java.  If java has not yet been configured, it will be configured by calling ``config_java()`` with no arguments.</span></td>
+    <td><span>Execute the given java command, by opening a subprocess that calls Java.  If java has not yet been configured, it will be configured by calling <tt class="rst-docutils literal">config_java()</tt> with no arguments.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -263,7 +263,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">config_java</span>(bin=None, options=None, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L29">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L29">
       
       (source)
     </a>
@@ -271,20 +271,15 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Configure nltk's java interface, by letting nltk know where it can
+    <div>Configure nltk's java interface, by letting nltk know where it can
 find the Java binary, and what extra options (if any) should be
-passed to Java when it is run.
-
-:param bin: The full path to the Java binary.  If not specified,
-    then nltk will search the system for a Java binary; and if
-    one is not found, it will raise a ``LookupError`` exception.
-:type bin: str
-:param options: A list of options that should be passed to the
-    Java binary when it is called.  A common value is
-    ``'-Xmx512m'``, which tells Java binary to increase
-    the maximum heap size to 512 megabytes.  If no options are
-    specified, then do not modify the options list.
-:type options: list(str)</p></div>
+passed to Java when it is run.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bin:</span>str</td><td class="fieldArgDesc">The full path to the Java binary.  If not specified,
+then nltk will search the system for a Java binary; and if
+one is not found, it will raise a <tt class="rst-docutils literal">LookupError</tt> exception.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">options:</span>list(str)</td><td class="fieldArgDesc">A list of options that should be passed to the
+Java binary when it is called.  A common value is
+<tt class="rst-docutils literal"><span class="pre">'-Xmx512m'</span></tt>, which tells Java binary to increase
+the maximum heap size to 512 megabytes.  If no options are
+specified, then do not modify the options list.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -298,7 +293,7 @@ passed to Java when it is run.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">deprecated</span>(message):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L405">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L405">
       
       (source)
     </a>
@@ -306,13 +301,15 @@ passed to Java when it is run.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">A decorator used to mark functions as deprecated.  This will cause
-a warning to be printed the when the function is used.  Usage:
-
-    &gt;&gt;&gt; from nltk.internals import deprecated
-    &gt;&gt;&gt; @deprecated('Use foo() instead')
-    ... def bar(x):
-    ...     print(x/10)</p></div>
+    <div><p>A decorator used to mark functions as deprecated.  This will cause
+a warning to be printed the when the function is used.  Usage:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.internals <span class="py-keyword">import</span> deprecated
+<span class="py-prompt">&gt;&gt;&gt; </span>@deprecated(<span class="py-string">'Use foo() instead'</span>)
+<span class="py-more">... </span><span class="py-keyword">def</span> <span class="py-defname">bar</span>(x):
+<span class="py-more">... </span>    <span class="py-builtin">print</span>(x/10)</pre></blockquote>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -326,7 +323,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_binary</span>(name, path_to_bin=None, env_vars=(), searchpath=(), binary_names=None, url=None, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L679">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L679">
       
       (source)
     </a>
@@ -348,7 +345,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_binary_iter</span>(name, path_to_bin=None, env_vars=(), searchpath=(), binary_names=None, url=None, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L653">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L653">
       
       (source)
     </a>
@@ -356,15 +353,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Search for a file to be used by nltk.
-
-:param name: The name or path of the file.
-:param path_to_bin: The user-supplied binary location (deprecated)
-:param env_vars: A list of environment variable names to check.
-:param file_names: A list of alternative file names to check.
-:param searchpath: List of directories to search.
-:param url: URL presented to user for download help.
-:param verbose: Whether or not to print path when a file is found.</p></div>
+    <div>Search for a file to be used by nltk.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">The name or path of the file.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path_to_bin</span></td><td class="fieldArgDesc">The user-supplied binary location (deprecated)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">env_vars</span></td><td class="fieldArgDesc">A list of environment variable names to check.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">searchpath</span></td><td class="fieldArgDesc">List of directories to search.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">binary_names</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">url</span></td><td class="fieldArgDesc">URL presented to user for download help.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc">Whether or not to print path when a file is found.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">file_names</span></td><td class="fieldArgDesc">A list of alternative file names to check.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -378,7 +367,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_dir</span>(filename, env_vars=(), searchpath=(), file_names=None, url=None, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L643">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L643">
       
       (source)
     </a>
@@ -400,7 +389,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_file</span>(filename, env_vars=(), searchpath=(), file_names=None, url=None, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L635">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L635">
       
       (source)
     </a>
@@ -422,7 +411,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_file_iter</span>(filename, env_vars=(), searchpath=(), file_names=None, url=None, verbose=False, finding_dir=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L504">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L504">
       
       (source)
     </a>
@@ -430,14 +419,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Search for a file to be used by nltk.
-
-:param filename: The name or path of the file.
-:param env_vars: A list of environment variable names to check.
-:param file_names: A list of alternative file names to check.
-:param searchpath: List of directories to search.
-:param url: URL presented to user for download help.
-:param verbose: Whether or not to print path when a file is found.</p></div>
+    <div>Search for a file to be used by nltk.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filename</span></td><td class="fieldArgDesc">The name or path of the file.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">env_vars</span></td><td class="fieldArgDesc">A list of environment variable names to check.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">searchpath</span></td><td class="fieldArgDesc">List of directories to search.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">file_names</span></td><td class="fieldArgDesc">A list of alternative file names to check.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">url</span></td><td class="fieldArgDesc">URL presented to user for download help.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc">Whether or not to print path when a file is found.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">finding_dir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -451,7 +433,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_jar</span>(name_pattern, path_to_jar=None, env_vars=(), searchpath=(), url=None, verbose=False, is_regex=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L836">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L836">
       
       (source)
     </a>
@@ -473,7 +455,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_jar_iter</span>(name_pattern, path_to_jar=None, env_vars=(), searchpath=(), url=None, verbose=False, is_regex=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L695">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L695">
       
       (source)
     </a>
@@ -481,15 +463,9 @@ a warning to be printed the when the function is used.  Usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Search for a jar that is used by nltk.
-
-:param name_pattern: The name of the jar file
-:param path_to_jar: The user-supplied jar location, or None.
-:param env_vars: A list of environment variable names to check
-                 in addition to the CLASSPATH variable which is
-                 checked by default.
-:param searchpath: List of directories to search.
-:param is_regex: Whether name is a regular expression.</p></div>
+    <div>Search for a jar that is used by nltk.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name_pattern</span></td><td class="fieldArgDesc">The name of the jar file</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path_to_jar</span></td><td class="fieldArgDesc">The user-supplied jar location, or None.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">env_vars</span></td><td class="fieldArgDesc">A list of environment variable names to check
+in addition to the CLASSPATH variable which is
+checked by default.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">searchpath</span></td><td class="fieldArgDesc">List of directories to search.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">url</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">is_regex</span></td><td class="fieldArgDesc">Whether name is a regular expression.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -503,7 +479,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_jars_within_path</span>(path_to_jars):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L852">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L852">
       
       (source)
     </a>
@@ -525,7 +501,7 @@ a warning to be printed the when the function is used.  Usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">import_from_stdlib</span>(module):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L876">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L876">
       
       (source)
     </a>
@@ -533,13 +509,13 @@ a warning to be printed the when the function is used.  Usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">When python is run from within the nltk/ directory tree, the
+    <div>When python is run from within the nltk/ directory tree, the
 current directory is included at the beginning of the search path.
 Unfortunately, that means that modules within nltk can sometimes
 shadow standard library modules.  As an example, the stdlib
 'inspect' module will attempt to import the stdlib 'tokenize'
 module, but will instead end up importing NLTK's 'tokenize' module
-instead (causing the import to fail).</p></div>
+instead (causing the import to fail).</div>
   </div>
 </div><div class="basefunction">
   
@@ -553,7 +529,7 @@ instead (causing the import to fail).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_writable</span>(path):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L1100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L1100">
       
       (source)
     </a>
@@ -575,7 +551,7 @@ instead (causing the import to fail).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">java</span>(cmd, classpath=None, stdin=None, stdout=None, stderr=None, blocking=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L61">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L61">
       
       (source)
     </a>
@@ -583,43 +559,29 @@ instead (causing the import to fail).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Execute the given java command, by opening a subprocess that calls
+    <div>Execute the given java command, by opening a subprocess that calls
 Java.  If java has not yet been configured, it will be configured
-by calling ``config_java()`` with no arguments.
-
-:param cmd: The java command that should be called, formatted as
-    a list of strings.  Typically, the first string will be the name
-    of the java class; and the remaining strings will be arguments
-    for that java class.
-:type cmd: list(str)
-
-:param classpath: A ``':'`` separated list of directories, JAR
-    archives, and ZIP archives to search for class files.
-:type classpath: str
-
-:param stdin, stdout, stderr: Specify the executed programs'
-    standard input, standard output and standard error file
-    handles, respectively.  Valid values are ``subprocess.PIPE``,
-    an existing file descriptor (a positive integer), an existing
-    file object, 'pipe', 'stdout', 'devnull' and None.  ``subprocess.PIPE`` indicates that a
-    new pipe to the child should be created.  With None, no
-    redirection will occur; the child's file handles will be
-    inherited from the parent.  Additionally, stderr can be
-    ``subprocess.STDOUT``, which indicates that the stderr data
-    from the applications should be captured into the same file
-    handle as for stdout.
-
-:param blocking: If ``false``, then return immediately after
-    spawning the subprocess.  In this case, the return value is
-    the ``Popen`` object, and not a ``(stdout, stderr)`` tuple.
-
-:return: If ``blocking=True``, then return a tuple ``(stdout,
-    stderr)``, containing the stdout and stderr outputs generated
-    by the java command if the ``stdout`` and ``stderr`` parameters
-    were set to ``subprocess.PIPE``; or None otherwise.  If
-    ``blocking=False``, then return a ``subprocess.Popen`` object.
-
-:raise OSError: If the java command returns a nonzero return code.</p></div>
+by calling <tt class="rst-docutils literal">config_java()</tt> with no arguments.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cmd:</span>list(str)</td><td class="fieldArgDesc">The java command that should be called, formatted as
+a list of strings.  Typically, the first string will be the name
+of the java class; and the remaining strings will be arguments
+for that java class.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classpath:</span>str</td><td class="fieldArgDesc">A <tt class="rst-docutils literal">':'</tt> separated list of directories, JAR
+archives, and ZIP archives to search for class files.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stdin</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stdout</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stderr</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">blocking</span></td><td class="fieldArgDesc">If <tt class="rst-docutils literal">false</tt>, then return immediately after
+spawning the subprocess.  In this case, the return value is
+the <tt class="rst-docutils literal">Popen</tt> object, and not a <tt class="rst-docutils literal">(stdout, stderr)</tt> tuple.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stdin, stdout, stderr</span></td><td class="fieldArgDesc">Specify the executed programs'
+standard input, standard output and standard error file
+handles, respectively.  Valid values are <tt class="rst-docutils literal">subprocess.PIPE</tt>,
+an existing file descriptor (a positive integer), an existing
+file object, 'pipe', 'stdout', 'devnull' and None.  <tt class="rst-docutils literal">subprocess.PIPE</tt> indicates that a
+new pipe to the child should be created.  With None, no
+redirection will occur; the child's file handles will be
+inherited from the parent.  Additionally, stderr can be
+<tt class="rst-docutils literal">subprocess.STDOUT</tt>, which indicates that the stderr data
+from the applications should be captured into the same file
+handle as for stdout.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">If <tt class="rst-docutils literal">blocking=True</tt>, then return a tuple <tt class="rst-docutils literal">(stdout,
+stderr)</tt>, containing the stdout and stderr outputs generated
+by the java command if the <tt class="rst-docutils literal">stdout</tt> and <tt class="rst-docutils literal">stderr</tt> parameters
+were set to <tt class="rst-docutils literal">subprocess.PIPE</tt>; or None otherwise.  If
+<tt class="rst-docutils literal">blocking=False</tt>, then return a <tt class="rst-docutils literal">subprocess.Popen</tt> object.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#OSError">OSError</a></code></td><td>If the java command returns a nonzero return code.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -633,7 +595,7 @@ by calling ``config_java()`` with no arguments.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">overridden</span>(method):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L330">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L330">
       
       (source)
     </a>
@@ -641,22 +603,21 @@ by calling ``config_java()`` with no arguments.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: True if ``method`` overrides some method with the same
-name in a base class.  This is typically used when defining
+    <div><p>name in a base class.  This is typically used when defining
 abstract base classes or interfaces, to allow subclasses to define
-either of two related methods:
-
-    &gt;&gt;&gt; class EaterI:
-    ...     '''Subclass must define eat() or batch_eat().'''
-    ...     def eat(self, food):
-    ...         if overridden(self.batch_eat):
-    ...             return self.batch_eat([food])[0]
-    ...         else:
-    ...             raise NotImplementedError()
-    ...     def batch_eat(self, foods):
-    ...         return [self.eat(food) for food in foods]
-
-:type method: instance method</p></div>
+either of two related methods:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">class</span> <span class="py-defname">EaterI</span>:
+<span class="py-more">... </span>    <span class="py-string">'''Subclass must define eat() or batch_eat().'''</span>
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">eat</span>(self, food):
+<span class="py-more">... </span>        <span class="py-keyword">if</span> overridden(self.batch_eat):
+<span class="py-more">... </span>            <span class="py-keyword">return</span> self.batch_eat([food])[0]
+<span class="py-more">... </span>        <span class="py-keyword">else</span>:
+<span class="py-more">... </span>            <span class="py-keyword">raise</span> <span class="py-builtin">NotImplementedError</span>()
+<span class="py-more">... </span>    <span class="py-keyword">def</span> <span class="py-defname">batch_eat</span>(self, foods):
+<span class="py-more">... </span>        <span class="py-keyword">return</span> [self.eat(food) <span class="py-keyword">for</span> food <span class="py-keyword">in</span> foods]</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">method:</span>instance method</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True if <tt class="rst-docutils literal">method</tt> overrides some method with the same</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -670,7 +631,7 @@ either of two related methods:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raise_unorderable_types</span>(ordering, a, b):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L1132">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L1132">
       
       (source)
     </a>
@@ -692,7 +653,7 @@ either of two related methods:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">read_int</span>(s, start_position):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L251">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L251">
       
       (source)
     </a>
@@ -700,30 +661,19 @@ either of two related methods:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">If an integer begins at the specified position in the given
-string, then return a tuple ``(val, end_position)`` containing the
+    <div><p>If an integer begins at the specified position in the given
+string, then return a tuple <tt class="rst-docutils literal">(val, end_position)</tt> containing the
 value of the integer and the position where it ends.  Otherwise,
-raise a ``ReadError``.
-
-:param s: A string that will be checked to see if within which a
-    Python integer exists.
-:type s: str
-
-:param start_position: The specified beginning position of the string ``s``
-    to begin regex matching.
-:type start_position: int
-
-:return: A tuple containing the matched integer casted to an int,
-    and the end position of the int in ``s``.
-:rtype: tuple(int, int)
-
-:raise ReadError: If the ``_READ_INT_RE`` regex doesn't return a
-    match in ``s`` at ``start_position``.
-
-:Example:
-&gt;&gt;&gt; from nltk.internals import read_int
-&gt;&gt;&gt; read_int('42 is the answer', 0)
-(42, 2)</p></div>
+raise a <tt class="rst-docutils literal">ReadError</tt>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.internals <span class="py-keyword">import</span> read_int
+<span class="py-prompt">&gt;&gt;&gt; </span>read_int(<span class="py-string">'42 is the answer'</span>, 0)
+<span class="py-output">(42, 2)</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">A string that will be checked to see if within which a
+Python integer exists.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start_position:</span>int</td><td class="fieldArgDesc">The specified beginning position of the string <tt class="rst-docutils literal">s</tt>
+to begin regex matching.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">tuple(int, int)</td><td class="fieldArgDesc">A tuple containing the matched integer casted to an int,
+and the end position of the int in <tt class="rst-docutils literal">s</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="nltk.internals.ReadError.html">ReadError</a></code></td><td>If the <tt class="rst-docutils literal">_READ_INT_RE</tt> regex doesn't return a
+match in <tt class="rst-docutils literal">s</tt> at <tt class="rst-docutils literal">start_position</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -737,7 +687,7 @@ raise a ``ReadError``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">read_number</span>(s, start_position):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L288">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L288">
       
       (source)
     </a>
@@ -745,30 +695,19 @@ raise a ``ReadError``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">If an integer or float begins at the specified position in the
-given string, then return a tuple ``(val, end_position)``
+    <div><p>If an integer or float begins at the specified position in the
+given string, then return a tuple <tt class="rst-docutils literal">(val, end_position)</tt>
 containing the value of the number and the position where it ends.
-Otherwise, raise a ``ReadError``.
-
-:param s: A string that will be checked to see if within which a
-    Python number exists.
-:type s: str
-
-:param start_position: The specified beginning position of the string ``s``
-    to begin regex matching.
-:type start_position: int
-
-:return: A tuple containing the matched number casted to a ``float``,
-    and the end position of the number in ``s``.
-:rtype: tuple(float, int)
-
-:raise ReadError: If the ``_READ_NUMBER_VALUE`` regex doesn't return a
-    match in ``s`` at ``start_position``.
-
-:Example:
-&gt;&gt;&gt; from nltk.internals import read_number
-&gt;&gt;&gt; read_number('Pi is 3.14159', 6)
-(3.14159, 13)</p></div>
+Otherwise, raise a <tt class="rst-docutils literal">ReadError</tt>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.internals <span class="py-keyword">import</span> read_number
+<span class="py-prompt">&gt;&gt;&gt; </span>read_number(<span class="py-string">'Pi is 3.14159'</span>, 6)
+<span class="py-output">(3.14159, 13)</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">A string that will be checked to see if within which a
+Python number exists.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start_position:</span>int</td><td class="fieldArgDesc">The specified beginning position of the string <tt class="rst-docutils literal">s</tt>
+to begin regex matching.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">tuple(float, int)</td><td class="fieldArgDesc">A tuple containing the matched number casted to a <tt class="rst-docutils literal">float</tt>,
+and the end position of the number in <tt class="rst-docutils literal">s</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="nltk.internals.ReadError.html">ReadError</a></code></td><td>If the <tt class="rst-docutils literal">_READ_NUMBER_VALUE</tt> regex doesn't return a
+match in <tt class="rst-docutils literal">s</tt> at <tt class="rst-docutils literal">start_position</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -782,7 +721,7 @@ Otherwise, raise a ``ReadError``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">read_str</span>(s, start_position):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L190">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L190">
       
       (source)
     </a>
@@ -790,34 +729,22 @@ Otherwise, raise a ``ReadError``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">If a Python string literal begins at the specified position in the
-given string, then return a tuple ``(val, end_position)``
+    <div><p>If a Python string literal begins at the specified position in the
+given string, then return a tuple <tt class="rst-docutils literal">(val, end_position)</tt>
 containing the value of the string literal and the position where
-it ends.  Otherwise, raise a ``ReadError``.
-
-:param s: A string that will be checked to see if within which a
-    Python string literal exists.
-:type s: str
-
-:param start_position: The specified beginning position of the string ``s``
-    to begin regex matching.
-:type start_position: int
-
-:return: A tuple containing the matched string literal evaluated as a
-    string and the end position of the string literal.
-:rtype: tuple(str, int)
-
-:raise ReadError: If the ``_STRING_START_RE`` regex doesn't return a
-    match in ``s`` at ``start_position``, i.e., open quote. If the
-    ``_STRING_END_RE`` regex doesn't return a match in ``s`` at the
-    end of the first match, i.e., close quote.
-:raise ValueError: If an invalid string (i.e., contains an invalid
-    escape sequence) is passed into the ``eval``.
-
-:Example:
-&gt;&gt;&gt; from nltk.internals import read_str
-&gt;&gt;&gt; read_str('"Hello", World!', 0)
-('Hello', 7)</p></div>
+it ends.  Otherwise, raise a <tt class="rst-docutils literal">ReadError</tt>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.internals <span class="py-keyword">import</span> read_str
+<span class="py-prompt">&gt;&gt;&gt; </span>read_str(<span class="py-string">'"Hello", World!'</span>, 0)
+<span class="py-output">('Hello', 7)</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">A string that will be checked to see if within which a
+Python string literal exists.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start_position:</span>int</td><td class="fieldArgDesc">The specified beginning position of the string <tt class="rst-docutils literal">s</tt>
+to begin regex matching.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">tuple(str, int)</td><td class="fieldArgDesc">A tuple containing the matched string literal evaluated as a
+string and the end position of the string literal.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="nltk.internals.ReadError.html">ReadError</a></code></td><td>If the <tt class="rst-docutils literal">_STRING_START_RE</tt> regex doesn't return a
+match in <tt class="rst-docutils literal">s</tt> at <tt class="rst-docutils literal">start_position</tt>, i.e., open quote. If the
+<tt class="rst-docutils literal">_STRING_END_RE</tt> regex doesn't return a match in <tt class="rst-docutils literal">s</tt> at the
+end of the first match, i.e., close quote.</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>If an invalid string (i.e., contains an invalid
+escape sequence) is passed into the <tt class="rst-docutils literal">eval</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -831,7 +758,7 @@ it ends.  Otherwise, raise a ``ReadError``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">slice_bounds</span>(sequence, slice_obj, allow_step=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L1029">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L1029">
       
       (source)
     </a>
@@ -839,18 +766,19 @@ it ends.  Otherwise, raise a ``ReadError``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a slice, return the corresponding (start, stop) bounds,
+    <div><p>Given a slice, return the corresponding (start, stop) bounds,
 taking into account None indices and negative indices.  The
-following guarantees are made for the returned start and stop values:
-
-  - 0 &lt;= start &lt;= len(sequence)
-  - 0 &lt;= stop &lt;= len(sequence)
-  - start &lt;= stop
-
-:raise ValueError: If ``slice_obj.step`` is not None.
-:param allow_step: If true, then the slice object may have a
-    non-None step.  If it does, then return a tuple
-    (start, stop, step).</p></div>
+following guarantees are made for the returned start and stop values:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>0 &lt;= start &lt;= len(sequence)</li>
+<li>0 &lt;= stop &lt;= len(sequence)</li>
+<li>start &lt;= stop</li>
+</ul>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">slice_obj</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">allow_step</span></td><td class="fieldArgDesc">If true, then the slice object may have a
+non-None step.  If it does, then return a tuple
+(start, stop, step).</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>If <tt class="rst-docutils literal">slice_obj.step</tt> is not None.</td></tr></table></div>
   </div>
 </div><div class="basevariable">
   
@@ -864,7 +792,7 @@ following guarantees are made for the returned start and stop values:
   <div class="functionHeader">
     
     <span class="py-defname">a</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L152">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L152">
       
       (source)
     </a>
@@ -886,7 +814,7 @@ following guarantees are made for the returned start and stop values:
   <div class="functionHeader">
     
     <span class="py-defname">b</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L152">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L152">
       
       (source)
     </a>
@@ -908,7 +836,7 @@ following guarantees are made for the returned start and stop values:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_add_epytext_field</span>(obj, field, message):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L384">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L384">
       
       (source)
     </a>
@@ -916,7 +844,7 @@ following guarantees are made for the returned start and stop values:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add an epytext @field to a given object's docstring.</p></div>
+    <div>Add an epytext @field to a given object's docstring.</div>
   </div>
 </div><div class="basefunction private">
   
@@ -930,7 +858,7 @@ following guarantees are made for the returned start and stop values:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_decode_stdoutdata</span>(stdoutdata):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L860">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L860">
       
       (source)
     </a>
@@ -938,7 +866,7 @@ following guarantees are made for the returned start and stop values:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert data read from stdout/stderr to unicode </p></div>
+    <div>Convert data read from stdout/stderr to unicode</div>
   </div>
 </div><div class="basefunction private">
   
@@ -952,7 +880,7 @@ following guarantees are made for the returned start and stop values:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_mro</span>(cls):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L361">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L361">
       
       (source)
     </a>
@@ -960,11 +888,11 @@ following guarantees are made for the returned start and stop values:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the method resolution order for ``cls`` -- i.e., a list
-containing ``cls`` and all its base classes, in the order in which
-they would be checked by ``getattr``.  For new-style classes, this
+    <div>Return the method resolution order for <tt class="rst-docutils literal">cls</tt> -- i.e., a list
+containing <tt class="rst-docutils literal">cls</tt> and all its base classes, in the order in which
+they would be checked by <tt class="rst-docutils literal">getattr</tt>.  For new-style classes, this
 is just cls.__mro__.  For classic classes, this can be obtained by
-a depth-first left-to-right traversal of ``__bases__``.</p></div>
+a depth-first left-to-right traversal of <tt class="rst-docutils literal">__bases__</tt>.</div>
   </div>
 </div><div class="basevariable private">
   
@@ -978,7 +906,7 @@ a depth-first left-to-right traversal of ``__bases__``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_java_bin</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L26">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L26">
       
       (source)
     </a>
@@ -1000,7 +928,7 @@ a depth-first left-to-right traversal of ``__bases__``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_java_options</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L27">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L27">
       
       (source)
     </a>
@@ -1022,7 +950,7 @@ a depth-first left-to-right traversal of ``__bases__``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_READ_INT_RE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L248">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L248">
       
       (source)
     </a>
@@ -1044,7 +972,7 @@ a depth-first left-to-right traversal of ``__bases__``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_READ_NUMBER_VALUE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L285">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L285">
       
       (source)
     </a>
@@ -1066,7 +994,7 @@ a depth-first left-to-right traversal of ``__bases__``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_STRING_START_RE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/internals.py#L187">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/internals.py#L187">
       
       (source)
     </a>
@@ -1086,7 +1014,7 @@ a depth-first left-to-right traversal of ``__bases__``.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

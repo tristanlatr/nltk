@@ -65,23 +65,23 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CooperStore</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/cooper_storage.py#L13" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CooperStore</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/cooper_storage.py#L13" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.sem.cooper_storage.CooperStore">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A container for handling quantifier ambiguity via Cooper storage.</p></div>
+        <div>A container for handling quantifier ambiguity via Cooper storage.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1214">
+        <table class="children sortable" id="id1218">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param featstruct: The value of the ``sem`` node in a tree from ``parse_with_bindops()`` :type featstruct: FeatStruct (with features ``core`` and ``store``)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -111,7 +111,7 @@
     
     <td>Method</td>
     <td><code><a href="#_permute">_permute</a></code></td>
-    <td><span>:return: An iterator over the permutations of the input list :type lst: list :rtype: iter</span></td>
+    <td><span></span></td>
   </tr>
 </table>
         
@@ -133,7 +133,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, featstruct):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/cooper_storage.py#L18">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/cooper_storage.py#L18">
       
       (source)
     </a>
@@ -141,9 +141,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param featstruct: The value of the ``sem`` node in a tree from
-    ``parse_with_bindops()``
-:type featstruct: FeatStruct (with features ``core`` and ``store``)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">featstruct:</span>FeatStruct (with features <tt class="rst-docutils literal">core</tt> and <tt class="rst-docutils literal">store</tt>)</td><td class="fieldArgDesc">The value of the <tt class="rst-docutils literal">sem</tt> node in a tree from
+<tt class="rst-docutils literal">parse_with_bindops()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -157,7 +156,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">s_retrieve</span>(self, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/cooper_storage.py#L47">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/cooper_storage.py#L47">
       
       (source)
     </a>
@@ -165,18 +164,18 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Carry out S-Retrieval of binding operators in store. If hack=True,
-serialize the bindop and core as strings and reparse. Ugh.
-
-Each permutation of the store (i.e. list of binding operators) is
+    <div><p>Carry out S-Retrieval of binding operators in store. If hack=True,
+serialize the bindop and core as strings and reparse. Ugh.</p>
+<p>Each permutation of the store (i.e. list of binding operators) is
 taken to be a possible scoping of quantifiers. We iterate through the
 binding operators in each permutation, and successively apply them to
 the current term, starting with the core semantic representation,
-working from the inside out.
-
-Binding operators are of the form::
-
-     bo(\P.all x.(man(x) -&gt; P(x)),z1)</p></div>
+working from the inside out.</p>
+<p>Binding operators are of the form:</p>
+<pre class="rst-literal-block">
+bo(\P.all x.(man(x) -&gt; P(x)),z1)
+</pre>
+</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -190,7 +189,7 @@ Binding operators are of the form::
   <div class="functionHeader">
     
     <span class="py-defname">core</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/cooper_storage.py#L28">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/cooper_storage.py#L28">
       
       (source)
     </a>
@@ -212,7 +211,7 @@ Binding operators are of the form::
   <div class="functionHeader">
     
     <span class="py-defname">featstruct</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/cooper_storage.py#L25">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/cooper_storage.py#L25">
       
       (source)
     </a>
@@ -234,7 +233,7 @@ Binding operators are of the form::
   <div class="functionHeader">
     
     <span class="py-defname">readings</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/cooper_storage.py#L26">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/cooper_storage.py#L26">
       
       (source)
     </a>
@@ -256,7 +255,7 @@ Binding operators are of the form::
   <div class="functionHeader">
     
     <span class="py-defname">store</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/cooper_storage.py#L29">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/cooper_storage.py#L29">
       
       (source)
     </a>
@@ -278,7 +277,7 @@ Binding operators are of the form::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_permute</span>(self, lst):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/cooper_storage.py#L33">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/cooper_storage.py#L33">
       
       (source)
     </a>
@@ -286,9 +285,7 @@ Binding operators are of the form::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: An iterator over the permutations of the input list
-:type lst: list
-:rtype: iter</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lst:</span>list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter</td><td class="fieldArgDesc">An iterator over the permutations of the input list</td></tr></table></div>
   </div>
 </div>
 
@@ -300,7 +297,7 @@ Binding operators are of the form::
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

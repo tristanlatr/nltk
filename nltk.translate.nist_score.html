@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/nist_score.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/nist_score.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">NIST score implementation.</p></div>
+        <div>NIST score implementation.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1900">
+        <table class="children sortable" id="id1904">
   
   
   <tr class="function">
@@ -113,7 +113,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">corpus_nist</span>(list_of_references, hypotheses, n=5):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/nist_score.py#L74">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/nist_score.py#L74">
       
       (source)
     </a>
@@ -121,15 +121,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate a single corpus-level NIST score (aka. system-level BLEU) for all
-the hypotheses and their respective references.
-
-:param references: a corpus of lists of reference sentences, w.r.t. hypotheses
-:type references: list(list(list(str)))
-:param hypotheses: a list of hypothesis sentences
-:type hypotheses: list(list(str))
-:param n: highest n-gram order
-:type n: int</p></div>
+    <div>Calculate a single corpus-level NIST score (aka. system-level BLEU) for all
+the hypotheses and their respective references.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list_of_references</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypotheses:</span>list(list(str))</td><td class="fieldArgDesc">a list of hypothesis sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">n:</span>int</td><td class="fieldArgDesc">highest n-gram order</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">references:</span>list(list(list(str)))</td><td class="fieldArgDesc">a corpus of lists of reference sentences, w.r.t. hypotheses</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -143,7 +136,7 @@ the hypotheses and their respective references.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">nist_length_penalty</span>(ref_len, hyp_len):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/nist_score.py#L174">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/nist_score.py#L174">
       
       (source)
     </a>
@@ -151,19 +144,18 @@ the hypotheses and their respective references.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculates the NIST length penalty, from Eq. 3 in Doddington (2002)
-
-    penalty = exp( beta * log( min( len(hyp)/len(ref) , 1.0 )))
-
-where,
-
-    `beta` is chosen to make the brevity penalty factor = 0.5 when the
-    no. of words in the system output (hyp) is 2/3 of the average
-    no. of words in the reference translation (ref)
-
-The NIST penalty is different from BLEU's such that it minimize the impact
+    <div><p>Calculates the NIST length penalty, from Eq. 3 in Doddington (2002)</p>
+<blockquote>
+penalty = exp( beta * log( min( len(hyp)/len(ref) , 1.0 )))</blockquote>
+<p>where,</p>
+<blockquote>
+<code>beta</code> is chosen to make the brevity penalty factor = 0.5 when the
+no. of words in the system output (hyp) is 2/3 of the average
+no. of words in the reference translation (ref)</blockquote>
+<p>The NIST penalty is different from BLEU's such that it minimize the impact
 of the score of small variations in the length of a translation.
-See Fig. 4 in  Doddington (2002)</p></div>
+See Fig. 4 in  Doddington (2002)</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -177,7 +169,7 @@ See Fig. 4 in  Doddington (2002)</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sentence_nist</span>(references, hypothesis, n=5):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/nist_score.py#L19">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/nist_score.py#L19">
       
       (source)
     </a>
@@ -185,55 +177,47 @@ See Fig. 4 in  Doddington (2002)</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate NIST score from
+    <div><p>Calculate NIST score from
 George Doddington. 2002. "Automatic evaluation of machine translation quality
 using n-gram co-occurrence statistics." Proceedings of HLT.
-Morgan Kaufmann Publishers Inc. http://dl.acm.org/citation.cfm?id=1289189.1289273
-
-DARPA commissioned NIST to develop an MT evaluation facility based on the BLEU
+Morgan Kaufmann Publishers Inc. <a class="rst-reference external" href="http://dl.acm.org/citation.cfm?id=1289189.1289273" target="_top">http://dl.acm.org/citation.cfm?id=1289189.1289273</a></p>
+<p>DARPA commissioned NIST to develop an MT evaluation facility based on the BLEU
 score. The official script used by NIST to compute BLEU and NIST score is
-mteval-14.pl. The main differences are:
-
- - BLEU uses geometric mean of the ngram overlaps, NIST uses arithmetic mean.
- - NIST has a different brevity penalty
- - NIST score from mteval-14.pl has a self-contained tokenizer
-
-Note: The mteval-14.pl includes a smoothing function for BLEU score that is NOT
-      used in the NIST score computation.
-
-&gt;&gt;&gt; hypothesis1 = ['It', 'is', 'a', 'guide', 'to', 'action', 'which',
-...               'ensures', 'that', 'the', 'military', 'always',
-...               'obeys', 'the', 'commands', 'of', 'the', 'party']
-
-&gt;&gt;&gt; hypothesis2 = ['It', 'is', 'to', 'insure', 'the', 'troops',
-...               'forever', 'hearing', 'the', 'activity', 'guidebook',
-...               'that', 'party', 'direct']
-
-&gt;&gt;&gt; reference1 = ['It', 'is', 'a', 'guide', 'to', 'action', 'that',
-...               'ensures', 'that', 'the', 'military', 'will', 'forever',
-...               'heed', 'Party', 'commands']
-
-&gt;&gt;&gt; reference2 = ['It', 'is', 'the', 'guiding', 'principle', 'which',
-...               'guarantees', 'the', 'military', 'forces', 'always',
-...               'being', 'under', 'the', 'command', 'of', 'the',
-...               'Party']
-
-&gt;&gt;&gt; reference3 = ['It', 'is', 'the', 'practical', 'guide', 'for', 'the',
-...               'army', 'always', 'to', 'heed', 'the', 'directions',
-...               'of', 'the', 'party']
-
-&gt;&gt;&gt; sentence_nist([reference1, reference2, reference3], hypothesis1) # doctest: +ELLIPSIS
-3.3709...
-
-&gt;&gt;&gt; sentence_nist([reference1, reference2, reference3], hypothesis2) # doctest: +ELLIPSIS
-1.4619...
-
-:param references: reference sentences
-:type references: list(list(str))
-:param hypothesis: a hypothesis sentence
-:type hypothesis: list(str)
-:param n: highest n-gram order
-:type n: int</p></div>
+mteval-14.pl. The main differences are:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>BLEU uses geometric mean of the ngram overlaps, NIST uses arithmetic mean.</li>
+<li>NIST has a different brevity penalty</li>
+<li>NIST score from mteval-14.pl has a self-contained tokenizer</li>
+</ul>
+</blockquote>
+<dl class="rst-docutils">
+<dt>Note: The mteval-14.pl includes a smoothing function for BLEU score that is NOT</dt>
+<dd>used in the NIST score computation.</dd>
+</dl>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>hypothesis1 = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'a'</span>, <span class="py-string">'guide'</span>, <span class="py-string">'to'</span>, <span class="py-string">'action'</span>, <span class="py-string">'which'</span>,
+<span class="py-more">... </span>              <span class="py-string">'ensures'</span>, <span class="py-string">'that'</span>, <span class="py-string">'the'</span>, <span class="py-string">'military'</span>, <span class="py-string">'always'</span>,
+<span class="py-more">... </span>              <span class="py-string">'obeys'</span>, <span class="py-string">'the'</span>, <span class="py-string">'commands'</span>, <span class="py-string">'of'</span>, <span class="py-string">'the'</span>, <span class="py-string">'party'</span>]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>hypothesis2 = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'to'</span>, <span class="py-string">'insure'</span>, <span class="py-string">'the'</span>, <span class="py-string">'troops'</span>,
+<span class="py-more">... </span>              <span class="py-string">'forever'</span>, <span class="py-string">'hearing'</span>, <span class="py-string">'the'</span>, <span class="py-string">'activity'</span>, <span class="py-string">'guidebook'</span>,
+<span class="py-more">... </span>              <span class="py-string">'that'</span>, <span class="py-string">'party'</span>, <span class="py-string">'direct'</span>]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>reference1 = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'a'</span>, <span class="py-string">'guide'</span>, <span class="py-string">'to'</span>, <span class="py-string">'action'</span>, <span class="py-string">'that'</span>,
+<span class="py-more">... </span>              <span class="py-string">'ensures'</span>, <span class="py-string">'that'</span>, <span class="py-string">'the'</span>, <span class="py-string">'military'</span>, <span class="py-string">'will'</span>, <span class="py-string">'forever'</span>,
+<span class="py-more">... </span>              <span class="py-string">'heed'</span>, <span class="py-string">'Party'</span>, <span class="py-string">'commands'</span>]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>reference2 = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'the'</span>, <span class="py-string">'guiding'</span>, <span class="py-string">'principle'</span>, <span class="py-string">'which'</span>,
+<span class="py-more">... </span>              <span class="py-string">'guarantees'</span>, <span class="py-string">'the'</span>, <span class="py-string">'military'</span>, <span class="py-string">'forces'</span>, <span class="py-string">'always'</span>,
+<span class="py-more">... </span>              <span class="py-string">'being'</span>, <span class="py-string">'under'</span>, <span class="py-string">'the'</span>, <span class="py-string">'command'</span>, <span class="py-string">'of'</span>, <span class="py-string">'the'</span>,
+<span class="py-more">... </span>              <span class="py-string">'Party'</span>]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>reference3 = [<span class="py-string">'It'</span>, <span class="py-string">'is'</span>, <span class="py-string">'the'</span>, <span class="py-string">'practical'</span>, <span class="py-string">'guide'</span>, <span class="py-string">'for'</span>, <span class="py-string">'the'</span>,
+<span class="py-more">... </span>              <span class="py-string">'army'</span>, <span class="py-string">'always'</span>, <span class="py-string">'to'</span>, <span class="py-string">'heed'</span>, <span class="py-string">'the'</span>, <span class="py-string">'directions'</span>,
+<span class="py-more">... </span>              <span class="py-string">'of'</span>, <span class="py-string">'the'</span>, <span class="py-string">'party'</span>]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_nist([reference1, reference2, reference3], hypothesis1) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">3.3709...</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_nist([reference1, reference2, reference3], hypothesis2) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">1.4619...</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">references:</span>list(list(str))</td><td class="fieldArgDesc">reference sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hypothesis:</span>list(str)</td><td class="fieldArgDesc">a hypothesis sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">n:</span>int</td><td class="fieldArgDesc">highest n-gram order</td></tr></table></div>
   </div>
 </div>
 
@@ -245,7 +229,7 @@ Note: The mteval-14.pl includes a smoothing function for BLEU score that is NOT
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

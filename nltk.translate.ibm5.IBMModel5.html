@@ -65,67 +65,66 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel5</span>(<span title="nltk.translate.IBMModel">IBMModel</span>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L126" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel5</span>(<span title="nltk.translate.IBMModel">IBMModel</span>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L126" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.ibm5.IBMModel5">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Translation model that keeps track of vacant positions in the target
-sentence to decide where to place translated words
-
-&gt;&gt;&gt; bitext = []
-&gt;&gt;&gt; bitext.append(AlignedSent(['klein', 'ist', 'das', 'haus'], ['the', 'house', 'is', 'small']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'haus', 'war', 'ja', 'groß'], ['the', 'house', 'was', 'big']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'buch', 'ist', 'ja', 'klein'], ['the', 'book', 'is', 'small']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['ein', 'haus', 'ist', 'klein'], ['a', 'house', 'is', 'small']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'haus'], ['the', 'house']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'buch'], ['the', 'book']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['ein', 'buch'], ['a', 'book']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['ich', 'fasse', 'das', 'buch', 'zusammen'], ['i', 'summarize', 'the', 'book']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['fasse', 'zusammen'], ['summarize']))
-&gt;&gt;&gt; src_classes = {'the': 0, 'a': 0, 'small': 1, 'big': 1, 'house': 2, 'book': 2, 'is': 3, 'was': 3, 'i': 4, 'summarize': 5 }
-&gt;&gt;&gt; trg_classes = {'das': 0, 'ein': 0, 'haus': 1, 'buch': 1, 'klein': 2, 'groß': 2, 'ist': 3, 'war': 3, 'ja': 4, 'ich': 5, 'fasse': 6, 'zusammen': 6 }
-
-&gt;&gt;&gt; ibm5 = IBMModel5(bitext, 5, src_classes, trg_classes)
-
-&gt;&gt;&gt; print(round(ibm5.head_vacancy_table[1][1][1], 3))
-1.0
-&gt;&gt;&gt; print(round(ibm5.head_vacancy_table[2][1][1], 3))
-0.0
-&gt;&gt;&gt; print(round(ibm5.non_head_vacancy_table[3][3][6], 3))
-1.0
-
-&gt;&gt;&gt; print(round(ibm5.fertility_table[2]['summarize'], 3))
-1.0
-&gt;&gt;&gt; print(round(ibm5.fertility_table[1]['book'], 3))
-1.0
-
-&gt;&gt;&gt; print(ibm5.p1)
-0.033...
-
-&gt;&gt;&gt; test_sentence = bitext[2]
-&gt;&gt;&gt; test_sentence.words
-['das', 'buch', 'ist', 'ja', 'klein']
-&gt;&gt;&gt; test_sentence.mots
-['the', 'book', 'is', 'small']
-&gt;&gt;&gt; test_sentence.alignment
-Alignment([(0, 0), (1, 1), (2, 2), (3, None), (4, 3)])</p></div>
+        <div><p>Translation model that keeps track of vacant positions in the target
+sentence to decide where to place translated words</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext = []
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'klein'</span>, <span class="py-string">'ist'</span>, <span class="py-string">'das'</span>, <span class="py-string">'haus'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'house'</span>, <span class="py-string">'is'</span>, <span class="py-string">'small'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'das'</span>, <span class="py-string">'haus'</span>, <span class="py-string">'war'</span>, <span class="py-string">'ja'</span>, <span class="py-string">'groß'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'house'</span>, <span class="py-string">'was'</span>, <span class="py-string">'big'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'das'</span>, <span class="py-string">'buch'</span>, <span class="py-string">'ist'</span>, <span class="py-string">'ja'</span>, <span class="py-string">'klein'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'book'</span>, <span class="py-string">'is'</span>, <span class="py-string">'small'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'ein'</span>, <span class="py-string">'haus'</span>, <span class="py-string">'ist'</span>, <span class="py-string">'klein'</span>], [<span class="py-string">'a'</span>, <span class="py-string">'house'</span>, <span class="py-string">'is'</span>, <span class="py-string">'small'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'das'</span>, <span class="py-string">'haus'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'house'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'das'</span>, <span class="py-string">'buch'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'book'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'ein'</span>, <span class="py-string">'buch'</span>], [<span class="py-string">'a'</span>, <span class="py-string">'book'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'ich'</span>, <span class="py-string">'fasse'</span>, <span class="py-string">'das'</span>, <span class="py-string">'buch'</span>, <span class="py-string">'zusammen'</span>], [<span class="py-string">'i'</span>, <span class="py-string">'summarize'</span>, <span class="py-string">'the'</span>, <span class="py-string">'book'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'fasse'</span>, <span class="py-string">'zusammen'</span>], [<span class="py-string">'summarize'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>src_classes = {<span class="py-string">'the'</span>: 0, <span class="py-string">'a'</span>: 0, <span class="py-string">'small'</span>: 1, <span class="py-string">'big'</span>: 1, <span class="py-string">'house'</span>: 2, <span class="py-string">'book'</span>: 2, <span class="py-string">'is'</span>: 3, <span class="py-string">'was'</span>: 3, <span class="py-string">'i'</span>: 4, <span class="py-string">'summarize'</span>: 5 }
+<span class="py-prompt">&gt;&gt;&gt; </span>trg_classes = {<span class="py-string">'das'</span>: 0, <span class="py-string">'ein'</span>: 0, <span class="py-string">'haus'</span>: 1, <span class="py-string">'buch'</span>: 1, <span class="py-string">'klein'</span>: 2, <span class="py-string">'groß'</span>: 2, <span class="py-string">'ist'</span>: 3, <span class="py-string">'war'</span>: 3, <span class="py-string">'ja'</span>: 4, <span class="py-string">'ich'</span>: 5, <span class="py-string">'fasse'</span>: 6, <span class="py-string">'zusammen'</span>: 6 }</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ibm5 = IBMModel5(bitext, 5, src_classes, trg_classes)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm5.head_vacancy_table[1][1][1], 3))
+<span class="py-output">1.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm5.head_vacancy_table[2][1][1], 3))
+<span class="py-output">0.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm5.non_head_vacancy_table[3][3][6], 3))
+<span class="py-output">1.0</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm5.fertility_table[2][<span class="py-string">'summarize'</span>], 3))
+<span class="py-output">1.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm5.fertility_table[1][<span class="py-string">'book'</span>], 3))
+<span class="py-output">1.0</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(ibm5.p1)
+<span class="py-output">0.033...</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>test_sentence = bitext[2]
+<span class="py-prompt">&gt;&gt;&gt; </span>test_sentence.words
+<span class="py-output">['das', 'buch', 'ist', 'ja', 'klein']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>test_sentence.mots
+<span class="py-output">['the', 'book', 'is', 'small']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>test_sentence.alignment
+<span class="py-output">Alignment([(0, 0), (1, 1), (2, 2), (3, None), (4, 3)])</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1890">
+        <table class="children sortable" id="id1894">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Train on ``sentence_aligned_corpus`` and create a lexical translation model, vacancy models, a fertility model, and a model for generating NULL-aligned words.</span></td>
+    <td><span>Train on <tt class="rst-docutils literal">sentence_aligned_corpus</tt> and create a lexical translation model, vacancy models, a fertility model, and a model for generating NULL-aligned words.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#hillclimb">hillclimb</a></code></td>
-    <td><span>Starting from the alignment in ``alignment_info``, look at neighboring alignments iteratively for the best one, according to Model 4</span></td>
+    <td><span>Starting from the alignment in <tt class="rst-docutils literal">alignment_info</tt>, look at neighboring alignments iteratively for the best one, according to Model 4</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -140,7 +139,7 @@ Alignment([(0, 0), (1, 1), (2, 2), (3, None), (4, 3)])</p></div>
     
     <td>Method</td>
     <td><code><a href="#prune">prune</a></code></td>
-    <td><span>Removes alignments from ``alignment_infos`` that have substantially lower Model 4 scores than the best alignment</span></td>
+    <td><span>Removes alignments from <tt class="rst-docutils literal">alignment_infos</tt> that have substantially lower Model 4 scores than the best alignment</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -185,7 +184,7 @@ Alignment([(0, 0), (1, 1), (2, 2), (3, None), (4, 3)])</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="#head_vacancy_table">head_vacancy_table</a></code></td>
-    <td><span>dict[int][int][int]: float. Probability(vacancy difference | number of remaining valid positions,target word class). Values accessed as ``head_vacancy_table[dv][v_max][trg_class]``.</span></td>
+    <td><span>dict[int][int][int]: float. Probability(vacancy difference | number of remaining valid positions,target word class). Values accessed as <tt class="rst-docutils literal"><span class="pre">head_vacancy_table[dv][v_max][trg_class]</span></tt>.</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -195,7 +194,7 @@ Alignment([(0, 0), (1, 1), (2, 2), (3, None), (4, 3)])</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="#non_head_vacancy_table">non_head_vacancy_table</a></code></td>
-    <td><span>dict[int][int][int]: float. Probability(vacancy difference | number of remaining valid positions,target word class). Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</span></td>
+    <td><span>dict[int][int][int]: float. Probability(vacancy difference | number of remaining valid positions,target word class). Values accessed as <tt class="rst-docutils literal"><span class="pre">non_head_vacancy_table[dv][v_max][trg_class]</span></tt>.</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -237,7 +236,7 @@ Alignment([(0, 0), (1, 1), (2, 2), (3, None), (4, 3)])</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, sentence_aligned_corpus, iterations, source_word_classes, target_word_classes, probability_tables=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L176">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L176">
       
       (source)
     </a>
@@ -245,37 +244,22 @@ Alignment([(0, 0), (1, 1), (2, 2), (3, None), (4, 3)])</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Train on ``sentence_aligned_corpus`` and create a lexical
+    <div><p>Train on <tt class="rst-docutils literal">sentence_aligned_corpus</tt> and create a lexical
 translation model, vacancy models, a fertility model, and a
-model for generating NULL-aligned words.
-
-Translation direction is from ``AlignedSent.mots`` to
-``AlignedSent.words``.
-
-:param sentence_aligned_corpus: Sentence-aligned parallel corpus
-:type sentence_aligned_corpus: list(AlignedSent)
-
-:param iterations: Number of iterations to run training algorithm
-:type iterations: int
-
-:param source_word_classes: Lookup table that maps a source word
-    to its word class, the latter represented by an integer id
-:type source_word_classes: dict[str]: int
-
-:param target_word_classes: Lookup table that maps a target word
-    to its word class, the latter represented by an integer id
-:type target_word_classes: dict[str]: int
-
-:param probability_tables: Optional. Use this to pass in custom
-    probability values. If not specified, probabilities will be
-    set to a uniform distribution, or some other sensible value.
-    If specified, all the following entries must be present:
-    ``translation_table``, ``alignment_table``,
-    ``fertility_table``, ``p1``, ``head_distortion_table``,
-    ``non_head_distortion_table``, ``head_vacancy_table``,
-    ``non_head_vacancy_table``. See ``IBMModel``, ``IBMModel4``,
-    and ``IBMModel5`` for the type and purpose of these tables.
-:type probability_tables: dict[str]: object</p></div>
+model for generating NULL-aligned words.</p>
+<p>Translation direction is from <tt class="rst-docutils literal">AlignedSent.mots</tt> to
+<tt class="rst-docutils literal">AlignedSent.words</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence_aligned_corpus:</span>list(AlignedSent)</td><td class="fieldArgDesc">Sentence-aligned parallel corpus</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">iterations:</span>int</td><td class="fieldArgDesc">Number of iterations to run training algorithm</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source_word_classes:</span>dict[str]: int</td><td class="fieldArgDesc">Lookup table that maps a source word
+to its word class, the latter represented by an integer id</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target_word_classes:</span>dict[str]: int</td><td class="fieldArgDesc">Lookup table that maps a target word
+to its word class, the latter represented by an integer id</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">probability_tables:</span>dict[str]: object</td><td class="fieldArgDesc">Optional. Use this to pass in custom
+probability values. If not specified, probabilities will be
+set to a uniform distribution, or some other sensible value.
+If specified, all the following entries must be present:
+<tt class="rst-docutils literal">translation_table</tt>, <tt class="rst-docutils literal">alignment_table</tt>,
+<tt class="rst-docutils literal">fertility_table</tt>, <tt class="rst-docutils literal">p1</tt>, <tt class="rst-docutils literal">head_distortion_table</tt>,
+<tt class="rst-docutils literal">non_head_distortion_table</tt>, <tt class="rst-docutils literal">head_vacancy_table</tt>,
+<tt class="rst-docutils literal">non_head_vacancy_table</tt>. See <tt class="rst-docutils literal">IBMModel</tt>, <tt class="rst-docutils literal">IBMModel4</tt>,
+and <tt class="rst-docutils literal">IBMModel5</tt> for the type and purpose of these tables.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -289,7 +273,7 @@ Translation direction is from ``AlignedSent.mots`` to
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">hillclimb</span>(self, alignment_info, j_pegged=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L404">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L404">
       
       (source)
     </a>
@@ -297,23 +281,16 @@ Translation direction is from ``AlignedSent.mots`` to
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Starting from the alignment in ``alignment_info``, look at
+    <div><p>Starting from the alignment in <tt class="rst-docutils literal">alignment_info</tt>, look at
 neighboring alignments iteratively for the best one, according
-to Model 4
-
-Note that Model 4 scoring is used instead of Model 5 because the
-latter is too expensive to compute.
-
-There is no guarantee that the best alignment in the alignment
+to Model 4</p>
+<p>Note that Model 4 scoring is used instead of Model 5 because the
+latter is too expensive to compute.</p>
+<p>There is no guarantee that the best alignment in the alignment
 space will be found, because the algorithm might be stuck in a
-local maximum.
-
-:param j_pegged: If specified, the search will be constrained to
-    alignments where ``j_pegged`` remains unchanged
-:type j_pegged: int
-
-:return: The best alignment found from hill climbing
-:rtype: AlignmentInfo</p></div>
+local maximum.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alignment_info</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">j_pegged:</span>int</td><td class="fieldArgDesc">If specified, the search will be constrained to
+alignments where <tt class="rst-docutils literal">j_pegged</tt> remains unchanged</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">AlignmentInfo</td><td class="fieldArgDesc">The best alignment found from hill climbing</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -327,7 +304,7 @@ local maximum.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">maximize_vacancy_probabilities</span>(self, counts):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L552">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L552">
       
       (source)
     </a>
@@ -349,7 +326,7 @@ local maximum.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_t_a_given_s</span>(self, alignment_info):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L445">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L445">
       
       (source)
     </a>
@@ -357,8 +334,8 @@ local maximum.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Probability of target sentence and an alignment given the
-source sentence</p></div>
+    <div>Probability of target sentence and an alignment given the
+source sentence</div>
   </div>
 </div><div class="basemethod">
   
@@ -372,7 +349,7 @@ source sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prune</span>(self, alignment_infos):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L384">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L384">
       
       (source)
     </a>
@@ -380,11 +357,8 @@ source sentence</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Removes alignments from ``alignment_infos`` that have
-substantially lower Model 4 scores than the best alignment
-
-:return: Pruned alignments
-:rtype: set(AlignmentInfo)</p></div>
+    <div>Removes alignments from <tt class="rst-docutils literal">alignment_infos</tt> that have
+substantially lower Model 4 scores than the best alignment<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(AlignmentInfo)</td><td class="fieldArgDesc">Pruned alignments</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -398,7 +372,7 @@ substantially lower Model 4 scores than the best alignment
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">reset_probabilities</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L253">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L253">
       
       (source)
     </a>
@@ -420,7 +394,7 @@ substantially lower Model 4 scores than the best alignment
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sample</span>(self, sentence_pair):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L355">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L355">
       
       (source)
     </a>
@@ -428,27 +402,20 @@ substantially lower Model 4 scores than the best alignment
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Sample the most probable alignments from the entire alignment
-space according to Model 4
-
-Note that Model 4 scoring is used instead of Model 5 because the
-latter is too expensive to compute.
-
-First, determine the best alignment according to IBM Model 2.
+    <div><p>Sample the most probable alignments from the entire alignment
+space according to Model 4</p>
+<p>Note that Model 4 scoring is used instead of Model 5 because the
+latter is too expensive to compute.</p>
+<p>First, determine the best alignment according to IBM Model 2.
 With this initial alignment, use hill climbing to determine the
 best alignment according to a IBM Model 4. Add this
 alignment and its neighbors to the sample set. Repeat this
 process with other initial alignments obtained by pegging an
 alignment point. Finally, prune alignments that have
-substantially lower Model 4 scores than the best alignment.
-
-:param sentence_pair: Source and target language sentence pair
-    to generate a sample of alignments from
-:type sentence_pair: AlignedSent
-
-:return: A set of best alignments represented by their ``AlignmentInfo``
-    and the best alignment of the set for convenience
-:rtype: set(AlignmentInfo), AlignmentInfo</p></div>
+substantially lower Model 4 scores than the best alignment.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence_pair:</span>AlignedSent</td><td class="fieldArgDesc">Source and target language sentence pair
+to generate a sample of alignments from</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(AlignmentInfo), AlignmentInfo</td><td class="fieldArgDesc">A set of best alignments represented by their <tt class="rst-docutils literal">AlignmentInfo</tt>
+and the best alignment of the set for convenience</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -462,7 +429,7 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_uniform_probabilities</span>(self, sentence_aligned_corpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L273">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L273">
       
       (source)
     </a>
@@ -470,8 +437,8 @@ substantially lower Model 4 scores than the best alignment.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Set vacancy probabilities uniformly to
-1 / cardinality of vacancy difference values</p></div>
+    <div>Set vacancy probabilities uniformly to
+1 / cardinality of vacancy difference values</div>
   </div>
 </div><div class="basemethod">
   
@@ -485,7 +452,7 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, parallel_corpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L309">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L309">
       
       (source)
     </a>
@@ -507,7 +474,7 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionHeader">
     
     <span class="py-defname">MIN_SCORE_FACTOR</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L171">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L171">
       
       (source)
     </a>
@@ -515,7 +482,7 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionBody">
     
     
-    <div><p class="pre">Alignments with scores below this factor are pruned during sampling</p></div>
+    <div>Alignments with scores below this factor are pruned during sampling</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -529,7 +496,7 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionHeader">
     
     <span class="py-defname">alignment_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L231">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L231">
       
       (source)
     </a>
@@ -551,7 +518,7 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionHeader">
     
     <span class="py-defname">fertility_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L232">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L232">
       
       (source)
     </a>
@@ -573,7 +540,7 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionHeader">
     
     <span class="py-defname">head_distortion_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L234">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L234">
       
       (source)
     </a>
@@ -595,7 +562,7 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionHeader">
     
     <span class="py-defname">head_vacancy_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L247">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L247">
       
       (source)
     </a>
@@ -603,9 +570,9 @@ substantially lower Model 4 scores than the best alignment.
   <div class="functionBody">
     
     
-    <div><p class="pre">dict[int][int][int]: float. Probability(vacancy difference |
+    <div>dict[int][int][int]: float. Probability(vacancy difference |
 number of remaining valid positions,target word class).
-Values accessed as ``head_vacancy_table[dv][v_max][trg_class]``.</p></div>
+Values accessed as <tt class="rst-docutils literal"><span class="pre">head_vacancy_table[dv][v_max][trg_class]</span></tt>.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -619,7 +586,7 @@ Values accessed as ``head_vacancy_table[dv][v_max][trg_class]``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">non_head_distortion_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L235">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L235">
       
       (source)
     </a>
@@ -641,7 +608,7 @@ Values accessed as ``head_vacancy_table[dv][v_max][trg_class]``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">non_head_vacancy_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L248">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L248">
       
       (source)
     </a>
@@ -649,9 +616,9 @@ Values accessed as ``head_vacancy_table[dv][v_max][trg_class]``.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">dict[int][int][int]: float. Probability(vacancy difference |
+    <div>dict[int][int][int]: float. Probability(vacancy difference |
 number of remaining valid positions,target word class).
-Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</p></div>
+Values accessed as <tt class="rst-docutils literal"><span class="pre">non_head_vacancy_table[dv][v_max][trg_class]</span></tt>.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -665,7 +632,7 @@ Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">p1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L233">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L233">
       
       (source)
     </a>
@@ -687,7 +654,7 @@ Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">src_classes</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L219">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L219">
       
       (source)
     </a>
@@ -709,7 +676,7 @@ Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">translation_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L230">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L230">
       
       (source)
     </a>
@@ -731,7 +698,7 @@ Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">trg_classes</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm5.py#L220">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm5.py#L220">
       
       (source)
     </a>
@@ -751,7 +718,7 @@ Values accessed as ``non_head_vacancy_table[dv][v_max][trg_class]``.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

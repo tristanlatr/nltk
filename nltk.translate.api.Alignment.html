@@ -65,37 +65,40 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Alignment</span>(<a href="https://docs.python.org/3/library/stdtypes.html#frozenset" title="frozenset">frozenset</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L162" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Alignment</span>(<a href="https://docs.python.org/3/library/stdtypes.html#frozenset" title="frozenset">frozenset</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L162" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.api.Alignment">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A storage class for representing alignment between two sequences, s1, s2.
+        <div><p>A storage class for representing alignment between two sequences, s1, s2.
 In general, an alignment is a set of tuples of the form (i, j, ...)
 representing an alignment between the i-th element of s1 and the
 j-th element of s2.  Tuples are extensible (they might contain
-additional data, such as a boolean to indicate sure vs possible alignments).
-
-    &gt;&gt;&gt; from nltk.translate import Alignment
-    &gt;&gt;&gt; a = Alignment([(0, 0), (0, 1), (1, 2), (2, 2)])
-    &gt;&gt;&gt; a.invert()
-    Alignment([(0, 0), (1, 0), (2, 1), (2, 2)])
-    &gt;&gt;&gt; print(a.invert())
-    0-0 1-0 2-1 2-2
-    &gt;&gt;&gt; a[0]
-    [(0, 1), (0, 0)]
-    &gt;&gt;&gt; a.invert()[2]
-    [(2, 1), (2, 2)]
-    &gt;&gt;&gt; b = Alignment([(0, 0), (0, 1)])
-    &gt;&gt;&gt; b.issubset(a)
-    True
-    &gt;&gt;&gt; c = Alignment.fromstring('0-0 0-1')
-    &gt;&gt;&gt; b == c
-    True</p></div>
+additional data, such as a boolean to indicate sure vs possible alignments).</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.translate <span class="py-keyword">import</span> Alignment
+<span class="py-prompt">&gt;&gt;&gt; </span>a = Alignment([(0, 0), (0, 1), (1, 2), (2, 2)])
+<span class="py-prompt">&gt;&gt;&gt; </span>a.invert()
+<span class="py-output">Alignment([(0, 0), (1, 0), (2, 1), (2, 2)])</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(a.invert())
+<span class="py-output">0-0 1-0 2-1 2-2</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>a[0]
+<span class="py-output">[(0, 1), (0, 0)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>a.invert()[2]
+<span class="py-output">[(2, 1), (2, 2)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>b = Alignment([(0, 0), (0, 1)])
+<span class="py-prompt">&gt;&gt;&gt; </span>b.issubset(a)
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>c = Alignment.fromstring(<span class="py-string">'0-0 0-1'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>b == c
+<span class="py-output">True</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1866">
+        <table class="children sortable" id="id1870">
   
   
   <tr class="classmethod">
@@ -169,7 +172,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">fromstring</span>(cls, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L194">
       
       (source)
     </a>
@@ -177,15 +180,13 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Read a giza-formatted string and return an Alignment object.
-
-    &gt;&gt;&gt; Alignment.fromstring('0-0 2-1 9-2 21-3 10-4 7-5')
-    Alignment([(0, 0), (2, 1), (7, 5), (9, 2), (10, 4), (21, 3)])
-
-:type s: str
-:param s: the positional alignments in giza format
-:rtype: Alignment
-:return: An Alignment object corresponding to the string representation ``s``.</p></div>
+    <div><p>Read a giza-formatted string and return an Alignment object.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Alignment.fromstring(<span class="py-string">'0-0 2-1 9-2 21-3 10-4 7-5'</span>)
+<span class="py-output">Alignment([(0, 0), (2, 1), (7, 5), (9, 2), (10, 4), (21, 3)])</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">the positional alignments in giza format</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Alignment</td><td class="fieldArgDesc">An Alignment object corresponding to the string representation <tt class="rst-docutils literal">s</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -199,7 +200,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, key):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L210">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L210">
       
       (source)
     </a>
@@ -207,7 +208,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Look up the alignments that map from a given index or slice.</p></div>
+    <div>Look up the alignments that map from a given index or slice.</div>
   </div>
 </div><div class="basemethod">
   
@@ -221,7 +222,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__new__</span>(cls, pairs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L188">
       
       (source)
     </a>
@@ -243,7 +244,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L238">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L238">
       
       (source)
     </a>
@@ -251,7 +252,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Produce a Giza-formatted string representing the alignment.</p></div>
+    <div>Produce a Giza-formatted string representing the alignment.</div>
   </div>
 </div><div class="basemethod">
   
@@ -265,7 +266,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L244">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L244">
       
       (source)
     </a>
@@ -273,7 +274,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Produce a Giza-formatted string representing the alignment.</p></div>
+    <div>Produce a Giza-formatted string representing the alignment.</div>
   </div>
 </div><div class="basemethod">
   
@@ -287,7 +288,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">invert</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L218">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L218">
       
       (source)
     </a>
@@ -295,7 +296,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return an Alignment object, being the inverted mapping.</p></div>
+    <div>Return an Alignment object, being the inverted mapping.</div>
   </div>
 </div><div class="basemethod">
   
@@ -309,7 +310,7 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">range</span>(self, positions=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L224">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L224">
       
       (source)
     </a>
@@ -317,8 +318,8 @@ additional data, such as a boolean to indicate sure vs possible alignments).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Work out the range of the mapping from the given positions.
-If no positions are specified, compute the range of the entire mapping.</p></div>
+    <div>Work out the range of the mapping from the given positions.
+If no positions are specified, compute the range of the entire mapping.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -332,7 +333,7 @@ If no positions are specified, compute the range of the entire mapping.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_build_index</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L250">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L250">
       
       (source)
     </a>
@@ -340,8 +341,8 @@ If no positions are specified, compute the range of the entire mapping.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Build a list self._index such that self._index[i] is a list
-of the alignments originating from word i.</p></div>
+    <div>Build a list self._index such that self._index[i] is a list
+of the alignments originating from word i.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -355,7 +356,7 @@ of the alignments originating from word i.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_index</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L191">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L191">
       
       (source)
     </a>
@@ -377,7 +378,7 @@ of the alignments originating from word i.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_len</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L190">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L190">
       
       (source)
     </a>
@@ -397,7 +398,7 @@ of the alignments originating from word i.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

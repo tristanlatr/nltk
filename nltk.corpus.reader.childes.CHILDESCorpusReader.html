@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CHILDESCorpusReader</span>(<a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html" title="nltk.corpus.reader.xmldocs.XMLCorpusReader">XMLCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L27" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CHILDESCorpusReader</span>(<a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html" title="nltk.corpus.reader.xmldocs.XMLCorpusReader">XMLCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L27" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.childes.CHILDESCorpusReader">View In Hierarchy</a></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id274">
+        <table class="children sortable" id="id277">
   
   
   <tr class="method">
@@ -173,7 +173,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html">XMLCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id275">
+          <table class="children sortable" id="id278">
   
   
   <tr class="basemethod">
@@ -197,7 +197,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html">XMLCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id276">
+          <table class="children sortable" id="id279">
   
   
   <tr class="basemethod">
@@ -264,7 +264,7 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -301,7 +301,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, lazy=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L39">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L39">
       
       (source)
     </a>
@@ -309,34 +309,34 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html#__init__">nltk.corpus.reader.xmldocs.XMLCorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:type root: PathPointer or str
-:param root: A path pointer identifying the root directory for
-    this corpus.  If a string is specified, then it will be
-    converted to a ``PathPointer`` automatically.
-:param fileids: A list of the files that make up this corpus.
-    This list can either be specified explicitly, as a list of
-    strings; or implicitly, as a regular expression over file
-    paths.  The absolute path for each file will be constructed
-    by joining the reader's root to each file name.
-:param encoding: The default unicode encoding for the files
-    that make up the corpus.  The value of ``encoding`` can be any
-    of the following:
-    - A string: ``encoding`` is the encoding name for all files.
-    - A dictionary: ``encoding[file_id]`` is the encoding
-      name for the file whose identifier is ``file_id``.  If
-      ``file_id`` is not in ``encoding``, then the file
-      contents will be processed using non-unicode byte strings.
-    - A list: ``encoding`` should be a list of ``(regexp, encoding)``
-      tuples.  The encoding for a file whose identifier is ``file_id``
-      will be the ``encoding`` value for the first tuple whose
-      ``regexp`` matches the ``file_id``.  If no tuple's ``regexp``
-      matches the ``file_id``, the file contents will be processed
-      using non-unicode byte strings.
-    - None: the file contents of all files will be
-      processed using non-unicode byte strings.
-:param tagset: The name of the tagset used by this corpus, to be used
-      for normalizing or converting the POS tags returned by the
-      tagged_...() methods.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root:</span>PathPointer or str</td><td class="fieldArgDesc">A path pointer identifying the root directory for
+this corpus.  If a string is specified, then it will be
+converted to a <tt class="rst-docutils literal">PathPointer</tt> automatically.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list of the files that make up this corpus.
+This list can either be specified explicitly, as a list of
+strings; or implicitly, as a regular expression over file
+paths.  The absolute path for each file will be constructed
+by joining the reader's root to each file name.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lazy</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><p>The default unicode encoding for the files
+that make up the corpus.  The value of <tt class="rst-docutils literal">encoding</tt> can be any
+of the following:
+- A string: <tt class="rst-docutils literal">encoding</tt> is the encoding name for all files.
+- A dictionary: <tt class="rst-docutils literal">encoding[file_id]</tt> is the encoding</p>
+<blockquote>
+name for the file whose identifier is <tt class="rst-docutils literal">file_id</tt>.  If
+<tt class="rst-docutils literal">file_id</tt> is not in <tt class="rst-docutils literal">encoding</tt>, then the file
+contents will be processed using non-unicode byte strings.</blockquote>
+<ul class="rst-simple">
+<li>A list: <tt class="rst-docutils literal">encoding</tt> should be a list of <tt class="rst-docutils literal">(regexp, encoding)</tt>
+tuples.  The encoding for a file whose identifier is <tt class="rst-docutils literal">file_id</tt>
+will be the <tt class="rst-docutils literal">encoding</tt> value for the first tuple whose
+<tt class="rst-docutils literal">regexp</tt> matches the <tt class="rst-docutils literal">file_id</tt>.  If no tuple's <tt class="rst-docutils literal">regexp</tt>
+matches the <tt class="rst-docutils literal">file_id</tt>, the file contents will be processed
+using non-unicode byte strings.</li>
+<li>None: the file contents of all files will be
+processed using non-unicode byte strings.</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc">The name of the tagset used by this corpus, to be used
+for normalizing or converting the POS tags returned by the
+<a href="#id1"><span class="rst-problematic" id="rst-id2">tagged_</span></a>...() methods.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -350,7 +350,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">age</span>(self, fileids=None, speaker='CHI', month=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L250">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L250">
       
       (source)
     </a>
@@ -372,7 +372,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">convert_age</span>(self, age_year):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L278">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L278">
       
       (source)
     </a>
@@ -394,7 +394,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">corpus</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L209">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L209">
       
       (source)
     </a>
@@ -416,7 +416,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">MLU</span>(self, fileids=None, speaker='CHI'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L290">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L290">
       
       (source)
     </a>
@@ -438,7 +438,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">participants</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L225">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L225">
       
       (source)
     </a>
@@ -460,7 +460,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None, speaker='ALL', stem=False, relation=None, strip_space=True, replace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L125">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L125">
       
       (source)
     </a>
@@ -482,7 +482,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, speaker='ALL', stem=False, relation=None, strip_space=True, replace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L167">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L167">
       
       (source)
     </a>
@@ -504,7 +504,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, speaker='ALL', stem=False, relation=False, strip_space=True, replace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L83">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L83">
       
       (source)
     </a>
@@ -526,7 +526,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">webview_file</span>(self, fileid, urlbase=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L516">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L516">
       
       (source)
     </a>
@@ -548,7 +548,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None, speaker='ALL', stem=False, relation=False, strip_space=True, replace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L43">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L43">
       
       (source)
     </a>
@@ -570,7 +570,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">childes_url_base</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L514">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L514">
       
       (source)
     </a>
@@ -592,7 +592,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_age</span>(self, fileid, speaker, month):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L265">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L265">
       
       (source)
     </a>
@@ -614,7 +614,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_corpus</span>(self, fileid):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L218">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L218">
       
       (source)
     </a>
@@ -636,7 +636,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_participants</span>(self, fileid):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L235">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L235">
       
       (source)
     </a>
@@ -658,7 +658,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_words</span>(self, fileid, speaker, sent, stem, relation, pos, strip_space, replace):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L351">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L351">
       
       (source)
     </a>
@@ -680,7 +680,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_getMLU</span>(self, fileid, speaker):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L303">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L303">
       
       (source)
     </a>
@@ -702,7 +702,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_lazy</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/childes.py#L41">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/childes.py#L41">
       
       (source)
     </a>
@@ -722,7 +722,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

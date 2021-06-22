@@ -65,17 +65,15 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/mapping.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/mapping.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Interface for converting POS tags from various treebanks
-to the universal tagset of Petrov, Das, &amp; McDonald.
-
-The tagset consists of the following 12 coarse tags:
-
-VERB - verbs (all tenses and modes)
+        <div><p>Interface for converting POS tags from various treebanks
+to the universal tagset of Petrov, Das, &amp; McDonald.</p>
+<p>The tagset consists of the following 12 coarse tags:</p>
+<p>VERB - verbs (all tenses and modes)
 NOUN - nouns (common and proper)
 PRON - pronouns
 ADJ - adjectives
@@ -86,13 +84,13 @@ DET - determiners
 NUM - cardinal numbers
 PRT - particles or other function words
 X - other: foreign words, typos, abbreviations
-. - punctuation
-
-@see: http://arxiv.org/abs/1104.2086 and http://code.google.com/p/universal-pos-tags/</p></div>
+. - punctuation</p>
+<p>@see: <a class="rst-reference external" href="http://arxiv.org/abs/1104.2086" target="_top">http://arxiv.org/abs/1104.2086</a> and <a class="rst-reference external" href="http://code.google.com/p/universal-pos-tags/" target="_top">http://code.google.com/p/universal-pos-tags/</a></p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1561">
+        <table class="children sortable" id="id1565">
   
   
   <tr class="function">
@@ -146,7 +144,7 @@ X - other: foreign words, typos, abbreviations
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">map_tag</span>(source, target, source_tag):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/mapping.py#L117">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/mapping.py#L117">
       
       (source)
     </a>
@@ -154,14 +152,15 @@ X - other: foreign words, typos, abbreviations
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Maps the tag from the source tagset to the target tagset.
-
-&gt;&gt;&gt; map_tag('en-ptb', 'universal', 'VBZ')
-'VERB'
-&gt;&gt;&gt; map_tag('en-ptb', 'universal', 'VBP')
-'VERB'
-&gt;&gt;&gt; map_tag('en-ptb', 'universal', '``')
-'.'</p></div>
+    <div><p>Maps the tag from the source tagset to the target tagset.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>map_tag(<span class="py-string">'en-ptb'</span>, <span class="py-string">'universal'</span>, <span class="py-string">'VBZ'</span>)
+<span class="py-output">'VERB'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>map_tag(<span class="py-string">'en-ptb'</span>, <span class="py-string">'universal'</span>, <span class="py-string">'VBP'</span>)
+<span class="py-output">'VERB'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>map_tag(<span class="py-string">'en-ptb'</span>, <span class="py-string">'universal'</span>, <span class="py-string">'``'</span>)
+<span class="py-output">'.'</span>
+</pre></div>
   </div>
 </div><div class="basefunction">
   
@@ -175,7 +174,7 @@ X - other: foreign words, typos, abbreviations
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagset_mapping</span>(source, target):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/mapping.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/mapping.py#L79">
       
       (source)
     </a>
@@ -183,10 +182,11 @@ X - other: foreign words, typos, abbreviations
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Retrieve the mapping dictionary between tagsets.
-
-&gt;&gt;&gt; tagset_mapping('ru-rnc', 'universal') == {'!': '.', 'A': 'ADJ', 'C': 'CONJ', 'AD': 'ADV',            'NN': 'NOUN', 'VG': 'VERB', 'COMP': 'CONJ', 'NC': 'NUM', 'VP': 'VERB', 'P': 'ADP',            'IJ': 'X', 'V': 'VERB', 'Z': 'X', 'VI': 'VERB', 'YES_NO_SENT': 'X', 'PTCL': 'PRT'}
-True</p></div>
+    <div><p>Retrieve the mapping dictionary between tagsets.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tagset_mapping(<span class="py-string">'ru-rnc'</span>, <span class="py-string">'universal'</span>) == {<span class="py-string">'!'</span>: <span class="py-string">'.'</span>, <span class="py-string">'A'</span>: <span class="py-string">'ADJ'</span>, <span class="py-string">'C'</span>: <span class="py-string">'CONJ'</span>, <span class="py-string">'AD'</span>: <span class="py-string">'ADV'</span>,            <span class="py-string">'NN'</span>: <span class="py-string">'NOUN'</span>, <span class="py-string">'VG'</span>: <span class="py-string">'VERB'</span>, <span class="py-string">'COMP'</span>: <span class="py-string">'CONJ'</span>, <span class="py-string">'NC'</span>: <span class="py-string">'NUM'</span>, <span class="py-string">'VP'</span>: <span class="py-string">'VERB'</span>, <span class="py-string">'P'</span>: <span class="py-string">'ADP'</span>,            <span class="py-string">'IJ'</span>: <span class="py-string">'X'</span>, <span class="py-string">'V'</span>: <span class="py-string">'VERB'</span>, <span class="py-string">'Z'</span>: <span class="py-string">'X'</span>, <span class="py-string">'VI'</span>: <span class="py-string">'VERB'</span>, <span class="py-string">'YES_NO_SENT'</span>: <span class="py-string">'X'</span>, <span class="py-string">'PTCL'</span>: <span class="py-string">'PRT'</span>}
+<span class="py-output">True</span>
+</pre></div>
   </div>
 </div><div class="basefunction private">
   
@@ -200,7 +200,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_load_universal_map</span>(fileid):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/mapping.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/mapping.py#L58">
       
       (source)
     </a>
@@ -222,7 +222,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_MAPPINGS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/mapping.py#L55">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/mapping.py#L55">
       
       (source)
     </a>
@@ -244,7 +244,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_UNIVERSAL_DATA</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/mapping.py#L37">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/mapping.py#L37">
       
       (source)
     </a>
@@ -266,7 +266,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_UNIVERSAL_TAGS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr>...]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/mapping.py#L38">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/mapping.py#L38">
       
       (source)
     </a>
@@ -286,7 +286,7 @@ True</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

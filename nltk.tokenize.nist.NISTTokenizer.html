@@ -65,57 +65,53 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NISTTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L27" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NISTTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L27" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.nist.NISTTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This NIST tokenizer is sentence-based instead of the original
+        <div><p>This NIST tokenizer is sentence-based instead of the original
 paragraph-based tokenization from mteval-14.pl; The sentence-based
-tokenization is consistent with the other tokenizers available in NLTK.
-
-&gt;&gt;&gt; from nltk.tokenize.nist import NISTTokenizer
-&gt;&gt;&gt; nist = NISTTokenizer()
-&gt;&gt;&gt; s = "Good muffins cost $3.88 in New York."
-&gt;&gt;&gt; expected_lower = [u'good', u'muffins', u'cost', u'$', u'3.88', u'in', u'new', u'york', u'.']
-&gt;&gt;&gt; expected_cased = [u'Good', u'muffins', u'cost', u'$', u'3.88', u'in', u'New', u'York', u'.']
-&gt;&gt;&gt; nist.tokenize(s, lowercase=False) == expected_cased
-True
-&gt;&gt;&gt; nist.tokenize(s, lowercase=True) == expected_lower  # Lowercased.
-True
-
-The international_tokenize() is the preferred function when tokenizing
-non-european text, e.g.
-
-&gt;&gt;&gt; from nltk.tokenize.nist import NISTTokenizer
-&gt;&gt;&gt; nist = NISTTokenizer()
-
-# Input strings.
+tokenization is consistent with the other tokenizers available in NLTK.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize.nist <span class="py-keyword">import</span> NISTTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>nist = NISTTokenizer()
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">"Good muffins cost $3.88 in New York."</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>expected_lower = [u<span class="py-string">'good'</span>, u<span class="py-string">'muffins'</span>, u<span class="py-string">'cost'</span>, u<span class="py-string">'$'</span>, u<span class="py-string">'3.88'</span>, u<span class="py-string">'in'</span>, u<span class="py-string">'new'</span>, u<span class="py-string">'york'</span>, u<span class="py-string">'.'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>expected_cased = [u<span class="py-string">'Good'</span>, u<span class="py-string">'muffins'</span>, u<span class="py-string">'cost'</span>, u<span class="py-string">'$'</span>, u<span class="py-string">'3.88'</span>, u<span class="py-string">'in'</span>, u<span class="py-string">'New'</span>, u<span class="py-string">'York'</span>, u<span class="py-string">'.'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span>nist.tokenize(s, lowercase=<span class="py-builtin">False</span>) == expected_cased
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>nist.tokenize(s, lowercase=<span class="py-builtin">True</span>) == expected_lower  <span class="py-comment"># Lowercased.</span>
+<span class="py-output">True</span>
+</pre><p>The international_tokenize() is the preferred function when tokenizing
+non-european text, e.g.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize.nist <span class="py-keyword">import</span> NISTTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>nist = NISTTokenizer()</pre><p># Input strings.
 &gt;&gt;&gt; albb = u'Alibaba Group Holding Limited (Chinese: 阿里巴巴集团控股 有限公司) us a Chinese e-commerce company...'
 &gt;&gt;&gt; amz = u'Amazon.com, Inc. (/ˈæməzɒn/) is an American electronic commerce...'
-&gt;&gt;&gt; rkt = u'Rakuten, Inc. (楽天株式会社 Rakuten Kabushiki-gaisha) is a Japanese electronic commerce and Internet company based in Tokyo.'
-
-# Expected tokens.
+&gt;&gt;&gt; rkt = u'Rakuten, Inc. (楽天株式会社 Rakuten Kabushiki-gaisha) is a Japanese electronic commerce and Internet company based in Tokyo.'</p>
+<p># Expected tokens.
 &gt;&gt;&gt; expected_albb = [u'Alibaba', u'Group', u'Holding', u'Limited', u'(', u'Chinese', u':', u'阿里巴巴集团控股', u'有限公司', u')']
 &gt;&gt;&gt; expected_amz = [u'Amazon', u'.', u'com', u',', u'Inc', u'.', u'(', u'/', u'ˈæ', u'm']
-&gt;&gt;&gt; expected_rkt = [u'Rakuten', u',', u'Inc', u'.', u'(', u'楽天株式会社', u'Rakuten', u'Kabushiki', u'-', u'gaisha']
-
-&gt;&gt;&gt; nist.international_tokenize(albb)[:10] == expected_albb
-True
-&gt;&gt;&gt; nist.international_tokenize(amz)[:10] == expected_amz
-True
-&gt;&gt;&gt; nist.international_tokenize(rkt)[:10] == expected_rkt
-True
-
-# Doctest for patching issue #1926
+&gt;&gt;&gt; expected_rkt = [u'Rakuten', u',', u'Inc', u'.', u'(', u'楽天株式会社', u'Rakuten', u'Kabushiki', u'-', u'gaisha']</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>nist.international_tokenize(albb)[:10] == expected_albb
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>nist.international_tokenize(amz)[:10] == expected_amz
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>nist.international_tokenize(rkt)[:10] == expected_rkt
+<span class="py-output">True</span>
+</pre><p># Doctest for patching issue #1926
 &gt;&gt;&gt; sent = u'this is a foo☄sentence.'
 &gt;&gt;&gt; expected_sent = [u'this', u'is', u'a', u'foo', u'☄', u'sentence', u'.']
 &gt;&gt;&gt; nist.international_tokenize(sent) == expected_sent
-True</p></div>
+True</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1791">
+        <table class="children sortable" id="id1795">
   
   
   <tr class="method">
@@ -132,7 +128,7 @@ True</p></div>
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *s*.</span></td>
+    <td><span>Return a tokenized copy of <em>s</em>.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -229,24 +225,24 @@ True</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1792">
+          <table class="children sortable" id="id1796">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -268,7 +264,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">international_tokenize</span>(self, text, lowercase=False, split_non_ascii=True, return_str=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L159">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L159">
       
       (source)
     </a>
@@ -290,7 +286,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">lang_independent_sub</span>(self, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L128">
       
       (source)
     </a>
@@ -298,7 +294,7 @@ True</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Performs the language independent string substituitions. </p></div>
+    <div>Performs the language independent string substituitions.</div>
   </div>
 </div><div class="basemethod">
   
@@ -312,7 +308,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, text, lowercase=False, western_lang=True, return_str=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L140">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L140">
       
       (source)
     </a>
@@ -320,9 +316,7 @@ True</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Return a tokenized copy of *s*.
-
-:rtype: list of str</p></div>
+    <div>Return a tokenized copy of <em>s</em>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -336,7 +330,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">DASH_PRECEED_DIGIT</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L84">
       
       (source)
     </a>
@@ -358,7 +352,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">INTERNATIONAL_REGEXES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L126">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L126">
       
       (source)
     </a>
@@ -380,7 +374,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">LANG_DEPENDENT_REGEXES</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L86">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L86">
       
       (source)
     </a>
@@ -402,7 +396,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">NONASCII</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L113">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L113">
       
       (source)
     </a>
@@ -424,7 +418,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">number_regex</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L100">
       
       (source)
     </a>
@@ -446,7 +440,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PERIOD_COMMA_FOLLOW</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L82">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L82">
       
       (source)
     </a>
@@ -468,7 +462,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PERIOD_COMMA_PRECEED</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L80">
       
       (source)
     </a>
@@ -490,7 +484,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PUNCT</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L78">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L78">
       
       (source)
     </a>
@@ -512,7 +506,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PUNCT_1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L115">
       
       (source)
     </a>
@@ -534,7 +528,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">PUNCT_2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L119">
       
       (source)
     </a>
@@ -556,7 +550,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">punct_regex</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L101">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L101">
       
       (source)
     </a>
@@ -578,7 +572,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">pup_number</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L94">
       
       (source)
     </a>
@@ -600,7 +594,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">pup_punct</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L95">
       
       (source)
     </a>
@@ -622,7 +616,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">pup_symbol</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L96">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L96">
       
       (source)
     </a>
@@ -644,7 +638,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">STRIP_EOL_HYPHEN</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L76">
       
       (source)
     </a>
@@ -666,7 +660,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">STRIP_SKIP</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L74">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L74">
       
       (source)
     </a>
@@ -688,7 +682,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">symbol_regex</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L102">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L102">
       
       (source)
     </a>
@@ -710,7 +704,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">SYMBOLS</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/nist.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/nist.py#L124">
       
       (source)
     </a>
@@ -730,7 +724,7 @@ True</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

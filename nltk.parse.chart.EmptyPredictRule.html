@@ -65,17 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">EmptyPredictRule</span>(<a href="nltk.parse.chart.AbstractChartRule.html" title="nltk.parse.chart.AbstractChartRule">AbstractChartRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1251" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.featurechart.FeatureEmptyPredictRule.html">nltk.parse.featurechart.FeatureEmptyPredictRule</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">EmptyPredictRule</span>(<a href="nltk.parse.chart.AbstractChartRule.html" title="nltk.parse.chart.AbstractChartRule">AbstractChartRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1251" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.featurechart.FeatureEmptyPredictRule.html">nltk.parse.featurechart.FeatureEmptyPredictRule</a></code></p>
         <p><a href="classIndex.html#nltk.parse.chart.EmptyPredictRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A rule that inserts all empty productions as passive edges,
-in every position in the chart.</p></div>
+        <div>A rule that inserts all empty productions as passive edges,
+in every position in the chart.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id866">
+        <table class="children sortable" id="id870">
   
   
   <tr class="method">
@@ -94,7 +94,7 @@ in every position in the chart.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.AbstractChartRule.html">AbstractChartRule</a></code>:
           </p>
-          <table class="children sortable" id="id867">
+          <table class="children sortable" id="id871">
   
   
   <tr class="basemethod">
@@ -128,7 +128,7 @@ in every position in the chart.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply</span>(self, chart, grammar):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1259">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1259">
       
       (source)
     </a>
@@ -136,16 +136,12 @@ in every position in the chart.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.AbstractChartRule.html#apply">nltk.parse.chart.AbstractChartRule.apply</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.featurechart.FeatureEmptyPredictRule.html">nltk.parse.featurechart.FeatureEmptyPredictRule</a></code></div>
     
-    <div><p class="pre">Return a generator that will add edges licensed by this rule
+    <div>Return a generator that will add edges licensed by this rule
 and the given edges to the chart, one at a time.  Each
 time the generator is resumed, it will either add a new
-edge and yield that edge; or return.
-
-:type edges: list(EdgeI)
-:param edges: A set of existing edges.  The number of edges
-    that should be passed to ``apply()`` is specified by the
-    ``NUM_EDGES`` class variable.
-:rtype: iter(EdgeI)</p></div>
+edge and yield that edge; or return.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edges:</span>list(EdgeI)</td><td class="fieldArgDesc">A set of existing edges.  The number of edges
+that should be passed to <tt class="rst-docutils literal">apply()</tt> is specified by the
+<tt class="rst-docutils literal">NUM_EDGES</tt> class variable.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -159,13 +155,13 @@ edge and yield that edge; or return.
   <div class="functionHeader">
     
     <span class="py-defname">NUM_EDGES</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1257">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1257">
       
       (source)
     </a>
   </div>
   <div class="functionBody">
-    
+    <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.ChartRuleI.html#NUM_EDGES">nltk.parse.chart.ChartRuleI.NUM_EDGES</a></code></div>
     
     <div><p class="undocumented">Undocumented</p></div>
   </div>
@@ -179,7 +175,7 @@ edge and yield that edge; or return.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

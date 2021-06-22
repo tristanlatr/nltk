@@ -65,23 +65,23 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">IgnoreReadmeCorpusView</span>(<a href="nltk.corpus.reader.util.StreamBackedCorpusView.html" title="nltk.corpus.reader.util.StreamBackedCorpusView">StreamBackedCorpusView</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/opinion_lexicon.py#L35" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">IgnoreReadmeCorpusView</span>(<a href="nltk.corpus.reader.util.StreamBackedCorpusView.html" title="nltk.corpus.reader.util.StreamBackedCorpusView">StreamBackedCorpusView</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/opinion_lexicon.py#L35" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.opinion_lexicon.IgnoreReadmeCorpusView">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This CorpusView is used to skip the initial readme block of the corpus.</p></div>
+        <div>This CorpusView is used to skip the initial readme block of the corpus.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id373">
+        <table class="children sortable" id="id376">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new corpus view, based on the file ``fileid``, and read with ``block_reader``.  See the class documentation for more information.</span></td>
+    <td><span>Create a new corpus view, based on the file <tt class="rst-docutils literal">fileid</tt>, and read with <tt class="rst-docutils literal">block_reader</tt>.  See the class documentation for more information.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -93,7 +93,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html">StreamBackedCorpusView</a></code>:
           </p>
-          <table class="children sortable" id="id374">
+          <table class="children sortable" id="id377">
   
   
   <tr class="basemethod">
@@ -154,8 +154,18 @@
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_block_reader">_block_reader</a></code></td>
+    <td><span>The function used to read
+a single block from the underlying file stream.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_cache">_cache</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A cache of the most recently read block.  It
+is encoded as a tuple (start_toknum, end_toknum, tokens), where
+start_toknum is the token index of the first token in the block;
+end_toknum is the token index of the first token not in the
+block; and tokens is a list of the tokens in the block.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -175,7 +185,9 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_eofpos">_eofpos</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The character position of the last character in the
+file.  This is calculated when the corpus view is initialized,
+and is used to decide when the end of file has been reached.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -185,17 +197,22 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_len">_len</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The total number of tokens in the corpus, if known;
+or None, if the number of tokens is not yet known.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_stream">_stream</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The stream used to access the underlying corpus file.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_toknum">_toknum</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list containing the token index of each block
+that has been processed.  In particular, <tt class="rst-docutils literal">_toknum[i]</tt> is the
+token index of the first token in block <tt class="rst-docutils literal">i</tt>.  Together
+with <tt class="rst-docutils literal">_filepos</tt>, this forms a partial mapping between token
+indices and file positions.</span></td>
   </tr>
 </table>
           
@@ -217,7 +234,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/opinion_lexicon.py#L40">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/opinion_lexicon.py#L40">
       
       (source)
     </a>
@@ -225,22 +242,16 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#__init__">nltk.corpus.reader.util.StreamBackedCorpusView.__init__</a></code></div>
     
-    <div><p class="pre">Create a new corpus view, based on the file ``fileid``, and
-read with ``block_reader``.  See the class documentation
-for more information.
-
-:param fileid: The path to the file that is read by this
-    corpus view.  ``fileid`` can either be a string or a
-    ``PathPointer``.
-
-:param startpos: The file position at which the view will
-    start reading.  This can be used to skip over preface
-    sections.
-
-:param encoding: The unicode encoding that should be used to
-    read the file's contents.  If no encoding is specified,
-    then the file's contents will be read as a non-unicode
-    string (i.e., a str).</p></div>
+    <div>Create a new corpus view, based on the file <tt class="rst-docutils literal">fileid</tt>, and
+read with <tt class="rst-docutils literal">block_reader</tt>.  See the class documentation
+for more information.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileid</span></td><td class="fieldArgDesc">The path to the file that is read by this
+corpus view.  <tt class="rst-docutils literal">fileid</tt> can either be a string or a
+<tt class="rst-docutils literal">PathPointer</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">startpos</span></td><td class="fieldArgDesc">The file position at which the view will
+start reading.  This can be used to skip over preface
+sections.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc">The unicode encoding that should be used to
+read the file's contents.  If no encoding is specified,
+then the file's contents will be read as a non-unicode
+string (i.e., a str).</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -254,7 +265,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">_filepos</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/opinion_lexicon.py#L47">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/opinion_lexicon.py#L47">
       
       (source)
     </a>
@@ -274,7 +285,7 @@ for more information.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,35 +65,44 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">LineTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/simple.py#L81" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LineTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/simple.py#L81" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.simple.LineTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Tokenize a string into its lines, optionally discarding blank lines.
-This is similar to ``s.split('\n')``.
-
-    &gt;&gt;&gt; from nltk.tokenize import LineTokenizer
-    &gt;&gt;&gt; s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."
-    &gt;&gt;&gt; LineTokenizer(blanklines='keep').tokenize(s)
-    ['Good muffins cost $3.88', 'in New York.  Please buy me',
-    'two of them.', '', 'Thanks.']
-    &gt;&gt;&gt; # same as [l for l in s.split('\n') if l.strip()]:
-    &gt;&gt;&gt; LineTokenizer(blanklines='discard').tokenize(s)
-    ['Good muffins cost $3.88', 'in New York.  Please buy me',
-    'two of them.', 'Thanks.']
-
-:param blanklines: Indicates how blank lines should be handled.  Valid values are:
-
-    - ``discard``: strip blank lines out of the token list before returning it.
-       A line is considered blank if it contains only whitespace characters.
-    - ``keep``: leave all blank lines in the token list.
-    - ``discard-eof``: if the string ends with a newline, then do not generate
-       a corresponding token ``''`` after that newline.</p></div>
+        <div><p>Tokenize a string into its lines, optionally discarding blank lines.
+This is similar to <tt class="rst-docutils literal"><span class="pre">s.split('\n')</span></tt>.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> LineTokenizer
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">"Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>LineTokenizer(blanklines=<span class="py-string">'keep'</span>).tokenize(s)
+<span class="py-output">['Good muffins cost $3.88', 'in New York.  Please buy me',</span>
+<span class="py-output">'two of them.', '', 'Thanks.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># same as [l for l in s.split('\n') if l.strip()]:</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>LineTokenizer(blanklines=<span class="py-string">'discard'</span>).tokenize(s)
+<span class="py-output">['Good muffins cost $3.88', 'in New York.  Please buy me',</span>
+<span class="py-output">'two of them.', 'Thanks.']</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">blanklines</span></td><td class="fieldArgDesc"><p>Indicates how blank lines should be handled.  Valid values are:</p>
+<ul class="rst-simple">
+<li><dl class="rst-first rst-docutils">
+<dt><tt class="rst-docutils literal">discard</tt>: strip blank lines out of the token list before returning it.</dt>
+<dd>A line is considered blank if it contains only whitespace characters.</dd>
+</dl>
+</li>
+<li><tt class="rst-docutils literal">keep</tt>: leave all blank lines in the token list.</li>
+<li><dl class="rst-first rst-docutils">
+<dt><tt class="rst-docutils literal"><span class="pre">discard-eof</span></tt>: if the string ends with a newline, then do not generate</dt>
+<dd>a corresponding token <tt class="rst-docutils literal">''</tt> after that newline.</dd>
+</dl>
+</li>
+</ul>
+</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1831">
+        <table class="children sortable" id="id1835">
   
   
   <tr class="method">
@@ -105,12 +114,12 @@ This is similar to ``s.split('\n')``.
     
     <td>Method</td>
     <td><code><a href="#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *s*.</span></td>
+    <td><span>Return a tokenized copy of <em>s</em>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -122,19 +131,19 @@ This is similar to ``s.split('\n')``.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1832">
+          <table class="children sortable" id="id1836">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -156,7 +165,7 @@ This is similar to ``s.split('\n')``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, blanklines='discard'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/simple.py#L104">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/simple.py#L104">
       
       (source)
     </a>
@@ -178,7 +187,7 @@ This is similar to ``s.split('\n')``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">span_tokenize</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/simple.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/simple.py#L124">
       
       (source)
     </a>
@@ -186,10 +195,8 @@ This is similar to ``s.split('\n')``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">nltk.tokenize.api.TokenizerI.span_tokenize</a></code></div>
     
-    <div><p class="pre">Identify the tokens using integer offsets ``(start_i, end_i)``,
-where ``s[start_i:end_i]`` is the corresponding token.
-
-:rtype: iter(tuple(int, int))</p></div>
+    <div>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>,
+where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(tuple(int, int))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -203,7 +210,7 @@ where ``s[start_i:end_i]`` is the corresponding token.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/simple.py#L113">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/simple.py#L113">
       
       (source)
     </a>
@@ -211,9 +218,7 @@ where ``s[start_i:end_i]`` is the corresponding token.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">Return a tokenized copy of *s*.
-
-:rtype: list of str</p></div>
+    <div>Return a tokenized copy of <em>s</em>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -227,7 +232,7 @@ where ``s[start_i:end_i]`` is the corresponding token.
   <div class="functionHeader">
     
     <span class="py-defname">_blanklines</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/simple.py#L111">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/simple.py#L111">
       
       (source)
     </a>
@@ -247,7 +252,7 @@ where ``s[start_i:end_i]`` is the corresponding token.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

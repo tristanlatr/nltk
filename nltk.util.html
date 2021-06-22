@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1959">
+        <table class="children sortable" id="id1963">
   
   
   <tr class="class">
@@ -116,7 +116,7 @@
     
     <td>Function</td>
     <td><code><a href="#choose">choose</a></code></td>
-    <td><span>This function is a fast way to calculate binomial coefficients, commonly known as nCk, i.e. the number of combinations of n things taken k at a time. (https://en.wikipedia.org/wiki/Binomial_coefficient).</span></td>
+    <td><span>This function is a fast way to calculate binomial coefficients, commonly known as nCk, i.e. the number of combinations of n things taken k at a time. (<a class="rst-reference external" href="https://en.wikipedia.org/wiki/Binomial_coefficient" target="_top">https://en.wikipedia.org/wiki/Binomial_coefficient</a>).</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -156,7 +156,7 @@
     
     <td>Function</td>
     <td><code><a href="#in_idle">in_idle</a></code></td>
-    <td><span>Return True if this function is run within idle.  Tkinter programs that are run in idle should never call ``Tk.mainloop``; so this function should be used to gate all calls to ``Tk.mainloop``.</span></td>
+    <td><span>Return True if this function is run within idle.  Tkinter programs that are run in idle should never call <tt class="rst-docutils literal">Tk.mainloop</tt>; so this function should be used to gate all calls to <tt class="rst-docutils literal">Tk.mainloop</tt>.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -206,7 +206,7 @@
     
     <td>Function</td>
     <td><code><a href="#re_show">re_show</a></code></td>
-    <td><span>Return a string with markers surrounding the matched substrings. Search str for substrings matching ``regexp`` and wrap the matches with braces.  This is convenient for learning about regular expressions.</span></td>
+    <td><span>Return a string with markers surrounding the matched substrings. Search str for substrings matching <tt class="rst-docutils literal">regexp</tt> and wrap the matches with braces.  This is convenient for learning about regular expressions.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -216,7 +216,7 @@
     
     <td>Function</td>
     <td><code><a href="#skipgrams">skipgrams</a></code></td>
-    <td><span>Returns all possible skipgrams generated from a sequence of items, as an iterator. Skipgrams are ngrams that allows tokens to be skipped. Refer to http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf</span></td>
+    <td><span>Returns all possible skipgrams generated from a sequence of items, as an iterator. Skipgrams are ngrams that allows tokens to be skipped. Refer to <a class="rst-reference external" href="http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf" target="_top">http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf</a></span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -263,7 +263,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">acyclic_branches_depth_first</span>(tree, children=iter, depth=-1, cut_mark=None, traversed=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L309">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L309">
       
       (source)
     </a>
@@ -271,42 +271,41 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Traverse the nodes of a tree in depth-first order,
+    <div><p>Traverse the nodes of a tree in depth-first order,
 discarding eventual cycles within the same branch,
 but keep duplicate pathes in different branches.
-Add cut_mark (when defined) if cycles were truncated.
-
-The first argument should be the tree root;
+Add cut_mark (when defined) if cycles were truncated.</p>
+<p>The first argument should be the tree root;
 children should be a function taking as argument a tree node
-and returning an iterator of the node's children.
-
-Catches only only cycles within the same branch,
-but keeping cycles from different branches:
-
-&gt;&gt;&gt; import nltk
-&gt;&gt;&gt; from nltk.util import acyclic_branches_depth_first as tree
-&gt;&gt;&gt; wn=nltk.corpus.wordnet
-&gt;&gt;&gt; from pprint import pprint
-&gt;&gt;&gt; pprint(tree(wn.synset('certified.a.01'), lambda s:s.also_sees(), cut_mark='...', depth=4))
-[Synset('certified.a.01'),
- [Synset('authorized.a.01'),
-  [Synset('lawful.a.01'),
-   [Synset('legal.a.01'),
-    "Cycle(Synset('lawful.a.01'),0,...)",
-    [Synset('legitimate.a.01'), '...']],
-   [Synset('straight.a.06'),
-    [Synset('honest.a.01'), '...'],
-    "Cycle(Synset('lawful.a.01'),0,...)"]],
-  [Synset('legitimate.a.01'),
-   "Cycle(Synset('authorized.a.01'),1,...)",
-   [Synset('legal.a.01'),
-    [Synset('lawful.a.01'), '...'],
-    "Cycle(Synset('legitimate.a.01'),0,...)"],
-   [Synset('valid.a.01'),
-    "Cycle(Synset('legitimate.a.01'),0,...)",
-    [Synset('reasonable.a.01'), '...']]],
-  [Synset('official.a.01'), "Cycle(Synset('authorized.a.01'),1,...)"]],
- [Synset('documented.a.01')]]</p></div>
+and returning an iterator of the node's children.</p>
+<p>Catches only only cycles within the same branch,
+but keeping cycles from different branches:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> nltk
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.util <span class="py-keyword">import</span> acyclic_branches_depth_first <span class="py-keyword">as</span> tree
+<span class="py-prompt">&gt;&gt;&gt; </span>wn=nltk.corpus.wordnet
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> pprint <span class="py-keyword">import</span> pprint
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(tree(wn.synset(<span class="py-string">'certified.a.01'</span>), <span class="py-keyword">lambda</span> s:s.also_sees(), cut_mark=<span class="py-string">'...'</span>, depth=4))
+<span class="py-output">[Synset('certified.a.01'),</span>
+<span class="py-output"> [Synset('authorized.a.01'),</span>
+<span class="py-output">  [Synset('lawful.a.01'),</span>
+<span class="py-output">   [Synset('legal.a.01'),</span>
+<span class="py-output">    "Cycle(Synset('lawful.a.01'),0,...)",</span>
+<span class="py-output">    [Synset('legitimate.a.01'), '...']],</span>
+<span class="py-output">   [Synset('straight.a.06'),</span>
+<span class="py-output">    [Synset('honest.a.01'), '...'],</span>
+<span class="py-output">    "Cycle(Synset('lawful.a.01'),0,...)"]],</span>
+<span class="py-output">  [Synset('legitimate.a.01'),</span>
+<span class="py-output">   "Cycle(Synset('authorized.a.01'),1,...)",</span>
+<span class="py-output">   [Synset('legal.a.01'),</span>
+<span class="py-output">    [Synset('lawful.a.01'), '...'],</span>
+<span class="py-output">    "Cycle(Synset('legitimate.a.01'),0,...)"],</span>
+<span class="py-output">   [Synset('valid.a.01'),</span>
+<span class="py-output">    "Cycle(Synset('legitimate.a.01'),0,...)",</span>
+<span class="py-output">    [Synset('reasonable.a.01'), '...']]],</span>
+<span class="py-output">  [Synset('official.a.01'), "Cycle(Synset('authorized.a.01'),1,...)"]],</span>
+<span class="py-output"> [Synset('documented.a.01')]]</span>
+</pre></div>
   </div>
 </div><div class="basefunction">
   
@@ -320,7 +319,7 @@ but keeping cycles from different branches:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">acyclic_breadth_first</span>(tree, children=iter, maxdepth=-1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L231">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L231">
       
       (source)
     </a>
@@ -328,12 +327,12 @@ but keeping cycles from different branches:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Traverse the nodes of a tree in breadth-first order,
-discarding eventual cycles.
-
-The first argument should be the tree root;
+    <div><p>Traverse the nodes of a tree in breadth-first order,
+discarding eventual cycles.</p>
+<p>The first argument should be the tree root;
 children should be a function taking as argument a tree node
-and returning an iterator of the node's children.</p></div>
+and returning an iterator of the node's children.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -347,7 +346,7 @@ and returning an iterator of the node's children.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">acyclic_depth_first</span>(tree, children=iter, depth=-1, cut_mark=None, traversed=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L256">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L256">
       
       (source)
     </a>
@@ -355,36 +354,35 @@ and returning an iterator of the node's children.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Traverse the nodes of a tree in depth-first order,
+    <div><p>Traverse the nodes of a tree in depth-first order,
 discarding eventual cycles within any branch,
-adding cut_mark (when specified) if cycles were truncated.
-
-The first argument should be the tree root;
+adding cut_mark (when specified) if cycles were truncated.</p>
+<p>The first argument should be the tree root;
 children should be a function taking as argument a tree node
-and returning an iterator of the node's children.
-
-Catches all cycles:
-
-&gt;&gt;&gt; import nltk
-&gt;&gt;&gt; from nltk.util import acyclic_depth_first as acyclic_tree
-&gt;&gt;&gt; wn=nltk.corpus.wordnet
-&gt;&gt;&gt; from pprint import pprint
-&gt;&gt;&gt; pprint(acyclic_tree(wn.synset('dog.n.01'), lambda s:s.hypernyms(),cut_mark='...'))
-[Synset('dog.n.01'),
- [Synset('canine.n.02'),
-  [Synset('carnivore.n.01'),
-   [Synset('placental.n.01'),
-    [Synset('mammal.n.01'),
-     [Synset('vertebrate.n.01'),
-      [Synset('chordate.n.01'),
-       [Synset('animal.n.01'),
-        [Synset('organism.n.01'),
-         [Synset('living_thing.n.01'),
-          [Synset('whole.n.02'),
-           [Synset('object.n.01'),
-            [Synset('physical_entity.n.01'),
-             [Synset('entity.n.01')]]]]]]]]]]]]],
- [Synset('domestic_animal.n.01'), "Cycle(Synset('animal.n.01'),-3,...)"]]</p></div>
+and returning an iterator of the node's children.</p>
+<p>Catches all cycles:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> nltk
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.util <span class="py-keyword">import</span> acyclic_depth_first <span class="py-keyword">as</span> acyclic_tree
+<span class="py-prompt">&gt;&gt;&gt; </span>wn=nltk.corpus.wordnet
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> pprint <span class="py-keyword">import</span> pprint
+<span class="py-prompt">&gt;&gt;&gt; </span>pprint(acyclic_tree(wn.synset(<span class="py-string">'dog.n.01'</span>), <span class="py-keyword">lambda</span> s:s.hypernyms(),cut_mark=<span class="py-string">'...'</span>))
+<span class="py-output">[Synset('dog.n.01'),</span>
+<span class="py-output"> [Synset('canine.n.02'),</span>
+<span class="py-output">  [Synset('carnivore.n.01'),</span>
+<span class="py-output">   [Synset('placental.n.01'),</span>
+<span class="py-output">    [Synset('mammal.n.01'),</span>
+<span class="py-output">     [Synset('vertebrate.n.01'),</span>
+<span class="py-output">      [Synset('chordate.n.01'),</span>
+<span class="py-output">       [Synset('animal.n.01'),</span>
+<span class="py-output">        [Synset('organism.n.01'),</span>
+<span class="py-output">         [Synset('living_thing.n.01'),</span>
+<span class="py-output">          [Synset('whole.n.02'),</span>
+<span class="py-output">           [Synset('object.n.01'),</span>
+<span class="py-output">            [Synset('physical_entity.n.01'),</span>
+<span class="py-output">             [Synset('entity.n.01')]]]]]]]]]]]]],</span>
+<span class="py-output"> [Synset('domestic_animal.n.01'), "Cycle(Synset('animal.n.01'),-3,...)"]]</span>
+</pre></div>
   </div>
 </div><div class="basefunction">
   
@@ -398,7 +396,7 @@ Catches all cycles:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bigrams</span>(sequence, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L656">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L656">
       
       (source)
     </a>
@@ -406,18 +404,16 @@ Catches all cycles:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the bigrams generated from a sequence of items, as an iterator.
-For example:
-
-    &gt;&gt;&gt; from nltk.util import bigrams
-    &gt;&gt;&gt; list(bigrams([1,2,3,4,5]))
-    [(1, 2), (2, 3), (3, 4), (4, 5)]
-
-Use bigrams for a list version of this function.
-
-:param sequence: the source data to be converted into bigrams
-:type sequence: sequence or iter
-:rtype: iter(tuple)</p></div>
+    <div><p>Return the bigrams generated from a sequence of items, as an iterator.
+For example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.util <span class="py-keyword">import</span> bigrams
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(bigrams([1,2,3,4,5]))
+<span class="py-output">[(1, 2), (2, 3), (3, 4), (4, 5)]</span>
+</pre></blockquote>
+<p>Use bigrams for a list version of this function.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence:</span>sequence or iter</td><td class="fieldArgDesc">the source data to be converted into bigrams</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(tuple)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -431,7 +427,7 @@ Use bigrams for a list version of this function.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">binary_search_file</span>(file, key, cache={}, cacheDepth=-1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L799">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L799">
       
       (source)
     </a>
@@ -439,13 +435,8 @@ Use bigrams for a list version of this function.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the line from the file with first word key.
-Searches through a sorted file using the binary search algorithm.
-
-:type file: file
-:param file: the file to be searched through.
-:type key: str
-:param key: the identifier we are searching for.</p></div>
+    <div>Return the line from the file with first word key.
+Searches through a sorted file using the binary search algorithm.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">file:</span>file</td><td class="fieldArgDesc">the file to be searched through.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key:</span>str</td><td class="fieldArgDesc">the identifier we are searching for.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cache</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cacheDepth</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -459,7 +450,7 @@ Searches through a sorted file using the binary search algorithm.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">breadth_first</span>(tree, children=iter, maxdepth=-1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L205">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L205">
       
       (source)
     </a>
@@ -467,11 +458,11 @@ Searches through a sorted file using the binary search algorithm.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Traverse the nodes of a tree in breadth-first order.
+    <div>Traverse the nodes of a tree in breadth-first order.
 (No check for cycles.)
 The first argument should be the tree root;
 children should be a function taking as argument a tree node
-and returning an iterator of the node's children.</p></div>
+and returning an iterator of the node's children.</div>
   </div>
 </div><div class="basefunction">
   
@@ -485,7 +476,7 @@ and returning an iterator of the node's children.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">choose</span>(n, k):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L945">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L945">
       
       (source)
     </a>
@@ -493,22 +484,19 @@ and returning an iterator of the node's children.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">This function is a fast way to calculate binomial coefficients, commonly
+    <div><p>This function is a fast way to calculate binomial coefficients, commonly
 known as nCk, i.e. the number of combinations of n things taken k at a time.
-(https://en.wikipedia.org/wiki/Binomial_coefficient).
-
-This is the *scipy.special.comb()* with long integer computation but this
-approximation is faster, see https://github.com/nltk/nltk/issues/1181
-
-    &gt;&gt;&gt; choose(4, 2)
-    6
-    &gt;&gt;&gt; choose(6, 2)
-    15
-
-:param n: The number of things.
-:type n: int
-:param r: The number of times a thing is taken.
-:type r: int</p></div>
+(<a class="rst-reference external" href="https://en.wikipedia.org/wiki/Binomial_coefficient" target="_top">https://en.wikipedia.org/wiki/Binomial_coefficient</a>).</p>
+<p>This is the <em>scipy.special.comb()</em> with long integer computation but this
+approximation is faster, see <a class="rst-reference external" href="https://github.com/nltk/nltk/issues/1181" target="_top">https://github.com/nltk/nltk/issues/1181</a></p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>choose(4, 2)
+<span class="py-output">6</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>choose(6, 2)
+<span class="py-output">15</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">n:</span>int</td><td class="fieldArgDesc">The number of things.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">k</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span>int</td><td class="fieldArgDesc">The number of times a thing is taken.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -522,7 +510,7 @@ approximation is faster, see https://github.com/nltk/nltk/issues/1181
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">clean_html</span>(html):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L519">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L519">
       
       (source)
     </a>
@@ -544,7 +532,7 @@ approximation is faster, see https://github.com/nltk/nltk/issues/1181
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">clean_url</span>(url):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L525">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L525">
       
       (source)
     </a>
@@ -566,7 +554,7 @@ approximation is faster, see https://github.com/nltk/nltk/issues/1181
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">elementtree_indent</span>(elem, level=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L913">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L913">
       
       (source)
     </a>
@@ -574,16 +562,9 @@ approximation is faster, see https://github.com/nltk/nltk/issues/1181
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Recursive function to indent an ElementTree._ElementInterface
+    <div>Recursive function to indent an ElementTree._ElementInterface
 used for pretty printing. Run indent on elem and then output
-in the normal way.
-
-:param elem: element to be indented. will be modified.
-:type elem: ElementTree._ElementInterface
-:param level: level of indentation for this element
-:type level: nonnegative integer
-:rtype:   ElementTree._ElementInterface
-:return:  Contents of elem indented to reflect its structure</p></div>
+in the normal way.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">elem:</span>ElementTree._ElementInterface</td><td class="fieldArgDesc">element to be indented. will be modified.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">level:</span>nonnegative integer</td><td class="fieldArgDesc">level of indentation for this element</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">ElementTree._ElementInterface</td><td class="fieldArgDesc">Contents of elem indented to reflect its structure</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -597,7 +578,7 @@ in the normal way.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">everygrams</span>(sequence, min_len=1, max_len=-1, pad_left=False, pad_right=False, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L696">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L696">
       
       (source)
     </a>
@@ -605,33 +586,27 @@ in the normal way.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns all possible ngrams generated from a sequence of items, as an iterator.
-
-    &gt;&gt;&gt; sent = 'a b c'.split()
-
-New version outputs for everygrams.
-    &gt;&gt;&gt; list(everygrams(sent))
-    [('a',), ('a', 'b'), ('a', 'b', 'c'), ('b',), ('b', 'c'), ('c',)]
-
-Old version outputs for everygrams.
-    &gt;&gt;&gt; sorted(everygrams(sent), key=len)
-    [('a',), ('b',), ('c',), ('a', 'b'), ('b', 'c'), ('a', 'b', 'c')]
-
-    &gt;&gt;&gt; list(everygrams(sent, max_len=2))
-    [('a',), ('a', 'b'), ('b',), ('b', 'c'), ('c',)]
-
-:param sequence: the source data to be converted into ngrams. If max_len is
-    not provided, this sequence will be loaded into memory
-:type sequence: sequence or iter
-:param min_len: minimum length of the ngrams, aka. n-gram order/degree of ngram
-:type  min_len: int
-:param max_len: maximum length of the ngrams (set to length of sequence by default)
-:type  max_len: int
-:param pad_left: whether the ngrams should be left-padded
-:type pad_left: bool
-:param pad_right: whether the ngrams should be right-padded
-:type pad_right: bool
-:rtype: iter(tuple)</p></div>
+    <div><p>Returns all possible ngrams generated from a sequence of items, as an iterator.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = <span class="py-string">'a b c'</span>.split()</pre></blockquote>
+<dl class="rst-docutils">
+<dt>New version outputs for everygrams.</dt>
+<dd><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(everygrams(sent))
+<span class="py-output">[('a',), ('a', 'b'), ('a', 'b', 'c'), ('b',), ('b', 'c'), ('c',)]</span>
+</pre></dd>
+<dt>Old version outputs for everygrams.</dt>
+<dd><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sorted</span>(everygrams(sent), key=<span class="py-builtin">len</span>)
+<span class="py-output">[('a',), ('b',), ('c',), ('a', 'b'), ('b', 'c'), ('a', 'b', 'c')]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(everygrams(sent, max_len=2))
+<span class="py-output">[('a',), ('a', 'b'), ('b',), ('b', 'c'), ('c',)]</span>
+</pre></dd>
+</dl>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence:</span>sequence or iter</td><td class="fieldArgDesc">the source data to be converted into ngrams. If max_len is
+not provided, this sequence will be loaded into memory</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_len:</span>int</td><td class="fieldArgDesc">minimum length of the ngrams, aka. n-gram order/degree of ngram</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_len:</span>int</td><td class="fieldArgDesc">maximum length of the ngrams (set to length of sequence by default)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pad_left:</span>bool</td><td class="fieldArgDesc">whether the ngrams should be left-padded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pad_right:</span>bool</td><td class="fieldArgDesc">whether the ngrams should be right-padded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(tuple)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -645,7 +620,7 @@ Old version outputs for everygrams.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">filestring</span>(f):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L190">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L190">
       
       (source)
     </a>
@@ -667,7 +642,7 @@ Old version outputs for everygrams.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">flatten</span>(*args):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L536">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L536">
       
       (source)
     </a>
@@ -675,14 +650,14 @@ Old version outputs for everygrams.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Flatten a list.
-
-    &gt;&gt;&gt; from nltk.util import flatten
-    &gt;&gt;&gt; flatten(1, 2, ['b', 'a' , ['c', 'd']], 3)
-    [1, 2, 'b', 'a', 'c', 'd', 3]
-
-:param args: items and lists to be combined into a single list
-:rtype: list</p></div>
+    <div><p>Flatten a list.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.util <span class="py-keyword">import</span> flatten
+<span class="py-prompt">&gt;&gt;&gt; </span>flatten(1, 2, [<span class="py-string">'b'</span>, <span class="py-string">'a'</span> , [<span class="py-string">'c'</span>, <span class="py-string">'d'</span>]], 3)
+<span class="py-output">[1, 2, 'b', 'a', 'c', 'd', 3]</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">items and lists to be combined into a single list</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -696,7 +671,7 @@ Old version outputs for everygrams.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">guess_encoding</span>(data):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L375">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L375">
       
       (source)
     </a>
@@ -704,16 +679,16 @@ Old version outputs for everygrams.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a byte string, attempt to decode it.
+    <div><p>Given a byte string, attempt to decode it.
 Tries the standard 'UTF8' and 'latin-1' encodings,
-Plus several gathered from locale information.
-
-The calling program *must* first call::
-
-    locale.setlocale(locale.LC_ALL, '')
-
-If successful it returns ``(decoded_unicode, successful_encoding)``.
-If unsuccessful it raises a ``UnicodeError``.</p></div>
+Plus several gathered from locale information.</p>
+<p>The calling program <em>must</em> first call:</p>
+<pre class="rst-literal-block">
+locale.setlocale(locale.LC_ALL, '')
+</pre>
+<p>If successful it returns <tt class="rst-docutils literal">(decoded_unicode, successful_encoding)</tt>.
+If unsuccessful it raises a <tt class="rst-docutils literal">UnicodeError</tt>.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -727,7 +702,7 @@ If unsuccessful it raises a ``UnicodeError``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">in_idle</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L79">
       
       (source)
     </a>
@@ -735,14 +710,11 @@ If unsuccessful it raises a ``UnicodeError``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if this function is run within idle.  Tkinter
-programs that are run in idle should never call ``Tk.mainloop``; so
-this function should be used to gate all calls to ``Tk.mainloop``.
-
-:warning: This function works by checking ``sys.stdin``.  If the
-    user has modified ``sys.stdin``, then it may return incorrect
-    results.
-:rtype: bool</p></div>
+    <div>Return True if this function is run within idle.  Tkinter
+programs that are run in idle should never call <tt class="rst-docutils literal">Tk.mainloop</tt>; so
+this function should be used to gate all calls to <tt class="rst-docutils literal">Tk.mainloop</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: warning</td></tr><tr><td colspan="2">This function works by checking <tt class="rst-docutils literal">sys.stdin</tt>.  If the
+user has modified <tt class="rst-docutils literal">sys.stdin</tt>, then it may return incorrect
+results.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -756,7 +728,7 @@ this function should be used to gate all calls to ``Tk.mainloop``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">invert_dict</span>(d):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L447">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L447">
       
       (source)
     </a>
@@ -778,7 +750,7 @@ this function should be used to gate all calls to ``Tk.mainloop``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">invert_graph</span>(graph):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L498">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L498">
       
       (source)
     </a>
@@ -786,12 +758,7 @@ this function should be used to gate all calls to ``Tk.mainloop``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Inverts a directed graph.
-
-:param graph: the graph, represented as a dictionary of sets
-:type graph: dict(set)
-:return: the inverted graph
-:rtype: dict(set)</p></div>
+    <div>Inverts a directed graph.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graph:</span>dict(set)</td><td class="fieldArgDesc">the graph, represented as a dictionary of sets</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">dict(set)</td><td class="fieldArgDesc">the inverted graph</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -805,7 +772,7 @@ this function should be used to gate all calls to ``Tk.mainloop``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">ngrams</span>(sequence, n, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L608">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L608">
       
       (source)
     </a>
@@ -813,39 +780,28 @@ this function should be used to gate all calls to ``Tk.mainloop``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the ngrams generated from a sequence of items, as an iterator.
-For example:
-
-    &gt;&gt;&gt; from nltk.util import ngrams
-    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 3))
-    [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
-
-Wrap with list for a list version of this function.  Set pad_left
-or pad_right to true in order to get additional ngrams:
-
-    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 2, pad_right=True))
-    [(1, 2), (2, 3), (3, 4), (4, 5), (5, None)]
-    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 2, pad_right=True, right_pad_symbol='&lt;/s&gt;'))
-    [(1, 2), (2, 3), (3, 4), (4, 5), (5, '&lt;/s&gt;')]
-    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 2, pad_left=True, left_pad_symbol='&lt;s&gt;'))
-    [('&lt;s&gt;', 1), (1, 2), (2, 3), (3, 4), (4, 5)]
-    &gt;&gt;&gt; list(ngrams([1,2,3,4,5], 2, pad_left=True, pad_right=True, left_pad_symbol='&lt;s&gt;', right_pad_symbol='&lt;/s&gt;'))
-    [('&lt;s&gt;', 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, '&lt;/s&gt;')]
-
-
-:param sequence: the source data to be converted into ngrams
-:type sequence: sequence or iter
-:param n: the degree of the ngrams
-:type n: int
-:param pad_left: whether the ngrams should be left-padded
-:type pad_left: bool
-:param pad_right: whether the ngrams should be right-padded
-:type pad_right: bool
-:param left_pad_symbol: the symbol to use for left padding (default is None)
-:type left_pad_symbol: any
-:param right_pad_symbol: the symbol to use for right padding (default is None)
-:type right_pad_symbol: any
-:rtype: sequence or iter</p></div>
+    <div><p>Return the ngrams generated from a sequence of items, as an iterator.
+For example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.util <span class="py-keyword">import</span> ngrams
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(ngrams([1,2,3,4,5], 3))
+<span class="py-output">[(1, 2, 3), (2, 3, 4), (3, 4, 5)]</span>
+</pre></blockquote>
+<p>Wrap with list for a list version of this function.  Set pad_left
+or pad_right to true in order to get additional ngrams:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(ngrams([1,2,3,4,5], 2, pad_right=<span class="py-builtin">True</span>))
+<span class="py-output">[(1, 2), (2, 3), (3, 4), (4, 5), (5, None)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(ngrams([1,2,3,4,5], 2, pad_right=<span class="py-builtin">True</span>, right_pad_symbol=<span class="py-string">'&lt;/s&gt;'</span>))
+<span class="py-output">[(1, 2), (2, 3), (3, 4), (4, 5), (5, '&lt;/s&gt;')]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(ngrams([1,2,3,4,5], 2, pad_left=<span class="py-builtin">True</span>, left_pad_symbol=<span class="py-string">'&lt;s&gt;'</span>))
+<span class="py-output">[('&lt;s&gt;', 1), (1, 2), (2, 3), (3, 4), (4, 5)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(ngrams([1,2,3,4,5], 2, pad_left=<span class="py-builtin">True</span>, pad_right=<span class="py-builtin">True</span>, left_pad_symbol=<span class="py-string">'&lt;s&gt;'</span>, right_pad_symbol=<span class="py-string">'&lt;/s&gt;'</span>))
+<span class="py-output">[('&lt;s&gt;', 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, '&lt;/s&gt;')]</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence:</span>sequence or iter</td><td class="fieldArgDesc">the source data to be converted into ngrams</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">n:</span>int</td><td class="fieldArgDesc">the degree of the ngrams</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pad_left:</span>bool</td><td class="fieldArgDesc">whether the ngrams should be left-padded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pad_right:</span>bool</td><td class="fieldArgDesc">whether the ngrams should be right-padded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">left_pad_symbol:</span>any</td><td class="fieldArgDesc">the symbol to use for left padding (default is None)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">right_pad_symbol:</span>any</td><td class="fieldArgDesc">the symbol to use for right padding (default is None)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">sequence or iter</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -859,7 +815,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pad_sequence</span>(sequence, n, pad_left=False, pad_right=False, left_pad_symbol=None, right_pad_symbol=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L565">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L565">
       
       (source)
     </a>
@@ -867,28 +823,17 @@ or pad_right to true in order to get additional ngrams:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns a padded sequence of items before ngram extraction.
-
-    &gt;&gt;&gt; list(pad_sequence([1,2,3,4,5], 2, pad_left=True, pad_right=True, left_pad_symbol='&lt;s&gt;', right_pad_symbol='&lt;/s&gt;'))
-    ['&lt;s&gt;', 1, 2, 3, 4, 5, '&lt;/s&gt;']
-    &gt;&gt;&gt; list(pad_sequence([1,2,3,4,5], 2, pad_left=True, left_pad_symbol='&lt;s&gt;'))
-    ['&lt;s&gt;', 1, 2, 3, 4, 5]
-    &gt;&gt;&gt; list(pad_sequence([1,2,3,4,5], 2, pad_right=True, right_pad_symbol='&lt;/s&gt;'))
-    [1, 2, 3, 4, 5, '&lt;/s&gt;']
-
-:param sequence: the source data to be padded
-:type sequence: sequence or iter
-:param n: the degree of the ngrams
-:type n: int
-:param pad_left: whether the ngrams should be left-padded
-:type pad_left: bool
-:param pad_right: whether the ngrams should be right-padded
-:type pad_right: bool
-:param left_pad_symbol: the symbol to use for left padding (default is None)
-:type left_pad_symbol: any
-:param right_pad_symbol: the symbol to use for right padding (default is None)
-:type right_pad_symbol: any
-:rtype: sequence or iter</p></div>
+    <div><p>Returns a padded sequence of items before ngram extraction.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(pad_sequence([1,2,3,4,5], 2, pad_left=<span class="py-builtin">True</span>, pad_right=<span class="py-builtin">True</span>, left_pad_symbol=<span class="py-string">'&lt;s&gt;'</span>, right_pad_symbol=<span class="py-string">'&lt;/s&gt;'</span>))
+<span class="py-output">['&lt;s&gt;', 1, 2, 3, 4, 5, '&lt;/s&gt;']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(pad_sequence([1,2,3,4,5], 2, pad_left=<span class="py-builtin">True</span>, left_pad_symbol=<span class="py-string">'&lt;s&gt;'</span>))
+<span class="py-output">['&lt;s&gt;', 1, 2, 3, 4, 5]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(pad_sequence([1,2,3,4,5], 2, pad_right=<span class="py-builtin">True</span>, right_pad_symbol=<span class="py-string">'&lt;/s&gt;'</span>))
+<span class="py-output">[1, 2, 3, 4, 5, '&lt;/s&gt;']</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence:</span>sequence or iter</td><td class="fieldArgDesc">the source data to be padded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">n:</span>int</td><td class="fieldArgDesc">the degree of the ngrams</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pad_left:</span>bool</td><td class="fieldArgDesc">whether the ngrams should be left-padded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pad_right:</span>bool</td><td class="fieldArgDesc">whether the ngrams should be right-padded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">left_pad_symbol:</span>any</td><td class="fieldArgDesc">the symbol to use for left padding (default is None)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">right_pad_symbol:</span>any</td><td class="fieldArgDesc">the symbol to use for right padding (default is None)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">sequence or iter</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -902,7 +847,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pairwise</span>(iterable):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L980">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L980">
       
       (source)
     </a>
@@ -910,7 +855,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">s -&gt; (s0,s1), (s1,s2), (s2, s3), ...</p></div>
+    <div>s -&gt; (s0,s1), (s1,s2), (s2, s3), ...</div>
   </div>
 </div><div class="basefunction">
   
@@ -924,7 +869,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parallelize_preprocess</span>(func, iterator, processes, progress_bar=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L991">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L991">
       
       (source)
     </a>
@@ -946,7 +891,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pr</span>(data, start=0, end=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L100">
       
       (source)
     </a>
@@ -954,14 +899,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Pretty print a sequence of data items
-
-:param data: the data stream to print
-:type data: sequence or iter
-:param start: the start position
-:type start: int
-:param end: the end position
-:type end: int</p></div>
+    <div>Pretty print a sequence of data items<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data:</span>sequence or iter</td><td class="fieldArgDesc">the data stream to print</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start:</span>int</td><td class="fieldArgDesc">the start position</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">end:</span>int</td><td class="fieldArgDesc">the end position</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -975,7 +913,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">print_string</span>(s, width=70):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L114">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L114">
       
       (source)
     </a>
@@ -983,12 +921,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Pretty print a string, breaking lines on whitespace
-
-:param s: the string to print, consisting of words and spaces
-:type s: str
-:param width: the display width
-:type width: int</p></div>
+    <div>Pretty print a string, breaking lines on whitespace<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">the string to print, consisting of words and spaces</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">width:</span>int</td><td class="fieldArgDesc">the display width</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1002,7 +935,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">py25</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L145">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L145">
       
       (source)
     </a>
@@ -1024,7 +957,7 @@ or pad_right to true in order to get additional ngrams:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">re_show</span>(regexp, string, left='{', right='}'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L166">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L166">
       
       (source)
     </a>
@@ -1032,19 +965,9 @@ or pad_right to true in order to get additional ngrams:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string with markers surrounding the matched substrings.
-Search str for substrings matching ``regexp`` and wrap the matches
-with braces.  This is convenient for learning about regular expressions.
-
-:param regexp: The regular expression.
-:type regexp: str
-:param string: The string being matched.
-:type string: str
-:param left: The left delimiter (printed before the matched substring)
-:type left: str
-:param right: The right delimiter (printed after the matched substring)
-:type right: str
-:rtype: str</p></div>
+    <div>Return a string with markers surrounding the matched substrings.
+Search str for substrings matching <tt class="rst-docutils literal">regexp</tt> and wrap the matches
+with braces.  This is convenient for learning about regular expressions.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">regexp:</span>str</td><td class="fieldArgDesc">The regular expression.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string:</span>str</td><td class="fieldArgDesc">The string being matched.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">left:</span>str</td><td class="fieldArgDesc">The left delimiter (printed before the matched substring)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">right:</span>str</td><td class="fieldArgDesc">The right delimiter (printed after the matched substring)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1058,7 +981,7 @@ with braces.  This is convenient for learning about regular expressions.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_proxy</span>(proxy, user=None, password=''):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L873">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L873">
       
       (source)
     </a>
@@ -1066,16 +989,12 @@ with braces.  This is convenient for learning about regular expressions.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Set the HTTP proxy for Python to download through.
-
-If ``proxy`` is None then tries to set proxy from environment or system
-settings.
-
-:param proxy: The HTTP proxy server to use. For example:
-    'http://proxy.example.com:3128/'
-:param user: The username to authenticate with. Use None to disable
-    authentication.
-:param password: The password to authenticate with.</p></div>
+    <div><p>Set the HTTP proxy for Python to download through.</p>
+<p>If <tt class="rst-docutils literal">proxy</tt> is None then tries to set proxy from environment or system
+settings.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">proxy</span></td><td class="fieldArgDesc">The HTTP proxy server to use. For example:
+'<a class="rst-reference external" href="http://proxy.example.com:3128/" target="_top">http://proxy.example.com:3128/</a>'</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">user</span></td><td class="fieldArgDesc">The username to authenticate with. Use None to disable
+authentication.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">password</span></td><td class="fieldArgDesc">The password to authenticate with.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1089,7 +1008,7 @@ settings.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">skipgrams</span>(sequence, n, k, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L756">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L756">
       
       (source)
     </a>
@@ -1097,23 +1016,18 @@ settings.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns all possible skipgrams generated from a sequence of items, as an iterator.
+    <div><p>Returns all possible skipgrams generated from a sequence of items, as an iterator.
 Skipgrams are ngrams that allows tokens to be skipped.
-Refer to http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf
-
-    &gt;&gt;&gt; sent = "Insurgents killed in ongoing fighting".split()
-    &gt;&gt;&gt; list(skipgrams(sent, 2, 2))
-    [('Insurgents', 'killed'), ('Insurgents', 'in'), ('Insurgents', 'ongoing'), ('killed', 'in'), ('killed', 'ongoing'), ('killed', 'fighting'), ('in', 'ongoing'), ('in', 'fighting'), ('ongoing', 'fighting')]
-    &gt;&gt;&gt; list(skipgrams(sent, 3, 2))
-    [('Insurgents', 'killed', 'in'), ('Insurgents', 'killed', 'ongoing'), ('Insurgents', 'killed', 'fighting'), ('Insurgents', 'in', 'ongoing'), ('Insurgents', 'in', 'fighting'), ('Insurgents', 'ongoing', 'fighting'), ('killed', 'in', 'ongoing'), ('killed', 'in', 'fighting'), ('killed', 'ongoing', 'fighting'), ('in', 'ongoing', 'fighting')]
-
-:param sequence: the source data to be converted into trigrams
-:type sequence: sequence or iter
-:param n: the degree of the ngrams
-:type n: int
-:param k: the skip distance
-:type  k: int
-:rtype: iter(tuple)</p></div>
+Refer to <a class="rst-reference external" href="http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf" target="_top">http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf</a></p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = <span class="py-string">"Insurgents killed in ongoing fighting"</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(skipgrams(sent, 2, 2))
+<span class="py-output">[('Insurgents', 'killed'), ('Insurgents', 'in'), ('Insurgents', 'ongoing'), ('killed', 'in'), ('killed', 'ongoing'), ('killed', 'fighting'), ('in', 'ongoing'), ('in', 'fighting'), ('ongoing', 'fighting')]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(skipgrams(sent, 3, 2))
+<span class="py-output">[('Insurgents', 'killed', 'in'), ('Insurgents', 'killed', 'ongoing'), ('Insurgents', 'killed', 'fighting'), ('Insurgents', 'in', 'ongoing'), ('Insurgents', 'in', 'fighting'), ('Insurgents', 'ongoing', 'fighting'), ('killed', 'in', 'ongoing'), ('killed', 'in', 'fighting'), ('killed', 'ongoing', 'fighting'), ('in', 'ongoing', 'fighting')]</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence:</span>sequence or iter</td><td class="fieldArgDesc">the source data to be converted into trigrams</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">n:</span>int</td><td class="fieldArgDesc">the degree of the ngrams</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">k:</span>int</td><td class="fieldArgDesc">the skip distance</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(tuple)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1127,7 +1041,7 @@ Refer to http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenwrap</span>(tokens, separator=' ', width=70):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L126">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L126">
       
       (source)
     </a>
@@ -1135,14 +1049,7 @@ Refer to http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Pretty print a list of text tokens, breaking lines on whitespace
-
-:param tokens: the tokens to print
-:type tokens: list
-:param separator: the string to use to separate tokens
-:type separator: str
-:param width: the display width (default=70)
-:type width: int</p></div>
+    <div>Pretty print a list of text tokens, breaking lines on whitespace<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list</td><td class="fieldArgDesc">the tokens to print</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">separator:</span>str</td><td class="fieldArgDesc">the string to use to separate tokens</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">width:</span>int</td><td class="fieldArgDesc">the display width (default=70)</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1156,7 +1063,7 @@ Refer to http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">transitive_closure</span>(graph, reflexive=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L464">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L464">
       
       (source)
     </a>
@@ -1164,17 +1071,11 @@ Refer to http://homepages.inf.ed.ac.uk/ballison/pdf/lrec_skipgrams.pdf
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate the transitive closure of a directed graph,
-optionally the reflexive transitive closure.
-
-The algorithm is a slight modification of the "Marking Algorithm" of
-Ioannidis &amp; Ramakrishnan (1998) "Efficient Transitive Closure Algorithms".
-
-:param graph: the initial graph, represented as a dictionary of sets
-:type graph: dict(set)
-:param reflexive: if set, also make the closure reflexive
-:type reflexive: bool
-:rtype: dict(set)</p></div>
+    <div><p>Calculate the transitive closure of a directed graph,
+optionally the reflexive transitive closure.</p>
+<p>The algorithm is a slight modification of the "Marking Algorithm" of
+Ioannidis &amp; Ramakrishnan (1998) "Efficient Transitive Closure Algorithms".</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graph:</span>dict(set)</td><td class="fieldArgDesc">the initial graph, represented as a dictionary of sets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reflexive:</span>bool</td><td class="fieldArgDesc">if set, also make the closure reflexive</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">dict(set)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1188,7 +1089,7 @@ Ioannidis &amp; Ramakrishnan (1998) "Efficient Transitive Closure Algorithms".
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">trigrams</span>(sequence, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L676">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L676">
       
       (source)
     </a>
@@ -1196,18 +1097,16 @@ Ioannidis &amp; Ramakrishnan (1998) "Efficient Transitive Closure Algorithms".
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the trigrams generated from a sequence of items, as an iterator.
-For example:
-
-    &gt;&gt;&gt; from nltk.util import trigrams
-    &gt;&gt;&gt; list(trigrams([1,2,3,4,5]))
-    [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
-
-Use trigrams for a list version of this function.
-
-:param sequence: the source data to be converted into trigrams
-:type sequence: sequence or iter
-:rtype: iter(tuple)</p></div>
+    <div><p>Return the trigrams generated from a sequence of items, as an iterator.
+For example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.util <span class="py-keyword">import</span> trigrams
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(trigrams([1,2,3,4,5]))
+<span class="py-output">[(1, 2, 3), (2, 3, 4), (3, 4, 5)]</span>
+</pre></blockquote>
+<p>Use trigrams for a list version of this function.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence:</span>sequence or iter</td><td class="fieldArgDesc">the source data to be converted into trigrams</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(tuple)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1221,7 +1120,7 @@ Use trigrams for a list version of this function.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unique_list</span>(xs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L436">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L436">
       
       (source)
     </a>
@@ -1243,7 +1142,7 @@ Use trigrams for a list version of this function.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">usage</span>(obj, selfname='self'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/util.py#L42">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/util.py#L42">
       
       (source)
     </a>
@@ -1263,7 +1162,7 @@ Use trigrams for a list version of this function.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

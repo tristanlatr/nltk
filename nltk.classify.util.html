@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Utility functions and classes for classifiers.</p></div>
+        <div>Utility functions and classes for classifiers.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id174">
+        <table class="children sortable" id="id177">
   
   
   <tr class="class">
@@ -158,7 +158,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">accuracy</span>(classifier, gold):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L90">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L90">
       
       (source)
     </a>
@@ -180,7 +180,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply_features</span>(feature_func, toks, labeled=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L27">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L27">
       
       (source)
     </a>
@@ -188,36 +188,33 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use the ``LazyMap`` class to construct a lazy list-like
-object that is analogous to ``map(feature_func, toks)``.  In
-particular, if ``labeled=False``, then the returned list-like
-object's values are equal to::
-
-    [feature_func(tok) for tok in toks]
-
-If ``labeled=True``, then the returned list-like object's values
-are equal to::
-
-    [(feature_func(tok), label) for (tok, label) in toks]
-
-The primary purpose of this function is to avoid the memory
+    <div><p>Use the <tt class="rst-docutils literal">LazyMap</tt> class to construct a lazy list-like
+object that is analogous to <tt class="rst-docutils literal">map(feature_func, toks)</tt>.  In
+particular, if <tt class="rst-docutils literal">labeled=False</tt>, then the returned list-like
+object's values are equal to:</p>
+<pre class="rst-literal-block">
+[feature_func(tok) for tok in toks]
+</pre>
+<p>If <tt class="rst-docutils literal">labeled=True</tt>, then the returned list-like object's values
+are equal to:</p>
+<pre class="rst-literal-block">
+[(feature_func(tok), label) for (tok, label) in toks]
+</pre>
+<p>The primary purpose of this function is to avoid the memory
 overhead involved in storing all the featuresets for every token
 in a corpus.  Instead, these featuresets are constructed lazily,
 as-needed.  The reduction in memory overhead can be especially
 significant when the underlying list of tokens is itself lazy (as
-is the case with many corpus readers).
-
-:param feature_func: The function that will be applied to each
-    token.  It should return a featureset -- i.e., a dict
-    mapping feature names to feature values.
-:param toks: The list of tokens to which ``feature_func`` should be
-    applied.  If ``labeled=True``, then the list elements will be
-    passed directly to ``feature_func()``.  If ``labeled=False``,
-    then the list elements should be tuples ``(tok,label)``, and
-    ``tok`` will be passed to ``feature_func()``.
-:param labeled: If true, then ``toks`` contains labeled tokens --
-    i.e., tuples of the form ``(tok, label)``.  (Default:
-    auto-detect based on types.)</p></div>
+is the case with many corpus readers).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">feature_func</span></td><td class="fieldArgDesc">The function that will be applied to each
+token.  It should return a featureset -- i.e., a dict
+mapping feature names to feature values.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">toks</span></td><td class="fieldArgDesc">The list of tokens to which <tt class="rst-docutils literal">feature_func</tt> should be
+applied.  If <tt class="rst-docutils literal">labeled=True</tt>, then the list elements will be
+passed directly to <tt class="rst-docutils literal">feature_func()</tt>.  If <tt class="rst-docutils literal">labeled=False</tt>,
+then the list elements should be tuples <tt class="rst-docutils literal">(tok,label)</tt>, and
+<tt class="rst-docutils literal">tok</tt> will be passed to <tt class="rst-docutils literal">feature_func()</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labeled</span></td><td class="fieldArgDesc">If true, then <tt class="rst-docutils literal">toks</tt> contains labeled tokens --
+i.e., tuples of the form <tt class="rst-docutils literal">(tok, label)</tt>.  (Default:
+auto-detect based on types.)</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -231,7 +228,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">attested_labels</span>(tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L72">
       
       (source)
     </a>
@@ -239,12 +236,9 @@ is the case with many corpus readers).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: A list of all labels that are attested in the given list
-    of tokens.
-:rtype: list of (immutable)
-:param tokens: The list of classified tokens from which to extract
-    labels.  A classified token has the form ``(token, label)``.
-:type tokens: list</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list</td><td class="fieldArgDesc">The list of classified tokens from which to extract
+labels.  A classified token has the form <tt class="rst-docutils literal">(token, label)</tt>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of (immutable)</td><td class="fieldArgDesc">A list of all labels that are attested in the given list
+of tokens.</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -258,7 +252,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">binary_names_demo_features</span>(name):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L170">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L170">
       
       (source)
     </a>
@@ -280,7 +274,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">check_megam_config</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L332">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L332">
       
       (source)
     </a>
@@ -288,7 +282,7 @@ is the case with many corpus readers).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Checks whether the MEGAM binary is configured.</p></div>
+    <div>Checks whether the MEGAM binary is configured.</div>
   </div>
 </div><div class="basefunction">
   
@@ -302,7 +296,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">log_likelihood</span>(classifier, gold):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L84">
       
       (source)
     </a>
@@ -324,7 +318,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">names_demo</span>(trainer, features=names_demo_features):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L183">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L183">
       
       (source)
     </a>
@@ -346,7 +340,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">names_demo_features</span>(name):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L159">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L159">
       
       (source)
     </a>
@@ -368,7 +362,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">partial_names_demo</span>(trainer, features=names_demo_features):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L229">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L229">
       
       (source)
     </a>
@@ -390,7 +384,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">wsd_demo</span>(trainer, word, features, n=1000):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L287">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L287">
       
       (source)
     </a>
@@ -412,7 +406,7 @@ is the case with many corpus readers).
   <div class="functionHeader">
     
     <span class="py-defname">_inst_cache</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/util.py#L284">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/util.py#L284">
       
       (source)
     </a>
@@ -432,7 +426,7 @@ is the case with many corpus readers).
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

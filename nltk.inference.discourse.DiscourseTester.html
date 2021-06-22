@@ -65,28 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">DiscourseTester</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L171" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DiscourseTester</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L171" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.inference.discourse.DiscourseTester">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Check properties of an ongoing discourse.</p></div>
+        <div>Check properties of an ongoing discourse.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id704">
+        <table class="children sortable" id="id707">
   
   
   <tr class="staticmethod">
     
     <td>Static Method</td>
     <td><code><a href="#multiply">multiply</a></code></td>
-    <td><span>Multiply every thread in ``discourse`` by every reading in ``readings``.</span></td>
+    <td><span>Multiply every thread in <tt class="rst-docutils literal">discourse</tt> by every reading in <tt class="rst-docutils literal">readings</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Initialize a ``DiscourseTester``.</span></td>
+    <td><span>Initialize a <tt class="rst-docutils literal">DiscourseTester</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -106,7 +106,7 @@
     
     <td>Method</td>
     <td><code><a href="#expand_threads">expand_threads</a></code></td>
-    <td><span>Given a thread ID, find the list of ``logic.Expression`` objects corresponding to the reading IDs in that thread.</span></td>
+    <td><span>Given a thread ID, find the list of <tt class="rst-docutils literal">logic.Expression</tt> objects corresponding to the reading IDs in that thread.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -141,12 +141,12 @@
     
     <td>Method</td>
     <td><code><a href="#_construct_readings">_construct_readings</a></code></td>
-    <td><span>Use ``self._sentences`` to construct a value for ``self._readings``.</span></td>
+    <td><span>Use <tt class="rst-docutils literal">self._sentences</tt> to construct a value for <tt class="rst-docutils literal">self._readings</tt>.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
     <td><code><a href="#_construct_threads">_construct_threads</a></code></td>
-    <td><span>Use ``self._readings`` to construct a value for ``self._threads`` and use the model builder to construct a value for ``self._filtered_threads``</span></td>
+    <td><span>Use <tt class="rst-docutils literal">self._readings</tt> to construct a value for <tt class="rst-docutils literal">self._threads</tt> and use the model builder to construct a value for <tt class="rst-docutils literal">self._filtered_threads</tt></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -161,7 +161,7 @@
     
     <td>Method</td>
     <td><code><a href="#_show_threads">_show_threads</a></code></td>
-    <td><span>Print out the value of ``self._threads`` or ``self._filtered_hreads``</span></td>
+    <td><span>Print out the value of <tt class="rst-docutils literal">self._threads</tt> or <tt class="rst-docutils literal">self._filtered_hreads</tt></span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -223,7 +223,7 @@
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">multiply</span>(discourse, readings):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L515">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L515">
       
       (source)
     </a>
@@ -231,16 +231,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Multiply every thread in ``discourse`` by every reading in ``readings``.
-
-Given discourse = [['A'], ['B']], readings = ['a', 'b', 'c'] , returns
-[['A', 'a'], ['A', 'b'], ['A', 'c'], ['B', 'a'], ['B', 'b'], ['B', 'c']]
-
-:param discourse: the current list of readings
-:type discourse: list of lists
-:param readings: an additional list of readings
-:type readings: list(Expression)
-:rtype: A list of lists</p></div>
+    <div><p>Multiply every thread in <tt class="rst-docutils literal">discourse</tt> by every reading in <tt class="rst-docutils literal">readings</tt>.</p>
+<p>Given discourse = [['A'], ['B']], readings = ['a', 'b', 'c'] , returns
+[['A', 'a'], ['A', 'b'], ['A', 'c'], ['B', 'a'], ['B', 'b'], ['B', 'c']]</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">discourse:</span>list of lists</td><td class="fieldArgDesc">the current list of readings</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">readings:</span>list(Expression)</td><td class="fieldArgDesc">an additional list of readings</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">A list of lists</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -254,7 +248,7 @@ Given discourse = [['A'], ['B']], readings = ['a', 'b', 'c'] , returns
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, input, reading_command=None, background=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L176">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L176">
       
       (source)
     </a>
@@ -262,12 +256,7 @@ Given discourse = [['A'], ['B']], readings = ['a', 'b', 'c'] , returns
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Initialize a ``DiscourseTester``.
-
-:param input: the discourse sentences
-:type input: list of str
-:param background: Formulas which express background assumptions
-:type background: list(Expression)</p></div>
+    <div>Initialize a <tt class="rst-docutils literal">DiscourseTester</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">input:</span>list of str</td><td class="fieldArgDesc">the discourse sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reading_command</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">background:</span>list(Expression)</td><td class="fieldArgDesc">Formulas which express background assumptions</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -281,7 +270,7 @@ Given discourse = [['A'], ['B']], readings = ['a', 'b', 'c'] , returns
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_background</span>(self, background, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L484">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L484">
       
       (source)
     </a>
@@ -289,11 +278,11 @@ Given discourse = [['A'], ['B']], readings = ['a', 'b', 'c'] , returns
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a list of background assumptions for reasoning about the discourse.
-
-When called,  this method also updates the discourse model's set of readings and threads.
+    <div><p>Add a list of background assumptions for reasoning about the discourse.</p>
+<p>When called,  this method also updates the discourse model's set of readings and threads.
 :param background: Formulas which contain background information
-:type background: list(Expression)</p></div>
+:type background: list(Expression)</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -307,7 +296,7 @@ When called,  this method also updates the discourse model's set of readings and
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_sentence</span>(self, sentence, informchk=False, consistchk=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L214">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L214">
       
       (source)
     </a>
@@ -315,13 +304,13 @@ When called,  this method also updates the discourse model's set of readings and
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a sentence to the current discourse.
-
-Updates ``self._input`` and ``self._sentences``.
+    <div><p>Add a sentence to the current discourse.</p>
+<p>Updates <tt class="rst-docutils literal">self._input</tt> and <tt class="rst-docutils literal">self._sentences</tt>.
 :param sentence: An input sentence
 :type sentence: str
-:param informchk: if ``True``, check that the result of adding the sentence is thread-informative. Updates ``self._readings``.
-:param consistchk: if ``True``, check that the result of adding the sentence is thread-consistent. Updates ``self._readings``.</p></div>
+:param informchk: if <tt class="rst-docutils literal">True</tt>, check that the result of adding the sentence is thread-informative. Updates <tt class="rst-docutils literal">self._readings</tt>.
+:param consistchk: if <tt class="rst-docutils literal">True</tt>, check that the result of adding the sentence is thread-consistent. Updates <tt class="rst-docutils literal">self._readings</tt>.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -335,7 +324,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">background</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L504">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L504">
       
       (source)
     </a>
@@ -343,7 +332,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Show the current background assumptions.</p></div>
+    <div>Show the current background assumptions.</div>
   </div>
 </div><div class="basemethod">
   
@@ -357,7 +346,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">expand_threads</span>(self, thread_id, threads=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L399">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L399">
       
       (source)
     </a>
@@ -365,14 +354,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a thread ID, find the list of ``logic.Expression`` objects corresponding to the reading IDs in that thread.
-
-:param thread_id: thread ID
-:type thread_id: str
-:param threads: a mapping from thread IDs to lists of reading IDs
-:type threads: dict
-:return: A list of pairs ``(rid, reading)`` where reading is the ``logic.Expression`` associated with a reading ID
-:rtype: list of tuple</p></div>
+    <div>Given a thread ID, find the list of <tt class="rst-docutils literal">logic.Expression</tt> objects corresponding to the reading IDs in that thread.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">thread_id:</span>str</td><td class="fieldArgDesc">thread ID</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">threads:</span>dict</td><td class="fieldArgDesc">a mapping from thread IDs to lists of reading IDs</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of tuple</td><td class="fieldArgDesc">A list of pairs <tt class="rst-docutils literal">(rid, reading)</tt> where reading is the <tt class="rst-docutils literal">logic.Expression</tt> associated with a reading ID</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -386,7 +368,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">grammar</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L276">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L276">
       
       (source)
     </a>
@@ -394,7 +376,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print out the grammar in use for parsing input sentences</p></div>
+    <div>Print out the grammar in use for parsing input sentences</div>
   </div>
 </div><div class="basemethod">
   
@@ -408,7 +390,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">models</span>(self, thread_id=None, show=True, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L456">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L456">
       
       (source)
     </a>
@@ -416,11 +398,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Call Mace4 to build a model for each current discourse thread.
-
-:param thread_id: thread ID
-:type thread_id: str
-:param show: If ``True``, display the model that has been found.</p></div>
+    <div>Call Mace4 to build a model for each current discourse thread.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">thread_id:</span>str</td><td class="fieldArgDesc">thread ID</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">show</span></td><td class="fieldArgDesc">If <tt class="rst-docutils literal">True</tt>, display the model that has been found.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -434,7 +412,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">readings</span>(self, sentence=None, threaded=False, verbose=True, filter=False, show_thread_readings=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L368">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L368">
       
       (source)
     </a>
@@ -442,12 +420,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct and show the readings of the discourse (or of a single sentence).
-
-:param sentence: test just this sentence
-:type sentence: str
-:param threaded: if ``True``, print out each thread ID and the corresponding thread.
-:param filter: if ``True``, only print out consistent thread IDs and threads.</p></div>
+    <div>Construct and show the readings of the discourse (or of a single sentence).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence:</span>str</td><td class="fieldArgDesc">test just this sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">threaded</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt>, print out each thread ID and the corresponding thread.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filter</span></td><td class="fieldArgDesc">if <tt class="rst-docutils literal">True</tt>, only print out consistent thread IDs and threads.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">show_thread_readings</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -461,7 +434,7 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">retract_sentence</span>(self, sentence, verbose=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L250">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L250">
       
       (source)
     </a>
@@ -469,12 +442,12 @@ Updates ``self._input`` and ``self._sentences``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove a sentence from the current discourse.
-
-Updates ``self._input``, ``self._sentences`` and ``self._readings``.
+    <div><p>Remove a sentence from the current discourse.</p>
+<p>Updates <tt class="rst-docutils literal">self._input</tt>, <tt class="rst-docutils literal">self._sentences</tt> and <tt class="rst-docutils literal">self._readings</tt>.
 :param sentence: An input sentence
 :type sentence: str
-:param verbose: If ``True``,  report on the updated list of sentences.</p></div>
+:param verbose: If <tt class="rst-docutils literal">True</tt>,  report on the updated list of sentences.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -488,7 +461,7 @@ Updates ``self._input``, ``self._sentences`` and ``self._readings``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sentences</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L207">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L207">
       
       (source)
     </a>
@@ -496,7 +469,7 @@ Updates ``self._input``, ``self._sentences`` and ``self._readings``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Display the list of sentences in the current discourse.</p></div>
+    <div>Display the list of sentences in the current discourse.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -510,7 +483,7 @@ Updates ``self._input``, ``self._sentences`` and ``self._readings``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_check_consistency</span>(self, threads, show=False, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L422">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L422">
       
       (source)
     </a>
@@ -532,7 +505,7 @@ Updates ``self._input``, ``self._sentences`` and ``self._readings``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_construct_readings</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L294">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L294">
       
       (source)
     </a>
@@ -540,7 +513,7 @@ Updates ``self._input``, ``self._sentences`` and ``self._readings``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use ``self._sentences`` to construct a value for ``self._readings``.</p></div>
+    <div>Use <tt class="rst-docutils literal">self._sentences</tt> to construct a value for <tt class="rst-docutils literal">self._readings</tt>.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -554,7 +527,7 @@ Updates ``self._input``, ``self._sentences`` and ``self._readings``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_construct_threads</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L310">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L310">
       
       (source)
     </a>
@@ -562,8 +535,8 @@ Updates ``self._input``, ``self._sentences`` and ``self._readings``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use ``self._readings`` to construct a value for ``self._threads``
-and use the model builder to construct a value for ``self._filtered_threads``</p></div>
+    <div>Use <tt class="rst-docutils literal">self._readings</tt> to construct a value for <tt class="rst-docutils literal">self._threads</tt>
+and use the model builder to construct a value for <tt class="rst-docutils literal">self._filtered_threads</tt></div>
   </div>
 </div><div class="basemethod private">
   
@@ -577,7 +550,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_readings</span>(self, sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L286">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L286">
       
       (source)
     </a>
@@ -585,9 +558,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Build a list of semantic readings for a sentence.
-
-:rtype: list(Expression)</p></div>
+    <div>Build a list of semantic readings for a sentence.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Expression)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -601,7 +572,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_show_readings</span>(self, sentence=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L329">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L329">
       
       (source)
     </a>
@@ -609,7 +580,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print out the readings for  the discourse (or a single sentence).</p></div>
+    <div>Print out the readings for  the discourse (or a single sentence).</div>
   </div>
 </div><div class="basemethod private">
   
@@ -623,7 +594,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_show_threads</span>(self, filter=False, show_thread_readings=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L346">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L346">
       
       (source)
     </a>
@@ -631,7 +602,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print out the value of ``self._threads`` or ``self._filtered_hreads``</p></div>
+    <div>Print out the value of <tt class="rst-docutils literal">self._threads</tt> or <tt class="rst-docutils literal">self._filtered_hreads</tt></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -645,7 +616,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-defname">_background</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L199">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L199">
       
       (source)
     </a>
@@ -667,7 +638,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-defname">_filtered_threads</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L193">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L193">
       
       (source)
     </a>
@@ -689,7 +660,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-defname">_input</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L185">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L185">
       
       (source)
     </a>
@@ -711,7 +682,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-defname">_models</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L187">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L187">
       
       (source)
     </a>
@@ -733,7 +704,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-defname">_reading_command</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L189">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L189">
       
       (source)
     </a>
@@ -755,7 +726,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-defname">_readings</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L188">
       
       (source)
     </a>
@@ -777,7 +748,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-defname">_sentences</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L186">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L186">
       
       (source)
     </a>
@@ -799,7 +770,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="functionHeader">
     
     <span class="py-defname">_threads</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/inference/discourse.py#L192">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/inference/discourse.py#L192">
       
       (source)
     </a>
@@ -819,7 +790,7 @@ and use the model builder to construct a value for ``self._filtered_threads``</p
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

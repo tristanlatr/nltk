@@ -65,18 +65,18 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">MTECorpusReader</span>(<span title="nltk.corpus.reader.TaggedCorpusReader">TaggedCorpusReader</span>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L209" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MTECorpusReader</span>(<span title="nltk.corpus.reader.TaggedCorpusReader">TaggedCorpusReader</span>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L209" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.mte.MTECorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for corpora following the TEI-p5 xml scheme, such as MULTEXT-East.
+        <div>Reader for corpora following the TEI-p5 xml scheme, such as MULTEXT-East.
 MULTEXT-East contains part-of-speech-tagged words with a quite precise tagging
-scheme. These tags can be converted to the Universal tagset</p></div>
+scheme. These tags can be converted to the Universal tagset</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id342">
+        <table class="children sortable" id="id345">
   
   
   <tr class="method">
@@ -108,7 +108,7 @@ scheme. These tags can be converted to the Universal tagset</p></div>
     
     <td>Method</td>
     <td><code><a href="#raw">raw</a></code></td>
-    <td><span>:param fileids: A list specifying the fileids that should be used. :return: the given file(s) as a single string. :rtype: str</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -138,7 +138,7 @@ scheme. These tags can be converted to the Universal tagset</p></div>
     
     <td>Method</td>
     <td><code><a href="#words">words</a></code></td>
-    <td><span>:param fileids: A list specifying the fileids that should be used. :return: the given file(s) as a list of words and punctuation symbols. :rtype: list(str)</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -165,7 +165,7 @@ scheme. These tags can be converted to the Universal tagset</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root=None, fileids=None, encoding='utf8'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L216">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L216">
       
       (source)
     </a>
@@ -173,15 +173,13 @@ scheme. These tags can be converted to the Universal tagset</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new MTECorpusreader for a set of documents
-located at the given root directory.  Example usage:
-
-    &gt;&gt;&gt; root = '/...path to corpus.../'
-    &gt;&gt;&gt; reader = MTECorpusReader(root, 'oana-*.xml', 'utf8') # doctest: +SKIP
-
-:param root: The root directory for this corpus. (default points to location in multext config file)
-:param fileids: A list or regexp specifying the fileids in this corpus. (default is oana-en.xml)
-:param enconding: The encoding of the given files (default is utf8)</p></div>
+    <div><p>Construct a new MTECorpusreader for a set of documents
+located at the given root directory.  Example usage:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>root = <span class="py-string">'/...path to corpus.../'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>reader = MTECorpusReader(root, <span class="py-string">'oana-*.xml'</span>, <span class="py-string">'utf8'</span>) <span class="py-comment"># doctest: +SKIP</span></pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for this corpus. (default points to location in multext config file)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list or regexp specifying the fileids in this corpus. (default is oana-en.xml)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">enconding</span></td><td class="fieldArgDesc">The encoding of the given files (default is utf8)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -195,7 +193,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">lemma_paras</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L375">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L375">
       
       (source)
     </a>
@@ -203,11 +201,11 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:return: the given file(s) as a list of paragraphs, each encoded as a
-         list of sentences, which are in turn encoded as a list of
-         tuples of the word and the corresponding lemma (word, lemma)
-:rtype: list(List(List(tuple(str, str))))</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(List(List(tuple(str, str))))</td><td class="fieldArgDesc">the given file(s) as a list of paragraphs, each encoded as a
+list of sentences, which are in turn encoded as a list of
+tuples of the word and the corresponding lemma (word, lemma)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -221,7 +219,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">lemma_sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L337">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L337">
       
       (source)
     </a>
@@ -229,11 +227,11 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:return: the given file(s) as a list of sentences or utterances, each
-         encoded as a list of tuples of the word and the corresponding
-         lemma (word, lemma)
-:rtype: list(list(tuple(str, str)))</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(tuple(str, str)))</td><td class="fieldArgDesc">the given file(s) as a list of sentences or utterances, each
+encoded as a list of tuples of the word and the corresponding
+lemma (word, lemma)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -247,7 +245,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">lemma_words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L300">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L300">
       
       (source)
     </a>
@@ -255,10 +253,10 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:return: the given file(s) as a list of words, the corresponding lemmas
-         and punctuation symbols, encoded as tuples (word, lemma)
-:rtype: list(tuple(str,str))</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(str,str))</td><td class="fieldArgDesc">the given file(s) as a list of words, the corresponding lemmas
+and punctuation symbols, encoded as tuples (word, lemma)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -272,7 +270,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">paras</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L286">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L286">
       
       (source)
     </a>
@@ -280,10 +278,10 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:return: the given file(s) as a list of paragraphs, each encoded as a list
-         of sentences, which are in turn encoded as lists of word string
-:rtype: list(list(list(str)))</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(list(str)))</td><td class="fieldArgDesc">the given file(s) as a list of paragraphs, each encoded as a list
+of sentences, which are in turn encoded as lists of word string</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -297,7 +295,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L251">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L251">
       
       (source)
     </a>
@@ -305,9 +303,9 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:return: the given file(s) as a single string.
-:rtype: str</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">the given file(s) as a single string.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -321,7 +319,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">readme</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L243">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L243">
       
       (source)
     </a>
@@ -329,9 +327,9 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Prints some information about this corpus.
+    <div>Prints some information about this corpus.
 :return: the content of the attached README file
-:rtype: str</p></div>
+:rtype: str</div>
   </div>
 </div><div class="basemethod">
   
@@ -345,7 +343,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L272">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L272">
       
       (source)
     </a>
@@ -353,10 +351,10 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:return: the given file(s) as a list of sentences or utterances,
-         each encoded as a list of word strings
-:rtype: list(list(str))</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(str))</td><td class="fieldArgDesc">the given file(s) as a list of sentences or utterances,
+each encoded as a list of word strings</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -370,7 +368,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_paras</span>(self, fileids=None, tagset='msd', tags=''):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L390">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L390">
       
       (source)
     </a>
@@ -378,15 +376,13 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:param tagset: The tagset that should be used in the returned object,
-               either "universal" or "msd", "msd" is the default
-:param tags: An MSD Tag that is used to filter all parts of the used corpus
-             that are not more precise or at least equal to the given tag
-:return: the given file(s) as a list of paragraphs, each encoded as a
-         list of sentences, which are in turn encoded as a list
-         of (word,tag) tuples
-:rtype: list(list(list(tuple(str, str))))</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc">The tagset that should be used in the returned object,
+either "universal" or "msd", "msd" is the default</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags</span></td><td class="fieldArgDesc">An MSD Tag that is used to filter all parts of the used corpus
+that are not more precise or at least equal to the given tag</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(list(tuple(str, str))))</td><td class="fieldArgDesc">the given file(s) as a list of paragraphs, each encoded as a
+list of sentences, which are in turn encoded as a list
+of (word,tag) tuples</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -400,7 +396,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, tagset='msd', tags=''):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L352">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L352">
       
       (source)
     </a>
@@ -408,14 +404,12 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:param tagset: The tagset that should be used in the returned object,
-               either "universal" or "msd", "msd" is the default
-:param tags: An MSD Tag that is used to filter all parts of the used corpus
-             that are not more precise or at least equal to the given tag
-:return: the given file(s) as a list of sentences or utterances, each
-         each encoded as a list of (word,tag) tuples
-:rtype: list(list(tuple(str, str)))</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc">The tagset that should be used in the returned object,
+either "universal" or "msd", "msd" is the default</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags</span></td><td class="fieldArgDesc">An MSD Tag that is used to filter all parts of the used corpus
+that are not more precise or at least equal to the given tag</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(tuple(str, str)))</td><td class="fieldArgDesc">the given file(s) as a list of sentences or utterances, each
+each encoded as a list of (word,tag) tuples</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -429,7 +423,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, tagset='msd', tags=''):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L314">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L314">
       
       (source)
     </a>
@@ -437,14 +431,12 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:param tagset: The tagset that should be used in the returned object,
-               either "universal" or "msd", "msd" is the default
-:param tags: An MSD Tag that is used to filter all parts of the used corpus
-             that are not more precise or at least equal to the given tag
-:return: the given file(s) as a list of tagged words and punctuation symbols
-         encoded as tuples (word, tag)
-:rtype: list(tuple(str, str))</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc">The tagset that should be used in the returned object,
+either "universal" or "msd", "msd" is the default</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags</span></td><td class="fieldArgDesc">An MSD Tag that is used to filter all parts of the used corpus
+that are not more precise or at least equal to the given tag</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(str, str))</td><td class="fieldArgDesc">the given file(s) as a list of tagged words and punctuation symbols
+encoded as tuples (word, tag)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -458,7 +450,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L259">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L259">
       
       (source)
     </a>
@@ -466,9 +458,9 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">    :param fileids: A list specifying the fileids that should be used.
-:return: the given file(s) as a list of words and punctuation symbols.
-:rtype: list(str)</p></div>
+    <div><blockquote>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list specifying the fileids that should be used.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file(s) as a list of words and punctuation symbols.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -482,7 +474,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__fileids</span>(self, fileids):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/mte.py#L230">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/mte.py#L230">
       
       (source)
     </a>
@@ -502,7 +494,7 @@ located at the given root directory.  Example usage:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

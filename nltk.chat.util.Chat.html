@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Chat</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L35" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Chat</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L35" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.chat.util.Chat">View In Hierarchy</a></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id96">
+        <table class="children sortable" id="id99">
   
   
   <tr class="method">
@@ -143,7 +143,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, pairs, reflections={}):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L36">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L36">
       
       (source)
     </a>
@@ -151,18 +151,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Initialize the chatbot.  Pairs is a list of patterns and responses.  Each
+    <div>Initialize the chatbot.  Pairs is a list of patterns and responses.  Each
 pattern is a regular expression matching the user's statement or question,
 e.g. r'I like (.*)'.  For each such pattern a list of possible responses
 is given, e.g. ['Why do you like %1', 'Did you ever dislike %1'].  Material
 which is matched by parenthesized sections of the patterns (e.g. .*) is mapped to
-the numbered positions in the responses, e.g. %1.
-
-:type pairs: list of tuple
-:param pairs: The patterns and responses
-:type reflections: dict
-:param reflections: A mapping between first and second person expressions
-:rtype: None</p></div>
+the numbered positions in the responses, e.g. %1.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pairs:</span>list of tuple</td><td class="fieldArgDesc">The patterns and responses</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reflections:</span>dict</td><td class="fieldArgDesc">A mapping between first and second person expressions</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -176,7 +170,7 @@ the numbered positions in the responses, e.g. %1.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">converse</span>(self, quit='quit'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L114">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L114">
       
       (source)
     </a>
@@ -198,7 +192,7 @@ the numbered positions in the responses, e.g. %1.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">respond</span>(self, str):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L88">
       
       (source)
     </a>
@@ -206,11 +200,7 @@ the numbered positions in the responses, e.g. %1.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Generate a response to the user input.
-
-:type str: str
-:param str: The string to be mapped
-:rtype: str</p></div>
+    <div>Generate a response to the user input.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str:</span>str</td><td class="fieldArgDesc">The string to be mapped</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -224,7 +214,7 @@ the numbered positions in the responses, e.g. %1.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_compile_reflections</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L56">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L56">
       
       (source)
     </a>
@@ -246,7 +236,7 @@ the numbered positions in the responses, e.g. %1.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_substitute</span>(self, str):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L62">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L62">
       
       (source)
     </a>
@@ -254,12 +244,8 @@ the numbered positions in the responses, e.g. %1.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Substitute words in the string, according to the specified reflections,
-e.g. "I'm" -&gt; "you are"
-
-:type str: str
-:param str: The string to be mapped
-:rtype: str</p></div>
+    <div>Substitute words in the string, according to the specified reflections,
+e.g. "I'm" -&gt; "you are"<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str:</span>str</td><td class="fieldArgDesc">The string to be mapped</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -273,7 +259,7 @@ e.g. "I'm" -&gt; "you are"
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_wildcards</span>(self, response, match):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L76">
       
       (source)
     </a>
@@ -295,7 +281,7 @@ e.g. "I'm" -&gt; "you are"
   <div class="functionHeader">
     
     <span class="py-defname">_pairs</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L52">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L52">
       
       (source)
     </a>
@@ -317,7 +303,7 @@ e.g. "I'm" -&gt; "you are"
   <div class="functionHeader">
     
     <span class="py-defname">_reflections</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L53">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L53">
       
       (source)
     </a>
@@ -339,7 +325,7 @@ e.g. "I'm" -&gt; "you are"
   <div class="functionHeader">
     
     <span class="py-defname">_regex</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chat/util.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chat/util.py#L54">
       
       (source)
     </a>
@@ -359,7 +345,7 @@ e.g. "I'm" -&gt; "you are"
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

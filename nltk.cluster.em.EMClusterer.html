@@ -65,12 +65,12 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">EMClusterer</span>(<a href="nltk.cluster.util.VectorSpaceClusterer.html" title="nltk.cluster.util.VectorSpaceClusterer">VectorSpaceClusterer</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L16" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">EMClusterer</span>(<a href="nltk.cluster.util.VectorSpaceClusterer.html" title="nltk.cluster.util.VectorSpaceClusterer">VectorSpaceClusterer</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L16" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.cluster.em.EMClusterer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The Gaussian EM clusterer models the vectors as being produced by
+        <div>The Gaussian EM clusterer models the vectors as being produced by
 a mixture of k Gaussian sources. The parameters of these sources
 (prior probability, mean and covariance matrix) are then found to
 maximise the likelihood of the given data. This is done with the
@@ -80,11 +80,11 @@ the membership probabilities for each vector in each of the
 clusters; this is the 'E' step. The cluster parameters are then
 updated in the 'M' step using the maximum likelihood estimate from
 the cluster membership probabilities. This process continues until
-the likelihood of the data does not significantly increase.</p></div>
+the likelihood of the data does not significantly increase.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id185">
+        <table class="children sortable" id="id188">
   
   
   <tr class="method">
@@ -163,7 +163,7 @@ the likelihood of the data does not significantly increase.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.cluster.util.VectorSpaceClusterer.html">VectorSpaceClusterer</a></code>:
           </p>
-          <table class="children sortable" id="id186">
+          <table class="children sortable" id="id189">
   
   
   <tr class="basemethod">
@@ -212,7 +212,7 @@ the likelihood of the data does not significantly increase.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.cluster.api.ClusterI.html">ClusterI</a></code> (via <code><a href="nltk.cluster.util.VectorSpaceClusterer.html">VectorSpaceClusterer</a></code>):
           </p>
-          <table class="children sortable" id="id187">
+          <table class="children sortable" id="id190">
   
   
   <tr class="basemethod">
@@ -251,7 +251,7 @@ the likelihood of the data does not significantly increase.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, initial_means, priors=None, covariance_matrices=None, conv_threshold=1e-06, bias=0.1, normalise=False, svd_dimensions=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L31">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L31">
       
       (source)
     </a>
@@ -259,26 +259,11 @@ the likelihood of the data does not significantly increase.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#__init__">nltk.cluster.util.VectorSpaceClusterer.__init__</a></code></div>
     
-    <div><p class="pre">Creates an EM clusterer with the given starting parameters,
-convergence threshold and vector mangling parameters.
-
-:param  initial_means: the means of the gaussian cluster centers
-:type   initial_means: [seq of] numpy array or seq of SparseArray
-:param  priors: the prior probability for each cluster
-:type   priors: numpy array or seq of float
-:param  covariance_matrices: the covariance matrix for each cluster
-:type   covariance_matrices: [seq of] numpy array
-:param  conv_threshold: maximum change in likelihood before deemed
-            convergent
-:type   conv_threshold: int or float
-:param  bias: variance bias used to ensure non-singular covariance
-              matrices
-:type   bias: float
-:param  normalise:  should vectors be normalised to length 1
-:type   normalise:  boolean
-:param  svd_dimensions: number of dimensions to use in reducing vector
-                       dimensionsionality with SVD
-:type   svd_dimensions: int</p></div>
+    <div>Creates an EM clusterer with the given starting parameters,
+convergence threshold and vector mangling parameters.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">initial_means:</span>[seq of] numpy array or seq of SparseArray</td><td class="fieldArgDesc">the means of the gaussian cluster centers</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">priors:</span>numpy array or seq of float</td><td class="fieldArgDesc">the prior probability for each cluster</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">covariance_matrices:</span>[seq of] numpy array</td><td class="fieldArgDesc">the covariance matrix for each cluster</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">conv_threshold:</span>int or float</td><td class="fieldArgDesc">maximum change in likelihood before deemed
+convergent</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bias:</span>float</td><td class="fieldArgDesc">variance bias used to ensure non-singular covariance
+matrices</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">normalise:</span>boolean</td><td class="fieldArgDesc">should vectors be normalised to length 1</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">svd_dimensions:</span>int</td><td class="fieldArgDesc">number of dimensions to use in reducing vector
+dimensionsionality with SVD</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -292,7 +277,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L175">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L175">
       
       (source)
     </a>
@@ -314,7 +299,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify_vectorspace</span>(self, vector):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L134">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L134">
       
       (source)
     </a>
@@ -322,7 +307,7 @@ convergence threshold and vector mangling parameters.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#classify_vectorspace">nltk.cluster.util.VectorSpaceClusterer.classify_vectorspace</a></code></div>
     
-    <div><p class="pre">Returns the index of the appropriate cluster for the vector.</p></div>
+    <div>Returns the index of the appropriate cluster for the vector.</div>
   </div>
 </div><div class="basemethod">
   
@@ -336,7 +321,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cluster_vectorspace</span>(self, vectors, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L74">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L74">
       
       (source)
     </a>
@@ -344,7 +329,7 @@ convergence threshold and vector mangling parameters.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#cluster_vectorspace">nltk.cluster.util.VectorSpaceClusterer.cluster_vectorspace</a></code></div>
     
-    <div><p class="pre">Finds the clusters using the given set of vectors.</p></div>
+    <div>Finds the clusters using the given set of vectors.</div>
   </div>
 </div><div class="basemethod">
   
@@ -358,7 +343,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">likelihood_vectorspace</span>(self, vector, cluster):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L144">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L144">
       
       (source)
     </a>
@@ -366,7 +351,7 @@ convergence threshold and vector mangling parameters.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#likelihood_vectorspace">nltk.cluster.util.VectorSpaceClusterer.likelihood_vectorspace</a></code></div>
     
-    <div><p class="pre">Returns the likelihood of the vector belonging to the cluster.</p></div>
+    <div>Returns the likelihood of the vector belonging to the cluster.</div>
   </div>
 </div><div class="basemethod">
   
@@ -380,7 +365,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">num_clusters</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L71">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L71">
       
       (source)
     </a>
@@ -388,7 +373,7 @@ convergence threshold and vector mangling parameters.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.api.ClusterI.html#num_clusters">nltk.cluster.api.ClusterI.num_clusters</a></code></div>
     
-    <div><p class="pre">Returns the number of clusters.</p></div>
+    <div>Returns the number of clusters.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -402,7 +387,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_gaussian</span>(self, mean, cvm, x):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L150">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L150">
       
       (source)
     </a>
@@ -424,7 +409,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_loglikelihood</span>(self, vectors, priors, means, covariances):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L166">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L166">
       
       (source)
     </a>
@@ -446,7 +431,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-defname">_bias</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L69">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L69">
       
       (source)
     </a>
@@ -468,7 +453,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-defname">_conv_threshold</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L66">
       
       (source)
     </a>
@@ -490,7 +475,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-defname">_covariance_matrices</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L67">
       
       (source)
     </a>
@@ -512,7 +497,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-defname">_means</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L64">
       
       (source)
     </a>
@@ -534,7 +519,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-defname">_num_clusters</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L65">
       
       (source)
     </a>
@@ -556,7 +541,7 @@ convergence threshold and vector mangling parameters.
   <div class="functionHeader">
     
     <span class="py-defname">_priors</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/em.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/em.py#L68">
       
       (source)
     </a>
@@ -576,7 +561,7 @@ convergence threshold and vector mangling parameters.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

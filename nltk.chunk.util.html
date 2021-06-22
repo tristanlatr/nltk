@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id129">
+        <table class="children sortable" id="id132">
   
   
   <tr class="class">
@@ -121,7 +121,7 @@
     
     <td>Function</td>
     <td><code><a href="#tree2conlltags">tree2conlltags</a></code></td>
-    <td><span>Return a list of 3-tuples containing ``(word, tag, IOB-tag)``. Convert a tree to the CoNLL IOB tag format.</span></td>
+    <td><span>Return a list of 3-tuples containing <tt class="rst-docutils literal">(word, tag, <span class="pre">IOB-tag)</span></tt>. Convert a tree to the CoNLL IOB tag format.</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
@@ -168,7 +168,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">accuracy</span>(chunker, gold):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L22">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L22">
       
       (source)
     </a>
@@ -176,15 +176,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Score the accuracy of the chunker against the gold standard.
+    <div>Score the accuracy of the chunker against the gold standard.
 Strip the chunk information from the gold standard and rechunk it using
-the chunker, then compute the accuracy score.
-
-:type chunker: ChunkParserI
-:param chunker: The chunker being evaluated.
-:type gold: tree
-:param gold: The chunk structures to score the chunker on.
-:rtype: float</p></div>
+the chunker, then compute the accuracy score.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chunker:</span>ChunkParserI</td><td class="fieldArgDesc">The chunker being evaluated.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gold:</span>tree</td><td class="fieldArgDesc">The chunk structures to score the chunker on.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -198,7 +192,7 @@ the chunker, then compute the accuracy score.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">conllstr2tree</span>(s, chunk_types=('NP', 'PP', 'VP'), root_label='S'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L374">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L374">
       
       (source)
     </a>
@@ -206,20 +200,12 @@ the chunker, then compute the accuracy score.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a chunk structure for a single sentence
+    <div>Return a chunk structure for a single sentence
 encoded in the given CONLL 2000 style string.
 This function converts a CoNLL IOB string into a tree.
 It uses the specified chunk types
 (defaults to NP, PP and VP), and creates a tree rooted at a node
-labeled S (by default).
-
-:param s: The CoNLL string to be converted.
-:type s: str
-:param chunk_types: The chunk types to be converted.
-:type chunk_types: tuple
-:param root_label: The node label to use for the root.
-:type root_label: str
-:rtype: Tree</p></div>
+labeled S (by default).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">The CoNLL string to be converted.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chunk_types:</span>tuple</td><td class="fieldArgDesc">The chunk types to be converted.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root_label:</span>str</td><td class="fieldArgDesc">The node label to use for the root.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Tree</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -233,7 +219,7 @@ labeled S (by default).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">conlltags2tree</span>(sentence, chunk_types=('NP', 'PP', 'VP'), root_label='S', strict=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L454">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L454">
       
       (source)
     </a>
@@ -241,7 +227,7 @@ labeled S (by default).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert the CoNLL IOB format to a tree.</p></div>
+    <div>Convert the CoNLL IOB format to a tree.</div>
   </div>
 </div><div class="basefunction">
   
@@ -255,7 +241,7 @@ labeled S (by default).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L595">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L595">
       
       (source)
     </a>
@@ -278,7 +264,7 @@ labeled S (by default).
     
     <span class="py-keyword">def</span> <span class="py-defname">ieerstr2tree</span>(s, chunk_types=['LOCATION', 'ORGANIZATION', 'PERSON', 'DURATION', 'DATE', 'CARDINAL',
     'PERCENT', 'MONEY', 'MEASURE'], root_label='S'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L552">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L552">
       
       (source)
     </a>
@@ -286,14 +272,12 @@ labeled S (by default).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a chunk structure containing the chunked tagged text that is
+    <div>Return a chunk structure containing the chunked tagged text that is
 encoded in the given IEER style string.
 Convert a string of chunked tagged text in the IEER named
 entity format into a chunk structure.  Chunks are of several
 types, LOCATION, ORGANIZATION, PERSON, DURATION, DATE, CARDINAL,
-PERCENT, MONEY, and MEASURE.
-
-:rtype: Tree</p></div>
+PERCENT, MONEY, and MEASURE.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Tree</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -307,7 +291,7 @@ PERCENT, MONEY, and MEASURE.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagstr2tree</span>(s, chunk_label='NP', root_label='S', sep='/', source_tagset=None, target_tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L320">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L320">
       
       (source)
     </a>
@@ -315,20 +299,12 @@ PERCENT, MONEY, and MEASURE.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Divide a string of bracketted tagged text into
+    <div>Divide a string of bracketted tagged text into
 chunks and unchunked tokens, and produce a Tree.
-Chunks are marked by square brackets (``[...]``).  Words are
+Chunks are marked by square brackets (<tt class="rst-docutils literal"><span class="pre">[...]</span></tt>).  Words are
 delimited by whitespace, and each word should have the form
-``text/tag``.  Words that do not contain a slash are
-assigned a ``tag`` of None.
-
-:param s: The string to be converted
-:type s: str
-:param chunk_label: The label to use for chunk nodes
-:type chunk_label: str
-:param root_label: The label to use for the root of the tree
-:type root_label: str
-:rtype: Tree</p></div>
+<tt class="rst-docutils literal">text/tag</tt>.  Words that do not contain a slash are
+assigned a <tt class="rst-docutils literal">tag</tt> of None.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span>str</td><td class="fieldArgDesc">The string to be converted</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chunk_label:</span>str</td><td class="fieldArgDesc">The label to use for chunk nodes</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root_label:</span>str</td><td class="fieldArgDesc">The label to use for the root of the tree</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sep</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source_tagset</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target_tagset</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Tree</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -342,7 +318,7 @@ assigned a ``tag`` of None.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tree2conllstr</span>(t):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L490">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L490">
       
       (source)
     </a>
@@ -350,12 +326,8 @@ assigned a ``tag`` of None.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a multiline string where each line contains a word, tag and IOB tag.
-Convert a tree to the CoNLL IOB string format
-
-:param t: The tree to be converted.
-:type t: Tree
-:rtype: str</p></div>
+    <div>Return a multiline string where each line contains a word, tag and IOB tag.
+Convert a tree to the CoNLL IOB string format<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">t:</span>Tree</td><td class="fieldArgDesc">The tree to be converted.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -369,7 +341,7 @@ Convert a tree to the CoNLL IOB string format
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tree2conlltags</span>(t):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L427">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L427">
       
       (source)
     </a>
@@ -377,12 +349,8 @@ Convert a tree to the CoNLL IOB string format
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of 3-tuples containing ``(word, tag, IOB-tag)``.
-Convert a tree to the CoNLL IOB tag format.
-
-:param t: The tree to be converted.
-:type t: Tree
-:rtype: list(tuple)</p></div>
+    <div>Return a list of 3-tuples containing <tt class="rst-docutils literal">(word, tag, <span class="pre">IOB-tag)</span></tt>.
+Convert a tree to the CoNLL IOB tag format.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">t:</span>Tree</td><td class="fieldArgDesc">The tree to be converted.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -396,7 +364,7 @@ Convert a tree to the CoNLL IOB tag format.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_chunksets</span>(t, count, chunk_label):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L307">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L307">
       
       (source)
     </a>
@@ -418,7 +386,7 @@ Convert a tree to the CoNLL IOB tag format.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_ieer_read_text</span>(s, root_label):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L520">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L520">
       
       (source)
     </a>
@@ -440,7 +408,7 @@ Convert a tree to the CoNLL IOB tag format.
   <div class="functionHeader">
     
     <span class="py-defname">_IEER_DOC_RE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L505">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L505">
       
       (source)
     </a>
@@ -462,7 +430,7 @@ Convert a tree to the CoNLL IOB tag format.
   <div class="functionHeader">
     
     <span class="py-defname">_IEER_TYPE_RE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L517">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L517">
       
       (source)
     </a>
@@ -484,7 +452,7 @@ Convert a tree to the CoNLL IOB tag format.
   <div class="functionHeader">
     
     <span class="py-defname">_LINE_RE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L371">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L371">
       
       (source)
     </a>
@@ -504,7 +472,7 @@ Convert a tree to the CoNLL IOB tag format.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

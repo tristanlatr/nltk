@@ -65,30 +65,29 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SingleEdgeFundamentalRule</span>(<a href="nltk.parse.chart.FundamentalRule.html" title="nltk.parse.chart.FundamentalRule">FundamentalRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1053" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.app.chartparser_app.FundamentalEdgeRule.html">nltk.app.chartparser_app.FundamentalEdgeRule</a></code>, <code><a href="nltk.parse.chart.FilteredSingleEdgeFundamentalRule.html">nltk.parse.chart.FilteredSingleEdgeFundamentalRule</a></code>, <code><a href="nltk.parse.earleychart.CompleteFundamentalRule.html">nltk.parse.earleychart.CompleteFundamentalRule</a></code>, <code><a href="nltk.parse.featurechart.FeatureSingleEdgeFundamentalRule.html">nltk.parse.featurechart.FeatureSingleEdgeFundamentalRule</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SingleEdgeFundamentalRule</span>(<a href="nltk.parse.chart.FundamentalRule.html" title="nltk.parse.chart.FundamentalRule">FundamentalRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1053" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.app.chartparser_app.FundamentalEdgeRule.html">nltk.app.chartparser_app.FundamentalEdgeRule</a></code>, <code><a href="nltk.parse.chart.FilteredSingleEdgeFundamentalRule.html">nltk.parse.chart.FilteredSingleEdgeFundamentalRule</a></code>, <code><a href="nltk.parse.earleychart.CompleteFundamentalRule.html">nltk.parse.earleychart.CompleteFundamentalRule</a></code>, <code><a href="nltk.parse.featurechart.FeatureSingleEdgeFundamentalRule.html">nltk.parse.featurechart.FeatureSingleEdgeFundamentalRule</a></code></p>
         <p><a href="classIndex.html#nltk.parse.chart.SingleEdgeFundamentalRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A rule that joins a given edge with adjacent edges in the chart,
+        <div><p>A rule that joins a given edge with adjacent edges in the chart,
 to form combined edges.  In particular, this rule specifies that
-either of the edges:
-
-- ``[A -&gt; alpha \* B beta][i:j]``
-- ``[B -&gt; gamma \*][j:k]``
-
-licenses the edge:
-
-- ``[A -&gt; alpha B * beta][i:j]``
-
-if the other edge is already in the chart.
-
-:note: This is basically ``FundamentalRule``, with one edge left
-    unspecified.</p></div>
+either of the edges:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">[A <span class="pre">-&gt;</span> alpha \* B <span class="pre">beta][i:j]</span></tt></li>
+<li><tt class="rst-docutils literal">[B <span class="pre">-&gt;</span> gamma <span class="pre">\*][j:k]</span></tt></li>
+</ul>
+<p>licenses the edge:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">[A <span class="pre">-&gt;</span> alpha B * <span class="pre">beta][i:j]</span></tt></li>
+</ul>
+<p>if the other edge is already in the chart.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">This is basically <tt class="rst-docutils literal">FundamentalRule</tt>, with one edge left
+unspecified.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id851">
+        <table class="children sortable" id="id855">
   
   
   <tr class="method">
@@ -117,7 +116,7 @@ if the other edge is already in the chart.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.AbstractChartRule.html">AbstractChartRule</a></code> (via <code><a href="nltk.parse.chart.FundamentalRule.html">FundamentalRule</a></code>):
           </p>
-          <table class="children sortable" id="id852">
+          <table class="children sortable" id="id856">
   
   
   <tr class="basemethod">
@@ -151,7 +150,7 @@ if the other edge is already in the chart.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply</span>(self, chart, grammar, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1074">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1074">
       
       (source)
     </a>
@@ -159,16 +158,12 @@ if the other edge is already in the chart.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.FundamentalRule.html#apply">nltk.parse.chart.FundamentalRule.apply</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.earleychart.CompleterRule.html">nltk.parse.earleychart.CompleterRule</a></code>, <code><a href="nltk.parse.earleychart.FilteredCompleteFundamentalRule.html">nltk.parse.earleychart.FilteredCompleteFundamentalRule</a></code>, <code><a href="nltk.parse.earleychart.ScannerRule.html">nltk.parse.earleychart.ScannerRule</a></code></div>
     
-    <div><p class="pre">Return a generator that will add edges licensed by this rule
+    <div>Return a generator that will add edges licensed by this rule
 and the given edges to the chart, one at a time.  Each
 time the generator is resumed, it will either add a new
-edge and yield that edge; or return.
-
-:type edges: list(EdgeI)
-:param edges: A set of existing edges.  The number of edges
-    that should be passed to ``apply()`` is specified by the
-    ``NUM_EDGES`` class variable.
-:rtype: iter(EdgeI)</p></div>
+edge and yield that edge; or return.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edges:</span>list(EdgeI)</td><td class="fieldArgDesc">A set of existing edges.  The number of edges
+that should be passed to <tt class="rst-docutils literal">apply()</tt> is specified by the
+<tt class="rst-docutils literal">NUM_EDGES</tt> class variable.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -182,7 +177,7 @@ edge and yield that edge; or return.
   <div class="functionHeader">
     
     <span class="py-defname">NUM_EDGES</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1072">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1072">
       
       (source)
     </a>
@@ -204,7 +199,7 @@ edge and yield that edge; or return.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_apply_complete</span>(self, chart, grammar, right_edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1082">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1082">
       
       (source)
     </a>
@@ -226,7 +221,7 @@ edge and yield that edge; or return.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_apply_incomplete</span>(self, chart, grammar, left_edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1090">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1090">
       
       (source)
     </a>
@@ -246,7 +241,7 @@ edge and yield that edge; or return.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

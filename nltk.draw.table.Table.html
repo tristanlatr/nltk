@@ -65,57 +65,53 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Table</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L582" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Table</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L582" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.draw.table.Table">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A display widget for a table of values, based on a ``MultiListbox``
-widget.  For many purposes, ``Table`` can be treated as a
+        <div><p>A display widget for a table of values, based on a <tt class="rst-docutils literal">MultiListbox</tt>
+widget.  For many purposes, <tt class="rst-docutils literal">Table</tt> can be treated as a
 list-of-lists.  E.g., table[i] is a list of the values for row i;
 and table.append(row) adds a new row with the given lits of
 values.  Individual cells can be accessed using table[i,j], which
 refers to the j-th column of the i-th row.  This can be used to
-both read and write values from the table.  E.g.:
-
-    &gt;&gt;&gt; table[i,j] = 'hello'
-
-The column (j) can be given either as an index number, or as a
+both read and write values from the table.  E.g.:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>table[i,j] = <span class="py-string">'hello'</span></pre></blockquote>
+<p>The column (j) can be given either as an index number, or as a
 column name.  E.g., the following prints the value in the 3rd row
-for the 'First Name' column:
-
-    &gt;&gt;&gt; print(table[3, 'First Name'])
-    John
-
-You can configure the colors for individual rows, columns, or
-cells using ``rowconfig()``, ``columnconfig()``, and ``itemconfig()``.
+for the 'First Name' column:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(table[3, <span class="py-string">'First Name'</span>])
+<span class="py-output">John</span>
+</pre></blockquote>
+<p>You can configure the colors for individual rows, columns, or
+cells using <tt class="rst-docutils literal">rowconfig()</tt>, <tt class="rst-docutils literal">columnconfig()</tt>, and <tt class="rst-docutils literal">itemconfig()</tt>.
 The color configuration for each row will be preserved if the
 table is modified; however, when new rows are added, any color
-configurations that have been made for *columns* will not be
-applied to the new row.
-
-Note: Although ``Table`` acts like a widget in some ways (e.g., it
-defines ``grid()``, ``pack()``, and ``bind()``), it is not itself a
+configurations that have been made for <em>columns</em> will not be
+applied to the new row.</p>
+<p>Note: Although <tt class="rst-docutils literal">Table</tt> acts like a widget in some ways (e.g., it
+defines <tt class="rst-docutils literal">grid()</tt>, <tt class="rst-docutils literal">pack()</tt>, and <tt class="rst-docutils literal">bind()</tt>), it is not itself a
 widget; it just contains one.  This is because widgets need to
-define ``__getitem__()``, ``__setitem__()``, and ``__nonzero__()`` in
-a way that's incompatible with the fact that ``Table`` behaves as a
-list-of-lists.
-
-:ivar _mlb: The multi-column listbox used to display this table's data.
-:ivar _rows: A list-of-lists used to hold the cell values of this
-    table.  Each element of _rows is a row value, i.e., a list of
-    cell values, one for each column in the row.</p></div>
+define <tt class="rst-docutils literal">__getitem__()</tt>, <tt class="rst-docutils literal">__setitem__()</tt>, and <tt class="rst-docutils literal">__nonzero__()</tt> in
+a way that's incompatible with the fact that <tt class="rst-docutils literal">Table</tt> behaves as a
+list-of-lists.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id579">
+        <table class="children sortable" id="id582">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__delitem__">__delitem__</a></code></td>
-    <td><span>Delete the ``row_index``th row from this table.</span></td>
+    <td><span>Delete the <a href="#id1"><span class="rst-problematic" id="rst-id2">``</span></a>row_index``th row from this table.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -130,12 +126,12 @@ list-of-lists.
     
     <td>Method</td>
     <td><code><a href="#__len__">__len__</a></code></td>
-    <td><span>:return: the number of rows in this table.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__setitem__">__setitem__</a></code></td>
-    <td><span>Replace the value of a row or a cell in this table with ``val``.</span></td>
+    <td><span>Replace the value of a row or a cell in this table with <tt class="rst-docutils literal">val</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -145,22 +141,22 @@ list-of-lists.
     
     <td>Method</td>
     <td><code><a href="#bind">bind</a></code></td>
-    <td><span>Add a binding to this table's main frame that will call ``func`` in response to the event sequence.</span></td>
+    <td><span>Add a binding to this table's main frame that will call <tt class="rst-docutils literal">func</tt> in response to the event sequence.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#bind_to_columns">bind_to_columns</a></code></td>
-    <td><span>:see: ``MultiListbox.bind_to_columns()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#bind_to_labels">bind_to_labels</a></code></td>
-    <td><span>:see: ``MultiListbox.bind_to_labels()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#bind_to_listboxes">bind_to_listboxes</a></code></td>
-    <td><span>:see: ``MultiListbox.bind_to_listboxes()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -175,7 +171,7 @@ list-of-lists.
     
     <td>Method</td>
     <td><code><a href="#columnconfigure">columnconfigure</a></code></td>
-    <td><span>:see: ``MultiListbox.columnconfigure()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -190,12 +186,12 @@ list-of-lists.
     
     <td>Method</td>
     <td><code><a href="#grid">grid</a></code></td>
-    <td><span>Position this table's main frame widget in its parent widget.  See ``Tkinter.Frame.grid()`` for more info.</span></td>
+    <td><span>Position this table's main frame widget in its parent widget.  See <tt class="rst-docutils literal">Tkinter.Frame.grid()</tt> for more info.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#hide_column">hide_column</a></code></td>
-    <td><span>:see: ``MultiListbox.hide_column()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -205,32 +201,32 @@ list-of-lists.
     
     <td>Method</td>
     <td><code><a href="#itemconfigure">itemconfigure</a></code></td>
-    <td><span>:see: ``MultiListbox.itemconfigure()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#pack">pack</a></code></td>
-    <td><span>Position this table's main frame widget in its parent widget.  See ``Tkinter.Frame.pack()`` for more info.</span></td>
+    <td><span>Position this table's main frame widget in its parent widget.  See <tt class="rst-docutils literal">Tkinter.Frame.pack()</tt> for more info.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#rowconfigure">rowconfigure</a></code></td>
-    <td><span>:see: ``MultiListbox.rowconfigure()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#select">select</a></code></td>
-    <td><span>:see: ``MultiListbox.select()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#selected_row">selected_row</a></code></td>
-    <td><span>Return the index of the currently selected row, or None if no row is selected.  To get the row value itself, use ``table[table.selected_row()]``.</span></td>
+    <td><span>Return the index of the currently selected row, or None if no row is selected.  To get the row value itself, use <tt class="rst-docutils literal"><span class="pre">table[table.selected_row()]</span></tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#show_column">show_column</a></code></td>
-    <td><span>:see: ``MultiListbox.show_column()``</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -265,7 +261,7 @@ list-of-lists.
     
     <td>Method</td>
     <td><code><a href="#_restore_config_info">_restore_config_info</a></code></td>
-    <td><span>Restore selection &amp; color configuration information that was saved using ``_save_config_info``.</span></td>
+    <td><span>Restore selection &amp; color configuration information that was saved using <tt class="rst-docutils literal">_save_config_info</tt>.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -280,7 +276,7 @@ list-of-lists.
     
     <td>Class Variable</td>
     <td><code><a href="#_DEBUG">_DEBUG</a></code></td>
-    <td><span>If true, then run ``_check_table_vs_mlb()`` after any operation that modifies the table.</span></td>
+    <td><span>If true, then run <tt class="rst-docutils literal">_check_table_vs_mlb()</tt> after any operation that modifies the table.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -295,7 +291,7 @@ list-of-lists.
     
     <td>Instance Variable</td>
     <td><code><a href="#_mlb">_mlb</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The multi-column listbox used to display this table's data.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -310,7 +306,9 @@ list-of-lists.
     
     <td>Instance Variable</td>
     <td><code><a href="#_rows">_rows</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list-of-lists used to hold the cell values of this
+table.  Each element of _rows is a row value, i.e., a list of
+cell values, one for each column in the row.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -342,7 +340,7 @@ list-of-lists.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__delitem__</span>(self, row_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L866">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L866">
       
       (source)
     </a>
@@ -350,7 +348,7 @@ list-of-lists.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Delete the ``row_index``th row from this table.</p></div>
+    <div>Delete the <a href="#id1"><span class="rst-problematic" id="rst-id2">``</span></a>row_index``th row from this table.</div>
   </div>
 </div><div class="basemethod">
   
@@ -364,7 +362,7 @@ list-of-lists.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L811">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L811">
       
       (source)
     </a>
@@ -391,7 +389,7 @@ integers, ``(i,j)``, then return the value of the cell in the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, master, column_names, rows=None, column_weights=None, scrollbar=True, click_to_sort=True, reprfunc=None, cnf={}, **kw):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L621">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L621">
       
       (source)
     </a>
@@ -399,35 +397,21 @@ integers, ``(i,j)``, then return the value of the cell in the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new Table widget.
-
-:type master: Tkinter.Widget
-:param master: The widget that should contain the new table.
-:type column_names: list(str)
-:param column_names: A list of names for the columns; these
-    names will be used to create labels for each column;
-    and can be used as an index when reading or writing
-    cell values from the table.
-:type rows: list(list)
-:param rows: A list of row values used to initialze the table.
-    Each row value should be a tuple of cell values, one for
-    each column in the row.
-:type scrollbar: bool
-:param scrollbar: If true, then create a scrollbar for the
-    new table widget.
-:type click_to_sort: bool
-:param click_to_sort: If true, then create bindings that will
-    sort the table's rows by a given column's values if the
-    user clicks on that colum's label.
-:type reprfunc: function
-:param reprfunc: If specified, then use this function to
-    convert each table cell value to a string suitable for
-    display.  ``reprfunc`` has the following signature:
-    reprfunc(row_index, col_index, cell_value) -&gt; str
-    (Note that the column is specified by index, not by name.)
-:param cnf, kw: Configuration parameters for this widget's
-    contained ``MultiListbox``.  See ``MultiListbox.__init__()``
-    for details.</p></div>
+    <div>Construct a new Table widget.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">master:</span>Tkinter.Widget</td><td class="fieldArgDesc">The widget that should contain the new table.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">column_names:</span>list(str)</td><td class="fieldArgDesc">A list of names for the columns; these
+names will be used to create labels for each column;
+and can be used as an index when reading or writing
+cell values from the table.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rows:</span>list(list)</td><td class="fieldArgDesc">A list of row values used to initialze the table.
+Each row value should be a tuple of cell values, one for
+each column in the row.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">column_weights</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scrollbar:</span>bool</td><td class="fieldArgDesc">If true, then create a scrollbar for the
+new table widget.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">click_to_sort:</span>bool</td><td class="fieldArgDesc">If true, then create bindings that will
+sort the table's rows by a given column's values if the
+user clicks on that colum's label.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reprfunc:</span>function</td><td class="fieldArgDesc">If specified, then use this function to
+convert each table cell value to a string suitable for
+display.  <tt class="rst-docutils literal">reprfunc</tt> has the following signature:
+reprfunc(row_index, col_index, cell_value) -&gt; str
+(Note that the column is specified by index, not by name.)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cnf</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kw</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cnf, kw</span></td><td class="fieldArgDesc">Configuration parameters for this widget's
+contained <tt class="rst-docutils literal">MultiListbox</tt>.  See <tt class="rst-docutils literal">MultiListbox.__init__()</tt>
+for details.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -441,7 +425,7 @@ integers, ``(i,j)``, then return the value of the cell in the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L879">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L879">
       
       (source)
     </a>
@@ -449,7 +433,7 @@ integers, ``(i,j)``, then return the value of the cell in the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the number of rows in this table.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the number of rows in this table.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -463,7 +447,7 @@ integers, ``(i,j)``, then return the value of the cell in the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, index, val):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L827">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L827">
       
       (source)
     </a>
@@ -471,17 +455,16 @@ integers, ``(i,j)``, then return the value of the cell in the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Replace the value of a row or a cell in this table with
-``val``.
-
-If ``index`` is an integer, then ``val`` should be a row value
+    <div><p>Replace the value of a row or a cell in this table with
+<tt class="rst-docutils literal">val</tt>.</p>
+<p>If <tt class="rst-docutils literal">index</tt> is an integer, then <tt class="rst-docutils literal">val</tt> should be a row value
 (i.e., a tuple of cell values, one for each column).  In this
-case, the values of the ``index``th row of the table will be
-replaced with the values in ``val``.
-
-If ``index`` is a tuple of integers, ``(i,j)``, then replace the
-value of the cell in the ``i``th row and ``j``th column with
-``val``.</p></div>
+case, the values of the <tt class="rst-docutils literal"><span class="pre">index``th</span> row of the table will be
+replaced with the values in ``val</tt>.</p>
+<p>If <tt class="rst-docutils literal">index</tt> is a tuple of integers, <tt class="rst-docutils literal">(i,j)</tt>, then replace the
+value of the cell in the <tt class="rst-docutils literal"><span class="pre">i``th</span> row and <span class="pre">``j``th</span> column with
+``val</tt>.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -495,7 +478,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">append</span>(self, rowvalue):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L791">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L791">
       
       (source)
     </a>
@@ -503,10 +486,8 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a new row to the end of the table.
-
-:param rowvalue: A tuple of cell values, one for each column
-    in the new row.</p></div>
+    <div>Add a new row to the end of the table.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rowvalue</span></td><td class="fieldArgDesc">A tuple of cell values, one for each column
+in the new row.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -520,7 +501,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bind</span>(self, sequence=None, func=None, add=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L719">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L719">
       
       (source)
     </a>
@@ -528,8 +509,8 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a binding to this table's main frame that will call
-``func`` in response to the event sequence.</p></div>
+    <div>Add a binding to this table's main frame that will call
+<tt class="rst-docutils literal">func</tt> in response to the event sequence.</div>
   </div>
 </div><div class="basemethod">
   
@@ -543,7 +524,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bind_to_columns</span>(self, sequence=None, func=None, add=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L746">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L746">
       
       (source)
     </a>
@@ -551,7 +532,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.bind_to_columns()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.bind_to_columns()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -565,7 +546,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bind_to_labels</span>(self, sequence=None, func=None, add=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L738">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L738">
       
       (source)
     </a>
@@ -573,7 +554,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.bind_to_labels()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.bind_to_labels()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -587,7 +568,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bind_to_listboxes</span>(self, sequence=None, func=None, add=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L742">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L742">
       
       (source)
     </a>
@@ -595,7 +576,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.bind_to_listboxes()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.bind_to_listboxes()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -609,7 +590,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">clear</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L802">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L802">
       
       (source)
     </a>
@@ -617,7 +598,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Delete all rows in this table.</p></div>
+    <div>Delete all rows in this table.</div>
   </div>
 </div><div class="basemethod">
   
@@ -631,7 +612,7 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">column_index</span>(self, i):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L905">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L905">
       
       (source)
     </a>
@@ -639,10 +620,10 @@ value of the cell in the ``i``th row and ``j``th column with
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">If ``i`` is a valid column index integer, then return it as is.
-Otherwise, check if ``i`` is used as the name for any column;
+    <div>If <tt class="rst-docutils literal">i</tt> is a valid column index integer, then return it as is.
+Otherwise, check if <tt class="rst-docutils literal">i</tt> is used as the name for any column;
 if so, return that column's index.  Otherwise, raise a
-``KeyError`` exception.</p></div>
+<tt class="rst-docutils literal">KeyError</tt> exception.</div>
   </div>
 </div><div class="basemethod">
   
@@ -656,7 +637,7 @@ if so, return that column's index.  Otherwise, raise a
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">columnconfigure</span>(self, col_index, cnf={}, **kw):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L728">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L728">
       
       (source)
     </a>
@@ -664,7 +645,7 @@ if so, return that column's index.  Otherwise, raise a
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.columnconfigure()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.columnconfigure()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -678,7 +659,7 @@ if so, return that column's index.  Otherwise, raise a
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">extend</span>(self, rowvalues):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L778">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L778">
       
       (source)
     </a>
@@ -686,11 +667,9 @@ if so, return that column's index.  Otherwise, raise a
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add new rows at the end of the table.
-
-:param rowvalues: A list of row values used to initialze the
-    table.  Each row value should be a tuple of cell values,
-    one for each column in the row.</p></div>
+    <div>Add new rows at the end of the table.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rowvalues</span></td><td class="fieldArgDesc">A list of row values used to initialze the
+table.  Each row value should be a tuple of cell values,
+one for each column in the row.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -704,7 +683,7 @@ if so, return that column's index.  Otherwise, raise a
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">focus</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L715">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L715">
       
       (source)
     </a>
@@ -712,7 +691,7 @@ if so, return that column's index.  Otherwise, raise a
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Direct (keyboard) input foxus to this widget.</p></div>
+    <div>Direct (keyboard) input foxus to this widget.</div>
   </div>
 </div><div class="basemethod">
   
@@ -726,7 +705,7 @@ if so, return that column's index.  Otherwise, raise a
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">grid</span>(self, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L710">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L710">
       
       (source)
     </a>
@@ -734,8 +713,8 @@ if so, return that column's index.  Otherwise, raise a
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Position this table's main frame widget in its parent
-widget.  See ``Tkinter.Frame.grid()`` for more info.</p></div>
+    <div>Position this table's main frame widget in its parent
+widget.  See <tt class="rst-docutils literal">Tkinter.Frame.grid()</tt> for more info.</div>
   </div>
 </div><div class="basemethod">
   
@@ -749,7 +728,7 @@ widget.  See ``Tkinter.Frame.grid()`` for more info.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">hide_column</span>(self, column_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L918">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L918">
       
       (source)
     </a>
@@ -757,7 +736,7 @@ widget.  See ``Tkinter.Frame.grid()`` for more info.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.hide_column()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.hide_column()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -771,7 +750,7 @@ widget.  See ``Tkinter.Frame.grid()`` for more info.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">insert</span>(self, row_index, rowvalue):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L758">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L758">
       
       (source)
     </a>
@@ -779,13 +758,11 @@ widget.  See ``Tkinter.Frame.grid()`` for more info.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Insert a new row into the table, so that its row index will be
-``row_index``.  If the table contains any rows whose row index
-is greater than or equal to ``row_index``, then they will be
-shifted down.
-
-:param rowvalue: A tuple of cell values, one for each column
-    in the new row.</p></div>
+    <div>Insert a new row into the table, so that its row index will be
+<tt class="rst-docutils literal">row_index</tt>.  If the table contains any rows whose row index
+is greater than or equal to <tt class="rst-docutils literal">row_index</tt>, then they will be
+shifted down.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">row_index</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rowvalue</span></td><td class="fieldArgDesc">A tuple of cell values, one for each column
+in the new row.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -799,7 +776,7 @@ shifted down.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">itemconfigure</span>(self, row_index, col_index, cnf=None, **kw):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L733">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L733">
       
       (source)
     </a>
@@ -807,7 +784,7 @@ shifted down.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.itemconfigure()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.itemconfigure()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -821,7 +798,7 @@ shifted down.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pack</span>(self, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L705">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L705">
       
       (source)
     </a>
@@ -829,8 +806,8 @@ shifted down.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Position this table's main frame widget in its parent
-widget.  See ``Tkinter.Frame.pack()`` for more info.</p></div>
+    <div>Position this table's main frame widget in its parent
+widget.  See <tt class="rst-docutils literal">Tkinter.Frame.pack()</tt> for more info.</div>
   </div>
 </div><div class="basemethod">
   
@@ -844,7 +821,7 @@ widget.  See ``Tkinter.Frame.pack()`` for more info.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">rowconfigure</span>(self, row_index, cnf={}, **kw):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L724">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L724">
       
       (source)
     </a>
@@ -852,7 +829,7 @@ widget.  See ``Tkinter.Frame.pack()`` for more info.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.rowconfigure()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.rowconfigure()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -866,7 +843,7 @@ widget.  See ``Tkinter.Frame.pack()`` for more info.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">select</span>(self, index=None, delta=None, see=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L942">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L942">
       
       (source)
     </a>
@@ -874,7 +851,7 @@ widget.  See ``Tkinter.Frame.pack()`` for more info.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.select()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.select()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -888,7 +865,7 @@ widget.  See ``Tkinter.Frame.pack()`` for more info.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">selected_row</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L930">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L930">
       
       (source)
     </a>
@@ -896,9 +873,9 @@ widget.  See ``Tkinter.Frame.pack()`` for more info.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the index of the currently selected row, or None if
+    <div>Return the index of the currently selected row, or None if
 no row is selected.  To get the row value itself, use
-``table[table.selected_row()]``.</p></div>
+<tt class="rst-docutils literal"><span class="pre">table[table.selected_row()]</span></tt>.</div>
   </div>
 </div><div class="basemethod">
   
@@ -912,7 +889,7 @@ no row is selected.  To get the row value itself, use
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">show_column</span>(self, column_index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L922">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L922">
       
       (source)
     </a>
@@ -920,7 +897,7 @@ no row is selected.  To get the row value itself, use
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:see: ``MultiListbox.show_column()``</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">MultiListbox.show_column()</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -934,7 +911,7 @@ no row is selected.  To get the row value itself, use
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sort_by</span>(self, column_index, order='toggle'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L950">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L950">
       
       (source)
     </a>
@@ -942,22 +919,22 @@ no row is selected.  To get the row value itself, use
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Sort the rows in this table, using the specified column's
-values as a sort key.
-
-:param column_index: Specifies which column to sort, using
-    either a column index (int) or a column's label name
-    (str).
-
-:param order: Specifies whether to sort the values in
-    ascending or descending order:
-
-      - ``'ascending'``: Sort from least to greatest.
-      - ``'descending'``: Sort from greatest to least.
-      - ``'toggle'``: If the most recent call to ``sort_by()``
-        sorted the table by the same column (``column_index``),
-        then reverse the rows; otherwise sort in ascending
-        order.</p></div>
+    <div>Sort the rows in this table, using the specified column's
+values as a sort key.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">column_index</span></td><td class="fieldArgDesc">Specifies which column to sort, using
+either a column index (int) or a column's label name
+(str).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">order</span></td><td class="fieldArgDesc"><p>Specifies whether to sort the values in
+ascending or descending order:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">'ascending'</tt>: Sort from least to greatest.</li>
+<li><tt class="rst-docutils literal">'descending'</tt>: Sort from greatest to least.</li>
+<li><tt class="rst-docutils literal">'toggle'</tt>: If the most recent call to <tt class="rst-docutils literal">sort_by()</tt>
+sorted the table by the same column (<tt class="rst-docutils literal">column_index</tt>),
+then reverse the rows; otherwise sort in ascending
+order.</li>
+</ul>
+</blockquote>
+</td></tr></table></div>
   </div>
 </div><div class="baseproperty">
   
@@ -971,7 +948,7 @@ values as a sort key.
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">column_names</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L900">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L900">
       
       (source)
     </a>
@@ -979,7 +956,7 @@ values as a sort key.
   <div class="functionBody">
     
     
-    <div><p class="pre">A list of the names of the columns in this table.</p></div>
+    <div>A list of the names of the columns in this table.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -993,7 +970,7 @@ values as a sort key.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_check_table_vs_mlb</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L1111">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L1111">
       
       (source)
     </a>
@@ -1001,10 +978,10 @@ values as a sort key.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Verify that the contents of the table's ``_rows`` variable match
-the contents of its multi-listbox (``_mlb``).  This is just
+    <div>Verify that the contents of the table's <tt class="rst-docutils literal">_rows</tt> variable match
+the contents of its multi-listbox (<tt class="rst-docutils literal">_mlb</tt>).  This is just
 included for debugging purposes, to make sure that the
-list-modifying operations are working correctly.</p></div>
+list-modifying operations are working correctly.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1018,7 +995,7 @@ list-modifying operations are working correctly.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_checkrow</span>(self, rowvalue):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L885">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L885">
       
       (source)
     </a>
@@ -1026,8 +1003,8 @@ list-modifying operations are working correctly.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Helper function: check that a given row value has the correct
-number of elements; and if not, raise an exception.</p></div>
+    <div>Helper function: check that a given row value has the correct
+number of elements; and if not, raise an exception.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1041,7 +1018,7 @@ number of elements; and if not, raise an exception.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_fill_table</span>(self, save_config=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L1010">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L1010">
       
       (source)
     </a>
@@ -1049,12 +1026,12 @@ number of elements; and if not, raise an exception.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Re-draw the table from scratch, by clearing out the table's
+    <div>Re-draw the table from scratch, by clearing out the table's
 multi-column listbox; and then filling it in with values from
-``self._rows``.  Note that any cell-, row-, or column-specific
+<tt class="rst-docutils literal">self._rows</tt>.  Note that any cell-, row-, or column-specific
 color configuration that has been done will be lost.  The
 selection will also be lost -- i.e., no row will be selected
-after this call completes.</p></div>
+after this call completes.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1068,7 +1045,7 @@ after this call completes.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_itemconfig</span>(self, r, c):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L1025">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L1025">
       
       (source)
     </a>
@@ -1090,7 +1067,7 @@ after this call completes.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_restore_config_info</span>(self, cookie, index_by_id=False, see=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L1077">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L1077">
       
       (source)
     </a>
@@ -1098,8 +1075,8 @@ after this call completes.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Restore selection &amp; color configuration information that was
-saved using ``_save_config_info``.</p></div>
+    <div>Restore selection &amp; color configuration information that was
+saved using <tt class="rst-docutils literal">_save_config_info</tt>.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1113,7 +1090,7 @@ saved using ``_save_config_info``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_save_config_info</span>(self, row_indices=None, index_by_id=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L1036">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L1036">
       
       (source)
     </a>
@@ -1121,18 +1098,18 @@ saved using ``_save_config_info``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a 'cookie' containing information about which row is
+    <div>Return a 'cookie' containing information about which row is
 selected, and what color configurations have been applied.
 this information can the be re-applied to the table (after
-making modifications) using ``_restore_config_info()``.  Color
+making modifications) using <tt class="rst-docutils literal">_restore_config_info()</tt>.  Color
 configuration information will be saved for any rows in
-``row_indices``, or in the entire table, if
-``row_indices=None``.  If ``index_by_id=True``, the the cookie
+<tt class="rst-docutils literal">row_indices</tt>, or in the entire table, if
+<tt class="rst-docutils literal">row_indices=None</tt>.  If <tt class="rst-docutils literal">index_by_id=True</tt>, the the cookie
 will associate rows with their configuration information based
 on the rows' python id.  This is useful when performing
-operations that re-arrange the rows (e.g. ``sort``).  If
-``index_by_id=False``, then it is assumed that all rows will be
-in the same order when ``_restore_config_info()`` is called.</p></div>
+operations that re-arrange the rows (e.g. <tt class="rst-docutils literal">sort</tt>).  If
+<tt class="rst-docutils literal">index_by_id=False</tt>, then it is assumed that all rows will be
+in the same order when <tt class="rst-docutils literal">_restore_config_info()</tt> is called.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1146,7 +1123,7 @@ in the same order when ``_restore_config_info()`` is called.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_sort</span>(self, event):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L991">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L991">
       
       (source)
     </a>
@@ -1154,8 +1131,8 @@ in the same order when ``_restore_config_info()`` is called.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Event handler for clicking on a column label -- sort by
-that column.</p></div>
+    <div>Event handler for clicking on a column label -- sort by
+that column.</div>
   </div>
 </div><div class="baseclassvariable private">
   
@@ -1169,7 +1146,7 @@ that column.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_DEBUG</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L1107">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L1107">
       
       (source)
     </a>
@@ -1177,8 +1154,8 @@ that column.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">If true, then run ``_check_table_vs_mlb()`` after any operation
-that modifies the table.</p></div>
+    <div>If true, then run <tt class="rst-docutils literal">_check_table_vs_mlb()</tt> after any operation
+that modifies the table.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1192,7 +1169,7 @@ that modifies the table.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_column_name_to_index</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L668">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L668">
       
       (source)
     </a>
@@ -1214,7 +1191,7 @@ that modifies the table.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_frame</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L666">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L666">
       
       (source)
     </a>
@@ -1236,7 +1213,7 @@ that modifies the table.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_mlb</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L679">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L615">
       
       (source)
     </a>
@@ -1244,7 +1221,7 @@ that modifies the table.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The multi-column listbox used to display this table's data.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1258,7 +1235,7 @@ that modifies the table.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_num_columns</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L664">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L664">
       
       (source)
     </a>
@@ -1280,7 +1257,7 @@ that modifies the table.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_reprfunc</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L665">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L665">
       
       (source)
     </a>
@@ -1302,7 +1279,7 @@ that modifies the table.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_rows</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L672">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L616">
       
       (source)
     </a>
@@ -1310,7 +1287,9 @@ that modifies the table.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A list-of-lists used to hold the cell values of this
+table.  Each element of _rows is a row value, i.e., a list of
+cell values, one for each column in the row.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1324,7 +1303,7 @@ that modifies the table.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_scrollbar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L689">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L689">
       
       (source)
     </a>
@@ -1346,7 +1325,7 @@ that modifies the table.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_sortkey</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/table.py#L692">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/table.py#L692">
       
       (source)
     </a>
@@ -1366,7 +1345,7 @@ that modifies the table.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

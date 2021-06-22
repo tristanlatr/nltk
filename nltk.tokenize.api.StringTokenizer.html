@@ -65,29 +65,29 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">StringTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/api.py#L66" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tokenize.simple.CharTokenizer.html">nltk.tokenize.simple.CharTokenizer</a></code>, <code><a href="nltk.tokenize.simple.SpaceTokenizer.html">nltk.tokenize.simple.SpaceTokenizer</a></code>, <code><a href="nltk.tokenize.simple.TabTokenizer.html">nltk.tokenize.simple.TabTokenizer</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StringTokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/api.py#L66" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tokenize.simple.CharTokenizer.html">nltk.tokenize.simple.CharTokenizer</a></code>, <code><a href="nltk.tokenize.simple.SpaceTokenizer.html">nltk.tokenize.simple.SpaceTokenizer</a></code>, <code><a href="nltk.tokenize.simple.TabTokenizer.html">nltk.tokenize.simple.TabTokenizer</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.api.StringTokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A tokenizer that divides a string into substrings by splitting
-on the specified string (defined in subclasses).</p></div>
+        <div>A tokenizer that divides a string into substrings by splitting
+on the specified string (defined in subclasses).</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1779">
+        <table class="children sortable" id="id1783">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#tokenize">tokenize</a></code></td>
-    <td><span>Return a tokenized copy of *s*.</span></td>
+    <td><span>Return a tokenized copy of <em>s</em>.</span></td>
   </tr><tr class="property private">
     
     <td>Property</td>
@@ -99,19 +99,19 @@ on the specified string (defined in subclasses).</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1780">
+          <table class="children sortable" id="id1784">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -133,7 +133,7 @@ on the specified string (defined in subclasses).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">span_tokenize</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/api.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/api.py#L79">
       
       (source)
     </a>
@@ -141,10 +141,8 @@ on the specified string (defined in subclasses).</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">nltk.tokenize.api.TokenizerI.span_tokenize</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.tokenize.simple.CharTokenizer.html">nltk.tokenize.simple.CharTokenizer</a></code></div>
     
-    <div><p class="pre">Identify the tokens using integer offsets ``(start_i, end_i)``,
-where ``s[start_i:end_i]`` is the corresponding token.
-
-:rtype: iter(tuple(int, int))</p></div>
+    <div>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>,
+where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(tuple(int, int))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -158,7 +156,7 @@ where ``s[start_i:end_i]`` is the corresponding token.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/api.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/api.py#L76">
       
       (source)
     </a>
@@ -166,9 +164,7 @@ where ``s[start_i:end_i]`` is the corresponding token.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.tokenize.simple.CharTokenizer.html">nltk.tokenize.simple.CharTokenizer</a></code></div>
     
-    <div><p class="pre">Return a tokenized copy of *s*.
-
-:rtype: list of str</p></div>
+    <div>Return a tokenized copy of <em>s</em>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseproperty private">
   
@@ -182,7 +178,7 @@ where ``s[start_i:end_i]`` is the corresponding token.
   <div class="functionHeader">
     @property<br />@abstractmethod<br />
     <span class="py-defname">_string</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/api.py#L71">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/api.py#L71">
       
       (source)
     </a>
@@ -202,7 +198,7 @@ where ``s[start_i:end_i]`` is the corresponding token.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

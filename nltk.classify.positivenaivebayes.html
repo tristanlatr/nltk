@@ -65,12 +65,12 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/positivenaivebayes.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/positivenaivebayes.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A variant of the Naive Bayes Classifier that performs binary classification with
+        <div><p>A variant of the Naive Bayes Classifier that performs binary classification with
 partially-labeled training sets. In other words, assume we want to build a classifier
 that assigns each example to one of two complementary classes (e.g., male names and
 female names).
@@ -78,69 +78,74 @@ If we have a training set with labeled examples for both classes, we can use a
 standard Naive Bayes Classifier. However, consider the case when we only have labeled
 examples for one of the classes, and other, unlabeled, examples.
 Then, assuming a prior distribution on the two labels, we can use the unlabeled set
-to estimate the frequencies of the various features.
-
-Let the two possible labels be 1 and 0, and let's say we only have examples labeled 1
-and unlabeled examples. We are also given an estimate of P(1).
-
-We compute P(feature|1) exactly as in the standard case.
-
-To compute P(feature|0), we first estimate P(feature) from the unlabeled set (we are
+to estimate the frequencies of the various features.</p>
+<p>Let the two possible labels be 1 and 0, and let's say we only have examples labeled 1
+and unlabeled examples. We are also given an estimate of P(1).</p>
+<p>We compute P(feature|1) exactly as in the standard case.</p>
+<p>To compute P(feature|0), we first estimate P(feature) from the unlabeled set (we are
 assuming that the unlabeled examples are drawn according to the given prior distribution)
-and then express the conditional probability as:
-
-|                  P(feature) - P(feature|1) * P(1)
-|  P(feature|0) = ----------------------------------
-|                               P(0)
-
-Example:
-
-    &gt;&gt;&gt; from nltk.classify import PositiveNaiveBayesClassifier
-
-Some sentences about sports:
-
-    &gt;&gt;&gt; sports_sentences = [ 'The team dominated the game',
-    ...                      'They lost the ball',
-    ...                      'The game was intense',
-    ...                      'The goalkeeper catched the ball',
-    ...                      'The other team controlled the ball' ]
-
-Mixed topics, including sports:
-
-    &gt;&gt;&gt; various_sentences = [ 'The President did not comment',
-    ...                       'I lost the keys',
-    ...                       'The team won the game',
-    ...                       'Sara has two kids',
-    ...                       'The ball went off the court',
-    ...                       'They had the ball for the whole game',
-    ...                       'The show is over' ]
-
-The features of a sentence are simply the words it contains:
-
-    &gt;&gt;&gt; def features(sentence):
-    ...     words = sentence.lower().split()
-    ...     return dict(('contains(%s)' % w, True) for w in words)
-
-We use the sports sentences as positive examples, the mixed ones ad unlabeled examples:
-
-    &gt;&gt;&gt; positive_featuresets = map(features, sports_sentences)
-    &gt;&gt;&gt; unlabeled_featuresets = map(features, various_sentences)
-    &gt;&gt;&gt; classifier = PositiveNaiveBayesClassifier.train(positive_featuresets,
-    ...                                                 unlabeled_featuresets)
-
-Is the following sentence about sports?
-
-    &gt;&gt;&gt; classifier.classify(features('The cat is on the table'))
-    False
-
-What about this one?
-
-    &gt;&gt;&gt; classifier.classify(features('My team lost the game'))
-    True</p></div>
+and then express the conditional probability as:</p>
+<div class="rst-line-block">
+<div class="rst-line-block">
+<div class="rst-line">P(feature) - P(feature|1) * P(1)</div>
+</div>
+<div class="rst-line">P(feature|0) = ----------------------------------</div>
+<div class="rst-line-block">
+<div class="rst-line">P(0)</div>
+</div>
+</div>
+<p>Example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.classify <span class="py-keyword">import</span> PositiveNaiveBayesClassifier</pre></blockquote>
+<p>Some sentences about sports:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sports_sentences = [ <span class="py-string">'The team dominated the game'</span>,
+<span class="py-more">... </span>                     <span class="py-string">'They lost the ball'</span>,
+<span class="py-more">... </span>                     <span class="py-string">'The game was intense'</span>,
+<span class="py-more">... </span>                     <span class="py-string">'The goalkeeper catched the ball'</span>,
+<span class="py-more">... </span>                     <span class="py-string">'The other team controlled the ball'</span> ]</pre></blockquote>
+<p>Mixed topics, including sports:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>various_sentences = [ <span class="py-string">'The President did not comment'</span>,
+<span class="py-more">... </span>                      <span class="py-string">'I lost the keys'</span>,
+<span class="py-more">... </span>                      <span class="py-string">'The team won the game'</span>,
+<span class="py-more">... </span>                      <span class="py-string">'Sara has two kids'</span>,
+<span class="py-more">... </span>                      <span class="py-string">'The ball went off the court'</span>,
+<span class="py-more">... </span>                      <span class="py-string">'They had the ball for the whole game'</span>,
+<span class="py-more">... </span>                      <span class="py-string">'The show is over'</span> ]</pre></blockquote>
+<p>The features of a sentence are simply the words it contains:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">def</span> <span class="py-defname">features</span>(sentence):
+<span class="py-more">... </span>    words = sentence.lower().split()
+<span class="py-more">... </span>    <span class="py-keyword">return</span> <span class="py-builtin">dict</span>((<span class="py-string">'contains(%s)'</span> % w, <span class="py-builtin">True</span>) <span class="py-keyword">for</span> w <span class="py-keyword">in</span> words)</pre></blockquote>
+<p>We use the sports sentences as positive examples, the mixed ones ad unlabeled examples:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>positive_featuresets = <span class="py-builtin">map</span>(features, sports_sentences)
+<span class="py-prompt">&gt;&gt;&gt; </span>unlabeled_featuresets = <span class="py-builtin">map</span>(features, various_sentences)
+<span class="py-prompt">&gt;&gt;&gt; </span>classifier = PositiveNaiveBayesClassifier.train(positive_featuresets,
+<span class="py-more">... </span>                                                unlabeled_featuresets)</pre></blockquote>
+<p>Is the following sentence about sports?</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>classifier.classify(features(<span class="py-string">'The cat is on the table'</span>))
+<span class="py-output">False</span>
+</pre></blockquote>
+<p>What about this one?</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>classifier.classify(features(<span class="py-string">'My team lost the game'</span>))
+<span class="py-output">True</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id157">
+        <table class="children sortable" id="id160">
   
   
   <tr class="class">
@@ -174,7 +179,7 @@ What about this one?
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/positivenaivebayes.py#L177">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/positivenaivebayes.py#L177">
       
       (source)
     </a>
@@ -194,7 +199,7 @@ What about this one?
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

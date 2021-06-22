@@ -65,17 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConcordanceIndex</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L130" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConcordanceIndex</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L130" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.text.ConcordanceIndex">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An index that can be used to look up the offset locations at which
-a given word occurs in a document.</p></div>
+        <div>An index that can be used to look up the offset locations at which
+a given word occurs in a document.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1769">
+        <table class="children sortable" id="id1773">
   
   
   <tr class="method">
@@ -107,7 +107,7 @@ a given word occurs in a document.</p></div>
     
     <td>Method</td>
     <td><code><a href="#tokens">tokens</a></code></td>
-    <td><span>:rtype: list(str) :return: The document that this concordance index was created from.</span></td>
+    <td><span></span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -144,7 +144,7 @@ a given word occurs in a document.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tokens, key=(lambda x: x)):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L136">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L136">
       
       (source)
     </a>
@@ -152,15 +152,12 @@ a given word occurs in a document.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new concordance index.
-
-:param tokens: The document (list of tokens) that this
-    concordance index was created from.  This list can be used
-    to access the context of a given word occurrence.
-:param key: A function that maps each token to a normalized
-    version that will be used as a key in the index.  E.g., if
-    you use ``key=lambda s:s.lower()``, then the index will be
-    case-insensitive.</p></div>
+    <div>Construct a new concordance index.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens</span></td><td class="fieldArgDesc">The document (list of tokens) that this
+concordance index was created from.  This list can be used
+to access the context of a given word occurrence.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">A function that maps each token to a normalized
+version that will be used as a key in the index.  E.g., if
+you use <tt class="rst-docutils literal">key=lambda s:s.lower()</tt>, then the index will be
+case-insensitive.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -174,7 +171,7 @@ a given word occurs in a document.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L180">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L180">
       
       (source)
     </a>
@@ -196,7 +193,7 @@ a given word occurs in a document.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_concordance</span>(self, word, width=80):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L186">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L186">
       
       (source)
     </a>
@@ -204,9 +201,9 @@ a given word occurs in a document.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Find all concordance lines given the query word.
-
-Provided with a list of words, these will be found as a phrase.</p></div>
+    <div><p>Find all concordance lines given the query word.</p>
+<p>Provided with a list of words, these will be found as a phrase.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -220,7 +217,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">offsets</span>(self, word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L170">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L170">
       
       (source)
     </a>
@@ -228,10 +225,9 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:rtype: list(int)
-:return: A list of the offset positions at which the given
-    word occurs.  If a key function was specified for the
-    index, then given word's key will be looked up.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(int)</td><td class="fieldArgDesc">A list of the offset positions at which the given
+word occurs.  If a key function was specified for the
+index, then given word's key will be looked up.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -245,7 +241,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">print_concordance</span>(self, word, width=80, lines=25):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L230">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L230">
       
       (source)
     </a>
@@ -253,7 +249,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print concordance lines given the query word.
+    <div>Print concordance lines given the query word.
 :param word: The target word or phrase (a list of strings)
 :type word: str or list
 :param lines: The number of lines to display (default=25)
@@ -261,7 +257,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
 :param width: The width of each line, in characters (default=80)
 :type width: int
 :param save: The option to save the concordance.
-:type save: bool</p></div>
+:type save: bool</div>
   </div>
 </div><div class="basemethod">
   
@@ -275,7 +271,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokens</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L162">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L162">
       
       (source)
     </a>
@@ -283,9 +279,8 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:rtype: list(str)
-:return: The document that this concordance index was
-    created from.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">The document that this concordance index was
+created from.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -299,7 +294,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_key</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L152">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L152">
       
       (source)
     </a>
@@ -307,7 +302,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Function mapping each token to an index key (or None).</p></div>
+    <div>Function mapping each token to an index key (or None).</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -321,7 +316,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_offsets</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L155">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L155">
       
       (source)
     </a>
@@ -329,7 +324,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Dictionary mapping words (or keys) to lists of offset indices.</p></div>
+    <div>Dictionary mapping words (or keys) to lists of offset indices.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -343,7 +338,7 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tokens</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L148">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L148">
       
       (source)
     </a>
@@ -351,8 +346,8 @@ Provided with a list of words, these will be found as a phrase.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The document (list of tokens) that this concordance index
-was created from.</p></div>
+    <div>The document (list of tokens) that this concordance index
+was created from.</div>
   </div>
 </div>
 
@@ -364,7 +359,7 @@ was created from.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

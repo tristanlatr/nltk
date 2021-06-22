@@ -65,175 +65,172 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CoreNLPDependencyParser</span>(<a href="nltk.parse.corenlp.GenericCoreNLPParser.html" title="nltk.parse.corenlp.GenericCoreNLPParser">GenericCoreNLPParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/corenlp.py#L550" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CoreNLPDependencyParser</span>(<a href="nltk.parse.corenlp.GenericCoreNLPParser.html" title="nltk.parse.corenlp.GenericCoreNLPParser">GenericCoreNLPParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/corenlp.py#L550" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.corenlp.CoreNLPDependencyParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Dependency parser.
-
-&gt;&gt;&gt; dep_parser = CoreNLPDependencyParser(url='http://localhost:9000')
-
-&gt;&gt;&gt; parse, = dep_parser.raw_parse(
-...     'The quick brown fox jumps over the lazy dog.'
-... )
-&gt;&gt;&gt; print(parse.to_conll(4))  # doctest: +NORMALIZE_WHITESPACE
-The     DT      4       det
-quick   JJ      4       amod
-brown   JJ      4       amod
-fox     NN      5       nsubj
-jumps   VBZ     0       ROOT
-over    IN      9       case
-the     DT      9       det
-lazy    JJ      9       amod
-dog     NN      5       nmod
-.       .       5       punct
-
-&gt;&gt;&gt; print(parse.tree())  # doctest: +NORMALIZE_WHITESPACE
-(jumps (fox The quick brown) (dog over the lazy) .)
-
-&gt;&gt;&gt; for governor, dep, dependent in parse.triples():
-...     print(governor, dep, dependent)  # doctest: +NORMALIZE_WHITESPACE
-    ('jumps', 'VBZ') nsubj ('fox', 'NN')
-    ('fox', 'NN') det ('The', 'DT')
-    ('fox', 'NN') amod ('quick', 'JJ')
-    ('fox', 'NN') amod ('brown', 'JJ')
-    ('jumps', 'VBZ') nmod ('dog', 'NN')
-    ('dog', 'NN') case ('over', 'IN')
-    ('dog', 'NN') det ('the', 'DT')
-    ('dog', 'NN') amod ('lazy', 'JJ')
-    ('jumps', 'VBZ') punct ('.', '.')
-
-&gt;&gt;&gt; (parse_fox, ), (parse_dog, ) = dep_parser.raw_parse_sents(
-...     [
-...         'The quick brown fox jumps over the lazy dog.',
-...         'The quick grey wolf jumps over the lazy fox.',
-...     ]
-... )
-&gt;&gt;&gt; print(parse_fox.to_conll(4))  # doctest: +NORMALIZE_WHITESPACE
-The DT      4       det
-quick       JJ      4       amod
-brown       JJ      4       amod
-fox NN      5       nsubj
-jumps       VBZ     0       ROOT
-over        IN      9       case
-the DT      9       det
-lazy        JJ      9       amod
-dog NN      5       nmod
-.   .       5       punct
-
-&gt;&gt;&gt; print(parse_dog.to_conll(4))  # doctest: +NORMALIZE_WHITESPACE
-The DT      4       det
-quick       JJ      4       amod
-grey        JJ      4       amod
-wolf        NN      5       nsubj
-jumps       VBZ     0       ROOT
-over        IN      9       case
-the DT      9       det
-lazy        JJ      9       amod
-fox NN      5       nmod
-.   .       5       punct
-
-&gt;&gt;&gt; (parse_dog, ), (parse_friends, ) = dep_parser.parse_sents(
-...     [
-...         "I 'm a dog".split(),
-...         "This is my friends ' cat ( the tabby )".split(),
-...     ]
-... )
-&gt;&gt;&gt; print(parse_dog.to_conll(4))  # doctest: +NORMALIZE_WHITESPACE
-I   PRP     4       nsubj
-'m  VBP     4       cop
-a   DT      4       det
-dog NN      0       ROOT
-
-&gt;&gt;&gt; print(parse_friends.to_conll(4))  # doctest: +NORMALIZE_WHITESPACE
-This        DT      6       nsubj
-is  VBZ     6       cop
-my  PRP$    4       nmod:poss
-friends     NNS     6       nmod:poss
-'   POS     4       case
-cat NN      0       ROOT
--LRB-       -LRB-   9       punct
-the DT      9       det
-tabby       NN      6       appos
--RRB-       -RRB-   9       punct
-
-&gt;&gt;&gt; parse_john, parse_mary, = dep_parser.parse_text(
-...     'John loves Mary. Mary walks.'
-... )
-
-&gt;&gt;&gt; print(parse_john.to_conll(4))  # doctest: +NORMALIZE_WHITESPACE
-John        NNP     2       nsubj
-loves       VBZ     0       ROOT
-Mary        NNP     2       dobj
-.   .       2       punct
-
-&gt;&gt;&gt; print(parse_mary.to_conll(4))  # doctest: +NORMALIZE_WHITESPACE
-Mary        NNP     2       nsubj
-walks       VBZ     0       ROOT
-.   .       2       punct
-
-Special cases
--------------
-
-Non-breaking space inside of a token.
-
-&gt;&gt;&gt; len(
-...     next(
-...         dep_parser.raw_parse(
-...             'Anhalt said children typically treat a 20-ounce soda bottle as one '
-...             'serving, while it actually contains 2 1/2 servings.'
-...         )
-...     ).nodes
-... )
-21
-
-Phone  numbers.
-
-&gt;&gt;&gt; len(
-...     next(
-...         dep_parser.raw_parse('This is not going to crash: 01 111 555.')
-...     ).nodes
-... )
-10
-
-&gt;&gt;&gt; print(
-...     next(
-...         dep_parser.raw_parse('The underscore _ should not simply disappear.')
-...     ).to_conll(4)
-... )  # doctest: +NORMALIZE_WHITESPACE
-The         DT  3   det
-underscore  VBP 3   amod
-_           NN  7   nsubj
-should      MD  7   aux
-not         RB  7   neg
-simply      RB  7   advmod
-disappear   VB  0   ROOT
-.           .   7   punct
-
-&gt;&gt;&gt; print(
-...     '\n'.join(
-...         next(
-...             dep_parser.raw_parse(
-...                 'for all of its insights into the dream world of teen life , and its electronic expression through '
-...                 'cyber culture , the film gives no quarter to anyone seeking to pull a cohesive story out of its 2 '
-...                 '1/2-hour running time .'
-...             )
-...         ).to_conll(4).split('\n')[-8:]
-...     )
-... )
-its PRP$    40      nmod:poss
-2 1/2       CD      40      nummod
--   :       40      punct
-hour        NN      31      nmod
-running     VBG     42      amod
-time        NN      40      dep
-.   .       24      punct
-&lt;BLANKLINE&gt;</p></div>
+        <div><p>Dependency parser.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>dep_parser = CoreNLPDependencyParser(url=<span class="py-string">'http://localhost:9000'</span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>parse, = dep_parser.raw_parse(
+<span class="py-more">... </span>    <span class="py-string">'The quick brown fox jumps over the lazy dog.'</span>
+<span class="py-more">... </span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(parse.to_conll(4))  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">The     DT      4       det</span>
+<span class="py-output">quick   JJ      4       amod</span>
+<span class="py-output">brown   JJ      4       amod</span>
+<span class="py-output">fox     NN      5       nsubj</span>
+<span class="py-output">jumps   VBZ     0       ROOT</span>
+<span class="py-output">over    IN      9       case</span>
+<span class="py-output">the     DT      9       det</span>
+<span class="py-output">lazy    JJ      9       amod</span>
+<span class="py-output">dog     NN      5       nmod</span>
+<span class="py-output">.       .       5       punct</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(parse.tree())  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">(jumps (fox The quick brown) (dog over the lazy) .)</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> governor, dep, dependent <span class="py-keyword">in</span> parse.triples():
+<span class="py-more">... </span>    <span class="py-builtin">print</span>(governor, dep, dependent)  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">    ('jumps', 'VBZ') nsubj ('fox', 'NN')</span>
+<span class="py-output">    ('fox', 'NN') det ('The', 'DT')</span>
+<span class="py-output">    ('fox', 'NN') amod ('quick', 'JJ')</span>
+<span class="py-output">    ('fox', 'NN') amod ('brown', 'JJ')</span>
+<span class="py-output">    ('jumps', 'VBZ') nmod ('dog', 'NN')</span>
+<span class="py-output">    ('dog', 'NN') case ('over', 'IN')</span>
+<span class="py-output">    ('dog', 'NN') det ('the', 'DT')</span>
+<span class="py-output">    ('dog', 'NN') amod ('lazy', 'JJ')</span>
+<span class="py-output">    ('jumps', 'VBZ') punct ('.', '.')</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>(parse_fox, ), (parse_dog, ) = dep_parser.raw_parse_sents(
+<span class="py-more">... </span>    [
+<span class="py-more">... </span>        <span class="py-string">'The quick brown fox jumps over the lazy dog.'</span>,
+<span class="py-more">... </span>        <span class="py-string">'The quick grey wolf jumps over the lazy fox.'</span>,
+<span class="py-more">... </span>    ]
+<span class="py-more">... </span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(parse_fox.to_conll(4))  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">The DT      4       det</span>
+<span class="py-output">quick       JJ      4       amod</span>
+<span class="py-output">brown       JJ      4       amod</span>
+<span class="py-output">fox NN      5       nsubj</span>
+<span class="py-output">jumps       VBZ     0       ROOT</span>
+<span class="py-output">over        IN      9       case</span>
+<span class="py-output">the DT      9       det</span>
+<span class="py-output">lazy        JJ      9       amod</span>
+<span class="py-output">dog NN      5       nmod</span>
+<span class="py-output">.   .       5       punct</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(parse_dog.to_conll(4))  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">The DT      4       det</span>
+<span class="py-output">quick       JJ      4       amod</span>
+<span class="py-output">grey        JJ      4       amod</span>
+<span class="py-output">wolf        NN      5       nsubj</span>
+<span class="py-output">jumps       VBZ     0       ROOT</span>
+<span class="py-output">over        IN      9       case</span>
+<span class="py-output">the DT      9       det</span>
+<span class="py-output">lazy        JJ      9       amod</span>
+<span class="py-output">fox NN      5       nmod</span>
+<span class="py-output">.   .       5       punct</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>(parse_dog, ), (parse_friends, ) = dep_parser.parse_sents(
+<span class="py-more">... </span>    [
+<span class="py-more">... </span>        <span class="py-string">"I 'm a dog"</span>.split(),
+<span class="py-more">... </span>        <span class="py-string">"This is my friends ' cat ( the tabby )"</span>.split(),
+<span class="py-more">... </span>    ]
+<span class="py-more">... </span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(parse_dog.to_conll(4))  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">I   PRP     4       nsubj</span>
+<span class="py-output">'m  VBP     4       cop</span>
+<span class="py-output">a   DT      4       det</span>
+<span class="py-output">dog NN      0       ROOT</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(parse_friends.to_conll(4))  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">This        DT      6       nsubj</span>
+<span class="py-output">is  VBZ     6       cop</span>
+<span class="py-output">my  PRP$    4       nmod:poss</span>
+<span class="py-output">friends     NNS     6       nmod:poss</span>
+<span class="py-output">'   POS     4       case</span>
+<span class="py-output">cat NN      0       ROOT</span>
+<span class="py-output">-LRB-       -LRB-   9       punct</span>
+<span class="py-output">the DT      9       det</span>
+<span class="py-output">tabby       NN      6       appos</span>
+<span class="py-output">-RRB-       -RRB-   9       punct</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>parse_john, parse_mary, = dep_parser.parse_text(
+<span class="py-more">... </span>    <span class="py-string">'John loves Mary. Mary walks.'</span>
+<span class="py-more">... </span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(parse_john.to_conll(4))  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">John        NNP     2       nsubj</span>
+<span class="py-output">loves       VBZ     0       ROOT</span>
+<span class="py-output">Mary        NNP     2       dobj</span>
+<span class="py-output">.   .       2       punct</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(parse_mary.to_conll(4))  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">Mary        NNP     2       nsubj</span>
+<span class="py-output">walks       VBZ     0       ROOT</span>
+<span class="py-output">.   .       2       punct</span>
+</pre><div class="rst-section" id="rst-special-cases">
+<h1 class="heading">Special cases</h1>
+<p>Non-breaking space inside of a token.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(
+<span class="py-more">... </span>    <span class="py-builtin">next</span>(
+<span class="py-more">... </span>        dep_parser.raw_parse(
+<span class="py-more">... </span>            <span class="py-string">'Anhalt said children typically treat a 20-ounce soda bottle as one '</span>
+<span class="py-more">... </span>            <span class="py-string">'serving, while it actually contains 2 1/2 servings.'</span>
+<span class="py-more">... </span>        )
+<span class="py-more">... </span>    ).nodes
+<span class="py-more">... </span>)
+<span class="py-output">21</span>
+</pre><p>Phone  numbers.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(
+<span class="py-more">... </span>    <span class="py-builtin">next</span>(
+<span class="py-more">... </span>        dep_parser.raw_parse(<span class="py-string">'This is not going to crash: 01 111 555.'</span>)
+<span class="py-more">... </span>    ).nodes
+<span class="py-more">... </span>)
+<span class="py-output">10</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(
+<span class="py-more">... </span>    <span class="py-builtin">next</span>(
+<span class="py-more">... </span>        dep_parser.raw_parse(<span class="py-string">'The underscore _ should not simply disappear.'</span>)
+<span class="py-more">... </span>    ).to_conll(4)
+<span class="py-more">... </span>)  <span class="py-comment"># doctest: +NORMALIZE_WHITESPACE</span>
+<span class="py-output">The         DT  3   det</span>
+<span class="py-output">underscore  VBP 3   amod</span>
+<span class="py-output">_           NN  7   nsubj</span>
+<span class="py-output">should      MD  7   aux</span>
+<span class="py-output">not         RB  7   neg</span>
+<span class="py-output">simply      RB  7   advmod</span>
+<span class="py-output">disappear   VB  0   ROOT</span>
+<span class="py-output">.           .   7   punct</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(
+<span class="py-more">... </span>    <span class="py-string">'\n'</span>.join(
+<span class="py-more">... </span>        <span class="py-builtin">next</span>(
+<span class="py-more">... </span>            dep_parser.raw_parse(
+<span class="py-more">... </span>                <span class="py-string">'for all of its insights into the dream world of teen life , and its electronic expression through '</span>
+<span class="py-more">... </span>                <span class="py-string">'cyber culture , the film gives no quarter to anyone seeking to pull a cohesive story out of its 2 '</span>
+<span class="py-more">... </span>                <span class="py-string">'1/2-hour running time .'</span>
+<span class="py-more">... </span>            )
+<span class="py-more">... </span>        ).to_conll(4).split(<span class="py-string">'\n'</span>)[-8:]
+<span class="py-more">... </span>    )
+<span class="py-more">... </span>)
+<span class="py-output">its PRP$    40      nmod:poss</span>
+<span class="py-output">2 1/2       CD      40      nummod</span>
+<span class="py-output">-   :       40      punct</span>
+<span class="py-output">hour        NN      31      nmod</span>
+<span class="py-output">running     VBG     42      amod</span>
+<span class="py-output">time        NN      40      dep</span>
+<span class="py-output">.   .       24      punct</span>
+<span class="py-output">&lt;BLANKLINE&gt;</span>
+</pre></div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id902">
+        <table class="children sortable" id="id906">
   
   
   <tr class="method">
@@ -257,7 +254,7 @@ time        NN      40      dep
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">GenericCoreNLPParser</a></code>:
           </p>
-          <table class="children sortable" id="id903">
+          <table class="children sortable" id="id907">
   
   
   <tr class="basemethod">
@@ -336,60 +333,60 @@ time        NN      40      dep
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code> (via <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">GenericCoreNLPParser</a></code>):
           </p>
-          <table class="children sortable" id="id904">
+          <table class="children sortable" id="id908">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code> (via <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">GenericCoreNLPParser</a></code>):
           </p>
-          <table class="children sortable" id="id905">
+          <table class="children sortable" id="id909">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code> (via <code><a href="nltk.parse.corenlp.GenericCoreNLPParser.html">GenericCoreNLPParser</a></code>):
           </p>
-          <table class="children sortable" id="id906">
+          <table class="children sortable" id="id910">
   
   
   <tr class="basemethod">
@@ -423,7 +420,7 @@ time        NN      40      dep
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">make_tree</span>(self, result):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/corenlp.py#L717">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/corenlp.py#L717">
       
       (source)
     </a>
@@ -445,7 +442,7 @@ time        NN      40      dep
   <div class="functionHeader">
     
     <span class="py-defname">parser_annotator</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/corenlp.py#L715">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/corenlp.py#L715">
       
       (source)
     </a>
@@ -467,7 +464,7 @@ time        NN      40      dep
   <div class="functionHeader">
     
     <span class="py-defname">_OUTPUT_FORMAT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/corenlp.py#L714">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/corenlp.py#L714">
       
       (source)
     </a>
@@ -487,7 +484,7 @@ time        NN      40      dep
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

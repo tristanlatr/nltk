@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/phrase_based.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/phrase_based.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1901">
+        <table class="children sortable" id="id1905">
   
   
   <tr class="function">
@@ -108,7 +108,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">extract</span>(f_start, f_end, e_start, e_end, alignment, f_aligned, srctext, trgtext, srclen, trglen, max_phrase_length):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/phrase_based.py#L10">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/phrase_based.py#L10">
       
       (source)
     </a>
@@ -116,39 +116,27 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">This function checks for alignment point consistency and extracts
-phrases using the chunk of consistent phrases.
-
-A phrase pair (e, f ) is consistent with an alignment A if and only if:
-
-(i) No English words in the phrase pair are aligned to words outside it.
-
-       ∀e i ∈ e, (e i , f j ) ∈ A ⇒ f j ∈ f
-
-(ii) No Foreign words in the phrase pair are aligned to words outside it.
-
-        ∀f j ∈ f , (e i , f j ) ∈ A ⇒ e i ∈ e
-
-(iii) The phrase pair contains at least one alignment point.
-
-        ∃e i ∈ e  ̄ , f j ∈ f  ̄ s.t. (e i , f j ) ∈ A
-
-:type f_start: int
-:param f_start: Starting index of the possible foreign language phrases
-:type f_end: int
-:param f_end: End index of the possible foreign language phrases
-:type e_start: int
-:param e_start: Starting index of the possible source language phrases
-:type e_end: int
-:param e_end: End index of the possible source language phrases
-:type srctext: list
-:param srctext: The source language tokens, a list of string.
-:type trgtext: list
-:param trgtext: The target language tokens, a list of string.
-:type srclen: int
-:param srclen: The number of tokens in the source language tokens.
-:type trglen: int
-:param trglen: The number of tokens in the target language tokens.</p></div>
+    <div><p>This function checks for alignment point consistency and extracts
+phrases using the chunk of consistent phrases.</p>
+<p>A phrase pair (e, f ) is consistent with an alignment A if and only if:</p>
+<ol class="rst-lowerroman">
+<li><p class="rst-first">No English words in the phrase pair are aligned to words outside it.</p>
+<blockquote>
+<p>∀e i ∈ e, (e i , f j ) ∈ A ⇒ f j ∈ f</p>
+</blockquote>
+</li>
+<li><p class="rst-first">No Foreign words in the phrase pair are aligned to words outside it.</p>
+<blockquote>
+<p>∀f j ∈ f , (e i , f j ) ∈ A ⇒ e i ∈ e</p>
+</blockquote>
+</li>
+<li><p class="rst-first">The phrase pair contains at least one alignment point.</p>
+<blockquote>
+<p>∃e i ∈ e  ̄ , f j ∈ f  ̄ s.t. (e i , f j ) ∈ A</p>
+</blockquote>
+</li>
+</ol>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f_start:</span>int</td><td class="fieldArgDesc">Starting index of the possible foreign language phrases</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f_end:</span>int</td><td class="fieldArgDesc">End index of the possible foreign language phrases</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">e_start:</span>int</td><td class="fieldArgDesc">Starting index of the possible source language phrases</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">e_end:</span>int</td><td class="fieldArgDesc">End index of the possible source language phrases</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alignment</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f_aligned</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">srctext:</span>list</td><td class="fieldArgDesc">The source language tokens, a list of string.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trgtext:</span>list</td><td class="fieldArgDesc">The target language tokens, a list of string.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">srclen:</span>int</td><td class="fieldArgDesc">The number of tokens in the source language tokens.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trglen:</span>int</td><td class="fieldArgDesc">The number of tokens in the target language tokens.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_phrase_length</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -162,7 +150,7 @@ A phrase pair (e, f ) is consistent with an alignment A if and only if:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">phrase_extraction</span>(srctext, trgtext, alignment, max_phrase_length=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/phrase_based.py#L89">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/phrase_based.py#L89">
       
       (source)
     </a>
@@ -170,70 +158,58 @@ A phrase pair (e, f ) is consistent with an alignment A if and only if:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Phrase extraction algorithm extracts all consistent phrase pairs from
-a word-aligned sentence pair.
-
-The idea is to loop over all possible source language (e) phrases and find
+    <div><p>Phrase extraction algorithm extracts all consistent phrase pairs from
+a word-aligned sentence pair.</p>
+<p>The idea is to loop over all possible source language (e) phrases and find
 the minimal foreign phrase (f) that matches each of them. Matching is done
 by identifying all alignment points for the source phrase and finding the
 shortest foreign phrase that includes all the foreign counterparts for the
-source words.
-
-In short, a phrase alignment has to
+source words.</p>
+<p>In short, a phrase alignment has to
 (a) contain all alignment points for all covered words
-(b) contain at least one alignment point
-
-&gt;&gt;&gt; srctext = "michael assumes that he will stay in the house"
-&gt;&gt;&gt; trgtext = "michael geht davon aus , dass er im haus bleibt"
-&gt;&gt;&gt; alignment = [(0,0), (1,1), (1,2), (1,3), (2,5), (3,6), (4,9),
-... (5,9), (6,7), (7,7), (8,8)]
-&gt;&gt;&gt; phrases = phrase_extraction(srctext, trgtext, alignment)
-&gt;&gt;&gt; for i in sorted(phrases):
-...    print(i)
-...
-((0, 1), (0, 1), 'michael', 'michael')
-((0, 2), (0, 4), 'michael assumes', 'michael geht davon aus')
-((0, 2), (0, 5), 'michael assumes', 'michael geht davon aus ,')
-((0, 3), (0, 6), 'michael assumes that', 'michael geht davon aus , dass')
-((0, 4), (0, 7), 'michael assumes that he', 'michael geht davon aus , dass er')
-((0, 9), (0, 10), 'michael assumes that he will stay in the house', 'michael geht davon aus , dass er im haus bleibt')
-((1, 2), (1, 4), 'assumes', 'geht davon aus')
-((1, 2), (1, 5), 'assumes', 'geht davon aus ,')
-((1, 3), (1, 6), 'assumes that', 'geht davon aus , dass')
-((1, 4), (1, 7), 'assumes that he', 'geht davon aus , dass er')
-((1, 9), (1, 10), 'assumes that he will stay in the house', 'geht davon aus , dass er im haus bleibt')
-((2, 3), (4, 6), 'that', ', dass')
-((2, 3), (5, 6), 'that', 'dass')
-((2, 4), (4, 7), 'that he', ', dass er')
-((2, 4), (5, 7), 'that he', 'dass er')
-((2, 9), (4, 10), 'that he will stay in the house', ', dass er im haus bleibt')
-((2, 9), (5, 10), 'that he will stay in the house', 'dass er im haus bleibt')
-((3, 4), (6, 7), 'he', 'er')
-((3, 9), (6, 10), 'he will stay in the house', 'er im haus bleibt')
-((4, 6), (9, 10), 'will stay', 'bleibt')
-((4, 9), (7, 10), 'will stay in the house', 'im haus bleibt')
-((6, 8), (7, 8), 'in the', 'im')
-((6, 9), (7, 9), 'in the house', 'im haus')
-((8, 9), (8, 9), 'house', 'haus')
-
-:type srctext: str
-:param srctext: The sentence string from the source language.
-:type trgtext: str
-:param trgtext: The sentence string from the target language.
-:type alignment: list(tuple)
-:param alignment: The word alignment outputs as list of tuples, where
-    the first elements of tuples are the source words' indices and
-    second elements are the target words' indices. This is also the output
-    format of nltk.translate.ibm1
-:rtype: list(tuple)
-:return: A list of tuples, each element in a list is a phrase and each
-    phrase is a tuple made up of (i) its source location, (ii) its target
-    location, (iii) the source phrase and (iii) the target phrase. The phrase
-    list of tuples represents all the possible phrases extracted from the
-    word alignments.
-:type max_phrase_length: int
-:param max_phrase_length: maximal phrase length, if 0 or not specified
-    it is set to a length of the longer sentence (srctext or trgtext).</p></div>
+(b) contain at least one alignment point</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>srctext = <span class="py-string">"michael assumes that he will stay in the house"</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>trgtext = <span class="py-string">"michael geht davon aus , dass er im haus bleibt"</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>alignment = [(0,0), (1,1), (1,2), (1,3), (2,5), (3,6), (4,9),
+<span class="py-more">... </span>(5,9), (6,7), (7,7), (8,8)]
+<span class="py-prompt">&gt;&gt;&gt; </span>phrases = phrase_extraction(srctext, trgtext, alignment)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> i <span class="py-keyword">in</span> <span class="py-builtin">sorted</span>(phrases):
+<span class="py-more">... </span>   <span class="py-builtin">print</span>(i)
+<span class="py-more">...</span>
+<span class="py-output">((0, 1), (0, 1), 'michael', 'michael')</span>
+<span class="py-output">((0, 2), (0, 4), 'michael assumes', 'michael geht davon aus')</span>
+<span class="py-output">((0, 2), (0, 5), 'michael assumes', 'michael geht davon aus ,')</span>
+<span class="py-output">((0, 3), (0, 6), 'michael assumes that', 'michael geht davon aus , dass')</span>
+<span class="py-output">((0, 4), (0, 7), 'michael assumes that he', 'michael geht davon aus , dass er')</span>
+<span class="py-output">((0, 9), (0, 10), 'michael assumes that he will stay in the house', 'michael geht davon aus , dass er im haus bleibt')</span>
+<span class="py-output">((1, 2), (1, 4), 'assumes', 'geht davon aus')</span>
+<span class="py-output">((1, 2), (1, 5), 'assumes', 'geht davon aus ,')</span>
+<span class="py-output">((1, 3), (1, 6), 'assumes that', 'geht davon aus , dass')</span>
+<span class="py-output">((1, 4), (1, 7), 'assumes that he', 'geht davon aus , dass er')</span>
+<span class="py-output">((1, 9), (1, 10), 'assumes that he will stay in the house', 'geht davon aus , dass er im haus bleibt')</span>
+<span class="py-output">((2, 3), (4, 6), 'that', ', dass')</span>
+<span class="py-output">((2, 3), (5, 6), 'that', 'dass')</span>
+<span class="py-output">((2, 4), (4, 7), 'that he', ', dass er')</span>
+<span class="py-output">((2, 4), (5, 7), 'that he', 'dass er')</span>
+<span class="py-output">((2, 9), (4, 10), 'that he will stay in the house', ', dass er im haus bleibt')</span>
+<span class="py-output">((2, 9), (5, 10), 'that he will stay in the house', 'dass er im haus bleibt')</span>
+<span class="py-output">((3, 4), (6, 7), 'he', 'er')</span>
+<span class="py-output">((3, 9), (6, 10), 'he will stay in the house', 'er im haus bleibt')</span>
+<span class="py-output">((4, 6), (9, 10), 'will stay', 'bleibt')</span>
+<span class="py-output">((4, 9), (7, 10), 'will stay in the house', 'im haus bleibt')</span>
+<span class="py-output">((6, 8), (7, 8), 'in the', 'im')</span>
+<span class="py-output">((6, 9), (7, 9), 'in the house', 'im haus')</span>
+<span class="py-output">((8, 9), (8, 9), 'house', 'haus')</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">srctext:</span>str</td><td class="fieldArgDesc">The sentence string from the source language.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trgtext:</span>str</td><td class="fieldArgDesc">The sentence string from the target language.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alignment:</span>list(tuple)</td><td class="fieldArgDesc">The word alignment outputs as list of tuples, where
+the first elements of tuples are the source words' indices and
+second elements are the target words' indices. This is also the output
+format of nltk.translate.ibm1</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_phrase_length:</span>int</td><td class="fieldArgDesc">maximal phrase length, if 0 or not specified
+it is set to a length of the longer sentence (srctext or trgtext).</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple)</td><td class="fieldArgDesc">A list of tuples, each element in a list is a phrase and each
+phrase is a tuple made up of (i) its source location, (ii) its target
+location, (iii) the source phrase and (iii) the target phrase. The phrase
+list of tuples represents all the possible phrases extracted from the
+word alignments.</td></tr></table></div>
   </div>
 </div>
 
@@ -245,7 +221,7 @@ In short, a phrase alignment has to
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

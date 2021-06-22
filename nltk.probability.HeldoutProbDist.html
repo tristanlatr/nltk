@@ -65,65 +65,51 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">HeldoutProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L984" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HeldoutProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L984" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.HeldoutProbDist">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The heldout estimate for the probability distribution of the
+        <div><p>The heldout estimate for the probability distribution of the
 experiment used to generate two frequency distributions.  These
 two frequency distributions are called the "heldout frequency
 distribution" and the "base frequency distribution."  The
 "heldout estimate" uses uses the "heldout frequency
 distribution" to predict the probability of each sample, given its
-frequency in the "base frequency distribution".
-
-In particular, the heldout estimate approximates the probability
-for a sample that occurs *r* times in the base distribution as
+frequency in the "base frequency distribution".</p>
+<p>In particular, the heldout estimate approximates the probability
+for a sample that occurs <em>r</em> times in the base distribution as
 the average frequency in the heldout distribution of all samples
-that occur *r* times in the base distribution.
-
-This average frequency is *Tr[r]/(Nr[r].N)*, where:
-
-- *Tr[r]* is the total count in the heldout distribution for
-  all samples that occur *r* times in the base distribution.
-- *Nr[r]* is the number of samples that occur *r* times in
-  the base distribution.
-- *N* is the number of outcomes recorded by the heldout
-  frequency distribution.
-
-In order to increase the efficiency of the ``prob`` member
-function, *Tr[r]/(Nr[r].N)* is precomputed for each value of *r*
-when the ``HeldoutProbDist`` is created.
-
-:type _estimate: list(float)
-:ivar _estimate: A list mapping from *r*, the number of
-    times that a sample occurs in the base distribution, to the
-    probability estimate for that sample.  ``_estimate[r]`` is
-    calculated by finding the average frequency in the heldout
-    distribution of all samples that occur *r* times in the base
-    distribution.  In particular, ``_estimate[r]`` =
-    *Tr[r]/(Nr[r].N)*.
-:type _max_r: int
-:ivar _max_r: The maximum number of times that any sample occurs
-    in the base distribution.  ``_max_r`` is used to decide how
-    large ``_estimate`` must be.</p></div>
+that occur <em>r</em> times in the base distribution.</p>
+<p>This average frequency is <em>Tr[r]/(Nr[r].N)</em>, where:</p>
+<ul class="rst-simple">
+<li><em>Tr[r]</em> is the total count in the heldout distribution for
+all samples that occur <em>r</em> times in the base distribution.</li>
+<li><em>Nr[r]</em> is the number of samples that occur <em>r</em> times in
+the base distribution.</li>
+<li><em>N</em> is the number of outcomes recorded by the heldout
+frequency distribution.</li>
+</ul>
+<p>In order to increase the efficiency of the <tt class="rst-docutils literal">prob</tt> member
+function, <em>Tr[r]/(Nr[r].N)</em> is precomputed for each value of <em>r</em>
+when the <tt class="rst-docutils literal">HeldoutProbDist</tt> is created.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1148">
+        <table class="children sortable" id="id1152">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Use the heldout estimate to create a probability distribution for the experiment used to generate ``base_fdist`` and ``heldout_fdist``.</span></td>
+    <td><span>Use the heldout estimate to create a probability distribution for the experiment used to generate <tt class="rst-docutils literal">base_fdist</tt> and <tt class="rst-docutils literal">heldout_fdist</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>:rtype: str :return: A string representation of this ``ProbDist``.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -153,7 +139,7 @@ when the ``HeldoutProbDist`` is created.
     
     <td>Method</td>
     <td><code><a href="#samples">samples</a></code></td>
-    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
+    <td><span>Return a list of all samples that have nonzero probabilities. Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -168,7 +154,7 @@ when the ``HeldoutProbDist`` is created.
     
     <td>Method</td>
     <td><code><a href="#_calculate_Tr">_calculate_Tr</a></code></td>
-    <td><span>Return the list *Tr*, where *Tr[r]* is the total count in ``heldout_fdist`` for all samples that occur *r* times in ``base_fdist``.</span></td>
+    <td><span>Return the list <em>Tr</em>, where <em>Tr[r]</em> is the total count in <tt class="rst-docutils literal">heldout_fdist</tt> for all samples that occur <em>r</em> times in <tt class="rst-docutils literal">base_fdist</tt>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -178,7 +164,13 @@ when the ``HeldoutProbDist`` is created.
     
     <td>Instance Variable</td>
     <td><code><a href="#_estimate">_estimate</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list mapping from <em>r</em>, the number of
+times that a sample occurs in the base distribution, to the
+probability estimate for that sample.  <tt class="rst-docutils literal">_estimate[r]</tt> is
+calculated by finding the average frequency in the heldout
+distribution of all samples that occur <em>r</em> times in the base
+distribution.  In particular, <tt class="rst-docutils literal">_estimate[r]</tt> =
+<em>Tr[r]/(Nr[r].N)</em>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -188,21 +180,23 @@ when the ``HeldoutProbDist`` is created.
     
     <td>Instance Variable</td>
     <td><code><a href="#_max_r">_max_r</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The maximum number of times that any sample occurs
+in the base distribution.  <tt class="rst-docutils literal">_max_r</tt> is used to decide how
+large <tt class="rst-docutils literal">_estimate</tt> must be.</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.ProbDistI.html">ProbDistI</a></code>:
           </p>
-          <table class="children sortable" id="id1149">
+          <table class="children sortable" id="id1153">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.probability.ProbDistI.html#generate">generate</a></code></td>
-    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
+    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample <tt class="rst-docutils literal">samp</tt> is equal to <tt class="rst-docutils literal">self.prob(samp)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -229,7 +223,7 @@ when the ``HeldoutProbDist`` is created.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, base_fdist, heldout_fdist, bins=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1028">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1028">
       
       (source)
     </a>
@@ -237,20 +231,13 @@ when the ``HeldoutProbDist`` is created.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#__init__">nltk.probability.ProbDistI.__init__</a></code></div>
     
-    <div><p class="pre">Use the heldout estimate to create a probability distribution
-for the experiment used to generate ``base_fdist`` and
-``heldout_fdist``.
-
-:type base_fdist: FreqDist
-:param base_fdist: The base frequency distribution.
-:type heldout_fdist: FreqDist
-:param heldout_fdist: The heldout frequency distribution.
-:type bins: int
-:param bins: The number of sample values that can be generated
-    by the experiment that is described by the probability
-    distribution.  This value must be correctly set for the
-    probabilities of the sample values to sum to one.  If
-    ``bins`` is not specified, it defaults to ``freqdist.B()``.</p></div>
+    <div>Use the heldout estimate to create a probability distribution
+for the experiment used to generate <tt class="rst-docutils literal">base_fdist</tt> and
+<tt class="rst-docutils literal">heldout_fdist</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">base_fdist:</span>FreqDist</td><td class="fieldArgDesc">The base frequency distribution.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">heldout_fdist:</span>FreqDist</td><td class="fieldArgDesc">The heldout frequency distribution.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bins:</span>int</td><td class="fieldArgDesc">The number of sample values that can be generated
+by the experiment that is described by the probability
+distribution.  This value must be correctly set for the
+probabilities of the sample values to sum to one.  If
+<tt class="rst-docutils literal">bins</tt> is not specified, it defaults to <tt class="rst-docutils literal">freqdist.B()</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -264,7 +251,7 @@ for the experiment used to generate ``base_fdist`` and
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1139">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1139">
       
       (source)
     </a>
@@ -272,8 +259,7 @@ for the experiment used to generate ``base_fdist`` and
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:rtype: str
-:return: A string representation of this ``ProbDist``.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">A string representation of this <tt class="rst-docutils literal">ProbDist</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -287,7 +273,7 @@ for the experiment used to generate ``base_fdist`` and
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">base_fdist</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1104">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1104">
       
       (source)
     </a>
@@ -295,10 +281,8 @@ for the experiment used to generate ``base_fdist`` and
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the base frequency distribution that this probability
-distribution is based on.
-
-:rtype: FreqDist</p></div>
+    <div>Return the base frequency distribution that this probability
+distribution is based on.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">FreqDist</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -312,7 +296,7 @@ distribution is based on.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">discount</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1136">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1136">
       
       (source)
     </a>
@@ -320,9 +304,7 @@ distribution is based on.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#discount">nltk.probability.ProbDistI.discount</a></code></div>
     
-    <div><p class="pre">Return the ratio by which counts are discounted on average: c*/c
-
-:rtype: float</p></div>
+    <div>Return the ratio by which counts are discounted on average: c*/c<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -336,7 +318,7 @@ distribution is based on.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">heldout_fdist</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1113">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1113">
       
       (source)
     </a>
@@ -344,10 +326,8 @@ distribution is based on.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the heldout frequency distribution that this
-probability distribution is based on.
-
-:rtype: FreqDist</p></div>
+    <div>Return the heldout frequency distribution that this
+probability distribution is based on.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">FreqDist</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -361,7 +341,7 @@ probability distribution is based on.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">max</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1130">
       
       (source)
     </a>
@@ -369,11 +349,9 @@ probability distribution is based on.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#max">nltk.probability.ProbDistI.max</a></code></div>
     
-    <div><p class="pre">Return the sample with the greatest probability.  If two or
+    <div>Return the sample with the greatest probability.  If two or
 more samples have the same probability, return one of them;
-which sample is returned is undefined.
-
-:rtype: any</p></div>
+which sample is returned is undefined.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">any</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -387,7 +365,7 @@ which sample is returned is undefined.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self, sample):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1125">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1125">
       
       (source)
     </a>
@@ -395,13 +373,9 @@ which sample is returned is undefined.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#prob">nltk.probability.ProbDistI.prob</a></code></div>
     
-    <div><p class="pre">Return the probability for a given sample.  Probabilities
-are always real numbers in the range [0, 1].
-
-:param sample: The sample whose probability
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+    <div>Return the probability for a given sample.  Probabilities
+are always real numbers in the range [0, 1].<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">The sample whose probability
+should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -415,7 +389,7 @@ are always real numbers in the range [0, 1].
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">samples</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1122">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1122">
       
       (source)
     </a>
@@ -423,10 +397,8 @@ are always real numbers in the range [0, 1].
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#samples">nltk.probability.ProbDistI.samples</a></code></div>
     
-    <div><p class="pre">Return a list of all samples that have nonzero probabilities.
-Use ``prob`` to find the probability of each sample.
-
-:rtype: list</p></div>
+    <div>Return a list of all samples that have nonzero probabilities.
+Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -440,7 +412,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">SUM_TO_ONE</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1026">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1026">
       
       (source)
     </a>
@@ -448,8 +420,8 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#SUM_TO_ONE">nltk.probability.ProbDistI.SUM_TO_ONE</a></code></div>
     
-    <div><p class="pre">True if the probabilities of the samples in this probability
-distribution will always sum to one.</p></div>
+    <div>True if the probabilities of the samples in this probability
+distribution will always sum to one.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -463,7 +435,7 @@ distribution will always sum to one.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_calculate_estimate</span>(self, Tr, Nr, N):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1076">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1076">
       
       (source)
     </a>
@@ -471,23 +443,15 @@ distribution will always sum to one.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the list *estimate*, where *estimate[r]* is the probability
-estimate for any sample that occurs *r* times in the base frequency
-distribution.  In particular, *estimate[r]* is *Tr[r]/(N[r].N)*.
-In the special case that *N[r]=0*, *estimate[r]* will never be used;
-so we define *estimate[r]=None* for those cases.
-
-:rtype: list(float)
-:type Tr: list(float)
-:param Tr: the list *Tr*, where *Tr[r]* is the total count in
-    the heldout distribution for all samples that occur *r*
-    times in base distribution.
-:type Nr: list(float)
-:param Nr: The list *Nr*, where *Nr[r]* is the number of
-    samples that occur *r* times in the base distribution.
-:type N: int
-:param N: The total number of outcomes recorded by the heldout
-    frequency distribution.</p></div>
+    <div>Return the list <em>estimate</em>, where <em>estimate[r]</em> is the probability
+estimate for any sample that occurs <em>r</em> times in the base frequency
+distribution.  In particular, <em>estimate[r]</em> is <em>Tr[r]/(N[r].N)</em>.
+In the special case that <em>N[r]=0</em>, <em>estimate[r]</em> will never be used;
+so we define <em>estimate[r]=None</em> for those cases.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">Tr:</span>list(float)</td><td class="fieldArgDesc">the list <em>Tr</em>, where <em>Tr[r]</em> is the total count in
+the heldout distribution for all samples that occur <em>r</em>
+times in base distribution.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">Nr:</span>list(float)</td><td class="fieldArgDesc">The list <em>Nr</em>, where <em>Nr[r]</em> is the number of
+samples that occur <em>r</em> times in the base distribution.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">N:</span>int</td><td class="fieldArgDesc">The total number of outcomes recorded by the heldout
+frequency distribution.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(float)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -501,7 +465,7 @@ so we define *estimate[r]=None* for those cases.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_calculate_Tr</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1062">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1062">
       
       (source)
     </a>
@@ -509,11 +473,9 @@ so we define *estimate[r]=None* for those cases.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the list *Tr*, where *Tr[r]* is the total count in
-``heldout_fdist`` for all samples that occur *r*
-times in ``base_fdist``.
-
-:rtype: list(float)</p></div>
+    <div>Return the list <em>Tr</em>, where <em>Tr[r]</em> is the total count in
+<tt class="rst-docutils literal">heldout_fdist</tt> for all samples that occur <em>r</em>
+times in <tt class="rst-docutils literal">base_fdist</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(float)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -527,7 +489,7 @@ times in ``base_fdist``.
   <div class="functionHeader">
     
     <span class="py-defname">_base_fdist</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1046">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1046">
       
       (source)
     </a>
@@ -548,8 +510,8 @@ times in ``base_fdist``.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_estimate</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1060">
+    <span class="py-defname">_estimate</span>: list(float) =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1012">
       
       (source)
     </a>
@@ -557,7 +519,13 @@ times in ``base_fdist``.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A list mapping from <em>r</em>, the number of
+times that a sample occurs in the base distribution, to the
+probability estimate for that sample.  <tt class="rst-docutils literal">_estimate[r]</tt> is
+calculated by finding the average frequency in the heldout
+distribution of all samples that occur <em>r</em> times in the base
+distribution.  In particular, <tt class="rst-docutils literal">_estimate[r]</tt> =
+<em>Tr[r]/(Nr[r].N)</em>.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -571,7 +539,7 @@ times in ``base_fdist``.
   <div class="functionHeader">
     
     <span class="py-defname">_heldout_fdist</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1047">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1047">
       
       (source)
     </a>
@@ -592,8 +560,8 @@ times in ``base_fdist``.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_max_r</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1050">
+    <span class="py-defname">_max_r</span>: int =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1020">
       
       (source)
     </a>
@@ -601,7 +569,9 @@ times in ``base_fdist``.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The maximum number of times that any sample occurs
+in the base distribution.  <tt class="rst-docutils literal">_max_r</tt> is used to decide how
+large <tt class="rst-docutils literal">_estimate</tt> must be.</div>
   </div>
 </div>
 
@@ -613,7 +583,7 @@ times in ``base_fdist``.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

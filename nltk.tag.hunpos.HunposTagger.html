@@ -65,37 +65,44 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">HunposTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L27" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HunposTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L27" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.hunpos.HunposTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A class for pos tagging with HunPos. The input is the paths to:
- - a model trained on training data
- - (optionally) the path to the hunpos-tag binary
- - (optionally) the encoding of the training data (default: ISO-8859-1)
-
-Example:
-
-    &gt;&gt;&gt; from nltk.tag import HunposTagger
-    &gt;&gt;&gt; ht = HunposTagger('en_wsj.model')
-    &gt;&gt;&gt; ht.tag('What is the airspeed of an unladen swallow ?'.split())
-    [('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'), ('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'VB'), ('?', '.')]
-    &gt;&gt;&gt; ht.close()
-
-This class communicates with the hunpos-tag binary via pipes. When the
+        <div><dl class="rst-docutils">
+<dt>A class for pos tagging with HunPos. The input is the paths to:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>a model trained on training data</li>
+<li>(optionally) the path to the hunpos-tag binary</li>
+<li>(optionally) the encoding of the training data (default: ISO-8859-1)</li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> HunposTagger
+<span class="py-prompt">&gt;&gt;&gt; </span>ht = HunposTagger(<span class="py-string">'en_wsj.model'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>ht.tag(<span class="py-string">'What is the airspeed of an unladen swallow ?'</span>.split())
+<span class="py-output">[('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'), ('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'VB'), ('?', '.')]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ht.close()</pre></blockquote>
+<p>This class communicates with the hunpos-tag binary via pipes. When the
 tagger object is no longer needed, the close() method should be called to
 free system resources. The class supports the context manager interface; if
-used in a with statement, the close() method is invoked automatically:
-
-    &gt;&gt;&gt; with HunposTagger('en_wsj.model') as ht:
-    ...     ht.tag('What is the airspeed of an unladen swallow ?'.split())
-    ...
-    [('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'), ('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'VB'), ('?', '.')]</p></div>
+used in a with statement, the close() method is invoked automatically:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">with</span> HunposTagger(<span class="py-string">'en_wsj.model'</span>) <span class="py-keyword">as</span> ht:
+<span class="py-more">... </span>    ht.tag(<span class="py-string">'What is the airspeed of an unladen swallow ?'</span>.split())
+<span class="py-more">...</span>
+<span class="py-output">[('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'), ('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'VB'), ('?', '.')]</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1559">
+        <table class="children sortable" id="id1563">
   
   
   <tr class="method">
@@ -159,7 +166,7 @@ used in a with statement, the close() method is invoked automatically:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code>:
           </p>
-          <table class="children sortable" id="id1560">
+          <table class="children sortable" id="id1564">
   
   
   <tr class="basemethod">
@@ -171,7 +178,7 @@ used in a with statement, the close() method is invoked automatically:
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -198,7 +205,7 @@ used in a with statement, the close() method is invoked automatically:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__del__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L103">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L103">
       
       (source)
     </a>
@@ -220,7 +227,7 @@ used in a with statement, the close() method is invoked automatically:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__enter__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L112">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L112">
       
       (source)
     </a>
@@ -242,7 +249,7 @@ used in a with statement, the close() method is invoked automatically:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__exit__</span>(self, exc_type, exc_value, traceback):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L115">
       
       (source)
     </a>
@@ -264,7 +271,7 @@ used in a with statement, the close() method is invoked automatically:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path_to_model, path_to_bin=None, encoding=_hunpos_charset, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L53">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L53">
       
       (source)
     </a>
@@ -272,17 +279,13 @@ used in a with statement, the close() method is invoked automatically:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Starts the hunpos-tag executable and establishes a connection with it.
-
-:param path_to_model: The model file.
-:param path_to_bin: The hunpos-tag binary.
-:param encoding: The encoding used by the model. Unicode tokens
-    passed to the tag() and tag_sents() methods are converted to
-    this charset when they are sent to hunpos-tag.
-    The default is ISO-8859-1 (Latin-1).
-
-    This parameter is ignored for str tokens, which are sent as-is.
-    The caller must ensure that tokens are encoded in the right charset.</p></div>
+    <div>Starts the hunpos-tag executable and establishes a connection with it.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path_to_model</span></td><td class="fieldArgDesc">The model file.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path_to_bin</span></td><td class="fieldArgDesc">The hunpos-tag binary.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><p>The encoding used by the model. Unicode tokens
+passed to the tag() and tag_sents() methods are converted to
+this charset when they are sent to hunpos-tag.
+The default is ISO-8859-1 (Latin-1).</p>
+<p>This parameter is ignored for str tokens, which are sent as-is.
+The caller must ensure that tokens are encoded in the right charset.</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -296,7 +299,7 @@ used in a with statement, the close() method is invoked automatically:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">close</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L106">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L106">
       
       (source)
     </a>
@@ -304,7 +307,7 @@ used in a with statement, the close() method is invoked automatically:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Closes the pipe to the hunpos executable.</p></div>
+    <div>Closes the pipe to the hunpos executable.</div>
   </div>
 </div><div class="basemethod">
   
@@ -318,7 +321,7 @@ used in a with statement, the close() method is invoked automatically:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L118">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L118">
       
       (source)
     </a>
@@ -326,8 +329,8 @@ used in a with statement, the close() method is invoked automatically:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.api.TaggerI.html#tag">nltk.tag.api.TaggerI.tag</a></code></div>
     
-    <div><p class="pre">Tags a single sentence: a list of words.
-The tokens should not contain any newline characters.</p></div>
+    <div>Tags a single sentence: a list of words.
+The tokens should not contain any newline characters.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -341,7 +344,7 @@ The tokens should not contain any newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_closed</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L69">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L69">
       
       (source)
     </a>
@@ -363,7 +366,7 @@ The tokens should not contain any newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_encoding</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L93">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L93">
       
       (source)
     </a>
@@ -385,7 +388,7 @@ The tokens should not contain any newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_hunpos</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L94">
       
       (source)
     </a>
@@ -407,7 +410,7 @@ The tokens should not contain any newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_hunpos_bin</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L81">
       
       (source)
     </a>
@@ -429,7 +432,7 @@ The tokens should not contain any newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_hunpos_model</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/hunpos.py#L90">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/hunpos.py#L90">
       
       (source)
     </a>
@@ -449,7 +452,7 @@ The tokens should not contain any newline characters.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

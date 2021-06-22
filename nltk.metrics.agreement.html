@@ -65,74 +65,66 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Implementations of inter-annotator agreement coefficients surveyed by Artstein
-and Poesio (2007), Inter-Coder Agreement for Computational Linguistics.
-
-An agreement coefficient calculates the amount that annotators agreed on label
-assignments beyond what is expected by chance.
-
-In defining the AnnotationTask class, we use naming conventions similar to the
-paper's terminology.  There are three types of objects in an annotation task:
-
-    the coders (variables "c" and "C")
-    the items to be annotated (variables "i" and "I")
-    the potential categories to be assigned (variables "k" and "K")
-
-Additionally, it is often the case that we don't want to treat two different
+        <div><p>Implementations of inter-annotator agreement coefficients surveyed by Artstein
+and Poesio (2007), Inter-Coder Agreement for Computational Linguistics.</p>
+<p>An agreement coefficient calculates the amount that annotators agreed on label
+assignments beyond what is expected by chance.</p>
+<p>In defining the AnnotationTask class, we use naming conventions similar to the
+paper's terminology.  There are three types of objects in an annotation task:</p>
+<blockquote>
+the coders (variables "c" and "C")
+the items to be annotated (variables "i" and "I")
+the potential categories to be assigned (variables "k" and "K")</blockquote>
+<p>Additionally, it is often the case that we don't want to treat two different
 labels as complete disagreement, and so the AnnotationTask constructor can also
 take a distance metric as a final argument.  Distance metrics are simply
 functions that take two arguments, and return a value between 0.0 and 1.0
 indicating the distance between them.  If not supplied, the default is binary
-comparison between the arguments.
-
-The simplest way to initialize an AnnotationTask is with a list of triples,
-each containing a coder's assignment for one object in the task:
-
-    task = AnnotationTask(data=[('c1', '1', 'v1'),('c2', '1', 'v1'),...])
-
-Note that the data list needs to contain the same number of triples for each
-individual coder, containing category values for the same set of items.
-
-Alpha (Krippendorff 1980)
+comparison between the arguments.</p>
+<p>The simplest way to initialize an AnnotationTask is with a list of triples,
+each containing a coder's assignment for one object in the task:</p>
+<blockquote>
+task = AnnotationTask(data=[('c1', '1', 'v1'),('c2', '1', 'v1'),...])</blockquote>
+<p>Note that the data list needs to contain the same number of triples for each
+individual coder, containing category values for the same set of items.</p>
+<p>Alpha (Krippendorff 1980)
 Kappa (Cohen 1960)
 S (Bennet, Albert and Goldstein 1954)
-Pi (Scott 1955)
-
-
-TODO: Describe handling of multiple coders and missing data
-
-Expected results from the Artstein and Poesio survey paper:
-
-    &gt;&gt;&gt; from nltk.metrics.agreement import AnnotationTask
-    &gt;&gt;&gt; import os.path
-    &gt;&gt;&gt; t = AnnotationTask(data=[x.split() for x in open(os.path.join(os.path.dirname(__file__), "artstein_poesio_example.txt"))])
-    &gt;&gt;&gt; t.avg_Ao()
-    0.88
-    &gt;&gt;&gt; t.pi()
-    0.7995322418977615...
-    &gt;&gt;&gt; t.S()
-    0.8199999999999998...
-
-    This would have returned a wrong value (0.0) in @785fb79 as coders are in
-    the wrong order. Subsequently, all values for pi(), S(), and kappa() would
-    have been wrong as they are computed with avg_Ao().
-    &gt;&gt;&gt; t2 = AnnotationTask(data=[('b','1','stat'),('a','1','stat')])
-    &gt;&gt;&gt; t2.avg_Ao()
-    1.0
-
-    The following, of course, also works.
-    &gt;&gt;&gt; t3 = AnnotationTask(data=[('a','1','othr'),('b','1','othr')])
-    &gt;&gt;&gt; t3.avg_Ao()
-    1.0</p></div>
+Pi (Scott 1955)</p>
+<p>TODO: Describe handling of multiple coders and missing data</p>
+<p>Expected results from the Artstein and Poesio survey paper:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.metrics.agreement <span class="py-keyword">import</span> AnnotationTask
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> os.path
+<span class="py-prompt">&gt;&gt;&gt; </span>t = AnnotationTask(data=[x.split() <span class="py-keyword">for</span> x <span class="py-keyword">in</span> <span class="py-builtin">open</span>(os.path.join(os.path.dirname(__file__), <span class="py-string">"artstein_poesio_example.txt"</span>))])
+<span class="py-prompt">&gt;&gt;&gt; </span>t.avg_Ao()
+<span class="py-output">0.88</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>t.pi()
+<span class="py-output">0.7995322418977615...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>t.S()
+<span class="py-output">0.8199999999999998...</span>
+</pre><p>This would have returned a wrong value (0.0) in @785fb79 as coders are in
+the wrong order. Subsequently, all values for pi(), S(), and kappa() would
+have been wrong as they are computed with avg_Ao().
+&gt;&gt;&gt; t2 = AnnotationTask(data=[('b','1','stat'),('a','1','stat')])
+&gt;&gt;&gt; t2.avg_Ao()
+1.0</p>
+<p>The following, of course, also works.
+&gt;&gt;&gt; t3 = AnnotationTask(data=[('a','1','othr'),('b','1','othr')])
+&gt;&gt;&gt; t3.avg_Ao()
+1.0</p>
+</blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id807">
+        <table class="children sortable" id="id810">
   
   
   <tr class="class">
@@ -211,7 +203,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">coder</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L463">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L463">
       
       (source)
     </a>
@@ -233,7 +225,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">data</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L459">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L459">
       
       (source)
     </a>
@@ -255,7 +247,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">labels</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L463">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L463">
       
       (source)
     </a>
@@ -277,7 +269,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">log</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L81">
       
       (source)
     </a>
@@ -299,7 +291,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">object_</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L463">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L463">
       
       (source)
     </a>
@@ -321,7 +313,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">options</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L450">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L450">
       
       (source)
     </a>
@@ -343,7 +335,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">parser</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L377">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L377">
       
       (source)
     </a>
@@ -365,7 +357,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">remainder</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L450">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L450">
       
       (source)
     </a>
@@ -387,7 +379,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">task</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L476">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L476">
       
       (source)
     </a>
@@ -409,7 +401,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="functionHeader">
     
     <span class="py-defname">toks</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L462">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L462">
       
       (source)
     </a>
@@ -429,7 +421,7 @@ Expected results from the Artstein and Poesio survey paper:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

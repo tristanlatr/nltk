@@ -65,30 +65,30 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ClassifierBasedPOSTagger</span>(<a href="nltk.tag.sequential.ClassifierBasedTagger.html" title="nltk.tag.sequential.ClassifierBasedTagger">ClassifierBasedTagger</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L702" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ClassifierBasedPOSTagger</span>(<a href="nltk.tag.sequential.ClassifierBasedTagger.html" title="nltk.tag.sequential.ClassifierBasedTagger">ClassifierBasedTagger</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L702" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.sequential.ClassifierBasedPOSTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A classifier based part of speech tagger.</p></div>
+        <div>A classifier based part of speech tagger.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1609">
+        <table class="children sortable" id="id1613">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#feature_detector">feature_detector</a></code></td>
-    <td><span>Return the feature detector that this tagger uses to generate featuresets for its classifier.  The feature detector is a function with the signature::</span></td>
+    <td><span>Return the feature detector that this tagger uses to generate featuresets for its classifier.  The feature detector is a function with the signature:</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.sequential.ClassifierBasedTagger.html">ClassifierBasedTagger</a></code>:
           </p>
-          <table class="children sortable" id="id1610">
+          <table class="children sortable" id="id1614">
   
   
   <tr class="basemethod">
@@ -115,7 +115,7 @@
     
     <td>Method</td>
     <td><code><a href="nltk.tag.sequential.ClassifierBasedTagger.html#_train">_train</a></code></td>
-    <td><span>Build a new classifier, based on the given training data *tagged_corpus*.</span></td>
+    <td><span>Build a new classifier, based on the given training data <em>tagged_corpus</em>.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -137,14 +137,14 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">SequentialBackoffTagger</a></code> (via <code><a href="nltk.tag.sequential.ClassifierBasedTagger.html">ClassifierBasedTagger</a></code>):
           </p>
-          <table class="children sortable" id="id1611">
+          <table class="children sortable" id="id1615">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tag.sequential.SequentialBackoffTagger.html#tag">tag</a></code></td>
-    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple ``(token, tag)``.</span></td>
+    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -159,14 +159,15 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.tag.sequential.SequentialBackoffTagger.html#_taggers">_taggers</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list of all the taggers that should be tried to
+tag a token (i.e., self and its backoff taggers).</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code> (via <code><a href="nltk.tag.sequential.ClassifierBasedTagger.html">ClassifierBasedTagger</a></code>, <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">SequentialBackoffTagger</a></code>):
           </p>
-          <table class="children sortable" id="id1612">
+          <table class="children sortable" id="id1616">
   
   
   <tr class="basemethod">
@@ -178,7 +179,7 @@
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -190,7 +191,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code> (via <code><a href="nltk.tag.sequential.ClassifierBasedTagger.html">ClassifierBasedTagger</a></code>, <code><a href="nltk.tag.api.FeaturesetTaggerI.html">FeaturesetTaggerI</a></code>):
           </p>
-          <table class="children sortable" id="id1613">
+          <table class="children sortable" id="id1617">
   
   
   <tr class="basemethod">
@@ -202,12 +203,12 @@
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag">tag</a></code></td>
-    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple ``(token, tag)``.</span></td>
+    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -234,7 +235,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">feature_detector</span>(self, tokens, index, history):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L707">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L707">
       
       (source)
     </a>
@@ -242,13 +243,14 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.sequential.ClassifierBasedTagger.html#feature_detector">nltk.tag.sequential.ClassifierBasedTagger.feature_detector</a></code></div>
     
-    <div><p class="pre">Return the feature detector that this tagger uses to generate
+    <div><p>Return the feature detector that this tagger uses to generate
 featuresets for its classifier.  The feature detector is a
-function with the signature::
-
-  feature_detector(tokens, index, history) -&gt; featureset
-
-See ``classifier()``</p></div>
+function with the signature:</p>
+<pre class="rst-literal-block">
+feature_detector(tokens, index, history) -&gt; featureset
+</pre>
+<p>See <tt class="rst-docutils literal">classifier()</tt></p>
+</div>
   </div>
 </div>
 
@@ -260,7 +262,7 @@ See ``classifier()``</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

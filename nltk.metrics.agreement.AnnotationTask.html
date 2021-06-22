@@ -65,25 +65,24 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">AnnotationTask</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L84" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AnnotationTask</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L84" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.metrics.agreement.AnnotationTask">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Represents an annotation task, i.e. people assign labels to items.
-
-Notation tries to match notation in Artstein and Poesio (2007).
-
-In general, coders and items can be represented as any hashable object.
+        <div><p>Represents an annotation task, i.e. people assign labels to items.</p>
+<p>Notation tries to match notation in Artstein and Poesio (2007).</p>
+<p>In general, coders and items can be represented as any hashable object.
 Integers, for example, are fine, though strings are more readable.
 Labels must support the distance functions applied to them, so e.g.
 a string-edit-distance makes no sense if your labels are integers,
 whereas interval distance needs numeric values.  A notable case of this
-is the MASI metric, which requires Python sets.</p></div>
+is the MASI metric, which requires Python sets.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id808">
+        <table class="children sortable" id="id811">
   
   
   <tr class="method">
@@ -252,7 +251,7 @@ is the MASI metric, which requires Python sets.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, data=None, distance=binary_distance):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L97">
       
       (source)
     </a>
@@ -260,15 +259,16 @@ is the MASI metric, which requires Python sets.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Initialize an annotation task.
-
-The data argument can be None (to create an empty annotation task) or a sequence of 3-tuples,
-each representing a coder's labeling of an item:
-    (coder,item,label)
-
-The distance argument is a function taking two arguments (labels) and producing a numerical distance.
-The distance from a label to itself should be zero:
-    distance(l,l) = 0</p></div>
+    <div><p>Initialize an annotation task.</p>
+<p>The data argument can be None (to create an empty annotation task) or a sequence of 3-tuples,
+each representing a coder's labeling of an item:</p>
+<blockquote>
+(coder,item,label)</blockquote>
+<p>The distance argument is a function taking two arguments (labels) and producing a numerical distance.
+The distance from a label to itself should be zero:</p>
+<blockquote>
+distance(l,l) = 0</blockquote>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -282,7 +282,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L116">
       
       (source)
     </a>
@@ -304,7 +304,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Ae_kappa</span>(self, cA, cB):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L270">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L270">
       
       (source)
     </a>
@@ -326,7 +326,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">agr</span>(self, cA, cB, i, data=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L137">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L137">
       
       (source)
     </a>
@@ -334,9 +334,7 @@ The distance from a label to itself should be zero:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Agreement between two coders on a given item
-
-        </p></div>
+    <div>Agreement between two coders on a given item</div>
   </div>
 </div><div class="basemethod">
   
@@ -350,7 +348,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">alpha</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L310">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L310">
       
       (source)
     </a>
@@ -358,9 +356,7 @@ The distance from a label to itself should be zero:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Krippendorff 1980
-
-        </p></div>
+    <div>Krippendorff 1980</div>
   </div>
 </div><div class="basemethod">
   
@@ -374,7 +370,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Ao</span>(self, cA, cB):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L189">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L189">
       
       (source)
     </a>
@@ -382,9 +378,7 @@ The distance from a label to itself should be zero:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Observed agreement between two coders on all items.
-
-        </p></div>
+    <div>Observed agreement between two coders on all items.</div>
   </div>
 </div><div class="basemethod">
   
@@ -398,7 +392,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">avg_Ao</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L217">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L217">
       
       (source)
     </a>
@@ -406,9 +400,7 @@ The distance from a label to itself should be zero:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Average observed agreement across all coders and items.
-
-        </p></div>
+    <div>Average observed agreement across all coders and items.</div>
   </div>
 </div><div class="basemethod">
   
@@ -422,7 +414,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Disagreement</span>(self, label_freqs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L302">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L302">
       
       (source)
     </a>
@@ -444,7 +436,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Do_Kw</span>(self, max_distance=1.0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L239">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L239">
       
       (source)
     </a>
@@ -452,9 +444,7 @@ The distance from a label to itself should be zero:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Averaged over all labelers
-
-        </p></div>
+    <div>Averaged over all labelers</div>
   </div>
 </div><div class="basemethod">
   
@@ -468,7 +458,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Do_Kw_pairwise</span>(self, cA, cB, max_distance=1.0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L225">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L225">
       
       (source)
     </a>
@@ -476,9 +466,7 @@ The distance from a label to itself should be zero:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">The observed disagreement for the weighted kappa coefficient.
-
-        </p></div>
+    <div>The observed disagreement for the weighted kappa coefficient.</div>
   </div>
 </div><div class="basemethod">
   
@@ -492,7 +480,7 @@ The distance from a label to itself should be zero:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">kappa</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L287">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L287">
       
       (source)
     </a>
@@ -500,8 +488,8 @@ The distance from a label to itself should be zero:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Cohen 1960
-Averages naively over kappas for each coder pair.</p></div>
+    <div>Cohen 1960
+Averages naively over kappas for each coder pair.</div>
   </div>
 </div><div class="basemethod">
   
@@ -515,7 +503,7 @@ Averages naively over kappas for each coder pair.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">kappa_pairwise</span>(self, cA, cB):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L278">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L278">
       
       (source)
     </a>
@@ -523,7 +511,7 @@ Averages naively over kappas for each coder pair.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">        </p></div>
+    <div></div>
   </div>
 </div><div class="basemethod">
   
@@ -537,7 +525,7 @@ Averages naively over kappas for each coder pair.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">load_array</span>(self, array):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L125">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L125">
       
       (source)
     </a>
@@ -545,10 +533,12 @@ Averages naively over kappas for each coder pair.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Load an sequence of annotation results, appending to any data already loaded.
-
-The argument is a sequence of 3-tuples, each representing a coder's labeling of an item:
-    (coder,item,label)</p></div>
+    <div><p>Load an sequence of annotation results, appending to any data already loaded.</p>
+<dl class="rst-docutils">
+<dt>The argument is a sequence of 3-tuples, each representing a coder's labeling of an item:</dt>
+<dd>(coder,item,label)</dd>
+</dl>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -562,7 +552,7 @@ The argument is a sequence of 3-tuples, each representing a coder's labeling of 
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">multi_kappa</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L294">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L294">
       
       (source)
     </a>
@@ -570,8 +560,8 @@ The argument is a sequence of 3-tuples, each representing a coder's labeling of 
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Davies and Fleiss 1982
-Averages over observed and expected agreements for each coder pair.</p></div>
+    <div>Davies and Fleiss 1982
+Averages over observed and expected agreements for each coder pair.</div>
   </div>
 </div><div class="basemethod">
   
@@ -585,7 +575,7 @@ Averages over observed and expected agreements for each coder pair.</p></div>
   <div class="functionHeader">
     @deprecated('Use Nk, Nik or Nck instead')<br />
     <span class="py-keyword">def</span> <span class="py-defname">N</span>(self, k=None, i=None, c=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L167">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L167">
       
       (source)
     </a>
@@ -593,9 +583,7 @@ Averages over observed and expected agreements for each coder pair.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Implements the "n-notation" used in Artstein and Poesio (2007)
-
-        </p></div>
+    <div>Implements the "n-notation" used in Artstein and Poesio (2007)</div>
   </div>
 </div><div class="basemethod">
   
@@ -609,7 +597,7 @@ Averages over observed and expected agreements for each coder pair.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Nck</span>(self, c, k):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L164">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L164">
       
       (source)
     </a>
@@ -631,7 +619,7 @@ Averages over observed and expected agreements for each coder pair.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Nik</span>(self, i, k):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L161">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L161">
       
       (source)
     </a>
@@ -653,7 +641,7 @@ Averages over observed and expected agreements for each coder pair.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">Nk</span>(self, k):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L158">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L158">
       
       (source)
     </a>
@@ -675,7 +663,7 @@ Averages over observed and expected agreements for each coder pair.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pi</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L258">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L258">
       
       (source)
     </a>
@@ -683,8 +671,8 @@ Averages over observed and expected agreements for each coder pair.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Scott 1955; here, multi-pi.
-Equivalent to K from Siegel and Castellan (1988).</p></div>
+    <div>Scott 1955; here, multi-pi.
+Equivalent to K from Siegel and Castellan (1988).</div>
   </div>
 </div><div class="basemethod">
   
@@ -698,7 +686,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">S</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L250">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L250">
       
       (source)
     </a>
@@ -706,9 +694,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Bennett, Albert and Goldstein 1954
-
-        </p></div>
+    <div>Bennett, Albert and Goldstein 1954</div>
   </div>
 </div><div class="basemethod">
   
@@ -722,7 +708,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">weighted_kappa</span>(self, max_distance=1.0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L361">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L361">
       
       (source)
     </a>
@@ -730,9 +716,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Cohen 1968
-
-        </p></div>
+    <div>Cohen 1968</div>
   </div>
 </div><div class="basemethod">
   
@@ -746,7 +730,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">weighted_kappa_pairwise</span>(self, cA, cB, max_distance=1.0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L344">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L344">
       
       (source)
     </a>
@@ -754,9 +738,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Cohen 1968
-
-        </p></div>
+    <div>Cohen 1968</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -770,7 +752,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">C</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L111">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L111">
       
       (source)
     </a>
@@ -792,7 +774,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">data</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L112">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L112">
       
       (source)
     </a>
@@ -814,7 +796,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">distance</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L108">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L108">
       
       (source)
     </a>
@@ -836,7 +818,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">I</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L109">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L109">
       
       (source)
     </a>
@@ -858,7 +840,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">K</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L110">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L110">
       
       (source)
     </a>
@@ -880,7 +862,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_grouped_data</span>(self, field, data=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L185">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L185">
       
       (source)
     </a>
@@ -902,7 +884,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_pairwise_average</span>(self, function):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/agreement.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/agreement.py#L202">
       
       (source)
     </a>
@@ -910,7 +892,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculates the average of function results for each coder pair</p></div>
+    <div>Calculates the average of function results for each coder pair</div>
   </div>
 </div>
 
@@ -922,7 +904,7 @@ Equivalent to K from Siegel and Castellan (1988).</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

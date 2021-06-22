@@ -65,21 +65,21 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CFG</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L451" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.grammar.FeatureGrammar.html">nltk.grammar.FeatureGrammar</a></code>, <code><a href="nltk.grammar.PCFG.html">nltk.grammar.PCFG</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CFG</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L451" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.grammar.FeatureGrammar.html">nltk.grammar.FeatureGrammar</a></code>, <code><a href="nltk.grammar.PCFG.html">nltk.grammar.PCFG</a></code></p>
         <p><a href="classIndex.html#nltk.grammar.CFG">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A context-free grammar.  A grammar consists of a start state and
+        <div><p>A context-free grammar.  A grammar consists of a start state and
 a set of productions.  The set of terminals and nonterminals is
-implicitly specified by the productions.
-
-If you need efficient key-based access to productions, you
-can use a subclass to implement it.</p></div>
+implicitly specified by the productions.</p>
+<p>If you need efficient key-based access to productions, you
+can use a subclass to implement it.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id656">
+        <table class="children sortable" id="id659">
   
   
   <tr class="classmethod">
@@ -106,7 +106,7 @@ can use a subclass to implement it.</p></div>
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new context-free grammar, from the given start state and set of ``Production``s.</span></td>
+    <td><span>Create a new context-free grammar, from the given start state and set of <a href="#id1"><span class="rst-problematic" id="rst-id2">``</span></a>Production``s.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -313,7 +313,7 @@ can use a subclass to implement it.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">binarize</span>(cls, grammar, padding='@$@'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L802">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L802">
       
       (source)
     </a>
@@ -321,14 +321,18 @@ can use a subclass to implement it.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert all non-binary rules into binary by introducing
+    <div><p>Convert all non-binary rules into binary by introducing
 new tokens.
 Example::
-Original:
-    A =&gt; B C D
-After Conversion:
-    A =&gt; B A@$@B
-    A@$@B =&gt; C D</p></div>
+Original:</p>
+<blockquote>
+A =&gt; B C D</blockquote>
+<dl class="rst-docutils">
+<dt>After Conversion:</dt>
+<dd>A =&gt; B A@$@B
+A@$@B =&gt; C D</dd>
+</dl>
+</div>
   </div>
 </div><div class="baseclassmethod">
   
@@ -342,7 +346,7 @@ After Conversion:
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">eliminate_start</span>(cls, grammar):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L834">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L834">
       
       (source)
     </a>
@@ -350,9 +354,9 @@ After Conversion:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Eliminate start rule in case it appears on RHS
+    <div>Eliminate start rule in case it appears on RHS
 Example: S -&gt; S0 S1 and S0 -&gt; S1 S
-Then another rule S0_Sigma -&gt; S is added</p></div>
+Then another rule S0_Sigma -&gt; S is added</div>
   </div>
 </div><div class="baseclassmethod">
   
@@ -366,7 +370,7 @@ Then another rule S0_Sigma -&gt; S is added</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">fromstring</span>(cls, input, encoding=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L550">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L550">
       
       (source)
     </a>
@@ -374,9 +378,7 @@ Then another rule S0_Sigma -&gt; S is added</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.FeatureGrammar.html">nltk.grammar.FeatureGrammar</a></code>, <code><a href="nltk.grammar.PCFG.html">nltk.grammar.PCFG</a></code></div>
     
-    <div><p class="pre">Return the grammar instance corresponding to the input string(s).
-
-:param input: a grammar, either in the form of a string or as a list of strings.</p></div>
+    <div>Return the grammar instance corresponding to the input string(s).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">input</span></td><td class="fieldArgDesc">a grammar, either in the form of a string or as a list of strings.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassmethod">
   
@@ -390,7 +392,7 @@ Then another rule S0_Sigma -&gt; S is added</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">remove_unitary_rules</span>(cls, grammar):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L776">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L776">
       
       (source)
     </a>
@@ -398,8 +400,8 @@ Then another rule S0_Sigma -&gt; S is added</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove nonlexical unitary rules and convert them to
-lexical</p></div>
+    <div>Remove nonlexical unitary rules and convert them to
+lexical</div>
   </div>
 </div><div class="basemethod">
   
@@ -413,7 +415,7 @@ lexical</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, start, productions, calculate_leftcorners=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L461">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L461">
       
       (source)
     </a>
@@ -421,16 +423,9 @@ lexical</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.FeatureGrammar.html">nltk.grammar.FeatureGrammar</a></code>, <code><a href="nltk.grammar.PCFG.html">nltk.grammar.PCFG</a></code></div>
     
-    <div><p class="pre">Create a new context-free grammar, from the given start state
-and set of ``Production``s.
-
-:param start: The start symbol
-:type start: Nonterminal
-:param productions: The list of productions that defines the grammar
-:type productions: list(Production)
-:param calculate_leftcorners: False if we don't want to calculate the
-    leftcorner relation. In that case, some optimized chart parsers won't work.
-:type calculate_leftcorners: bool</p></div>
+    <div>Create a new context-free grammar, from the given start state
+and set of <a href="#id1"><span class="rst-problematic" id="rst-id2">``</span></a>Production``s.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start:</span>Nonterminal</td><td class="fieldArgDesc">The start symbol</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">productions:</span>list(Production)</td><td class="fieldArgDesc">The list of productions that defines the grammar</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">calculate_leftcorners:</span>bool</td><td class="fieldArgDesc">False if we don't want to calculate the
+leftcorner relation. In that case, some optimized chart parsers won't work.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -444,7 +439,7 @@ and set of ``Production``s.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L855">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L855">
       
       (source)
     </a>
@@ -466,7 +461,7 @@ and set of ``Production``s.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L858">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L858">
       
       (source)
     </a>
@@ -488,7 +483,7 @@ and set of ``Production``s.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">check_coverage</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L665">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L665">
       
       (source)
     </a>
@@ -496,10 +491,8 @@ and set of ``Production``s.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Check whether the grammar rules cover the given list of tokens.
-If not, then raise an exception.
-
-:type tokens: list(str)</p></div>
+    <div>Check whether the grammar rules cover the given list of tokens.
+If not, then raise an exception.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -513,7 +506,7 @@ If not, then raise an exception.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chomsky_normal_form</span>(self, new_token_padding='@$@', flexible=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L748">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L748">
       
       (source)
     </a>
@@ -521,9 +514,11 @@ If not, then raise an exception.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns a new Grammer that is in chomsky normal
-:param: new_token_padding
-    Customise new rule formation during binarisation</p></div>
+    <div><p>Returns a new Grammer that is in chomsky normal
+:param: new_token_padding</p>
+<blockquote>
+Customise new rule formation during binarisation</blockquote>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -537,7 +532,7 @@ If not, then raise an exception.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_binarised</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L727">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L727">
       
       (source)
     </a>
@@ -545,8 +540,8 @@ If not, then raise an exception.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if all productions are at most binary.
-Note that there can still be empty and unary productions.</p></div>
+    <div>Return True if all productions are at most binary.
+Note that there can still be empty and unary productions.</div>
   </div>
 </div><div class="basemethod">
   
@@ -560,7 +555,7 @@ Note that there can still be empty and unary productions.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_chomsky_normal_form</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L741">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L741">
       
       (source)
     </a>
@@ -568,8 +563,8 @@ Note that there can still be empty and unary productions.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if the grammar is of Chomsky Normal Form, i.e. all productions
-are of the form A -&gt; B C, or A -&gt; "s".</p></div>
+    <div>Return True if the grammar is of Chomsky Normal Form, i.e. all productions
+are of the form A -&gt; B C, or A -&gt; "s".</div>
   </div>
 </div><div class="basemethod">
   
@@ -583,7 +578,7 @@ are of the form A -&gt; B C, or A -&gt; "s".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_flexible_chomsky_normal_form</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L734">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L734">
       
       (source)
     </a>
@@ -591,8 +586,8 @@ are of the form A -&gt; B C, or A -&gt; "s".</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if all productions are of the forms
-A -&gt; B C, A -&gt; B, or A -&gt; "s".</p></div>
+    <div>Return True if all productions are of the forms
+A -&gt; B C, A -&gt; B, or A -&gt; "s".</div>
   </div>
 </div><div class="basemethod">
   
@@ -606,7 +601,7 @@ A -&gt; B C, A -&gt; B, or A -&gt; "s".</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_leftcorner</span>(self, cat, left):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L632">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L632">
       
       (source)
     </a>
@@ -614,14 +609,8 @@ A -&gt; B C, A -&gt; B, or A -&gt; "s".</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">True if left is a leftcorner of cat, where left can be a
-terminal or a nonterminal.
-
-:param cat: the parent of the leftcorner
-:type cat: Nonterminal
-:param left: the suggested leftcorner
-:type left: Terminal or Nonterminal
-:rtype: bool</p></div>
+    <div>True if left is a leftcorner of cat, where left can be a
+terminal or a nonterminal.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cat:</span>Nonterminal</td><td class="fieldArgDesc">the parent of the leftcorner</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">left:</span>Terminal or Nonterminal</td><td class="fieldArgDesc">the suggested leftcorner</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -635,7 +624,7 @@ terminal or a nonterminal.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_lexical</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L690">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L690">
       
       (source)
     </a>
@@ -643,7 +632,7 @@ terminal or a nonterminal.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if all productions are lexicalised.</p></div>
+    <div>Return True if all productions are lexicalised.</div>
   </div>
 </div><div class="basemethod">
   
@@ -657,7 +646,7 @@ terminal or a nonterminal.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_nonempty</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L721">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L721">
       
       (source)
     </a>
@@ -665,7 +654,7 @@ terminal or a nonterminal.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if there are no empty productions.</p></div>
+    <div>Return True if there are no empty productions.</div>
   </div>
 </div><div class="basemethod">
   
@@ -679,7 +668,7 @@ terminal or a nonterminal.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_nonlexical</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L696">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L696">
       
       (source)
     </a>
@@ -687,14 +676,13 @@ terminal or a nonterminal.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if all lexical rules are "preterminals", that is,
-unary rules which can be separated in a preprocessing step.
-
-This means that all productions are of the forms
-A -&gt; B1 ... Bn (n&gt;=0), or A -&gt; "s".
-
-Note: is_lexical() and is_nonlexical() are not opposites.
-There are grammars which are neither, and grammars which are both.</p></div>
+    <div><p>Return True if all lexical rules are "preterminals", that is,
+unary rules which can be separated in a preprocessing step.</p>
+<p>This means that all productions are of the forms
+A -&gt; B1 ... Bn (n&gt;=0), or A -&gt; "s".</p>
+<p>Note: is_lexical() and is_nonlexical() are not opposites.
+There are grammars which are neither, and grammars which are both.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -708,7 +696,7 @@ There are grammars which are neither, and grammars which are both.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">leftcorner_parents</span>(self, cat):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L653">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L653">
       
       (source)
     </a>
@@ -716,13 +704,8 @@ There are grammars which are neither, and grammars which are both.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.FeatureGrammar.html">nltk.grammar.FeatureGrammar</a></code></div>
     
-    <div><p class="pre">Return the set of all nonterminals for which the given category
-is a left corner. This is the inverse of the leftcorner relation.
-
-:param cat: the suggested leftcorner
-:type cat: Nonterminal
-:return: the set of all parents to the leftcorner
-:rtype: set(Nonterminal)</p></div>
+    <div>Return the set of all nonterminals for which the given category
+is a left corner. This is the inverse of the leftcorner relation.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cat:</span>Nonterminal</td><td class="fieldArgDesc">the suggested leftcorner</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(Nonterminal)</td><td class="fieldArgDesc">the set of all parents to the leftcorner</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -736,7 +719,7 @@ is a left corner. This is the inverse of the leftcorner relation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">leftcorners</span>(self, cat):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L617">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L617">
       
       (source)
     </a>
@@ -744,16 +727,11 @@ is a left corner. This is the inverse of the leftcorner relation.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.FeatureGrammar.html">nltk.grammar.FeatureGrammar</a></code></div>
     
-    <div><p class="pre">Return the set of all nonterminals that the given nonterminal
-can start with, including itself.
-
-This is the reflexive, transitive closure of the immediate
-leftcorner relation:  (A &gt; B)  iff  (A -&gt; B beta)
-
-:param cat: the parent of the leftcorners
-:type cat: Nonterminal
-:return: the set of all leftcorners
-:rtype: set(Nonterminal)</p></div>
+    <div><p>Return the set of all nonterminals that the given nonterminal
+can start with, including itself.</p>
+<p>This is the reflexive, transitive closure of the immediate
+leftcorner relation:  (A &gt; B)  iff  (A -&gt; B beta)</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cat:</span>Nonterminal</td><td class="fieldArgDesc">the parent of the leftcorners</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set(Nonterminal)</td><td class="fieldArgDesc">the set of all leftcorners</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -767,7 +745,7 @@ leftcorner relation:  (A &gt; B)  iff  (A -&gt; B beta)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">max_len</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L715">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L715">
       
       (source)
     </a>
@@ -775,7 +753,7 @@ leftcorner relation:  (A &gt; B)  iff  (A -&gt; B beta)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the right-hand side length of the longest grammar production.</p></div>
+    <div>Return the right-hand side length of the longest grammar production.</div>
   </div>
 </div><div class="basemethod">
   
@@ -789,7 +767,7 @@ leftcorner relation:  (A &gt; B)  iff  (A -&gt; B beta)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">min_len</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L709">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L709">
       
       (source)
     </a>
@@ -797,7 +775,7 @@ leftcorner relation:  (A &gt; B)  iff  (A -&gt; B beta)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the right-hand side length of the shortest grammar production.</p></div>
+    <div>Return the right-hand side length of the shortest grammar production.</div>
   </div>
 </div><div class="basemethod">
   
@@ -811,7 +789,7 @@ leftcorner relation:  (A &gt; B)  iff  (A -&gt; B beta)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">productions</span>(self, lhs=None, rhs=None, empty=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L572">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L572">
       
       (source)
     </a>
@@ -819,15 +797,9 @@ leftcorner relation:  (A &gt; B)  iff  (A -&gt; B beta)
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.FeatureGrammar.html">nltk.grammar.FeatureGrammar</a></code></div>
     
-    <div><p class="pre">Return the grammar productions, filtered by the left-hand side
-or the first item in the right-hand side.
-
-:param lhs: Only return productions with the given left-hand side.
-:param rhs: Only return productions with the given first item
-    in the right-hand side.
-:param empty: Only return productions with an empty right-hand side.
-:return: A list of productions matching the given constraints.
-:rtype: list(Production)</p></div>
+    <div>Return the grammar productions, filtered by the left-hand side
+or the first item in the right-hand side.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lhs</span></td><td class="fieldArgDesc">Only return productions with the given left-hand side.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rhs</span></td><td class="fieldArgDesc">Only return productions with the given first item
+in the right-hand side.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">empty</span></td><td class="fieldArgDesc">Only return productions with an empty right-hand side.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Production)</td><td class="fieldArgDesc">A list of productions matching the given constraints.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -841,7 +813,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">start</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L562">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L562">
       
       (source)
     </a>
@@ -849,9 +821,7 @@ or the first item in the right-hand side.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the start symbol of the grammar
-
-:rtype: Nonterminal</p></div>
+    <div>Return the start symbol of the grammar<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Nonterminal</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -865,7 +835,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_calculate_grammar_forms</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L679">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L679">
       
       (source)
     </a>
@@ -873,7 +843,7 @@ or the first item in the right-hand side.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Pre-calculate of which form(s) the grammar is.</p></div>
+    <div>Pre-calculate of which form(s) the grammar is.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -887,7 +857,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_calculate_indexes</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L488">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L488">
       
       (source)
     </a>
@@ -909,7 +879,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_calculate_leftcorners</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L513">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L513">
       
       (source)
     </a>
@@ -931,7 +901,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_all_unary_are_lexical</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L688">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L688">
       
       (source)
     </a>
@@ -953,7 +923,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_categories</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L482">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L482">
       
       (source)
     </a>
@@ -975,7 +945,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_empty_index</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L491">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L491">
       
       (source)
     </a>
@@ -997,7 +967,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_immediate_leftcorner_categories</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L515">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L515">
       
       (source)
     </a>
@@ -1019,7 +989,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_immediate_leftcorner_words</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L518">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L518">
       
       (source)
     </a>
@@ -1041,7 +1011,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_is_lexical</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L684">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L684">
       
       (source)
     </a>
@@ -1063,7 +1033,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_is_nonlexical</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L685">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L685">
       
       (source)
     </a>
@@ -1085,7 +1055,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_leftcorner_parents</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L531">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L531">
       
       (source)
     </a>
@@ -1107,7 +1077,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_leftcorner_words</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L540">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L540">
       
       (source)
     </a>
@@ -1129,7 +1099,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_leftcorners</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L530">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L530">
       
       (source)
     </a>
@@ -1151,7 +1121,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_lexical_index</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L492">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L492">
       
       (source)
     </a>
@@ -1173,7 +1143,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_lhs_index</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L489">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L489">
       
       (source)
     </a>
@@ -1195,7 +1165,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_max_len</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L687">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L687">
       
       (source)
     </a>
@@ -1217,7 +1187,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_min_len</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L686">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L686">
       
       (source)
     </a>
@@ -1239,7 +1209,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_productions</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L481">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L481">
       
       (source)
     </a>
@@ -1261,7 +1231,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_rhs_index</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L490">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L490">
       
       (source)
     </a>
@@ -1283,7 +1253,7 @@ or the first item in the right-hand side.
   <div class="functionHeader">
     
     <span class="py-defname">_start</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L480">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L480">
       
       (source)
     </a>
@@ -1303,7 +1273,7 @@ or the first item in the right-hand side.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

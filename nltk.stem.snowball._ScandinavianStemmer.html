@@ -65,17 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">_ScandinavianStemmer</span>(<a href="nltk.stem.snowball._LanguageSpecificStemmer.html" title="nltk.stem.snowball._LanguageSpecificStemmer">_LanguageSpecificStemmer</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L176" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.stem.snowball.DanishStemmer.html">nltk.stem.snowball.DanishStemmer</a></code>, <code><a href="nltk.stem.snowball.NorwegianStemmer.html">nltk.stem.snowball.NorwegianStemmer</a></code>, <code><a href="nltk.stem.snowball.SwedishStemmer.html">nltk.stem.snowball.SwedishStemmer</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">_ScandinavianStemmer</span>(<a href="nltk.stem.snowball._LanguageSpecificStemmer.html" title="nltk.stem.snowball._LanguageSpecificStemmer">_LanguageSpecificStemmer</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/snowball.py#L176" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.stem.snowball.DanishStemmer.html">nltk.stem.snowball.DanishStemmer</a></code>, <code><a href="nltk.stem.snowball.NorwegianStemmer.html">nltk.stem.snowball.NorwegianStemmer</a></code>, <code><a href="nltk.stem.snowball.SwedishStemmer.html">nltk.stem.snowball.SwedishStemmer</a></code></p>
         <p><a href="classIndex.html#nltk.stem.snowball._ScandinavianStemmer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This subclass encapsulates a method for defining the string region R1.
-It is used by the Danish, Norwegian, and Swedish stemmer.</p></div>
+        <div>This subclass encapsulates a method for defining the string region R1.
+It is used by the Danish, Norwegian, and Swedish stemmer.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1488">
+        <table class="children sortable" id="id1492">
   
   
   <tr class="method private">
@@ -89,7 +89,7 @@ It is used by the Danish, Norwegian, and Swedish stemmer.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.stem.snowball._LanguageSpecificStemmer.html">_LanguageSpecificStemmer</a></code>:
           </p>
-          <table class="children sortable" id="id1489">
+          <table class="children sortable" id="id1493">
   
   
   <tr class="basemethod">
@@ -113,7 +113,7 @@ It is used by the Danish, Norwegian, and Swedish stemmer.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.stem.api.StemmerI.html">StemmerI</a></code> (via <code><a href="nltk.stem.snowball._LanguageSpecificStemmer.html">_LanguageSpecificStemmer</a></code>):
           </p>
-          <table class="children sortable" id="id1490">
+          <table class="children sortable" id="id1494">
   
   
   <tr class="basemethod">
@@ -142,7 +142,7 @@ It is used by the Danish, Norwegian, and Swedish stemmer.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_r1_scandinavian</span>(self, word, vowels):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/stem/snowball.py#L184">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/stem/snowball.py#L184">
       
       (source)
     </a>
@@ -150,23 +150,15 @@ It is used by the Danish, Norwegian, and Swedish stemmer.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the region R1 that is used by the Scandinavian stemmers.
-
-R1 is the region after the first non-vowel following a vowel,
+    <div><p>Return the region R1 that is used by the Scandinavian stemmers.</p>
+<p>R1 is the region after the first non-vowel following a vowel,
 or is the null region at the end of the word if there is no
 such non-vowel. But then R1 is adjusted so that the region
-before it contains at least three letters.
-
-:param word: The word whose region R1 is determined.
-:type word: str or unicode
-:param vowels: The vowels of the respective language that are
-               used to determine the region R1.
-:type vowels: unicode
-:return: the region R1 for the respective word.
-:rtype: unicode
-:note: This helper method is invoked by the respective stem method of
-       the subclasses DanishStemmer, NorwegianStemmer, and
-       SwedishStemmer. It is not to be invoked directly!</p></div>
+before it contains at least three letters.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word:</span>str or unicode</td><td class="fieldArgDesc">The word whose region R1 is determined.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">vowels:</span>unicode</td><td class="fieldArgDesc">The vowels of the respective language that are
+used to determine the region R1.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">unicode</td><td class="fieldArgDesc">the region R1 for the respective word.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">This helper method is invoked by the respective stem method of
+the subclasses DanishStemmer, NorwegianStemmer, and
+SwedishStemmer. It is not to be invoked directly!</td></tr></table></div>
   </div>
 </div>
 
@@ -178,7 +170,7 @@ before it contains at least three letters.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

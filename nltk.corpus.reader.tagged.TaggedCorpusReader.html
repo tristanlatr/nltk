@@ -65,27 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaggedCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L24" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.MacMorphoCorpusReader.html">nltk.corpus.reader.tagged.MacMorphoCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.TimitTaggedCorpusReader.html">nltk.corpus.reader.tagged.TimitTaggedCorpusReader</a></code>, <code><a href="nltk.corpus.reader.ycoe.YCOETaggedCorpusReader.html">nltk.corpus.reader.ycoe.YCOETaggedCorpusReader</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TaggedCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L24" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.MacMorphoCorpusReader.html">nltk.corpus.reader.tagged.MacMorphoCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.TimitTaggedCorpusReader.html">nltk.corpus.reader.tagged.TimitTaggedCorpusReader</a></code>, <code><a href="nltk.corpus.reader.ycoe.YCOETaggedCorpusReader.html">nltk.corpus.reader.ycoe.YCOETaggedCorpusReader</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.tagged.TaggedCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for simple part-of-speech tagged corpora.  Paragraphs are
+        <div><p>Reader for simple part-of-speech tagged corpora.  Paragraphs are
 assumed to be split using blank lines.  Sentences and words can be
 tokenized using the default tokenizers, or by custom tokenizers
 specified as parameters to the constructor.  Words are parsed
-using ``nltk.tag.str2tuple``.  By default, ``'/'`` is used as the
-separator.  I.e., words should have the form::
-
-   word1/tag1 word2/tag2 word3/tag3 ...
-
-But custom separators may be specified as parameters to the
+using <tt class="rst-docutils literal">nltk.tag.str2tuple</tt>.  By default, <tt class="rst-docutils literal">'/'</tt> is used as the
+separator.  I.e., words should have the form:</p>
+<pre class="rst-literal-block">
+word1/tag1 word2/tag2 word3/tag3 ...
+</pre>
+<p>But custom separators may be specified as parameters to the
 constructor.  Part of speech tags are case-normalized to upper
-case.</p></div>
+case.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id462">
+        <table class="children sortable" id="id465">
   
   
   <tr class="method">
@@ -102,7 +103,7 @@ case.</p></div>
     
     <td>Method</td>
     <td><code><a href="#raw">raw</a></code></td>
-    <td><span>:return: the given file(s) as a single string. :rtype: str</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -117,7 +118,7 @@ case.</p></div>
     
     <td>Method</td>
     <td><code><a href="#tagged_sents">tagged_sents</a></code></td>
-    <td><span>:return: the given file(s) as a list of sentences, each encoded as a list of ``(word,tag)`` tuples.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -127,7 +128,7 @@ case.</p></div>
     
     <td>Method</td>
     <td><code><a href="#words">words</a></code></td>
-    <td><span>:return: the given file(s) as a list of words and punctuation symbols. :rtype: list(str)</span></td>
+    <td><span></span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -159,7 +160,7 @@ case.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id463">
+          <table class="children sortable" id="id466">
   
   
   <tr class="basemethod">
@@ -226,7 +227,7 @@ case.</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -258,7 +259,7 @@ case.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, sep='/', word_tokenizer=WhitespaceTokenizer(), sent_tokenizer=RegexpTokenizer('\n', gaps=True), para_block_reader=read_blankline_block, encoding='utf8', tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L40">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L40">
       
       (source)
     </a>
@@ -266,14 +267,13 @@ case.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.MacMorphoCorpusReader.html">nltk.corpus.reader.tagged.MacMorphoCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.TimitTaggedCorpusReader.html">nltk.corpus.reader.tagged.TimitTaggedCorpusReader</a></code>, <code><a href="nltk.corpus.reader.ycoe.YCOETaggedCorpusReader.html">nltk.corpus.reader.ycoe.YCOETaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">Construct a new Tagged Corpus reader for a set of documents
-located at the given root directory.  Example usage:
-
-    &gt;&gt;&gt; root = '/...path to corpus.../'
-    &gt;&gt;&gt; reader = TaggedCorpusReader(root, '.*', '.txt') # doctest: +SKIP
-
-:param root: The root directory for this corpus.
-:param fileids: A list or regexp specifying the fileids in this corpus.</p></div>
+    <div><p>Construct a new Tagged Corpus reader for a set of documents
+located at the given root directory.  Example usage:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>root = <span class="py-string">'/...path to corpus.../'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>reader = TaggedCorpusReader(root, <span class="py-string">'.*'</span>, <span class="py-string">'.txt'</span>) <span class="py-comment"># doctest: +SKIP</span></pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list or regexp specifying the fileids in this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sep</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word_tokenizer</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent_tokenizer</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">para_block_reader</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -287,7 +287,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">paras</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L128">
       
       (source)
     </a>
@@ -295,10 +295,9 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.TimitTaggedCorpusReader.html">nltk.corpus.reader.tagged.TimitTaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    paragraphs, each encoded as a list of sentences, which are
-    in turn encoded as lists of word strings.
-:rtype: list(list(list(str)))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(list(str)))</td><td class="fieldArgDesc">the given file(s) as a list of
+paragraphs, each encoded as a list of sentences, which are
+in turn encoded as lists of word strings.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -312,7 +311,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L68">
       
       (source)
     </a>
@@ -320,8 +319,7 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">:return: the given file(s) as a single string.
-:rtype: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">the given file(s) as a single string.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -335,7 +333,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L103">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L103">
       
       (source)
     </a>
@@ -343,10 +341,9 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    sentences or utterances, each encoded as a list of word
-    strings.
-:rtype: list(list(str))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(str))</td><td class="fieldArgDesc">the given file(s) as a list of
+sentences or utterances, each encoded as a list of word
+strings.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -360,7 +357,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_paras</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L211">
       
       (source)
     </a>
@@ -368,10 +365,9 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.TimitTaggedCorpusReader.html">nltk.corpus.reader.tagged.TimitTaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    paragraphs, each encoded as a list of sentences, which are
-    in turn encoded as lists of ``(word,tag)`` tuples.
-:rtype: list(list(list(tuple(str,str))))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(list(tuple(str,str))))</td><td class="fieldArgDesc">the given file(s) as a list of
+paragraphs, each encoded as a list of sentences, which are
+in turn encoded as lists of <tt class="rst-docutils literal">(word,tag)</tt> tuples.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -385,7 +381,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L182">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L182">
       
       (source)
     </a>
@@ -393,10 +389,8 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    sentences, each encoded as a list of ``(word,tag)`` tuples.
-
-:rtype: list(list(tuple(str,str)))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(tuple(str,str)))</td><td class="fieldArgDesc">the given file(s) as a list of
+sentences, each encoded as a list of <tt class="rst-docutils literal">(word,tag)</tt> tuples.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -410,7 +404,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L153">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L153">
       
       (source)
     </a>
@@ -418,10 +412,9 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">:return: the given file(s) as a list of tagged
-    words and punctuation symbols, encoded as tuples
-    ``(word,tag)``.
-:rtype: list(tuple(str,str))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(str,str))</td><td class="fieldArgDesc">the given file(s) as a list of tagged
+words and punctuation symbols, encoded as tuples
+<tt class="rst-docutils literal">(word,tag)</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -435,7 +428,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L79">
       
       (source)
     </a>
@@ -443,9 +436,8 @@ located at the given root directory.  Example usage:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">:return: the given file(s) as a list of words
-    and punctuation symbols.
-:rtype: list(str)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file(s) as a list of words
+and punctuation symbols.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -459,7 +451,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-defname">_para_block_reader</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L65">
       
       (source)
     </a>
@@ -481,7 +473,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-defname">_sent_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L64">
       
       (source)
     </a>
@@ -503,7 +495,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-defname">_sep</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L62">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L62">
       
       (source)
     </a>
@@ -525,7 +517,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-defname">_tagset</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L66">
       
       (source)
     </a>
@@ -547,7 +539,7 @@ located at the given root directory.  Example usage:
   <div class="functionHeader">
     
     <span class="py-defname">_word_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/tagged.py#L63">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/tagged.py#L63">
       
       (source)
     </a>
@@ -567,7 +559,7 @@ located at the given root directory.  Example usage:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,18 +65,18 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TrigramCollocationFinder</span>(<a href="nltk.collocations.AbstractCollocationFinder.html" title="nltk.collocations.AbstractCollocationFinder">AbstractCollocationFinder</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L202" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TrigramCollocationFinder</span>(<a href="nltk.collocations.AbstractCollocationFinder.html" title="nltk.collocations.AbstractCollocationFinder">AbstractCollocationFinder</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L202" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.collocations.TrigramCollocationFinder">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A tool for the finding and ranking of trigram collocations or other
+        <div>A tool for the finding and ranking of trigram collocations or other
 association measures. It is often useful to use from_words() rather than
-constructing an instance directly.</p></div>
+constructing an instance directly.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id224">
+        <table class="children sortable" id="id227">
   
   
   <tr class="classmethod">
@@ -120,7 +120,7 @@ constructing an instance directly.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.collocations.AbstractCollocationFinder.html">AbstractCollocationFinder</a></code>:
           </p>
-          <table class="children sortable" id="id225">
+          <table class="children sortable" id="id228">
   
   
   <tr class="baseclassmethod">
@@ -214,7 +214,7 @@ constructing an instance directly.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">from_words</span>(cls, words, window_size=3):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L219">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L219">
       
       (source)
     </a>
@@ -222,8 +222,8 @@ constructing an instance directly.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a TrigramCollocationFinder for all trigrams in the given
-sequence.</p></div>
+    <div>Construct a TrigramCollocationFinder for all trigrams in the given
+sequence.</div>
   </div>
 </div><div class="basemethod">
   
@@ -237,7 +237,7 @@ sequence.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, word_fd, bigram_fd, wildcard_fd, trigram_fd):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L210">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L210">
       
       (source)
     </a>
@@ -245,9 +245,9 @@ sequence.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.collocations.AbstractCollocationFinder.html#__init__">nltk.collocations.AbstractCollocationFinder.__init__</a></code></div>
     
-    <div><p class="pre">Construct a TrigramCollocationFinder, given FreqDists for
+    <div>Construct a TrigramCollocationFinder, given FreqDists for
 appearances of words, bigrams, two words with any word between them,
-and trigrams.</p></div>
+and trigrams.</div>
   </div>
 </div><div class="basemethod">
   
@@ -261,7 +261,7 @@ and trigrams.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bigram_finder</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L246">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L246">
       
       (source)
     </a>
@@ -269,9 +269,9 @@ and trigrams.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Constructs a bigram collocation finder with the bigram and unigram
+    <div>Constructs a bigram collocation finder with the bigram and unigram
 data from this finder. Note that this does not include any filtering
-applied to this finder.</p></div>
+applied to this finder.</div>
   </div>
 </div><div class="basemethod">
   
@@ -285,7 +285,7 @@ applied to this finder.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">score_ngram</span>(self, score_fn, w1, w2, w3):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L253">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L253">
       
       (source)
     </a>
@@ -293,8 +293,8 @@ applied to this finder.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the score for a given trigram using the given scoring
-function.</p></div>
+    <div>Returns the score for a given trigram using the given scoring
+function.</div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -308,7 +308,7 @@ function.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">default_ws</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L208">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L208">
       
       (source)
     </a>
@@ -330,7 +330,7 @@ function.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">bigram_fd</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L217">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L217">
       
       (source)
     </a>
@@ -352,7 +352,7 @@ function.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">wildcard_fd</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L216">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L216">
       
       (source)
     </a>
@@ -372,7 +372,7 @@ function.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

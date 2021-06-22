@@ -65,18 +65,18 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">BrillTemplateI</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/template.py#L17" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tbl.template.Template.html">nltk.tbl.template.Template</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BrillTemplateI</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/template.py#L17" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tbl.template.Template.html">nltk.tbl.template.Template</a></code></p>
         <p><a href="classIndex.html#nltk.tbl.template.BrillTemplateI">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An interface for generating lists of transformational rules that
-apply at given sentence positions.  ``BrillTemplateI`` is used by
-``Brill`` training algorithms to generate candidate rules.</p></div>
+        <div>An interface for generating lists of transformational rules that
+apply at given sentence positions.  <tt class="rst-docutils literal">BrillTemplateI</tt> is used by
+<tt class="rst-docutils literal">Brill</tt> training algorithms to generate candidate rules.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1637">
+        <table class="children sortable" id="id1641">
   
   
   <tr class="method">
@@ -88,7 +88,7 @@ apply at given sentence positions.  ``BrillTemplateI`` is used by
     
     <td>Method</td>
     <td><code><a href="#get_neighborhood">get_neighborhood</a></code></td>
-    <td><span>Returns the set of indices *i* such that ``applicable_rules(token, i, ...)`` depends on the value of the *index*th token of *token*.</span></td>
+    <td><span>Returns the set of indices <em>i</em> such that <tt class="rst-docutils literal">applicable_rules(token, i, <span class="pre">...)</span></tt> depends on the value of the <em>index*th token of *token</em>.</span></td>
   </tr>
 </table>
         
@@ -110,7 +110,7 @@ apply at given sentence positions.  ``BrillTemplateI`` is used by
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">applicable_rules</span>(self, tokens, i, correctTag):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/template.py#L24">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/template.py#L24">
       
       (source)
     </a>
@@ -118,22 +118,14 @@ apply at given sentence positions.  ``BrillTemplateI`` is used by
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.tbl.template.Template.html">nltk.tbl.template.Template</a></code></div>
     
-    <div><p class="pre">Return a list of the transformational rules that would correct
-the *i*th subtoken's tag in the given token.  In particular,
+    <div><p>Return a list of the transformational rules that would correct
+the <em>i*th subtoken's tag in the given token.  In particular,
 return a list of zero or more rules that would change
-*tokens*[i][1] to *correctTag*, if applied to *token*[i].
-
-If the *i*th token already has the correct tag (i.e., if
+*tokens*[i][1] to *correctTag</em>, if applied to <a href="#id1"><span class="rst-problematic" id="rst-id2">*</span></a>token*[i].</p>
+<p>If the <a href="#id3"><span class="rst-problematic" id="rst-id4">*</span></a>i*th token already has the correct tag (i.e., if
 tagged_tokens[i][1] == correctTag), then
-``applicable_rules()`` should return the empty list.
-
-:param tokens: The tagged tokens being tagged.
-:type tokens: list(tuple)
-:param i: The index of the token whose tag should be corrected.
-:type i: int
-:param correctTag: The correct tag for the *i*th token.
-:type correctTag: any
-:rtype: list(BrillRule)</p></div>
+<tt class="rst-docutils literal">applicable_rules()</tt> should return the empty list.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(tuple)</td><td class="fieldArgDesc">The tagged tokens being tagged.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">i:</span>int</td><td class="fieldArgDesc">The index of the token whose tag should be corrected.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">correctTag:</span>any</td><td class="fieldArgDesc">The correct tag for the <a href="#id5"><span class="rst-problematic" id="rst-id6">*</span></a>i*th token.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(BrillRule)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -147,7 +139,7 @@ tagged_tokens[i][1] == correctTag), then
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">get_neighborhood</span>(self, token, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/template.py#L45">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/template.py#L45">
       
       (source)
     </a>
@@ -155,17 +147,11 @@ tagged_tokens[i][1] == correctTag), then
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.tbl.template.Template.html">nltk.tbl.template.Template</a></code></div>
     
-    <div><p class="pre">Returns the set of indices *i* such that
-``applicable_rules(token, i, ...)`` depends on the value of
-the *index*th token of *token*.
-
-This method is used by the "fast" Brill tagger trainer.
-
-:param token: The tokens being tagged.
-:type token: list(tuple)
-:param index: The index whose neighborhood should be returned.
-:type index: int
-:rtype: set</p></div>
+    <div><p>Returns the set of indices <em>i</em> such that
+<tt class="rst-docutils literal">applicable_rules(token, i, <span class="pre">...)</span></tt> depends on the value of
+the <em>index*th token of *token</em>.</p>
+<p>This method is used by the "fast" Brill tagger trainer.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">token:</span>list(tuple)</td><td class="fieldArgDesc">The tokens being tagged.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index:</span>int</td><td class="fieldArgDesc">The index whose neighborhood should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">set</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div>
 
@@ -177,7 +163,7 @@ This method is used by the "fast" Brill tagger trainer.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

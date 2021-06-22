@@ -65,28 +65,21 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Model</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L380" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Model</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L380" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.sem.evaluate.Model">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A first order model is a domain *D* of discourse and a valuation *V*.
-
-A domain *D* is a set, and a valuation *V* is a map that associates
+        <div><p>A first order model is a domain <em>D</em> of discourse and a valuation <em>V</em>.</p>
+<p>A domain <em>D</em> is a set, and a valuation <em>V</em> is a map that associates
 expressions with values in the model.
-The domain of *V* should be a subset of *D*.
-
-Construct a new ``Model``.
-
-:type domain: set
-:param domain: A set of entities representing the domain of discourse of the model.
-:type valuation: Valuation
-:param valuation: the valuation of the model.
-:param prop: If this is set, then we are building a propositional    model and don't require the domain of *V* to be subset of *D*.</p></div>
+The domain of <em>V</em> should be a subset of <em>D</em>.</p>
+<p>Construct a new <tt class="rst-docutils literal">Model</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">domain</span></td><td class="fieldArgDesc">A set of entities representing the domain of discourse of the model.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">valuation</span></td><td class="fieldArgDesc">the valuation of the model.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prop</span></td><td class="fieldArgDesc">If this is set, then we are building a propositional    model and don't require the domain of <em>V</em> to be subset of <em>D</em>.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1324">
+        <table class="children sortable" id="id1328">
   
   
   <tr class="method">
@@ -155,7 +148,7 @@ Construct a new ``Model``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, domain, valuation):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L398">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L398">
       
       (source)
     </a>
@@ -177,7 +170,7 @@ Construct a new ``Model``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L408">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L408">
       
       (source)
     </a>
@@ -199,7 +192,7 @@ Construct a new ``Model``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L411">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L411">
       
       (source)
     </a>
@@ -221,7 +214,7 @@ Construct a new ``Model``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">evaluate</span>(self, expr, g, trace=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L414">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L414">
       
       (source)
     </a>
@@ -229,12 +222,12 @@ Construct a new ``Model``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Read input expressions, and provide a handler for ``satisfy``
-that blocks further propagation of the ``Undefined`` error.
-:param expr: An ``Expression`` of ``logic``.
+    <div>Read input expressions, and provide a handler for <tt class="rst-docutils literal">satisfy</tt>
+that blocks further propagation of the <tt class="rst-docutils literal">Undefined</tt> error.
+:param expr: An <tt class="rst-docutils literal">Expression</tt> of <tt class="rst-docutils literal">logic</tt>.
 :type g: Assignment
 :param g: an assignment to individual variables.
-:rtype: bool or 'Undefined'</p></div>
+:rtype: bool or 'Undefined'</div>
   </div>
 </div><div class="basemethod">
   
@@ -248,7 +241,7 @@ that blocks further propagation of the ``Undefined`` error.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">i</span>(self, parsed, g, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L505">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L505">
       
       (source)
     </a>
@@ -256,18 +249,14 @@ that blocks further propagation of the ``Undefined`` error.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">An interpretation function.
-
-Assuming that ``parsed`` is atomic:
-
-- if ``parsed`` is a non-logical constant, calls the valuation *V*
-- else if ``parsed`` is an individual variable, calls assignment *g*
-- else returns ``Undefined``.
-
-:param parsed: an ``Expression`` of ``logic``.
-:type g: Assignment
-:param g: an assignment to individual variables.
-:return: a semantic value</p></div>
+    <div><p>An interpretation function.</p>
+<p>Assuming that <tt class="rst-docutils literal">parsed</tt> is atomic:</p>
+<ul class="rst-simple">
+<li>if <tt class="rst-docutils literal">parsed</tt> is a non-logical constant, calls the valuation <em>V</em></li>
+<li>else if <tt class="rst-docutils literal">parsed</tt> is an individual variable, calls assignment <em>g</em></li>
+<li>else returns <tt class="rst-docutils literal">Undefined</tt>.</li>
+</ul>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parsed</span></td><td class="fieldArgDesc">an <tt class="rst-docutils literal">Expression</tt> of <tt class="rst-docutils literal">logic</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span>Assignment</td><td class="fieldArgDesc">an assignment to individual variables.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a semantic value</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -281,7 +270,7 @@ Assuming that ``parsed`` is atomic:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">satisfiers</span>(self, parsed, varex, g, trace=None, nesting=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L531">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L531">
       
       (source)
     </a>
@@ -289,15 +278,7 @@ Assuming that ``parsed`` is atomic:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Generate the entities from the model's domain that satisfy an open formula.
-
-:param parsed: an open formula
-:type parsed: Expression
-:param varex: the relevant free individual variable in ``parsed``.
-:type varex: VariableExpression or str
-:param g: a variable assignment
-:type g:  Assignment
-:return: a set of the entities that satisfy ``parsed``.</p></div>
+    <div>Generate the entities from the model's domain that satisfy an open formula.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parsed:</span>Expression</td><td class="fieldArgDesc">an open formula</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">varex:</span>VariableExpression or str</td><td class="fieldArgDesc">the relevant free individual variable in <tt class="rst-docutils literal">parsed</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span>Assignment</td><td class="fieldArgDesc">a variable assignment</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nesting</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a set of the entities that satisfy <tt class="rst-docutils literal">parsed</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -311,7 +292,7 @@ Assuming that ``parsed`` is atomic:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">satisfy</span>(self, parsed, g, trace=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L436">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L436">
       
       (source)
     </a>
@@ -319,16 +300,10 @@ Assuming that ``parsed`` is atomic:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Recursive interpretation function for a formula of first-order logic.
-
-Raises an ``Undefined`` error when ``parsed`` is an atomic string
-but is not a symbol or an individual variable.
-
-:return: Returns a truth value or ``Undefined`` if ``parsed`` is        complex, and calls the interpretation function ``i`` if ``parsed``        is atomic.
-
-:param parsed: An expression of ``logic``.
-:type g: Assignment
-:param g: an assignment to individual variables.</p></div>
+    <div><p>Recursive interpretation function for a formula of first-order logic.</p>
+<p>Raises an <tt class="rst-docutils literal">Undefined</tt> error when <tt class="rst-docutils literal">parsed</tt> is an atomic string
+but is not a symbol or an individual variable.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parsed</span></td><td class="fieldArgDesc">An expression of <tt class="rst-docutils literal">logic</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span>Assignment</td><td class="fieldArgDesc">an assignment to individual variables.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">Returns a truth value or <tt class="rst-docutils literal">Undefined</tt> if <tt class="rst-docutils literal">parsed</tt> is        complex, and calls the interpretation function <tt class="rst-docutils literal">i</tt> if <tt class="rst-docutils literal">parsed</tt>        is atomic.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -341,8 +316,8 @@ but is not a symbol or an individual variable.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">domain</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L400">
+    <span class="py-defname">domain</span>: set =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L390">
       
       (source)
     </a>
@@ -363,8 +338,8 @@ but is not a symbol or an individual variable.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">valuation</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/evaluate.py#L401">
+    <span class="py-defname">valuation</span>: Valuation =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/evaluate.py#L392">
       
       (source)
     </a>
@@ -384,7 +359,7 @@ but is not a symbol or an individual variable.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

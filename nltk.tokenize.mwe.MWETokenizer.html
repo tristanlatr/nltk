@@ -65,17 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">MWETokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/mwe.py#L36" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MWETokenizer</span>(<a href="nltk.tokenize.api.TokenizerI.html" title="nltk.tokenize.api.TokenizerI">TokenizerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/mwe.py#L36" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.mwe.MWETokenizer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A tokenizer that processes tokenized text and merges multi-word expressions
-into single tokens.</p></div>
+        <div>A tokenizer that processes tokenized text and merges multi-word expressions
+into single tokens.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1788">
+        <table class="children sortable" id="id1792">
   
   
   <tr class="method">
@@ -109,24 +109,24 @@ into single tokens.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tokenize.api.TokenizerI.html">TokenizerI</a></code>:
           </p>
-          <table class="children sortable" id="id1789">
+          <table class="children sortable" id="id1793">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize">span_tokenize</a></code></td>
-    <td><span>Identify the tokens using integer offsets ``(start_i, end_i)``, where ``s[start_i:end_i]`` is the corresponding token.</span></td>
+    <td><span>Identify the tokens using integer offsets <tt class="rst-docutils literal">(start_i, end_i)</tt>, where <tt class="rst-docutils literal">s[start_i:end_i]</tt> is the corresponding token.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#span_tokenize_sents">span_tokenize_sents</a></code></td>
-    <td><span>Apply ``self.span_tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.span_tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tokenize.api.TokenizerI.html#tokenize_sents">tokenize_sents</a></code></td>
-    <td><span>Apply ``self.tokenize()`` to each element of ``strings``.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tokenize()</tt> to each element of <tt class="rst-docutils literal">strings</tt>.  I.e.:</span></td>
   </tr>
 </table>
           
@@ -148,7 +148,7 @@ into single tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, mwes=None, separator='_'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/mwe.py#L41">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/mwe.py#L41">
       
       (source)
     </a>
@@ -156,15 +156,10 @@ into single tokens.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Initialize the multi-word tokenizer with a list of expressions and a
-separator
-
-:type mwes: list(list(str))
-:param mwes: A sequence of multi-word expressions to be merged, where
-    each MWE is a sequence of strings.
-:type separator: str
-:param separator: String that should be inserted between words in a multi-word
-    expression token. (Default is '_')</p></div>
+    <div>Initialize the multi-word tokenizer with a list of expressions and a
+separator<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mwes:</span>list(list(str))</td><td class="fieldArgDesc">A sequence of multi-word expressions to be merged, where
+each MWE is a sequence of strings.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">separator:</span>str</td><td class="fieldArgDesc">String that should be inserted between words in a multi-word
+expression token. (Default is '_')</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -178,7 +173,7 @@ separator
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_mwe</span>(self, mwe):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/mwe.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/mwe.py#L58">
       
       (source)
     </a>
@@ -186,23 +181,18 @@ separator
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a multi-word expression to the lexicon (stored as a word trie)
-
-We use ``util.Trie`` to represent the trie. Its form is a dict of dicts. 
-The key True marks the end of a valid MWE.
-
-:param mwe: The multi-word expression we're adding into the word trie
-:type mwe: tuple(str) or list(str)
-
-:Example:
-
-&gt;&gt;&gt; tokenizer = MWETokenizer()
-&gt;&gt;&gt; tokenizer.add_mwe(('a', 'b'))
-&gt;&gt;&gt; tokenizer.add_mwe(('a', 'b', 'c'))
-&gt;&gt;&gt; tokenizer.add_mwe(('a', 'x'))
-&gt;&gt;&gt; expected = {'a': {'x': {True: None}, 'b': {True: None, 'c': {True: None}}}}
-&gt;&gt;&gt; tokenizer._mwes == expected
-True</p></div>
+    <div><p>Add a multi-word expression to the lexicon (stored as a word trie)</p>
+<p>We use <tt class="rst-docutils literal">util.Trie</tt> to represent the trie. Its form is a dict of dicts.
+The key True marks the end of a valid MWE.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tokenizer = MWETokenizer()
+<span class="py-prompt">&gt;&gt;&gt; </span>tokenizer.add_mwe((<span class="py-string">'a'</span>, <span class="py-string">'b'</span>))
+<span class="py-prompt">&gt;&gt;&gt; </span>tokenizer.add_mwe((<span class="py-string">'a'</span>, <span class="py-string">'b'</span>, <span class="py-string">'c'</span>))
+<span class="py-prompt">&gt;&gt;&gt; </span>tokenizer.add_mwe((<span class="py-string">'a'</span>, <span class="py-string">'x'</span>))
+<span class="py-prompt">&gt;&gt;&gt; </span>expected = {<span class="py-string">'a'</span>: {<span class="py-string">'x'</span>: {<span class="py-builtin">True</span>: <span class="py-builtin">None</span>}, <span class="py-string">'b'</span>: {<span class="py-builtin">True</span>: <span class="py-builtin">None</span>, <span class="py-string">'c'</span>: {<span class="py-builtin">True</span>: <span class="py-builtin">None</span>}}}}
+<span class="py-prompt">&gt;&gt;&gt; </span>tokenizer._mwes == expected
+<span class="py-output">True</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mwe:</span>tuple(str) or list(str)</td><td class="fieldArgDesc">The multi-word expression we're adding into the word trie</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -216,7 +206,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokenize</span>(self, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/mwe.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/mwe.py#L80">
       
       (source)
     </a>
@@ -224,16 +214,11 @@ True</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tokenize.api.TokenizerI.html#tokenize">nltk.tokenize.api.TokenizerI.tokenize</a></code></div>
     
-    <div><p class="pre">:param text: A list containing tokenized text
-:type text: list(str)
-:return: A list of the tokenized text with multi-words merged together
-:rtype: list(str)
-
-:Example:
-
-&gt;&gt;&gt; tokenizer = MWETokenizer([('hors', "d'oeuvre")], separator='+')
-&gt;&gt;&gt; tokenizer.tokenize("An hors d'oeuvre tonight, sir?".split())
-['An', "hors+d'oeuvre", 'tonight,', 'sir?']</p></div>
+    <div><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tokenizer = MWETokenizer([(<span class="py-string">'hors'</span>, <span class="py-string">"d'oeuvre"</span>)], separator=<span class="py-string">'+'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>tokenizer.tokenize(<span class="py-string">"An hors d'oeuvre tonight, sir?"</span>.split())
+<span class="py-output">['An', "hors+d'oeuvre", 'tonight,', 'sir?']</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">text:</span>list(str)</td><td class="fieldArgDesc">A list containing tokenized text</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">A list of the tokenized text with multi-words merged together</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -247,7 +232,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_mwes</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/mwe.py#L55">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/mwe.py#L55">
       
       (source)
     </a>
@@ -269,7 +254,7 @@ True</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_separator</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/mwe.py#L56">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/mwe.py#L56">
       
       (source)
     </a>
@@ -289,7 +274,7 @@ True</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

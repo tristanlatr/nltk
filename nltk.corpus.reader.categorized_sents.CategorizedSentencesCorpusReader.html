@@ -65,42 +65,41 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CategorizedSentencesCorpusReader</span>(<a href="nltk.corpus.reader.api.CategorizedCorpusReader.html" title="nltk.corpus.reader.api.CategorizedCorpusReader">CategorizedCorpusReader</a>, <a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L42" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CategorizedSentencesCorpusReader</span>(<a href="nltk.corpus.reader.api.CategorizedCorpusReader.html" title="nltk.corpus.reader.api.CategorizedCorpusReader">CategorizedCorpusReader</a>, <a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L42" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.categorized_sents.CategorizedSentencesCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A reader for corpora in which each row represents a single instance, mainly
+        <div><p>A reader for corpora in which each row represents a single instance, mainly
 a sentence. Istances are divided into categories based on their file identifiers
 (see CategorizedCorpusReader).
 Since many corpora allow rows that contain more than one sentence, it is
 possible to specify a sentence tokenizer to retrieve all sentences instead
-than all rows.
-
-Examples using the Subjectivity Dataset:
-
-&gt;&gt;&gt; from nltk.corpus import subjectivity
-&gt;&gt;&gt; subjectivity.sents()[23]
-['television', 'made', 'him', 'famous', ',', 'but', 'his', 'biggest', 'hits',
-'happened', 'off', 'screen', '.']
-&gt;&gt;&gt; subjectivity.categories()
-['obj', 'subj']
-&gt;&gt;&gt; subjectivity.words(categories='subj')
-['smart', 'and', 'alert', ',', 'thirteen', ...]
-
-Examples using the Sentence Polarity Dataset:
-
-&gt;&gt;&gt; from nltk.corpus import sentence_polarity
-&gt;&gt;&gt; sentence_polarity.sents()
-[['simplistic', ',', 'silly', 'and', 'tedious', '.'], ["it's", 'so', 'laddish',
-'and', 'juvenile', ',', 'only', 'teenage', 'boys', 'could', 'possibly', 'find',
-'it', 'funny', '.'], ...]
-&gt;&gt;&gt; sentence_polarity.categories()
-['neg', 'pos']</p></div>
+than all rows.</p>
+<p>Examples using the Subjectivity Dataset:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> subjectivity
+<span class="py-prompt">&gt;&gt;&gt; </span>subjectivity.sents()[23]
+<span class="py-output">['television', 'made', 'him', 'famous', ',', 'but', 'his', 'biggest', 'hits',</span>
+<span class="py-output">'happened', 'off', 'screen', '.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>subjectivity.categories()
+<span class="py-output">['obj', 'subj']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>subjectivity.words(categories=<span class="py-string">'subj'</span>)
+<span class="py-output">['smart', 'and', 'alert', ',', 'thirteen', ...]</span>
+</pre><p>Examples using the Sentence Polarity Dataset:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> sentence_polarity
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_polarity.sents()
+<span class="py-output">[['simplistic', ',', 'silly', 'and', 'tedious', '.'], ["it's", 'so', 'laddish',</span>
+<span class="py-output">'and', 'juvenile', ',', 'only', 'teenage', 'boys', 'could', 'possibly', 'find',</span>
+<span class="py-output">'it', 'funny', '.'], ...]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>sentence_polarity.categories()
+<span class="py-output">['neg', 'pos']</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id265">
+        <table class="children sortable" id="id268">
   
   
   <tr class="method">
@@ -159,7 +158,7 @@ Examples using the Sentence Polarity Dataset:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CategorizedCorpusReader.html">CategorizedCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id266">
+          <table class="children sortable" id="id269">
   
   
   <tr class="basemethod">
@@ -218,7 +217,7 @@ Examples using the Sentence Polarity Dataset:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id267">
+          <table class="children sortable" id="id270">
   
   
   <tr class="basemethod">
@@ -280,7 +279,7 @@ Examples using the Sentence Polarity Dataset:
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -317,7 +316,7 @@ Examples using the Sentence Polarity Dataset:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, word_tokenizer=WhitespaceTokenizer(), sent_tokenizer=None, encoding='utf8', **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L75">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L75">
       
       (source)
     </a>
@@ -325,13 +324,8 @@ Examples using the Sentence Polarity Dataset:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CategorizedCorpusReader.html#__init__">nltk.corpus.reader.api.CategorizedCorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:param root: The root directory for the corpus.
-:param fileids: a list or regexp specifying the fileids in the corpus.
-:param word_tokenizer: a tokenizer for breaking sentences or paragraphs
-    into words. Default: `WhitespaceTokenizer`
-:param sent_tokenizer: a tokenizer for breaking paragraphs into sentences.
-:param encoding: the encoding that should be used to read the corpus.
-:param kwargs: additional parameters passed to CategorizedCorpusReader.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for the corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the fileids in the corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word_tokenizer</span></td><td class="fieldArgDesc">a tokenizer for breaking sentences or paragraphs
+into words. Default: <code><a href="nltk.tokenize.regexp.WhitespaceTokenizer.html">WhitespaceTokenizer</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent_tokenizer</span></td><td class="fieldArgDesc">a tokenizer for breaking paragraphs into sentences.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc">the encoding that should be used to read the corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc">additional parameters passed to CategorizedCorpusReader.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -345,7 +339,7 @@ Examples using the Sentence Polarity Dataset:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None, categories=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L107">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L107">
       
       (source)
     </a>
@@ -353,12 +347,9 @@ Examples using the Sentence Polarity Dataset:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param fileids: a list or regexp specifying the fileids that have to be
-    returned as a raw string.
-:param categories: a list specifying the categories whose files have to
-    be returned as a raw string.
-:return: the given file(s) as a single string.
-:rtype: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the fileids that have to be
+returned as a raw string.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">categories</span></td><td class="fieldArgDesc">a list specifying the categories whose files have to
+be returned as a raw string.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">the given file(s) as a single string.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -372,7 +363,7 @@ Examples using the Sentence Polarity Dataset:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">readme</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L123">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L123">
       
       (source)
     </a>
@@ -380,7 +371,7 @@ Examples using the Sentence Polarity Dataset:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#readme">nltk.corpus.reader.api.CorpusReader.readme</a></code></div>
     
-    <div><p class="pre">Return the contents of the corpus Readme.txt file.</p></div>
+    <div>Return the contents of the corpus Readme.txt file.</div>
   </div>
 </div><div class="basemethod">
   
@@ -394,7 +385,7 @@ Examples using the Sentence Polarity Dataset:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None, categories=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L129">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L129">
       
       (source)
     </a>
@@ -402,15 +393,10 @@ Examples using the Sentence Polarity Dataset:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all sentences in the corpus or in the specified file(s).
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    sentences have to be returned.
-:param categories: a list specifying the categories whose sentences have
-    to be returned.
-:return: the given file(s) as a list of sentences.
-    Each sentence is tokenized using the specified word_tokenizer.
-:rtype: list(list(str))</p></div>
+    <div>Return all sentences in the corpus or in the specified file(s).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+sentences have to be returned.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">categories</span></td><td class="fieldArgDesc">a list specifying the categories whose sentences have
+to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(str))</td><td class="fieldArgDesc">the given file(s) as a list of sentences.
+Each sentence is tokenized using the specified word_tokenizer.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -424,7 +410,7 @@ Examples using the Sentence Polarity Dataset:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None, categories=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L153">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L153">
       
       (source)
     </a>
@@ -432,15 +418,10 @@ Examples using the Sentence Polarity Dataset:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all words and punctuation symbols in the corpus or in the specified
-file(s).
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    words have to be returned.
-:param categories: a list specifying the categories whose words have to
-    be returned.
-:return: the given file(s) as a list of words and punctuation symbols.
-:rtype: list(str)</p></div>
+    <div>Return all words and punctuation symbols in the corpus or in the specified
+file(s).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+words have to be returned.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">categories</span></td><td class="fieldArgDesc">a list specifying the categories whose words have to
+be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file(s) as a list of words and punctuation symbols.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -454,7 +435,7 @@ file(s).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_sent_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L177">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L177">
       
       (source)
     </a>
@@ -476,7 +457,7 @@ file(s).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_word_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L194">
       
       (source)
     </a>
@@ -498,7 +479,7 @@ file(s).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_resolve</span>(self, fileids, categories):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L99">
       
       (source)
     </a>
@@ -520,7 +501,7 @@ file(s).
   <div class="functionHeader">
     
     <span class="py-defname">_sent_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L97">
       
       (source)
     </a>
@@ -542,7 +523,7 @@ file(s).
   <div class="functionHeader">
     
     <span class="py-defname">_word_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/categorized_sents.py#L96">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/categorized_sents.py#L96">
       
       (source)
     </a>
@@ -562,7 +543,7 @@ file(s).
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

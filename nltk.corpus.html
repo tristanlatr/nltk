@@ -65,64 +65,65 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">NLTK corpus readers.  The modules in this package provide functions
+        <div><p>NLTK corpus readers.  The modules in this package provide functions
 that can be used to read corpus files in a variety of formats.  These
 functions can be used to read both the corpus files that are
 distributed in the NLTK corpus package, and corpus files that are part
-of external corpora.
-
-Available Corpora
-=================
-
-Please see http://www.nltk.org/nltk_data/ for a complete list.
-Install corpora using nltk.download().
-
-Corpus Reader Functions
-=======================
-Each corpus module defines one or more "corpus reader functions",
+of external corpora.</p>
+<div class="rst-section" id="rst-available-corpora">
+<h1 class="heading">Available Corpora</h1>
+<p>Please see <a class="rst-reference external" href="http://www.nltk.org/nltk_data/" target="_top">http://www.nltk.org/nltk_data/</a> for a complete list.
+Install corpora using nltk.download().</p>
+</div>
+<div class="rst-section" id="rst-corpus-reader-functions">
+<h1 class="heading">Corpus Reader Functions</h1>
+<p>Each corpus module defines one or more "corpus reader functions",
 which can be used to read documents from that corpus.  These functions
-take an argument, ``item``, which is used to indicate which document
-should be read from the corpus:
-
-- If ``item`` is one of the unique identifiers listed in the corpus
-  module's ``items`` variable, then the corresponding document will
-  be loaded from the NLTK corpus package.
-- If ``item`` is a filename, then that file will be read.
-
-Additionally, corpus reader functions can be given lists of item
+take an argument, <tt class="rst-docutils literal">item</tt>, which is used to indicate which document
+should be read from the corpus:</p>
+<ul class="rst-simple">
+<li>If <tt class="rst-docutils literal">item</tt> is one of the unique identifiers listed in the corpus
+module's <tt class="rst-docutils literal">items</tt> variable, then the corresponding document will
+be loaded from the NLTK corpus package.</li>
+<li>If <tt class="rst-docutils literal">item</tt> is a filename, then that file will be read.</li>
+</ul>
+<p>Additionally, corpus reader functions can be given lists of item
 names; in which case, they will return a concatenation of the
-corresponding documents.
-
-Corpus reader functions are named based on the type of information
-they return.  Some common examples, and their return types, are:
-
-- words(): list of str
-- sents(): list of (list of str)
-- paras(): list of (list of (list of str))
-- tagged_words(): list of (str,str) tuple
-- tagged_sents(): list of (list of (str,str))
-- tagged_paras(): list of (list of (list of (str,str)))
-- chunked_sents(): list of (Tree w/ (str,str) leaves)
-- parsed_sents(): list of (Tree with str leaves)
-- parsed_paras(): list of (list of (Tree with str leaves))
-- xml(): A single xml ElementTree
-- raw(): unprocessed corpus contents
-
-For example, to read a list of the words in the Brown Corpus, use
-``nltk.corpus.brown.words()``:
-
-    &gt;&gt;&gt; from nltk.corpus import brown
-    &gt;&gt;&gt; print(", ".join(brown.words()))
-    The, Fulton, County, Grand, Jury, said, ...</p></div>
+corresponding documents.</p>
+<p>Corpus reader functions are named based on the type of information
+they return.  Some common examples, and their return types, are:</p>
+<ul class="rst-simple">
+<li>words(): list of str</li>
+<li>sents(): list of (list of str)</li>
+<li>paras(): list of (list of (list of str))</li>
+<li>tagged_words(): list of (str,str) tuple</li>
+<li>tagged_sents(): list of (list of (str,str))</li>
+<li>tagged_paras(): list of (list of (list of (str,str)))</li>
+<li>chunked_sents(): list of (Tree w/ (str,str) leaves)</li>
+<li>parsed_sents(): list of (Tree with str leaves)</li>
+<li>parsed_paras(): list of (list of (Tree with str leaves))</li>
+<li>xml(): A single xml ElementTree</li>
+<li>raw(): unprocessed corpus contents</li>
+</ul>
+<p>For example, to read a list of the words in the Brown Corpus, use
+<tt class="rst-docutils literal">nltk.corpus.brown.words()</tt>:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> brown
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">", "</span>.join(brown.words()))
+<span class="py-output">The, Fulton, County, Grand, Jury, said, ...</span>
+</pre></blockquote>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id229">
+        <table class="children sortable" id="id232">
   
   
   <tr class="package">
@@ -144,7 +145,7 @@ For example, to read a list of the words in the Brown Corpus, use
 </table>
         
 
-          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id230">
+          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id233">
   
   
   <tr class="function">
@@ -550,7 +551,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">abc</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L68">
       
       (source)
     </a>
@@ -572,7 +573,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">alpino</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L74">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L74">
       
       (source)
     </a>
@@ -594,7 +595,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">brown</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L75">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L75">
       
       (source)
     </a>
@@ -616,7 +617,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">cess_cat</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L83">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L83">
       
       (source)
     </a>
@@ -638,7 +639,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">cess_esp</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L90">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L90">
       
       (source)
     </a>
@@ -660,7 +661,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">cmudict</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L97">
       
       (source)
     </a>
@@ -682,7 +683,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">comtrans</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L98">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L98">
       
       (source)
     </a>
@@ -704,7 +705,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">comparative_sentences</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L99">
       
       (source)
     </a>
@@ -726,7 +727,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">conll2000</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L105">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L105">
       
       (source)
     </a>
@@ -748,7 +749,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">conll2002</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L113">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L113">
       
       (source)
     </a>
@@ -770,7 +771,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">conll2007</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L120">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L120">
       
       (source)
     </a>
@@ -792,7 +793,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">crubadan</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L126">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L126">
       
       (source)
     </a>
@@ -814,7 +815,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">dependency_treebank</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L127">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L127">
       
       (source)
     </a>
@@ -836,7 +837,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">floresta</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L130">
       
       (source)
     </a>
@@ -858,7 +859,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">framenet15</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L138">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L138">
       
       (source)
     </a>
@@ -880,7 +881,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">framenet</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L149">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L149">
       
       (source)
     </a>
@@ -902,7 +903,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">gazetteers</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L160">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L160">
       
       (source)
     </a>
@@ -924,7 +925,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">genesis</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L163">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L163">
       
       (source)
     </a>
@@ -946,7 +947,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">gutenberg</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L173">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L173">
       
       (source)
     </a>
@@ -968,7 +969,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">ieer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L176">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L176">
       
       (source)
     </a>
@@ -990,7 +991,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">inaugural</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L177">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L177">
       
       (source)
     </a>
@@ -1012,7 +1013,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">indian</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L181">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L181">
       
       (source)
     </a>
@@ -1034,7 +1035,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">jeita</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L185">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L185">
       
       (source)
     </a>
@@ -1056,7 +1057,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">knbc</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L186">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L186">
       
       (source)
     </a>
@@ -1078,7 +1079,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">lin_thesaurus</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L187">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L187">
       
       (source)
     </a>
@@ -1100,7 +1101,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">mac_morpho</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L188">
       
       (source)
     </a>
@@ -1122,7 +1123,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">machado</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L195">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L195">
       
       (source)
     </a>
@@ -1144,7 +1145,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">masc_tagged</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L202">
       
       (source)
     </a>
@@ -1166,7 +1167,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">movie_reviews</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L211">
       
       (source)
     </a>
@@ -1188,7 +1189,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">multext_east</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L218">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L218">
       
       (source)
     </a>
@@ -1210,7 +1211,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">names</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L221">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L221">
       
       (source)
     </a>
@@ -1232,7 +1233,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">nps_chat</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L224">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L224">
       
       (source)
     </a>
@@ -1254,7 +1255,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">opinion_lexicon</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L227">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L227">
       
       (source)
     </a>
@@ -1276,7 +1277,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">ppattach</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L233">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L233">
       
       (source)
     </a>
@@ -1298,7 +1299,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">product_reviews_1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L236">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L236">
       
       (source)
     </a>
@@ -1320,7 +1321,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">product_reviews_2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L239">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L239">
       
       (source)
     </a>
@@ -1342,7 +1343,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">pros_cons</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L242">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L242">
       
       (source)
     </a>
@@ -1364,7 +1365,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">ptb</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L249">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L249">
       
       (source)
     </a>
@@ -1386,7 +1387,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">qc</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L256">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L256">
       
       (source)
     </a>
@@ -1408,7 +1409,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">reuters</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L259">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L259">
       
       (source)
     </a>
@@ -1430,7 +1431,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">rte</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L266">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L266">
       
       (source)
     </a>
@@ -1452,7 +1453,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">senseval</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L267">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L267">
       
       (source)
     </a>
@@ -1474,7 +1475,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">sentence_polarity</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L268">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L268">
       
       (source)
     </a>
@@ -1496,7 +1497,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">sentiwordnet</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L275">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L275">
       
       (source)
     </a>
@@ -1518,7 +1519,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">shakespeare</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L278">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L278">
       
       (source)
     </a>
@@ -1540,7 +1541,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">sinica_treebank</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L279">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L279">
       
       (source)
     </a>
@@ -1562,7 +1563,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">state_union</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L286">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L286">
       
       (source)
     </a>
@@ -1584,7 +1585,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">stopwords</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L289">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L289">
       
       (source)
     </a>
@@ -1606,7 +1607,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">subjectivity</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L292">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L292">
       
       (source)
     </a>
@@ -1628,7 +1629,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">swadesh</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L299">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L299">
       
       (source)
     </a>
@@ -1650,7 +1651,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">swadesh110</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L302">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L302">
       
       (source)
     </a>
@@ -1672,7 +1673,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">swadesh207</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L305">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L305">
       
       (source)
     </a>
@@ -1694,7 +1695,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">switchboard</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L308">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L308">
       
       (source)
     </a>
@@ -1716,7 +1717,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">timit</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L309">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L309">
       
       (source)
     </a>
@@ -1738,7 +1739,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">timit_tagged</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L310">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L310">
       
       (source)
     </a>
@@ -1760,7 +1761,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">toolbox</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L313">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L313">
       
       (source)
     </a>
@@ -1782,7 +1783,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">treebank</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L316">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L316">
       
       (source)
     </a>
@@ -1804,7 +1805,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">treebank_chunk</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L323">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L323">
       
       (source)
     </a>
@@ -1826,7 +1827,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">treebank_raw</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L332">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L332">
       
       (source)
     </a>
@@ -1848,7 +1849,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">twitter_samples</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L335">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L335">
       
       (source)
     </a>
@@ -1870,7 +1871,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">udhr</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L336">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L336">
       
       (source)
     </a>
@@ -1892,7 +1893,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">udhr2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L337">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L337">
       
       (source)
     </a>
@@ -1914,7 +1915,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">universal_treebanks</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L338">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L338">
       
       (source)
     </a>
@@ -1936,7 +1937,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">verbnet</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L355">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L355">
       
       (source)
     </a>
@@ -1958,7 +1959,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">webtext</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L356">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L356">
       
       (source)
     </a>
@@ -1980,7 +1981,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">wordnet</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L359">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L359">
       
       (source)
     </a>
@@ -2002,7 +2003,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">wordnet_ic</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L364">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L364">
       
       (source)
     </a>
@@ -2024,7 +2025,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">words</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L365">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L365">
       
       (source)
     </a>
@@ -2046,7 +2047,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">propbank</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L370">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L370">
       
       (source)
     </a>
@@ -2068,7 +2069,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">nombank</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L379">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L379">
       
       (source)
     </a>
@@ -2090,7 +2091,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">propbank_ptb</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L388">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L388">
       
       (source)
     </a>
@@ -2112,7 +2113,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">nombank_ptb</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L397">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L397">
       
       (source)
     </a>
@@ -2134,7 +2135,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">semcor</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L406">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L406">
       
       (source)
     </a>
@@ -2156,7 +2157,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">nonbreaking_prefixes</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L410">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L410">
       
       (source)
     </a>
@@ -2178,7 +2179,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-defname">perluniprops</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L416">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L416">
       
       (source)
     </a>
@@ -2200,7 +2201,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L451">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L451">
       
       (source)
     </a>
@@ -2222,7 +2223,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">teardown_module</span>(module=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/__init__.py#L487">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/__init__.py#L487">
       
       (source)
     </a>
@@ -2242,7 +2243,7 @@ For example, to read a list of the words in the Brown Corpus, use
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,43 +65,45 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/senna.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/senna.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A general interface to the SENNA pipeline that supports any of the
-operations specified in SUPPORTED_OPERATIONS.
-
-Applying multiple operations at once has the speed advantage. For example,
+        <div><p>A general interface to the SENNA pipeline that supports any of the
+operations specified in SUPPORTED_OPERATIONS.</p>
+<p>Applying multiple operations at once has the speed advantage. For example,
 Senna will automatically determine POS tags if you are extracting named
 entities. Applying both of the operations will cost only the time of
-extracting the named entities.
-
-The SENNA pipeline has a fixed maximum size of the sentences that it can read.
+extracting the named entities.</p>
+<p>The SENNA pipeline has a fixed maximum size of the sentences that it can read.
 By default it is 1024 token/sentence. If you have larger sentences, changing
 the MAX_SENTENCE_SIZE value in SENNA_main.c should be considered and your
 system specific binary should be rebuilt. Otherwise this could introduce
-misalignment errors.
-
-The input is:
-- path to the directory that contains SENNA executables. If the path is incorrect,
-   Senna will automatically search for executable file specified in SENNA environment variable
-- List of the operations needed to be performed.
-- (optionally) the encoding of the input data (default:utf-8)
-
-Note: Unit tests for this module can be found in test/unit/test_senna.py
-
-    &gt;&gt;&gt; from nltk.classify import Senna
-    &gt;&gt;&gt; pipeline = Senna('/usr/share/senna-v3.0', ['pos', 'chk', 'ner'])
-    &gt;&gt;&gt; sent = 'Dusseldorf is an international business center'.split()
-    &gt;&gt;&gt; [(token['word'], token['chk'], token['ner'], token['pos']) for token in pipeline.tag(sent)] # doctest: +SKIP
-    [('Dusseldorf', 'B-NP', 'B-LOC', 'NNP'), ('is', 'B-VP', 'O', 'VBZ'), ('an', 'B-NP', 'O', 'DT'),
-    ('international', 'I-NP', 'O', 'JJ'), ('business', 'I-NP', 'O', 'NN'), ('center', 'I-NP', 'O', 'NN')]</p></div>
+misalignment errors.</p>
+<p>The input is:
+- path to the directory that contains SENNA executables. If the path is incorrect,</p>
+<blockquote>
+Senna will automatically search for executable file specified in SENNA environment variable</blockquote>
+<ul class="rst-simple">
+<li>List of the operations needed to be performed.</li>
+<li>(optionally) the encoding of the input data (default:utf-8)</li>
+</ul>
+<p>Note: Unit tests for this module can be found in test/unit/test_senna.py</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.classify <span class="py-keyword">import</span> Senna
+<span class="py-prompt">&gt;&gt;&gt; </span>pipeline = Senna(<span class="py-string">'/usr/share/senna-v3.0'</span>, [<span class="py-string">'pos'</span>, <span class="py-string">'chk'</span>, <span class="py-string">'ner'</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = <span class="py-string">'Dusseldorf is an international business center'</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span>[(token[<span class="py-string">'word'</span>], token[<span class="py-string">'chk'</span>], token[<span class="py-string">'ner'</span>], token[<span class="py-string">'pos'</span>]) <span class="py-keyword">for</span> token <span class="py-keyword">in</span> pipeline.tag(sent)] <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('Dusseldorf', 'B-NP', 'B-LOC', 'NNP'), ('is', 'B-VP', 'O', 'VBZ'), ('an', 'B-NP', 'O', 'DT'),</span>
+<span class="py-output">('international', 'I-NP', 'O', 'JJ'), ('business', 'I-NP', 'O', 'NN'), ('center', 'I-NP', 'O', 'NN')]</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id166">
+        <table class="children sortable" id="id169">
   
   
   <tr class="class">
@@ -140,7 +142,7 @@ Note: Unit tests for this module can be found in test/unit/test_senna.py
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">setup_module</span>(module):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/senna.py#L182">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/senna.py#L182">
       
       (source)
     </a>
@@ -162,7 +164,7 @@ Note: Unit tests for this module can be found in test/unit/test_senna.py
   <div class="functionHeader">
     
     <span class="py-defname">_senna_url</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/senna.py#L46">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/senna.py#L46">
       
       (source)
     </a>
@@ -182,7 +184,7 @@ Note: Unit tests for this module can be found in test/unit/test_senna.py
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

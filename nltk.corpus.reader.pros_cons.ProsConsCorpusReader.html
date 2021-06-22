@@ -65,24 +65,27 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProsConsCorpusReader</span>(<a href="nltk.corpus.reader.api.CategorizedCorpusReader.html" title="nltk.corpus.reader.api.CategorizedCorpusReader">CategorizedCorpusReader</a>, <a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/pros_cons.py#L34" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProsConsCorpusReader</span>(<a href="nltk.corpus.reader.api.CategorizedCorpusReader.html" title="nltk.corpus.reader.api.CategorizedCorpusReader">CategorizedCorpusReader</a>, <a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/pros_cons.py#L34" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.pros_cons.ProsConsCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for the Pros and Cons sentence dataset.
-
-    &gt;&gt;&gt; from nltk.corpus import pros_cons
-    &gt;&gt;&gt; pros_cons.sents(categories='Cons')
-    [['East', 'batteries', '!', 'On', '-', 'off', 'switch', 'too', 'easy',
-    'to', 'maneuver', '.'], ['Eats', '...', 'no', ',', 'GULPS', 'batteries'],
-    ...]
-    &gt;&gt;&gt; pros_cons.words('IntegratedPros.txt')
-    ['Easy', 'to', 'use', ',', 'economical', '!', ...]</p></div>
+        <div><p>Reader for the Pros and Cons sentence dataset.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> pros_cons
+<span class="py-prompt">&gt;&gt;&gt; </span>pros_cons.sents(categories=<span class="py-string">'Cons'</span>)
+<span class="py-output">[['East', 'batteries', '!', 'On', '-', 'off', 'switch', 'too', 'easy',</span>
+<span class="py-output">'to', 'maneuver', '.'], ['Eats', '...', 'no', ',', 'GULPS', 'batteries'],</span>
+<span class="py-output">...]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>pros_cons.words(<span class="py-string">'IntegratedPros.txt'</span>)
+<span class="py-output">['Easy', 'to', 'use', ',', 'economical', '!', ...]</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id420">
+        <table class="children sortable" id="id423">
   
   
   <tr class="method">
@@ -126,7 +129,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CategorizedCorpusReader.html">CategorizedCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id421">
+          <table class="children sortable" id="id424">
   
   
   <tr class="basemethod">
@@ -185,7 +188,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id422">
+          <table class="children sortable" id="id425">
   
   
   <tr class="basemethod">
@@ -252,7 +255,7 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -289,7 +292,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, word_tokenizer=WordPunctTokenizer(), encoding='utf8', **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/pros_cons.py#L49">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/pros_cons.py#L49">
       
       (source)
     </a>
@@ -297,12 +300,8 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CategorizedCorpusReader.html#__init__">nltk.corpus.reader.api.CategorizedCorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:param root: The root directory for the corpus.
-:param fileids: a list or regexp specifying the fileids in the corpus.
-:param word_tokenizer: a tokenizer for breaking sentences or paragraphs
-    into words. Default: `WhitespaceTokenizer`
-:param encoding: the encoding that should be used to read the corpus.
-:param kwargs: additional parameters passed to CategorizedCorpusReader.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for the corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the fileids in the corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word_tokenizer</span></td><td class="fieldArgDesc">a tokenizer for breaking sentences or paragraphs
+into words. Default: <code><a href="nltk.tokenize.regexp.WhitespaceTokenizer.html">WhitespaceTokenizer</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc">the encoding that should be used to read the corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc">additional parameters passed to CategorizedCorpusReader.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -316,7 +315,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None, categories=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/pros_cons.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/pros_cons.py#L70">
       
       (source)
     </a>
@@ -324,15 +323,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all sentences in the corpus or in the specified files/categories.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    sentences have to be returned.
-:param categories: a list specifying the categories whose sentences
-    have to be returned.
-:return: the given file(s) as a list of sentences. Each sentence is
-    tokenized using the specified word_tokenizer.
-:rtype: list(list(str))</p></div>
+    <div>Return all sentences in the corpus or in the specified files/categories.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+sentences have to be returned.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">categories</span></td><td class="fieldArgDesc">a list specifying the categories whose sentences
+have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(str))</td><td class="fieldArgDesc">the given file(s) as a list of sentences. Each sentence is
+tokenized using the specified word_tokenizer.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -346,7 +340,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None, categories=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/pros_cons.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/pros_cons.py#L94">
       
       (source)
     </a>
@@ -354,15 +348,10 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all words and punctuation symbols in the corpus or in the specified
-files/categories.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    words have to be returned.
-:param categories: a list specifying the categories whose words have
-    to be returned.
-:return: the given file(s) as a list of words and punctuation symbols.
-:rtype: list(str)</p></div>
+    <div>Return all words and punctuation symbols in the corpus or in the specified
+files/categories.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+words have to be returned.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">categories</span></td><td class="fieldArgDesc">a list specifying the categories whose words have
+to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file(s) as a list of words and punctuation symbols.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -376,7 +365,7 @@ files/categories.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_sent_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/pros_cons.py#L118">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/pros_cons.py#L118">
       
       (source)
     </a>
@@ -398,7 +387,7 @@ files/categories.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_word_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/pros_cons.py#L129">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/pros_cons.py#L129">
       
       (source)
     </a>
@@ -420,7 +409,7 @@ files/categories.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_resolve</span>(self, fileids, categories):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/pros_cons.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/pros_cons.py#L135">
       
       (source)
     </a>
@@ -442,7 +431,7 @@ files/categories.
   <div class="functionHeader">
     
     <span class="py-defname">_word_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/pros_cons.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/pros_cons.py#L68">
       
       (source)
     </a>
@@ -462,7 +451,7 @@ files/categories.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

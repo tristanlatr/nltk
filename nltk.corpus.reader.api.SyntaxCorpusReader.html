@@ -65,26 +65,30 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SyntaxCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L376" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html">nltk.corpus.reader.bracket_parse.BracketParseCorpusReader</a></code>, <code><a href="nltk.corpus.reader.dependency.DependencyCorpusReader.html">nltk.corpus.reader.dependency.DependencyCorpusReader</a></code>, <code><a href="nltk.corpus.reader.knbc.KNBCorpusReader.html">nltk.corpus.reader.knbc.KNBCorpusReader</a></code>, <code><a href="nltk.corpus.reader.sinica_treebank.SinicaTreebankCorpusReader.html">nltk.corpus.reader.sinica_treebank.SinicaTreebankCorpusReader</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SyntaxCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L376" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html">nltk.corpus.reader.bracket_parse.BracketParseCorpusReader</a></code>, <code><a href="nltk.corpus.reader.dependency.DependencyCorpusReader.html">nltk.corpus.reader.dependency.DependencyCorpusReader</a></code>, <code><a href="nltk.corpus.reader.knbc.KNBCorpusReader.html">nltk.corpus.reader.knbc.KNBCorpusReader</a></code>, <code><a href="nltk.corpus.reader.sinica_treebank.SinicaTreebankCorpusReader.html">nltk.corpus.reader.sinica_treebank.SinicaTreebankCorpusReader</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.api.SyntaxCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract base class for reading corpora consisting of
-syntactically parsed text.  Subclasses should define:
-
-  - ``__init__``, which specifies the location of the corpus
-    and a method for detecting the sentence blocks in corpus files.
-  - ``_read_block``, which reads a block from the input stream.
-  - ``_word``, which takes a block and returns a list of list of words.
-  - ``_tag``, which takes a block and returns a list of list of tagged
-    words.
-  - ``_parse``, which takes a block and returns a list of parsed
-    sentences.</p></div>
+        <div><p>An abstract base class for reading corpora consisting of
+syntactically parsed text.  Subclasses should define:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">__init__</tt>, which specifies the location of the corpus
+and a method for detecting the sentence blocks in corpus files.</li>
+<li><tt class="rst-docutils literal">_read_block</tt>, which reads a block from the input stream.</li>
+<li><tt class="rst-docutils literal">_word</tt>, which takes a block and returns a list of list of words.</li>
+<li><tt class="rst-docutils literal">_tag</tt>, which takes a block and returns a list of list of tagged
+words.</li>
+<li><tt class="rst-docutils literal">_parse</tt>, which takes a block and returns a list of parsed
+sentences.</li>
+</ul>
+</blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id241">
+        <table class="children sortable" id="id244">
   
   
   <tr class="method">
@@ -168,7 +172,7 @@ syntactically parsed text.  Subclasses should define:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id242">
+          <table class="children sortable" id="id245">
   
   
   <tr class="basemethod">
@@ -240,7 +244,7 @@ syntactically parsed text.  Subclasses should define:
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -277,7 +281,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parsed_sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L410">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L410">
       
       (source)
     </a>
@@ -299,7 +303,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L403">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L403">
       
       (source)
     </a>
@@ -321,7 +325,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L430">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L430">
       
       (source)
     </a>
@@ -343,7 +347,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L419">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L419">
       
       (source)
     </a>
@@ -365,7 +369,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L439">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L439">
       
       (source)
     </a>
@@ -387,7 +391,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L450">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L450">
       
       (source)
     </a>
@@ -409,7 +413,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L391">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L391">
       
       (source)
     </a>
@@ -431,7 +435,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L400">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L400">
       
       (source)
     </a>
@@ -453,7 +457,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_parsed_sent_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L475">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L475">
       
       (source)
     </a>
@@ -475,7 +479,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_sent_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L467">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L467">
       
       (source)
     </a>
@@ -497,7 +501,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_tagged_sent_block</span>(self, stream, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L470">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L470">
       
       (source)
     </a>
@@ -519,7 +523,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_tagged_word_block</span>(self, stream, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L464">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L464">
       
       (source)
     </a>
@@ -541,7 +545,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_word_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L461">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L461">
       
       (source)
     </a>
@@ -563,7 +567,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_tag</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L397">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L397">
       
       (source)
     </a>
@@ -585,7 +589,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_word</span>(self, s):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L394">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L394">
       
       (source)
     </a>
@@ -605,7 +609,7 @@ syntactically parsed text.  Subclasses should define:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

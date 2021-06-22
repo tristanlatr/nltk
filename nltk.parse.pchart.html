@@ -65,36 +65,38 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Classes and interfaces for associating probabilities with tree
+        <div><p>Classes and interfaces for associating probabilities with tree
 structures that represent the internal organization of a text.  The
-probabilistic parser module defines ``BottomUpProbabilisticChartParser``.
-
-``BottomUpProbabilisticChartParser`` is an abstract class that implements
-a bottom-up chart parser for ``PCFG`` grammars.  It maintains a queue of edges,
+probabilistic parser module defines <tt class="rst-docutils literal">BottomUpProbabilisticChartParser</tt>.</p>
+<p><tt class="rst-docutils literal">BottomUpProbabilisticChartParser</tt> is an abstract class that implements
+a bottom-up chart parser for <tt class="rst-docutils literal">PCFG</tt> grammars.  It maintains a queue of edges,
 and adds them to the chart one at a time.  The ordering of this queue
 is based on the probabilities associated with the edges, allowing the
 parser to expand more likely edges before less likely ones.  Each
 subclass implements a different queue ordering, producing different
-search strategies.  Currently the following subclasses are defined:
-
-  - ``InsideChartParser`` searches edges in decreasing order of
-    their trees' inside probabilities.
-  - ``RandomChartParser`` searches edges in random order.
-  - ``LongestChartParser`` searches edges in decreasing order of their
-    location's length.
-
-The ``BottomUpProbabilisticChartParser`` constructor has an optional
+search strategies.  Currently the following subclasses are defined:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">InsideChartParser</tt> searches edges in decreasing order of
+their trees' inside probabilities.</li>
+<li><tt class="rst-docutils literal">RandomChartParser</tt> searches edges in random order.</li>
+<li><tt class="rst-docutils literal">LongestChartParser</tt> searches edges in decreasing order of their
+location's length.</li>
+</ul>
+</blockquote>
+<p>The <tt class="rst-docutils literal">BottomUpProbabilisticChartParser</tt> constructor has an optional
 argument beam_size.  If non-zero, this controls the size of the beam
-(aka the edge queue).  This option is most useful with InsideChartParser.</p></div>
+(aka the edge queue).  This option is most useful with InsideChartParser.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1062">
+        <table class="children sortable" id="id1066">
   
   
   <tr class="class">
@@ -111,7 +113,7 @@ argument beam_size.  If non-zero, this controls the size of the beam
     
     <td>Class</td>
     <td><code><a href="nltk.parse.pchart.LongestChartParser.html">LongestChartParser</a></code></td>
-    <td><span>A bottom-up parser for ``PCFG`` grammars that tries longer edges before shorter ones.  This sorting order results in a type of best-first search strategy.</span></td>
+    <td><span>A bottom-up parser for <tt class="rst-docutils literal">PCFG</tt> grammars that tries longer edges before shorter ones.  This sorting order results in a type of best-first search strategy.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -141,7 +143,7 @@ argument beam_size.  If non-zero, this controls the size of the beam
     
     <td>Class</td>
     <td><code><a href="nltk.parse.pchart.RandomChartParser.html">RandomChartParser</a></code></td>
-    <td><span>A bottom-up parser for ``PCFG`` grammars that tries edges in random order. This sorting order results in a random search strategy.</span></td>
+    <td><span>A bottom-up parser for <tt class="rst-docutils literal">PCFG</tt> grammars that tries edges in random order. This sorting order results in a random search strategy.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -151,7 +153,7 @@ argument beam_size.  If non-zero, this controls the size of the beam
     
     <td>Class</td>
     <td><code><a href="nltk.parse.pchart.UnsortedChartParser.html">UnsortedChartParser</a></code></td>
-    <td><span>A bottom-up parser for ``PCFG`` grammars that tries edges in whatever order.</span></td>
+    <td><span>A bottom-up parser for <tt class="rst-docutils literal">PCFG</tt> grammars that tries edges in whatever order.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -178,7 +180,7 @@ argument beam_size.  If non-zero, this controls the size of the beam
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>(choice=None, draw_parses=None, print_parses=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/pchart.py#L431">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/pchart.py#L431">
       
       (source)
     </a>
@@ -186,10 +188,10 @@ argument beam_size.  If non-zero, this controls the size of the beam
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">A demonstration of the probabilistic parsers.  The user is
+    <div>A demonstration of the probabilistic parsers.  The user is
 prompted to select which demo to run, and how many parses should
 be found; and then each parser is run on the same demo, and a
-summary of the results are displayed.</p></div>
+summary of the results are displayed.</div>
   </div>
 </div>
 
@@ -201,7 +203,7 @@ summary of the results are displayed.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

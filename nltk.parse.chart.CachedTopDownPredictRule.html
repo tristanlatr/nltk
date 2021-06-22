@@ -65,21 +65,21 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CachedTopDownPredictRule</span>(<a href="nltk.parse.chart.TopDownPredictRule.html" title="nltk.parse.chart.TopDownPredictRule">TopDownPredictRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1158" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.earleychart.PredictorRule.html">nltk.parse.earleychart.PredictorRule</a></code>, <code><a href="nltk.parse.featurechart.FeatureTopDownPredictRule.html">nltk.parse.featurechart.FeatureTopDownPredictRule</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CachedTopDownPredictRule</span>(<a href="nltk.parse.chart.TopDownPredictRule.html" title="nltk.parse.chart.TopDownPredictRule">TopDownPredictRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1158" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.earleychart.PredictorRule.html">nltk.parse.earleychart.PredictorRule</a></code>, <code><a href="nltk.parse.featurechart.FeatureTopDownPredictRule.html">nltk.parse.featurechart.FeatureTopDownPredictRule</a></code></p>
         <p><a href="classIndex.html#nltk.parse.chart.CachedTopDownPredictRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A cached version of ``TopDownPredictRule``.  After the first time
-this rule is applied to an edge with a given ``end`` and ``next``,
-it will not generate any more edges for edges with that ``end`` and
-``next``.
-
-If ``chart`` or ``grammar`` are changed, then the cache is flushed.</p></div>
+        <div><p>A cached version of <tt class="rst-docutils literal">TopDownPredictRule</tt>.  After the first time
+this rule is applied to an edge with a given <tt class="rst-docutils literal">end</tt> and <tt class="rst-docutils literal">next</tt>,
+it will not generate any more edges for edges with that <tt class="rst-docutils literal">end</tt> and
+<tt class="rst-docutils literal">next</tt>.</p>
+<p>If <tt class="rst-docutils literal">chart</tt> or <tt class="rst-docutils literal">grammar</tt> are changed, then the cache is flushed.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id859">
+        <table class="children sortable" id="id863">
   
   
   <tr class="method">
@@ -103,7 +103,7 @@ If ``chart`` or ``grammar`` are changed, then the cache is flushed.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.TopDownPredictRule.html">TopDownPredictRule</a></code>:
           </p>
-          <table class="children sortable" id="id860">
+          <table class="children sortable" id="id864">
   
   
   <tr class="baseclassvariable">
@@ -117,7 +117,7 @@ If ``chart`` or ``grammar`` are changed, then the cache is flushed.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.AbstractChartRule.html">AbstractChartRule</a></code> (via <code><a href="nltk.parse.chart.TopDownPredictRule.html">TopDownPredictRule</a></code>):
           </p>
-          <table class="children sortable" id="id861">
+          <table class="children sortable" id="id865">
   
   
   <tr class="basemethod">
@@ -151,7 +151,7 @@ If ``chart`` or ``grammar`` are changed, then the cache is flushed.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1168">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1168">
       
       (source)
     </a>
@@ -173,7 +173,7 @@ If ``chart`` or ``grammar`` are changed, then the cache is flushed.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply</span>(self, chart, grammar, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1172">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1172">
       
       (source)
     </a>
@@ -181,16 +181,12 @@ If ``chart`` or ``grammar`` are changed, then the cache is flushed.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.TopDownPredictRule.html#apply">nltk.parse.chart.TopDownPredictRule.apply</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.parse.featurechart.FeatureTopDownPredictRule.html">nltk.parse.featurechart.FeatureTopDownPredictRule</a></code></div>
     
-    <div><p class="pre">Return a generator that will add edges licensed by this rule
+    <div>Return a generator that will add edges licensed by this rule
 and the given edges to the chart, one at a time.  Each
 time the generator is resumed, it will either add a new
-edge and yield that edge; or return.
-
-:type edges: list(EdgeI)
-:param edges: A set of existing edges.  The number of edges
-    that should be passed to ``apply()`` is specified by the
-    ``NUM_EDGES`` class variable.
-:rtype: iter(EdgeI)</p></div>
+edge and yield that edge; or return.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edges:</span>list(EdgeI)</td><td class="fieldArgDesc">A set of existing edges.  The number of edges
+that should be passed to <tt class="rst-docutils literal">apply()</tt> is specified by the
+<tt class="rst-docutils literal">NUM_EDGES</tt> class variable.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -204,7 +200,7 @@ edge and yield that edge; or return.
   <div class="functionHeader">
     
     <span class="py-defname">_done</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/chart.py#L1170">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/chart.py#L1170">
       
       (source)
     </a>
@@ -224,7 +220,7 @@ edge and yield that edge; or return.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

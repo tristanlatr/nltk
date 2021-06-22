@@ -65,38 +65,36 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticProjectiveDependencyParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L288" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProbabilisticProjectiveDependencyParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L288" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.projectivedependencyparser.ProbabilisticProjectiveDependencyParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A probabilistic, projective dependency parser.
-
-This parser returns the most probable projective parse derived from the
+        <div><p>A probabilistic, projective dependency parser.</p>
+<p>This parser returns the most probable projective parse derived from the
 probabilistic dependency grammar derived from the train() method.  The
 probabilistic model is an implementation of Eisner's (1996) Model C, which
 conditions on head-word, head-tag, child-word, and child-tag.  The decoding
 uses a bottom-up chart-based span concatenation algorithm that's identical
-to the one utilized by the rule-based projective parser.
-
-Usage example
--------------
-&gt;&gt;&gt; from nltk.parse.dependencygraph import conll_data2
-
-&gt;&gt;&gt; graphs = [
-... DependencyGraph(entry) for entry in conll_data2.split('\n\n') if entry
-... ]
-
-&gt;&gt;&gt; ppdp = ProbabilisticProjectiveDependencyParser()
-&gt;&gt;&gt; ppdp.train(graphs)
-
-&gt;&gt;&gt; sent = ['Cathy', 'zag', 'hen', 'wild', 'zwaaien', '.']
-&gt;&gt;&gt; list(ppdp.parse(sent))
-[Tree('zag', ['Cathy', 'hen', Tree('zwaaien', ['wild', '.'])])]</p></div>
+to the one utilized by the rule-based projective parser.</p>
+<div class="rst-section" id="rst-usage-example">
+<h1 class="heading">Usage example</h1>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.parse.dependencygraph <span class="py-keyword">import</span> conll_data2</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>graphs = [
+<span class="py-more">... </span>DependencyGraph(entry) <span class="py-keyword">for</span> entry <span class="py-keyword">in</span> conll_data2.split(<span class="py-string">'\n\n'</span>) <span class="py-keyword">if</span> entry
+<span class="py-more">... </span>]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ppdp = ProbabilisticProjectiveDependencyParser()
+<span class="py-prompt">&gt;&gt;&gt; </span>ppdp.train(graphs)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = [<span class="py-string">'Cathy'</span>, <span class="py-string">'zag'</span>, <span class="py-string">'hen'</span>, <span class="py-string">'wild'</span>, <span class="py-string">'zwaaien'</span>, <span class="py-string">'.'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(ppdp.parse(sent))
+<span class="py-output">[Tree('zag', ['Cathy', 'hen', Tree('zwaaien', ['wild', '.'])])]</span>
+</pre></div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1095">
+        <table class="children sortable" id="id1099">
   
   
   <tr class="method">
@@ -155,7 +153,7 @@ Usage example
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L315">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L315">
       
       (source)
     </a>
@@ -163,8 +161,8 @@ Usage example
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a new probabilistic dependency parser.  No additional
-operations are necessary.</p></div>
+    <div>Create a new probabilistic dependency parser.  No additional
+operations are necessary.</div>
   </div>
 </div><div class="basemethod">
   
@@ -178,7 +176,7 @@ operations are necessary.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">compute_prob</span>(self, dg):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L524">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L524">
       
       (source)
     </a>
@@ -186,14 +184,9 @@ operations are necessary.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Computes the probability of a dependency graph based
+    <div>Computes the probability of a dependency graph based
 on the parser's probability model (defined by the parser's
-statistical dependency grammar).
-
-:param dg: A dependency graph to score.
-:type dg: DependencyGraph
-:return: The probability of the dependency graph.
-:rtype: int</p></div>
+statistical dependency grammar).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dg:</span>DependencyGraph</td><td class="fieldArgDesc">A dependency graph to score.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc">The probability of the dependency graph.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -207,7 +200,7 @@ statistical dependency grammar).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">concatenate</span>(self, span1, span2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L387">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L387">
       
       (source)
     </a>
@@ -215,15 +208,12 @@ statistical dependency grammar).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Concatenates the two spans in whichever way possible.  This
+    <div>Concatenates the two spans in whichever way possible.  This
 includes rightward concatenation (from the leftmost word of the
 leftmost span to the rightmost word of the rightmost span) and
 leftward concatenation (vice-versa) between adjacent spans.  Unlike
 Eisner's presentation of span concatenation, these spans do not
-share or pivot on a particular word/word-index.
-
-:return: A list of new spans formed through concatenation.
-:rtype: list(DependencySpan)</p></div>
+share or pivot on a particular word/word-index.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(DependencySpan)</td><td class="fieldArgDesc">A list of new spans formed through concatenation.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -237,7 +227,7 @@ share or pivot on a particular word/word-index.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L321">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L321">
       
       (source)
     </a>
@@ -245,11 +235,11 @@ share or pivot on a particular word/word-index.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Parses the list of tokens subject to the projectivity constraint
+    <div>Parses the list of tokens subject to the projectivity constraint
 and the productions in the parser's grammar.  This uses a method
 similar to the span-concatenation algorithm defined in Eisner (1996).
 It returns the most probable parse derived from the parser's
-probabilistic dependency grammar.</p></div>
+probabilistic dependency grammar.</div>
   </div>
 </div><div class="basemethod">
   
@@ -263,7 +253,7 @@ probabilistic dependency grammar.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, graphs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L440">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L440">
       
       (source)
     </a>
@@ -271,13 +261,10 @@ probabilistic dependency grammar.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Trains a ProbabilisticDependencyGrammar based on the list of input
+    <div>Trains a ProbabilisticDependencyGrammar based on the list of input
 DependencyGraphs.  This model is an implementation of Eisner's (1996)
 Model C, which derives its statistics from head-word, head-tag,
-child-word, and child-tag relationships.
-
-:param graphs: A list of dependency graphs to train from.
-:type: list(DependencyGraph)</p></div>
+child-word, and child-tag relationships.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graphs</span></td><td class="fieldArgDesc">A list of dependency graphs to train from.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -291,7 +278,7 @@ child-word, and child-tag relationships.
   <div class="functionHeader">
     
     <span class="py-defname">_grammar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L522">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L522">
       
       (source)
     </a>
@@ -313,7 +300,7 @@ child-word, and child-tag relationships.
   <div class="functionHeader">
     
     <span class="py-defname">_tokens</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L329">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L329">
       
       (source)
     </a>
@@ -333,7 +320,7 @@ child-word, and child-tag relationships.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

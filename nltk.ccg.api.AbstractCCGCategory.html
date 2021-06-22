@@ -65,12 +65,12 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">AbstractCCGCategory</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L14" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.ccg.api.CCGVar.html">nltk.ccg.api.CCGVar</a></code>, <code><a href="nltk.ccg.api.FunctionalCategory.html">nltk.ccg.api.FunctionalCategory</a></code>, <code><a href="nltk.ccg.api.PrimitiveCategory.html">nltk.ccg.api.PrimitiveCategory</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AbstractCCGCategory</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L14" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.ccg.api.CCGVar.html">nltk.ccg.api.CCGVar</a></code>, <code><a href="nltk.ccg.api.FunctionalCategory.html">nltk.ccg.api.FunctionalCategory</a></code>, <code><a href="nltk.ccg.api.PrimitiveCategory.html">nltk.ccg.api.PrimitiveCategory</a></code></p>
         <p><a href="classIndex.html#nltk.ccg.api.AbstractCCGCategory">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Interface for categories in combinatory grammars.</p></div>
+        <div>Interface for categories in combinatory grammars.</div>
       </div>
 
       <div id="splitTables">
@@ -153,7 +153,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L58">
       
       (source)
     </a>
@@ -175,7 +175,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L75">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L75">
       
       (source)
     </a>
@@ -197,7 +197,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L67">
       
       (source)
     </a>
@@ -219,7 +219,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L64">
       
       (source)
     </a>
@@ -241,7 +241,7 @@
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L54">
       
       (source)
     </a>
@@ -263,7 +263,7 @@
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">can_unify</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L45">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L45">
       
       (source)
     </a>
@@ -271,9 +271,15 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.ccg.api.CCGVar.html">nltk.ccg.api.CCGVar</a></code>, <code><a href="nltk.ccg.api.FunctionalCategory.html">nltk.ccg.api.FunctionalCategory</a></code>, <code><a href="nltk.ccg.api.PrimitiveCategory.html">nltk.ccg.api.PrimitiveCategory</a></code></div>
     
-    <div><p class="pre">Determines whether two categories can be unified.
- - Returns None if they cannot be unified
- - Returns a list of necessary substitutions if they can.</p></div>
+    <div><dl class="rst-docutils">
+<dt>Determines whether two categories can be unified.</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>Returns None if they cannot be unified</li>
+<li>Returns a list of necessary substitutions if they can.</li>
+</ul>
+</dd>
+</dl>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -287,7 +293,7 @@
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">is_function</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L26">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L26">
       
       (source)
     </a>
@@ -295,7 +301,7 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.ccg.api.CCGVar.html">nltk.ccg.api.CCGVar</a></code>, <code><a href="nltk.ccg.api.FunctionalCategory.html">nltk.ccg.api.FunctionalCategory</a></code>, <code><a href="nltk.ccg.api.PrimitiveCategory.html">nltk.ccg.api.PrimitiveCategory</a></code></div>
     
-    <div><p class="pre">Returns true if the category is a function application.</p></div>
+    <div>Returns true if the category is a function application.</div>
   </div>
 </div><div class="basemethod">
   
@@ -309,7 +315,7 @@
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">is_primitive</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L20">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L20">
       
       (source)
     </a>
@@ -317,7 +323,7 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.ccg.api.CCGVar.html">nltk.ccg.api.CCGVar</a></code>, <code><a href="nltk.ccg.api.FunctionalCategory.html">nltk.ccg.api.FunctionalCategory</a></code>, <code><a href="nltk.ccg.api.PrimitiveCategory.html">nltk.ccg.api.PrimitiveCategory</a></code></div>
     
-    <div><p class="pre">Returns true if the category is primitive.</p></div>
+    <div>Returns true if the category is primitive.</div>
   </div>
 </div><div class="basemethod">
   
@@ -331,7 +337,7 @@
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">is_var</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L32">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L32">
       
       (source)
     </a>
@@ -339,7 +345,7 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.ccg.api.CCGVar.html">nltk.ccg.api.CCGVar</a></code>, <code><a href="nltk.ccg.api.FunctionalCategory.html">nltk.ccg.api.FunctionalCategory</a></code>, <code><a href="nltk.ccg.api.PrimitiveCategory.html">nltk.ccg.api.PrimitiveCategory</a></code></div>
     
-    <div><p class="pre">Returns true if the category is a variable.</p></div>
+    <div>Returns true if the category is a variable.</div>
   </div>
 </div><div class="basemethod">
   
@@ -353,7 +359,7 @@
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">substitute</span>(self, substitutions):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L38">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L38">
       
       (source)
     </a>
@@ -361,8 +367,8 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.ccg.api.CCGVar.html">nltk.ccg.api.CCGVar</a></code>, <code><a href="nltk.ccg.api.FunctionalCategory.html">nltk.ccg.api.FunctionalCategory</a></code>, <code><a href="nltk.ccg.api.PrimitiveCategory.html">nltk.ccg.api.PrimitiveCategory</a></code></div>
     
-    <div><p class="pre">Takes a set of (var, category) substitutions, and replaces every
-occurrence of the variable with the corresponding category.</p></div>
+    <div>Takes a set of (var, category) substitutions, and replaces every
+occurrence of the variable with the corresponding category.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -376,7 +382,7 @@ occurrence of the variable with the corresponding category.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_hash</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/api.py#L79">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/api.py#L79">
       
       (source)
     </a>
@@ -396,7 +402,7 @@ occurrence of the variable with the corresponding category.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

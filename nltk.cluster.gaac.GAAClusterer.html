@@ -65,24 +65,24 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">GAAClusterer</span>(<a href="nltk.cluster.util.VectorSpaceClusterer.html" title="nltk.cluster.util.VectorSpaceClusterer">VectorSpaceClusterer</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L16" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">GAAClusterer</span>(<a href="nltk.cluster.util.VectorSpaceClusterer.html" title="nltk.cluster.util.VectorSpaceClusterer">VectorSpaceClusterer</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L16" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.cluster.gaac.GAAClusterer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The Group Average Agglomerative starts with each of the N vectors as singleton
+        <div><p>The Group Average Agglomerative starts with each of the N vectors as singleton
 clusters. It then iteratively merges pairs of clusters which have the
 closest centroids.  This continues until there is only one cluster. The
 order of merges gives rise to a dendrogram: a tree with the earlier merges
 lower than later merges. The membership of a given number of clusters c, 1
-&lt;= c &lt;= N, can be found by cutting the dendrogram at depth c.
-
-This clusterer uses the cosine similarity metric only, which allows for
-efficient speed-up in the clustering process.</p></div>
+&lt;= c &lt;= N, can be found by cutting the dendrogram at depth c.</p>
+<p>This clusterer uses the cosine similarity metric only, which allows for
+efficient speed-up in the clustering process.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id189">
+        <table class="children sortable" id="id192">
   
   
   <tr class="method">
@@ -114,7 +114,7 @@ efficient speed-up in the clustering process.</p></div>
     
     <td>Method</td>
     <td><code><a href="#dendrogram">dendrogram</a></code></td>
-    <td><span>:return: The dendrogram representing the current clustering :rtype:  Dendrogram</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -156,7 +156,7 @@ efficient speed-up in the clustering process.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.cluster.util.VectorSpaceClusterer.html">VectorSpaceClusterer</a></code>:
           </p>
-          <table class="children sortable" id="id190">
+          <table class="children sortable" id="id193">
   
   
   <tr class="basemethod">
@@ -205,7 +205,7 @@ efficient speed-up in the clustering process.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.cluster.api.ClusterI.html">ClusterI</a></code> (via <code><a href="nltk.cluster.util.VectorSpaceClusterer.html">VectorSpaceClusterer</a></code>):
           </p>
-          <table class="children sortable" id="id191">
+          <table class="children sortable" id="id194">
   
   
   <tr class="basemethod">
@@ -244,7 +244,7 @@ efficient speed-up in the clustering process.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, num_clusters=1, normalise=True, svd_dimensions=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L29">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L29">
       
       (source)
     </a>
@@ -252,11 +252,8 @@ efficient speed-up in the clustering process.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#__init__">nltk.cluster.util.VectorSpaceClusterer.__init__</a></code></div>
     
-    <div><p class="pre">:param normalise:       should vectors be normalised to length 1
-:type normalise:        boolean
-:param svd_dimensions:  number of dimensions to use in reducing vector
-                        dimensionsionality with SVD
-:type svd_dimensions:   int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">num_clusters</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">normalise:</span>boolean</td><td class="fieldArgDesc">should vectors be normalised to length 1</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">svd_dimensions:</span>int</td><td class="fieldArgDesc">number of dimensions to use in reducing vector
+dimensionsionality with SVD</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -270,7 +267,7 @@ efficient speed-up in the clustering process.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L136">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L136">
       
       (source)
     </a>
@@ -292,7 +289,7 @@ efficient speed-up in the clustering process.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify_vectorspace</span>(self, vector):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L117">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L117">
       
       (source)
     </a>
@@ -300,7 +297,7 @@ efficient speed-up in the clustering process.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#classify_vectorspace">nltk.cluster.util.VectorSpaceClusterer.classify_vectorspace</a></code></div>
     
-    <div><p class="pre">Returns the index of the appropriate cluster for the vector.</p></div>
+    <div>Returns the index of the appropriate cluster for the vector.</div>
   </div>
 </div><div class="basemethod">
   
@@ -314,7 +311,7 @@ efficient speed-up in the clustering process.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cluster</span>(self, vectors, assign_clusters=False, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L35">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L35">
       
       (source)
     </a>
@@ -322,8 +319,8 @@ efficient speed-up in the clustering process.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#cluster">nltk.cluster.util.VectorSpaceClusterer.cluster</a></code></div>
     
-    <div><p class="pre">Assigns the vectors to clusters, learning the clustering parameters
-from the data. Returns a cluster identifier for each vector.</p></div>
+    <div>Assigns the vectors to clusters, learning the clustering parameters
+from the data. Returns a cluster identifier for each vector.</div>
   </div>
 </div><div class="basemethod">
   
@@ -337,7 +334,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cluster_vectorspace</span>(self, vectors, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L42">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L42">
       
       (source)
     </a>
@@ -345,7 +342,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.util.VectorSpaceClusterer.html#cluster_vectorspace">nltk.cluster.util.VectorSpaceClusterer.cluster_vectorspace</a></code></div>
     
-    <div><p class="pre">Finds the clusters using the given set of vectors.</p></div>
+    <div>Finds the clusters using the given set of vectors.</div>
   </div>
 </div><div class="basemethod">
   
@@ -359,7 +356,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">dendrogram</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L126">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L126">
       
       (source)
     </a>
@@ -367,8 +364,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The dendrogram representing the current clustering
-:rtype:  Dendrogram</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Dendrogram</td><td class="fieldArgDesc">The dendrogram representing the current clustering</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -382,7 +378,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">num_clusters</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L133">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L133">
       
       (source)
     </a>
@@ -390,7 +386,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.api.ClusterI.html#num_clusters">nltk.cluster.api.ClusterI.num_clusters</a></code></div>
     
-    <div><p class="pre">Returns the number of clusters.</p></div>
+    <div>Returns the number of clusters.</div>
   </div>
 </div><div class="basemethod">
   
@@ -404,7 +400,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update_clusters</span>(self, num_clusters):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L99">
       
       (source)
     </a>
@@ -426,7 +422,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_merge_similarities</span>(self, dist, cluster_len, i, j):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L80">
       
       (source)
     </a>
@@ -448,7 +444,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_centroids</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L101">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L101">
       
       (source)
     </a>
@@ -470,7 +466,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_dendrogram</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L32">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L32">
       
       (source)
     </a>
@@ -492,7 +488,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_groups_values</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L33">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L33">
       
       (source)
     </a>
@@ -514,7 +510,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_num_clusters</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/gaac.py#L31">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/gaac.py#L31">
       
       (source)
     </a>
@@ -534,7 +530,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

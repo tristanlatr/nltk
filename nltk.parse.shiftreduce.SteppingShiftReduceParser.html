@@ -65,67 +65,62 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SteppingShiftReduceParser</span>(<a href="nltk.parse.shiftreduce.ShiftReduceParser.html" title="nltk.parse.shiftreduce.ShiftReduceParser">ShiftReduceParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L286" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SteppingShiftReduceParser</span>(<a href="nltk.parse.shiftreduce.ShiftReduceParser.html" title="nltk.parse.shiftreduce.ShiftReduceParser">ShiftReduceParser</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L286" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.shiftreduce.SteppingShiftReduceParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A ``ShiftReduceParser`` that allows you to setp through the parsing
+        <div><p>A <tt class="rst-docutils literal">ShiftReduceParser</tt> that allows you to setp through the parsing
 process, performing a single operation at a time.  It also allows
-you to change the parser's grammar midway through parsing a text.
-
-The ``initialize`` method is used to start parsing a text.
-``shift`` performs a single shift operation, and ``reduce`` performs
-a single reduce operation.  ``step`` will perform a single reduce
+you to change the parser's grammar midway through parsing a text.</p>
+<p>The <tt class="rst-docutils literal">initialize</tt> method is used to start parsing a text.
+<tt class="rst-docutils literal">shift</tt> performs a single shift operation, and <tt class="rst-docutils literal">reduce</tt> performs
+a single reduce operation.  <tt class="rst-docutils literal">step</tt> will perform a single reduce
 operation if possible; otherwise, it will perform a single shift
-operation.  ``parses`` returns the set of parses that have been
-found by the parser.
-
-:ivar _history: A list of ``(stack, remaining_text)`` pairs,
-    containing all of the previous states of the parser.  This
-    history is used to implement the ``undo`` operation.
-:see: ``nltk.grammar``</p></div>
+operation.  <tt class="rst-docutils literal">parses</tt> returns the set of parses that have been
+found by the parser.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">nltk.grammar</tt></td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1105">
+        <table class="children sortable" id="id1109">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new ``ShiftReduceParser``, that uses ``grammar`` to parse texts.</span></td>
+    <td><span>Create a new <tt class="rst-docutils literal">ShiftReduceParser</tt>, that uses <tt class="rst-docutils literal">grammar</tt> to parse texts.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#initialize">initialize</a></code></td>
-    <td><span>Start parsing a given text.  This sets the parser's stack to ``[]`` and sets its remaining text to ``tokens``.</span></td>
+    <td><span>Start parsing a given text.  This sets the parser's stack to <tt class="rst-docutils literal">[]</tt> and sets its remaining text to <tt class="rst-docutils literal">tokens</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#parses">parses</a></code></td>
-    <td><span>:return: An iterator of the parses that have been found by this parser so far. :rtype: iter(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#reduce">reduce</a></code></td>
-    <td><span>Use ``production`` to combine the rightmost stack elements into a single Tree.  If ``production`` does not match the rightmost stack elements, then do nothing.</span></td>
+    <td><span>Use <tt class="rst-docutils literal">production</tt> to combine the rightmost stack elements into a single Tree.  If <tt class="rst-docutils literal">production</tt> does not match the rightmost stack elements, then do nothing.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#reducible_productions">reducible_productions</a></code></td>
-    <td><span>:return: A list of the productions for which reductions are available for the current parser state. :rtype: list(Production)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#remaining_text">remaining_text</a></code></td>
-    <td><span>:return: The portion of the text that is not yet covered by the stack. :rtype: list(str)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -140,7 +135,7 @@ found by the parser.
     
     <td>Method</td>
     <td><code><a href="#stack">stack</a></code></td>
-    <td><span>:return: The parser's stack. :rtype: list(str and Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -160,7 +155,9 @@ found by the parser.
     
     <td>Instance Variable</td>
     <td><code><a href="#_history">_history</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list of <tt class="rst-docutils literal">(stack, remaining_text)</tt> pairs,
+containing all of the previous states of the parser.  This
+history is used to implement the <tt class="rst-docutils literal">undo</tt> operation.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -177,14 +174,14 @@ found by the parser.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html">ShiftReduceParser</a></code>:
           </p>
-          <table class="children sortable" id="id1106">
+          <table class="children sortable" id="id1110">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -209,12 +206,12 @@ found by the parser.
     
     <td>Method</td>
     <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_shift">_shift</a></code></td>
-    <td><span>Move a token from the beginning of ``remaining_text`` to the end of ``stack``.</span></td>
+    <td><span>Move a token from the beginning of <tt class="rst-docutils literal">remaining_text</tt> to the end of <tt class="rst-docutils literal">stack</tt>.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#_trace_reduce">_trace_reduce</a></code></td>
-    <td><span>Print trace output displaying that ``production`` was used to reduce ``stack``.</span></td>
+    <td><span>Print trace output displaying that <tt class="rst-docutils literal">production</tt> was used to reduce <tt class="rst-docutils literal">stack</tt>.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -236,24 +233,24 @@ found by the parser.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code> (via <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html">ShiftReduceParser</a></code>):
           </p>
-          <table class="children sortable" id="id1107">
+          <table class="children sortable" id="id1111">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_sents">parse_sents</a></code></td>
-    <td><span>Apply ``self.parse()`` to each element of ``sents``. :rtype: iter(iter(Tree))</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.parse()</tt> to each element of <tt class="rst-docutils literal">sents</tt>. :rtype: iter(iter(Tree))</span></td>
   </tr>
 </table>
           
@@ -275,7 +272,7 @@ found by the parser.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, grammar, trace=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L305">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L305">
       
       (source)
     </a>
@@ -283,16 +280,11 @@ found by the parser.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#__init__">nltk.parse.shiftreduce.ShiftReduceParser.__init__</a></code></div>
     
-    <div><p class="pre">Create a new ``ShiftReduceParser``, that uses ``grammar`` to
-parse texts.
-
-:type grammar: Grammar
-:param grammar: The grammar used to parse texts.
-:type trace: int
-:param trace: The level of tracing that should be used when
-    parsing a text.  ``0`` will generate no tracing output;
-    and higher numbers will produce more verbose tracing
-    output.</p></div>
+    <div>Create a new <tt class="rst-docutils literal">ShiftReduceParser</tt>, that uses <tt class="rst-docutils literal">grammar</tt> to
+parse texts.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar:</span>Grammar</td><td class="fieldArgDesc">The grammar used to parse texts.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace:</span>int</td><td class="fieldArgDesc">The level of tracing that should be used when
+parsing a text.  <tt class="rst-docutils literal">0</tt> will generate no tracing output;
+and higher numbers will produce more verbose tracing
+output.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -306,7 +298,7 @@ parse texts.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">initialize</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L333">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L333">
       
       (source)
     </a>
@@ -314,8 +306,8 @@ parse texts.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Start parsing a given text.  This sets the parser's stack to
-``[]`` and sets its remaining text to ``tokens``.</p></div>
+    <div>Start parsing a given text.  This sets the parser's stack to
+<tt class="rst-docutils literal">[]</tt> and sets its remaining text to <tt class="rst-docutils literal">tokens</tt>.</div>
   </div>
 </div><div class="basemethod">
   
@@ -329,7 +321,7 @@ parse texts.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L311">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L311">
       
       (source)
     </a>
@@ -337,12 +329,7 @@ parse texts.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.shiftreduce.ShiftReduceParser.html#parse">nltk.parse.shiftreduce.ShiftReduceParser.parse</a></code></div>
     
-    <div><p class="pre">:return: An iterator that generates parse trees for the sentence.
-When possible this list is sorted from most likely to least likely.
-
-:param sent: The sentence to be parsed
-:type sent: list(str)
-:rtype: iter(Tree)</p></div>
+    <div>When possible this list is sorted from most likely to least likely.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sent:</span>list(str)</td><td class="fieldArgDesc">The sentence to be parsed</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(Tree)</td><td class="fieldArgDesc">An iterator that generates parse trees for the sentence.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -356,7 +343,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parses</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L420">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L420">
       
       (source)
     </a>
@@ -364,9 +351,8 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: An iterator of the parses that have been found by this
-    parser so far.
-:rtype: iter(Tree)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(Tree)</td><td class="fieldArgDesc">An iterator of the parses that have been found by this
+parser so far.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -380,7 +366,7 @@ When possible this list is sorted from most likely to least likely.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">reduce</span>(self, production=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L372">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L372">
       
       (source)
     </a>
@@ -388,15 +374,11 @@ When possible this list is sorted from most likely to least likely.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use ``production`` to combine the rightmost stack elements into
-a single Tree.  If ``production`` does not match the
-rightmost stack elements, then do nothing.
-
-:return: The production used to reduce the stack, if a
-    reduction was performed.  If no reduction was performed,
-    return None.
-
-:rtype: Production or None</p></div>
+    <div>Use <tt class="rst-docutils literal">production</tt> to combine the rightmost stack elements into
+a single Tree.  If <tt class="rst-docutils literal">production</tt> does not match the
+rightmost stack elements, then do nothing.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Production or None</td><td class="fieldArgDesc">The production used to reduce the stack, if a
+reduction was performed.  If no reduction was performed,
+return None.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -410,7 +392,7 @@ rightmost stack elements, then do nothing.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">reducible_productions</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L407">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L407">
       
       (source)
     </a>
@@ -418,9 +400,8 @@ rightmost stack elements, then do nothing.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: A list of the productions for which reductions are
-    available for the current parser state.
-:rtype: list(Production)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(Production)</td><td class="fieldArgDesc">A list of the productions for which reductions are
+available for the current parser state.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -434,7 +415,7 @@ rightmost stack elements, then do nothing.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remaining_text</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L325">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L325">
       
       (source)
     </a>
@@ -442,9 +423,8 @@ rightmost stack elements, then do nothing.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The portion of the text that is not yet covered by the
-    stack.
-:rtype: list(str)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">The portion of the text that is not yet covered by the
+stack.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -458,7 +438,7 @@ rightmost stack elements, then do nothing.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_grammar</span>(self, grammar):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L435">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L435">
       
       (source)
     </a>
@@ -466,10 +446,7 @@ rightmost stack elements, then do nothing.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Change the grammar used to parse texts.
-
-:param grammar: The new grammar.
-:type grammar: CFG</p></div>
+    <div>Change the grammar used to parse texts.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar:</span>CFG</td><td class="fieldArgDesc">The new grammar.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -483,7 +460,7 @@ rightmost stack elements, then do nothing.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">shift</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L357">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L357">
       
       (source)
     </a>
@@ -491,12 +468,9 @@ rightmost stack elements, then do nothing.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Move a token from the beginning of the remaining text to the
+    <div>Move a token from the beginning of the remaining text to the
 end of the stack.  If there are no more tokens in the
-remaining text, then do nothing.
-
-:return: True if the shift operation was successful.
-:rtype: bool</p></div>
+remaining text, then do nothing.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc">True if the shift operation was successful.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -510,7 +484,7 @@ remaining text, then do nothing.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">stack</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L318">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L318">
       
       (source)
     </a>
@@ -518,8 +492,7 @@ remaining text, then do nothing.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The parser's stack.
-:rtype: list(str and Tree)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str and Tree)</td><td class="fieldArgDesc">The parser's stack.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -533,7 +506,7 @@ remaining text, then do nothing.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">step</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L342">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L342">
       
       (source)
     </a>
@@ -541,16 +514,13 @@ remaining text, then do nothing.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Perform a single parsing operation.  If a reduction is
+    <div>Perform a single parsing operation.  If a reduction is
 possible, then perform that reduction, and return the
 production that it is based on.  Otherwise, if a shift is
 possible, then perform it, and return True.  Otherwise,
-return False.
-
-:return: False if no operation was performed; True if a shift was
-    performed; and the CFG production used to reduce if a
-    reduction was performed.
-:rtype: Production or bool</p></div>
+return False.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Production or bool</td><td class="fieldArgDesc">False if no operation was performed; True if a shift was
+performed; and the CFG production used to reduce if a
+reduction was performed.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -564,7 +534,7 @@ return False.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">undo</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L391">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L391">
       
       (source)
     </a>
@@ -572,14 +542,11 @@ return False.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the parser to its state before the most recent
-shift or reduce operation.  Calling ``undo`` repeatedly return
+    <div>Return the parser to its state before the most recent
+shift or reduce operation.  Calling <tt class="rst-docutils literal">undo</tt> repeatedly return
 the parser to successively earlier states.  If no shift or
-reduce operations have been performed, ``undo`` will make no
-changes.
-
-:return: true if an operation was successfully undone.
-:rtype: bool</p></div>
+reduce operations have been performed, <tt class="rst-docutils literal">undo</tt> will make no
+changes.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc">true if an operation was successfully undone.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -593,7 +560,7 @@ changes.
   <div class="functionHeader">
     
     <span class="py-defname">_grammar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L442">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L442">
       
       (source)
     </a>
@@ -615,7 +582,7 @@ changes.
   <div class="functionHeader">
     
     <span class="py-defname">_history</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L309">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L299">
       
       (source)
     </a>
@@ -623,7 +590,9 @@ changes.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A list of <tt class="rst-docutils literal">(stack, remaining_text)</tt> pairs,
+containing all of the previous states of the parser.  This
+history is used to implement the <tt class="rst-docutils literal">undo</tt> operation.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -637,7 +606,7 @@ changes.
   <div class="functionHeader">
     
     <span class="py-defname">_remaining_text</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L308">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L308">
       
       (source)
     </a>
@@ -659,7 +628,7 @@ changes.
   <div class="functionHeader">
     
     <span class="py-defname">_stack</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/shiftreduce.py#L307">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/shiftreduce.py#L307">
       
       (source)
     </a>
@@ -679,7 +648,7 @@ changes.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

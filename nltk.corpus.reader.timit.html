@@ -65,122 +65,126 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/timit.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/timit.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Read tokens, phonemes and audio data from the NLTK TIMIT Corpus.
-
-This corpus contains selected portion of the TIMIT corpus.
-
- - 16 speakers from 8 dialect regions
- - 1 male and 1 female from each dialect region
- - total 130 sentences (10 sentences per speaker.  Note that some
-   sentences are shared among other speakers, especially sa1 and sa2
-   are spoken by all speakers.)
- - total 160 recording of sentences (10 recordings per speaker)
- - audio format: NIST Sphere, single channel, 16kHz sampling,
-  16 bit sample, PCM encoding
-
-
-Module contents
-===============
-
-The timit corpus reader provides 4 functions and 4 data items.
-
- - utterances
-
-   List of utterances in the corpus.  There are total 160 utterances,
-   each of which corresponds to a unique utterance of a speaker.
-   Here's an example of an utterance identifier in the list::
-
-       dr1-fvmh0/sx206
-         - _----  _---
-         | |  |   | |
-         | |  |   | |
-         | |  |   | `--- sentence number
-         | |  |   `----- sentence type (a:all, i:shared, x:exclusive)
-         | |  `--------- speaker ID
-         | `------------ sex (m:male, f:female)
-         `-------------- dialect region (1..8)
-
- - speakers
-
-   List of speaker IDs.  An example of speaker ID::
-
-       dr1-fvmh0
-
-   Note that if you split an item ID with colon and take the first element of
-   the result, you will get a speaker ID.
-
-       &gt;&gt;&gt; itemid = 'dr1-fvmh0/sx206'
-       &gt;&gt;&gt; spkrid , sentid = itemid.split('/')
-       &gt;&gt;&gt; spkrid
-       'dr1-fvmh0'
-
-   The second element of the result is a sentence ID.
-
- - dictionary()
-
-   Phonetic dictionary of words contained in this corpus.  This is a Python
-   dictionary from words to phoneme lists.
-
- - spkrinfo()
-
-   Speaker information table.  It's a Python dictionary from speaker IDs to
-   records of 10 fields.  Speaker IDs the same as the ones in timie.speakers.
-   Each record is a dictionary from field names to values, and the fields are
-   as follows::
-
-     id         speaker ID as defined in the original TIMIT speaker info table
-     sex        speaker gender (M:male, F:female)
-     dr         speaker dialect region (1:new england, 2:northern,
-                3:north midland, 4:south midland, 5:southern, 6:new york city,
-                7:western, 8:army brat (moved around))
-     use        corpus type (TRN:training, TST:test)
-                in this sample corpus only TRN is available
-     recdate    recording date
-     birthdate  speaker birth date
-     ht         speaker height
-     race       speaker race (WHT:white, BLK:black, AMR:american indian,
-                SPN:spanish-american, ORN:oriental,???:unknown)
-     edu        speaker education level (HS:high school, AS:associate degree,
-                BS:bachelor's degree (BS or BA), MS:master's degree (MS or MA),
-                PHD:doctorate degree (PhD,JD,MD), ??:unknown)
-     comments   comments by the recorder
-
-The 4 functions are as follows.
-
- - tokenized(sentences=items, offset=False)
-
-   Given a list of items, returns an iterator of a list of word lists,
-   each of which corresponds to an item (sentence).  If offset is set to True,
-   each element of the word list is a tuple of word(string), start offset and
-   end offset, where offset is represented as a number of 16kHz samples.
-
- - phonetic(sentences=items, offset=False)
-
-   Given a list of items, returns an iterator of a list of phoneme lists,
-   each of which corresponds to an item (sentence).  If offset is set to True,
-   each element of the phoneme list is a tuple of word(string), start offset
-   and end offset, where offset is represented as a number of 16kHz samples.
-
- - audiodata(item, start=0, end=None)
-
-   Given an item, returns a chunk of audio samples formatted into a string.
-   When the fuction is called, if start and end are omitted, the entire
-   samples of the recording will be returned.  If only end is omitted,
-   samples from the start offset to the end of the recording will be returned.
-
- - play(data)
-
-   Play the given audio samples. The audio samples can be obtained from the
-   timit.audiodata function.</p></div>
+        <div><p>Read tokens, phonemes and audio data from the NLTK TIMIT Corpus.</p>
+<p>This corpus contains selected portion of the TIMIT corpus.</p>
+<blockquote>
+<ul class="rst-simple">
+<li>16 speakers from 8 dialect regions</li>
+<li>1 male and 1 female from each dialect region</li>
+<li>total 130 sentences (10 sentences per speaker.  Note that some
+sentences are shared among other speakers, especially sa1 and sa2
+are spoken by all speakers.)</li>
+<li>total 160 recording of sentences (10 recordings per speaker)</li>
+<li>audio format: NIST Sphere, single channel, 16kHz sampling,</li>
+</ul>
+<blockquote>
+16 bit sample, PCM encoding</blockquote>
+</blockquote>
+<div class="rst-section" id="rst-module-contents">
+<h1 class="heading">Module contents</h1>
+<p>The timit corpus reader provides 4 functions and 4 data items.</p>
+<blockquote>
+<ul>
+<li><p class="rst-first">utterances</p>
+<p>List of utterances in the corpus.  There are total 160 utterances,
+each of which corresponds to a unique utterance of a speaker.
+Here's an example of an utterance identifier in the list:</p>
+<pre class="rst-literal-block">
+dr1-fvmh0/sx206
+  - _----  _---
+  | |  |   | |
+  | |  |   | |
+  | |  |   | `--- sentence number
+  | |  |   `----- sentence type (a:all, i:shared, x:exclusive)
+  | |  `--------- speaker ID
+  | `------------ sex (m:male, f:female)
+  `-------------- dialect region (1..8)
+</pre>
+</li>
+<li><p class="rst-first">speakers</p>
+<p>List of speaker IDs.  An example of speaker ID:</p>
+<pre class="rst-literal-block">
+dr1-fvmh0
+</pre>
+<p>Note that if you split an item ID with colon and take the first element of
+the result, you will get a speaker ID.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>itemid = <span class="py-string">'dr1-fvmh0/sx206'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>spkrid , sentid = itemid.split(<span class="py-string">'/'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>spkrid
+<span class="py-output">'dr1-fvmh0'</span>
+</pre></blockquote>
+<p>The second element of the result is a sentence ID.</p>
+</li>
+<li><p class="rst-first">dictionary()</p>
+<p>Phonetic dictionary of words contained in this corpus.  This is a Python
+dictionary from words to phoneme lists.</p>
+</li>
+<li><p class="rst-first">spkrinfo()</p>
+<p>Speaker information table.  It's a Python dictionary from speaker IDs to
+records of 10 fields.  Speaker IDs the same as the ones in timie.speakers.
+Each record is a dictionary from field names to values, and the fields are
+as follows:</p>
+<pre class="rst-literal-block">
+id         speaker ID as defined in the original TIMIT speaker info table
+sex        speaker gender (M:male, F:female)
+dr         speaker dialect region (1:new england, 2:northern,
+           3:north midland, 4:south midland, 5:southern, 6:new york city,
+           7:western, 8:army brat (moved around))
+use        corpus type (TRN:training, TST:test)
+           in this sample corpus only TRN is available
+recdate    recording date
+birthdate  speaker birth date
+ht         speaker height
+race       speaker race (WHT:white, BLK:black, AMR:american indian,
+           SPN:spanish-american, ORN:oriental,???:unknown)
+edu        speaker education level (HS:high school, AS:associate degree,
+           BS:bachelor's degree (BS or BA), MS:master's degree (MS or MA),
+           PHD:doctorate degree (PhD,JD,MD), ??:unknown)
+comments   comments by the recorder
+</pre>
+</li>
+</ul>
+</blockquote>
+<p>The 4 functions are as follows.</p>
+<blockquote>
+<ul>
+<li><p class="rst-first">tokenized(sentences=items, offset=False)</p>
+<p>Given a list of items, returns an iterator of a list of word lists,
+each of which corresponds to an item (sentence).  If offset is set to True,
+each element of the word list is a tuple of word(string), start offset and
+end offset, where offset is represented as a number of 16kHz samples.</p>
+</li>
+<li><p class="rst-first">phonetic(sentences=items, offset=False)</p>
+<p>Given a list of items, returns an iterator of a list of phoneme lists,
+each of which corresponds to an item (sentence).  If offset is set to True,
+each element of the phoneme list is a tuple of word(string), start offset
+and end offset, where offset is represented as a number of 16kHz samples.</p>
+</li>
+<li><p class="rst-first">audiodata(item, start=0, end=None)</p>
+<p>Given an item, returns a chunk of audio samples formatted into a string.
+When the fuction is called, if start and end are omitted, the entire
+samples of the recording will be returned.  If only end is omitted,
+samples from the start offset to the end of the recording will be returned.</p>
+</li>
+<li><p class="rst-first">play(data)</p>
+<p>Play the given audio samples. The audio samples can be obtained from the
+timit.audiodata function.</p>
+</li>
+</ul>
+</blockquote>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id476">
+        <table class="children sortable" id="id479">
   
   
   <tr class="class">
@@ -219,7 +223,7 @@ The 4 functions are as follows.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">read_timit_block</span>(stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/timit.py#L484">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/timit.py#L484">
       
       (source)
     </a>
@@ -227,8 +231,8 @@ The 4 functions are as follows.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Block reader for timit tagged sentences, which are preceded by a sentence
-number that will be ignored.</p></div>
+    <div>Block reader for timit tagged sentences, which are preceded by a sentence
+number that will be ignored.</div>
   </div>
 </div>
 
@@ -240,7 +244,7 @@ number that will be ignored.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,51 +65,54 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConditionalProbDist</span>(<a href="nltk.probability.ConditionalProbDistI.html" title="nltk.probability.ConditionalProbDistI">ConditionalProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2176" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConditionalProbDist</span>(<a href="nltk.probability.ConditionalProbDistI.html" title="nltk.probability.ConditionalProbDistI">ConditionalProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2176" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.ConditionalProbDist">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A conditional probability distribution modeling the experiments
+        <div><p>A conditional probability distribution modeling the experiments
 that were used to generate a conditional frequency distribution.
 A ConditionalProbDist is constructed from a
-``ConditionalFreqDist`` and a ``ProbDist`` factory:
-
-- The ``ConditionalFreqDist`` specifies the frequency
-  distribution for each condition.
-- The ``ProbDist`` factory is a function that takes a
-  condition's frequency distribution, and returns its
-  probability distribution.  A ``ProbDist`` class's name (such as
-  ``MLEProbDist`` or ``HeldoutProbDist``) can be used to specify
-  that class's constructor.
-
-The first argument to the ``ProbDist`` factory is the frequency
+<tt class="rst-docutils literal">ConditionalFreqDist</tt> and a <tt class="rst-docutils literal">ProbDist</tt> factory:</p>
+<ul class="rst-simple">
+<li>The <tt class="rst-docutils literal">ConditionalFreqDist</tt> specifies the frequency
+distribution for each condition.</li>
+<li>The <tt class="rst-docutils literal">ProbDist</tt> factory is a function that takes a
+condition's frequency distribution, and returns its
+probability distribution.  A <tt class="rst-docutils literal">ProbDist</tt> class's name (such as
+<tt class="rst-docutils literal">MLEProbDist</tt> or <tt class="rst-docutils literal">HeldoutProbDist</tt>) can be used to specify
+that class's constructor.</li>
+</ul>
+<p>The first argument to the <tt class="rst-docutils literal">ProbDist</tt> factory is the frequency
 distribution that it should model; and the remaining arguments are
-specified by the ``factory_args`` parameter to the
-``ConditionalProbDist`` constructor.  For example, the following
-code constructs a ``ConditionalProbDist``, where the probability
-distribution for each condition is an ``ELEProbDist`` with 10 bins:
-
-    &gt;&gt;&gt; from nltk.corpus import brown
-    &gt;&gt;&gt; from nltk.probability import ConditionalFreqDist
-    &gt;&gt;&gt; from nltk.probability import ConditionalProbDist, ELEProbDist
-    &gt;&gt;&gt; cfdist = ConditionalFreqDist(brown.tagged_words()[:5000])
-    &gt;&gt;&gt; cpdist = ConditionalProbDist(cfdist, ELEProbDist, 10)
-    &gt;&gt;&gt; cpdist['passed'].max()
-    'VBD'
-    &gt;&gt;&gt; cpdist['passed'].prob('VBD')
-    0.423...</p></div>
+specified by the <tt class="rst-docutils literal">factory_args</tt> parameter to the
+<tt class="rst-docutils literal">ConditionalProbDist</tt> constructor.  For example, the following
+code constructs a <tt class="rst-docutils literal">ConditionalProbDist</tt>, where the probability
+distribution for each condition is an <tt class="rst-docutils literal">ELEProbDist</tt> with 10 bins:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> brown
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.probability <span class="py-keyword">import</span> ConditionalFreqDist
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.probability <span class="py-keyword">import</span> ConditionalProbDist, ELEProbDist
+<span class="py-prompt">&gt;&gt;&gt; </span>cfdist = ConditionalFreqDist(brown.tagged_words()[:5000])
+<span class="py-prompt">&gt;&gt;&gt; </span>cpdist = ConditionalProbDist(cfdist, ELEProbDist, 10)
+<span class="py-prompt">&gt;&gt;&gt; </span>cpdist[<span class="py-string">'passed'</span>].max()
+<span class="py-output">'VBD'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>cpdist[<span class="py-string">'passed'</span>].prob(<span class="py-string">'VBD'</span>)
+<span class="py-output">0.423...</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1162">
+        <table class="children sortable" id="id1166">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Construct a new conditional probability distribution, based on the given conditional frequency distribution and ``ProbDist`` factory.</span></td>
+    <td><span>Construct a new conditional probability distribution, based on the given conditional frequency distribution and <tt class="rst-docutils literal">ProbDist</tt> factory.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -136,19 +139,19 @@ distribution for each condition is an ``ELEProbDist`` with 10 bins:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.ConditionalProbDistI.html">ConditionalProbDistI</a></code>:
           </p>
-          <table class="children sortable" id="id1163">
+          <table class="children sortable" id="id1167">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.probability.ConditionalProbDistI.html#__repr__">__repr__</a></code></td>
-    <td><span>Return a string representation of this ``ConditionalProbDist``.</span></td>
+    <td><span>Return a string representation of this <tt class="rst-docutils literal">ConditionalProbDist</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.probability.ConditionalProbDistI.html#conditions">conditions</a></code></td>
-    <td><span>Return a list of the conditions that are represented by this ``ConditionalProbDist``.  Use the indexing operator to access the probability distribution for a given condition.</span></td>
+    <td><span>Return a list of the conditions that are represented by this <tt class="rst-docutils literal">ConditionalProbDist</tt>.  Use the indexing operator to access the probability distribution for a given condition.</span></td>
   </tr>
 </table>
           
@@ -170,7 +173,7 @@ distribution for each condition is an ``ELEProbDist`` with 10 bins:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, cfdist, probdist_factory, *factory_args, **factory_kw_args):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2210">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2210">
       
       (source)
     </a>
@@ -178,27 +181,18 @@ distribution for each condition is an ``ELEProbDist`` with 10 bins:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ConditionalProbDistI.html#__init__">nltk.probability.ConditionalProbDistI.__init__</a></code></div>
     
-    <div><p class="pre">Construct a new conditional probability distribution, based on
-the given conditional frequency distribution and ``ProbDist``
-factory.
-
-:type cfdist: ConditionalFreqDist
-:param cfdist: The ``ConditionalFreqDist`` specifying the
-    frequency distribution for each condition.
-:type probdist_factory: class or function
-:param probdist_factory: The function or class that maps
-    a condition's frequency distribution to its probability
-    distribution.  The function is called with the frequency
-    distribution as its first argument,
-    ``factory_args`` as its remaining arguments, and
-    ``factory_kw_args`` as keyword arguments.
-:type factory_args: (any)
-:param factory_args: Extra arguments for ``probdist_factory``.
-    These arguments are usually used to specify extra
-    properties for the probability distributions of individual
-    conditions, such as the number of bins they contain.
-:type factory_kw_args: (any)
-:param factory_kw_args: Extra keyword arguments for ``probdist_factory``.</p></div>
+    <div>Construct a new conditional probability distribution, based on
+the given conditional frequency distribution and <tt class="rst-docutils literal">ProbDist</tt>
+factory.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cfdist:</span>ConditionalFreqDist</td><td class="fieldArgDesc">The <tt class="rst-docutils literal">ConditionalFreqDist</tt> specifying the
+frequency distribution for each condition.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">probdist_factory:</span>class or function</td><td class="fieldArgDesc">The function or class that maps
+a condition's frequency distribution to its probability
+distribution.  The function is called with the frequency
+distribution as its first argument,
+<tt class="rst-docutils literal">factory_args</tt> as its remaining arguments, and
+<tt class="rst-docutils literal">factory_kw_args</tt> as keyword arguments.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">factory_args:</span>(any)</td><td class="fieldArgDesc">Extra arguments for <tt class="rst-docutils literal">probdist_factory</tt>.
+These arguments are usually used to specify extra
+properties for the probability distributions of individual
+conditions, such as the number of bins they contain.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">factory_kw_args:</span>(any)</td><td class="fieldArgDesc">Extra keyword arguments for <tt class="rst-docutils literal">probdist_factory</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -212,7 +206,7 @@ factory.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__missing__</span>(self, key):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2243">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2243">
       
       (source)
     </a>
@@ -234,7 +228,7 @@ factory.
   <div class="functionHeader">
     
     <span class="py-defname">_factory_args</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2235">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2235">
       
       (source)
     </a>
@@ -256,7 +250,7 @@ factory.
   <div class="functionHeader">
     
     <span class="py-defname">_factory_kw_args</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2236">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2236">
       
       (source)
     </a>
@@ -278,7 +272,7 @@ factory.
   <div class="functionHeader">
     
     <span class="py-defname">_probdist_factory</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L2234">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L2234">
       
       (source)
     </a>
@@ -298,7 +292,7 @@ factory.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

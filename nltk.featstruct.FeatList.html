@@ -65,28 +65,25 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">FeatList</span>(<a href="nltk.featstruct.FeatStruct.html" title="nltk.featstruct.FeatStruct">FeatStruct</a>, <a href="https://docs.python.org/3/library/stdtypes.html#list" title="list">list</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L924" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">FeatList</span>(<a href="nltk.featstruct.FeatStruct.html" title="nltk.featstruct.FeatStruct">FeatStruct</a>, <a href="https://docs.python.org/3/library/stdtypes.html#list" title="list">list</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L924" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.featstruct.FeatList">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A list of feature values, where each feature value is either a
+        <div><p>A list of feature values, where each feature value is either a
 basic value (such as a string or an integer), or a nested feature
-structure.
-
-Feature lists may contain reentrant feature values.  A "reentrant
+structure.</p>
+<p>Feature lists may contain reentrant feature values.  A "reentrant
 feature value" is a single feature value that can be accessed via
-multiple feature paths.  Feature lists may also be cyclic.
-
-Two feature lists are considered equal if they assign the same
-values to all features, and have the same reentrances.
-
-:see: ``FeatStruct`` for information about feature paths, reentrance,
-    cyclic feature structures, mutability, freezing, and hashing.</p></div>
+multiple feature paths.  Feature lists may also be cyclic.</p>
+<p>Two feature lists are considered equal if they assign the same
+values to all features, and have the same reentrances.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">FeatStruct</tt> for information about feature paths, reentrance,
+cyclic feature structures, mutability, freezing, and hashing.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id624">
+        <table class="children sortable" id="id627">
   
   
   <tr class="method">
@@ -98,7 +95,7 @@ values to all features, and have the same reentrances.
     
     <td>Method</td>
     <td><code><a href="#__delitem__">__delitem__</a></code></td>
-    <td><span>If the feature with the given name or path exists, delete its value; otherwise, raise ``KeyError``.</span></td>
+    <td><span>If the feature with the given name or path exists, delete its value; otherwise, raise <tt class="rst-docutils literal">KeyError</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -113,7 +110,7 @@ values to all features, and have the same reentrances.
     
     <td>Method</td>
     <td><code><a href="#__setitem__">__setitem__</a></code></td>
-    <td><span>Set the value for the feature with the given name or path to ``value``.  If ``name_or_path`` is an invalid path, raise ``KeyError``.</span></td>
+    <td><span>Set the value for the feature with the given name or path to <tt class="rst-docutils literal">value</tt>.  If <tt class="rst-docutils literal">name_or_path</tt> is an invalid path, raise <tt class="rst-docutils literal">KeyError</tt>.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -190,7 +187,7 @@ values to all features, and have the same reentrances.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.featstruct.FeatStruct.html">FeatStruct</a></code>:
           </p>
-          <table class="children sortable" id="id625">
+          <table class="children sortable" id="id628">
   
   
   <tr class="basemethod">
@@ -202,7 +199,7 @@ values to all features, and have the same reentrances.
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#__hash__">__hash__</a></code></td>
-    <td><span>If this feature structure is frozen, return its hash value; otherwise, raise ``TypeError``.</span></td>
+    <td><span>If this feature structure is frozen, return its hash value; otherwise, raise <tt class="rst-docutils literal">TypeError</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -227,7 +224,7 @@ values to all features, and have the same reentrances.
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#copy">copy</a></code></td>
-    <td><span>Return a new copy of ``self``.  The new copy will not be frozen.</span></td>
+    <td><span>Return a new copy of <tt class="rst-docutils literal">self</tt>.  The new copy will not be frozen.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -252,27 +249,27 @@ values to all features, and have the same reentrances.
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#remove_variables">remove_variables</a></code></td>
-    <td><span>Return the feature structure that is obtained by deleting any feature whose value is a ``Variable``.</span></td>
+    <td><span>Return the feature structure that is obtained by deleting any feature whose value is a <tt class="rst-docutils literal">Variable</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#rename_variables">rename_variables</a></code></td>
-    <td><span>:see: ``nltk.featstruct.rename_variables()``</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#retract_bindings">retract_bindings</a></code></td>
-    <td><span>:see: ``nltk.featstruct.retract_bindings()``</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#substitute_bindings">substitute_bindings</a></code></td>
-    <td><span>:see: ``nltk.featstruct.substitute_bindings()``</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#subsumes">subsumes</a></code></td>
-    <td><span>Return True if ``self`` subsumes ``other``.  I.e., return true If unifying ``self`` with ``other`` would result in a feature structure equal to ``other``.</span></td>
+    <td><span>Return True if <tt class="rst-docutils literal">self</tt> subsumes <tt class="rst-docutils literal">other</tt>.  I.e., return true If unifying <tt class="rst-docutils literal">self</tt> with <tt class="rst-docutils literal">other</tt> would result in a feature structure equal to <tt class="rst-docutils literal">other</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -282,7 +279,7 @@ values to all features, and have the same reentrances.
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#variables">variables</a></code></td>
-    <td><span>:see: ``nltk.featstruct.find_variables()``</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -302,7 +299,7 @@ values to all features, and have the same reentrances.
     
     <td>Method</td>
     <td><code><a href="nltk.featstruct.FeatStruct.html#_find_reentrances">_find_reentrances</a></code></td>
-    <td><span>Return a dictionary that maps from the ``id`` of each feature structure contained in ``self`` (including ``self``) to a boolean value, indicating whether it is reentrant or not.</span></td>
+    <td><span>Return a dictionary that maps from the <tt class="rst-docutils literal">id</tt> of each feature structure contained in <tt class="rst-docutils literal">self</tt> (including <tt class="rst-docutils literal">self</tt>) to a boolean value, indicating whether it is reentrant or not.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -349,7 +346,7 @@ values to all features, and have the same reentrances.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__deepcopy__</span>(self, memo):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1029">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1029">
       
       (source)
     </a>
@@ -371,7 +368,7 @@ values to all features, and have the same reentrances.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__delitem__</span>(self, name_or_path):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L976">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L976">
       
       (source)
     </a>
@@ -379,8 +376,8 @@ values to all features, and have the same reentrances.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">If the feature with the given name or path exists, delete
-its value; otherwise, raise ``KeyError``.</p></div>
+    <div>If the feature with the given name or path exists, delete
+its value; otherwise, raise <tt class="rst-docutils literal">KeyError</tt>.</div>
   </div>
 </div><div class="basemethod">
   
@@ -394,7 +391,7 @@ its value; otherwise, raise ``KeyError``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, name_or_path):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L960">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L960">
       
       (source)
     </a>
@@ -416,7 +413,7 @@ its value; otherwise, raise ``KeyError``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, features=()):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L941">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L941">
       
       (source)
     </a>
@@ -424,12 +421,10 @@ its value; otherwise, raise ``KeyError``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a new feature list, with the specified features.
-
-:param features: The initial list of features for this feature
-    list.  If ``features`` is a string, then it is paresd using
-    ``FeatStructReader``.  Otherwise, it should be a sequence
-    of basic values and nested feature structures.</p></div>
+    <div>Create a new feature list, with the specified features.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">features</span></td><td class="fieldArgDesc">The initial list of features for this feature
+list.  If <tt class="rst-docutils literal">features</tt> is a string, then it is paresd using
+<tt class="rst-docutils literal">FeatStructReader</tt>.  Otherwise, it should be a sequence
+of basic values and nested feature structures.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -443,7 +438,7 @@ its value; otherwise, raise ``KeyError``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, name_or_path, value):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L994">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L994">
       
       (source)
     </a>
@@ -451,9 +446,9 @@ its value; otherwise, raise ``KeyError``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Set the value for the feature with the given name or path
-to ``value``.  If ``name_or_path`` is an invalid path, raise
-``KeyError``.</p></div>
+    <div>Set the value for the feature with the given name or path
+to <tt class="rst-docutils literal">value</tt>.  If <tt class="rst-docutils literal">name_or_path</tt> is an invalid path, raise
+<tt class="rst-docutils literal">KeyError</tt>.</div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -467,7 +462,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">__iadd__</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1015">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1015">
       
       (source)
     </a>
@@ -489,7 +484,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">__imul__</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1016">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1016">
       
       (source)
     </a>
@@ -511,7 +506,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">append</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1017">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1017">
       
       (source)
     </a>
@@ -533,7 +528,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">extend</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1018">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1018">
       
       (source)
     </a>
@@ -555,7 +550,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">insert</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1019">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1019">
       
       (source)
     </a>
@@ -577,7 +572,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">pop</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1020">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1020">
       
       (source)
     </a>
@@ -599,7 +594,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">remove</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1021">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1021">
       
       (source)
     </a>
@@ -621,7 +616,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">reverse</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1022">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1022">
       
       (source)
     </a>
@@ -643,7 +638,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-defname">sort</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1023">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1023">
       
       (source)
     </a>
@@ -665,7 +660,7 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_items</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1044">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1044">
       
       (source)
     </a>
@@ -673,9 +668,9 @@ to ``value``.  If ``name_or_path`` is an invalid path, raise
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.featstruct.FeatStruct.html#_items">nltk.featstruct.FeatStruct._items</a></code></div>
     
-    <div><p class="pre">Return an iterable of (fid,fval) pairs, where fid is a
+    <div>Return an iterable of (fid,fval) pairs, where fid is a
 feature identifier and fval is the corresponding feature
-value, for all features defined by this FeatStruct.</p></div>
+value, for all features defined by this FeatStruct.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -689,7 +684,7 @@ value, for all features defined by this FeatStruct.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_keys</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1038">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1038">
       
       (source)
     </a>
@@ -697,8 +692,8 @@ value, for all features defined by this FeatStruct.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.featstruct.FeatStruct.html#_keys">nltk.featstruct.FeatStruct._keys</a></code></div>
     
-    <div><p class="pre">Return an iterable of the feature identifiers used by this
-FeatStruct.</p></div>
+    <div>Return an iterable of the feature identifiers used by this
+FeatStruct.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -712,7 +707,7 @@ FeatStruct.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_repr</span>(self, reentrances, reentrance_ids):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1052">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1052">
       
       (source)
     </a>
@@ -720,15 +715,12 @@ FeatStruct.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.featstruct.FeatStruct.html#_repr">nltk.featstruct.FeatStruct._repr</a></code></div>
     
-    <div><p class="pre">Return a string representation of this feature structure.
-
-:param reentrances: A dictionary that maps from the ``id`` of
-    each feature value in self, indicating whether that value
-    is reentrant or not.
-:param reentrance_ids: A dictionary mapping from each ``id``
-    of a feature value to a unique identifier.  This is modified
-    by ``repr``: the first time a reentrant feature value is
-    displayed, an identifier is added to ``reentrance_ids`` for it.</p></div>
+    <div>Return a string representation of this feature structure.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reentrances</span></td><td class="fieldArgDesc">A dictionary that maps from the <tt class="rst-docutils literal">id</tt> of
+each feature value in self, indicating whether that value
+is reentrant or not.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reentrance_ids</span></td><td class="fieldArgDesc">A dictionary mapping from each <tt class="rst-docutils literal">id</tt>
+of a feature value to a unique identifier.  This is modified
+by <tt class="rst-docutils literal">repr</tt>: the first time a reentrant feature value is
+displayed, an identifier is added to <tt class="rst-docutils literal">reentrance_ids</tt> for it.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -742,7 +734,7 @@ FeatStruct.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_values</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L1041">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L1041">
       
       (source)
     </a>
@@ -750,8 +742,8 @@ FeatStruct.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.featstruct.FeatStruct.html#_values">nltk.featstruct.FeatStruct._values</a></code></div>
     
-    <div><p class="pre">Return an iterable of the feature values directly defined
-by this FeatStruct.</p></div>
+    <div>Return an iterable of the feature values directly defined
+by this FeatStruct.</div>
   </div>
 </div><div class="baseclassvariable private">
   
@@ -765,7 +757,7 @@ by this FeatStruct.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_INDEX_ERROR</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/featstruct.py#L958">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/featstruct.py#L958">
       
       (source)
     </a>
@@ -785,7 +777,7 @@ by this FeatStruct.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,29 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Feature</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L14" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Feature</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L14" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tbl.feature.Feature">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract base class for Features. A Feature is a combination of
+        <div><p>An abstract base class for Features. A Feature is a combination of
 a specific property-computing method and a list of relative positions
-to apply that method to.
-
-The property-computing method, M{extract_property(tokens, index)},
+to apply that method to.</p>
+<p>The property-computing method, M{extract_property(tokens, index)},
 must be implemented by every subclass. It extracts or computes a specific
 property for the token at the current index. Typical extract_property()
 methods return features such as the token text or tag; but more involved
 methods may consider the entire sequence M{tokens} and
-for instance compute the length of the sentence the token belongs to.
-
-In addition, the subclass may have a PROPERTY_NAME, which is how
+for instance compute the length of the sentence the token belongs to.</p>
+<p>In addition, the subclass may have a PROPERTY_NAME, which is how
 it will be printed (in Rules and Templates, etc). If not given, defaults
-to the classname.</p></div>
+to the classname.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1631">
+        <table class="children sortable" id="id1635">
   
   
   <tr class="classmethod">
@@ -196,7 +195,7 @@ to the classname.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">decode_json_obj</span>(cls, obj):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L99">
       
       (source)
     </a>
@@ -218,7 +217,7 @@ to the classname.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">expand</span>(cls, starts, winlens, excludezero=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L107">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L107">
       
       (source)
     </a>
@@ -226,52 +225,43 @@ to the classname.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of features, one for each start point in starts
+    <div><p>Return a list of features, one for each start point in starts
 and for each window length in winlen. If excludezero is True,
 no Features containing 0 in its positions will be generated
 (many tbl trainers have a special representation for the
-target feature at [0])
-
-For instance, importing a concrete subclass (Feature is abstract)
-&gt;&gt;&gt; from nltk.tag.brill import Word
-
-First argument gives the possible start positions, second the
+target feature at [0])</p>
+<p>For instance, importing a concrete subclass (Feature is abstract)
+&gt;&gt;&gt; from nltk.tag.brill import Word</p>
+<p>First argument gives the possible start positions, second the
 possible window lengths
 &gt;&gt;&gt; Word.expand([-3,-2,-1], [1])
-[Word([-3]), Word([-2]), Word([-1])]
-
-&gt;&gt;&gt; Word.expand([-2,-1], [1])
-[Word([-2]), Word([-1])]
-
-&gt;&gt;&gt; Word.expand([-3,-2,-1], [1,2])
-[Word([-3]), Word([-2]), Word([-1]), Word([-3, -2]), Word([-2, -1])]
-
-&gt;&gt;&gt; Word.expand([-2,-1], [1])
-[Word([-2]), Word([-1])]
-
-a third optional argument excludes all Features whose positions contain zero
+[Word([-3]), Word([-2]), Word([-1])]</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word.expand([-2,-1], [1])
+<span class="py-output">[Word([-2]), Word([-1])]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word.expand([-3,-2,-1], [1,2])
+<span class="py-output">[Word([-3]), Word([-2]), Word([-1]), Word([-3, -2]), Word([-2, -1])]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word.expand([-2,-1], [1])
+<span class="py-output">[Word([-2]), Word([-1])]</span>
+</pre><p>a third optional argument excludes all Features whose positions contain zero
 &gt;&gt;&gt; Word.expand([-2,-1,0], [1,2], excludezero=False)
-[Word([-2]), Word([-1]), Word([0]), Word([-2, -1]), Word([-1, 0])]
-
-&gt;&gt;&gt; Word.expand([-2,-1,0], [1,2], excludezero=True)
-[Word([-2]), Word([-1]), Word([-2, -1])]
-
-All window lengths must be positive
+[Word([-2]), Word([-1]), Word([0]), Word([-2, -1]), Word([-1, 0])]</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word.expand([-2,-1,0], [1,2], excludezero=<span class="py-builtin">True</span>)
+<span class="py-output">[Word([-2]), Word([-1]), Word([-2, -1])]</span>
+</pre><p>All window lengths must be positive
 &gt;&gt;&gt; Word.expand([-2,-1], [0])
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-  File "nltk/tag/tbl/template.py", line 371, in expand
-    :param starts: where to start looking for Feature
-ValueError: non-positive window length in [0]
-
-:param starts: where to start looking for Feature
-:type starts: list of ints
-:param winlens: window lengths where to look for Feature
-:type starts: list of ints
-:param excludezero: do not output any Feature with 0 in any of its positions.
-:type excludezero: bool
-:returns: list of Features
-:raises ValueError: for non-positive window lengths</p></div>
+Traceback (most recent call last):</p>
+<blockquote>
+<p>File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+File "nltk/tag/tbl/template.py", line 371, in expand</p>
+<blockquote>
+</blockquote>
+</blockquote>
+<p>ValueError: non-positive window length in [0]</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">starts:</span>list of ints</td><td class="fieldArgDesc">where to start looking for Feature</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">winlens</span></td><td class="fieldArgDesc">window lengths where to look for Feature</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">excludezero:</span>bool</td><td class="fieldArgDesc">do not output any Feature with 0 in any of its positions.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of Features</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>for non-positive window lengths</td></tr></table></div>
   </div>
 </div><div class="basestaticmethod">
   
@@ -285,7 +275,7 @@ ValueError: non-positive window length in [0]
   <div class="functionHeader">
     @staticmethod<br />@abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">extract_property</span>(tokens, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L255">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L255">
       
       (source)
     </a>
@@ -293,14 +283,7 @@ ValueError: non-positive window length in [0]
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Any subclass of Feature must define static method extract_property(tokens, index)
-
-:param tokens: the sequence of tokens
-:type tokens: list of tokens
-:param index: the current index
-:type index: int
-:return: feature value
-:rtype: any (but usually scalar)</p></div>
+    <div>Any subclass of Feature must define static method extract_property(tokens, index)<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list of tokens</td><td class="fieldArgDesc">the sequence of tokens</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index:</span>int</td><td class="fieldArgDesc">the current index</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">any (but usually scalar)</td><td class="fieldArgDesc">feature value</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -314,7 +297,7 @@ ValueError: non-positive window length in [0]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L232">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L232">
       
       (source)
     </a>
@@ -336,7 +319,7 @@ ValueError: non-positive window length in [0]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ge__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L249">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L249">
       
       (source)
     </a>
@@ -358,7 +341,7 @@ ValueError: non-positive window length in [0]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__gt__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L246">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L246">
       
       (source)
     </a>
@@ -380,7 +363,7 @@ ValueError: non-positive window length in [0]
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, positions, end=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L36">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L36">
       
       (source)
     </a>
@@ -388,43 +371,32 @@ ValueError: non-positive window length in [0]
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a Feature which may apply at C{positions}.
-
-#For instance, importing some concrete subclasses (Feature is abstract)
-&gt;&gt;&gt; from nltk.tag.brill import Word, Pos
-
-#Feature Word, applying at one of [-2, -1]
+    <div><p>Construct a Feature which may apply at C{positions}.</p>
+<p>#For instance, importing some concrete subclasses (Feature is abstract)
+&gt;&gt;&gt; from nltk.tag.brill import Word, Pos</p>
+<p>#Feature Word, applying at one of [-2, -1]
 &gt;&gt;&gt; Word([-2,-1])
-Word([-2, -1])
-
-#Positions need not be contiguous
+Word([-2, -1])</p>
+<p>#Positions need not be contiguous
 &gt;&gt;&gt; Word([-2,-1, 1])
-Word([-2, -1, 1])
-
-#Contiguous ranges can alternatively be specified giving the
+Word([-2, -1, 1])</p>
+<p>#Contiguous ranges can alternatively be specified giving the
 #two endpoints (inclusive)
 &gt;&gt;&gt; Pos(-3, -1)
-Pos([-3, -2, -1])
-
-#In two-arg form, start &lt;= end is enforced
+Pos([-3, -2, -1])</p>
+<p>#In two-arg form, start &lt;= end is enforced
 &gt;&gt;&gt; Pos(2, 1)
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-  File "nltk/tbl/template.py", line 306, in __init__
-    raise TypeError
-ValueError: illegal interval specification: (start=2, end=1)
-
-:type positions: list of int
-:param positions: the positions at which this features should apply
-:raises ValueError: illegal position specifications
-
-An alternative calling convention, for contiguous positions only,
-is Feature(start, end):
-
-:type start: int
-:param start: start of range where this feature should apply
-:type end: int
-:param end: end of range (NOTE: inclusive!) where this feature should apply</p></div>
+Traceback (most recent call last):</p>
+<blockquote>
+<p>File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+File "nltk/tbl/template.py", line 306, in __init__</p>
+<blockquote>
+raise TypeError</blockquote>
+</blockquote>
+<p>ValueError: illegal interval specification: (start=2, end=1)</p>
+<p>An alternative calling convention, for contiguous positions only,
+is Feature(start, end):</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">positions:</span>list of int</td><td class="fieldArgDesc">the positions at which this features should apply</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">end:</span>int</td><td class="fieldArgDesc">end of range (NOTE: inclusive!) where this feature should apply</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start:</span>int</td><td class="fieldArgDesc">start of range where this feature should apply</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>illegal position specifications</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -438,7 +410,7 @@ is Feature(start, end):
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__le__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L252">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L252">
       
       (source)
     </a>
@@ -460,7 +432,7 @@ is Feature(start, end):
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L235">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L235">
       
       (source)
     </a>
@@ -482,7 +454,7 @@ is Feature(start, end):
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L243">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L243">
       
       (source)
     </a>
@@ -504,7 +476,7 @@ is Feature(start, end):
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L104">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L104">
       
       (source)
     </a>
@@ -526,7 +498,7 @@ is Feature(start, end):
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">encode_json_obj</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L96">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L96">
       
       (source)
     </a>
@@ -548,7 +520,7 @@ is Feature(start, end):
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">intersects</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L194">
       
       (source)
     </a>
@@ -556,31 +528,24 @@ is Feature(start, end):
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if the positions of this Feature intersects with those of other
-
-More precisely, return True if this feature refers to the same property as other;
-and there is some overlap in the positions they look at.
-
-#For instance, importing a concrete subclass (Feature is abstract)
-&gt;&gt;&gt; from nltk.tag.brill import Word, Pos
-
-&gt;&gt;&gt; Word([-3,-2,-1]).intersects(Word([-3,-2]))
-True
-
-&gt;&gt;&gt; Word([-3,-2,-1]).intersects(Word([-3,-2, 0]))
-True
-
-&gt;&gt;&gt; Word([-3,-2,-1]).intersects(Word([0]))
-False
-
-#Feature subclasses must agree
+    <div><p>Return True if the positions of this Feature intersects with those of other</p>
+<p>More precisely, return True if this feature refers to the same property as other;
+and there is some overlap in the positions they look at.</p>
+<p>#For instance, importing a concrete subclass (Feature is abstract)
+&gt;&gt;&gt; from nltk.tag.brill import Word, Pos</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word([-3,-2,-1]).intersects(Word([-3,-2]))
+<span class="py-output">True</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word([-3,-2,-1]).intersects(Word([-3,-2, 0]))
+<span class="py-output">True</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word([-3,-2,-1]).intersects(Word([0]))
+<span class="py-output">False</span>
+</pre><p>#Feature subclasses must agree
 &gt;&gt;&gt; Word([-3,-2,-1]).intersects(Pos([-3,-2]))
-False
-
-:param other: feature with which to compare
-:type other: (subclass of) Feature
-:return: True if feature classes agree and there is some overlap in the positions they look at
-:rtype: bool</p></div>
+False</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">other:</span>(subclass of) Feature</td><td class="fieldArgDesc">feature with which to compare</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc">True if feature classes agree and there is some overlap in the positions they look at</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -594,7 +559,7 @@ False
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">issuperset</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L162">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L162">
       
       (source)
     </a>
@@ -602,29 +567,22 @@ False
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if this Feature always returns True when other does
-
-More precisely, return True if this feature refers to the same property as other;
+    <div><p>Return True if this Feature always returns True when other does</p>
+<p>More precisely, return True if this feature refers to the same property as other;
 and this Feature looks at all positions that other does (and possibly
-other positions in addition).
-
-#For instance, importing a concrete subclass (Feature is abstract)
-&gt;&gt;&gt; from nltk.tag.brill import Word, Pos
-
-&gt;&gt;&gt; Word([-3,-2,-1]).issuperset(Word([-3,-2]))
-True
-
-&gt;&gt;&gt; Word([-3,-2,-1]).issuperset(Word([-3,-2, 0]))
-False
-
-#Feature subclasses must agree
+other positions in addition).</p>
+<p>#For instance, importing a concrete subclass (Feature is abstract)
+&gt;&gt;&gt; from nltk.tag.brill import Word, Pos</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word([-3,-2,-1]).issuperset(Word([-3,-2]))
+<span class="py-output">True</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>Word([-3,-2,-1]).issuperset(Word([-3,-2, 0]))
+<span class="py-output">False</span>
+</pre><p>#Feature subclasses must agree
 &gt;&gt;&gt; Word([-3,-2,-1]).issuperset(Pos([-3,-2]))
-False
-
-:param other: feature with which to compare
-:type other: (subclass of) Feature
-:return: True if this feature is superset, otherwise False
-:rtype: bool</p></div>
+False</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">other:</span>(subclass of) Feature</td><td class="fieldArgDesc">feature with which to compare</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc">True if this feature is superset, otherwise False</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -638,7 +596,7 @@ False
   <div class="functionHeader">
     
     <span class="py-defname">json_tag</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L33">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L33">
       
       (source)
     </a>
@@ -660,7 +618,7 @@ False
   <div class="functionHeader">
     
     <span class="py-defname">positions</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L77">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L77">
       
       (source)
     </a>
@@ -682,7 +640,7 @@ False
   <div class="functionHeader">
     
     <span class="py-defname">PROPERTY_NAME</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/feature.py#L34">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/feature.py#L34">
       
       (source)
     </a>
@@ -702,7 +660,7 @@ False
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

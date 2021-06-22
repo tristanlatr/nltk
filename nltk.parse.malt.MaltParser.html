@@ -65,31 +65,35 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">MaltParser</span>(<a href="nltk.parse.api.ParserI.html" title="nltk.parse.api.ParserI">ParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L96" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MaltParser</span>(<a href="nltk.parse.api.ParserI.html" title="nltk.parse.api.ParserI">ParserI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L96" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.malt.MaltParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A class for dependency parsing with MaltParser. The input is the paths to:
+        <div><p>A class for dependency parsing with MaltParser. The input is the paths to:
 - a maltparser directory
 - (optionally) the path to a pre-trained MaltParser .mco model file
 - (optionally) the tagger to use for POS tagging before parsing
-- (optionally) additional Java arguments
-
-Example:
-    &gt;&gt;&gt; from nltk.parse import malt
-    &gt;&gt;&gt; # With MALT_PARSER and MALT_MODEL environment set.
-    &gt;&gt;&gt; mp = malt.MaltParser('maltparser-1.7.2', 'engmalt.linear-1.7.mco') # doctest: +SKIP
-    &gt;&gt;&gt; mp.parse_one('I shot an elephant in my pajamas .'.split()).tree() # doctest: +SKIP
-    (shot I (elephant an) (in (pajamas my)) .)
-    &gt;&gt;&gt; # Without MALT_PARSER and MALT_MODEL environment.
-    &gt;&gt;&gt; mp = malt.MaltParser('/home/user/maltparser-1.7.2/', '/home/user/engmalt.linear-1.7.mco') # doctest: +SKIP
-    &gt;&gt;&gt; mp.parse_one('I shot an elephant in my pajamas .'.split()).tree() # doctest: +SKIP
-    (shot I (elephant an) (in (pajamas my)) .)</p></div>
+- (optionally) additional Java arguments</p>
+<dl class="rst-docutils">
+<dt>Example:</dt>
+<dd><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.parse <span class="py-keyword">import</span> malt
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># With MALT_PARSER and MALT_MODEL environment set.</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>mp = malt.MaltParser(<span class="py-string">'maltparser-1.7.2'</span>, <span class="py-string">'engmalt.linear-1.7.mco'</span>) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>mp.parse_one(<span class="py-string">'I shot an elephant in my pajamas .'</span>.split()).tree() <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">(shot I (elephant an) (in (pajamas my)) .)</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># Without MALT_PARSER and MALT_MODEL environment.</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>mp = malt.MaltParser(<span class="py-string">'/home/user/maltparser-1.7.2/'</span>, <span class="py-string">'/home/user/engmalt.linear-1.7.mco'</span>) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>mp.parse_one(<span class="py-string">'I shot an elephant in my pajamas .'</span>.split()).tree() <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">(shot I (elephant an) (in (pajamas my)) .)</span>
+</pre></dd>
+</dl>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1053">
+        <table class="children sortable" id="id1057">
   
   
   <tr class="method">
@@ -116,7 +120,7 @@ Example:
     
     <td>Method</td>
     <td><code><a href="#train">train</a></code></td>
-    <td><span>Train MaltParser from a list of ``DependencyGraph`` objects</span></td>
+    <td><span>Train MaltParser from a list of <tt class="rst-docutils literal">DependencyGraph</tt> objects</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -163,29 +167,29 @@ Example:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.api.ParserI.html">ParserI</a></code>:
           </p>
-          <table class="children sortable" id="id1054">
+          <table class="children sortable" id="id1058">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#grammar">grammar</a></code></td>
-    <td><span>:return: The grammar used by this parser.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse">parse</a></code></td>
-    <td><span>:return: An iterator that generates parse trees for the sentence. When possible this list is sorted from most likely to least likely.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_all">parse_all</a></code></td>
-    <td><span>:rtype: list(Tree)</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.parse.api.ParserI.html#parse_one">parse_one</a></code></td>
-    <td><span>:rtype: Tree or None</span></td>
+    <td><span></span></td>
   </tr>
 </table>
           
@@ -207,7 +211,7 @@ Example:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parser_dirname, model_filename=None, tagger=None, additional_java_args=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L116">
       
       (source)
     </a>
@@ -215,24 +219,23 @@ Example:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">An interface for parsing with the Malt Parser.
-
-:param parser_dirname: The path to the maltparser directory that
-contains the maltparser-1.x.jar
+    <div><p>An interface for parsing with the Malt Parser.</p>
+<p>contains the maltparser-1.x.jar
 :type parser_dirname: str
 :param model_filename: The name of the pre-trained model with .mco file
 extension. If provided, training will not be required.
-(see http://www.maltparser.org/mco/mco.html and
-see http://www.patful.com/chalk/node/185)
+(see <a class="rst-reference external" href="http://www.maltparser.org/mco/mco.html" target="_top">http://www.maltparser.org/mco/mco.html</a> and
+see <a class="rst-reference external" href="http://www.patful.com/chalk/node/185" target="_top">http://www.patful.com/chalk/node/185</a>)
 :type model_filename: str
 :param tagger: The tagger used to POS tag the raw string before
-formatting to CONLL format. It should behave like `nltk.pos_tag`
+formatting to CONLL format. It should behave like <code><a href="nltk.tag.html#pos_tag">nltk.pos_tag</a></code>
 :type tagger: function
 :param additional_java_args: This is the additional Java arguments that
 one can use when calling Maltparser, usually this is the heapsize
-limits, e.g. `additional_java_args=['-Xmx1024m']`
-(see http://goo.gl/mpDBvQ)
-:type additional_java_args: list</p></div>
+limits, e.g. <code>additional_java_args=['-Xmx1024m']</code>
+(see <a class="rst-reference external" href="http://goo.gl/mpDBvQ" target="_top">http://goo.gl/mpDBvQ</a>)
+:type additional_java_args: list</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parser_dirname</span></td><td class="fieldArgDesc">The path to the maltparser directory that</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model_filename</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagger</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">additional_java_args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -246,7 +249,7 @@ limits, e.g. `additional_java_args=['-Xmx1024m']`
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">generate_malt_command</span>(self, inputfilename, outputfilename=None, mode=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L240">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L240">
       
       (source)
     </a>
@@ -254,12 +257,7 @@ limits, e.g. `additional_java_args=['-Xmx1024m']`
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">This function generates the maltparser command use at the terminal.
-
-:param inputfilename: path to the input file
-:type inputfilename: str
-:param outputfilename: path to the output file
-:type outputfilename: str</p></div>
+    <div>This function generates the maltparser command use at the terminal.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inputfilename:</span>str</td><td class="fieldArgDesc">path to the input file</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outputfilename:</span>str</td><td class="fieldArgDesc">path to the output file</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mode</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -273,7 +271,7 @@ limits, e.g. `additional_java_args=['-Xmx1024m']`
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse_sents</span>(self, sentences, verbose=False, top_relation_label='null'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L224">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L224">
       
       (source)
     </a>
@@ -281,14 +279,10 @@ limits, e.g. `additional_java_args=['-Xmx1024m']`
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.api.ParserI.html#parse_sents">nltk.parse.api.ParserI.parse_sents</a></code></div>
     
-    <div><p class="pre">Use MaltParser to parse multiple sentences.
+    <div>Use MaltParser to parse multiple sentences.
 Takes a list of sentences, where each sentence is a list of words.
 Each sentence will be automatically tagged with this
-MaltParser instance's tagger.
-
-:param sentences: Input sentences to parse
-:type sentence: list(list(str))
-:return: iter(DependencyGraph)</p></div>
+MaltParser instance's tagger.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentences</span></td><td class="fieldArgDesc">Input sentences to parse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">top_relation_label</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence:</span>list(list(str))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">iter(DependencyGraph)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -302,7 +296,7 @@ MaltParser instance's tagger.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse_tagged_sents</span>(self, sentences, verbose=False, top_relation_label='null'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L158">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L158">
       
       (source)
     </a>
@@ -310,14 +304,11 @@ MaltParser instance's tagger.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use MaltParser to parse multiple POS tagged sentences. Takes multiple
+    <div><p>Use MaltParser to parse multiple POS tagged sentences. Takes multiple
 sentences where each sentence is a list of (word, tag) tuples.
-The sentences must have already been tokenized and tagged.
-
-:param sentences: Input sentences to parse
-:type sentence: list(list(tuple(str, str)))
-:return: iter(iter(``DependencyGraph``)) the dependency graph
-representation of each sentence</p></div>
+The sentences must have already been tokenized and tagged.</p>
+<p>representation of each sentence</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentences</span></td><td class="fieldArgDesc">Input sentences to parse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">top_relation_label</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence:</span>list(list(tuple(str, str)))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">iter(iter(<tt class="rst-docutils literal">DependencyGraph</tt>)) the dependency graph</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -331,7 +322,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, depgraphs, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L278">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L278">
       
       (source)
     </a>
@@ -339,10 +330,7 @@ representation of each sentence</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Train MaltParser from a list of ``DependencyGraph`` objects
-
-:param depgraphs: list of ``DependencyGraph`` objects for training input data
-:type depgraphs: DependencyGraph</p></div>
+    <div>Train MaltParser from a list of <tt class="rst-docutils literal">DependencyGraph</tt> objects<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">depgraphs:</span>DependencyGraph</td><td class="fieldArgDesc">list of <tt class="rst-docutils literal">DependencyGraph</tt> objects for training input data</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -356,7 +344,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train_from_file</span>(self, conll_file, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L297">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L297">
       
       (source)
     </a>
@@ -364,9 +352,9 @@ representation of each sentence</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Train MaltParser from a file
+    <div>Train MaltParser from a file
 :param conll_file: str for the filename of the training input data
-:type conll_file: str</p></div>
+:type conll_file: str</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -380,7 +368,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">additional_java_args</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L147">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L147">
       
       (source)
     </a>
@@ -402,7 +390,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">malt_jars</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L145">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L145">
       
       (source)
     </a>
@@ -424,7 +412,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">model</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L151">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L151">
       
       (source)
     </a>
@@ -446,7 +434,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">tagger</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L156">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L156">
       
       (source)
     </a>
@@ -468,7 +456,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">working_dir</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L154">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L154">
       
       (source)
     </a>
@@ -490,7 +478,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_execute</span>(cmd, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L272">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L272">
       
       (source)
     </a>
@@ -512,7 +500,7 @@ representation of each sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_trained</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/malt.py#L152">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/malt.py#L152">
       
       (source)
     </a>
@@ -532,7 +520,7 @@ representation of each sentence</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

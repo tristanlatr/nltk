@@ -65,36 +65,34 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CRFTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L23" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CRFTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L23" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.crf.CRFTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A module for POS tagging using CRFSuite https://pypi.python.org/pypi/python-crfsuite
-
-&gt;&gt;&gt; from nltk.tag import CRFTagger
-&gt;&gt;&gt; ct = CRFTagger()
-
-&gt;&gt;&gt; train_data = [[('University','Noun'), ('is','Verb'), ('a','Det'), ('good','Adj'), ('place','Noun')],
-... [('dog','Noun'),('eat','Verb'),('meat','Noun')]]
-
-&gt;&gt;&gt; ct.train(train_data,'model.crf.tagger')
-&gt;&gt;&gt; ct.tag_sents([['dog','is','good'], ['Cat','eat','meat']])
-[[('dog', 'Noun'), ('is', 'Verb'), ('good', 'Adj')], [('Cat', 'Noun'), ('eat', 'Verb'), ('meat', 'Noun')]]
-
-&gt;&gt;&gt; gold_sentences = [[('dog','Noun'),('is','Verb'),('good','Adj')] , [('Cat','Noun'),('eat','Verb'), ('meat','Noun')]]
-&gt;&gt;&gt; ct.evaluate(gold_sentences)
-1.0
-
-Setting learned model file
+        <div><p>A module for POS tagging using CRFSuite <a class="rst-reference external" href="https://pypi.python.org/pypi/python-crfsuite" target="_top">https://pypi.python.org/pypi/python-crfsuite</a></p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> CRFTagger
+<span class="py-prompt">&gt;&gt;&gt; </span>ct = CRFTagger()</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>train_data = [[(<span class="py-string">'University'</span>,<span class="py-string">'Noun'</span>), (<span class="py-string">'is'</span>,<span class="py-string">'Verb'</span>), (<span class="py-string">'a'</span>,<span class="py-string">'Det'</span>), (<span class="py-string">'good'</span>,<span class="py-string">'Adj'</span>), (<span class="py-string">'place'</span>,<span class="py-string">'Noun'</span>)],
+<span class="py-more">... </span>[(<span class="py-string">'dog'</span>,<span class="py-string">'Noun'</span>),(<span class="py-string">'eat'</span>,<span class="py-string">'Verb'</span>),(<span class="py-string">'meat'</span>,<span class="py-string">'Noun'</span>)]]</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ct.train(train_data,<span class="py-string">'model.crf.tagger'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>ct.tag_sents([[<span class="py-string">'dog'</span>,<span class="py-string">'is'</span>,<span class="py-string">'good'</span>], [<span class="py-string">'Cat'</span>,<span class="py-string">'eat'</span>,<span class="py-string">'meat'</span>]])
+<span class="py-output">[[('dog', 'Noun'), ('is', 'Verb'), ('good', 'Adj')], [('Cat', 'Noun'), ('eat', 'Verb'), ('meat', 'Noun')]]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>gold_sentences = [[(<span class="py-string">'dog'</span>,<span class="py-string">'Noun'</span>),(<span class="py-string">'is'</span>,<span class="py-string">'Verb'</span>),(<span class="py-string">'good'</span>,<span class="py-string">'Adj'</span>)] , [(<span class="py-string">'Cat'</span>,<span class="py-string">'Noun'</span>),(<span class="py-string">'eat'</span>,<span class="py-string">'Verb'</span>), (<span class="py-string">'meat'</span>,<span class="py-string">'Noun'</span>)]]
+<span class="py-prompt">&gt;&gt;&gt; </span>ct.evaluate(gold_sentences)
+<span class="py-output">1.0</span>
+</pre><p>Setting learned model file
 &gt;&gt;&gt; ct = CRFTagger()
 &gt;&gt;&gt; ct.set_model_file('model.crf.tagger')
 &gt;&gt;&gt; ct.evaluate(gold_sentences)
-1.0</p></div>
+1.0</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1552">
+        <table class="children sortable" id="id1556">
   
   
   <tr class="method">
@@ -163,7 +161,7 @@ Setting learned model file
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code>:
           </p>
-          <table class="children sortable" id="id1553">
+          <table class="children sortable" id="id1557">
   
   
   <tr class="basemethod">
@@ -197,7 +195,7 @@ Setting learned model file
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, feature_func=None, verbose=False, training_opt={}):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L49">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L49">
       
       (source)
     </a>
@@ -205,33 +203,42 @@ Setting learned model file
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Initialize the CRFSuite tagger
+    <div><p>Initialize the CRFSuite tagger
 :param feature_func: The function that extracts features for each token of a sentence. This function should take
 2 parameters: tokens and index which extract features at index position from tokens list. See the build in
 _get_features function for more detail.
 :param verbose: output the debugging messages during training.
 :type verbose: boolean
 :param training_opt: python-crfsuite training options
-:type training_opt : dictionary
-
-Set of possible training options (using LBFGS training algorithm).
- 'feature.minfreq' : The minimum frequency of features.
- 'feature.possible_states' : Force to generate possible state features.
- 'feature.possible_transitions' : Force to generate possible transition features.
- 'c1' : Coefficient for L1 regularization.
- 'c2' : Coefficient for L2 regularization.
- 'max_iterations' : The maximum number of iterations for L-BFGS optimization.
- 'num_memories' : The number of limited memories for approximating the inverse hessian matrix.
- 'epsilon' : Epsilon for testing the convergence of the objective.
- 'period' : The duration of iterations to test the stopping criterion.
- 'delta' : The threshold for the stopping criterion; an L-BFGS iteration stops when the
-            improvement of the log likelihood over the last ${period} iterations is no greater than this threshold.
- 'linesearch' : The line search algorithm used in L-BFGS updates:
-                   { 'MoreThuente': More and Thuente's method,
-                      'Backtracking': Backtracking method with regular Wolfe condition,
-                      'StrongBacktracking': Backtracking method with strong Wolfe condition
-                   }
- 'max_linesearch' :  The maximum number of trials for the line search algorithm.</p></div>
+:type training_opt : dictionary</p>
+<dl class="rst-docutils">
+<dt>Set of possible training options (using LBFGS training algorithm).</dt>
+<dd><p class="rst-first">'feature.minfreq' : The minimum frequency of features.
+'feature.possible_states' : Force to generate possible state features.
+'feature.possible_transitions' : Force to generate possible transition features.
+'c1' : Coefficient for L1 regularization.
+'c2' : Coefficient for L2 regularization.
+'max_iterations' : The maximum number of iterations for L-BFGS optimization.
+'num_memories' : The number of limited memories for approximating the inverse hessian matrix.
+'epsilon' : Epsilon for testing the convergence of the objective.
+'period' : The duration of iterations to test the stopping criterion.
+'delta' : The threshold for the stopping criterion; an L-BFGS iteration stops when the</p>
+<blockquote>
+improvement of the log likelihood over the last ${period} iterations is no greater than this threshold.</blockquote>
+<dl class="rst-docutils">
+<dt>'linesearch' <span class="classifier-delimiter">:</span> <span class="rst-classifier">The line search algorithm used in L-BFGS updates:</span></dt>
+<dd><dl class="rst-first rst-docutils">
+<dt>{ 'MoreThuente': More and Thuente's method,</dt>
+<dd>'Backtracking': Backtracking method with regular Wolfe condition,
+'StrongBacktracking': Backtracking method with strong Wolfe condition</dd>
+</dl>
+<p class="rst-last">}</p>
+</dd>
+</dl>
+<p class="rst-last">'max_linesearch' :  The maximum number of trials for the line search algorithm.</p>
+</dd>
+</dl>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -245,7 +252,7 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_model_file</span>(self, model_file):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L93">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L93">
       
       (source)
     </a>
@@ -267,7 +274,7 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L193">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L193">
       
       (source)
     </a>
@@ -275,13 +282,19 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.api.TaggerI.html#tag">nltk.tag.api.TaggerI.tag</a></code></div>
     
-    <div><p class="pre">Tag a sentence using Python CRFSuite Tagger. NB before using this function, user should specify the mode_file either by
-               - Train a new model using ``train'' function
-               - Use the pre-trained model which is set via ``set_model_file'' function
-:params tokens : list of tokens needed to tag.
+    <div><dl class="rst-docutils">
+<dt>Tag a sentence using Python CRFSuite Tagger. NB before using this function, user should specify the mode_file either by</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>Train a new model using <a href="#id1"><span class="rst-problematic" id="rst-id2">``</span></a>train'' function</li>
+<li>Use the pre-trained model which is set via <a href="#id3"><span class="rst-problematic" id="rst-id4">``</span></a>set_model_file'' function</li>
+</ul>
+</dd>
+</dl>
+<p>:params tokens : list of tokens needed to tag.
 :type tokens : list(str)
 :return : list of tagged tokens.
-:rtype : list (tuple(str,str))</p></div>
+:rtype : list (tuple(str,str))</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -295,7 +308,7 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag_sents</span>(self, sents):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L143">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L143">
       
       (source)
     </a>
@@ -303,13 +316,19 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.api.TaggerI.html#tag_sents">nltk.tag.api.TaggerI.tag_sents</a></code></div>
     
-    <div><p class="pre">Tag a list of sentences. NB before using this function, user should specify the mode_file either by
-               - Train a new model using ``train'' function
-               - Use the pre-trained model which is set via ``set_model_file'' function
-:params sentences : list of sentences needed to tag.
+    <div><dl class="rst-docutils">
+<dt>Tag a list of sentences. NB before using this function, user should specify the mode_file either by</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>Train a new model using <a href="#id1"><span class="rst-problematic" id="rst-id2">``</span></a>train'' function</li>
+<li>Use the pre-trained model which is set via <a href="#id3"><span class="rst-problematic" id="rst-id4">``</span></a>set_model_file'' function</li>
+</ul>
+</dd>
+</dl>
+<p>:params sentences : list of sentences needed to tag.
 :type sentences : list(list(str))
 :return : list of tagged sentences.
-:rtype : list (list (tuple(str,str)))</p></div>
+:rtype : list (list (tuple(str,str)))</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -323,7 +342,7 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, train_data, model_file):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L172">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L172">
       
       (source)
     </a>
@@ -331,10 +350,10 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Train the CRF tagger using CRFSuite
+    <div>Train the CRF tagger using CRFSuite
 :params train_data : is the list of annotated sentences.
 :type train_data : list (list(tuple(str,str)))
-:params model_file : the model will be saved to this file.</p></div>
+:params model_file : the model will be saved to this file.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -348,7 +367,7 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_features</span>(self, tokens, idx):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L97">
       
       (source)
     </a>
@@ -356,16 +375,21 @@ Set of possible training options (using LBFGS training algorithm).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extract basic features about this word including
-     - Current Word
-     - Is Capitalized ?
-     - Has Punctuation ?
-     - Has Number ?
-     - Suffixes up to length 3
-Note that : we might include feature over previous word, next word ect.
-
-:return : a list which contains the features
-:rtype : list(str)</p></div>
+    <div><dl class="rst-docutils">
+<dt>Extract basic features about this word including</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>Current Word</li>
+<li>Is Capitalized ?</li>
+<li>Has Punctuation ?</li>
+<li>Has Number ?</li>
+<li>Suffixes up to length 3</li>
+</ul>
+</dd>
+</dl>
+<p>Note that : we might include feature over previous word, next word ect.</p>
+<p>:return : a list which contains the features
+:rtype : list(str)</p>
+</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -379,7 +403,7 @@ Note that : we might include feature over previous word, next word ect.
   <div class="functionHeader">
     
     <span class="py-defname">_feature_func</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L85">
       
       (source)
     </a>
@@ -401,7 +425,7 @@ Note that : we might include feature over previous word, next word ect.
   <div class="functionHeader">
     
     <span class="py-defname">_model_file</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L81">
       
       (source)
     </a>
@@ -423,7 +447,7 @@ Note that : we might include feature over previous word, next word ect.
   <div class="functionHeader">
     
     <span class="py-defname">_pattern</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L91">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L91">
       
       (source)
     </a>
@@ -445,7 +469,7 @@ Note that : we might include feature over previous word, next word ect.
   <div class="functionHeader">
     
     <span class="py-defname">_tagger</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L82">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L82">
       
       (source)
     </a>
@@ -467,7 +491,7 @@ Note that : we might include feature over previous word, next word ect.
   <div class="functionHeader">
     
     <span class="py-defname">_training_options</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L90">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L90">
       
       (source)
     </a>
@@ -489,7 +513,7 @@ Note that : we might include feature over previous word, next word ect.
   <div class="functionHeader">
     
     <span class="py-defname">_verbose</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/crf.py#L89">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/crf.py#L89">
       
       (source)
     </a>
@@ -509,7 +533,7 @@ Note that : we might include feature over previous word, next word ect.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

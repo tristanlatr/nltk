@@ -65,32 +65,32 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CrossValidationProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1149" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CrossValidationProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1149" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.CrossValidationProbDist">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The cross-validation estimate for the probability distribution of
+        <div>The cross-validation estimate for the probability distribution of
 the experiment used to generate a set of frequency distribution.
 The "cross-validation estimate" for the probability of a sample
 is found by averaging the held-out estimates for the sample in
-each pair of frequency distributions.</p></div>
+each pair of frequency distributions.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1150">
+        <table class="children sortable" id="id1154">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Use the cross-validation estimate to create a probability distribution for the experiment used to generate ``freqdists``.</span></td>
+    <td><span>Use the cross-validation estimate to create a probability distribution for the experiment used to generate <tt class="rst-docutils literal">freqdists</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a string representation of this ``ProbDist``.</span></td>
+    <td><span>Return a string representation of this <tt class="rst-docutils literal">ProbDist</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -100,7 +100,7 @@ each pair of frequency distributions.</p></div>
     
     <td>Method</td>
     <td><code><a href="#freqdists">freqdists</a></code></td>
-    <td><span>Return the list of frequency distributions that this ``ProbDist`` is based on.</span></td>
+    <td><span>Return the list of frequency distributions that this <tt class="rst-docutils literal">ProbDist</tt> is based on.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -110,7 +110,7 @@ each pair of frequency distributions.</p></div>
     
     <td>Method</td>
     <td><code><a href="#samples">samples</a></code></td>
-    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
+    <td><span>Return a list of all samples that have nonzero probabilities. Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -132,14 +132,14 @@ each pair of frequency distributions.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.ProbDistI.html">ProbDistI</a></code>:
           </p>
-          <table class="children sortable" id="id1151">
+          <table class="children sortable" id="id1155">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.probability.ProbDistI.html#generate">generate</a></code></td>
-    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
+    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample <tt class="rst-docutils literal">samp</tt> is equal to <tt class="rst-docutils literal">self.prob(samp)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -171,7 +171,7 @@ each pair of frequency distributions.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, freqdists, bins):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1160">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1160">
       
       (source)
     </a>
@@ -179,19 +179,14 @@ each pair of frequency distributions.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#__init__">nltk.probability.ProbDistI.__init__</a></code></div>
     
-    <div><p class="pre">Use the cross-validation estimate to create a probability
+    <div>Use the cross-validation estimate to create a probability
 distribution for the experiment used to generate
-``freqdists``.
-
-:type freqdists: list(FreqDist)
-:param freqdists: A list of the frequency distributions
-    generated by the experiment.
-:type bins: int
-:param bins: The number of sample values that can be generated
-    by the experiment that is described by the probability
-    distribution.  This value must be correctly set for the
-    probabilities of the sample values to sum to one.  If
-    ``bins`` is not specified, it defaults to ``freqdist.B()``.</p></div>
+<tt class="rst-docutils literal">freqdists</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">freqdists:</span>list(FreqDist)</td><td class="fieldArgDesc">A list of the frequency distributions
+generated by the experiment.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bins:</span>int</td><td class="fieldArgDesc">The number of sample values that can be generated
+by the experiment that is described by the probability
+distribution.  This value must be correctly set for the
+probabilities of the sample values to sum to one.  If
+<tt class="rst-docutils literal">bins</tt> is not specified, it defaults to <tt class="rst-docutils literal">freqdist.B()</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -205,7 +200,7 @@ distribution for the experiment used to generate
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1210">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1210">
       
       (source)
     </a>
@@ -213,9 +208,7 @@ distribution for the experiment used to generate
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation of this ``ProbDist``.
-
-:rtype: str</p></div>
+    <div>Return a string representation of this <tt class="rst-docutils literal">ProbDist</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -229,7 +222,7 @@ distribution for the experiment used to generate
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">discount</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1207">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1207">
       
       (source)
     </a>
@@ -237,9 +230,7 @@ distribution for the experiment used to generate
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#discount">nltk.probability.ProbDistI.discount</a></code></div>
     
-    <div><p class="pre">Return the ratio by which counts are discounted on average: c*/c
-
-:rtype: float</p></div>
+    <div>Return the ratio by which counts are discounted on average: c*/c<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -253,7 +244,7 @@ distribution for the experiment used to generate
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">freqdists</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1187">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1187">
       
       (source)
     </a>
@@ -261,9 +252,7 @@ distribution for the experiment used to generate
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the list of frequency distributions that this ``ProbDist`` is based on.
-
-:rtype: list(FreqDist)</p></div>
+    <div>Return the list of frequency distributions that this <tt class="rst-docutils literal">ProbDist</tt> is based on.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(FreqDist)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -277,7 +266,7 @@ distribution for the experiment used to generate
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self, sample):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1199">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1199">
       
       (source)
     </a>
@@ -285,13 +274,9 @@ distribution for the experiment used to generate
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#prob">nltk.probability.ProbDistI.prob</a></code></div>
     
-    <div><p class="pre">Return the probability for a given sample.  Probabilities
-are always real numbers in the range [0, 1].
-
-:param sample: The sample whose probability
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+    <div>Return the probability for a given sample.  Probabilities
+are always real numbers in the range [0, 1].<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">The sample whose probability
+should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -305,7 +290,7 @@ are always real numbers in the range [0, 1].
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">samples</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1195">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1195">
       
       (source)
     </a>
@@ -313,10 +298,8 @@ are always real numbers in the range [0, 1].
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#samples">nltk.probability.ProbDistI.samples</a></code></div>
     
-    <div><p class="pre">Return a list of all samples that have nonzero probabilities.
-Use ``prob`` to find the probability of each sample.
-
-:rtype: list</p></div>
+    <div>Return a list of all samples that have nonzero probabilities.
+Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -330,7 +313,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">SUM_TO_ONE</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1158">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1158">
       
       (source)
     </a>
@@ -338,8 +321,8 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#SUM_TO_ONE">nltk.probability.ProbDistI.SUM_TO_ONE</a></code></div>
     
-    <div><p class="pre">True if the probabilities of the samples in this probability
-distribution will always sum to one.</p></div>
+    <div>True if the probabilities of the samples in this probability
+distribution will always sum to one.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -353,7 +336,7 @@ distribution will always sum to one.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_freqdists</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1176">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1176">
       
       (source)
     </a>
@@ -375,7 +358,7 @@ distribution will always sum to one.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_heldout_probdists</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1180">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1180">
       
       (source)
     </a>
@@ -395,7 +378,7 @@ distribution will always sum to one.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

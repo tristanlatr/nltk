@@ -65,74 +65,34 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChunkScore</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L52" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChunkScore</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L52" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.chunk.util.ChunkScore">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A utility class for scoring chunk parsers.  ``ChunkScore`` can
+        <div><p>A utility class for scoring chunk parsers.  <tt class="rst-docutils literal">ChunkScore</tt> can
 evaluate a chunk parser's output, based on a number of statistics
 (precision, recall, f-measure, misssed chunks, incorrect chunks).
 It can also combine the scores from the parsing of multiple texts;
 this makes it significantly easier to evaluate a chunk parser that
-operates one sentence at a time.
-
-Texts are evaluated with the ``score`` method.  The results of
+operates one sentence at a time.</p>
+<p>Texts are evaluated with the <tt class="rst-docutils literal">score</tt> method.  The results of
 evaluation can be accessed via a number of accessor methods, such
-as ``precision`` and ``f_measure``.  A typical use of the
-``ChunkScore`` class is::
-
-    &gt;&gt;&gt; chunkscore = ChunkScore()           # doctest: +SKIP
-    &gt;&gt;&gt; for correct in correct_sentences:   # doctest: +SKIP
-    ...     guess = chunkparser.parse(correct.leaves())   # doctest: +SKIP
-    ...     chunkscore.score(correct, guess)              # doctest: +SKIP
-    &gt;&gt;&gt; print('F Measure:', chunkscore.f_measure())       # doctest: +SKIP
-    F Measure: 0.823
-
-:ivar kwargs: Keyword arguments:
-
-    - max_tp_examples: The maximum number actual examples of true
-      positives to record.  This affects the ``correct`` member
-      function: ``correct`` will not return more than this number
-      of true positive examples.  This does *not* affect any of
-      the numerical metrics (precision, recall, or f-measure)
-
-    - max_fp_examples: The maximum number actual examples of false
-      positives to record.  This affects the ``incorrect`` member
-      function and the ``guessed`` member function: ``incorrect``
-      will not return more than this number of examples, and
-      ``guessed`` will not return more than this number of true
-      positive examples.  This does *not* affect any of the
-      numerical metrics (precision, recall, or f-measure)
-
-    - max_fn_examples: The maximum number actual examples of false
-      negatives to record.  This affects the ``missed`` member
-      function and the ``correct`` member function: ``missed``
-      will not return more than this number of examples, and
-      ``correct`` will not return more than this number of true
-      negative examples.  This does *not* affect any of the
-      numerical metrics (precision, recall, or f-measure)
-
-    - chunk_label: A regular expression indicating which chunks
-      should be compared.  Defaults to ``'.*'`` (i.e., all chunks).
-
-:type _tp: list(Token)
-:ivar _tp: List of true positives
-:type _fp: list(Token)
-:ivar _fp: List of false positives
-:type _fn: list(Token)
-:ivar _fn: List of false negatives
-
-:type _tp_num: int
-:ivar _tp_num: Number of true positives
-:type _fp_num: int
-:ivar _fp_num: Number of false positives
-:type _fn_num: int
-:ivar _fn_num: Number of false negatives.</p></div>
+as <tt class="rst-docutils literal">precision</tt> and <tt class="rst-docutils literal">f_measure</tt>.  A typical use of the
+<tt class="rst-docutils literal">ChunkScore</tt> class is:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; chunkscore = ChunkScore()           # doctest: +SKIP
+&gt;&gt;&gt; for correct in correct_sentences:   # doctest: +SKIP
+...     guess = chunkparser.parse(correct.leaves())   # doctest: +SKIP
+...     chunkscore.score(correct, guess)              # doctest: +SKIP
+&gt;&gt;&gt; print('F Measure:', chunkscore.f_measure())       # doctest: +SKIP
+F Measure: 0.823
+</pre>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id130">
+        <table class="children sortable" id="id133">
   
   
   <tr class="method">
@@ -149,7 +109,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a concise representation of this ``ChunkScoring``.</span></td>
+    <td><span>Return a concise representation of this <tt class="rst-docutils literal">ChunkScoring</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -159,7 +119,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
     
     <td>Method</td>
     <td><code><a href="#accuracy">accuracy</a></code></td>
-    <td><span>Return the overall tag-based accuracy for all text that have been scored by this ``ChunkScore``, using the IOB (conll2000) tag encoding.</span></td>
+    <td><span>Return the overall tag-based accuracy for all text that have been scored by this <tt class="rst-docutils literal">ChunkScore</tt>, using the IOB (conll2000) tag encoding.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -169,7 +129,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
     
     <td>Method</td>
     <td><code><a href="#f_measure">f_measure</a></code></td>
-    <td><span>Return the overall F measure for all texts that have been scored by this ``ChunkScore``.</span></td>
+    <td><span>Return the overall F measure for all texts that have been scored by this <tt class="rst-docutils literal">ChunkScore</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -189,17 +149,22 @@ as ``precision`` and ``f_measure``.  A typical use of the
     
     <td>Method</td>
     <td><code><a href="#precision">precision</a></code></td>
-    <td><span>Return the overall precision for all texts that have been scored by this ``ChunkScore``.</span></td>
+    <td><span>Return the overall precision for all texts that have been scored by this <tt class="rst-docutils literal">ChunkScore</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#recall">recall</a></code></td>
-    <td><span>Return the overall recall for all texts that have been scored by this ``ChunkScore``.</span></td>
+    <td><span>Return the overall recall for all texts that have been scored by this <tt class="rst-docutils literal">ChunkScore</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#score">score</a></code></td>
     <td><span>Given a correctly chunked sentence, score another chunked version of the same sentence.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#kwargs">kwargs</a></code></td>
+    <td><span>Keyword arguments:</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -224,22 +189,22 @@ as ``precision`` and ``f_measure``.  A typical use of the
     
     <td>Instance Variable</td>
     <td><code><a href="#_fn">_fn</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>List of false negatives</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_fn_num">_fn_num</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Number of false negatives.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_fp">_fp</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>List of false positives</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_fp_num">_fp_num</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Number of false positives</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -279,12 +244,12 @@ as ``precision`` and ``f_measure``.  A typical use of the
     
     <td>Instance Variable</td>
     <td><code><a href="#_tp">_tp</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>List of true positives</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_tp_num">_tp_num</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Number of true positives</span></td>
   </tr>
 </table>
         
@@ -306,7 +271,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L115">
       
       (source)
     </a>
@@ -328,7 +293,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L275">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L275">
       
       (source)
     </a>
@@ -350,7 +315,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L279">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L279">
       
       (source)
     </a>
@@ -358,9 +323,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a concise representation of this ``ChunkScoring``.
-
-:rtype: str</p></div>
+    <div>Return a concise representation of this <tt class="rst-docutils literal">ChunkScoring</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -374,7 +337,7 @@ as ``precision`` and ``f_measure``.  A typical use of the
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L287">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L287">
       
       (source)
     </a>
@@ -382,12 +345,10 @@ as ``precision`` and ``f_measure``.  A typical use of the
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a verbose representation of this ``ChunkScoring``.
+    <div>Return a verbose representation of this <tt class="rst-docutils literal">ChunkScoring</tt>.
 This representation includes the precision, recall, and
 f-measure scores.  For other information about the score,
-use the accessor methods (e.g., ``missed()`` and ``incorrect()``).
-
-:rtype: str</p></div>
+use the accessor methods (e.g., <tt class="rst-docutils literal">missed()</tt> and <tt class="rst-docutils literal">incorrect()</tt>).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -401,7 +362,7 @@ use the accessor methods (e.g., ``missed()`` and ``incorrect()``).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">accuracy</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L173">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L173">
       
       (source)
     </a>
@@ -409,11 +370,9 @@ use the accessor methods (e.g., ``missed()`` and ``incorrect()``).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the overall tag-based accuracy for all text that have
-been scored by this ``ChunkScore``, using the IOB (conll2000)
-tag encoding.
-
-:rtype: float</p></div>
+    <div>Return the overall tag-based accuracy for all text that have
+been scored by this <tt class="rst-docutils literal">ChunkScore</tt>, using the IOB (conll2000)
+tag encoding.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -427,7 +386,7 @@ tag encoding.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">correct</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L255">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L255">
       
       (source)
     </a>
@@ -435,10 +394,8 @@ tag encoding.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the chunks which were included in the correct
-chunk structures, listed in input order.
-
-:rtype: list of chunks</p></div>
+    <div>Return the chunks which were included in the correct
+chunk structures, listed in input order.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of chunks</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -452,7 +409,7 @@ chunk structures, listed in input order.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">f_measure</span>(self, alpha=0.5):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L213">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L213">
       
       (source)
     </a>
@@ -460,15 +417,11 @@ chunk structures, listed in input order.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the overall F measure for all texts that have been
-scored by this ``ChunkScore``.
-
-:param alpha: the relative weighting of precision and recall.
-    Larger alpha biases the score towards the precision value,
-    while smaller alpha biases the score towards the recall
-    value.  ``alpha`` should have a value in the range [0,1].
-:type alpha: float
-:rtype: float</p></div>
+    <div>Return the overall F measure for all texts that have been
+scored by this <tt class="rst-docutils literal">ChunkScore</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alpha:</span>float</td><td class="fieldArgDesc">the relative weighting of precision and recall.
+Larger alpha biases the score towards the precision value,
+while smaller alpha biases the score towards the recall
+value.  <tt class="rst-docutils literal">alpha</tt> should have a value in the range [0,1].</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -482,7 +435,7 @@ scored by this ``ChunkScore``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">guessed</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L265">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L265">
       
       (source)
     </a>
@@ -490,10 +443,8 @@ scored by this ``ChunkScore``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the chunks which were included in the guessed
-chunk structures, listed in input order.
-
-:rtype: list of chunks</p></div>
+    <div>Return the chunks which were included in the guessed
+chunk structures, listed in input order.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of chunks</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -507,7 +458,7 @@ chunk structures, listed in input order.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">incorrect</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L244">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L244">
       
       (source)
     </a>
@@ -515,10 +466,8 @@ chunk structures, listed in input order.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the chunks which were included in the guessed chunk structures,
-but not in the correct chunk structures, listed in input order.
-
-:rtype: list of chunks</p></div>
+    <div>Return the chunks which were included in the guessed chunk structures,
+but not in the correct chunk structures, listed in input order.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of chunks</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -532,7 +481,7 @@ but not in the correct chunk structures, listed in input order.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">missed</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L232">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L232">
       
       (source)
     </a>
@@ -540,11 +489,9 @@ but not in the correct chunk structures, listed in input order.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the chunks which were included in the
+    <div>Return the chunks which were included in the
 correct chunk structures, but not in the guessed chunk
-structures, listed in input order.
-
-:rtype: list of chunks</p></div>
+structures, listed in input order.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of chunks</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -558,7 +505,7 @@ structures, listed in input order.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">precision</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L185">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L185">
       
       (source)
     </a>
@@ -566,10 +513,8 @@ structures, listed in input order.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the overall precision for all texts that have been
-scored by this ``ChunkScore``.
-
-:rtype: float</p></div>
+    <div>Return the overall precision for all texts that have been
+scored by this <tt class="rst-docutils literal">ChunkScore</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -583,7 +528,7 @@ scored by this ``ChunkScore``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">recall</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L199">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L199">
       
       (source)
     </a>
@@ -591,10 +536,8 @@ scored by this ``ChunkScore``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the overall recall for all texts that have been
-scored by this ``ChunkScore``.
-
-:rtype: float</p></div>
+    <div>Return the overall recall for all texts that have been
+scored by this <tt class="rst-docutils literal">ChunkScore</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -608,7 +551,7 @@ scored by this ``ChunkScore``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">score</span>(self, correct, guessed):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L144">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L144">
       
       (source)
     </a>
@@ -616,14 +559,59 @@ scored by this ``ChunkScore``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a correctly chunked sentence, score another chunked
-version of the same sentence.
-
-:type correct: chunk structure
-:param correct: The known-correct ("gold standard") chunked
-    sentence.
-:type guessed: chunk structure
-:param guessed: The chunked sentence to be scored.</p></div>
+    <div>Given a correctly chunked sentence, score another chunked
+version of the same sentence.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">correct:</span>chunk structure</td><td class="fieldArgDesc">The known-correct ("gold standard") chunked
+sentence.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">guessed:</span>chunk structure</td><td class="fieldArgDesc">The chunked sentence to be scored.</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="nltk.chunk.util.ChunkScore.kwargs">
+    
+  </a>
+  <a name="kwargs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">kwargs</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L73">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Keyword arguments:</p>
+<ul class="rst-simple">
+<li><p class="rst-first">max_tp_examples: The maximum number actual examples of true
+positives to record.  This affects the <tt class="rst-docutils literal">correct</tt> member
+function: <tt class="rst-docutils literal">correct</tt> will not return more than this number
+of true positive examples.  This does <em>not</em> affect any of
+the numerical metrics (precision, recall, or f-measure)</p>
+</li>
+<li><p class="rst-first">max_fp_examples: The maximum number actual examples of false
+positives to record.  This affects the <tt class="rst-docutils literal">incorrect</tt> member
+function and the <tt class="rst-docutils literal">guessed</tt> member function: <tt class="rst-docutils literal">incorrect</tt>
+will not return more than this number of examples, and
+<tt class="rst-docutils literal">guessed</tt> will not return more than this number of true
+positive examples.  This does <em>not</em> affect any of the
+numerical metrics (precision, recall, or f-measure)</p>
+</li>
+<li><p class="rst-first">max_fn_examples: The maximum number actual examples of false
+negatives to record.  This affects the <tt class="rst-docutils literal">missed</tt> member
+function and the <tt class="rst-docutils literal">correct</tt> member function: <tt class="rst-docutils literal">missed</tt>
+will not return more than this number of examples, and
+<tt class="rst-docutils literal">correct</tt> will not return more than this number of true
+negative examples.  This does <em>not</em> affect any of the
+numerical metrics (precision, recall, or f-measure)</p>
+</li>
+<li><p class="rst-first">chunk_label: A regular expression indicating which chunks
+should be compared.  Defaults to <tt class="rst-docutils literal"><span class="pre">'.*'</span></tt> (i.e., all chunks).</p>
+</li>
+</ul>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -637,7 +625,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_updateMeasures</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L134">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L134">
       
       (source)
     </a>
@@ -659,7 +647,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_chunk_label</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L124">
       
       (source)
     </a>
@@ -681,7 +669,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_correct</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L116">
       
       (source)
     </a>
@@ -703,7 +691,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_count</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L128">
       
       (source)
     </a>
@@ -724,8 +712,8 @@ version of the same sentence.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_fn</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L120">
+    <span class="py-defname">_fn</span>: list(Token) =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L104">
       
       (source)
     </a>
@@ -733,7 +721,7 @@ version of the same sentence.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>List of false negatives</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -746,8 +734,8 @@ version of the same sentence.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_fn_num</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L127">
+    <span class="py-defname">_fn_num</span>: int =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L111">
       
       (source)
     </a>
@@ -755,7 +743,7 @@ version of the same sentence.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Number of false negatives.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -768,8 +756,8 @@ version of the same sentence.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_fp</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L119">
+    <span class="py-defname">_fp</span>: list(Token) =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L102">
       
       (source)
     </a>
@@ -777,7 +765,7 @@ version of the same sentence.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>List of false positives</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -790,8 +778,8 @@ version of the same sentence.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_fp_num</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L126">
+    <span class="py-defname">_fp_num</span>: int =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L109">
       
       (source)
     </a>
@@ -799,7 +787,7 @@ version of the same sentence.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Number of false positives</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -813,7 +801,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_guessed</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L117">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L117">
       
       (source)
     </a>
@@ -835,7 +823,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_max_fn</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L123">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L123">
       
       (source)
     </a>
@@ -857,7 +845,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_max_fp</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L122">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L122">
       
       (source)
     </a>
@@ -879,7 +867,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_max_tp</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L121">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L121">
       
       (source)
     </a>
@@ -901,7 +889,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_measuresNeedUpdate</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L132">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L132">
       
       (source)
     </a>
@@ -923,7 +911,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_tags_correct</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L129">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L129">
       
       (source)
     </a>
@@ -945,7 +933,7 @@ version of the same sentence.
   <div class="functionHeader">
     
     <span class="py-defname">_tags_total</span>: <code><a href="https://docs.python.org/3/library/functions.html#float">float</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L130">
       
       (source)
     </a>
@@ -966,8 +954,8 @@ version of the same sentence.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_tp</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L118">
+    <span class="py-defname">_tp</span>: list(Token) =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L100">
       
       (source)
     </a>
@@ -975,7 +963,7 @@ version of the same sentence.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>List of true positives</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -988,8 +976,8 @@ version of the same sentence.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_tp_num</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/util.py#L125">
+    <span class="py-defname">_tp_num</span>: int =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/util.py#L107">
       
       (source)
     </a>
@@ -997,7 +985,7 @@ version of the same sentence.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Number of true positives</div>
   </div>
 </div>
 
@@ -1009,7 +997,7 @@ version of the same sentence.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

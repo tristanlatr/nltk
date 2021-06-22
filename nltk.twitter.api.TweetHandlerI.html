@@ -65,24 +65,24 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TweetHandlerI</span>(<a href="nltk.twitter.api.BasicTweetHandler.html" title="nltk.twitter.api.BasicTweetHandler">BasicTweetHandler</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L80" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.twitter.twitterclient.TweetViewer.html">nltk.twitter.twitterclient.TweetViewer</a></code>, <code><a href="nltk.twitter.twitterclient.TweetWriter.html">nltk.twitter.twitterclient.TweetWriter</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TweetHandlerI</span>(<a href="nltk.twitter.api.BasicTweetHandler.html" title="nltk.twitter.api.BasicTweetHandler">BasicTweetHandler</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L80" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.twitter.twitterclient.TweetViewer.html">nltk.twitter.twitterclient.TweetViewer</a></code>, <code><a href="nltk.twitter.twitterclient.TweetWriter.html">nltk.twitter.twitterclient.TweetWriter</a></code></p>
         <p><a href="classIndex.html#nltk.twitter.api.TweetHandlerI">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Interface class whose subclasses should implement a handle method that
-Twitter clients can delegate to.</p></div>
+        <div>Interface class whose subclasses should implement a handle method that
+Twitter clients can delegate to.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1943">
+        <table class="children sortable" id="id1947">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param int limit: The number of data items to process in the current        round of processing.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -124,14 +124,14 @@ Twitter clients can delegate to.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.twitter.api.BasicTweetHandler.html">BasicTweetHandler</a></code>:
           </p>
-          <table class="children sortable" id="id1944">
+          <table class="children sortable" id="id1948">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.twitter.api.BasicTweetHandler.html#do_continue">do_continue</a></code></td>
-    <td><span>Returns `False` if the client should stop fetching Tweets.</span></td>
+    <td><span>Returns <code><a href="https://docs.python.org/3/library/constants.html#False">False</a></code> if the client should stop fetching Tweets.</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
@@ -168,7 +168,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, limit=20, upper_date_limit=None, lower_date_limit=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L86">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L86">
       
       (source)
     </a>
@@ -176,11 +176,7 @@ Twitter clients can delegate to.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.twitter.api.BasicTweetHandler.html#__init__">nltk.twitter.api.BasicTweetHandler.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.twitter.twitterclient.TweetWriter.html">nltk.twitter.twitterclient.TweetWriter</a></code></div>
     
-    <div><p class="pre">:param int limit: The number of data items to process in the current        round of processing.
-
-:param tuple upper_date_limit: The date at which to stop collecting        new data. This should be entered as a tuple which can serve as the        argument to `datetime.datetime`.        E.g. `date_limit=(2015, 4, 1, 12, 40)` for 12:30 pm on April 1 2015.
-
-:param tuple lower_date_limit: The date at which to stop collecting        new data. See `upper_data_limit` for formatting.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">upper_date_limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lower_date_limit</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int limit</span></td><td class="fieldArgDesc">The number of data items to process in the current        round of processing.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tuple upper_date_limit</span></td><td class="fieldArgDesc">The date at which to stop collecting        new data. This should be entered as a tuple which can serve as the        argument to <code><a href="https://docs.python.org/3/library/datetime.html#datetime.datetime">datetime.datetime</a></code>.        E.g. <code>date_limit=(2015, 4, 1, 12, 40)</code> for 12:30 pm on April 1 2015.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tuple lower_date_limit</span></td><td class="fieldArgDesc">The date at which to stop collecting        new data. See <code>upper_data_limit</code> for formatting.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -194,7 +190,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">check_date_limit</span>(self, data, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L122">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L122">
       
       (source)
     </a>
@@ -202,7 +198,7 @@ Twitter clients can delegate to.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Validate date limits.</p></div>
+    <div>Validate date limits.</div>
   </div>
 </div><div class="basemethod">
   
@@ -216,7 +212,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">handle</span>(self, data):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L110">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L110">
       
       (source)
     </a>
@@ -224,7 +220,7 @@ Twitter clients can delegate to.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.twitter.twitterclient.TweetViewer.html">nltk.twitter.twitterclient.TweetViewer</a></code>, <code><a href="nltk.twitter.twitterclient.TweetWriter.html">nltk.twitter.twitterclient.TweetWriter</a></code></div>
     
-    <div><p class="pre">Deal appropriately with data returned by the Twitter API</p></div>
+    <div>Deal appropriately with data returned by the Twitter API</div>
   </div>
 </div><div class="basemethod">
   
@@ -238,7 +234,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">on_finish</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L116">
       
       (source)
     </a>
@@ -246,7 +242,7 @@ Twitter clients can delegate to.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.twitter.twitterclient.TweetViewer.html">nltk.twitter.twitterclient.TweetViewer</a></code>, <code><a href="nltk.twitter.twitterclient.TweetWriter.html">nltk.twitter.twitterclient.TweetWriter</a></code></div>
     
-    <div><p class="pre">Actions when the tweet limit has been reached</p></div>
+    <div>Actions when the tweet limit has been reached</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -260,7 +256,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">do_stop</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L146">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L146">
       
       (source)
     </a>
@@ -268,7 +264,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.twitter.api.BasicTweetHandler.html#do_stop">nltk.twitter.api.BasicTweetHandler.do_stop</a></code></div>
     
-    <div><p class="pre">Stores the id of the last fetched Tweet to handle pagination.</p></div>
+    <div>Stores the id of the last fetched Tweet to handle pagination.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -282,7 +278,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">lower_date_limit</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L102">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L102">
       
       (source)
     </a>
@@ -304,7 +300,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">startingup</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L108">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L108">
       
       (source)
     </a>
@@ -326,7 +322,7 @@ Twitter clients can delegate to.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">upper_date_limit</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/twitter/api.py#L101">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/twitter/api.py#L101">
       
       (source)
     </a>
@@ -346,7 +342,7 @@ Twitter clients can delegate to.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

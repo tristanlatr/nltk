@@ -65,18 +65,18 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">VectorSpaceClusterer</span>(<a href="nltk.cluster.api.ClusterI.html" title="nltk.cluster.api.ClusterI">ClusterI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L22" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.cluster.em.EMClusterer.html">nltk.cluster.em.EMClusterer</a></code>, <code><a href="nltk.cluster.gaac.GAAClusterer.html">nltk.cluster.gaac.GAAClusterer</a></code>, <code><a href="nltk.cluster.kmeans.KMeansClusterer.html">nltk.cluster.kmeans.KMeansClusterer</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">VectorSpaceClusterer</span>(<a href="nltk.cluster.api.ClusterI.html" title="nltk.cluster.api.ClusterI">ClusterI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L22" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.cluster.em.EMClusterer.html">nltk.cluster.em.EMClusterer</a></code>, <code><a href="nltk.cluster.gaac.GAAClusterer.html">nltk.cluster.gaac.GAAClusterer</a></code>, <code><a href="nltk.cluster.kmeans.KMeansClusterer.html">nltk.cluster.kmeans.KMeansClusterer</a></code></p>
         <p><a href="classIndex.html#nltk.cluster.util.VectorSpaceClusterer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Abstract clusterer which takes tokens and maps them into a vector space.
+        <div>Abstract clusterer which takes tokens and maps them into a vector space.
 Optionally performs singular value decomposition to reduce the
-dimensionality.</p></div>
+dimensionality.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id197">
+        <table class="children sortable" id="id200">
   
   
   <tr class="method">
@@ -145,7 +145,7 @@ dimensionality.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.cluster.api.ClusterI.html">ClusterI</a></code>:
           </p>
-          <table class="children sortable" id="id198">
+          <table class="children sortable" id="id201">
   
   
   <tr class="basemethod">
@@ -189,7 +189,7 @@ dimensionality.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, normalise=False, svd_dimensions=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L29">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L29">
       
       (source)
     </a>
@@ -197,11 +197,8 @@ dimensionality.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.cluster.em.EMClusterer.html">nltk.cluster.em.EMClusterer</a></code>, <code><a href="nltk.cluster.gaac.GAAClusterer.html">nltk.cluster.gaac.GAAClusterer</a></code>, <code><a href="nltk.cluster.kmeans.KMeansClusterer.html">nltk.cluster.kmeans.KMeansClusterer</a></code></div>
     
-    <div><p class="pre">:param normalise:       should vectors be normalised to length 1
-:type normalise:        boolean
-:param svd_dimensions:  number of dimensions to use in reducing vector
-                        dimensionsionality with SVD
-:type svd_dimensions:   int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">normalise:</span>boolean</td><td class="fieldArgDesc">should vectors be normalised to length 1</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">svd_dimensions:</span>int</td><td class="fieldArgDesc">number of dimensions to use in reducing vector
+dimensionsionality with SVD</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -215,7 +212,7 @@ dimensionality.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify</span>(self, vector):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L72">
       
       (source)
     </a>
@@ -223,8 +220,8 @@ dimensionality.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.api.ClusterI.html#classify">nltk.cluster.api.ClusterI.classify</a></code></div>
     
-    <div><p class="pre">Classifies the token into a cluster, setting the token's CLUSTER
-parameter to that cluster identifier.</p></div>
+    <div>Classifies the token into a cluster, setting the token's CLUSTER
+parameter to that cluster identifier.</div>
   </div>
 </div><div class="basemethod">
   
@@ -238,7 +235,7 @@ parameter to that cluster identifier.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">classify_vectorspace</span>(self, vector):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L80">
       
       (source)
     </a>
@@ -246,7 +243,7 @@ parameter to that cluster identifier.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.cluster.em.EMClusterer.html">nltk.cluster.em.EMClusterer</a></code>, <code><a href="nltk.cluster.gaac.GAAClusterer.html">nltk.cluster.gaac.GAAClusterer</a></code>, <code><a href="nltk.cluster.kmeans.KMeansClusterer.html">nltk.cluster.kmeans.KMeansClusterer</a></code></div>
     
-    <div><p class="pre">Returns the index of the appropriate cluster for the vector.</p></div>
+    <div>Returns the index of the appropriate cluster for the vector.</div>
   </div>
 </div><div class="basemethod">
   
@@ -260,7 +257,7 @@ parameter to that cluster identifier.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cluster</span>(self, vectors, assign_clusters=False, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L41">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L41">
       
       (source)
     </a>
@@ -268,8 +265,8 @@ parameter to that cluster identifier.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.api.ClusterI.html#cluster">nltk.cluster.api.ClusterI.cluster</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.cluster.gaac.GAAClusterer.html">nltk.cluster.gaac.GAAClusterer</a></code></div>
     
-    <div><p class="pre">Assigns the vectors to clusters, learning the clustering parameters
-from the data. Returns a cluster identifier for each vector.</p></div>
+    <div>Assigns the vectors to clusters, learning the clustering parameters
+from the data. Returns a cluster identifier for each vector.</div>
   </div>
 </div><div class="basemethod">
   
@@ -283,7 +280,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">cluster_vectorspace</span>(self, vectors, trace):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L66">
       
       (source)
     </a>
@@ -291,7 +288,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.cluster.em.EMClusterer.html">nltk.cluster.em.EMClusterer</a></code>, <code><a href="nltk.cluster.gaac.GAAClusterer.html">nltk.cluster.gaac.GAAClusterer</a></code>, <code><a href="nltk.cluster.kmeans.KMeansClusterer.html">nltk.cluster.kmeans.KMeansClusterer</a></code></div>
     
-    <div><p class="pre">Finds the clusters using the given set of vectors.</p></div>
+    <div>Finds the clusters using the given set of vectors.</div>
   </div>
 </div><div class="basemethod">
   
@@ -305,7 +302,7 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">likelihood</span>(self, vector, label):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L86">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L86">
       
       (source)
     </a>
@@ -313,8 +310,8 @@ from the data. Returns a cluster identifier for each vector.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.cluster.api.ClusterI.html#likelihood">nltk.cluster.api.ClusterI.likelihood</a></code></div>
     
-    <div><p class="pre">Returns the likelihood (a float) of the token having the
-corresponding cluster.</p></div>
+    <div>Returns the likelihood (a float) of the token having the
+corresponding cluster.</div>
   </div>
 </div><div class="basemethod">
   
@@ -328,7 +325,7 @@ corresponding cluster.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">likelihood_vectorspace</span>(self, vector, cluster):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L93">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L93">
       
       (source)
     </a>
@@ -336,7 +333,7 @@ corresponding cluster.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.cluster.em.EMClusterer.html">nltk.cluster.em.EMClusterer</a></code></div>
     
-    <div><p class="pre">Returns the likelihood of the vector belonging to the cluster.</p></div>
+    <div>Returns the likelihood of the vector belonging to the cluster.</div>
   </div>
 </div><div class="basemethod">
   
@@ -350,7 +347,7 @@ corresponding cluster.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">vector</span>(self, vector):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L100">
       
       (source)
     </a>
@@ -358,7 +355,7 @@ corresponding cluster.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the vector after normalisation and dimensionality reduction</p></div>
+    <div>Returns the vector after normalisation and dimensionality reduction</div>
   </div>
 </div><div class="basemethod private">
   
@@ -372,7 +369,7 @@ corresponding cluster.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_normalise</span>(self, vector):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L110">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L110">
       
       (source)
     </a>
@@ -380,7 +377,7 @@ corresponding cluster.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Normalises the vector to unit length.</p></div>
+    <div>Normalises the vector to unit length.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -394,7 +391,7 @@ corresponding cluster.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_should_normalise</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L38">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L38">
       
       (source)
     </a>
@@ -416,7 +413,7 @@ corresponding cluster.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_svd_dimensions</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L39">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L39">
       
       (source)
     </a>
@@ -438,7 +435,7 @@ corresponding cluster.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_Tt</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L37">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L37">
       
       (source)
     </a>
@@ -458,7 +455,7 @@ corresponding cluster.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

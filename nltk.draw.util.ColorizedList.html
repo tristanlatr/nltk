@@ -65,24 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ColorizedList</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2170" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.app.chartparser_app.EdgeList.html">nltk.app.chartparser_app.EdgeList</a></code>, <code><a href="nltk.draw.cfg.ProductionList.html">nltk.draw.cfg.ProductionList</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ColorizedList</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2170" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.app.chartparser_app.EdgeList.html">nltk.app.chartparser_app.EdgeList</a></code>, <code><a href="nltk.draw.cfg.ProductionList.html">nltk.draw.cfg.ProductionList</a></code></p>
         <p><a href="classIndex.html#nltk.draw.util.ColorizedList">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract base class for displaying a colorized list of items.
-Subclasses should define:
-  - ``_init_colortags``, which sets up Text color tags that
-    will be used by the list.
-  - ``_item_repr``, which returns a list of (text,colortag)
-    tuples that make up the colorized representation of the
-    item.
-:note: Typically, you will want to register a callback for
-    ``'select'`` that calls ``mark`` on the given item.</p></div>
+        <div><p>An abstract base class for displaying a colorized list of items.
+Subclasses should define:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">_init_colortags</tt>, which sets up Text color tags that
+will be used by the list.</li>
+<li><tt class="rst-docutils literal">_item_repr</tt>, which returns a list of (text,colortag)
+tuples that make up the colorized representation of the
+item.</li>
+</ul>
+</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Note</td></tr><tr><td colspan="2">Typically, you will want to register a callback for
+<tt class="rst-docutils literal">'select'</tt> that calls <tt class="rst-docutils literal">mark</tt> on the given item.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id618">
+        <table class="children sortable" id="id621">
   
   
   <tr class="method">
@@ -104,7 +108,7 @@ Subclasses should define:
     
     <td>Method</td>
     <td><code><a href="#get">get</a></code></td>
-    <td><span>:return: A list of the items contained by this list.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -114,12 +118,12 @@ Subclasses should define:
     
     <td>Method</td>
     <td><code><a href="#mark">mark</a></code></td>
-    <td><span>Highlight the given item. :raise ValueError: If ``item`` is not contained in the list.</span></td>
+    <td><span>Highlight the given item. :raise ValueError: If <tt class="rst-docutils literal">item</tt> is not contained in the list.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#markonly">markonly</a></code></td>
-    <td><span>Remove any current highlighting, and mark the given item. :raise ValueError: If ``item`` is not contained in the list.</span></td>
+    <td><span>Remove any current highlighting, and mark the given item. :raise ValueError: If <tt class="rst-docutils literal">item</tt> is not contained in the list.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -129,7 +133,7 @@ Subclasses should define:
     
     <td>Method</td>
     <td><code><a href="#remove_callback">remove_callback</a></code></td>
-    <td><span>Deregister a callback function.  If ``func`` is none, then all callbacks are removed for the given event.</span></td>
+    <td><span>Deregister a callback function.  If <tt class="rst-docutils literal">func</tt> is none, then all callbacks are removed for the given event.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -231,7 +235,7 @@ Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parent, items=[], **options):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2183">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2183">
       
       (source)
     </a>
@@ -239,11 +243,7 @@ Subclasses should define:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new list.
-
-:param parent: The Tk widget that contains the colorized list
-:param items: The initial contents of the colorized list.
-:param options:</p></div>
+    <div>Construct a new list.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parent</span></td><td class="fieldArgDesc">The Tk widget that contains the colorized list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">items</span></td><td class="fieldArgDesc">The initial contents of the colorized list.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">options</span></td><td class="fieldArgDesc"></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -257,7 +257,7 @@ Subclasses should define:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_callback</span>(self, event, func):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2310">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2310">
       
       (source)
     </a>
@@ -265,16 +265,13 @@ Subclasses should define:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Register a callback function with the list.  This function
-will be called whenever the given event occurs.
-
-:param event: The event that will trigger the callback
-    function.  Valid events are: click1, click2, click3,
-    space, return, select, up, down, next, prior, move
-:param func: The function that should be called when
-    the event occurs.  ``func`` will be called with a
-    single item as its argument.  (The item selected
-    or the item moved to).</p></div>
+    <div>Register a callback function with the list.  This function
+will be called whenever the given event occurs.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">event</span></td><td class="fieldArgDesc">The event that will trigger the callback
+function.  Valid events are: click1, click2, click3,
+space, return, select, up, down, next, prior, move</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">func</span></td><td class="fieldArgDesc">The function that should be called when
+the event occurs.  <tt class="rst-docutils literal">func</tt> will be called with a
+single item as its argument.  (The item selected
+or the item moved to).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -288,7 +285,7 @@ will be called whenever the given event occurs.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">focus</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2368">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2368">
       
       (source)
     </a>
@@ -310,7 +307,7 @@ will be called whenever the given event occurs.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get</span>(self, index=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2232">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2232">
       
       (source)
     </a>
@@ -318,7 +315,7 @@ will be called whenever the given event occurs.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: A list of the items contained by this list.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">A list of the items contained by this list.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -332,7 +329,7 @@ will be called whenever the given event occurs.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">grid</span>(self, cnf={}, **kw):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2364">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2364">
       
       (source)
     </a>
@@ -354,7 +351,7 @@ will be called whenever the given event occurs.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">mark</span>(self, item):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2280">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2280">
       
       (source)
     </a>
@@ -362,8 +359,8 @@ will be called whenever the given event occurs.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Highlight the given item.
-:raise ValueError: If ``item`` is not contained in the list.</p></div>
+    <div>Highlight the given item.
+:raise ValueError: If <tt class="rst-docutils literal">item</tt> is not contained in the list.</div>
   </div>
 </div><div class="basemethod">
   
@@ -377,7 +374,7 @@ will be called whenever the given event occurs.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">markonly</span>(self, item):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2290">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2290">
       
       (source)
     </a>
@@ -385,8 +382,8 @@ will be called whenever the given event occurs.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove any current highlighting, and mark the given item.
-:raise ValueError: If ``item`` is not contained in the list.</p></div>
+    <div>Remove any current highlighting, and mark the given item.
+:raise ValueError: If <tt class="rst-docutils literal">item</tt> is not contained in the list.</div>
   </div>
 </div><div class="basemethod">
   
@@ -400,7 +397,7 @@ will be called whenever the given event occurs.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pack</span>(self, cnf={}, **kw):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2360">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2360">
       
       (source)
     </a>
@@ -422,7 +419,7 @@ will be called whenever the given event occurs.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove_callback</span>(self, event, func=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2333">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2333">
       
       (source)
     </a>
@@ -430,8 +427,8 @@ will be called whenever the given event occurs.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Deregister a callback function.  If ``func`` is none, then
-all callbacks are removed for the given event.</p></div>
+    <div>Deregister a callback function.  If <tt class="rst-docutils literal">func</tt> is none, then
+all callbacks are removed for the given event.</div>
   </div>
 </div><div class="basemethod">
   
@@ -445,7 +442,7 @@ all callbacks are removed for the given event.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set</span>(self, items):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2241">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2241">
       
       (source)
     </a>
@@ -453,7 +450,7 @@ all callbacks are removed for the given event.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Modify the list of items contained by this list.</p></div>
+    <div>Modify the list of items contained by this list.</div>
   </div>
 </div><div class="basemethod">
   
@@ -467,7 +464,7 @@ all callbacks are removed for the given event.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unmark</span>(self, item=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2264">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2264">
       
       (source)
     </a>
@@ -475,10 +472,10 @@ all callbacks are removed for the given event.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Remove highlighting from the given item; or from every item,
+    <div>Remove highlighting from the given item; or from every item,
 if no item is given.
-:raise ValueError: If ``item`` is not contained in the list.
-:raise KeyError: If ``item`` is not marked.</p></div>
+:raise ValueError: If <tt class="rst-docutils literal">item</tt> is not contained in the list.
+:raise KeyError: If <tt class="rst-docutils literal">item</tt> is not marked.</div>
   </div>
 </div><div class="basemethod">
   
@@ -492,7 +489,7 @@ if no item is given.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">view</span>(self, item):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2298">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2298">
       
       (source)
     </a>
@@ -500,8 +497,8 @@ if no item is given.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Adjust the view such that the given item is visible.  If
-the item is already visible, then do nothing.</p></div>
+    <div>Adjust the view such that the given item is visible.  If
+the item is already visible, then do nothing.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -515,7 +512,7 @@ the item is already visible, then do nothing.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_buttonpress</span>(self, event):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2411">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2411">
       
       (source)
     </a>
@@ -537,7 +534,7 @@ the item is already visible, then do nothing.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_fire_callback</span>(self, event, itemnum):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2401">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2401">
       
       (source)
     </a>
@@ -559,7 +556,7 @@ the item is already visible, then do nothing.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_init_colortags</span>(self, textwidget, options):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2211">
       
       (source)
     </a>
@@ -567,9 +564,12 @@ the item is already visible, then do nothing.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.app.chartparser_app.EdgeList.html">nltk.app.chartparser_app.EdgeList</a></code>, <code><a href="nltk.draw.cfg.ProductionList.html">nltk.draw.cfg.ProductionList</a></code></div>
     
-    <div><p class="pre">Set up any colortags that will be used by this colorized list.
-E.g.:
-    &gt;&gt;&gt; textwidget.tag_config('terminal', foreground='black')</p></div>
+    <div><p>Set up any colortags that will be used by this colorized list.
+E.g.:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>textwidget.tag_config(<span class="py-string">'terminal'</span>, foreground=<span class="py-string">'black'</span>)</pre></blockquote>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -583,7 +583,7 @@ E.g.:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_init_itemframe</span>(self, options):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2376">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2376">
       
       (source)
     </a>
@@ -605,7 +605,7 @@ E.g.:
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_item_repr</span>(self, item):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2219">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2219">
       
       (source)
     </a>
@@ -613,10 +613,10 @@ E.g.:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.app.chartparser_app.EdgeList.html">nltk.app.chartparser_app.EdgeList</a></code>, <code><a href="nltk.draw.cfg.ProductionList.html">nltk.draw.cfg.ProductionList</a></code></div>
     
-    <div><p class="pre">Return a list of (text, colortag) tuples that make up the
+    <div>Return a list of (text, colortag) tuples that make up the
 colorized representation of the item.  Colorized
 representations may not span multiple lines.  I.e., the text
-strings returned may not contain newline characters.</p></div>
+strings returned may not contain newline characters.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -630,7 +630,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_keypress</span>(self, event):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2417">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2417">
       
       (source)
     </a>
@@ -652,7 +652,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_callbacks</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2192">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2192">
       
       (source)
     </a>
@@ -674,7 +674,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_itemframe</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2377">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2377">
       
       (source)
     </a>
@@ -696,7 +696,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_items</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2205">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2205">
       
       (source)
     </a>
@@ -718,7 +718,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_marks</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2195">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2195">
       
       (source)
     </a>
@@ -740,7 +740,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_parent</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2191">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2191">
       
       (source)
     </a>
@@ -762,7 +762,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_textscroll</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2382">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2382">
       
       (source)
     </a>
@@ -784,7 +784,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_textwidget</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/draw/util.py#L2381">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/draw/util.py#L2381">
       
       (source)
     </a>
@@ -804,7 +804,7 @@ strings returned may not contain newline characters.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

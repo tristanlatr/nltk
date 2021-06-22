@@ -65,101 +65,95 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Vocabulary</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L39" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Vocabulary</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L39" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.lm.Vocabulary">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Stores language model vocabulary.
-
-Satisfies two common language modeling requirements for a vocabulary:
-- When checking membership and calculating its size, filters items
-  by comparing their counts to a cutoff value.
-- Adds a special "unknown" token which unseen words are mapped to.
-
-&gt;&gt;&gt; words = ['a', 'c', '-', 'd', 'c', 'a', 'b', 'r', 'a', 'c', 'd']
-&gt;&gt;&gt; from nltk.lm import Vocabulary
-&gt;&gt;&gt; vocab = Vocabulary(words, unk_cutoff=2)
-
-Tokens with counts greater than or equal to the cutoff value will
-be considered part of the vocabulary.
-
-&gt;&gt;&gt; vocab['c']
-3
-&gt;&gt;&gt; 'c' in vocab
-True
-&gt;&gt;&gt; vocab['d']
-2
-&gt;&gt;&gt; 'd' in vocab
-True
-
-Tokens with frequency counts less than the cutoff value will be considered not
+        <div><p>Stores language model vocabulary.</p>
+<p>Satisfies two common language modeling requirements for a vocabulary:
+- When checking membership and calculating its size, filters items</p>
+<blockquote>
+by comparing their counts to a cutoff value.</blockquote>
+<ul class="rst-simple">
+<li>Adds a special "unknown" token which unseen words are mapped to.</li>
+</ul>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>words = [<span class="py-string">'a'</span>, <span class="py-string">'c'</span>, <span class="py-string">'-'</span>, <span class="py-string">'d'</span>, <span class="py-string">'c'</span>, <span class="py-string">'a'</span>, <span class="py-string">'b'</span>, <span class="py-string">'r'</span>, <span class="py-string">'a'</span>, <span class="py-string">'c'</span>, <span class="py-string">'d'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.lm <span class="py-keyword">import</span> Vocabulary
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab = Vocabulary(words, unk_cutoff=2)</pre><p>Tokens with counts greater than or equal to the cutoff value will
+be considered part of the vocabulary.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab[<span class="py-string">'c'</span>]
+<span class="py-output">3</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'c'</span> <span class="py-keyword">in</span> vocab
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab[<span class="py-string">'d'</span>]
+<span class="py-output">2</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'d'</span> <span class="py-keyword">in</span> vocab
+<span class="py-output">True</span>
+</pre><p>Tokens with frequency counts less than the cutoff value will be considered not
 part of the vocabulary even though their entries in the count dictionary are
-preserved.
-
-&gt;&gt;&gt; vocab['b']
-1
-&gt;&gt;&gt; 'b' in vocab
-False
-&gt;&gt;&gt; vocab['aliens']
-0
-&gt;&gt;&gt; 'aliens' in vocab
-False
-
-Keeping the count entries for seen words allows us to change the cutoff value
-without having to recalculate the counts.
-
-&gt;&gt;&gt; vocab2 = Vocabulary(vocab.counts, unk_cutoff=1)
-&gt;&gt;&gt; "b" in vocab2
-True
-
-The cutoff value influences not only membership checking but also the result of
-getting the size of the vocabulary using the built-in `len`.
+preserved.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab[<span class="py-string">'b'</span>]
+<span class="py-output">1</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'b'</span> <span class="py-keyword">in</span> vocab
+<span class="py-output">False</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab[<span class="py-string">'aliens'</span>]
+<span class="py-output">0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'aliens'</span> <span class="py-keyword">in</span> vocab
+<span class="py-output">False</span>
+</pre><p>Keeping the count entries for seen words allows us to change the cutoff value
+without having to recalculate the counts.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab2 = Vocabulary(vocab.counts, unk_cutoff=1)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">"b"</span> <span class="py-keyword">in</span> vocab2
+<span class="py-output">True</span>
+</pre><p>The cutoff value influences not only membership checking but also the result of
+getting the size of the vocabulary using the built-in <code><a href="https://docs.python.org/3/library/functions.html#len">len</a></code>.
 Note that while the number of keys in the vocabulary's counter stays the same,
 the items in the vocabulary differ depending on the cutoff.
-We use `sorted` to demonstrate because it keeps the order consistent.
-
-&gt;&gt;&gt; sorted(vocab2.counts)
-['-', 'a', 'b', 'c', 'd', 'r']
-&gt;&gt;&gt; sorted(vocab2)
-['-', '&lt;UNK&gt;', 'a', 'b', 'c', 'd', 'r']
-&gt;&gt;&gt; sorted(vocab.counts)
-['-', 'a', 'b', 'c', 'd', 'r']
-&gt;&gt;&gt; sorted(vocab)
-['&lt;UNK&gt;', 'a', 'c', 'd']
-
-In addition to items it gets populated with, the vocabulary stores a special
-token that stands in for so-called "unknown" items. By default it's "&lt;UNK&gt;".
-
-&gt;&gt;&gt; "&lt;UNK&gt;" in vocab
-True
-
-We can look up words in a vocabulary using its `lookup` method.
+We use <code><a href="https://docs.python.org/3/library/functions.html#sorted">sorted</a></code> to demonstrate because it keeps the order consistent.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sorted</span>(vocab2.counts)
+<span class="py-output">['-', 'a', 'b', 'c', 'd', 'r']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sorted</span>(vocab2)
+<span class="py-output">['-', '&lt;UNK&gt;', 'a', 'b', 'c', 'd', 'r']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sorted</span>(vocab.counts)
+<span class="py-output">['-', 'a', 'b', 'c', 'd', 'r']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sorted</span>(vocab)
+<span class="py-output">['&lt;UNK&gt;', 'a', 'c', 'd']</span>
+</pre><p>In addition to items it gets populated with, the vocabulary stores a special
+token that stands in for so-called "unknown" items. By default it's "&lt;UNK&gt;".</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">"&lt;UNK&gt;"</span> <span class="py-keyword">in</span> vocab
+<span class="py-output">True</span>
+</pre><p>We can look up words in a vocabulary using its <code><a href="#lookup">lookup</a></code> method.
 "Unseen" words (with counts less than cutoff) are looked up as the unknown label.
-If given one word (a string) as an input, this method will return a string.
-
-&gt;&gt;&gt; vocab.lookup("a")
-'a'
-&gt;&gt;&gt; vocab.lookup("aliens")
-'&lt;UNK&gt;'
-
-If given a sequence, it will return an tuple of the looked up words.
-
-&gt;&gt;&gt; vocab.lookup(["p", 'a', 'r', 'd', 'b', 'c'])
-('&lt;UNK&gt;', 'a', '&lt;UNK&gt;', 'd', '&lt;UNK&gt;', 'c')
-
-It's possible to update the counts after the vocabulary has been created.
-In general, the interface is the same as that of `collections.Counter`.
-
-&gt;&gt;&gt; vocab['b']
-1
-&gt;&gt;&gt; vocab.update(["b", "b", "c"])
-&gt;&gt;&gt; vocab['b']
-3</p></div>
+If given one word (a string) as an input, this method will return a string.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab.lookup(<span class="py-string">"a"</span>)
+<span class="py-output">'a'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab.lookup(<span class="py-string">"aliens"</span>)
+<span class="py-output">'&lt;UNK&gt;'</span>
+</pre><p>If given a sequence, it will return an tuple of the looked up words.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab.lookup([<span class="py-string">"p"</span>, <span class="py-string">'a'</span>, <span class="py-string">'r'</span>, <span class="py-string">'d'</span>, <span class="py-string">'b'</span>, <span class="py-string">'c'</span>])
+<span class="py-output">('&lt;UNK&gt;', 'a', '&lt;UNK&gt;', 'd', '&lt;UNK&gt;', 'c')</span>
+</pre><p>It's possible to update the counts after the vocabulary has been created.
+In general, the interface is the same as that of <code><a href="https://docs.python.org/3/library/collections.html#collections.Counter">collections.Counter</a></code>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab[<span class="py-string">'b'</span>]
+<span class="py-output">1</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab.update([<span class="py-string">"b"</span>, <span class="py-string">"b"</span>, <span class="py-string">"c"</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab[<span class="py-string">'b'</span>]
+<span class="py-output">3</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id805">
+        <table class="children sortable" id="id808">
   
   
   <tr class="method">
@@ -253,7 +247,7 @@ In general, the interface is the same as that of `collections.Counter`.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__contains__</span>(self, item):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L194">
       
       (source)
     </a>
@@ -261,8 +255,8 @@ In general, the interface is the same as that of `collections.Counter`.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Only consider items with counts GE to cutoff as being in the
-vocabulary.</p></div>
+    <div>Only consider items with counts GE to cutoff as being in the
+vocabulary.</div>
   </div>
 </div><div class="basemethod">
   
@@ -276,7 +270,7 @@ vocabulary.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L211">
       
       (source)
     </a>
@@ -298,7 +292,7 @@ vocabulary.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, item):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L191">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L191">
       
       (source)
     </a>
@@ -320,7 +314,7 @@ vocabulary.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, counts=None, unk_cutoff=1, unk_label='&lt;UNK&gt;'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L128">
       
       (source)
     </a>
@@ -328,14 +322,10 @@ vocabulary.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a new Vocabulary.
-
-:param counts: Optional iterable or `collections.Counter` instance to
-               pre-seed the Vocabulary. In case it is iterable, counts
-               are calculated.
-:param int unk_cutoff: Words that occur less frequently than this value
-                       are not considered part of the vocabulary.
-:param unk_label: Label for marking words not part of vocabulary.</p></div>
+    <div>Create a new Vocabulary.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">counts</span></td><td class="fieldArgDesc">Optional iterable or <code><a href="https://docs.python.org/3/library/collections.html#collections.Counter">collections.Counter</a></code> instance to
+pre-seed the Vocabulary. In case it is iterable, counts
+are calculated.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">unk_cutoff</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">unk_label</span></td><td class="fieldArgDesc">Label for marking words not part of vocabulary.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">int unk_cutoff</span></td><td class="fieldArgDesc">Words that occur less frequently than this value
+are not considered part of the vocabulary.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -349,7 +339,7 @@ vocabulary.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L199">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L199">
       
       (source)
     </a>
@@ -357,8 +347,8 @@ vocabulary.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Building on membership check define how to iterate over
-vocabulary.</p></div>
+    <div>Building on membership check define how to iterate over
+vocabulary.</div>
   </div>
 </div><div class="basemethod">
   
@@ -372,7 +362,7 @@ vocabulary.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L207">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L207">
       
       (source)
     </a>
@@ -380,7 +370,7 @@ vocabulary.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Computing size of vocabulary reflects the cutoff.</p></div>
+    <div>Computing size of vocabulary reflects the cutoff.</div>
   </div>
 </div><div class="basemethod">
   
@@ -394,7 +384,7 @@ vocabulary.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L218">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L218">
       
       (source)
     </a>
@@ -416,7 +406,7 @@ vocabulary.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">lookup</span>(self, words):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L167">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L167">
       
       (source)
     </a>
@@ -424,25 +414,20 @@ vocabulary.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Look up one or more words in the vocabulary.
-
-If passed one word as a string will return that word or `self.unk_label`.
+    <div><p>Look up one or more words in the vocabulary.</p>
+<p>If passed one word as a string will return that word or <code>self.unk_label</code>.
 Otherwise will assume it was passed a sequence of words, will try to look
-each of them up and return an iterator over the looked up words.
-
-:param words: Word(s) to look up.
-:type words: Iterable(str) or str
-:rtype: generator(str) or str
-:raises: TypeError for types other than strings or iterables
-
-&gt;&gt;&gt; from nltk.lm import Vocabulary
-&gt;&gt;&gt; vocab = Vocabulary(["a", "b", "c", "a", "b"], unk_cutoff=2)
-&gt;&gt;&gt; vocab.lookup("a")
-'a'
-&gt;&gt;&gt; vocab.lookup("aliens")
-'&lt;UNK&gt;'
-&gt;&gt;&gt; vocab.lookup(["a", "b", "c", ["x", "b"]])
-('a', 'b', '&lt;UNK&gt;', ('&lt;UNK&gt;', 'b'))</p></div>
+each of them up and return an iterator over the looked up words.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.lm <span class="py-keyword">import</span> Vocabulary
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab = Vocabulary([<span class="py-string">"a"</span>, <span class="py-string">"b"</span>, <span class="py-string">"c"</span>, <span class="py-string">"a"</span>, <span class="py-string">"b"</span>], unk_cutoff=2)
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab.lookup(<span class="py-string">"a"</span>)
+<span class="py-output">'a'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab.lookup(<span class="py-string">"aliens"</span>)
+<span class="py-output">'&lt;UNK&gt;'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>vocab.lookup([<span class="py-string">"a"</span>, <span class="py-string">"b"</span>, <span class="py-string">"c"</span>, [<span class="py-string">"x"</span>, <span class="py-string">"b"</span>]])
+<span class="py-output">('a', 'b', '&lt;UNK&gt;', ('&lt;UNK&gt;', 'b'))</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">words:</span>Iterable(str) or str</td><td class="fieldArgDesc">Word(s) to look up.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">generator(str) or str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><span class="undocumented">Unknown exception</span></code></td><td>TypeError for types other than strings or iterables</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -456,7 +441,7 @@ each of them up and return an iterator over the looked up words.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, *counter_args, **counter_kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L158">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L158">
       
       (source)
     </a>
@@ -464,9 +449,9 @@ each of them up and return an iterator over the looked up words.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Update vocabulary counts.
-
-Wraps `collections.Counter.update` method.</p></div>
+    <div><p>Update vocabulary counts.</p>
+<p>Wraps <code><a href="https://docs.python.org/3/library/collections.html#collections.Counter.update">collections.Counter.update</a></code> method.</p>
+</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -480,7 +465,7 @@ Wraps `collections.Counter.update` method.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">counts</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L146">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L146">
       
       (source)
     </a>
@@ -502,7 +487,7 @@ Wraps `collections.Counter.update` method.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">unk_label</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L139">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L139">
       
       (source)
     </a>
@@ -524,7 +509,7 @@ Wraps `collections.Counter.update` method.</p></div>
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">cutoff</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L149">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L149">
       
       (source)
     </a>
@@ -532,9 +517,9 @@ Wraps `collections.Counter.update` method.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">Cutoff value.
-
-Items with count below this value are not considered part of vocabulary.</p></div>
+    <div><p>Cutoff value.</p>
+<p>Items with count below this value are not considered part of vocabulary.</p>
+</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -548,7 +533,7 @@ Items with count below this value are not considered part of vocabulary.</p></di
   <div class="functionHeader">
     
     <span class="py-defname">_cutoff</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L144">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L144">
       
       (source)
     </a>
@@ -570,7 +555,7 @@ Items with count below this value are not considered part of vocabulary.</p></di
   <div class="functionHeader">
     
     <span class="py-defname">_len</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/vocabulary.py#L165">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/vocabulary.py#L165">
       
       (source)
     </a>
@@ -590,7 +575,7 @@ Items with count below this value are not considered part of vocabulary.</p></di
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

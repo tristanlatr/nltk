@@ -65,40 +65,36 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">PerceptronTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L123" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PerceptronTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L123" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.perceptron.PerceptronTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Greedy Averaged Perceptron tagger, as implemented by Matthew Honnibal.
-See more implementation details here:
-    https://explosion.ai/blog/part-of-speech-pos-tagger-in-python
-
-&gt;&gt;&gt; from nltk.tag.perceptron import PerceptronTagger
-
-Train the model
-
-&gt;&gt;&gt; tagger = PerceptronTagger(load=False)
-
-&gt;&gt;&gt; tagger.train([[('today','NN'),('is','VBZ'),('good','JJ'),('day','NN')],
-... [('yes','NNS'),('it','PRP'),('beautiful','JJ')]])
-
-&gt;&gt;&gt; tagger.tag(['today','is','a','beautiful','day'])
-[('today', 'NN'), ('is', 'PRP'), ('a', 'PRP'), ('beautiful', 'JJ'), ('day', 'NN')]
-
-Use the pretrain model (the default constructor)
-
-&gt;&gt;&gt; pretrain = PerceptronTagger()
-
-&gt;&gt;&gt; pretrain.tag('The quick brown fox jumps over the lazy dog'.split())
-[('The', 'DT'), ('quick', 'JJ'), ('brown', 'NN'), ('fox', 'NN'), ('jumps', 'VBZ'), ('over', 'IN'), ('the', 'DT'), ('lazy', 'JJ'), ('dog', 'NN')]
-
-&gt;&gt;&gt; pretrain.tag("The red cat".split())
-[('The', 'DT'), ('red', 'JJ'), ('cat', 'NN')]</p></div>
+        <div><p>Greedy Averaged Perceptron tagger, as implemented by Matthew Honnibal.
+See more implementation details here:</p>
+<blockquote>
+<a class="rst-reference external" href="https://explosion.ai/blog/part-of-speech-pos-tagger-in-python" target="_top">https://explosion.ai/blog/part-of-speech-pos-tagger-in-python</a></blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag.perceptron <span class="py-keyword">import</span> PerceptronTagger</pre><p>Train the model</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tagger = PerceptronTagger(load=<span class="py-builtin">False</span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tagger.train([[(<span class="py-string">'today'</span>,<span class="py-string">'NN'</span>),(<span class="py-string">'is'</span>,<span class="py-string">'VBZ'</span>),(<span class="py-string">'good'</span>,<span class="py-string">'JJ'</span>),(<span class="py-string">'day'</span>,<span class="py-string">'NN'</span>)],
+<span class="py-more">... </span>[(<span class="py-string">'yes'</span>,<span class="py-string">'NNS'</span>),(<span class="py-string">'it'</span>,<span class="py-string">'PRP'</span>),(<span class="py-string">'beautiful'</span>,<span class="py-string">'JJ'</span>)]])</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tagger.tag([<span class="py-string">'today'</span>,<span class="py-string">'is'</span>,<span class="py-string">'a'</span>,<span class="py-string">'beautiful'</span>,<span class="py-string">'day'</span>])
+<span class="py-output">[('today', 'NN'), ('is', 'PRP'), ('a', 'PRP'), ('beautiful', 'JJ'), ('day', 'NN')]</span>
+</pre><p>Use the pretrain model (the default constructor)</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pretrain = PerceptronTagger()</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pretrain.tag(<span class="py-string">'The quick brown fox jumps over the lazy dog'</span>.split())
+<span class="py-output">[('The', 'DT'), ('quick', 'JJ'), ('brown', 'NN'), ('fox', 'NN'), ('jumps', 'VBZ'), ('over', 'IN'), ('the', 'DT'), ('lazy', 'JJ'), ('dog', 'NN')]</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pretrain.tag(<span class="py-string">"The red cat"</span>.split())
+<span class="py-output">[('The', 'DT'), ('red', 'JJ'), ('cat', 'NN')]</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1564">
+        <table class="children sortable" id="id1568">
   
   
   <tr class="classmethod">
@@ -110,7 +106,7 @@ Use the pretrain model (the default constructor)
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param load: Load the pickled model upon instantiation.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -120,7 +116,7 @@ Use the pretrain model (the default constructor)
     
     <td>Method</td>
     <td><code><a href="#load">load</a></code></td>
-    <td><span>:param loc: Load a pickled model at location. :type loc: str</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -135,7 +131,7 @@ Use the pretrain model (the default constructor)
     
     <td>Method</td>
     <td><code><a href="#train">train</a></code></td>
-    <td><span>Train a model from sentences, and save it at ``save_loc``. ``nr_iter`` controls the number of Perceptron training iterations.</span></td>
+    <td><span>Train a model from sentences, and save it at <tt class="rst-docutils literal">save_loc</tt>. <tt class="rst-docutils literal">nr_iter</tt> controls the number of Perceptron training iterations.</span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -187,7 +183,7 @@ Use the pretrain model (the default constructor)
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code>:
           </p>
-          <table class="children sortable" id="id1565">
+          <table class="children sortable" id="id1569">
   
   
   <tr class="basemethod">
@@ -199,7 +195,7 @@ Use the pretrain model (the default constructor)
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -226,7 +222,7 @@ Use the pretrain model (the default constructor)
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">decode_json_obj</span>(cls, obj):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L259">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L259">
       
       (source)
     </a>
@@ -248,7 +244,7 @@ Use the pretrain model (the default constructor)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, load=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L159">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L159">
       
       (source)
     </a>
@@ -256,7 +252,7 @@ Use the pretrain model (the default constructor)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param load: Load the pickled model upon instantiation.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">load</span></td><td class="fieldArgDesc">Load the pickled model upon instantiation.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -270,7 +266,7 @@ Use the pretrain model (the default constructor)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">encode_json_obj</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L256">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L256">
       
       (source)
     </a>
@@ -292,7 +288,7 @@ Use the pretrain model (the default constructor)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">load</span>(self, loc):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L247">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L247">
       
       (source)
     </a>
@@ -300,8 +296,7 @@ Use the pretrain model (the default constructor)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param loc: Load a pickled model at location.
-:type loc: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">loc:</span>str</td><td class="fieldArgDesc">Load a pickled model at location.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -315,7 +310,7 @@ Use the pretrain model (the default constructor)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">normalize</span>(self, word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L267">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L267">
       
       (source)
     </a>
@@ -323,12 +318,10 @@ Use the pretrain model (the default constructor)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Normalization used in pre-processing.
+    <div>Normalization used in pre-processing.
 - All words are lower cased
 - Groups of digits of length 4 are represented as !YEAR;
-- Other digits are represented as !DIGITS
-
-:rtype: str</p></div>
+- Other digits are represented as !DIGITS<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -342,7 +335,7 @@ Use the pretrain model (the default constructor)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, tokens, return_conf=False, use_tagdict=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L172">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L172">
       
       (source)
     </a>
@@ -350,9 +343,9 @@ Use the pretrain model (the default constructor)
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.api.TaggerI.html#tag">nltk.tag.api.TaggerI.tag</a></code></div>
     
-    <div><p class="pre">Tag tokenized sentences.
+    <div>Tag tokenized sentences.
 :params tokens: list of word
-:type tokens: list(str)</p></div>
+:type tokens: list(str)</div>
   </div>
 </div><div class="basemethod">
   
@@ -366,7 +359,7 @@ Use the pretrain model (the default constructor)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, sentences, save_loc=None, nr_iter=5):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L196">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L196">
       
       (source)
     </a>
@@ -374,13 +367,9 @@ Use the pretrain model (the default constructor)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Train a model from sentences, and save it at ``save_loc``. ``nr_iter``
-controls the number of Perceptron training iterations.
-
-:param sentences: A list or iterator of sentences, where each sentence
-    is a list of (words, tags) tuples.
-:param save_loc: If not ``None``, saves a pickled model in this location.
-:param nr_iter: Number of training iterations.</p></div>
+    <div>Train a model from sentences, and save it at <tt class="rst-docutils literal">save_loc</tt>. <tt class="rst-docutils literal">nr_iter</tt>
+controls the number of Perceptron training iterations.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentences</span></td><td class="fieldArgDesc">A list or iterator of sentences, where each sentence
+is a list of (words, tags) tuples.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">save_loc</span></td><td class="fieldArgDesc">If not <tt class="rst-docutils literal">None</tt>, saves a pickled model in this location.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_iter</span></td><td class="fieldArgDesc">Number of training iterations.</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -394,7 +383,7 @@ controls the number of Perceptron training iterations.
   <div class="functionHeader">
     
     <span class="py-defname">END</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L157">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L157">
       
       (source)
     </a>
@@ -416,7 +405,7 @@ controls the number of Perceptron training iterations.
   <div class="functionHeader">
     
     <span class="py-defname">json_tag</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L154">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L154">
       
       (source)
     </a>
@@ -438,7 +427,7 @@ controls the number of Perceptron training iterations.
   <div class="functionHeader">
     
     <span class="py-defname">START</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L156">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L156">
       
       (source)
     </a>
@@ -460,7 +449,7 @@ controls the number of Perceptron training iterations.
   <div class="functionHeader">
     
     <span class="py-defname">classes</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L165">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L165">
       
       (source)
     </a>
@@ -482,7 +471,7 @@ controls the number of Perceptron training iterations.
   <div class="functionHeader">
     
     <span class="py-defname">model</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L163">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L163">
       
       (source)
     </a>
@@ -504,7 +493,7 @@ controls the number of Perceptron training iterations.
   <div class="functionHeader">
     
     <span class="py-defname">tagdict</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L164">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L164">
       
       (source)
     </a>
@@ -526,7 +515,7 @@ controls the number of Perceptron training iterations.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_features</span>(self, i, word, context, prev, prev2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L284">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L284">
       
       (source)
     </a>
@@ -534,9 +523,9 @@ controls the number of Perceptron training iterations.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Map tokens into a feature representation, implemented as a
+    <div>Map tokens into a feature representation, implemented as a
 {hashable: int} dict. If the features change, a new model must be
-trained.</p></div>
+trained.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -550,7 +539,7 @@ trained.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_make_tagdict</span>(self, sentences):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L312">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L312">
       
       (source)
     </a>
@@ -558,8 +547,8 @@ trained.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Make a tag dictionary for single-tag words.
-:param sentences: A list of list of (word, tag) tuples.</p></div>
+    <div>Make a tag dictionary for single-tag words.
+:param sentences: A list of list of (word, tag) tuples.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -573,7 +562,7 @@ trained.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_sentences</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/perceptron.py#L212">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/perceptron.py#L212">
       
       (source)
     </a>
@@ -593,7 +582,7 @@ trained.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

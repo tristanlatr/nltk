@@ -65,20 +65,20 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ARFF_Formatter</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L249" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ARFF_Formatter</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L249" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.classify.weka.ARFF_Formatter">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Converts featuresets and labeled featuresets to ARFF-formatted
-strings, appropriate for input into Weka.
-
-Features and classes can be specified manually in the constructor, or may
-be determined from data using ``from_train``.</p></div>
+        <div><p>Converts featuresets and labeled featuresets to ARFF-formatted
+strings, appropriate for input into Weka.</p>
+<p>Features and classes can be specified manually in the constructor, or may
+be determined from data using <tt class="rst-docutils literal">from_train</tt>.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id179">
+        <table class="children sortable" id="id182">
   
   
   <tr class="staticmethod">
@@ -152,7 +152,7 @@ be determined from data using ``from_train``.</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">from_train</span>(tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L284">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L284">
       
       (source)
     </a>
@@ -160,9 +160,9 @@ be determined from data using ``from_train``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Constructs an ARFF_Formatter instance with class labels and feature
+    <div>Constructs an ARFF_Formatter instance with class labels and feature
 types determined from the given data. Handles boolean, numeric and
-string (note: not nominal) types.</p></div>
+string (note: not nominal) types.</div>
   </div>
 </div><div class="basemethod">
   
@@ -176,7 +176,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, labels, features):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L258">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L258">
       
       (source)
     </a>
@@ -184,11 +184,10 @@ string (note: not nominal) types.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param labels: A list of all class labels that can be generated.
-:param features: A list of feature specifications, where
-    each feature specification is a tuple (fname, ftype);
-    and ftype is an ARFF type string such as NUMERIC or
-    STRING.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labels</span></td><td class="fieldArgDesc">A list of all class labels that can be generated.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">features</span></td><td class="fieldArgDesc">A list of feature specifications, where
+each feature specification is a tuple (fname, ftype);
+and ftype is an ARFF type string such as NUMERIC or
+STRING.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -202,7 +201,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">data_section</span>(self, tokens, labeled=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L337">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L337">
       
       (source)
     </a>
@@ -210,13 +209,10 @@ string (note: not nominal) types.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the ARFF data section for the given data.
-
-:param tokens: a list of featuresets (dicts) or labelled featuresets
-    which are tuples (featureset, label).
-:param labeled: Indicates whether the given tokens are labeled
-    or not.  If None, then the tokens will be assumed to be
-    labeled if the first token's value is a tuple or list.</p></div>
+    <div>Returns the ARFF data section for the given data.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens</span></td><td class="fieldArgDesc">a list of featuresets (dicts) or labelled featuresets
+which are tuples (featureset, label).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labeled</span></td><td class="fieldArgDesc">Indicates whether the given tokens are labeled
+or not.  If None, then the tokens will be assumed to be
+labeled if the first token's value is a tuple or list.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -230,7 +226,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">format</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L269">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L269">
       
       (source)
     </a>
@@ -238,7 +234,7 @@ string (note: not nominal) types.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns a string representation of ARFF output for the given data.</p></div>
+    <div>Returns a string representation of ARFF output for the given data.</div>
   </div>
 </div><div class="basemethod">
   
@@ -252,7 +248,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">header_section</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L316">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L316">
       
       (source)
     </a>
@@ -260,7 +256,7 @@ string (note: not nominal) types.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns an ARFF header as a string.</p></div>
+    <div>Returns an ARFF header as a string.</div>
   </div>
 </div><div class="basemethod">
   
@@ -274,7 +270,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">labels</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L273">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L273">
       
       (source)
     </a>
@@ -282,7 +278,7 @@ string (note: not nominal) types.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the list of classes.</p></div>
+    <div>Returns the list of classes.</div>
   </div>
 </div><div class="basemethod">
   
@@ -296,7 +292,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">write</span>(self, outfile, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L277">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L277">
       
       (source)
     </a>
@@ -304,7 +300,7 @@ string (note: not nominal) types.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Writes ARFF data to a file for the given data.</p></div>
+    <div>Writes ARFF data to a file for the given data.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -318,7 +314,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_fmt_arff_val</span>(self, fval):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L363">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L363">
       
       (source)
     </a>
@@ -340,7 +336,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_features</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L267">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L267">
       
       (source)
     </a>
@@ -362,7 +358,7 @@ string (note: not nominal) types.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_labels</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/classify/weka.py#L266">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/classify/weka.py#L266">
       
       (source)
     </a>
@@ -382,7 +378,7 @@ string (note: not nominal) types.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

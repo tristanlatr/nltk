@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SennaChunkTagger</span>(<span title="nltk.classify.Senna">Senna</span>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/senna.py#L64" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SennaChunkTagger</span>(<span title="nltk.classify.Senna">Senna</span>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/senna.py#L64" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.senna.SennaChunkTagger">View In Hierarchy</a></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1568">
+        <table class="children sortable" id="id1572">
   
   
   <tr class="method">
@@ -113,7 +113,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, path, encoding='utf-8'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/senna.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/senna.py#L65">
       
       (source)
     </a>
@@ -135,7 +135,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bio_to_chunks</span>(self, tagged_sent, chunk_type):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/senna.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/senna.py#L80">
       
       (source)
     </a>
@@ -143,27 +143,20 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extracts the chunks in a BIO chunk-tagged sentence.
-
-&gt;&gt;&gt; from nltk.tag import SennaChunkTagger
-&gt;&gt;&gt; chktagger = SennaChunkTagger('/usr/share/senna-v3.0')
-&gt;&gt;&gt; sent = 'What is the airspeed of an unladen swallow ?'.split()
-&gt;&gt;&gt; tagged_sent = chktagger.tag(sent) # doctest: +SKIP
-&gt;&gt;&gt; tagged_sent # doctest: +SKIP
-[('What', 'B-NP'), ('is', 'B-VP'), ('the', 'B-NP'), ('airspeed', 'I-NP'),
-('of', 'B-PP'), ('an', 'B-NP'), ('unladen', 'I-NP'), ('swallow', 'I-NP'),
-('?', 'O')]
-&gt;&gt;&gt; list(chktagger.bio_to_chunks(tagged_sent, chunk_type='NP')) # doctest: +SKIP
-[('What', '0'), ('the airspeed', '2-3'), ('an unladen swallow', '5-6-7')]
-
-:param tagged_sent: A list of tuples of word and BIO chunk tag.
-:type tagged_sent: list(tuple)
-:param tagged_sent: The chunk tag that users want to extract, e.g. 'NP' or 'VP'
-:type tagged_sent: str
-
-:return: An iterable of tuples of chunks that users want to extract
-  and their corresponding indices.
-:rtype: iter(tuple(str))</p></div>
+    <div><p>Extracts the chunks in a BIO chunk-tagged sentence.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> SennaChunkTagger
+<span class="py-prompt">&gt;&gt;&gt; </span>chktagger = SennaChunkTagger(<span class="py-string">'/usr/share/senna-v3.0'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = <span class="py-string">'What is the airspeed of an unladen swallow ?'</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span>tagged_sent = chktagger.tag(sent) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>tagged_sent <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('What', 'B-NP'), ('is', 'B-VP'), ('the', 'B-NP'), ('airspeed', 'I-NP'),</span>
+<span class="py-output">('of', 'B-PP'), ('an', 'B-NP'), ('unladen', 'I-NP'), ('swallow', 'I-NP'),</span>
+<span class="py-output">('?', 'O')]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(chktagger.bio_to_chunks(tagged_sent, chunk_type=<span class="py-string">'NP'</span>)) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('What', '0'), ('the airspeed', '2-3'), ('an unladen swallow', '5-6-7')]</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagged_sent:</span>str</td><td class="fieldArgDesc">The chunk tag that users want to extract, e.g. 'NP' or 'VP'</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chunk_type</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(tuple(str))</td><td class="fieldArgDesc">An iterable of tuples of chunks that users want to extract
+and their corresponding indices.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -177,7 +170,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag_sents</span>(self, sentences):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/senna.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/senna.py#L68">
       
       (source)
     </a>
@@ -185,8 +178,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Applies the tag method over a list of sentences. This method will return
-for each sentence a list of tuples of (word, tag).</p></div>
+    <div>Applies the tag method over a list of sentences. This method will return
+for each sentence a list of tuples of (word, tag).</div>
   </div>
 </div>
 
@@ -198,7 +191,7 @@ for each sentence a list of tuples of (word, tag).</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

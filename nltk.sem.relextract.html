@@ -65,27 +65,27 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Code for extracting relational triples from the ieer and conll2002 corpora.
-
-Relations are stored internally as dictionaries ('reldicts').
-
-The two serialization outputs are "rtuple" and "clause".
-
-- An rtuple is a tuple of the form ``(subj, filler, obj)``,
-  where ``subj`` and ``obj`` are pairs of Named Entity mentions, and ``filler`` is the string of words
-  occurring between ``sub`` and ``obj`` (with no intervening NEs). Strings are printed via ``repr()`` to
-  circumvent locale variations in rendering utf-8 encoded strings.
-- A clause is an atom of the form ``relsym(subjsym, objsym)``,
-  where the relation, subject and object have been canonicalized to single strings.</p></div>
+        <div><p>Code for extracting relational triples from the ieer and conll2002 corpora.</p>
+<p>Relations are stored internally as dictionaries ('reldicts').</p>
+<p>The two serialization outputs are "rtuple" and "clause".</p>
+<ul class="rst-simple">
+<li>An rtuple is a tuple of the form <tt class="rst-docutils literal">(subj, filler, obj)</tt>,
+where <tt class="rst-docutils literal">subj</tt> and <tt class="rst-docutils literal">obj</tt> are pairs of Named Entity mentions, and <tt class="rst-docutils literal">filler</tt> is the string of words
+occurring between <tt class="rst-docutils literal">sub</tt> and <tt class="rst-docutils literal">obj</tt> (with no intervening NEs). Strings are printed via <tt class="rst-docutils literal">repr()</tt> to
+circumvent locale variations in rendering utf-8 encoded strings.</li>
+<li>A clause is an atom of the form <tt class="rst-docutils literal">relsym(subjsym, objsym)</tt>,
+where the relation, subject and object have been canonicalized to single strings.</li>
+</ul>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1450">
+        <table class="children sortable" id="id1454">
   
   
   <tr class="function">
@@ -117,7 +117,7 @@ The two serialization outputs are "rtuple" and "clause".
     
     <td>Function</td>
     <td><code><a href="#extract_rels">extract_rels</a></code></td>
-    <td><span>Filter the output of ``semi_rel2reldict`` according to specified NE classes and a filler pattern.</span></td>
+    <td><span>Filter the output of <tt class="rst-docutils literal">semi_rel2reldict</tt> according to specified NE classes and a filler pattern.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -157,7 +157,7 @@ The two serialization outputs are "rtuple" and "clause".
     
     <td>Function</td>
     <td><code><a href="#tree2semi_rel">tree2semi_rel</a></code></td>
-    <td><span>Group a chunk structure into a list of 'semi-relations' of the form (list(str), ``Tree``).</span></td>
+    <td><span>Group a chunk structure into a list of 'semi-relations' of the form (list(str), <tt class="rst-docutils literal">Tree</tt>).</span></td>
   </tr><tr class="variable">
     
     <td>Variable</td>
@@ -204,7 +204,7 @@ The two serialization outputs are "rtuple" and "clause".
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">class_abbrev</span>(type):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L75">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L75">
       
       (source)
     </a>
@@ -212,9 +212,9 @@ The two serialization outputs are "rtuple" and "clause".
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Abbreviate an NE class name.
+    <div>Abbreviate an NE class name.
 :type type: str
-:rtype: str</p></div>
+:rtype: str</div>
   </div>
 </div><div class="basefunction">
   
@@ -228,7 +228,7 @@ The two serialization outputs are "rtuple" and "clause".
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">clause</span>(reldict, relsym):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L287">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L287">
       
       (source)
     </a>
@@ -236,11 +236,11 @@ The two serialization outputs are "rtuple" and "clause".
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print the relation in clausal form.
+    <div>Print the relation in clausal form.
 :param reldict: a relation dictionary
 :type reldict: defaultdict
 :param relsym: a label for the relation
-:type relsym: str</p></div>
+:type relsym: str</div>
   </div>
 </div><div class="basefunction">
   
@@ -254,7 +254,7 @@ The two serialization outputs are "rtuple" and "clause".
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">conllesp</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L491">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L491">
       
       (source)
     </a>
@@ -276,7 +276,7 @@ The two serialization outputs are "rtuple" and "clause".
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">conllned</span>(trace=1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L452">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L452">
       
       (source)
     </a>
@@ -284,8 +284,8 @@ The two serialization outputs are "rtuple" and "clause".
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Find the copula+'van' relation ('of') in the Dutch tagged training corpus
-from CoNLL 2002.</p></div>
+    <div>Find the copula+'van' relation ('of') in the Dutch tagged training corpus
+from CoNLL 2002.</div>
   </div>
 </div><div class="basefunction">
   
@@ -299,7 +299,7 @@ from CoNLL 2002.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">descape_entity</span>(m, defs=html.entities.entitydefs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L104">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L104">
       
       (source)
     </a>
@@ -307,8 +307,8 @@ from CoNLL 2002.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Translate one entity to its ISO Latin value.
-Inspired by example from effbot.org</p></div>
+    <div>Translate one entity to its ISO Latin value.
+Inspired by example from effbot.org</div>
   </div>
 </div><div class="basefunction">
   
@@ -322,7 +322,7 @@ Inspired by example from effbot.org</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">extract_rels</span>(subjclass, objclass, doc, corpus='ace', pattern=None, window=10):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L202">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L202">
       
       (source)
     </a>
@@ -330,28 +330,13 @@ Inspired by example from effbot.org</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Filter the output of ``semi_rel2reldict`` according to specified NE classes and a filler pattern.
-
-The parameters ``subjclass`` and ``objclass`` can be used to restrict the
+    <div><p>Filter the output of <tt class="rst-docutils literal">semi_rel2reldict</tt> according to specified NE classes and a filler pattern.</p>
+<p>The parameters <tt class="rst-docutils literal">subjclass</tt> and <tt class="rst-docutils literal">objclass</tt> can be used to restrict the
 Named Entities to particular types (any of 'LOCATION', 'ORGANIZATION',
-'PERSON', 'DURATION', 'DATE', 'CARDINAL', 'PERCENT', 'MONEY', 'MEASURE').
-
-:param subjclass: the class of the subject Named Entity.
-:type subjclass: str
-:param objclass: the class of the object Named Entity.
-:type objclass: str
-:param doc: input document
-:type doc: ieer document or a list of chunk trees
-:param corpus: name of the corpus to take as input; possible values are
-    'ieer' and 'conll2002'
-:type corpus: str
-:param pattern: a regular expression for filtering the fillers of
-    retrieved triples.
-:type pattern: SRE_Pattern
-:param window: filters out fillers which exceed this threshold
-:type window: int
-:return: see ``mk_reldicts``
-:rtype: list(defaultdict)</p></div>
+'PERSON', 'DURATION', 'DATE', 'CARDINAL', 'PERCENT', 'MONEY', 'MEASURE').</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">subjclass:</span>str</td><td class="fieldArgDesc">the class of the subject Named Entity.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">objclass:</span>str</td><td class="fieldArgDesc">the class of the object Named Entity.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">doc:</span>ieer document or a list of chunk trees</td><td class="fieldArgDesc">input document</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">corpus:</span>str</td><td class="fieldArgDesc">name of the corpus to take as input; possible values are
+'ieer' and 'conll2002'</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pattern:</span>SRE_Pattern</td><td class="fieldArgDesc">a regular expression for filtering the fillers of
+retrieved triples.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">window:</span>int</td><td class="fieldArgDesc">filters out fillers which exceed this threshold</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(defaultdict)</td><td class="fieldArgDesc">see <tt class="rst-docutils literal">mk_reldicts</tt></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -365,7 +350,7 @@ Named Entities to particular types (any of 'LOCATION', 'ORGANIZATION',
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">ieer_headlines</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L429">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L429">
       
       (source)
     </a>
@@ -387,7 +372,7 @@ Named Entities to particular types (any of 'LOCATION', 'ORGANIZATION',
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">in_demo</span>(trace=0, sql=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L306">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L306">
       
       (source)
     </a>
@@ -395,12 +380,12 @@ Named Entities to particular types (any of 'LOCATION', 'ORGANIZATION',
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Select pairs of organizations and locations whose mentions occur with an
-intervening occurrence of the preposition "in".
-
-If the sql parameter is set to True, then the entity pairs are loaded into
+    <div><p>Select pairs of organizations and locations whose mentions occur with an
+intervening occurrence of the preposition "in".</p>
+<p>If the sql parameter is set to True, then the entity pairs are loaded into
 an in-memory database, and subsequently pulled out using an SQL "SELECT"
-query.</p></div>
+query.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -414,7 +399,7 @@ query.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">list2sym</span>(lst):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L118">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L118">
       
       (source)
     </a>
@@ -422,10 +407,10 @@ query.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Convert a list of strings into a canonical symbol.
+    <div>Convert a list of strings into a canonical symbol.
 :type lst: list
 :return: a Unicode string without whitespace
-:rtype: unicode</p></div>
+:rtype: unicode</div>
   </div>
 </div><div class="basefunction">
   
@@ -439,7 +424,7 @@ query.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">ne_chunked</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L516">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L516">
       
       (source)
     </a>
@@ -461,7 +446,7 @@ query.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">roles_demo</span>(trace=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L378">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L378">
       
       (source)
     </a>
@@ -483,7 +468,7 @@ query.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">rtuple</span>(reldict, lcon=False, rcon=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L263">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L263">
       
       (source)
     </a>
@@ -491,9 +476,9 @@ query.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Pretty print the reldict as an rtuple.
+    <div>Pretty print the reldict as an rtuple.
 :param reldict: a relation dictionary
-:type reldict: defaultdict</p></div>
+:type reldict: defaultdict</div>
   </div>
 </div><div class="basefunction">
   
@@ -507,7 +492,7 @@ query.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">semi_rel2reldict</span>(pairs, window=5, trace=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L162">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L162">
       
       (source)
     </a>
@@ -515,16 +500,10 @@ query.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Converts the pairs generated by ``tree2semi_rel`` into a 'reldict': a dictionary which
+    <div>Converts the pairs generated by <tt class="rst-docutils literal">tree2semi_rel</tt> into a 'reldict': a dictionary which
 stores information about the subject and object NEs plus the filler between them.
 Additionally, a left and right context of length =&lt; window are captured (within
-a given input sentence).
-
-:param pairs: a pair of list(str) and ``Tree``, as generated by
-:param window: a threshold for the number of items to include in the left and right context
-:type window: int
-:return: 'relation' dictionaries whose keys are 'lcon', 'subjclass', 'subjtext', 'subjsym', 'filler', objclass', objtext', 'objsym' and 'rcon'
-:rtype: list(defaultdict)</p></div>
+a given input sentence).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pairs</span></td><td class="fieldArgDesc">a pair of list(str) and <tt class="rst-docutils literal">Tree</tt>, as generated by</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">window:</span>int</td><td class="fieldArgDesc">a threshold for the number of items to include in the left and right context</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trace</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(defaultdict)</td><td class="fieldArgDesc">'relation' dictionaries whose keys are 'lcon', 'subjclass', 'subjtext', 'subjsym', 'filler', objclass', objtext', 'objsym' and 'rcon'</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -538,7 +517,7 @@ a given input sentence).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tree2semi_rel</span>(tree):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L133">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L133">
       
       (source)
     </a>
@@ -546,15 +525,11 @@ a given input sentence).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Group a chunk structure into a list of 'semi-relations' of the form (list(str), ``Tree``).
-
-In order to facilitate the construction of (``Tree``, string, ``Tree``) triples, this
+    <div><p>Group a chunk structure into a list of 'semi-relations' of the form (list(str), <tt class="rst-docutils literal">Tree</tt>).</p>
+<p>In order to facilitate the construction of (<tt class="rst-docutils literal">Tree</tt>, string, <tt class="rst-docutils literal">Tree</tt>) triples, this
 identifies pairs whose first member is a list (possibly empty) of terminal
-strings, and whose second member is a ``Tree`` of the form (NE_label, terminals).
-
-:param tree: a chunk tree
-:return: a list of pairs (list(str), ``Tree``)
-:rtype: list of tuple</p></div>
+strings, and whose second member is a <tt class="rst-docutils literal">Tree</tt> of the form (NE_label, terminals).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tree</span></td><td class="fieldArgDesc">a chunk tree</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list of tuple</td><td class="fieldArgDesc">a list of pairs (list(str), <tt class="rst-docutils literal">Tree</tt>)</td></tr></table></div>
   </div>
 </div><div class="basevariable">
   
@@ -568,7 +543,7 @@ strings, and whose second member is a ``Tree`` of the form (NE_label, terminals)
   <div class="functionHeader">
     
     <span class="py-defname">long2short</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L60">
       
       (source)
     </a>
@@ -590,7 +565,7 @@ strings, and whose second member is a ``Tree`` of the form (NE_label, terminals)
   <div class="functionHeader">
     
     <span class="py-defname">NE_CLASSES</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L30">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L30">
       
       (source)
     </a>
@@ -612,7 +587,7 @@ strings, and whose second member is a ``Tree`` of the form (NE_label, terminals)
   <div class="functionHeader">
     
     <span class="py-defname">short2long</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L59">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L59">
       
       (source)
     </a>
@@ -634,7 +609,7 @@ strings, and whose second member is a ``Tree`` of the form (NE_label, terminals)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_expand</span>(type):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L63">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L63">
       
       (source)
     </a>
@@ -642,9 +617,9 @@ strings, and whose second member is a ``Tree`` of the form (NE_label, terminals)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Expand an NE class name.
+    <div>Expand an NE class name.
 :type type: str
-:rtype: str</p></div>
+:rtype: str</div>
   </div>
 </div><div class="basefunction private">
   
@@ -658,7 +633,7 @@ strings, and whose second member is a ``Tree`` of the form (NE_label, terminals)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_join</span>(lst, sep=' ', untag=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sem/relextract.py#L87">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sem/relextract.py#L87">
       
       (source)
     </a>
@@ -666,10 +641,10 @@ strings, and whose second member is a ``Tree`` of the form (NE_label, terminals)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Join a list into a string, turning tags tuples into tag strings or just words.
-:param untag: if ``True``, omit the tag from tagged input strings.
+    <div>Join a list into a string, turning tags tuples into tag strings or just words.
+:param untag: if <tt class="rst-docutils literal">True</tt>, omit the tag from tagged input strings.
 :type lst: list
-:rtype: str</p></div>
+:rtype: str</div>
   </div>
 </div>
 
@@ -681,7 +656,7 @@ strings, and whose second member is a ``Tree`` of the form (NE_label, terminals)
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

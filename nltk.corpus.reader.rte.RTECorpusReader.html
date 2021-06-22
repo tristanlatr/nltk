@@ -65,19 +65,19 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">RTECorpusReader</span>(<a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html" title="nltk.corpus.reader.xmldocs.XMLCorpusReader">XMLCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/rte.py#L111" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">RTECorpusReader</span>(<a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html" title="nltk.corpus.reader.xmldocs.XMLCorpusReader">XMLCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/rte.py#L111" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.rte.RTECorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Corpus reader for corpora in RTE challenges.
-
-This is just a wrapper around the XMLCorpusReader. See module docstring above for the expected
-structure of input documents.</p></div>
+        <div><p>Corpus reader for corpora in RTE challenges.</p>
+<p>This is just a wrapper around the XMLCorpusReader. See module docstring above for the expected
+structure of input documents.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id430">
+        <table class="children sortable" id="id433">
   
   
   <tr class="method">
@@ -96,7 +96,7 @@ structure of input documents.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html">XMLCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id431">
+          <table class="children sortable" id="id434">
   
   
   <tr class="basemethod">
@@ -130,7 +130,7 @@ structure of input documents.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html">XMLCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id432">
+          <table class="children sortable" id="id435">
   
   
   <tr class="basemethod">
@@ -197,7 +197,7 @@ structure of input documents.</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -234,7 +234,7 @@ structure of input documents.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pairs</span>(self, fileids):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/rte.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/rte.py#L135">
       
       (source)
     </a>
@@ -242,11 +242,7 @@ structure of input documents.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Build a list of RTEPairs from a RTE corpus.
-
-:param fileids: a list of RTE corpus fileids
-:type: list
-:rtype: list(RTEPair)</p></div>
+    <div>Build a list of RTEPairs from a RTE corpus.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list of RTE corpus fileids</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(RTEPair)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -260,7 +256,7 @@ structure of input documents.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_etree</span>(self, doc):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/rte.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/rte.py#L119">
       
       (source)
     </a>
@@ -268,13 +264,10 @@ structure of input documents.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Map the XML input into an RTEPair.
-
-This uses the ``getiterator()`` method from the ElementTree package to
-find all the ``&lt;pair&gt;`` elements.
-
-:param doc: a parsed XML document
-:rtype: list(RTEPair)</p></div>
+    <div><p>Map the XML input into an RTEPair.</p>
+<p>This uses the <tt class="rst-docutils literal">getiterator()</tt> method from the ElementTree package to
+find all the <tt class="rst-docutils literal">&lt;pair&gt;</tt> elements.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">doc</span></td><td class="fieldArgDesc">a parsed XML document</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(RTEPair)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div>
 
@@ -286,7 +279,7 @@ find all the ``&lt;pair&gt;`` elements.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

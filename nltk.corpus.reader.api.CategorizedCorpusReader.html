@@ -65,29 +65,31 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">CategorizedCorpusReader</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L239" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus.reader.bracket_parse.CategorizedBracketParseCorpusReader.html">nltk.corpus.reader.bracket_parse.CategorizedBracketParseCorpusReader</a></code>, <code><a href="nltk.corpus.reader.categorized_sents.CategorizedSentencesCorpusReader.html">nltk.corpus.reader.categorized_sents.CategorizedSentencesCorpusReader</a></code>, <code><a href="nltk.corpus.reader.pl196x.Pl196xCorpusReader.html">nltk.corpus.reader.pl196x.Pl196xCorpusReader</a></code>, <code><a href="nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader.html">nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader</a></code>, <code><a href="nltk.corpus.reader.pros_cons.ProsConsCorpusReader.html">nltk.corpus.reader.pros_cons.ProsConsCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">CategorizedCorpusReader</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L239" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.corpus.reader.bracket_parse.CategorizedBracketParseCorpusReader.html">nltk.corpus.reader.bracket_parse.CategorizedBracketParseCorpusReader</a></code>, <code><a href="nltk.corpus.reader.categorized_sents.CategorizedSentencesCorpusReader.html">nltk.corpus.reader.categorized_sents.CategorizedSentencesCorpusReader</a></code>, <code><a href="nltk.corpus.reader.pl196x.Pl196xCorpusReader.html">nltk.corpus.reader.pl196x.Pl196xCorpusReader</a></code>, <code><a href="nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader.html">nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader</a></code>, <code><a href="nltk.corpus.reader.pros_cons.ProsConsCorpusReader.html">nltk.corpus.reader.pros_cons.ProsConsCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.api.CategorizedCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A mixin class used to aid in the implementation of corpus readers
+        <div><p>A mixin class used to aid in the implementation of corpus readers
 for categorized corpora.  This class defines the method
-``categories()``, which returns a list of the categories for the
-corpus or for a specified set of fileids; and overrides ``fileids()``
-to take a ``categories`` argument, restricting the set of fileids to
-be returned.
-
-Subclasses are expected to:
-
-  - Call ``__init__()`` to set up the mapping.
-
-  - Override all view methods to accept a ``categories`` parameter,
-    which can be used *instead* of the ``fileids`` parameter, to
-    select which fileids should be included in the returned view.</p></div>
+<tt class="rst-docutils literal">categories()</tt>, which returns a list of the categories for the
+corpus or for a specified set of fileids; and overrides <tt class="rst-docutils literal">fileids()</tt>
+to take a <tt class="rst-docutils literal">categories</tt> argument, restricting the set of fileids to
+be returned.</p>
+<p>Subclasses are expected to:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>Call <tt class="rst-docutils literal">__init__()</tt> to set up the mapping.</li>
+<li>Override all view methods to accept a <tt class="rst-docutils literal">categories</tt> parameter,
+which can be used <em>instead</em> of the <tt class="rst-docutils literal">fileids</tt> parameter, to
+select which fileids should be included in the returned view.</li>
+</ul>
+</blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id240">
+        <table class="children sortable" id="id243">
   
   
   <tr class="method">
@@ -166,7 +168,7 @@ Subclasses are expected to:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L257">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L257">
       
       (source)
     </a>
@@ -174,24 +176,25 @@ Subclasses are expected to:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.corpus.reader.bracket_parse.CategorizedBracketParseCorpusReader.html">nltk.corpus.reader.bracket_parse.CategorizedBracketParseCorpusReader</a></code>, <code><a href="nltk.corpus.reader.categorized_sents.CategorizedSentencesCorpusReader.html">nltk.corpus.reader.categorized_sents.CategorizedSentencesCorpusReader</a></code>, <code><a href="nltk.corpus.reader.pl196x.Pl196xCorpusReader.html">nltk.corpus.reader.pl196x.Pl196xCorpusReader</a></code>, <code><a href="nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader.html">nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader</a></code>, <code><a href="nltk.corpus.reader.pros_cons.ProsConsCorpusReader.html">nltk.corpus.reader.pros_cons.ProsConsCorpusReader</a></code>, <code><a href="nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader.html">nltk.corpus.reader.tagged.CategorizedTaggedCorpusReader</a></code></div>
     
-    <div><p class="pre">Initialize this mapping based on keyword arguments, as
-follows:
-
-  - cat_pattern: A regular expression pattern used to find the
-    category for each file identifier.  The pattern will be
-    applied to each file identifier, and the first matching
-    group will be used as the category label for that file.
-
-  - cat_map: A dictionary, mapping from file identifiers to
-    category labels.
-
-  - cat_file: The name of a file that contains the mapping
-    from file identifiers to categories.  The argument
-    ``cat_delimiter`` can be used to specify a delimiter.
-
-The corresponding argument will be deleted from ``kwargs``.  If
+    <div><p>Initialize this mapping based on keyword arguments, as
+follows:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>cat_pattern: A regular expression pattern used to find the
+category for each file identifier.  The pattern will be
+applied to each file identifier, and the first matching
+group will be used as the category label for that file.</li>
+<li>cat_map: A dictionary, mapping from file identifiers to
+category labels.</li>
+<li>cat_file: The name of a file that contains the mapping
+from file identifiers to categories.  The argument
+<tt class="rst-docutils literal">cat_delimiter</tt> can be used to specify a delimiter.</li>
+</ul>
+</blockquote>
+<p>The corresponding argument will be deleted from <tt class="rst-docutils literal">kwargs</tt>.  If
 more than one argument is specified, an exception will be
-raised.</p></div>
+raised.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -205,7 +208,7 @@ raised.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">categories</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L338">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L338">
       
       (source)
     </a>
@@ -213,8 +216,8 @@ raised.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of the categories that are defined for this corpus,
-or for the file(s) if it is given.</p></div>
+    <div>Return a list of the categories that are defined for this corpus,
+or for the file(s) if it is given.</div>
   </div>
 </div><div class="basemethod">
   
@@ -228,7 +231,7 @@ or for the file(s) if it is given.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">fileids</span>(self, categories=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L351">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L351">
       
       (source)
     </a>
@@ -236,8 +239,8 @@ or for the file(s) if it is given.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of file identifiers for the files that make up
-this corpus, or that make up the given category(s) if specified.</p></div>
+    <div>Return a list of file identifiers for the files that make up
+this corpus, or that make up the given category(s) if specified.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -251,7 +254,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_add</span>(self, file_id, category):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L334">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L334">
       
       (source)
     </a>
@@ -273,7 +276,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_init</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L308">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L308">
       
       (source)
     </a>
@@ -295,7 +298,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_c2f</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L279">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L279">
       
       (source)
     </a>
@@ -317,7 +320,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_delimiter</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L284">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L284">
       
       (source)
     </a>
@@ -339,7 +342,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_f2c</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L278">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L278">
       
       (source)
     </a>
@@ -361,7 +364,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_file</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L283">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L283">
       
       (source)
     </a>
@@ -383,7 +386,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_map</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L282">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L282">
       
       (source)
     </a>
@@ -405,7 +408,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_pattern</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/api.py#L281">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/api.py#L281">
       
       (source)
     </a>
@@ -425,7 +428,7 @@ this corpus, or that make up the given category(s) if specified.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

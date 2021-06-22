@@ -65,29 +65,34 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">EuroparlCorpusReader</span>(<a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html" title="nltk.corpus.reader.plaintext.PlaintextCorpusReader">PlaintextCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/plaintext.py#L209" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">EuroparlCorpusReader</span>(<a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html" title="nltk.corpus.reader.plaintext.PlaintextCorpusReader">PlaintextCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/plaintext.py#L209" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.plaintext.EuroparlCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for Europarl corpora that consist of plaintext documents.
+        <div><p>Reader for Europarl corpora that consist of plaintext documents.
 Documents are divided into chapters instead of paragraphs as
 for regular plaintext documents. Chapters are separated using blank
-lines. Everything is inherited from ``PlaintextCorpusReader`` except
-that:
-  - Since the corpus is pre-processed and pre-tokenized, the
-    word tokenizer should just split the line at whitespaces.
-  - For the same reason, the sentence tokenizer should just
-    split the paragraph at line breaks.
-  - There is a new 'chapters()' method that returns chapters instead
-    instead of paragraphs.
-  - The 'paras()' method inherited from PlaintextCorpusReader is
-    made non-functional to remove any confusion between chapters
-    and paragraphs for Europarl.</p></div>
+lines. Everything is inherited from <tt class="rst-docutils literal">PlaintextCorpusReader</tt> except
+that:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>Since the corpus is pre-processed and pre-tokenized, the
+word tokenizer should just split the line at whitespaces.</li>
+<li>For the same reason, the sentence tokenizer should just
+split the paragraph at line breaks.</li>
+<li>There is a new 'chapters()' method that returns chapters instead
+instead of paragraphs.</li>
+<li>The 'paras()' method inherited from PlaintextCorpusReader is
+made non-functional to remove any confusion between chapters
+and paragraphs for Europarl.</li>
+</ul>
+</blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id403">
+        <table class="children sortable" id="id406">
   
   
   <tr class="method">
@@ -121,7 +126,7 @@ that:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html">PlaintextCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id404">
+          <table class="children sortable" id="id407">
   
   
   <tr class="basemethod">
@@ -133,7 +138,7 @@ that:
     
     <td>Method</td>
     <td><code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html#raw">raw</a></code></td>
-    <td><span>:return: the given file(s) as a single string. :rtype: str</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -143,7 +148,7 @@ that:
     
     <td>Method</td>
     <td><code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html#words">words</a></code></td>
-    <td><span>:return: the given file(s) as a list of words and punctuation symbols. :rtype: list(str)</span></td>
+    <td><span></span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -165,7 +170,7 @@ that:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html">PlaintextCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id405">
+          <table class="children sortable" id="id408">
   
   
   <tr class="basemethod">
@@ -232,7 +237,7 @@ that:
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -269,7 +274,7 @@ that:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">chapters</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/plaintext.py#L246">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/plaintext.py#L246">
       
       (source)
     </a>
@@ -277,10 +282,9 @@ that:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    chapters, each encoded as a list of sentences, which are
-    in turn encoded as lists of word strings.
-:rtype: list(list(list(str)))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(list(str)))</td><td class="fieldArgDesc">the given file(s) as a list of
+chapters, each encoded as a list of sentences, which are
+in turn encoded as lists of word strings.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -294,7 +298,7 @@ that:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">paras</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/plaintext.py#L260">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/plaintext.py#L260">
       
       (source)
     </a>
@@ -302,10 +306,9 @@ that:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.plaintext.PlaintextCorpusReader.html#paras">nltk.corpus.reader.plaintext.PlaintextCorpusReader.paras</a></code></div>
     
-    <div><p class="pre">:return: the given file(s) as a list of
-    paragraphs, each encoded as a list of sentences, which are
-    in turn encoded as lists of word strings.
-:rtype: list(list(list(str)))</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(list(str)))</td><td class="fieldArgDesc">the given file(s) as a list of
+paragraphs, each encoded as a list of sentences, which are
+in turn encoded as lists of word strings.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -319,7 +322,7 @@ that:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_para_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/plaintext.py#L240">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/plaintext.py#L240">
       
       (source)
     </a>
@@ -341,7 +344,7 @@ that:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_sent_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/plaintext.py#L234">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/plaintext.py#L234">
       
       (source)
     </a>
@@ -363,7 +366,7 @@ that:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_word_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/plaintext.py#L228">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/plaintext.py#L228">
       
       (source)
     </a>
@@ -383,7 +386,7 @@ that:
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

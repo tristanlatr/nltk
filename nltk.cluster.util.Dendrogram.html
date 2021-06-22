@@ -65,26 +65,26 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Dendrogram</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L177" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Dendrogram</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L177" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.cluster.util.Dendrogram">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Represents a dendrogram, a tree with a specified branching order.  This
+        <div>Represents a dendrogram, a tree with a specified branching order.  This
 must be initialised with the leaf items, then iteratively call merge for
 each branch. This class constructs a tree representing the order of calls
-to the merge function.</p></div>
+to the merge function.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id200">
+        <table class="children sortable" id="id203">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param  items: the items at the leaves of the dendrogram :type   items: sequence of (any)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -141,7 +141,7 @@ to the merge function.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, items=[]):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L185">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L185">
       
       (source)
     </a>
@@ -149,8 +149,7 @@ to the merge function.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param  items: the items at the leaves of the dendrogram
-:type   items: sequence of (any)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">items:</span>sequence of (any)</td><td class="fieldArgDesc">the items at the leaves of the dendrogram</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -164,7 +163,7 @@ to the merge function.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L294">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L294">
       
       (source)
     </a>
@@ -186,7 +185,7 @@ to the merge function.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">groups</span>(self, n):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L210">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L210">
       
       (source)
     </a>
@@ -194,9 +193,9 @@ to the merge function.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Finds the n-groups of items (leaves) reachable from a cut at depth n.
+    <div>Finds the n-groups of items (leaves) reachable from a cut at depth n.
 :param  n: number of groups
-:type   n: int</p></div>
+:type   n: int</div>
   </div>
 </div><div class="basemethod">
   
@@ -210,7 +209,7 @@ to the merge function.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">merge</span>(self, *indices):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L194">
       
       (source)
     </a>
@@ -218,12 +217,9 @@ to the merge function.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Merges nodes at given indices in the dendrogram. The nodes will be
+    <div>Merges nodes at given indices in the dendrogram. The nodes will be
 combined which then replaces the first node specified. All other nodes
-involved in the merge will be removed.
-
-:param  indices: indices of the items to merge (at least two)
-:type   indices: seq of int</p></div>
+involved in the merge will be removed.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">indices:</span>seq of int</td><td class="fieldArgDesc">indices of the items to merge (at least two)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -237,7 +233,7 @@ involved in the merge will be removed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">show</span>(self, leaf_labels=[]):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L222">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L222">
       
       (source)
     </a>
@@ -245,10 +241,11 @@ involved in the merge will be removed.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Print the dendrogram in ASCII art to standard out.
-:param leaf_labels: an optional list of strings to use for labeling the
-                    leaves
-:type leaf_labels: list</p></div>
+    <div><p>Print the dendrogram in ASCII art to standard out.
+:param leaf_labels: an optional list of strings to use for labeling the</p>
+<blockquote>
+leaves</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">leaf_labels:</span>list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -262,7 +259,7 @@ involved in the merge will be removed.
   <div class="functionHeader">
     
     <span class="py-defname">_items</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L190">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L190">
       
       (source)
     </a>
@@ -284,7 +281,7 @@ involved in the merge will be removed.
   <div class="functionHeader">
     
     <span class="py-defname">_merge</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L192">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L192">
       
       (source)
     </a>
@@ -306,7 +303,7 @@ involved in the merge will be removed.
   <div class="functionHeader">
     
     <span class="py-defname">_original_items</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/cluster/util.py#L191">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/cluster/util.py#L191">
       
       (source)
     </a>
@@ -326,7 +323,7 @@ involved in the merge will be removed.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

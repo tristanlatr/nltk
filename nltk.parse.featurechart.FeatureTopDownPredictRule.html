@@ -65,30 +65,30 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">FeatureTopDownPredictRule</span>(<a href="nltk.parse.chart.CachedTopDownPredictRule.html" title="nltk.parse.chart.CachedTopDownPredictRule">CachedTopDownPredictRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L351" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.earleychart.FeaturePredictorRule.html">nltk.parse.earleychart.FeaturePredictorRule</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">FeatureTopDownPredictRule</span>(<a href="nltk.parse.chart.CachedTopDownPredictRule.html" title="nltk.parse.chart.CachedTopDownPredictRule">CachedTopDownPredictRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L351" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.parse.earleychart.FeaturePredictorRule.html">nltk.parse.earleychart.FeaturePredictorRule</a></code></p>
         <p><a href="classIndex.html#nltk.parse.featurechart.FeatureTopDownPredictRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A specialized version of the (cached) top down predict rule that operates
-on nonterminals whose symbols are ``FeatStructNonterminal``s.  Rather
+        <div><p>A specialized version of the (cached) top down predict rule that operates
+on nonterminals whose symbols are <a href="#id1"><span class="rst-problematic" id="rst-id2">``</span></a>FeatStructNonterminal``s.  Rather
 than simply comparing the nonterminals for equality, they are
-unified.
-
-The top down expand rule states that:
-
-- ``[A -&gt; alpha \* B1 beta][i:j]``
-
-licenses the edge:
-
-- ``[B2 -&gt; \* gamma][j:j]``
-
-for each grammar production ``B2 -&gt; gamma``, assuming that B1
-and B2 can be unified.</p></div>
+unified.</p>
+<p>The top down expand rule states that:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">[A <span class="pre">-&gt;</span> alpha \* B1 <span class="pre">beta][i:j]</span></tt></li>
+</ul>
+<p>licenses the edge:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">[B2 <span class="pre">-&gt;</span> \* <span class="pre">gamma][j:j]</span></tt></li>
+</ul>
+<p>for each grammar production <tt class="rst-docutils literal">B2 <span class="pre">-&gt;</span> gamma</tt>, assuming that B1
+and B2 can be unified.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1023">
+        <table class="children sortable" id="id1027">
   
   
   <tr class="method">
@@ -102,7 +102,7 @@ and B2 can be unified.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.CachedTopDownPredictRule.html">CachedTopDownPredictRule</a></code>:
           </p>
-          <table class="children sortable" id="id1024">
+          <table class="children sortable" id="id1028">
   
   
   <tr class="basemethod">
@@ -121,7 +121,7 @@ and B2 can be unified.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.TopDownPredictRule.html">TopDownPredictRule</a></code> (via <code><a href="nltk.parse.chart.CachedTopDownPredictRule.html">CachedTopDownPredictRule</a></code>):
           </p>
-          <table class="children sortable" id="id1025">
+          <table class="children sortable" id="id1029">
   
   
   <tr class="baseclassvariable">
@@ -135,7 +135,7 @@ and B2 can be unified.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.AbstractChartRule.html">AbstractChartRule</a></code> (via <code><a href="nltk.parse.chart.CachedTopDownPredictRule.html">CachedTopDownPredictRule</a></code>, <code><a href="nltk.parse.chart.TopDownPredictRule.html">TopDownPredictRule</a></code>):
           </p>
-          <table class="children sortable" id="id1026">
+          <table class="children sortable" id="id1030">
   
   
   <tr class="basemethod">
@@ -169,7 +169,7 @@ and B2 can be unified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply</span>(self, chart, grammar, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/featurechart.py#L370">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/featurechart.py#L370">
       
       (source)
     </a>
@@ -177,16 +177,12 @@ and B2 can be unified.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.CachedTopDownPredictRule.html#apply">nltk.parse.chart.CachedTopDownPredictRule.apply</a></code></div>
     
-    <div><p class="pre">Return a generator that will add edges licensed by this rule
+    <div>Return a generator that will add edges licensed by this rule
 and the given edges to the chart, one at a time.  Each
 time the generator is resumed, it will either add a new
-edge and yield that edge; or return.
-
-:type edges: list(EdgeI)
-:param edges: A set of existing edges.  The number of edges
-    that should be passed to ``apply()`` is specified by the
-    ``NUM_EDGES`` class variable.
-:rtype: iter(EdgeI)</p></div>
+edge and yield that edge; or return.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edges:</span>list(EdgeI)</td><td class="fieldArgDesc">A set of existing edges.  The number of edges
+that should be passed to <tt class="rst-docutils literal">apply()</tt> is specified by the
+<tt class="rst-docutils literal">NUM_EDGES</tt> class variable.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div>
 
@@ -198,7 +194,7 @@ edge and yield that edge; or return.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

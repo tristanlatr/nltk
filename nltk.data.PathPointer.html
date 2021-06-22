@@ -65,21 +65,21 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">PathPointer</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L256" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.data.FileSystemPathPointer.html">nltk.data.FileSystemPathPointer</a></code>, <code><a href="nltk.data.ZipFilePathPointer.html">nltk.data.ZipFilePathPointer</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PathPointer</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L256" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.data.FileSystemPathPointer.html">nltk.data.FileSystemPathPointer</a></code>, <code><a href="nltk.data.ZipFilePathPointer.html">nltk.data.ZipFilePathPointer</a></code></p>
         <p><a href="classIndex.html#nltk.data.PathPointer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract base class for 'path pointers,' used by NLTK's data
+        <div>An abstract base class for 'path pointers,' used by NLTK's data
 package to identify specific paths.  Two subclasses exist:
-``FileSystemPathPointer`` identifies a file that can be accessed
-directly via a given absolute path.  ``ZipFilePathPointer``
+<tt class="rst-docutils literal">FileSystemPathPointer</tt> identifies a file that can be accessed
+directly via a given absolute path.  <tt class="rst-docutils literal">ZipFilePathPointer</tt>
 identifies a file contained within a zipfile, that can be accessed
-by reading that zipfile.</p></div>
+by reading that zipfile.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id540">
+        <table class="children sortable" id="id543">
   
   
   <tr class="method">
@@ -118,7 +118,7 @@ by reading that zipfile.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">file_size</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L276">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L276">
       
       (source)
     </a>
@@ -126,11 +126,9 @@ by reading that zipfile.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.data.FileSystemPathPointer.html">nltk.data.FileSystemPathPointer</a></code>, <code><a href="nltk.data.ZipFilePathPointer.html">nltk.data.ZipFilePathPointer</a></code></div>
     
-    <div><p class="pre">Return the size of the file pointed to by this path pointer,
-in bytes.
-
-:raise IOError: If the path specified by this pointer does
-    not contain a readable file.</p></div>
+    <div>Return the size of the file pointed to by this path pointer,
+in bytes.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#IOError">IOError</a></code></td><td>If the path specified by this pointer does
+not contain a readable file.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -144,7 +142,7 @@ in bytes.
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">join</span>(self, fileid):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L286">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L286">
       
       (source)
     </a>
@@ -152,11 +150,11 @@ in bytes.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.data.FileSystemPathPointer.html">nltk.data.FileSystemPathPointer</a></code>, <code><a href="nltk.data.ZipFilePathPointer.html">nltk.data.ZipFilePathPointer</a></code></div>
     
-    <div><p class="pre">Return a new path pointer formed by starting at the path
+    <div>Return a new path pointer formed by starting at the path
 identified by this pointer, and then following the relative
-path given by ``fileid``.  The path components of ``fileid``
+path given by <tt class="rst-docutils literal">fileid</tt>.  The path components of <tt class="rst-docutils literal">fileid</tt>
 should be separated by forward slashes, regardless of
-the underlying file system's path seperator character.</p></div>
+the underlying file system's path seperator character.</div>
   </div>
 </div><div class="basemethod">
   
@@ -170,7 +168,7 @@ the underlying file system's path seperator character.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">open</span>(self, encoding=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L266">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L266">
       
       (source)
     </a>
@@ -178,11 +176,9 @@ the underlying file system's path seperator character.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.data.FileSystemPathPointer.html">nltk.data.FileSystemPathPointer</a></code>, <code><a href="nltk.data.ZipFilePathPointer.html">nltk.data.ZipFilePathPointer</a></code></div>
     
-    <div><p class="pre">Return a seekable read-only stream that can be used to read
-the contents of the file identified by this path pointer.
-
-:raise IOError: If the path specified by this pointer does
-    not contain a readable file.</p></div>
+    <div>Return a seekable read-only stream that can be used to read
+the contents of the file identified by this path pointer.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#IOError">IOError</a></code></td><td>If the path specified by this pointer does
+not contain a readable file.</td></tr></table></div>
   </div>
 </div>
 
@@ -194,7 +190,7 @@ the contents of the file identified by this path pointer.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

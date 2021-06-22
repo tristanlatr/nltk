@@ -65,70 +65,72 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/__init__.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/__init__.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">NLTK Taggers
-
-This package contains classes and interfaces for part-of-speech
-tagging, or simply "tagging".
-
-A "tag" is a case-sensitive string that specifies some property of a token,
+        <div><p>NLTK Taggers</p>
+<p>This package contains classes and interfaces for part-of-speech
+tagging, or simply "tagging".</p>
+<p>A "tag" is a case-sensitive string that specifies some property of a token,
 such as its part of speech.  Tagged tokens are encoded as tuples
-``(tag, token)``.  For example, the following tagged token combines
-the word ``'fly'`` with a noun part of speech tag (``'NN'``):
-
-    &gt;&gt;&gt; tagged_tok = ('fly', 'NN')
-
-An off-the-shelf tagger is available for English. It uses the Penn Treebank tagset:
-
-    &gt;&gt;&gt; from nltk import pos_tag, word_tokenize
-    &gt;&gt;&gt; pos_tag(word_tokenize("John's big idea isn't all that bad."))
-    [('John', 'NNP'), ("'s", 'POS'), ('big', 'JJ'), ('idea', 'NN'), ('is', 'VBZ'),
-    ("n't", 'RB'), ('all', 'PDT'), ('that', 'DT'), ('bad', 'JJ'), ('.', '.')]
-
-A Russian tagger is also available if you specify lang="rus". It uses
-the Russian National Corpus tagset:
-
-    &gt;&gt;&gt; pos_tag(word_tokenize("Илья оторопел и дважды перечитал бумажку."), lang='rus')    # doctest: +SKIP
-    [('Илья', 'S'), ('оторопел', 'V'), ('и', 'CONJ'), ('дважды', 'ADV'), ('перечитал', 'V'),
-    ('бумажку', 'S'), ('.', 'NONLEX')]
-
-This package defines several taggers, which take a list of tokens,
+<tt class="rst-docutils literal">(tag, token)</tt>.  For example, the following tagged token combines
+the word <tt class="rst-docutils literal">'fly'</tt> with a noun part of speech tag (<tt class="rst-docutils literal">'NN'</tt>):</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tagged_tok = (<span class="py-string">'fly'</span>, <span class="py-string">'NN'</span>)</pre></blockquote>
+<p>An off-the-shelf tagger is available for English. It uses the Penn Treebank tagset:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk <span class="py-keyword">import</span> pos_tag, word_tokenize
+<span class="py-prompt">&gt;&gt;&gt; </span>pos_tag(word_tokenize(<span class="py-string">"John's big idea isn't all that bad."</span>))
+<span class="py-output">[('John', 'NNP'), ("'s", 'POS'), ('big', 'JJ'), ('idea', 'NN'), ('is', 'VBZ'),</span>
+<span class="py-output">("n't", 'RB'), ('all', 'PDT'), ('that', 'DT'), ('bad', 'JJ'), ('.', '.')]</span>
+</pre></blockquote>
+<p>A Russian tagger is also available if you specify lang="rus". It uses
+the Russian National Corpus tagset:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>pos_tag(word_tokenize(<span class="py-string">"Илья оторопел и дважды перечитал бумажку."</span>), lang=<span class="py-string">'rus'</span>)    <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[('Илья', 'S'), ('оторопел', 'V'), ('и', 'CONJ'), ('дважды', 'ADV'), ('перечитал', 'V'),</span>
+<span class="py-output">('бумажку', 'S'), ('.', 'NONLEX')]</span>
+</pre></blockquote>
+<p>This package defines several taggers, which take a list of tokens,
 assign a tag to each one, and return the resulting list of tagged tokens.
 Most of the taggers are built automatically based on a training corpus.
-For example, the unigram tagger tags each word *w* by checking what
-the most frequent tag for *w* was in a training corpus:
-
-    &gt;&gt;&gt; from nltk.corpus import brown
-    &gt;&gt;&gt; from nltk.tag import UnigramTagger
-    &gt;&gt;&gt; tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
-    &gt;&gt;&gt; sent = ['Mitchell', 'decried', 'the', 'high', 'rate', 'of', 'unemployment']
-    &gt;&gt;&gt; for word, tag in tagger.tag(sent):
-    ...     print(word, '-&gt;', tag)
-    Mitchell -&gt; NP
-    decried -&gt; None
-    the -&gt; AT
-    high -&gt; JJ
-    rate -&gt; NN
-    of -&gt; IN
-    unemployment -&gt; None
-
-Note that words that the tagger has not seen during training receive a tag
-of ``None``.
-
-We evaluate a tagger on data that was not seen during training:
-
-    &gt;&gt;&gt; tagger.evaluate(brown.tagged_sents(categories='news')[500:600])
-    0.7...
-
-For more information, please consult chapter 5 of the NLTK Book.</p></div>
+For example, the unigram tagger tags each word <em>w</em> by checking what
+the most frequent tag for <em>w</em> was in a training corpus:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> brown
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> UnigramTagger
+<span class="py-prompt">&gt;&gt;&gt; </span>tagger = UnigramTagger(brown.tagged_sents(categories=<span class="py-string">'news'</span>)[:500])
+<span class="py-prompt">&gt;&gt;&gt; </span>sent = [<span class="py-string">'Mitchell'</span>, <span class="py-string">'decried'</span>, <span class="py-string">'the'</span>, <span class="py-string">'high'</span>, <span class="py-string">'rate'</span>, <span class="py-string">'of'</span>, <span class="py-string">'unemployment'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> word, tag <span class="py-keyword">in</span> tagger.tag(sent):
+<span class="py-more">... </span>    <span class="py-builtin">print</span>(word, <span class="py-string">'-&gt;'</span>, tag)
+<span class="py-output">Mitchell -&gt; NP</span>
+<span class="py-output">decried -&gt; None</span>
+<span class="py-output">the -&gt; AT</span>
+<span class="py-output">high -&gt; JJ</span>
+<span class="py-output">rate -&gt; NN</span>
+<span class="py-output">of -&gt; IN</span>
+<span class="py-output">unemployment -&gt; None</span>
+</pre></blockquote>
+<p>Note that words that the tagger has not seen during training receive a tag
+of <tt class="rst-docutils literal">None</tt>.</p>
+<p>We evaluate a tagger on data that was not seen during training:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>tagger.evaluate(brown.tagged_sents(categories=<span class="py-string">'news'</span>)[500:600])
+<span class="py-output">0.7...</span>
+</pre></blockquote>
+<p>For more information, please consult chapter 5 of the NLTK Book.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1540">
+        <table class="children sortable" id="id1544">
   
   
   <tr class="module">
@@ -200,7 +202,7 @@ For more information, please consult chapter 5 of the NLTK Book.</p></div>
 </table>
         
 
-          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id1541">
+          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id1545">
   
   
   <tr class="function">
@@ -246,7 +248,7 @@ For more information, please consult chapter 5 of the NLTK Book.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">RUS_PICKLE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/__init__.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/__init__.py#L95">
       
       (source)
     </a>
@@ -268,7 +270,7 @@ For more information, please consult chapter 5 of the NLTK Book.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_tagger</span>(lang=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/__init__.py#L100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/__init__.py#L100">
       
       (source)
     </a>
@@ -290,7 +292,7 @@ For more information, please consult chapter 5 of the NLTK Book.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_pos_tag</span>(tokens, tagset=None, tagger=None, lang=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/__init__.py#L110">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/__init__.py#L110">
       
       (source)
     </a>
@@ -312,7 +314,7 @@ For more information, please consult chapter 5 of the NLTK Book.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pos_tag</span>(tokens, tagset=None, lang='eng'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/__init__.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/__init__.py#L135">
       
       (source)
     </a>
@@ -320,28 +322,21 @@ For more information, please consult chapter 5 of the NLTK Book.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use NLTK's currently recommended part of speech tagger to
-tag the given list of tokens.
-
-    &gt;&gt;&gt; from nltk.tag import pos_tag
-    &gt;&gt;&gt; from nltk.tokenize import word_tokenize
-    &gt;&gt;&gt; pos_tag(word_tokenize("John's big idea isn't all that bad."))
-    [('John', 'NNP'), ("'s", 'POS'), ('big', 'JJ'), ('idea', 'NN'), ('is', 'VBZ'),
-    ("n't", 'RB'), ('all', 'PDT'), ('that', 'DT'), ('bad', 'JJ'), ('.', '.')]
-    &gt;&gt;&gt; pos_tag(word_tokenize("John's big idea isn't all that bad."), tagset='universal')
-    [('John', 'NOUN'), ("'s", 'PRT'), ('big', 'ADJ'), ('idea', 'NOUN'), ('is', 'VERB'),
-    ("n't", 'ADV'), ('all', 'DET'), ('that', 'DET'), ('bad', 'ADJ'), ('.', '.')]
-
-NB. Use `pos_tag_sents()` for efficient tagging of more than one sentence.
-
-:param tokens: Sequence of tokens to be tagged
-:type tokens: list(str)
-:param tagset: the tagset to be used, e.g. universal, wsj, brown
-:type tagset: str
-:param lang: the ISO 639 code of the language, e.g. 'eng' for English, 'rus' for Russian
-:type lang: str
-:return: The tagged tokens
-:rtype: list(tuple(str, str))</p></div>
+    <div><p>Use NLTK's currently recommended part of speech tagger to
+tag the given list of tokens.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag <span class="py-keyword">import</span> pos_tag
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tokenize <span class="py-keyword">import</span> word_tokenize
+<span class="py-prompt">&gt;&gt;&gt; </span>pos_tag(word_tokenize(<span class="py-string">"John's big idea isn't all that bad."</span>))
+<span class="py-output">[('John', 'NNP'), ("'s", 'POS'), ('big', 'JJ'), ('idea', 'NN'), ('is', 'VBZ'),</span>
+<span class="py-output">("n't", 'RB'), ('all', 'PDT'), ('that', 'DT'), ('bad', 'JJ'), ('.', '.')]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>pos_tag(word_tokenize(<span class="py-string">"John's big idea isn't all that bad."</span>), tagset=<span class="py-string">'universal'</span>)
+<span class="py-output">[('John', 'NOUN'), ("'s", 'PRT'), ('big', 'ADJ'), ('idea', 'NOUN'), ('is', 'VERB'),</span>
+<span class="py-output">("n't", 'ADV'), ('all', 'DET'), ('that', 'DET'), ('bad', 'ADJ'), ('.', '.')]</span>
+</pre></blockquote>
+<p>NB. Use <code>pos_tag_sents()</code> for efficient tagging of more than one sentence.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(str)</td><td class="fieldArgDesc">Sequence of tokens to be tagged</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset:</span>str</td><td class="fieldArgDesc">the tagset to be used, e.g. universal, wsj, brown</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lang:</span>str</td><td class="fieldArgDesc">the ISO 639 code of the language, e.g. 'eng' for English, 'rus' for Russian</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(str, str))</td><td class="fieldArgDesc">The tagged tokens</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -355,7 +350,7 @@ NB. Use `pos_tag_sents()` for efficient tagging of more than one sentence.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pos_tag_sents</span>(sentences, tagset=None, lang='eng'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/__init__.py#L164">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/__init__.py#L164">
       
       (source)
     </a>
@@ -363,17 +358,8 @@ NB. Use `pos_tag_sents()` for efficient tagging of more than one sentence.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use NLTK's currently recommended part of speech tagger to tag the
-given list of sentences, each consisting of a list of tokens.
-
-:param sentences: List of sentences to be tagged
-:type sentences: list(list(str))
-:param tagset: the tagset to be used, e.g. universal, wsj, brown
-:type tagset: str
-:param lang: the ISO 639 code of the language, e.g. 'eng' for English, 'rus' for Russian
-:type lang: str
-:return: The list of tagged sentences
-:rtype: list(list(tuple(str, str)))</p></div>
+    <div>Use NLTK's currently recommended part of speech tagger to tag the
+given list of sentences, each consisting of a list of tokens.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentences:</span>list(list(str))</td><td class="fieldArgDesc">List of sentences to be tagged</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset:</span>str</td><td class="fieldArgDesc">the tagset to be used, e.g. universal, wsj, brown</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lang:</span>str</td><td class="fieldArgDesc">the ISO 639 code of the language, e.g. 'eng' for English, 'rus' for Russian</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(tuple(str, str)))</td><td class="fieldArgDesc">The list of tagged sentences</td></tr></table></div>
   </div>
 </div>
 
@@ -385,7 +371,7 @@ given list of sentences, each consisting of a list of tokens.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

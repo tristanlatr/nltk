@@ -65,19 +65,19 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">InterpolatedLanguageModel</span>(<a href="nltk.lm.api.LanguageModel.html" title="nltk.lm.api.LanguageModel">LanguageModel</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/models.py#L62" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.lm.KneserNeyInterpolated.html">nltk.lm.KneserNeyInterpolated</a></code>, <code><a href="nltk.lm.WittenBellInterpolated.html">nltk.lm.WittenBellInterpolated</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">InterpolatedLanguageModel</span>(<a href="nltk.lm.api.LanguageModel.html" title="nltk.lm.api.LanguageModel">LanguageModel</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/models.py#L62" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.lm.KneserNeyInterpolated.html">nltk.lm.KneserNeyInterpolated</a></code>, <code><a href="nltk.lm.WittenBellInterpolated.html">nltk.lm.WittenBellInterpolated</a></code></p>
         <p><a href="classIndex.html#nltk.lm.models.InterpolatedLanguageModel">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Logic common to all interpolated language models.
-
-The idea to abstract this comes from Chen &amp; Goodman 1995.
-Do not instantiate this class directly!</p></div>
+        <div><p>Logic common to all interpolated language models.</p>
+<p>The idea to abstract this comes from Chen &amp; Goodman 1995.
+Do not instantiate this class directly!</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id781">
+        <table class="children sortable" id="id784">
   
   
   <tr class="method">
@@ -101,7 +101,7 @@ Do not instantiate this class directly!</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.lm.api.LanguageModel.html">LanguageModel</a></code>:
           </p>
-          <table class="children sortable" id="id782">
+          <table class="children sortable" id="id785">
   
   
   <tr class="basemethod">
@@ -175,7 +175,7 @@ Do not instantiate this class directly!</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, smoothing_cls, order, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/models.py#L69">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/models.py#L69">
       
       (source)
     </a>
@@ -183,18 +183,15 @@ Do not instantiate this class directly!</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.lm.api.LanguageModel.html#__init__">nltk.lm.api.LanguageModel.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.lm.KneserNeyInterpolated.html">nltk.lm.KneserNeyInterpolated</a></code>, <code><a href="nltk.lm.WittenBellInterpolated.html">nltk.lm.WittenBellInterpolated</a></code></div>
     
-    <div><p class="pre">Creates new LanguageModel.
-
-:param vocabulary: If provided, this vocabulary will be used instead
-of creating a new one when training.
-:type vocabulary: `nltk.lm.Vocabulary` or None
+    <div><p>Creates new LanguageModel.</p>
+<p>of creating a new one when training.
+:type vocabulary: <code><a href="nltk.lm.Vocabulary.html">nltk.lm.Vocabulary</a></code> or None
 :param counter: If provided, use this object to count ngrams.
-:type vocabulary: `nltk.lm.NgramCounter` or None
-:param ngrams_fn: If given, defines how sentences in training text are turned to ngram
-                  sequences.
-:type ngrams_fn: function or None
-:param pad_fn: If given, defines how senteces in training text are padded.
-:type pad_fn: function or None</p></div>
+:type vocabulary: <code><a href="nltk.lm.NgramCounter.html">nltk.lm.NgramCounter</a></code> or None
+:param ngrams_fn: If given, defines how sentences in training text are turned to ngram</p>
+<blockquote>
+sequences.</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">smoothing_cls</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">order</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ngrams_fn:</span>function or None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pad_fn:</span>function or None</td><td class="fieldArgDesc">If given, defines how senteces in training text are padded.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">vocabulary</span></td><td class="fieldArgDesc">If provided, this vocabulary will be used instead</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -208,7 +205,7 @@ of creating a new one when training.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unmasked_score</span>(self, word, context=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/models.py#L75">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/models.py#L75">
       
       (source)
     </a>
@@ -216,17 +213,14 @@ of creating a new one when training.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.lm.api.LanguageModel.html#unmasked_score">nltk.lm.api.LanguageModel.unmasked_score</a></code></div>
     
-    <div><p class="pre">Score a word given some optional context.
-
-Concrete models are expected to provide an implementation.
+    <div><p>Score a word given some optional context.</p>
+<p>Concrete models are expected to provide an implementation.
 Note that this method does not mask its arguments with the OOV label.
-Use the `score` method for that.
-
-:param str word: Word for which we want the score
-:param tuple(str) context: Context the word is in.
-If `None`, compute unigram score.
+Use the <code><a href="#score">score</a></code> method for that.</p>
+<p>If <code><a href="https://docs.python.org/3/library/constants.html#None">None</a></code>, compute unigram score.
 :param context: tuple(str) or None
-:rtype: float</p></div>
+:rtype: float</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">context</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str word</span></td><td class="fieldArgDesc">Word for which we want the score</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tuple(str) context</span></td><td class="fieldArgDesc">Context the word is in.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -240,7 +234,7 @@ If `None`, compute unigram score.
   <div class="functionHeader">
     
     <span class="py-defname">estimator</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/models.py#L73">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/models.py#L73">
       
       (source)
     </a>
@@ -260,7 +254,7 @@ If `None`, compute unigram score.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

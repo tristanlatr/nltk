@@ -65,19 +65,19 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A port of the Gale-Church Aligner.
-
-Gale &amp; Church (1993), A Program for Aligning Sentences in Bilingual Corpora.
-http://aclweb.org/anthology/J93-1004.pdf</p></div>
+        <div><p>A port of the Gale-Church Aligner.</p>
+<p>Gale &amp; Church (1993), A Program for Aligning Sentences in Bilingual Corpora.
+<a class="rst-reference external" href="http://aclweb.org/anthology/J93-1004.pdf" target="_top">http://aclweb.org/anthology/J93-1004.pdf</a></p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1871">
+        <table class="children sortable" id="id1875">
   
   
   <tr class="class">
@@ -156,7 +156,7 @@ http://aclweb.org/anthology/J93-1004.pdf</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">align_blocks</span>(source_sents_lens, target_sents_lens, params=LanguageIndependent):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L154">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L154">
       
       (source)
     </a>
@@ -164,21 +164,23 @@ http://aclweb.org/anthology/J93-1004.pdf</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the sentence alignment of two text blocks (usually paragraphs).
-
-    &gt;&gt;&gt; align_blocks([5,5,5], [7,7,7])
-    [(0, 0), (1, 1), (2, 2)]
-    &gt;&gt;&gt; align_blocks([10,5,5], [12,20])
-    [(0, 0), (1, 1), (2, 1)]
-    &gt;&gt;&gt; align_blocks([12,20], [10,5,5])
-    [(0, 0), (1, 1), (1, 2)]
-    &gt;&gt;&gt; align_blocks([10,2,10,10,2,10], [12,3,20,3,12])
-    [(0, 0), (1, 1), (2, 2), (3, 2), (4, 3), (5, 4)]
-
-@param source_sents_lens: The list of source sentence lengths.
+    <div><p>Return the sentence alignment of two text blocks (usually paragraphs).</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>align_blocks([5,5,5], [7,7,7])
+<span class="py-output">[(0, 0), (1, 1), (2, 2)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>align_blocks([10,5,5], [12,20])
+<span class="py-output">[(0, 0), (1, 1), (2, 1)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>align_blocks([12,20], [10,5,5])
+<span class="py-output">[(0, 0), (1, 1), (1, 2)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>align_blocks([10,2,10,10,2,10], [12,3,20,3,12])
+<span class="py-output">[(0, 0), (1, 1), (2, 2), (3, 2), (4, 3), (5, 4)]</span>
+</pre></blockquote>
+<p>@param source_sents_lens: The list of source sentence lengths.
 @param target_sents_lens: The list of target sentence lengths.
 @param params: the sentence alignment parameters.
-@return: The sentence alignments, a list of index pairs.</p></div>
+@return: The sentence alignments, a list of index pairs.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -192,7 +194,7 @@ http://aclweb.org/anthology/J93-1004.pdf</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">align_log_prob</span>(i, j, source_sents, target_sents, alignment, params):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L126">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L126">
       
       (source)
     </a>
@@ -200,17 +202,16 @@ http://aclweb.org/anthology/J93-1004.pdf</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the log probability of the two sentences C{source_sents[i]}, C{target_sents[j]}
-being aligned with a specific C{alignment}.
-
-@param i: The offset of the source sentence.
+    <div><p>Returns the log probability of the two sentences C{source_sents[i]}, C{target_sents[j]}
+being aligned with a specific C{alignment}.</p>
+<p>@param i: The offset of the source sentence.
 @param j: The offset of the target sentence.
 @param source_sents: The list of source sentence lengths.
 @param target_sents: The list of target sentence lengths.
 @param alignment: The alignment type, a tuple of two integers.
-@param params: The sentence alignment parameters.
-
-@returns: The log probability of a specific alignment between the two sentences, given the parameters.</p></div>
+@param params: The sentence alignment parameters.</p>
+<p>@returns: The log probability of a specific alignment between the two sentences, given the parameters.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -224,7 +225,7 @@ being aligned with a specific C{alignment}.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">align_texts</span>(source_blocks, target_blocks, params=LanguageIndependent):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L208">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L208">
       
       (source)
     </a>
@@ -232,19 +233,16 @@ being aligned with a specific C{alignment}.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Creates the sentence alignment of two texts.
-
-Texts can consist of several blocks. Block boundaries cannot be crossed by sentence
-alignment links.
-
-Each block consists of a list that contains the lengths (in characters) of the sentences
-in this block.
-
-@param source_blocks: The list of blocks in the source text.
+    <div><p>Creates the sentence alignment of two texts.</p>
+<p>Texts can consist of several blocks. Block boundaries cannot be crossed by sentence
+alignment links.</p>
+<p>Each block consists of a list that contains the lengths (in characters) of the sentences
+in this block.</p>
+<p>@param source_blocks: The list of blocks in the source text.
 @param target_blocks: The list of blocks in the target text.
-@param params: the sentence alignment parameters.
-
-@returns: A list of sentence alignment lists</p></div>
+@param params: the sentence alignment parameters.</p>
+<p>@returns: A list of sentence alignment lists</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -258,7 +256,7 @@ in this block.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">erfcc</span>(x):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L27">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L27">
       
       (source)
     </a>
@@ -266,7 +264,7 @@ in this block.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Complementary error function.</p></div>
+    <div>Complementary error function.</div>
   </div>
 </div><div class="basefunction">
   
@@ -280,7 +278,7 @@ in this block.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">norm_cdf</span>(x):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L66">
       
       (source)
     </a>
@@ -288,7 +286,7 @@ in this block.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the area under the normal distribution from M{-∞..x}.</p></div>
+    <div>Return the area under the normal distribution from M{-∞..x}.</div>
   </div>
 </div><div class="basefunction">
   
@@ -302,7 +300,7 @@ in this block.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">norm_logsf</span>(x):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L70">
       
       (source)
     </a>
@@ -324,7 +322,7 @@ in this block.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse_token_stream</span>(stream, soft_delimiter, hard_delimiter):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L255">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L255">
       
       (source)
     </a>
@@ -332,8 +330,8 @@ in this block.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Parses a stream of tokens and splits it into sentences (using C{soft_delimiter} tokens)
-and blocks (using C{hard_delimiter} tokens) for use with the L{align_texts} function.</p></div>
+    <div>Parses a stream of tokens and splits it into sentences (using C{soft_delimiter} tokens)
+and blocks (using C{hard_delimiter} tokens) for use with the L{align_texts} function.</div>
   </div>
 </div><div class="basefunction">
   
@@ -347,7 +345,7 @@ and blocks (using C{hard_delimiter} tokens) for use with the L{align_texts} func
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">split_at</span>(it, split_value):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L237">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L237">
       
       (source)
     </a>
@@ -355,11 +353,11 @@ and blocks (using C{hard_delimiter} tokens) for use with the L{align_texts} func
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Splits an iterator C{it} at values of C{split_value}.
-
-Each instance of C{split_value} is swallowed. The iterator produces
+    <div><p>Splits an iterator C{it} at values of C{split_value}.</p>
+<p>Each instance of C{split_value} is swallowed. The iterator produces
 subiterators which need to be consumed fully before the next subiterator
-can be used.</p></div>
+can be used.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -373,7 +371,7 @@ can be used.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">trace</span>(backlinks, source_sents_lens, target_sents_lens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L98">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L98">
       
       (source)
     </a>
@@ -381,15 +379,8 @@ can be used.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Traverse the alignment cost from the tracebacks and retrieves
-appropriate sentence pairs.
-
-:param backlinks: A dictionary where the key is the alignment points and value is the cost (referencing the LanguageIndependent.PRIORS)
-:type backlinks: dict
-:param source_sents_lens: A list of target sentences' lengths
-:type source_sents_lens: list(int)
-:param target_sents_lens: A list of target sentences' lengths
-:type target_sents_lens: list(int)</p></div>
+    <div>Traverse the alignment cost from the tracebacks and retrieves
+appropriate sentence pairs.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">backlinks:</span>dict</td><td class="fieldArgDesc">A dictionary where the key is the alignment points and value is the cost (referencing the LanguageIndependent.PRIORS)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source_sents_lens:</span>list(int)</td><td class="fieldArgDesc">A list of target sentences' lengths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target_sents_lens:</span>list(int)</td><td class="fieldArgDesc">A list of target sentences' lengths</td></tr></table></div>
   </div>
 </div><div class="basevariable">
   
@@ -403,7 +394,7 @@ appropriate sentence pairs.
   <div class="functionHeader">
     
     <span class="py-defname">LOG2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/gale_church.py#L77">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/gale_church.py#L77">
       
       (source)
     </a>
@@ -423,7 +414,7 @@ appropriate sentence pairs.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

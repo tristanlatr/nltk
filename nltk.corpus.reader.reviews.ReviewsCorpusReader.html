@@ -65,43 +65,48 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ReviewsCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L152" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ReviewsCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L152" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.reviews.ReviewsCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for the Customer Review Data dataset by Hu, Liu (2004).
+        <div><p>Reader for the Customer Review Data dataset by Hu, Liu (2004).
 Note: we are not applying any sentence tokenization at the moment, just word
-tokenization.
-
-    &gt;&gt;&gt; from nltk.corpus import product_reviews_1
-    &gt;&gt;&gt; camera_reviews = product_reviews_1.reviews('Canon_G3.txt')
-    &gt;&gt;&gt; review = camera_reviews[0]
-    &gt;&gt;&gt; review.sents()[0]
-    ['i', 'recently', 'purchased', 'the', 'canon', 'powershot', 'g3', 'and', 'am',
-    'extremely', 'satisfied', 'with', 'the', 'purchase', '.']
-    &gt;&gt;&gt; review.features()
-    [('canon powershot g3', '+3'), ('use', '+2'), ('picture', '+2'),
-    ('picture quality', '+1'), ('picture quality', '+1'), ('camera', '+2'),
-    ('use', '+2'), ('feature', '+1'), ('picture quality', '+3'), ('use', '+1'),
-    ('option', '+1')]
-
-We can also reach the same information directly from the stream:
-
-    &gt;&gt;&gt; product_reviews_1.features('Canon_G3.txt')
-    [('canon powershot g3', '+3'), ('use', '+2'), ...]
-
-We can compute stats for specific product features:
-
-    &gt;&gt;&gt; n_reviews = len([(feat,score) for (feat,score) in product_reviews_1.features('Canon_G3.txt') if feat=='picture'])
-    &gt;&gt;&gt; tot = sum([int(score) for (feat,score) in product_reviews_1.features('Canon_G3.txt') if feat=='picture'])
-    &gt;&gt;&gt; mean = tot / n_reviews
-    &gt;&gt;&gt; print(n_reviews, tot, mean)
-    15 24 1.6</p></div>
+tokenization.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> product_reviews_1
+<span class="py-prompt">&gt;&gt;&gt; </span>camera_reviews = product_reviews_1.reviews(<span class="py-string">'Canon_G3.txt'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>review = camera_reviews[0]
+<span class="py-prompt">&gt;&gt;&gt; </span>review.sents()[0]
+<span class="py-output">['i', 'recently', 'purchased', 'the', 'canon', 'powershot', 'g3', 'and', 'am',</span>
+<span class="py-output">'extremely', 'satisfied', 'with', 'the', 'purchase', '.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>review.features()
+<span class="py-output">[('canon powershot g3', '+3'), ('use', '+2'), ('picture', '+2'),</span>
+<span class="py-output">('picture quality', '+1'), ('picture quality', '+1'), ('camera', '+2'),</span>
+<span class="py-output">('use', '+2'), ('feature', '+1'), ('picture quality', '+3'), ('use', '+1'),</span>
+<span class="py-output">('option', '+1')]</span>
+</pre></blockquote>
+<p>We can also reach the same information directly from the stream:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>product_reviews_1.features(<span class="py-string">'Canon_G3.txt'</span>)
+<span class="py-output">[('canon powershot g3', '+3'), ('use', '+2'), ...]</span>
+</pre></blockquote>
+<p>We can compute stats for specific product features:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>n_reviews = <span class="py-builtin">len</span>([(feat,score) <span class="py-keyword">for</span> (feat,score) <span class="py-keyword">in</span> product_reviews_1.features(<span class="py-string">'Canon_G3.txt'</span>) <span class="py-keyword">if</span> feat==<span class="py-string">'picture'</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span>tot = <span class="py-builtin">sum</span>([<span class="py-builtin">int</span>(score) <span class="py-keyword">for</span> (feat,score) <span class="py-keyword">in</span> product_reviews_1.features(<span class="py-string">'Canon_G3.txt'</span>) <span class="py-keyword">if</span> feat==<span class="py-string">'picture'</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span>mean = tot / n_reviews
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(n_reviews, tot, mean)
+<span class="py-output">15 24 1.6</span>
+</pre></blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id426">
+        <table class="children sortable" id="id429">
   
   
   <tr class="method">
@@ -128,7 +133,7 @@ We can compute stats for specific product features:
     
     <td>Method</td>
     <td><code><a href="#reviews">reviews</a></code></td>
-    <td><span>Return all the reviews as a list of Review objects. If `fileids` is specified, return all the reviews from each of the specified files.</span></td>
+    <td><span>Return all the reviews as a list of Review objects. If <code>fileids</code> is specified, return all the reviews from each of the specified files.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -170,7 +175,7 @@ We can compute stats for specific product features:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id427">
+          <table class="children sortable" id="id430">
   
   
   <tr class="basemethod">
@@ -232,7 +237,7 @@ We can compute stats for specific product features:
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -269,7 +274,7 @@ We can compute stats for specific product features:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, word_tokenizer=WordPunctTokenizer(), encoding='utf8'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L186">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L186">
       
       (source)
     </a>
@@ -277,11 +282,8 @@ We can compute stats for specific product features:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:param root: The root directory for the corpus.
-:param fileids: a list or regexp specifying the fileids in the corpus.
-:param word_tokenizer: a tokenizer for breaking sentences or paragraphs
-    into words. Default: `WordPunctTokenizer`
-:param encoding: the encoding that should be used to read the corpus.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for the corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the fileids in the corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">word_tokenizer</span></td><td class="fieldArgDesc">a tokenizer for breaking sentences or paragraphs
+into words. Default: <code><a href="nltk.tokenize.regexp.WordPunctTokenizer.html">WordPunctTokenizer</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc">the encoding that should be used to read the corpus.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -295,7 +297,7 @@ We can compute stats for specific product features:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">features</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L200">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L200">
       
       (source)
     </a>
@@ -303,13 +305,9 @@ We can compute stats for specific product features:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of features. Each feature is a tuple made of the specific
-item feature and the opinion strength about that feature.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    features have to be returned.
-:return: all features for the item(s) in the given file(s).
-:rtype: list(tuple)</p></div>
+    <div>Return a list of features. Each feature is a tuple made of the specific
+item feature and the opinion strength about that feature.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+features have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple)</td><td class="fieldArgDesc">all features for the item(s) in the given file(s).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -323,7 +321,7 @@ item feature and the opinion strength about that feature.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L221">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L221">
       
       (source)
     </a>
@@ -331,10 +329,8 @@ item feature and the opinion strength about that feature.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param fileids: a list or regexp specifying the fileids of the files that
-    have to be returned as a raw string.
-:return: the given file(s) as a single string.
-:rtype: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the fileids of the files that
+have to be returned as a raw string.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">the given file(s) as a single string.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -348,7 +344,7 @@ item feature and the opinion strength about that feature.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">readme</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L234">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L234">
       
       (source)
     </a>
@@ -356,7 +352,7 @@ item feature and the opinion strength about that feature.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#readme">nltk.corpus.reader.api.CorpusReader.readme</a></code></div>
     
-    <div><p class="pre">Return the contents of the corpus README.txt file.</p></div>
+    <div>Return the contents of the corpus README.txt file.</div>
   </div>
 </div><div class="basemethod">
   
@@ -370,7 +366,7 @@ item feature and the opinion strength about that feature.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">reviews</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L240">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L240">
       
       (source)
     </a>
@@ -378,12 +374,9 @@ item feature and the opinion strength about that feature.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all the reviews as a list of Review objects. If `fileids` is
-specified, return all the reviews from each of the specified files.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    reviews have to be returned.
-:return: the given file(s) as a list of reviews.</p></div>
+    <div>Return all the reviews as a list of Review objects. If <code>fileids</code> is
+specified, return all the reviews from each of the specified files.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+reviews have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the given file(s) as a list of reviews.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -397,7 +390,7 @@ specified, return all the reviews from each of the specified files.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L258">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L258">
       
       (source)
     </a>
@@ -405,13 +398,9 @@ specified, return all the reviews from each of the specified files.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all sentences in the corpus or in the specified files.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    sentences have to be returned.
-:return: the given file(s) as a list of sentences, each encoded as a
-    list of word strings.
-:rtype: list(list(str))</p></div>
+    <div>Return all sentences in the corpus or in the specified files.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+sentences have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(list(str))</td><td class="fieldArgDesc">the given file(s) as a list of sentences, each encoded as a
+list of word strings.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -425,7 +414,7 @@ specified, return all the reviews from each of the specified files.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L275">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L275">
       
       (source)
     </a>
@@ -433,13 +422,9 @@ specified, return all the reviews from each of the specified files.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all words and punctuation symbols in the corpus or in the specified
-files.
-
-:param fileids: a list or regexp specifying the ids of the files whose
-    words have to be returned.
-:return: the given file(s) as a list of words and punctuation symbols.
-:rtype: list(str)</p></div>
+    <div>Return all words and punctuation symbols in the corpus or in the specified
+files.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">a list or regexp specifying the ids of the files whose
+words have to be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file(s) as a list of words and punctuation symbols.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -453,7 +438,7 @@ files.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_features</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L292">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L292">
       
       (source)
     </a>
@@ -475,7 +460,7 @@ files.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_review_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L301">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L301">
       
       (source)
     </a>
@@ -497,7 +482,7 @@ files.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_sent_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L334">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L334">
       
       (source)
     </a>
@@ -519,7 +504,7 @@ files.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_word_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L340">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L340">
       
       (source)
     </a>
@@ -541,7 +526,7 @@ files.
   <div class="functionHeader">
     
     <span class="py-defname">_word_tokenizer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/reviews.py#L198">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/reviews.py#L198">
       
       (source)
     </a>
@@ -561,7 +546,7 @@ files.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

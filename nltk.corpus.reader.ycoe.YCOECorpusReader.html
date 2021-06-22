@@ -65,18 +65,18 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">YCOECorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L33" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">YCOECorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L33" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.ycoe.YCOECorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Corpus reader for the York-Toronto-Helsinki Parsed Corpus of Old
+        <div>Corpus reader for the York-Toronto-Helsinki Parsed Corpus of Old
 English Prose (YCOE), a 1.5 million word syntactically-annotated
-corpus of Old English prose texts.</p></div>
+corpus of Old English prose texts.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id528">
+        <table class="children sortable" id="id531">
   
   
   <tr class="method">
@@ -155,7 +155,7 @@ corpus of Old English prose texts.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id529">
+          <table class="children sortable" id="id532">
   
   
   <tr class="basemethod">
@@ -217,7 +217,7 @@ corpus of Old English prose texts.</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -254,7 +254,7 @@ corpus of Old English prose texts.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, encoding='utf8'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L40">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L40">
       
       (source)
     </a>
@@ -262,34 +262,34 @@ corpus of Old English prose texts.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:type root: PathPointer or str
-:param root: A path pointer identifying the root directory for
-    this corpus.  If a string is specified, then it will be
-    converted to a ``PathPointer`` automatically.
-:param fileids: A list of the files that make up this corpus.
-    This list can either be specified explicitly, as a list of
-    strings; or implicitly, as a regular expression over file
-    paths.  The absolute path for each file will be constructed
-    by joining the reader's root to each file name.
-:param encoding: The default unicode encoding for the files
-    that make up the corpus.  The value of ``encoding`` can be any
-    of the following:
-    - A string: ``encoding`` is the encoding name for all files.
-    - A dictionary: ``encoding[file_id]`` is the encoding
-      name for the file whose identifier is ``file_id``.  If
-      ``file_id`` is not in ``encoding``, then the file
-      contents will be processed using non-unicode byte strings.
-    - A list: ``encoding`` should be a list of ``(regexp, encoding)``
-      tuples.  The encoding for a file whose identifier is ``file_id``
-      will be the ``encoding`` value for the first tuple whose
-      ``regexp`` matches the ``file_id``.  If no tuple's ``regexp``
-      matches the ``file_id``, the file contents will be processed
-      using non-unicode byte strings.
-    - None: the file contents of all files will be
-      processed using non-unicode byte strings.
-:param tagset: The name of the tagset used by this corpus, to be used
-      for normalizing or converting the POS tags returned by the
-      tagged_...() methods.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root:</span>PathPointer or str</td><td class="fieldArgDesc">A path pointer identifying the root directory for
+this corpus.  If a string is specified, then it will be
+converted to a <tt class="rst-docutils literal">PathPointer</tt> automatically.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><p>The default unicode encoding for the files
+that make up the corpus.  The value of <tt class="rst-docutils literal">encoding</tt> can be any
+of the following:
+- A string: <tt class="rst-docutils literal">encoding</tt> is the encoding name for all files.
+- A dictionary: <tt class="rst-docutils literal">encoding[file_id]</tt> is the encoding</p>
+<blockquote>
+name for the file whose identifier is <tt class="rst-docutils literal">file_id</tt>.  If
+<tt class="rst-docutils literal">file_id</tt> is not in <tt class="rst-docutils literal">encoding</tt>, then the file
+contents will be processed using non-unicode byte strings.</blockquote>
+<ul class="rst-simple">
+<li>A list: <tt class="rst-docutils literal">encoding</tt> should be a list of <tt class="rst-docutils literal">(regexp, encoding)</tt>
+tuples.  The encoding for a file whose identifier is <tt class="rst-docutils literal">file_id</tt>
+will be the <tt class="rst-docutils literal">encoding</tt> value for the first tuple whose
+<tt class="rst-docutils literal">regexp</tt> matches the <tt class="rst-docutils literal">file_id</tt>.  If no tuple's <tt class="rst-docutils literal">regexp</tt>
+matches the <tt class="rst-docutils literal">file_id</tt>, the file contents will be processed
+using non-unicode byte strings.</li>
+<li>None: the file contents of all files will be
+processed using non-unicode byte strings.</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list of the files that make up this corpus.
+This list can either be specified explicitly, as a list of
+strings; or implicitly, as a regular expression over file
+paths.  The absolute path for each file will be constructed
+by joining the reader's root to each file name.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc">The name of the tagset used by this corpus, to be used
+for normalizing or converting the POS tags returned by the
+<a href="#id1"><span class="rst-problematic" id="rst-id2">tagged_</span></a>...() methods.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -303,7 +303,7 @@ corpus of Old English prose texts.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">documents</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L60">
       
       (source)
     </a>
@@ -311,9 +311,9 @@ corpus of Old English prose texts.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a list of document identifiers for all documents in
+    <div>Return a list of document identifiers for all documents in
 this corpus, or for the documents with the given file(s) if
-specified.</p></div>
+specified.</div>
   </div>
 </div><div class="basemethod">
   
@@ -327,7 +327,7 @@ specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">fileids</span>(self, documents=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L76">
       
       (source)
     </a>
@@ -335,8 +335,8 @@ specified.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#fileids">nltk.corpus.reader.api.CorpusReader.fileids</a></code></div>
     
-    <div><p class="pre">Return a list of file identifiers for the files that make up
-this corpus, or that store the given document(s) if specified.</p></div>
+    <div>Return a list of file identifiers for the files that make up
+this corpus, or that store the given document(s) if specified.</div>
   </div>
 </div><div class="basemethod">
   
@@ -350,7 +350,7 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">paras</span>(self, documents=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L121">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L121">
       
       (source)
     </a>
@@ -372,7 +372,7 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parsed_sents</span>(self, documents=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L133">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L133">
       
       (source)
     </a>
@@ -394,7 +394,7 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">sents</span>(self, documents=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L118">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L118">
       
       (source)
     </a>
@@ -416,7 +416,7 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_paras</span>(self, documents=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L130">
       
       (source)
     </a>
@@ -438,7 +438,7 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_sents</span>(self, documents=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L127">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L127">
       
       (source)
     </a>
@@ -460,7 +460,7 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, documents=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L124">
       
       (source)
     </a>
@@ -482,7 +482,7 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, documents=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L115">
       
       (source)
     </a>
@@ -504,7 +504,7 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_getfileids</span>(self, documents, subcorpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L92">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L92">
       
       (source)
     </a>
@@ -512,8 +512,8 @@ this corpus, or that store the given document(s) if specified.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Helper that selects the appropriate fileids for a given set of
-documents from a given subcorpus (pos or psd).</p></div>
+    <div>Helper that selects the appropriate fileids for a given set of
+documents from a given subcorpus (pos or psd).</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -527,7 +527,7 @@ documents from a given subcorpus (pos or psd).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_documents</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L58">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L58">
       
       (source)
     </a>
@@ -549,7 +549,7 @@ documents from a given subcorpus (pos or psd).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_pos_reader</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L46">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L46">
       
       (source)
     </a>
@@ -571,7 +571,7 @@ documents from a given subcorpus (pos or psd).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_psd_reader</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ycoe.py#L43">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ycoe.py#L43">
       
       (source)
     </a>
@@ -591,7 +591,7 @@ documents from a given subcorpus (pos or psd).</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

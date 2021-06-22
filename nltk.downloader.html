@@ -65,81 +65,83 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The NLTK corpus and module downloader.  This module defines several
+        <div><p>The NLTK corpus and module downloader.  This module defines several
 interfaces which can be used to download corpora, models, and other
-data packages that can be used with NLTK.
-
-Downloading Packages
-====================
-If called with no arguments, ``download()`` will display an interactive
+data packages that can be used with NLTK.</p>
+<div class="rst-section" id="rst-downloading-packages">
+<h1 class="heading">Downloading Packages</h1>
+<p>If called with no arguments, <tt class="rst-docutils literal">download()</tt> will display an interactive
 interface which can be used to download and install new packages.
 If Tkinter is available, then a graphical interface will be shown,
-otherwise a simple text interface will be provided.
-
-Individual packages can be downloaded by calling the ``download()``
+otherwise a simple text interface will be provided.</p>
+<p>Individual packages can be downloaded by calling the <tt class="rst-docutils literal">download()</tt>
 function with a single argument, giving the package identifier for the
-package that should be downloaded:
-
-    &gt;&gt;&gt; download('treebank') # doctest: +SKIP
-    [nltk_data] Downloading package 'treebank'...
-    [nltk_data]   Unzipping corpora/treebank.zip.
-
-NLTK also provides a number of "package collections", consisting of
+package that should be downloaded:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>download(<span class="py-string">'treebank'</span>) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[nltk_data] Downloading package 'treebank'...</span>
+<span class="py-output">[nltk_data]   Unzipping corpora/treebank.zip.</span>
+</pre></blockquote>
+<p>NLTK also provides a number of "package collections", consisting of
 a group of related packages.  To download all packages in a
-colleciton, simply call ``download()`` with the collection's
-identifier:
-
-    &gt;&gt;&gt; download('all-corpora') # doctest: +SKIP
-    [nltk_data] Downloading package 'abc'...
-    [nltk_data]   Unzipping corpora/abc.zip.
-    [nltk_data] Downloading package 'alpino'...
-    [nltk_data]   Unzipping corpora/alpino.zip.
-      ...
-    [nltk_data] Downloading package 'words'...
-    [nltk_data]   Unzipping corpora/words.zip.
-
-Download Directory
-==================
-By default, packages are installed in either a system-wide directory
+colleciton, simply call <tt class="rst-docutils literal">download()</tt> with the collection's
+identifier:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>download(<span class="py-string">'all-corpora'</span>) <span class="py-comment"># doctest: +SKIP</span>
+<span class="py-output">[nltk_data] Downloading package 'abc'...</span>
+<span class="py-output">[nltk_data]   Unzipping corpora/abc.zip.</span>
+<span class="py-output">[nltk_data] Downloading package 'alpino'...</span>
+<span class="py-output">[nltk_data]   Unzipping corpora/alpino.zip.</span>
+<span class="py-output">  ...</span>
+<span class="py-output">[nltk_data] Downloading package 'words'...</span>
+<span class="py-output">[nltk_data]   Unzipping corpora/words.zip.</span>
+</pre></blockquote>
+</div>
+<div class="rst-section" id="rst-download-directory">
+<h1 class="heading">Download Directory</h1>
+<p>By default, packages are installed in either a system-wide directory
 (if Python has sufficient access to write to it); or in the current
-user's home directory.  However, the ``download_dir`` argument may be
-used to specify a different installation target, if desired.
-
-See ``Downloader.default_download_dir()`` for more a detailed
-description of how the default download directory is chosen.
-
-NLTK Download Server
-====================
-Before downloading any packages, the corpus and module downloader
+user's home directory.  However, the <tt class="rst-docutils literal">download_dir</tt> argument may be
+used to specify a different installation target, if desired.</p>
+<p>See <tt class="rst-docutils literal">Downloader.default_download_dir()</tt> for more a detailed
+description of how the default download directory is chosen.</p>
+</div>
+<div class="rst-section" id="rst-nltk-download-server">
+<h1 class="heading">NLTK Download Server</h1>
+<p>Before downloading any packages, the corpus and module downloader
 contacts the NLTK download server, to retrieve an index file
 describing the available packages.  By default, this index file is
-loaded from ``https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml``.
-If necessary, it is possible to create a new ``Downloader`` object,
-specifying a different URL for the package index file.
-
-Usage::
-
-    python nltk/downloader.py [-d DATADIR] [-q] [-f] [-k] PACKAGE_IDS
-
-or::
-
-    python -m nltk.downloader [-d DATADIR] [-q] [-f] [-k] PACKAGE_IDS</p></div>
+loaded from <tt class="rst-docutils literal"><span class="pre">https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml</span></tt>.
+If necessary, it is possible to create a new <tt class="rst-docutils literal">Downloader</tt> object,
+specifying a different URL for the package index file.</p>
+<p>Usage:</p>
+<pre class="rst-literal-block">
+python nltk/downloader.py [-d DATADIR] [-q] [-f] [-k] PACKAGE_IDS
+</pre>
+<p>or:</p>
+<pre class="rst-literal-block">
+python -m nltk.downloader [-d DATADIR] [-q] [-f] [-k] PACKAGE_IDS
+</pre>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id550">
+        <table class="children sortable" id="id553">
   
   
   <tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.downloader.Collection.html">Collection</a></code></td>
-    <td><span>A directory entry for a collection of downloadable packages. These entries are extracted from the XML index file that is downloaded by ``Downloader``.</span></td>
+    <td><span>A directory entry for a collection of downloadable packages. These entries are extracted from the XML index file that is downloaded by <tt class="rst-docutils literal">Downloader</tt>.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -154,7 +156,7 @@ or::
     
     <td>Class</td>
     <td><code><a href="nltk.downloader.DownloaderMessage.html">DownloaderMessage</a></code></td>
-    <td><span>A status message object, used by ``incr_download`` to communicate its progress.</span></td>
+    <td><span>A status message object, used by <tt class="rst-docutils literal">incr_download</tt> to communicate its progress.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
@@ -249,12 +251,12 @@ or::
     
     <td>Function</td>
     <td><code><a href="#md5_hexdigest">md5_hexdigest</a></code></td>
-    <td><span>Calculate and return the MD5 checksum for a given file. ``file`` may either be a filename or an open stream.</span></td>
+    <td><span>Calculate and return the MD5 checksum for a given file. <tt class="rst-docutils literal">file</tt> may either be a filename or an open stream.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#unzip">unzip</a></code></td>
-    <td><span>Extract the contents of the zip file ``filename`` into the directory ``root``.</span></td>
+    <td><span>Extract the contents of the zip file <tt class="rst-docutils literal">filename</tt> into the directory <tt class="rst-docutils literal">root</tt>.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -294,12 +296,12 @@ or::
     
     <td>Function</td>
     <td><code><a href="#_check_package">_check_package</a></code></td>
-    <td><span>Helper for ``build_index()``: Perform some checks to make sure that the given package is consistent.</span></td>
+    <td><span>Helper for <tt class="rst-docutils literal">build_index()</tt>: Perform some checks to make sure that the given package is consistent.</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
     <td><code><a href="#_find_collections">_find_collections</a></code></td>
-    <td><span>Helper for ``build_index()``: Yield a list of ElementTree.Element objects, each holding the xml for a single package collection.</span></td>
+    <td><span>Helper for <tt class="rst-docutils literal">build_index()</tt>: Yield a list of ElementTree.Element objects, each holding the xml for a single package collection.</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
@@ -319,7 +321,7 @@ or::
     
     <td>Function</td>
     <td><code><a href="#_svn_revision">_svn_revision</a></code></td>
-    <td><span>Helper for ``build_index()``: Calculate the subversion revision number for a given file (by using ``subprocess`` to run ``svn``).</span></td>
+    <td><span>Helper for <tt class="rst-docutils literal">build_index()</tt>: Calculate the subversion revision number for a given file (by using <tt class="rst-docutils literal">subprocess</tt> to run <tt class="rst-docutils literal">svn</tt>).</span></td>
   </tr><tr class="function private">
     
     <td>Function</td>
@@ -351,7 +353,7 @@ or::
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">build_index</span>(root, base_url):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2264">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2264">
       
       (source)
     </a>
@@ -359,33 +361,32 @@ or::
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a new data.xml index file, by combining the xml description
-files for various packages and collections.  ``root`` should be the
+    <div><p>Create a new data.xml index file, by combining the xml description
+files for various packages and collections.  <tt class="rst-docutils literal">root</tt> should be the
 path to a directory containing the package xml and zip files; and
-the collection xml files.  The ``root`` directory is expected to
-have the following subdirectories::
-
-  root/
-    packages/ .................. subdirectory for packages
-      corpora/ ................. zip &amp; xml files for corpora
-      grammars/ ................ zip &amp; xml files for grammars
-      taggers/ ................. zip &amp; xml files for taggers
-      tokenizers/ .............. zip &amp; xml files for tokenizers
-      etc.
-    collections/ ............... xml files for collections
-
-For each package, there should be two files: ``package.zip``
-(where *package* is the package name)
+the collection xml files.  The <tt class="rst-docutils literal">root</tt> directory is expected to
+have the following subdirectories:</p>
+<pre class="rst-literal-block">
+root/
+  packages/ .................. subdirectory for packages
+    corpora/ ................. zip &amp; xml files for corpora
+    grammars/ ................ zip &amp; xml files for grammars
+    taggers/ ................. zip &amp; xml files for taggers
+    tokenizers/ .............. zip &amp; xml files for tokenizers
+    etc.
+  collections/ ............... xml files for collections
+</pre>
+<p>For each package, there should be two files: <tt class="rst-docutils literal">package.zip</tt>
+(where <em>package</em> is the package name)
 which contains the package itself as a compressed zip file; and
-``package.xml``, which is an xml description of the package.  The
-zipfile ``package.zip`` should expand to a single subdirectory
-named ``package/``.  The base filename ``package`` must match
-the identifier given in the package's xml file.
-
-For each collection, there should be a single file ``collection.zip``
-describing the collection, where *collection* is the name of the collection.
-
-All identifiers (for both packages and collections) must be unique.</p></div>
+<tt class="rst-docutils literal">package.xml</tt>, which is an xml description of the package.  The
+zipfile <tt class="rst-docutils literal">package.zip</tt> should expand to a single subdirectory
+named <tt class="rst-docutils literal">package/</tt>.  The base filename <tt class="rst-docutils literal">package</tt> must match
+the identifier given in the package's xml file.</p>
+<p>For each collection, there should be a single file <tt class="rst-docutils literal">collection.zip</tt>
+describing the collection, where <em>collection</em> is the name of the collection.</p>
+<p>All identifiers (for both packages and collections) must be unique.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -399,7 +400,7 @@ All identifiers (for both packages and collections) must be unique.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">download_gui</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2480">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2480">
       
       (source)
     </a>
@@ -421,7 +422,7 @@ All identifiers (for both packages and collections) must be unique.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">download_shell</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2476">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2476">
       
       (source)
     </a>
@@ -443,7 +444,7 @@ All identifiers (for both packages and collections) must be unique.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">md5_hexdigest</span>(file):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2204">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2204">
       
       (source)
     </a>
@@ -451,8 +452,8 @@ All identifiers (for both packages and collections) must be unique.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate and return the MD5 checksum for a given file.
-``file`` may either be a filename or an open stream.</p></div>
+    <div>Calculate and return the MD5 checksum for a given file.
+<tt class="rst-docutils literal">file</tt> may either be a filename or an open stream.</div>
   </div>
 </div><div class="basefunction">
   
@@ -466,7 +467,7 @@ All identifiers (for both packages and collections) must be unique.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unzip</span>(filename, root, verbose=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2228">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2228">
       
       (source)
     </a>
@@ -474,8 +475,8 @@ All identifiers (for both packages and collections) must be unique.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Extract the contents of the zip file ``filename`` into the
-directory ``root``.</p></div>
+    <div>Extract the contents of the zip file <tt class="rst-docutils literal">filename</tt> into the
+directory <tt class="rst-docutils literal">root</tt>.</div>
   </div>
 </div><div class="basefunction">
   
@@ -489,7 +490,7 @@ directory ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2484">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2484">
       
       (source)
     </a>
@@ -511,7 +512,7 @@ directory ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">args</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2531">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2531">
       
       (source)
     </a>
@@ -533,7 +534,7 @@ directory ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">downloader</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2533">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2533">
       
       (source)
     </a>
@@ -555,7 +556,7 @@ directory ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">options</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2531">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2531">
       
       (source)
     </a>
@@ -577,7 +578,7 @@ directory ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">parser</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2491">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2491">
       
       (source)
     </a>
@@ -599,7 +600,7 @@ directory ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">rv</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2537">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2537">
       
       (source)
     </a>
@@ -621,7 +622,7 @@ directory ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">TKINTER</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L167">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L167">
       
       (source)
     </a>
@@ -643,7 +644,7 @@ directory ``root``.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_check_package</span>(pkg_xml, zipfilename, zf):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2352">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2352">
       
       (source)
     </a>
@@ -651,8 +652,8 @@ directory ``root``.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Helper for ``build_index()``: Perform some checks to make sure that
-the given package is consistent.</p></div>
+    <div>Helper for <tt class="rst-docutils literal">build_index()</tt>: Perform some checks to make sure that
+the given package is consistent.</div>
   </div>
 </div><div class="basefunction private">
   
@@ -666,7 +667,7 @@ the given package is consistent.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_find_collections</span>(root):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2392">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2392">
       
       (source)
     </a>
@@ -674,8 +675,8 @@ the given package is consistent.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Helper for ``build_index()``: Yield a list of ElementTree.Element
-objects, each holding the xml for a single package collection.</p></div>
+    <div>Helper for <tt class="rst-docutils literal">build_index()</tt>: Yield a list of ElementTree.Element
+objects, each holding the xml for a single package collection.</div>
   </div>
 </div><div class="basefunction private">
   
@@ -689,7 +690,7 @@ objects, each holding the xml for a single package collection.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_find_packages</span>(root):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2405">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2405">
       
       (source)
     </a>
@@ -697,13 +698,18 @@ objects, each holding the xml for a single package collection.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Helper for ``build_index()``: Yield a list of tuples
-``(pkg_xml, zf, subdir)``, where:
-  - ``pkg_xml`` is an ``ElementTree.Element`` holding the xml for a
-    package
-  - ``zf`` is a ``zipfile.ZipFile`` for the package's contents.
-  - ``subdir`` is the subdirectory (relative to ``root``) where
-    the package was found (e.g. 'corpora' or 'grammars').</p></div>
+    <div><p>Helper for <tt class="rst-docutils literal">build_index()</tt>: Yield a list of tuples
+<tt class="rst-docutils literal">(pkg_xml, zf, subdir)</tt>, where:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">pkg_xml</tt> is an <tt class="rst-docutils literal">ElementTree.Element</tt> holding the xml for a
+package</li>
+<li><tt class="rst-docutils literal">zf</tt> is a <tt class="rst-docutils literal">zipfile.ZipFile</tt> for the package's contents.</li>
+<li><tt class="rst-docutils literal">subdir</tt> is the subdirectory (relative to <tt class="rst-docutils literal">root</tt>) where
+the package was found (e.g. 'corpora' or 'grammars').</li>
+</ul>
+</blockquote>
+</div>
   </div>
 </div><div class="basefunction private">
   
@@ -717,7 +723,7 @@ objects, each holding the xml for a single package collection.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_indent_xml</span>(xml, prefix=''):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2336">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2336">
       
       (source)
     </a>
@@ -725,10 +731,10 @@ objects, each holding the xml for a single package collection.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Helper for ``build_index()``: Given an XML ``ElementTree``, modify it
-(and its descendents) ``text`` and ``tail`` attributes to generate
+    <div>Helper for <tt class="rst-docutils literal">build_index()</tt>: Given an XML <tt class="rst-docutils literal">ElementTree</tt>, modify it
+(and its descendents) <tt class="rst-docutils literal">text</tt> and <tt class="rst-docutils literal">tail</tt> attributes to generate
 an indented tree, where each nested element is indented by 2
-spaces with respect to its parent.</p></div>
+spaces with respect to its parent.</div>
   </div>
 </div><div class="basefunction private">
   
@@ -742,7 +748,7 @@ spaces with respect to its parent.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_md5_hexdigest</span>(fp):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2215">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2215">
       
       (source)
     </a>
@@ -764,7 +770,7 @@ spaces with respect to its parent.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_svn_revision</span>(filename):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2373">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2373">
       
       (source)
     </a>
@@ -772,8 +778,8 @@ spaces with respect to its parent.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Helper for ``build_index()``: Calculate the subversion revision
-number for a given file (by using ``subprocess`` to run ``svn``).</p></div>
+    <div>Helper for <tt class="rst-docutils literal">build_index()</tt>: Calculate the subversion revision
+number for a given file (by using <tt class="rst-docutils literal">subprocess</tt> to run <tt class="rst-docutils literal">svn</tt>).</div>
   </div>
 </div><div class="basefunction private">
   
@@ -787,7 +793,7 @@ number for a given file (by using ``subprocess`` to run ``svn``).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_unzip_iter</span>(filename, root, verbose=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2238">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2238">
       
       (source)
     </a>
@@ -809,7 +815,7 @@ number for a given file (by using ``subprocess`` to run ``svn``).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_downloader</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/downloader.py#L2472">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/downloader.py#L2472">
       
       (source)
     </a>
@@ -829,7 +835,7 @@ number for a given file (by using ``subprocess`` to run ``svn``).</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

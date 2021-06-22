@@ -65,18 +65,18 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NonbreakingPrefixesCorpusReader</span>(<a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html" title="nltk.corpus.reader.wordlist.WordListCorpusReader">WordListCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordlist.py#L47" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NonbreakingPrefixesCorpusReader</span>(<a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html" title="nltk.corpus.reader.wordlist.WordListCorpusReader">WordListCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/wordlist.py#L47" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.wordlist.NonbreakingPrefixesCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This is a class to read the nonbreaking prefixes textfiles from the
+        <div>This is a class to read the nonbreaking prefixes textfiles from the
 Moses Machine Translation toolkit. These lists are used in the Python port
-of the Moses' word tokenizer.</p></div>
+of the Moses' word tokenizer.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id505">
+        <table class="children sortable" id="id508">
   
   
   <tr class="method">
@@ -95,7 +95,7 @@ of the Moses' word tokenizer.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html">WordListCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id506">
+          <table class="children sortable" id="id509">
   
   
   <tr class="basemethod">
@@ -109,7 +109,7 @@ of the Moses' word tokenizer.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html">WordListCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id507">
+          <table class="children sortable" id="id510">
   
   
   <tr class="basemethod">
@@ -181,7 +181,7 @@ of the Moses' word tokenizer.</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -218,7 +218,7 @@ of the Moses' word tokenizer.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, lang=None, fileids=None, ignore_lines_startswith='#'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordlist.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/wordlist.py#L80">
       
       (source)
     </a>
@@ -226,16 +226,15 @@ of the Moses' word tokenizer.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.wordlist.WordListCorpusReader.html#words">nltk.corpus.reader.wordlist.WordListCorpusReader.words</a></code></div>
     
-    <div><p class="pre">This module returns a list of nonbreaking prefixes for the specified
-language(s).
-
-&gt;&gt;&gt; from nltk.corpus import nonbreaking_prefixes as nbp
-&gt;&gt;&gt; nbp.words('en')[:10] == [u'A', u'B', u'C', u'D', u'E', u'F', u'G', u'H', u'I', u'J']
-True
-&gt;&gt;&gt; nbp.words('ta')[:5] == [u'அ', u'ஆ', u'இ', u'ஈ', u'உ']
-True
-
-:return: a list words for the specified language(s).</p></div>
+    <div><p>This module returns a list of nonbreaking prefixes for the specified
+language(s).</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus <span class="py-keyword">import</span> nonbreaking_prefixes <span class="py-keyword">as</span> nbp
+<span class="py-prompt">&gt;&gt;&gt; </span>nbp.words(<span class="py-string">'en'</span>)[:10] == [u<span class="py-string">'A'</span>, u<span class="py-string">'B'</span>, u<span class="py-string">'C'</span>, u<span class="py-string">'D'</span>, u<span class="py-string">'E'</span>, u<span class="py-string">'F'</span>, u<span class="py-string">'G'</span>, u<span class="py-string">'H'</span>, u<span class="py-string">'I'</span>, u<span class="py-string">'J'</span>]
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>nbp.words(<span class="py-string">'ta'</span>)[:5] == [u<span class="py-string">'அ'</span>, u<span class="py-string">'ஆ'</span>, u<span class="py-string">'இ'</span>, u<span class="py-string">'ஈ'</span>, u<span class="py-string">'உ'</span>]
+<span class="py-output">True</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list words for the specified language(s).</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -249,7 +248,7 @@ True
   <div class="functionHeader">
     
     <span class="py-defname">available_langs</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/wordlist.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/wordlist.py#L54">
       
       (source)
     </a>
@@ -269,7 +268,7 @@ True
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

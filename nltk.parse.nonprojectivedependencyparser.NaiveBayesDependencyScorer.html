@@ -65,28 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NaiveBayesDependencyScorer</span>(<a href="nltk.parse.nonprojectivedependencyparser.DependencyScorerI.html" title="nltk.parse.nonprojectivedependencyparser.DependencyScorerI">DependencyScorerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L79" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NaiveBayesDependencyScorer</span>(<a href="nltk.parse.nonprojectivedependencyparser.DependencyScorerI.html" title="nltk.parse.nonprojectivedependencyparser.DependencyScorerI">DependencyScorerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L79" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.nonprojectivedependencyparser.NaiveBayesDependencyScorer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A dependency scorer built around a MaxEnt classifier.  In this
-particular class that classifier is a ``NaiveBayesClassifier``.
+        <div><p>A dependency scorer built around a MaxEnt classifier.  In this
+particular class that classifier is a <tt class="rst-docutils literal">NaiveBayesClassifier</tt>.
 It uses head-word, head-tag, child-word, and child-tag features
-for classification.
-
-&gt;&gt;&gt; from nltk.parse.dependencygraph import DependencyGraph, conll_data2
-
-&gt;&gt;&gt; graphs = [DependencyGraph(entry) for entry in conll_data2.split('\n\n') if entry]
-&gt;&gt;&gt; npp = ProbabilisticNonprojectiveParser()
-&gt;&gt;&gt; npp.train(graphs, NaiveBayesDependencyScorer())
-&gt;&gt;&gt; parses = npp.parse(['Cathy', 'zag', 'hen', 'zwaaien', '.'], ['N', 'V', 'Pron', 'Adj', 'N', 'Punc'])
-&gt;&gt;&gt; len(list(parses))
-1</p></div>
+for classification.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.parse.dependencygraph <span class="py-keyword">import</span> DependencyGraph, conll_data2</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>graphs = [DependencyGraph(entry) <span class="py-keyword">for</span> entry <span class="py-keyword">in</span> conll_data2.split(<span class="py-string">'\n\n'</span>) <span class="py-keyword">if</span> entry]
+<span class="py-prompt">&gt;&gt;&gt; </span>npp = ProbabilisticNonprojectiveParser()
+<span class="py-prompt">&gt;&gt;&gt; </span>npp.train(graphs, NaiveBayesDependencyScorer())
+<span class="py-prompt">&gt;&gt;&gt; </span>parses = npp.parse([<span class="py-string">'Cathy'</span>, <span class="py-string">'zag'</span>, <span class="py-string">'hen'</span>, <span class="py-string">'zwaaien'</span>, <span class="py-string">'.'</span>], [<span class="py-string">'N'</span>, <span class="py-string">'V'</span>, <span class="py-string">'Pron'</span>, <span class="py-string">'Adj'</span>, <span class="py-string">'N'</span>, <span class="py-string">'Punc'</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(<span class="py-builtin">list</span>(parses))
+<span class="py-output">1</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1057">
+        <table class="children sortable" id="id1061">
   
   
   <tr class="method">
@@ -130,7 +130,7 @@ for classification.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L97">
       
       (source)
     </a>
@@ -152,7 +152,7 @@ for classification.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">score</span>(self, graph):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L136">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L136">
       
       (source)
     </a>
@@ -160,15 +160,10 @@ for classification.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.nonprojectivedependencyparser.DependencyScorerI.html#score">nltk.parse.nonprojectivedependencyparser.DependencyScorerI.score</a></code></div>
     
-    <div><p class="pre">Converts the graph into a feature-based representation of
+    <div>Converts the graph into a feature-based representation of
 each edge, and then assigns a score to each based on the
 confidence of the classifier in assigning it to the
-positive label.  Scores are returned in a multidimensional list.
-
-:type graph: DependencyGraph
-:param graph: A dependency graph to score.
-:rtype: 3 dimensional list
-:return: Edge scores for the graph parameter.</p></div>
+positive label.  Scores are returned in a multidimensional list.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graph:</span>DependencyGraph</td><td class="fieldArgDesc">A dependency graph to score.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">3 dimensional list</td><td class="fieldArgDesc">Edge scores for the graph parameter.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -182,7 +177,7 @@ positive label.  Scores are returned in a multidimensional list.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, graphs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L100">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L100">
       
       (source)
     </a>
@@ -190,13 +185,10 @@ positive label.  Scores are returned in a multidimensional list.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.nonprojectivedependencyparser.DependencyScorerI.html#train">nltk.parse.nonprojectivedependencyparser.DependencyScorerI.train</a></code></div>
     
-    <div><p class="pre">Trains a ``NaiveBayesClassifier`` using the edges present in
+    <div>Trains a <tt class="rst-docutils literal">NaiveBayesClassifier</tt> using the edges present in
 graphs list as positive examples, the edges not present as
 negative examples.  Uses a feature vector of head-word,
-head-tag, child-word, and child-tag.
-
-:type graphs: list(DependencyGraph)
-:param graphs: A list of dependency graphs to train the scorer.</p></div>
+head-tag, child-word, and child-tag.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">graphs:</span>list(DependencyGraph)</td><td class="fieldArgDesc">A list of dependency graphs to train the scorer.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -210,7 +202,7 @@ head-tag, child-word, and child-tag.
   <div class="functionHeader">
     
     <span class="py-defname">classifier</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/nonprojectivedependencyparser.py#L134">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/nonprojectivedependencyparser.py#L134">
       
       (source)
     </a>
@@ -230,7 +222,7 @@ head-tag, child-word, and child-tag.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

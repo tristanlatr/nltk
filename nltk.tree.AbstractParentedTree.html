@@ -65,36 +65,42 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">AbstractParentedTree</span>(<a href="nltk.tree.Tree.html" title="nltk.tree.Tree">Tree</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L996" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tree.MultiParentedTree.html">nltk.tree.MultiParentedTree</a></code>, <code><a href="nltk.tree.ParentedTree.html">nltk.tree.ParentedTree</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AbstractParentedTree</span>(<a href="nltk.tree.Tree.html" title="nltk.tree.Tree">Tree</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L996" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tree.MultiParentedTree.html">nltk.tree.MultiParentedTree</a></code>, <code><a href="nltk.tree.ParentedTree.html">nltk.tree.ParentedTree</a></code></p>
         <p><a href="classIndex.html#nltk.tree.AbstractParentedTree">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract base class for a ``Tree`` that automatically maintains
+        <div><p>An abstract base class for a <tt class="rst-docutils literal">Tree</tt> that automatically maintains
 pointers to parent nodes.  These parent pointers are updated
 whenever any change is made to a tree's structure.  Two subclasses
-are currently defined:
-
-  - ``ParentedTree`` is used for tree structures where each subtree
-    has at most one parent.  This class should be used in cases
-    where there is no"sharing" of subtrees.
-
-  - ``MultiParentedTree`` is used for tree structures where a
-    subtree may have zero or more parents.  This class should be
-    used in cases where subtrees may be shared.
-
-Subclassing
-===========
-The ``AbstractParentedTree`` class redefines all operations that
+are currently defined:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">ParentedTree</tt> is used for tree structures where each subtree
+has at most one parent.  This class should be used in cases
+where there is no"sharing" of subtrees.</li>
+<li><tt class="rst-docutils literal">MultiParentedTree</tt> is used for tree structures where a
+subtree may have zero or more parents.  This class should be
+used in cases where subtrees may be shared.</li>
+</ul>
+</blockquote>
+<div class="rst-section" id="rst-subclassing">
+<h1 class="heading">Subclassing</h1>
+<p>The <tt class="rst-docutils literal">AbstractParentedTree</tt> class redefines all operations that
 modify a tree's structure to call two methods, which are used by
-subclasses to update parent information:
-
-  - ``_setparent()`` is called whenever a new child is added.
-  - ``_delparent()`` is called whenever a child is removed.</p></div>
+subclasses to update parent information:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">_setparent()</tt> is called whenever a new child is added.</li>
+<li><tt class="rst-docutils literal">_delparent()</tt> is called whenever a child is removed.</li>
+</ul>
+</blockquote>
+</div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1911">
+        <table class="children sortable" id="id1915">
   
   
   <tr class="method">
@@ -168,19 +174,19 @@ subclasses to update parent information:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tree.Tree.html">Tree</a></code>:
           </p>
-          <table class="children sortable" id="id1912">
+          <table class="children sortable" id="id1916">
   
   
   <tr class="baseclassmethod">
     
     <td>Class Method</td>
     <td><code><a href="nltk.tree.Tree.html#convert">convert</a></code></td>
-    <td><span>Convert a tree between different subtypes of Tree.  ``cls`` determines which class will be used to encode the new tree.</span></td>
+    <td><span>Convert a tree between different subtypes of Tree.  <tt class="rst-docutils literal">cls</tt> determines which class will be used to encode the new tree.</span></td>
   </tr><tr class="baseclassmethod">
     
     <td>Class Method</td>
     <td><code><a href="nltk.tree.Tree.html#fromstring">fromstring</a></code></td>
-    <td><span>Read a bracketed tree string and return the resulting tree. Trees are represented as nested brackettings, such as::</span></td>
+    <td><span>Read a bracketed tree string and return the resulting tree. Trees are represented as nested brackettings, such as:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -280,7 +286,7 @@ subclasses to update parent information:
     
     <td>Method</td>
     <td><code><a href="nltk.tree.Tree.html#leaf_treeposition">leaf_treeposition</a></code></td>
-    <td><span>:return: The tree position of the ``index``-th leaf in this tree.  I.e., if ``tp=self.leaf_treeposition(i)``, then ``self[tp]==self.leaves()[i]``.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -295,7 +301,7 @@ subclasses to update parent information:
     
     <td>Method</td>
     <td><code><a href="nltk.tree.Tree.html#pformat_latex_qtree">pformat_latex_qtree</a></code></td>
-    <td><span>Returns a representation of the tree compatible with the LaTeX qtree package. This consists of the string ``\Tree`` followed by the tree represented in bracketed notation.</span></td>
+    <td><span>Returns a representation of the tree compatible with the LaTeX qtree package. This consists of the string <tt class="rst-docutils literal">\Tree</tt> followed by the tree represented in bracketed notation.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -310,7 +316,7 @@ subclasses to update parent information:
     
     <td>Method</td>
     <td><code><a href="nltk.tree.Tree.html#pretty_print">pretty_print</a></code></td>
-    <td><span>Pretty-print this tree as ASCII or Unicode art. For explanation of the arguments, see the documentation for `nltk.treeprettyprinter.TreePrettyPrinter`.</span></td>
+    <td><span>Pretty-print this tree as ASCII or Unicode art. For explanation of the arguments, see the documentation for <code><a href="nltk.treeprettyprinter.TreePrettyPrinter.html">nltk.treeprettyprinter.TreePrettyPrinter</a></code>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -330,7 +336,7 @@ subclasses to update parent information:
     
     <td>Method</td>
     <td><code><a href="nltk.tree.Tree.html#treeposition_spanning_leaves">treeposition_spanning_leaves</a></code></td>
-    <td><span>:return: The tree position of the lowest descendant of this tree that dominates ``self.leaves()[start:end]``. :raise ValueError: if ``end &lt;= start``</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -422,7 +428,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__delitem__</span>(self, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1081">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1081">
       
       (source)
     </a>
@@ -444,7 +450,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__delslice__</span>(self, start, stop):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1233">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1233">
       
       (source)
     </a>
@@ -466,7 +472,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getslice__</span>(self, start, stop):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1230">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1230">
       
       (source)
     </a>
@@ -488,7 +494,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, node, children=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1021">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1021">
       
       (source)
     </a>
@@ -510,7 +516,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span>(self, index, value):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1121">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1121">
       
       (source)
     </a>
@@ -532,7 +538,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__setslice__</span>(self, start, stop, value):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1236">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1236">
       
       (source)
     </a>
@@ -554,7 +560,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">append</span>(self, child):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1181">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1181">
       
       (source)
     </a>
@@ -576,7 +582,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">extend</span>(self, children):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1186">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1186">
       
       (source)
     </a>
@@ -598,7 +604,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">insert</span>(self, index, child):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1192">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1192">
       
       (source)
     </a>
@@ -620,7 +626,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pop</span>(self, index=-1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1205">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1205">
       
       (source)
     </a>
@@ -642,7 +648,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove</span>(self, child):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1216">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1216">
       
       (source)
     </a>
@@ -664,7 +670,7 @@ subclasses to update parent information:
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_delparent</span>(self, child, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1061">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1061">
       
       (source)
     </a>
@@ -672,15 +678,11 @@ subclasses to update parent information:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.tree.MultiParentedTree.html">nltk.tree.MultiParentedTree</a></code>, <code><a href="nltk.tree.ParentedTree.html">nltk.tree.ParentedTree</a></code></div>
     
-    <div><p class="pre">Update the parent pointer of ``child`` to not point to self.  This
-method is only called if the type of ``child`` is ``Tree``; i.e., it
+    <div>Update the parent pointer of <tt class="rst-docutils literal">child</tt> to not point to self.  This
+method is only called if the type of <tt class="rst-docutils literal">child</tt> is <tt class="rst-docutils literal">Tree</tt>; i.e., it
 is not called when removing a leaf from a tree.  This method
 is always called before the child is actually removed from the
-child list of ``self``.
-
-:type child: Tree
-:type index: int
-:param index: The index of ``child`` in ``self``.</p></div>
+child list of <tt class="rst-docutils literal">self</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">child:</span>Tree</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index:</span>int</td><td class="fieldArgDesc">The index of <tt class="rst-docutils literal">child</tt> in <tt class="rst-docutils literal">self</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -694,7 +696,7 @@ child list of ``self``.
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_setparent</span>(self, child, index, dry_run=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tree.py#L1039">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tree.py#L1039">
       
       (source)
     </a>
@@ -702,23 +704,17 @@ child list of ``self``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.tree.MultiParentedTree.html">nltk.tree.MultiParentedTree</a></code>, <code><a href="nltk.tree.ParentedTree.html">nltk.tree.ParentedTree</a></code></div>
     
-    <div><p class="pre">Update the parent pointer of ``child`` to point to ``self``.  This
-method is only called if the type of ``child`` is ``Tree``;
+    <div>Update the parent pointer of <tt class="rst-docutils literal">child</tt> to point to <tt class="rst-docutils literal">self</tt>.  This
+method is only called if the type of <tt class="rst-docutils literal">child</tt> is <tt class="rst-docutils literal">Tree</tt>;
 i.e., it is not called when adding a leaf to a tree.  This method
 is always called before the child is actually added to the
-child list of ``self``.
-
-:type child: Tree
-:type index: int
-:param index: The index of ``child`` in ``self``.
-:raise TypeError: If ``child`` is a tree with an impropriate
-    type.  Typically, if ``child`` is a tree, then its type needs
-    to match the type of ``self``.  This prevents mixing of
-    different tree types (single-parented, multi-parented, and
-    non-parented).
-:param dry_run: If true, the don't actually set the child's
-    parent pointer; just check for any error conditions, and
-    raise an exception if one is found.</p></div>
+child list of <tt class="rst-docutils literal">self</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">child:</span>Tree</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index:</span>int</td><td class="fieldArgDesc">The index of <tt class="rst-docutils literal">child</tt> in <tt class="rst-docutils literal">self</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dry_run</span></td><td class="fieldArgDesc">If true, the don't actually set the child's
+parent pointer; just check for any error conditions, and
+raise an exception if one is found.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#TypeError">TypeError</a></code></td><td>If <tt class="rst-docutils literal">child</tt> is a tree with an impropriate
+type.  Typically, if <tt class="rst-docutils literal">child</tt> is a tree, then its type needs
+to match the type of <tt class="rst-docutils literal">self</tt>.  This prevents mixing of
+different tree types (single-parented, multi-parented, and
+non-parented).</td></tr></table></div>
   </div>
 </div>
 
@@ -730,7 +726,7 @@ child list of ``self``.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

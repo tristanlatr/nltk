@@ -65,22 +65,22 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">AlpinoCorpusReader</span>(<a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html" title="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader">BracketParseCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bracket_parse.py#L200" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AlpinoCorpusReader</span>(<a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html" title="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader">BracketParseCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/bracket_parse.py#L200" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.bracket_parse.AlpinoCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Reader for the Alpino Dutch Treebank.
+        <div>Reader for the Alpino Dutch Treebank.
 This corpus has a lexical breakdown structure embedded, as read by _parse
 Unfortunately this puts punctuation and some other words out of the sentence
-order in the xml element tree. This is no good for tag_ and word_
+order in the xml element tree. This is no good for <a href="#id1"><span class="rst-problematic" id="rst-id2">tag_</span></a> and <a href="#id3"><span class="rst-problematic" id="rst-id4">word_</span></a>
 _tag and _word will be overridden to use a non-default new parameter 'ordered'
 to the overridden _normalize function. The _parse function can then remain
-untouched.</p></div>
+untouched.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id260">
+        <table class="children sortable" id="id263">
   
   
   <tr class="method">
@@ -109,7 +109,7 @@ untouched.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html">BracketParseCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id261">
+          <table class="children sortable" id="id264">
   
   
   <tr class="basemethod private">
@@ -143,7 +143,7 @@ untouched.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.SyntaxCorpusReader.html">SyntaxCorpusReader</a></code> (via <code><a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html">BracketParseCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id262">
+          <table class="children sortable" id="id265">
   
   
   <tr class="basemethod">
@@ -207,7 +207,7 @@ untouched.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html">BracketParseCorpusReader</a></code>, <code><a href="nltk.corpus.reader.api.SyntaxCorpusReader.html">SyntaxCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id263">
+          <table class="children sortable" id="id266">
   
   
   <tr class="basemethod">
@@ -274,7 +274,7 @@ untouched.</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -306,7 +306,7 @@ untouched.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, encoding='ISO-8859-1', tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bracket_parse.py#L211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/bracket_parse.py#L211">
       
       (source)
     </a>
@@ -314,17 +314,13 @@ untouched.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html#__init__">nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:param root: The root directory for this corpus.
-:param fileids: A list or regexp specifying the fileids in this corpus.
-:param comment_char: The character which can appear at the start of
-    a line to indicate that the rest of the line is a comment.
-:param detect_blocks: The method that is used to find blocks
-  in the corpus; can be 'unindented_paren' (every unindented
-  parenthesis starts a new parse) or 'sexpr' (brackets are
-  matched).
-:param tagset: The name of the tagset used by this corpus, to be used
-      for normalizing or converting the POS tags returned by the
-      tagged_...() methods.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc">The name of the tagset used by this corpus, to be used
+for normalizing or converting the POS tags returned by the
+<a href="#id1"><span class="rst-problematic" id="rst-id2">tagged_</span></a>...() methods.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list or regexp specifying the fileids in this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">comment_char</span></td><td class="fieldArgDesc">The character which can appear at the start of
+a line to indicate that the rest of the line is a comment.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">detect_blocks</span></td><td class="fieldArgDesc">The method that is used to find blocks
+in the corpus; can be 'unindented_paren' (every unindented
+parenthesis starts a new parse) or 'sexpr' (brackets are
+matched).</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -338,7 +334,7 @@ untouched.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_normalize</span>(self, t, ordered=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bracket_parse.py#L221">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/bracket_parse.py#L221">
       
       (source)
     </a>
@@ -346,7 +342,7 @@ untouched.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html#_normalize">nltk.corpus.reader.bracket_parse.BracketParseCorpusReader._normalize</a></code></div>
     
-    <div><p class="pre">Normalize the xml sentence element in t.
+    <div>Normalize the xml sentence element in t.
 The sentence elements &lt;alpino_ds&gt;, although embedded in a few overall
 xml elements, are seperated by blank lines. That's how the reader can
 deliver them one at a time.
@@ -360,7 +356,7 @@ The return value is a string with all xml elementes replaced by
 clauses: either a cat clause with nested clauses, or a word clause.
 The order of the bracket clauses closely follows the xml.
 If ordered == True, the word clauses include an order sequence number.
-If ordered == False, the word clauses only have pos and word parts.</p></div>
+If ordered == False, the word clauses only have pos and word parts.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -374,7 +370,7 @@ If ordered == False, the word clauses only have pos and word parts.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_tag</span>(self, t, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bracket_parse.py#L255">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/bracket_parse.py#L255">
       
       (source)
     </a>
@@ -396,7 +392,7 @@ If ordered == False, the word clauses only have pos and word parts.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_word</span>(self, t):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/bracket_parse.py#L269">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/bracket_parse.py#L269">
       
       (source)
     </a>
@@ -404,7 +400,7 @@ If ordered == False, the word clauses only have pos and word parts.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.bracket_parse.BracketParseCorpusReader.html#_word">nltk.corpus.reader.bracket_parse.BracketParseCorpusReader._word</a></code></div>
     
-    <div><p class="pre">Return a correctly ordered list if words</p></div>
+    <div>Return a correctly ordered list if words</div>
   </div>
 </div>
 
@@ -416,7 +412,7 @@ If ordered == False, the word clauses only have pos and word parts.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

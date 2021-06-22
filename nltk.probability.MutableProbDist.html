@@ -65,18 +65,18 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">MutableProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1587" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MutableProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1587" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.MutableProbDist">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An mutable probdist where the probabilities may be easily modified. This
+        <div>An mutable probdist where the probabilities may be easily modified. This
 simply copies an existing probdist, storing the probability values in a
-mutable dictionary and providing an update method.</p></div>
+mutable dictionary and providing an update method.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1156">
+        <table class="children sortable" id="id1160">
   
   
   <tr class="method">
@@ -103,7 +103,7 @@ mutable dictionary and providing an update method.</p></div>
     
     <td>Method</td>
     <td><code><a href="#samples">samples</a></code></td>
-    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
+    <td><span>Return a list of all samples that have nonzero probabilities. Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -135,7 +135,7 @@ mutable dictionary and providing an update method.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.ProbDistI.html">ProbDistI</a></code>:
           </p>
-          <table class="children sortable" id="id1157">
+          <table class="children sortable" id="id1161">
   
   
   <tr class="basemethod">
@@ -147,7 +147,7 @@ mutable dictionary and providing an update method.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.probability.ProbDistI.html#generate">generate</a></code></td>
-    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
+    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample <tt class="rst-docutils literal">samp</tt> is equal to <tt class="rst-docutils literal">self.prob(samp)</tt>.</span></td>
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
@@ -174,7 +174,7 @@ mutable dictionary and providing an update method.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, prob_dist, samples, store_logs=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1594">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1594">
       
       (source)
     </a>
@@ -182,17 +182,10 @@ mutable dictionary and providing an update method.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#__init__">nltk.probability.ProbDistI.__init__</a></code></div>
     
-    <div><p class="pre">Creates the mutable probdist based on the given prob_dist and using
+    <div>Creates the mutable probdist based on the given prob_dist and using
 the list of samples given. These values are stored as log
-probabilities if the store_logs flag is set.
-
-:param prob_dist: the distribution from which to garner the
-    probabilities
-:type prob_dist: ProbDist
-:param samples: the complete set of samples
-:type samples: sequence of any
-:param store_logs: whether to store the probabilities as logarithms
-:type store_logs: bool</p></div>
+probabilities if the store_logs flag is set.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prob_dist:</span>ProbDist</td><td class="fieldArgDesc">the distribution from which to garner the
+probabilities</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples:</span>sequence of any</td><td class="fieldArgDesc">the complete set of samples</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">store_logs:</span>bool</td><td class="fieldArgDesc">whether to store the probabilities as logarithms</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -206,7 +199,7 @@ probabilities if the store_logs flag is set.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">logprob</span>(self, sample):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1633">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1633">
       
       (source)
     </a>
@@ -214,12 +207,8 @@ probabilities if the store_logs flag is set.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#logprob">nltk.probability.ProbDistI.logprob</a></code></div>
     
-    <div><p class="pre">Return the base 2 logarithm of the probability for a given sample.
-
-:param sample: The sample whose probability
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+    <div>Return the base 2 logarithm of the probability for a given sample.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">The sample whose probability
+should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -233,7 +222,7 @@ probabilities if the store_logs flag is set.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">max</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1618">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1618">
       
       (source)
     </a>
@@ -241,11 +230,9 @@ probabilities if the store_logs flag is set.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#max">nltk.probability.ProbDistI.max</a></code></div>
     
-    <div><p class="pre">Return the sample with the greatest probability.  If two or
+    <div>Return the sample with the greatest probability.  If two or
 more samples have the same probability, return one of them;
-which sample is returned is undefined.
-
-:rtype: any</p></div>
+which sample is returned is undefined.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">any</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -259,7 +246,7 @@ which sample is returned is undefined.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self, sample):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1626">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1626">
       
       (source)
     </a>
@@ -267,13 +254,9 @@ which sample is returned is undefined.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#prob">nltk.probability.ProbDistI.prob</a></code></div>
     
-    <div><p class="pre">Return the probability for a given sample.  Probabilities
-are always real numbers in the range [0, 1].
-
-:param sample: The sample whose probability
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+    <div>Return the probability for a given sample.  Probabilities
+are always real numbers in the range [0, 1].<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">The sample whose probability
+should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -287,7 +270,7 @@ are always real numbers in the range [0, 1].
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">samples</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1622">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1622">
       
       (source)
     </a>
@@ -295,10 +278,8 @@ are always real numbers in the range [0, 1].
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#samples">nltk.probability.ProbDistI.samples</a></code></div>
     
-    <div><p class="pre">Return a list of all samples that have nonzero probabilities.
-Use ``prob`` to find the probability of each sample.
-
-:rtype: list</p></div>
+    <div>Return a list of all samples that have nonzero probabilities.
+Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -312,7 +293,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, sample, prob, log=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1640">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1640">
       
       (source)
     </a>
@@ -320,18 +301,11 @@ Use ``prob`` to find the probability of each sample.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Update the probability for the given sample. This may cause the object
+    <div>Update the probability for the given sample. This may cause the object
 to stop being the valid probability distribution - the user must
 ensure that they update the sample probabilities such that all samples
 have probabilities between 0 and 1 and that all probabilities sum to
-one.
-
-:param sample: the sample for which to update the probability
-:type sample: any
-:param prob: the new probability
-:type prob: float
-:param log: is the probability already logged
-:type log: bool</p></div>
+one.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">the sample for which to update the probability</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prob:</span>float</td><td class="fieldArgDesc">the new probability</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">log:</span>bool</td><td class="fieldArgDesc">is the probability already logged</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -345,7 +319,7 @@ one.
   <div class="functionHeader">
     
     <span class="py-defname">_data</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1610">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1610">
       
       (source)
     </a>
@@ -367,7 +341,7 @@ one.
   <div class="functionHeader">
     
     <span class="py-defname">_logs</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1616">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1616">
       
       (source)
     </a>
@@ -389,7 +363,7 @@ one.
   <div class="functionHeader">
     
     <span class="py-defname">_sample_dict</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1609">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1609">
       
       (source)
     </a>
@@ -411,7 +385,7 @@ one.
   <div class="functionHeader">
     
     <span class="py-defname">_samples</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1608">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1608">
       
       (source)
     </a>
@@ -431,7 +405,7 @@ one.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

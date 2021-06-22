@@ -65,20 +65,20 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">KneserNeyProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1700" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">KneserNeyProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1700" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.KneserNeyProbDist">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Kneser-Ney estimate of a probability distribution. This is a version of
+        <div>Kneser-Ney estimate of a probability distribution. This is a version of
 back-off that counts how likely an n-gram is provided the n-1-gram had
 been seen in training. Extends the ProbDistI interface, requires a trigram
 FreqDist instance to train on. Optionally, a different from default discount
-value can be specified. The default discount is set to 0.75.</p></div>
+value can be specified. The default discount is set to 0.75.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1158">
+        <table class="children sortable" id="id1162">
   
   
   <tr class="method">
@@ -110,7 +110,7 @@ value can be specified. The default discount is set to 0.75.</p></div>
     
     <td>Method</td>
     <td><code><a href="#samples">samples</a></code></td>
-    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
+    <td><span>Return a list of all samples that have nonzero probabilities. Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -162,14 +162,14 @@ value can be specified. The default discount is set to 0.75.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.ProbDistI.html">ProbDistI</a></code>:
           </p>
-          <table class="children sortable" id="id1159">
+          <table class="children sortable" id="id1163">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.probability.ProbDistI.html#generate">generate</a></code></td>
-    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
+    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample <tt class="rst-docutils literal">samp</tt> is equal to <tt class="rst-docutils literal">self.prob(samp)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -201,7 +201,7 @@ value can be specified. The default discount is set to 0.75.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, freqdist, bins=None, discount=0.75):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1710">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1710">
       
       (source)
     </a>
@@ -209,14 +209,9 @@ value can be specified. The default discount is set to 0.75.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#__init__">nltk.probability.ProbDistI.__init__</a></code></div>
     
-    <div><p class="pre">:param freqdist: The trigram frequency distribution upon which to base
-    the estimation
-:type freqdist: FreqDist
-:param bins: Included for compatibility with nltk.tag.hmm
-:type bins: int or float
-:param discount: The discount applied when retrieving counts of
-    trigrams
-:type discount: float (preferred, but can be set to int)</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">freqdist:</span>FreqDist</td><td class="fieldArgDesc">The trigram frequency distribution upon which to base
+the estimation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bins:</span>int or float</td><td class="fieldArgDesc">Included for compatibility with nltk.tag.hmm</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">discount:</span>float (preferred, but can be set to int)</td><td class="fieldArgDesc">The discount applied when retrieving counts of
+trigrams</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -230,7 +225,7 @@ value can be specified. The default discount is set to 0.75.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1805">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1805">
       
       (source)
     </a>
@@ -238,9 +233,7 @@ value can be specified. The default discount is set to 0.75.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation of this ProbDist
-
-:rtype: str</p></div>
+    <div>Return a string representation of this ProbDist<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -254,7 +247,7 @@ value can be specified. The default discount is set to 0.75.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">discount</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1781">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1781">
       
       (source)
     </a>
@@ -262,9 +255,7 @@ value can be specified. The default discount is set to 0.75.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#discount">nltk.probability.ProbDistI.discount</a></code></div>
     
-    <div><p class="pre">Return the value by which counts are discounted. By default set to 0.75.
-
-:rtype: float</p></div>
+    <div>Return the value by which counts are discounted. By default set to 0.75.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -278,7 +269,7 @@ value can be specified. The default discount is set to 0.75.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">max</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1802">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1802">
       
       (source)
     </a>
@@ -286,11 +277,9 @@ value can be specified. The default discount is set to 0.75.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#max">nltk.probability.ProbDistI.max</a></code></div>
     
-    <div><p class="pre">Return the sample with the greatest probability.  If two or
+    <div>Return the sample with the greatest probability.  If two or
 more samples have the same probability, return one of them;
-which sample is returned is undefined.
-
-:rtype: any</p></div>
+which sample is returned is undefined.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">any</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -304,7 +293,7 @@ which sample is returned is undefined.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self, trigram):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1745">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1745">
       
       (source)
     </a>
@@ -312,13 +301,9 @@ which sample is returned is undefined.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#prob">nltk.probability.ProbDistI.prob</a></code></div>
     
-    <div><p class="pre">Return the probability for a given sample.  Probabilities
-are always real numbers in the range [0, 1].
-
-:param sample: The sample whose probability
-       should be returned.
-:type sample: any
-:rtype: float</p></div>
+    <div>Return the probability for a given sample.  Probabilities
+are always real numbers in the range [0, 1].<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trigram</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>any</td><td class="fieldArgDesc">The sample whose probability
+should be returned.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -332,7 +317,7 @@ are always real numbers in the range [0, 1].
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">samples</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1799">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1799">
       
       (source)
     </a>
@@ -340,10 +325,8 @@ are always real numbers in the range [0, 1].
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#samples">nltk.probability.ProbDistI.samples</a></code></div>
     
-    <div><p class="pre">Return a list of all samples that have nonzero probabilities.
-Use ``prob`` to find the probability of each sample.
-
-:rtype: list</p></div>
+    <div>Return a list of all samples that have nonzero probabilities.
+Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -357,7 +340,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_discount</span>(self, discount):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1789">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1789">
       
       (source)
     </a>
@@ -365,11 +348,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Set the value by which counts are discounted to the value of discount.
-
-:param discount: the new value to discount counts by
-:type discount: float (preferred, but int possible)
-:rtype: None</p></div>
+    <div>Set the value by which counts are discounted to the value of discount.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">discount:</span>float (preferred, but int possible)</td><td class="fieldArgDesc">the new value to discount counts by</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">None</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -383,7 +362,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">_bigrams</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1732">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1732">
       
       (source)
     </a>
@@ -405,7 +384,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">_bins</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1723">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1723">
       
       (source)
     </a>
@@ -427,7 +406,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">_cache</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1729">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1729">
       
       (source)
     </a>
@@ -449,7 +428,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">_D</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1726">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1726">
       
       (source)
     </a>
@@ -471,7 +450,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">_trigrams</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1733">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1733">
       
       (source)
     </a>
@@ -493,7 +472,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">_trigrams_contain</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1737">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1737">
       
       (source)
     </a>
@@ -515,7 +494,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">_wordtypes_after</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1736">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1736">
       
       (source)
     </a>
@@ -537,7 +516,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">_wordtypes_before</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1738">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1738">
       
       (source)
     </a>
@@ -557,7 +536,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

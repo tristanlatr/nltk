@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">BackwardTypeRaiseRule</span>(<a href="nltk.parse.chart.AbstractChartRule.html" title="nltk.parse.chart.AbstractChartRule">AbstractChartRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L217" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">BackwardTypeRaiseRule</span>(<a href="nltk.parse.chart.AbstractChartRule.html" title="nltk.parse.chart.AbstractChartRule">AbstractChartRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L217" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.ccg.chart.BackwardTypeRaiseRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Class for applying backward type raising.</p></div>
+        <div>Class for applying backward type raising.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id71">
+        <table class="children sortable" id="id73">
   
   
   <tr class="method">
@@ -108,7 +108,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.parse.chart.AbstractChartRule.html">AbstractChartRule</a></code>:
           </p>
-          <table class="children sortable" id="id72">
+          <table class="children sortable" id="id74">
   
   
   <tr class="basemethod">
@@ -116,6 +116,22 @@
     <td>Method</td>
     <td><code><a href="nltk.parse.chart.AbstractChartRule.html#apply_everywhere">apply_everywhere</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="nltk.parse.chart.ChartRuleI.html">ChartRuleI</a></code> (via <code><a href="nltk.parse.chart.AbstractChartRule.html">AbstractChartRule</a></code>):
+          </p>
+          <table class="children sortable" id="id75">
+  
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="nltk.parse.chart.ChartRuleI.html#NUM_EDGES">NUM_EDGES</a></code></td>
+    <td><span>The number of existing edges that this rule uses
+to license new edges.  Typically, this number ranges from zero
+to two.</span></td>
   </tr>
 </table>
           
@@ -137,7 +153,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L224">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L224">
       
       (source)
     </a>
@@ -159,7 +175,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L236">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L236">
       
       (source)
     </a>
@@ -181,7 +197,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply</span>(self, chart, grammar, left_edge, right_edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L227">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L227">
       
       (source)
     </a>
@@ -189,16 +205,12 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.parse.chart.AbstractChartRule.html#apply">nltk.parse.chart.AbstractChartRule.apply</a></code></div>
     
-    <div><p class="pre">Return a generator that will add edges licensed by this rule
+    <div>Return a generator that will add edges licensed by this rule
 and the given edges to the chart, one at a time.  Each
 time the generator is resumed, it will either add a new
-edge and yield that edge; or return.
-
-:type edges: list(EdgeI)
-:param edges: A set of existing edges.  The number of edges
-    that should be passed to ``apply()`` is specified by the
-    ``NUM_EDGES`` class variable.
-:rtype: iter(EdgeI)</p></div>
+edge and yield that edge; or return.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">chart</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">grammar</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">left_edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">right_edge</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">edges:</span>list(EdgeI)</td><td class="fieldArgDesc">A set of existing edges.  The number of edges
+that should be passed to <tt class="rst-docutils literal">apply()</tt> is specified by the
+<tt class="rst-docutils literal">NUM_EDGES</tt> class variable.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(EdgeI)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -212,7 +224,7 @@ edge and yield that edge; or return.
   <div class="functionHeader">
     
     <span class="py-defname">NUMEDGES</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L222">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L222">
       
       (source)
     </a>
@@ -234,7 +246,7 @@ edge and yield that edge; or return.
   <div class="functionHeader">
     
     <span class="py-defname">_combinator</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/ccg/chart.py#L225">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/ccg/chart.py#L225">
       
       (source)
     </a>
@@ -254,7 +266,7 @@ edge and yield that edge; or return.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,54 +65,54 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">LazyEnumerate</span>(<a href="nltk.collections.LazyZip.html" title="nltk.collections.LazyZip">LazyZip</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collections.py#L531" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LazyEnumerate</span>(<a href="nltk.collections.LazyZip.html" title="nltk.collections.LazyZip">LazyZip</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collections.py#L531" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.collections.LazyEnumerate">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A lazy sequence whose elements are tuples, each ontaining a count (from
-zero) and a value yielded by underlying sequence.  ``LazyEnumerate`` is
+        <div><p>A lazy sequence whose elements are tuples, each ontaining a count (from
+zero) and a value yielded by underlying sequence.  <tt class="rst-docutils literal">LazyEnumerate</tt> is
 useful for obtaining an indexed list. The tuples are constructed lazily
--- i.e., when you read a value from the list, ``LazyEnumerate`` will
+-- i.e., when you read a value from the list, <tt class="rst-docutils literal">LazyEnumerate</tt> will
 calculate that value by forming a tuple from the count of the i-th
-element and the i-th element of the underlying sequence.
-
-``LazyEnumerate`` is essentially a lazy version of the Python primitive
-function ``enumerate``.  In particular, the following two expressions are
-equivalent:
-
-    &gt;&gt;&gt; from nltk.collections import LazyEnumerate
-    &gt;&gt;&gt; sequence = ['first', 'second', 'third']
-    &gt;&gt;&gt; list(enumerate(sequence))
-    [(0, 'first'), (1, 'second'), (2, 'third')]
-    &gt;&gt;&gt; list(LazyEnumerate(sequence))
-    [(0, 'first'), (1, 'second'), (2, 'third')]
-
-Lazy enumerations can be useful for conserving memory in cases where the
-argument sequences are particularly long.
-
-A typical example of a use case for this class is obtaining an indexed
+element and the i-th element of the underlying sequence.</p>
+<p><tt class="rst-docutils literal">LazyEnumerate</tt> is essentially a lazy version of the Python primitive
+function <tt class="rst-docutils literal">enumerate</tt>.  In particular, the following two expressions are
+equivalent:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.collections <span class="py-keyword">import</span> LazyEnumerate
+<span class="py-prompt">&gt;&gt;&gt; </span>sequence = [<span class="py-string">'first'</span>, <span class="py-string">'second'</span>, <span class="py-string">'third'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(<span class="py-builtin">enumerate</span>(sequence))
+<span class="py-output">[(0, 'first'), (1, 'second'), (2, 'third')]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(LazyEnumerate(sequence))
+<span class="py-output">[(0, 'first'), (1, 'second'), (2, 'third')]</span>
+</pre></blockquote>
+<p>Lazy enumerations can be useful for conserving memory in cases where the
+argument sequences are particularly long.</p>
+<p>A typical example of a use case for this class is obtaining an indexed
 list for a long sequence of values.  By constructing tuples lazily and
 avoiding the creation of an additional long sequence, memory usage can be
-significantly reduced.</p></div>
+significantly reduced.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id213">
+        <table class="children sortable" id="id216">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param lst: the underlying list :type lst: list</span></td>
+    <td><span></span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.collections.LazyZip.html">LazyZip</a></code>:
           </p>
-          <table class="children sortable" id="id214">
+          <table class="children sortable" id="id217">
   
   
   <tr class="basemethod">
@@ -131,14 +131,14 @@ significantly reduced.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.collections.LazyMap.html">LazyMap</a></code> (via <code><a href="nltk.collections.LazyZip.html">LazyZip</a></code>):
           </p>
-          <table class="children sortable" id="id215">
+          <table class="children sortable" id="id218">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.collections.LazyMap.html#__getitem__">__getitem__</a></code></td>
-    <td><span>Return the *i* th token in the corpus file underlying this corpus view.  Negative indices and spans are both supported.</span></td>
+    <td><span>Return the <em>i</em> th token in the corpus file underlying this corpus view.  Negative indices and spans are both supported.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -170,7 +170,7 @@ significantly reduced.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.collections.AbstractLazySequence.html">AbstractLazySequence</a></code> (via <code><a href="nltk.collections.LazyZip.html">LazyZip</a></code>, <code><a href="nltk.collections.LazyMap.html">LazyMap</a></code>):
           </p>
-          <table class="children sortable" id="id216">
+          <table class="children sortable" id="id219">
   
   
   <tr class="basemethod">
@@ -182,7 +182,7 @@ significantly reduced.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.collections.AbstractLazySequence.html#__contains__">__contains__</a></code></td>
-    <td><span>Return true if this list contains ``value``.</span></td>
+    <td><span>Return true if this list contains <tt class="rst-docutils literal">value</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -192,7 +192,7 @@ significantly reduced.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.collections.AbstractLazySequence.html#__hash__">__hash__</a></code></td>
-    <td><span>:raise ValueError: Corpus view objects are unhashable.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -207,7 +207,7 @@ significantly reduced.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.collections.AbstractLazySequence.html#__mul__">__mul__</a></code></td>
-    <td><span>Return a list concatenating self with itself ``count`` times.</span></td>
+    <td><span>Return a list concatenating self with itself <tt class="rst-docutils literal">count</tt> times.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -227,12 +227,12 @@ significantly reduced.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.collections.AbstractLazySequence.html#__rmul__">__rmul__</a></code></td>
-    <td><span>Return a list concatenating self with itself ``count`` times.</span></td>
+    <td><span>Return a list concatenating self with itself <tt class="rst-docutils literal">count</tt> times.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.collections.AbstractLazySequence.html#count">count</a></code></td>
-    <td><span>Return the number of times this list contains ``value``.</span></td>
+    <td><span>Return the number of times this list contains <tt class="rst-docutils literal">value</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -264,7 +264,7 @@ significantly reduced.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, lst):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collections.py#L560">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collections.py#L560">
       
       (source)
     </a>
@@ -272,8 +272,7 @@ significantly reduced.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.collections.LazyZip.html#__init__">nltk.collections.LazyZip.__init__</a></code></div>
     
-    <div><p class="pre">:param lst: the underlying list
-:type lst: list</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lst:</span>list</td><td class="fieldArgDesc">the underlying list</td></tr></table></div>
   </div>
 </div>
 
@@ -285,7 +284,7 @@ significantly reduced.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

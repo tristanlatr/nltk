@@ -65,12 +65,12 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProjectiveDependencyParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L155" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProjectiveDependencyParser</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L155" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.projectivedependencyparser.ProjectiveDependencyParser">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A projective, rule-based, dependency parser.  A ProjectiveDependencyParser
+        <div>A projective, rule-based, dependency parser.  A ProjectiveDependencyParser
 is created with a DependencyGrammar, a set of productions specifying
 word-to-word dependency relations.  The parse() method will then
 return the set of all parses, in tree representation, for a given input
@@ -78,18 +78,18 @@ sequence of tokens.  Each parse must meet the requirements of the both
 the grammar and the projectivity constraint which specifies that the
 branches of the dependency tree are not allowed to cross.  Alternatively,
 this can be understood as stating that each parent node and its children
-in the parse tree form a continuous substring of the input sequence.</p></div>
+in the parse tree form a continuous substring of the input sequence.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1094">
+        <table class="children sortable" id="id1098">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new ProjectiveDependencyParser, from a word-to-word dependency grammar ``DependencyGrammar``.</span></td>
+    <td><span>Create a new ProjectiveDependencyParser, from a word-to-word dependency grammar <tt class="rst-docutils literal">DependencyGrammar</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -131,7 +131,7 @@ in the parse tree form a continuous substring of the input sequence.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, dependency_grammar):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L168">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L168">
       
       (source)
     </a>
@@ -139,11 +139,8 @@ in the parse tree form a continuous substring of the input sequence.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a new ProjectiveDependencyParser, from a word-to-word
-dependency grammar ``DependencyGrammar``.
-
-:param dependency_grammar: A word-to-word relation dependencygrammar.
-:type dependency_grammar: DependencyGrammar</p></div>
+    <div>Create a new ProjectiveDependencyParser, from a word-to-word
+dependency grammar <tt class="rst-docutils literal">DependencyGrammar</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dependency_grammar:</span>DependencyGrammar</td><td class="fieldArgDesc">A word-to-word relation dependencygrammar.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -157,7 +154,7 @@ dependency grammar ``DependencyGrammar``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">concatenate</span>(self, span1, span2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L228">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L228">
       
       (source)
     </a>
@@ -165,15 +162,12 @@ dependency grammar ``DependencyGrammar``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Concatenates the two spans in whichever way possible.  This
+    <div>Concatenates the two spans in whichever way possible.  This
 includes rightward concatenation (from the leftmost word of the
 leftmost span to the rightmost word of the rightmost span) and
 leftward concatenation (vice-versa) between adjacent spans.  Unlike
 Eisner's presentation of span concatenation, these spans do not
-share or pivot on a particular word/word-index.
-
-:return: A list of new spans formed through concatenation.
-:rtype: list(DependencySpan)</p></div>
+share or pivot on a particular word/word-index.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(DependencySpan)</td><td class="fieldArgDesc">A list of new spans formed through concatenation.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -187,7 +181,7 @@ share or pivot on a particular word/word-index.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">parse</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L178">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L178">
       
       (source)
     </a>
@@ -195,13 +189,8 @@ share or pivot on a particular word/word-index.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Performs a projective dependency parse on the list of tokens using
-a chart-based, span-concatenation algorithm similar to Eisner (1996).
-
-:param tokens: The list of input tokens.
-:type tokens: list(str)
-:return: An iterator over parse trees.
-:rtype: iter(Tree)</p></div>
+    <div>Performs a projective dependency parse on the list of tokens using
+a chart-based, span-concatenation algorithm similar to Eisner (1996).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(str)</td><td class="fieldArgDesc">The list of input tokens.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">iter(Tree)</td><td class="fieldArgDesc">An iterator over parse trees.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -215,7 +204,7 @@ a chart-based, span-concatenation algorithm similar to Eisner (1996).
   <div class="functionHeader">
     
     <span class="py-defname">_grammar</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L176">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L176">
       
       (source)
     </a>
@@ -237,7 +226,7 @@ a chart-based, span-concatenation algorithm similar to Eisner (1996).
   <div class="functionHeader">
     
     <span class="py-defname">_tokens</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/projectivedependencyparser.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/projectivedependencyparser.py#L188">
       
       (source)
     </a>
@@ -257,7 +246,7 @@ a chart-based, span-concatenation algorithm similar to Eisner (1996).
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

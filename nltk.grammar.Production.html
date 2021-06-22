@@ -65,48 +65,40 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Production</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L255" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.grammar.DependencyProduction.html">nltk.grammar.DependencyProduction</a></code>, <code><a href="nltk.grammar.ProbabilisticProduction.html">nltk.grammar.ProbabilisticProduction</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Production</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L255" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.grammar.DependencyProduction.html">nltk.grammar.DependencyProduction</a></code>, <code><a href="nltk.grammar.ProbabilisticProduction.html">nltk.grammar.ProbabilisticProduction</a></code></p>
         <p><a href="classIndex.html#nltk.grammar.Production">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A grammar production.  Each production maps a single symbol
+        <div>A grammar production.  Each production maps a single symbol
 on the "left-hand side" to a sequence of symbols on the
 "right-hand side".  (In the case of context-free productions,
-the left-hand side must be a ``Nonterminal``, and the right-hand
-side is a sequence of terminals and ``Nonterminals``.)
+the left-hand side must be a <tt class="rst-docutils literal">Nonterminal</tt>, and the right-hand
+side is a sequence of terminals and <tt class="rst-docutils literal">Nonterminals</tt>.)
 "terminals" can be any immutable hashable object that is
-not a ``Nonterminal``.  Typically, terminals are strings
-representing words, such as ``"dog"`` or ``"under"``.
-
-:see: ``CFG``
-:see: ``DependencyGrammar``
-:see: ``Nonterminal``
-:type _lhs: Nonterminal
-:ivar _lhs: The left-hand side of the production.
-:type _rhs: tuple(Nonterminal, terminal)
-:ivar _rhs: The right-hand side of the production.</p></div>
+not a <tt class="rst-docutils literal">Nonterminal</tt>.  Typically, terminals are strings
+representing words, such as <tt class="rst-docutils literal">"dog"</tt> or <tt class="rst-docutils literal">"under"</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">See Also</td></tr><tr><td colspan="2"><tt class="rst-docutils literal">CFG</tt></td></tr><tr><td colspan="2"><tt class="rst-docutils literal">DependencyGrammar</tt></td></tr><tr><td colspan="2"><tt class="rst-docutils literal">Nonterminal</tt></td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id649">
+        <table class="children sortable" id="id652">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__eq__">__eq__</a></code></td>
-    <td><span>Return True if this ``Production`` is equal to ``other``.</span></td>
+    <td><span>Return True if this <tt class="rst-docutils literal">Production</tt> is equal to <tt class="rst-docutils literal">other</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__hash__">__hash__</a></code></td>
-    <td><span>Return a hash value for the ``Production``.</span></td>
+    <td><span>Return a hash value for the <tt class="rst-docutils literal">Production</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Construct a new ``Production``.</span></td>
+    <td><span>Construct a new <tt class="rst-docutils literal">Production</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -126,12 +118,12 @@ representing words, such as ``"dog"`` or ``"under"``.
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a concise string representation of the ``Production``.</span></td>
+    <td><span>Return a concise string representation of the <tt class="rst-docutils literal">Production</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__str__">__str__</a></code></td>
-    <td><span>Return a verbose string representation of the ``Production``.</span></td>
+    <td><span>Return a verbose string representation of the <tt class="rst-docutils literal">Production</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -141,27 +133,27 @@ representing words, such as ``"dog"`` or ``"under"``.
     
     <td>Method</td>
     <td><code><a href="#is_nonlexical">is_nonlexical</a></code></td>
-    <td><span>Return True if the right-hand side only contains ``Nonterminals``</span></td>
+    <td><span>Return True if the right-hand side only contains <tt class="rst-docutils literal">Nonterminals</tt></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#lhs">lhs</a></code></td>
-    <td><span>Return the left-hand side of this ``Production``.</span></td>
+    <td><span>Return the left-hand side of this <tt class="rst-docutils literal">Production</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#rhs">rhs</a></code></td>
-    <td><span>Return the right-hand side of this ``Production``.</span></td>
+    <td><span>Return the right-hand side of this <tt class="rst-docutils literal">Production</tt>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_lhs">_lhs</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The left-hand side of the production.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_rhs">_rhs</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The right-hand side of the production.</span></td>
   </tr>
 </table>
         
@@ -183,7 +175,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L351">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L351">
       
       (source)
     </a>
@@ -191,9 +183,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.ProbabilisticProduction.html">nltk.grammar.ProbabilisticProduction</a></code></div>
     
-    <div><p class="pre">Return True if this ``Production`` is equal to ``other``.
-
-:rtype: bool</p></div>
+    <div>Return True if this <tt class="rst-docutils literal">Production</tt> is equal to <tt class="rst-docutils literal">other</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -207,7 +197,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L371">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L371">
       
       (source)
     </a>
@@ -215,9 +205,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.ProbabilisticProduction.html">nltk.grammar.ProbabilisticProduction</a></code></div>
     
-    <div><p class="pre">Return a hash value for the ``Production``.
-
-:rtype: int</p></div>
+    <div>Return a hash value for the <tt class="rst-docutils literal">Production</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -231,7 +219,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, lhs, rhs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L277">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L277">
       
       (source)
     </a>
@@ -239,12 +227,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.ProbabilisticProduction.html">nltk.grammar.ProbabilisticProduction</a></code></div>
     
-    <div><p class="pre">Construct a new ``Production``.
-
-:param lhs: The left-hand side of the new ``Production``.
-:type lhs: Nonterminal
-:param rhs: The right-hand side of the new ``Production``.
-:type rhs: sequence(Nonterminal and terminal)</p></div>
+    <div>Construct a new <tt class="rst-docutils literal">Production</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lhs:</span>Nonterminal</td><td class="fieldArgDesc">The left-hand side of the new <tt class="rst-docutils literal">Production</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rhs:</span>sequence(Nonterminal and terminal)</td><td class="fieldArgDesc">The right-hand side of the new <tt class="rst-docutils literal">Production</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -258,7 +241,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L309">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L309">
       
       (source)
     </a>
@@ -266,9 +249,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the length of the right-hand side.
-
-:rtype: int</p></div>
+    <div>Return the length of the right-hand side.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -282,7 +263,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__lt__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L366">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L366">
       
       (source)
     </a>
@@ -304,7 +285,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L363">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L363">
       
       (source)
     </a>
@@ -326,7 +307,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L343">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L343">
       
       (source)
     </a>
@@ -334,9 +315,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a concise string representation of the ``Production``.
-
-:rtype: str</p></div>
+    <div>Return a concise string representation of the <tt class="rst-docutils literal">Production</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -350,7 +329,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L333">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L333">
       
       (source)
     </a>
@@ -358,9 +337,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.grammar.DependencyProduction.html">nltk.grammar.DependencyProduction</a></code>, <code><a href="nltk.grammar.ProbabilisticProduction.html">nltk.grammar.ProbabilisticProduction</a></code></div>
     
-    <div><p class="pre">Return a verbose string representation of the ``Production``.
-
-:rtype: str</p></div>
+    <div>Return a verbose string representation of the <tt class="rst-docutils literal">Production</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -374,7 +351,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_lexical</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L325">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L325">
       
       (source)
     </a>
@@ -382,9 +359,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if the right-hand contain at least one terminal token.
-
-:rtype: bool</p></div>
+    <div>Return True if the right-hand contain at least one terminal token.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -398,7 +373,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">is_nonlexical</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L317">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L317">
       
       (source)
     </a>
@@ -406,9 +381,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if the right-hand side only contains ``Nonterminals``
-
-:rtype: bool</p></div>
+    <div>Return True if the right-hand side only contains <tt class="rst-docutils literal">Nonterminals</tt><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -422,7 +395,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">lhs</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L293">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L293">
       
       (source)
     </a>
@@ -430,9 +403,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the left-hand side of this ``Production``.
-
-:rtype: Nonterminal</p></div>
+    <div>Return the left-hand side of this <tt class="rst-docutils literal">Production</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">Nonterminal</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -446,7 +417,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">rhs</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L301">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L301">
       
       (source)
     </a>
@@ -454,9 +425,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the right-hand side of this ``Production``.
-
-:rtype: sequence(Nonterminal and terminal)</p></div>
+    <div>Return the right-hand side of this <tt class="rst-docutils literal">Production</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">sequence(Nonterminal and terminal)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -469,8 +438,8 @@ representing words, such as ``"dog"`` or ``"under"``.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_lhs</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L290">
+    <span class="py-defname">_lhs</span>: Nonterminal =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L271">
       
       (source)
     </a>
@@ -478,7 +447,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The left-hand side of the production.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -491,8 +460,8 @@ representing words, such as ``"dog"`` or ``"under"``.
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_rhs</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/grammar.py#L291">
+    <span class="py-defname">_rhs</span>: tuple(Nonterminal, terminal) =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/grammar.py#L273">
       
       (source)
     </a>
@@ -500,7 +469,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The right-hand side of the production.</div>
   </div>
 </div>
 
@@ -512,7 +481,7 @@ representing words, such as ``"dog"`` or ``"under"``.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

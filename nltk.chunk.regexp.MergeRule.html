@@ -65,33 +65,33 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">MergeRule</span>(<a href="nltk.chunk.regexp.RegexpChunkRule.html" title="nltk.chunk.regexp.RegexpChunkRule">RegexpChunkRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L526" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MergeRule</span>(<a href="nltk.chunk.regexp.RegexpChunkRule.html" title="nltk.chunk.regexp.RegexpChunkRule">RegexpChunkRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L526" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.chunk.regexp.MergeRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A rule specifying how to merge chunks in a ``ChunkString``, using
+        <div>A rule specifying how to merge chunks in a <tt class="rst-docutils literal">ChunkString</tt>, using
 two matching tag patterns: a left pattern, and a right pattern.
-When applied to a ``ChunkString``, it will find any chunk whose end
+When applied to a <tt class="rst-docutils literal">ChunkString</tt>, it will find any chunk whose end
 matches left pattern, and immediately followed by a chunk whose
 beginning matches right pattern.  It will then merge those two
-chunks into a single chunk.</p></div>
+chunks into a single chunk.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id115">
+        <table class="children sortable" id="id118">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Construct a new ``MergeRule``.</span></td>
+    <td><span>Construct a new <tt class="rst-docutils literal">MergeRule</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a string representation of this rule.  It has the form::</span></td>
+    <td><span>Return a string representation of this rule.  It has the form:</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -108,19 +108,19 @@ chunks into a single chunk.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.chunk.regexp.RegexpChunkRule.html">RegexpChunkRule</a></code>:
           </p>
-          <table class="children sortable" id="id116">
+          <table class="children sortable" id="id119">
   
   
   <tr class="basestaticmethod">
     
     <td>Static Method</td>
     <td><code><a href="nltk.chunk.regexp.RegexpChunkRule.html#fromstring">fromstring</a></code></td>
-    <td><span>Create a RegexpChunkRule from a string description. Currently, the following formats are supported::</span></td>
+    <td><span>Create a RegexpChunkRule from a string description. Currently, the following formats are supported:</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.chunk.regexp.RegexpChunkRule.html#apply">apply</a></code></td>
-    <td><span>Apply this rule to the given ``ChunkString``.  See the class reference documentation for a description of what it means to apply a rule.</span></td>
+    <td><span>Apply this rule to the given <tt class="rst-docutils literal">ChunkString</tt>.  See the class reference documentation for a description of what it means to apply a rule.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -162,7 +162,7 @@ chunks into a single chunk.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, left_tag_pattern, right_tag_pattern, descr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L536">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L536">
       
       (source)
     </a>
@@ -170,26 +170,18 @@ chunks into a single chunk.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.chunk.regexp.RegexpChunkRule.html#__init__">nltk.chunk.regexp.RegexpChunkRule.__init__</a></code></div>
     
-    <div><p class="pre">Construct a new ``MergeRule``.
-
-:type right_tag_pattern: str
-:param right_tag_pattern: This rule's right tag
-    pattern.  When applied to a ``ChunkString``, this
-    rule will find any chunk whose end matches
-    ``left_tag_pattern``, and immediately followed by a chunk
-    whose beginning matches this pattern.  It will
-    then merge those two chunks into a single chunk.
-:type left_tag_pattern: str
-:param left_tag_pattern: This rule's left tag
-    pattern.  When applied to a ``ChunkString``, this
-    rule will find any chunk whose end matches
-    this pattern, and immediately followed by a chunk
-    whose beginning matches ``right_tag_pattern``.  It will
-    then merge those two chunks into a single chunk.
-
-:type descr: str
-:param descr: A short description of the purpose and/or effect
-    of this rule.</p></div>
+    <div>Construct a new <tt class="rst-docutils literal">MergeRule</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">left_tag_pattern:</span>str</td><td class="fieldArgDesc">This rule's left tag
+pattern.  When applied to a <tt class="rst-docutils literal">ChunkString</tt>, this
+rule will find any chunk whose end matches
+this pattern, and immediately followed by a chunk
+whose beginning matches <tt class="rst-docutils literal">right_tag_pattern</tt>.  It will
+then merge those two chunks into a single chunk.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">right_tag_pattern:</span>str</td><td class="fieldArgDesc">This rule's right tag
+pattern.  When applied to a <tt class="rst-docutils literal">ChunkString</tt>, this
+rule will find any chunk whose end matches
+<tt class="rst-docutils literal">left_tag_pattern</tt>, and immediately followed by a chunk
+whose beginning matches this pattern.  It will
+then merge those two chunks into a single chunk.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">descr:</span>str</td><td class="fieldArgDesc">A short description of the purpose and/or effect
+of this rule.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -203,7 +195,7 @@ chunks into a single chunk.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L575">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L575">
       
       (source)
     </a>
@@ -211,15 +203,14 @@ chunks into a single chunk.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.chunk.regexp.RegexpChunkRule.html#__repr__">nltk.chunk.regexp.RegexpChunkRule.__repr__</a></code></div>
     
-    <div><p class="pre">Return a string representation of this rule.  It has the form::
-
-    &lt;MergeRule: '&lt;NN|DT|JJ&gt;', '&lt;NN|JJ&gt;'&gt;
-
-Note that this representation does not include the
+    <div><p>Return a string representation of this rule.  It has the form:</p>
+<pre class="rst-literal-block">
+&lt;MergeRule: '&lt;NN|DT|JJ&gt;', '&lt;NN|JJ&gt;'&gt;
+</pre>
+<p>Note that this representation does not include the
 description string; that string can be accessed
-separately with the ``descr()`` method.
-
-:rtype: str</p></div>
+separately with the <tt class="rst-docutils literal">descr()</tt> method.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -233,7 +224,7 @@ separately with the ``descr()`` method.
   <div class="functionHeader">
     
     <span class="py-defname">_left_tag_pattern</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L564">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L564">
       
       (source)
     </a>
@@ -255,7 +246,7 @@ separately with the ``descr()`` method.
   <div class="functionHeader">
     
     <span class="py-defname">_right_tag_pattern</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/chunk/regexp.py#L565">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/chunk/regexp.py#L565">
       
       (source)
     </a>
@@ -275,7 +266,7 @@ separately with the ``descr()`` method.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

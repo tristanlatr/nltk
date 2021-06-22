@@ -65,31 +65,33 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SimpleGoodTuringProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1364" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SimpleGoodTuringProbDist</span>(<a href="nltk.probability.ProbDistI.html" title="nltk.probability.ProbDistI">ProbDistI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1364" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.probability.SimpleGoodTuringProbDist">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">SimpleGoodTuring ProbDist approximates from frequency to frequency of
+        <div><p>SimpleGoodTuring ProbDist approximates from frequency to frequency of
 frequency into a linear line under log space by linear regression.
-Details of Simple Good-Turing algorithm can be found in:
-
-- Good Turing smoothing without tears" (Gale &amp; Sampson 1995),
-  Journal of Quantitative Linguistics, vol. 2 pp. 217-237.
-- "Speech and Language Processing (Jurafsky &amp; Martin),
-  2nd Edition, Chapter 4.5 p103 (log(Nc) =  a + b*log(c))
-- http://www.grsampson.net/RGoodTur.html
-
-Given a set of pair (xi, yi),  where the xi denotes the frequency and
+Details of Simple Good-Turing algorithm can be found in:</p>
+<ul class="rst-simple">
+<li>Good Turing smoothing without tears" (Gale &amp; Sampson 1995),
+Journal of Quantitative Linguistics, vol. 2 pp. 217-237.</li>
+<li>"Speech and Language Processing (Jurafsky &amp; Martin),
+2nd Edition, Chapter 4.5 p103 (log(Nc) =  a + b*log(c))</li>
+<li><a class="rst-reference external" href="http://www.grsampson.net/RGoodTur.html" target="_top">http://www.grsampson.net/RGoodTur.html</a></li>
+</ul>
+<p>Given a set of pair (xi, yi),  where the xi denotes the frequency and
 yi denotes the frequency of frequency, we want to minimize their
-square variation. E(x) and E(y) represent the mean of xi and yi.
-
-- slope: b = sigma ((xi-E(x)(yi-E(y))) / sigma ((xi-E(x))(xi-E(x)))
-- intercept: a = E(y) - b.E(x)</p></div>
+square variation. E(x) and E(y) represent the mean of xi and yi.</p>
+<ul class="rst-simple">
+<li>slope: b = sigma ((xi-E(x)(yi-E(y))) / sigma ((xi-E(x))(xi-E(x)))</li>
+<li>intercept: a = E(y) - b.E(x)</li>
+</ul>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1154">
+        <table class="children sortable" id="id1158">
   
   
   <tr class="method">
@@ -101,7 +103,7 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
     
     <td>Method</td>
     <td><code><a href="#__repr__">__repr__</a></code></td>
-    <td><span>Return a string representation of this ``ProbDist``.</span></td>
+    <td><span>Return a string representation of this <tt class="rst-docutils literal">ProbDist</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -136,7 +138,7 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
     
     <td>Method</td>
     <td><code><a href="#samples">samples</a></code></td>
-    <td><span>Return a list of all samples that have nonzero probabilities. Use ``prob`` to find the probability of each sample.</span></td>
+    <td><span>Return a list of all samples that have nonzero probabilities. Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -213,14 +215,14 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.probability.ProbDistI.html">ProbDistI</a></code>:
           </p>
-          <table class="children sortable" id="id1155">
+          <table class="children sortable" id="id1159">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.probability.ProbDistI.html#generate">generate</a></code></td>
-    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample ``samp`` is equal to ``self.prob(samp)``.</span></td>
+    <td><span>Return a randomly selected sample from this probability distribution. The probability of returning each sample <tt class="rst-docutils literal">samp</tt> is equal to <tt class="rst-docutils literal">self.prob(samp)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -247,7 +249,7 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, freqdist, bins=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1386">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1386">
       
       (source)
     </a>
@@ -255,13 +257,10 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#__init__">nltk.probability.ProbDistI.__init__</a></code></div>
     
-    <div><p class="pre">:param freqdist: The frequency counts upon which to base the
-    estimation.
-:type freqdist: FreqDist
-:param bins: The number of possible event types. This must be
-    larger than the number of bins in the ``freqdist``. If None,
-    then it's assumed to be equal to ``freqdist``.B() + 1
-:type bins: int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">freqdist:</span>FreqDist</td><td class="fieldArgDesc">The frequency counts upon which to base the
+estimation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bins:</span>int</td><td class="fieldArgDesc">The number of possible event types. This must be
+larger than the number of bins in the <tt class="rst-docutils literal">freqdist</tt>. If None,
+then it's assumed to be equal to <tt class="rst-docutils literal">freqdist</tt>.B() + 1</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -275,7 +274,7 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1578">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1578">
       
       (source)
     </a>
@@ -283,9 +282,7 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation of this ``ProbDist``.
-
-:rtype: str</p></div>
+    <div>Return a string representation of this <tt class="rst-docutils literal">ProbDist</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -299,7 +296,7 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">check</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1555">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1555">
       
       (source)
     </a>
@@ -321,7 +318,7 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">discount</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1562">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1562">
       
       (source)
     </a>
@@ -329,8 +326,8 @@ square variation. E(x) and E(y) represent the mean of xi and yi.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#discount">nltk.probability.ProbDistI.discount</a></code></div>
     
-    <div><p class="pre">This function returns the total mass of probability transfers from the
-seen samples to the unseen samples.</p></div>
+    <div>This function returns the total mass of probability transfers from the
+seen samples to the unseen samples.</div>
   </div>
 </div><div class="basemethod">
   
@@ -344,7 +341,7 @@ seen samples to the unseen samples.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">find_best_fit</span>(self, r, nr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1423">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1423">
       
       (source)
     </a>
@@ -352,9 +349,9 @@ seen samples to the unseen samples.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Use simple linear regression to tune parameters self._slope and
+    <div>Use simple linear regression to tune parameters self._slope and
 self._intercept in the log-log space based on count and Nr(count)
-(Work in log space to avoid floating point underflow.)</p></div>
+(Work in log space to avoid floating point underflow.)</div>
   </div>
 </div><div class="basemethod">
   
@@ -368,7 +365,7 @@ self._intercept in the log-log space based on count and Nr(count)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">freqdist</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1575">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1575">
       
       (source)
     </a>
@@ -390,7 +387,7 @@ self._intercept in the log-log space based on count and Nr(count)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">max</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1569">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1569">
       
       (source)
     </a>
@@ -398,11 +395,9 @@ self._intercept in the log-log space based on count and Nr(count)
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#max">nltk.probability.ProbDistI.max</a></code></div>
     
-    <div><p class="pre">Return the sample with the greatest probability.  If two or
+    <div>Return the sample with the greatest probability.  If two or
 more samples have the same probability, return one of them;
-which sample is returned is undefined.
-
-:rtype: any</p></div>
+which sample is returned is undefined.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">any</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -416,7 +411,7 @@ which sample is returned is undefined.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob</span>(self, sample):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1520">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1520">
       
       (source)
     </a>
@@ -424,11 +419,7 @@ which sample is returned is undefined.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#prob">nltk.probability.ProbDistI.prob</a></code></div>
     
-    <div><p class="pre">Return the sample's probability.
-
-:param sample: sample of the event
-:type sample: str
-:rtype: float</p></div>
+    <div>Return the sample's probability.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample:</span>str</td><td class="fieldArgDesc">sample of the event</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -442,7 +433,7 @@ which sample is returned is undefined.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">samples</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1572">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1572">
       
       (source)
     </a>
@@ -450,10 +441,8 @@ which sample is returned is undefined.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#samples">nltk.probability.ProbDistI.samples</a></code></div>
     
-    <div><p class="pre">Return a list of all samples that have nonzero probabilities.
-Use ``prob`` to find the probability of each sample.
-
-:rtype: list</p></div>
+    <div>Return a list of all samples that have nonzero probabilities.
+Use <tt class="rst-docutils literal">prob</tt> to find the probability of each sample.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -467,7 +456,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">smoothedNr</span>(self, r):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1504">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1504">
       
       (source)
     </a>
@@ -475,11 +464,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the number of samples with count r.
-
-:param r: The amount of frequency.
-:type r: int
-:rtype: float</p></div>
+    <div>Return the number of samples with count r.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span>int</td><td class="fieldArgDesc">The amount of frequency.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -493,7 +478,7 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionHeader">
     
     <span class="py-defname">SUM_TO_ONE</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1384">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1384">
       
       (source)
     </a>
@@ -501,8 +486,8 @@ Use ``prob`` to find the probability of each sample.
   <div class="functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.probability.ProbDistI.html#SUM_TO_ONE">nltk.probability.ProbDistI.SUM_TO_ONE</a></code></div>
     
-    <div><p class="pre">True if the probabilities of the samples in this probability
-distribution will always sum to one.</p></div>
+    <div>True if the probabilities of the samples in this probability
+distribution will always sum to one.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -516,7 +501,7 @@ distribution will always sum to one.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_prob_measure</span>(self, count):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1539">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1539">
       
       (source)
     </a>
@@ -538,7 +523,7 @@ distribution will always sum to one.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_r_Nr</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1413">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1413">
       
       (source)
     </a>
@@ -546,7 +531,7 @@ distribution will always sum to one.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Split the frequency distribution in two list (r, Nr), where Nr(r) &gt; 0</p></div>
+    <div>Split the frequency distribution in two list (r, Nr), where Nr(r) &gt; 0</div>
   </div>
 </div><div class="basemethod private">
   
@@ -560,7 +545,7 @@ distribution will always sum to one.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_r_Nr_non_zero</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1408">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1408">
       
       (source)
     </a>
@@ -582,7 +567,7 @@ distribution will always sum to one.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_renormalize</span>(self, r, nr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1490">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1490">
       
       (source)
     </a>
@@ -590,11 +575,11 @@ distribution will always sum to one.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">It is necessary to renormalize all the probability estimates to
+    <div>It is necessary to renormalize all the probability estimates to
 ensure a proper probability distribution results. This can be done
 by keeping the estimate of the probability mass for unseen items as
 N(1)/N and renormalizing all the estimates for previously seen items
-(as Gale and Sampson (1995) propose). (See M&amp;S P.213, 1999)</p></div>
+(as Gale and Sampson (1995) propose). (See M&amp;S P.213, 1999)</div>
   </div>
 </div><div class="basemethod private">
   
@@ -608,7 +593,7 @@ N(1)/N and renormalizing all the estimates for previously seen items
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_switch</span>(self, r, nr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1464">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1464">
       
       (source)
     </a>
@@ -616,8 +601,8 @@ N(1)/N and renormalizing all the estimates for previously seen items
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate the r frontier where we must switch from Nr to Sr
-when estimating E[Nr].</p></div>
+    <div>Calculate the r frontier where we must switch from Nr to Sr
+when estimating E[Nr].</div>
   </div>
 </div><div class="basemethod private">
   
@@ -631,7 +616,7 @@ when estimating E[Nr].</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_variance</span>(self, r, nr, nr_1):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1484">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1484">
       
       (source)
     </a>
@@ -653,7 +638,7 @@ when estimating E[Nr].</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_bins</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1402">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1402">
       
       (source)
     </a>
@@ -675,7 +660,7 @@ when estimating E[Nr].</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_freqdist</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1401">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1401">
       
       (source)
     </a>
@@ -697,7 +682,7 @@ when estimating E[Nr].</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_intercept</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1462">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1462">
       
       (source)
     </a>
@@ -719,7 +704,7 @@ when estimating E[Nr].</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_renormal</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1502">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1502">
       
       (source)
     </a>
@@ -741,7 +726,7 @@ when estimating E[Nr].</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_slope</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1454">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1454">
       
       (source)
     </a>
@@ -763,7 +748,7 @@ when estimating E[Nr].</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_switch_at</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/probability.py#L1472">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/probability.py#L1472">
       
       (source)
     </a>
@@ -783,7 +768,7 @@ when estimating E[Nr].</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

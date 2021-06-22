@@ -65,54 +65,14 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChartView</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L951" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ChartView</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L951" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.app.chartparser_app.ChartView">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A component for viewing charts.  This is used by ``ChartParserApp`` to
+        <div>A component for viewing charts.  This is used by <tt class="rst-docutils literal">ChartParserApp</tt> to
 allow students to interactively experiment with various chart
-parsing techniques.  It is also used by ``Chart.draw()``.
-
-:ivar _chart: The chart that we are giving a view of.  This chart
-   may be modified; after it is modified, you should call
-   ``update``.
-:ivar _sentence: The list of tokens that the chart spans.
-
-:ivar _root: The root window.
-:ivar _chart_canvas: The canvas we're using to display the chart
-    itself.
-:ivar _tree_canvas: The canvas we're using to display the tree
-    that each edge spans.  May be None, if we're not displaying
-    trees.
-:ivar _sentence_canvas: The canvas we're using to display the sentence
-    text.  May be None, if we're not displaying the sentence text.
-:ivar _edgetags: A dictionary mapping from edges to the tags of
-    the canvas elements (lines, etc) used to display that edge.
-    The values of this dictionary have the form
-    ``(linetag, rhstag1, dottag, rhstag2, lhstag)``.
-:ivar _treetags: A list of all the tags that make up the tree;
-    used to erase the tree (without erasing the loclines).
-:ivar _chart_height: The height of the chart canvas.
-:ivar _sentence_height: The height of the sentence canvas.
-:ivar _tree_height: The height of the tree
-
-:ivar _text_height: The height of a text string (in the normal
-    font).
-
-:ivar _edgelevels: A list of edges at each level of the chart (the
-    top level is the 0th element).  This list is used to remember
-    where edges should be drawn; and to make sure that no edges
-    are overlapping on the chart view.
-
-:ivar _unitsize: Pixel size of one unit (from the location).  This
-   is determined by the span of the chart's location, and the
-   width of the chart display canvas.
-
-:ivar _fontsize: The current font size
-
-:ivar _marks: A dictionary from edges to marks.  Marks are
-    strings, specifying colors (e.g. 'green').</p></div>
+parsing techniques.  It is also used by <tt class="rst-docutils literal">Chart.draw()</tt>.</div>
       </div>
 
       <div id="splitTables">
@@ -123,7 +83,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Construct a new ``Chart`` display.</span></td>
+    <td><span>Construct a new <tt class="rst-docutils literal">Chart</tt> display.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -258,7 +218,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     
     <td>Method</td>
     <td><code><a href="#_draw_treetok">_draw_treetok</a></code></td>
-    <td><span>:param index: The index of the first leaf in the tree. :return: The index of the first leaf after the tree.</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -323,17 +283,20 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     
     <td>Instance Variable</td>
     <td><code><a href="#_chart">_chart</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The chart that we are giving a view of.  This chart
+may be modified; after it is modified, you should call
+<tt class="rst-docutils literal">update</tt>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_chart_canvas">_chart_canvas</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The canvas we're using to display the chart
+itself.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_chart_height">_chart_height</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The height of the chart canvas.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -353,12 +316,18 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     
     <td>Instance Variable</td>
     <td><code><a href="#_edgelevels">_edgelevels</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list of edges at each level of the chart (the
+top level is the 0th element).  This list is used to remember
+where edges should be drawn; and to make sure that no edges
+are overlapping on the chart view.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_edgetags">_edgetags</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A dictionary mapping from edges to the tags of
+the canvas elements (lines, etc) used to display that edge.
+The values of this dictionary have the form
+<tt class="rst-docutils literal">(linetag, rhstag1, dottag, rhstag2, lhstag)</tt>.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -368,7 +337,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     
     <td>Instance Variable</td>
     <td><code><a href="#_fontsize">_fontsize</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The current font size</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -378,22 +347,29 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     
     <td>Instance Variable</td>
     <td><code><a href="#_marks">_marks</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A dictionary from edges to marks.  Marks are
+strings, specifying colors (e.g. 'green').</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_root">_root</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The root window.</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_sentence">_sentence</a></code></td>
+    <td><span>The list of tokens that the chart spans.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_sentence_canvas">_sentence_canvas</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The canvas we're using to display the sentence
+text.  May be None, if we're not displaying the sentence text.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_sentence_height">_sentence_height</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The height of the sentence canvas.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -403,17 +379,20 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     
     <td>Instance Variable</td>
     <td><code><a href="#_text_height">_text_height</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The height of a text string (in the normal
+font).</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_tree_canvas">_tree_canvas</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The canvas we're using to display the tree
+that each edge spans.  May be None, if we're not displaying
+trees.</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="#_tree_height">_tree_height</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The height of the tree</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -424,6 +403,12 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     <td>Instance Variable</td>
     <td><code><a href="#_tree_tags">_tree_tags</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_treetags">_treetags</a></code></td>
+    <td><span>A list of all the tags that make up the tree;
+used to erase the tree (without erasing the loclines).</span></td>
   </tr><tr class="instancevariable private">
     
     <td>Instance Variable</td>
@@ -443,7 +428,9 @@ parsing techniques.  It is also used by ``Chart.draw()``.
     
     <td>Instance Variable</td>
     <td><code><a href="#_unitsize">_unitsize</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Pixel size of one unit (from the location).  This
+is determined by the span of the chart's location, and the
+width of the chart display canvas.</span></td>
   </tr>
 </table>
         
@@ -465,7 +452,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, chart, root=None, **kw):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1003">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1003">
       
       (source)
     </a>
@@ -473,7 +460,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new ``Chart`` display.</p></div>
+    <div>Construct a new <tt class="rst-docutils literal">Chart</tt> display.</div>
   </div>
 </div><div class="basemethod">
   
@@ -487,7 +474,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_callback</span>(self, event, func):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1717">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1717">
       
       (source)
     </a>
@@ -509,7 +496,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">cycle_tree</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1575">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1575">
       
       (source)
     </a>
@@ -531,7 +518,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">draw</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1692">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1692">
       
       (source)
     </a>
@@ -539,7 +526,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Draw everything (from scratch).</p></div>
+    <div>Draw everything (from scratch).</div>
   </div>
 </div><div class="basemethod">
   
@@ -553,7 +540,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">draw_tree</span>(self, edge=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1543">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1543">
       
       (source)
     </a>
@@ -575,7 +562,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">erase_tree</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1536">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1536">
       
       (source)
     </a>
@@ -597,7 +584,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_font_size</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1159">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1159">
       
       (source)
     </a>
@@ -619,7 +606,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">mark_edge</span>(self, edge, mark='#0df'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1387">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1387">
       
       (source)
     </a>
@@ -627,7 +614,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Mark an edge</p></div>
+    <div>Mark an edge</div>
   </div>
 </div><div class="basemethod">
   
@@ -641,7 +628,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">markonly_edge</span>(self, edge, mark='#0df'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1407">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1407">
       
       (source)
     </a>
@@ -663,7 +650,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">page_down</span>(self, *e):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1127">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1127">
       
       (source)
     </a>
@@ -685,7 +672,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">page_up</span>(self, *e):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1124">
       
       (source)
     </a>
@@ -707,7 +694,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">remove_callback</span>(self, event, func=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1720">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1720">
       
       (source)
     </a>
@@ -729,7 +716,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">scroll_down</span>(self, *e):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1121">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1121">
       
       (source)
     </a>
@@ -751,7 +738,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">scroll_up</span>(self, *e):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1118">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1118">
       
       (source)
     </a>
@@ -773,7 +760,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_font_size</span>(self, size):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1151">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1151">
       
       (source)
     </a>
@@ -795,7 +782,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unmark_edge</span>(self, edge=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1394">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1394">
       
       (source)
     </a>
@@ -803,7 +790,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Unmark an edge (or all edges)</p></div>
+    <div>Unmark an edge (or all edges)</div>
   </div>
 </div><div class="basemethod">
   
@@ -817,7 +804,7 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">update</span>(self, chart=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1173">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1173">
       
       (source)
     </a>
@@ -825,13 +812,13 @@ parsing techniques.  It is also used by ``Chart.draw()``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Draw any edges that have not been drawn.  This is typically
+    <div><p>Draw any edges that have not been drawn.  This is typically
 called when a after modifies the canvas that a CanvasView is
-displaying.  ``update`` will cause any edges that have been
-added to the chart to be drawn.
-
-If update is given a ``chart`` argument, then it will replace
-the current chart with the given chart.</p></div>
+displaying.  <tt class="rst-docutils literal">update</tt> will cause any edges that have been
+added to the chart to be drawn.</p>
+<p>If update is given a <tt class="rst-docutils literal">chart</tt> argument, then it will replace
+the current chart with the given chart.</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -845,7 +832,7 @@ the current chart with the given chart.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">view_edge</span>(self, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1288">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1288">
       
       (source)
     </a>
@@ -867,7 +854,7 @@ the current chart with the given chart.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_add_edge</span>(self, edge, minlvl=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1245">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1245">
       
       (source)
     </a>
@@ -875,11 +862,15 @@ the current chart with the given chart.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a single edge to the ChartView:
-
-    - Call analyze_edge to recalculate display parameters
-    - Find an available level
-    - Call _draw_edge</p></div>
+    <div><p>Add a single edge to the ChartView:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>Call analyze_edge to recalculate display parameters</li>
+<li>Find an available level</li>
+<li>Call _draw_edge</li>
+</ul>
+</blockquote>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -893,7 +884,7 @@ the current chart with the given chart.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_analyze</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1411">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1411">
       
       (source)
     </a>
@@ -901,8 +892,8 @@ the current chart with the given chart.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Analyze the sentence string, to figure out how big a unit needs
-to be, How big the tree should be, etc.</p></div>
+    <div>Analyze the sentence string, to figure out how big a unit needs
+to be, How big the tree should be, etc.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -916,7 +907,7 @@ to be, How big the tree should be, etc.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_analyze_edge</span>(self, edge):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1211">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1211">
       
       (source)
     </a>
@@ -924,11 +915,15 @@ to be, How big the tree should be, etc.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Given a new edge, recalculate:
-
-    - _text_height
-    - _unitsize (if the edge text is too big for the current
-      _unitsize, then increase _unitsize)</p></div>
+    <div><p>Given a new edge, recalculate:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>_text_height</li>
+<li>_unitsize (if the edge text is too big for the current
+_unitsize, then increase _unitsize)</li>
+</ul>
+</blockquote>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -942,7 +937,7 @@ to be, How big the tree should be, etc.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_color_edge</span>(self, edge, linecolor=None, textcolor=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1356">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1356">
       
       (source)
     </a>
@@ -950,9 +945,9 @@ to be, How big the tree should be, etc.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Color in an edge with the given colors.
+    <div>Color in an edge with the given colors.
 If no colors are specified, use intelligent defaults
-(dependent on selection, etc.)</p></div>
+(dependent on selection, etc.)</div>
   </div>
 </div><div class="basemethod private">
   
@@ -966,7 +961,7 @@ If no colors are specified, use intelligent defaults
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_configure</span>(self, e):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1162">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1162">
       
       (source)
     </a>
@@ -974,10 +969,10 @@ If no colors are specified, use intelligent defaults
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">The configure callback.  This is called whenever the window is
+    <div>The configure callback.  This is called whenever the window is
 resized.  It is also called when the window is first mapped.
 It figures out the unit size, and redraws the contents of each
-canvas.</p></div>
+canvas.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -991,7 +986,7 @@ canvas.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_draw_edge</span>(self, edge, lvl):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1303">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1303">
       
       (source)
     </a>
@@ -999,7 +994,7 @@ canvas.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Draw a single edge on the ChartView.</p></div>
+    <div>Draw a single edge on the ChartView.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1013,7 +1008,7 @@ canvas.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_draw_loclines</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1469">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1469">
       
       (source)
     </a>
@@ -1021,8 +1016,8 @@ canvas.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Draw location lines.  These are vertical gridlines used to
-show where each location unit is.</p></div>
+    <div>Draw location lines.  These are vertical gridlines used to
+show where each location unit is.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1036,7 +1031,7 @@ show where each location unit is.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_draw_sentence</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1510">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1510">
       
       (source)
     </a>
@@ -1044,7 +1039,7 @@ show where each location unit is.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Draw the sentence string.</p></div>
+    <div>Draw the sentence string.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1058,7 +1053,7 @@ show where each location unit is.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_draw_treecycle</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1579">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1579">
       
       (source)
     </a>
@@ -1080,7 +1075,7 @@ show where each location unit is.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_draw_treetok</span>(self, treetok, index, depth=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1612">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1612">
       
       (source)
     </a>
@@ -1088,8 +1083,7 @@ show where each location unit is.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param index: The index of the first leaf in the tree.
-:return: The index of the first leaf after the tree.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">treetok</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index</span></td><td class="fieldArgDesc">The index of the first leaf in the tree.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">depth</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">The index of the first leaf after the tree.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -1103,7 +1097,7 @@ show where each location unit is.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_edge_conflict</span>(self, edge, lvl):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1198">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1198">
       
       (source)
     </a>
@@ -1111,9 +1105,9 @@ show where each location unit is.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return True if the given edge overlaps with any edge on the given
+    <div>Return True if the given edge overlaps with any edge on the given
 level.  This is used by _add_edge to figure out what level a
-new edge should be added to.</p></div>
+new edge should be added to.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1127,7 +1121,7 @@ new edge should be added to.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_fire_callbacks</span>(self, event, *args):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1729">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1729">
       
       (source)
     </a>
@@ -1149,7 +1143,7 @@ new edge should be added to.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_grow</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1130">
       
       (source)
     </a>
@@ -1157,7 +1151,7 @@ new edge should be added to.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Grow the window, if necessary</p></div>
+    <div>Grow the window, if necessary</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1171,7 +1165,7 @@ new edge should be added to.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_init_fonts</span>(self, root):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1092">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1092">
       
       (source)
     </a>
@@ -1193,7 +1187,7 @@ new edge should be added to.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_resize</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1449">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1449">
       
       (source)
     </a>
@@ -1201,10 +1195,10 @@ new edge should be added to.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Update the scroll-regions for each canvas.  This ensures that
+    <div>Update the scroll-regions for each canvas.  This ensures that
 everything is within a scroll-region, so the user can use the
-scrollbars to view the entire display.  This does *not*
-resize the window.</p></div>
+scrollbars to view the entire display.  This does <em>not</em>
+resize the window.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -1218,7 +1212,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_sb_canvas</span>(self, root, expand='y', fill='both', side='bottom'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1099">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1099">
       
       (source)
     </a>
@@ -1226,7 +1220,7 @@ resize the window.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Helper for __init__: construct a canvas with a scrollbar.</p></div>
+    <div>Helper for __init__: construct a canvas with a scrollbar.</div>
   </div>
 </div><div class="baseclassvariable private">
   
@@ -1240,7 +1234,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_CHART_LEVEL_SIZE</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1001">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1001">
       
       (source)
     </a>
@@ -1262,7 +1256,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_LEAF_SPACING</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L998">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L998">
       
       (source)
     </a>
@@ -1284,7 +1278,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_MARGIN</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L999">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L999">
       
       (source)
     </a>
@@ -1306,7 +1300,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_TREE_LEVEL_SIZE</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1000">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1000">
       
       (source)
     </a>
@@ -1328,7 +1322,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_boldfont</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1093">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1093">
       
       (source)
     </a>
@@ -1350,7 +1344,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_callbacks</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1016">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1016">
       
       (source)
     </a>
@@ -1372,7 +1366,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_chart</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1013">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L957">
       
       (source)
     </a>
@@ -1380,7 +1374,9 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The chart that we are giving a view of.  This chart
+may be modified; after it is modified, you should call
+<tt class="rst-docutils literal">update</tt>.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1394,7 +1390,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_chart_canvas</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1059">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L963">
       
       (source)
     </a>
@@ -1402,7 +1398,8 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The canvas we're using to display the chart
+itself.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1416,7 +1413,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_chart_height</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1462">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L976">
       
       (source)
     </a>
@@ -1424,7 +1421,7 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The height of the chart canvas.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1438,7 +1435,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_chart_level_size</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1441">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1441">
       
       (source)
     </a>
@@ -1460,7 +1457,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_chart_sb</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1059">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1059">
       
       (source)
     </a>
@@ -1482,7 +1479,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_compact</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1035">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1035">
       
       (source)
     </a>
@@ -1504,7 +1501,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_edgelevels</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1019">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L983">
       
       (source)
     </a>
@@ -1512,7 +1509,10 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A list of edges at each level of the chart (the
+top level is the 0th element).  This list is used to remember
+where edges should be drawn; and to make sure that no edges
+are overlapping on the chart view.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1526,7 +1526,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_edgetags</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1020">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L970">
       
       (source)
     </a>
@@ -1534,7 +1534,10 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A dictionary mapping from edges to the tags of
+the canvas elements (lines, etc) used to display that edge.
+The values of this dictionary have the form
+<tt class="rst-docutils literal">(linetag, rhstag1, dottag, rhstag2, lhstag)</tt>.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1548,7 +1551,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_font</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1094">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1094">
       
       (source)
     </a>
@@ -1570,7 +1573,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_fontsize</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1010">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L992">
       
       (source)
     </a>
@@ -1578,7 +1581,7 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The current font size</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1592,7 +1595,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_loclines</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1479">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1479">
       
       (source)
     </a>
@@ -1614,7 +1617,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_marks</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1023">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L994">
       
       (source)
     </a>
@@ -1622,7 +1625,8 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A dictionary from edges to marks.  Marks are
+strings, specifying colors (e.g. 'green').</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1636,7 +1640,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_root</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1051">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L962">
       
       (source)
     </a>
@@ -1644,7 +1648,29 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The root window.</div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.app.chartparser_app.ChartView._sentence">
+    
+  </a>
+  <a name="_sentence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_sentence</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L960">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>The list of tokens that the chart spans.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1658,7 +1684,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_sentence_canvas</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1067">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L968">
       
       (source)
     </a>
@@ -1666,7 +1692,8 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The canvas we're using to display the sentence
+text.  May be None, if we're not displaying the sentence text.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1680,7 +1707,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_sentence_height</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1434">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L977">
       
       (source)
     </a>
@@ -1688,7 +1715,7 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The height of the sentence canvas.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1702,7 +1729,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_sysfont</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1096">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1096">
       
       (source)
     </a>
@@ -1724,7 +1751,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_text_height</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1243">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L980">
       
       (source)
     </a>
@@ -1732,7 +1759,8 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The height of a text string (in the normal
+font).</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1746,7 +1774,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tree_canvas</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1077">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L965">
       
       (source)
     </a>
@@ -1754,7 +1782,9 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The canvas we're using to display the tree
+that each edge spans.  May be None, if we're not displaying
+trees.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1768,7 +1798,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tree_height</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1444">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L978">
       
       (source)
     </a>
@@ -1776,7 +1806,7 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>The height of the tree</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1790,7 +1820,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tree_sb</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1077">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1077">
       
       (source)
     </a>
@@ -1812,7 +1842,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tree_tags</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list">list</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1032">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1032">
       
       (source)
     </a>
@@ -1821,6 +1851,29 @@ resize the window.</p></div>
     
     
     <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="nltk.app.chartparser_app.ChartView._treetags">
+    
+  </a>
+  <a name="_treetags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_treetags</span> =
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L974">
+      
+      (source)
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>A list of all the tags that make up the tree;
+used to erase the tree (without erasing the loclines).</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1834,7 +1887,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_treetoks</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1027">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1027">
       
       (source)
     </a>
@@ -1856,7 +1909,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_treetoks_edge</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1028">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1028">
       
       (source)
     </a>
@@ -1878,7 +1931,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_treetoks_index</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1029">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L1029">
       
       (source)
     </a>
@@ -1900,7 +1953,7 @@ resize the window.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_unitsize</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/app/chartparser_app.py#L1145">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/app/chartparser_app.py#L988">
       
       (source)
     </a>
@@ -1908,7 +1961,9 @@ resize the window.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>Pixel size of one unit (from the location).  This
+is determined by the span of the chart's location, and the
+width of the chart display canvas.</div>
   </div>
 </div>
 
@@ -1920,7 +1975,7 @@ resize the window.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

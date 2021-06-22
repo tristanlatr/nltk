@@ -65,29 +65,35 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Rule</span>(<a href="nltk.tbl.rule.TagRule.html" title="nltk.tbl.rule.TagRule">TagRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L95" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Rule</span>(<a href="nltk.tbl.rule.TagRule.html" title="nltk.tbl.rule.TagRule">TagRule</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L95" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tbl.rule.Rule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A Rule checks the current corpus position for a certain set of conditions;
+        <div><p>A Rule checks the current corpus position for a certain set of conditions;
 if they are all fulfilled, the Rule is triggered, meaning that it
-will change tag A to tag B. For other tags than A, nothing happens.
-
-The conditions are parameters to the Rule instance. Each condition is a feature-value pair,
+will change tag A to tag B. For other tags than A, nothing happens.</p>
+<p>The conditions are parameters to the Rule instance. Each condition is a feature-value pair,
 with a set of positions to check for the value of the corresponding feature.
-Conceptually, the positions are joined by logical OR, and the feature set by logical AND.
-
-More formally, the Rule is then applicable to the M{n}th token iff:
-
-  - The M{n}th token is tagged with the Rule's original tag; and
-  - For each (Feature(positions), M{value}) tuple:
-    - The value of Feature of at least one token in {n+p for p in positions}
-      is M{value}.</p></div>
+Conceptually, the positions are joined by logical OR, and the feature set by logical AND.</p>
+<p>More formally, the Rule is then applicable to the M{n}th token iff:</p>
+<blockquote>
+<ul>
+<li><p class="rst-first">The M{n}th token is tagged with the Rule's original tag; and</p>
+</li>
+<li><p class="rst-first">For each (Feature(positions), M{value}) tuple:
+- The value of Feature of at least one token in {n+p for p in positions}</p>
+<blockquote>
+<p>is M{value}.</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1634">
+        <table class="children sortable" id="id1638">
   
   
   <tr class="classmethod">
@@ -176,7 +182,7 @@ More formally, the Rule is then applicable to the M{n}th token iff:
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tbl.rule.TagRule.html">TagRule</a></code>:
           </p>
-          <table class="children sortable" id="id1635">
+          <table class="children sortable" id="id1639">
   
   
   <tr class="basemethod">
@@ -215,7 +221,7 @@ More formally, the Rule is then applicable to the M{n}th token iff:
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">decode_json_obj</span>(cls, obj):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L146">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L146">
       
       (source)
     </a>
@@ -237,7 +243,7 @@ More formally, the Rule is then applicable to the M{n}th token iff:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L178">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L178">
       
       (source)
     </a>
@@ -259,7 +265,7 @@ More formally, the Rule is then applicable to the M{n}th token iff:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L190">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L190">
       
       (source)
     </a>
@@ -281,7 +287,7 @@ More formally, the Rule is then applicable to the M{n}th token iff:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, templateid, original_tag, replacement_tag, conditions):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L117">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L117">
       
       (source)
     </a>
@@ -289,19 +295,20 @@ More formally, the Rule is then applicable to the M{n}th token iff:
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tbl.rule.TagRule.html#__init__">nltk.tbl.rule.TagRule.__init__</a></code></div>
     
-    <div><p class="pre">Construct a new Rule that changes a token's tag from
+    <div><p>Construct a new Rule that changes a token's tag from
 C{original_tag} to C{replacement_tag} if all of the properties
-specified in C{conditions} hold.
-
-@type templateid: string
-@param templateid: the template id (a zero-padded string, '001' etc,
-  so it will sort nicely)
-
-@type conditions: C{iterable} of C{Feature}
-@param conditions: A list of Feature(positions),
-    each of which specifies that the property (computed by
-    Feature.extract_property()) of at least one
-    token in M{n} + p in positions is C{value}.</p></div>
+specified in C{conditions} hold.</p>
+<p>@type templateid: string
+@param templateid: the template id (a zero-padded string, '001' etc,</p>
+<blockquote>
+so it will sort nicely)</blockquote>
+<p>@type conditions: C{iterable} of C{Feature}
+@param conditions: A list of Feature(positions),</p>
+<blockquote>
+each of which specifies that the property (computed by
+Feature.extract_property()) of at least one
+token in M{n} + p in positions is C{value}.</blockquote>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -315,7 +322,7 @@ specified in C{conditions} hold.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L187">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L187">
       
       (source)
     </a>
@@ -337,7 +344,7 @@ specified in C{conditions} hold.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L199">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L199">
       
       (source)
     </a>
@@ -359,7 +366,7 @@ specified in C{conditions} hold.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L220">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L220">
       
       (source)
     </a>
@@ -381,7 +388,7 @@ specified in C{conditions} hold.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">applies</span>(self, tokens, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L155">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L155">
       
       (source)
     </a>
@@ -389,13 +396,8 @@ specified in C{conditions} hold.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tbl.rule.TagRule.html#applies">nltk.tbl.rule.TagRule.applies</a></code></div>
     
-    <div><p class="pre">:return: True if the rule would change the tag of
-    ``tokens[index]``, False otherwise
-:rtype: bool
-:param tokens: A tagged sentence
-:type tokens: list(str)
-:param index: The index to check
-:type index: int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(str)</td><td class="fieldArgDesc">A tagged sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index:</span>int</td><td class="fieldArgDesc">The index to check</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc">True if the rule would change the tag of
+<tt class="rst-docutils literal">tokens[index]</tt>, False otherwise</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -409,7 +411,7 @@ specified in C{conditions} hold.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">encode_json_obj</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L138">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L138">
       
       (source)
     </a>
@@ -431,7 +433,7 @@ specified in C{conditions} hold.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">format</span>(self, fmt):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L241">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L241">
       
       (source)
     </a>
@@ -439,38 +441,29 @@ specified in C{conditions} hold.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a string representation of this rule.
-
-&gt;&gt;&gt; from nltk.tbl.rule import Rule
-&gt;&gt;&gt; from nltk.tag.brill import Pos
-
-&gt;&gt;&gt; r = Rule("23", "VB", "NN", [(Pos([-2,-1]), 'DT')])
-
-r.format("str") == str(r)
+    <div><p>Return a string representation of this rule.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tbl.rule <span class="py-keyword">import</span> Rule
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.tag.brill <span class="py-keyword">import</span> Pos</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>r = Rule(<span class="py-string">"23"</span>, <span class="py-string">"VB"</span>, <span class="py-string">"NN"</span>, [(Pos([-2,-1]), <span class="py-string">'DT'</span>)])</pre><p>r.format("str") == str(r)
 True
 &gt;&gt;&gt; r.format("str")
-'VB-&gt;NN if Pos:DT@[-2,-1]'
-
-r.format("repr") == repr(r)
+'VB-&gt;NN if Pos:DT@[-2,-1]'</p>
+<p>r.format("repr") == repr(r)
 True
 &gt;&gt;&gt; r.format("repr")
-"Rule('23', 'VB', 'NN', [(Pos([-2, -1]),'DT')])"
-
-&gt;&gt;&gt; r.format("verbose")
-'VB -&gt; NN if the Pos of words i-2...i-1 is "DT"'
-
-&gt;&gt;&gt; r.format("not_found")
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-  File "nltk/tbl/rule.py", line 256, in format
-    raise ValueError("unknown rule format spec: {0}".format(fmt))
-ValueError: unknown rule format spec: not_found
-&gt;&gt;&gt;
-
-:param fmt: format specification
-:type fmt: str
-:return: string representation
-:rtype: str</p></div>
+"Rule('23', 'VB', 'NN', [(Pos([-2, -1]),'DT')])"</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>r.format(<span class="py-string">"verbose"</span>)
+<span class="py-output">'VB -&gt; NN if the Pos of words i-2...i-1 is "DT"'</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>r.format(<span class="py-string">"not_found"</span>)
+<span class="py-except">Traceback (most recent call last):</span>
+<span class="py-except">  File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span>
+<span class="py-except">  File "nltk/tbl/rule.py", line 256, in format</span>
+<span class="py-except">    raise ValueError("unknown rule format spec: {0}".format(fmt))</span>
+<span class="py-except">ValueError: unknown rule format spec: not_found</span>
+<span class="py-prompt">&gt;&gt;&gt;</span></pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fmt:</span>str</td><td class="fieldArgDesc">format specification</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc">string representation</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -484,7 +477,7 @@ ValueError: unknown rule format spec: not_found
   <div class="functionHeader">
     
     <span class="py-defname">json_tag</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L115">
       
       (source)
     </a>
@@ -506,7 +499,7 @@ ValueError: unknown rule format spec: not_found
   <div class="functionHeader">
     
     <span class="py-defname">templateid</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L136">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L136">
       
       (source)
     </a>
@@ -528,7 +521,7 @@ ValueError: unknown rule format spec: not_found
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_verbose_format</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L285">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L285">
       
       (source)
     </a>
@@ -536,10 +529,10 @@ ValueError: unknown rule format spec: not_found
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a wordy, human-readable string representation
-of the given rule.
-
-Not sure how useful this is.</p></div>
+    <div><p>Return a wordy, human-readable string representation
+of the given rule.</p>
+<p>Not sure how useful this is.</p>
+</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -553,7 +546,7 @@ Not sure how useful this is.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__hash</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L196">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L196">
       
       (source)
     </a>
@@ -575,7 +568,7 @@ Not sure how useful this is.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__repr</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L205">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L205">
       
       (source)
     </a>
@@ -597,7 +590,7 @@ Not sure how useful this is.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_conditions</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L135">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L135">
       
       (source)
     </a>
@@ -617,7 +610,7 @@ Not sure how useful this is.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

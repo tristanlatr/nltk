@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">PunktBaseClass</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L529" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tokenize.punkt.PunktSentenceTokenizer.html">nltk.tokenize.punkt.PunktSentenceTokenizer</a></code>, <code><a href="nltk.tokenize.punkt.PunktTrainer.html">nltk.tokenize.punkt.PunktTrainer</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PunktBaseClass</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L529" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tokenize.punkt.PunktSentenceTokenizer.html">nltk.tokenize.punkt.PunktSentenceTokenizer</a></code>, <code><a href="nltk.tokenize.punkt.PunktTrainer.html">nltk.tokenize.punkt.PunktTrainer</a></code></p>
         <p><a href="classIndex.html#nltk.tokenize.punkt.PunktBaseClass">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Includes common components of PunktTrainer and PunktSentenceTokenizer.</p></div>
+        <div>Includes common components of PunktTrainer and PunktSentenceTokenizer.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1797">
+        <table class="children sortable" id="id1801">
   
   
   <tr class="method">
@@ -133,7 +133,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, lang_vars=None, token_cls=PunktToken, params=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L534">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L534">
       
       (source)
     </a>
@@ -155,7 +155,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_annotate_first_pass</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L579">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L579">
       
       (source)
     </a>
@@ -163,20 +163,26 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Perform the first pass of annotation, which makes decisions
-based purely based on the word type of each word:
-
-  - '?', '!', and '.' are marked as sentence breaks.
-  - sequences of two or more periods are marked as ellipsis.
-  - any word ending in '.' that's a known abbreviation is
-    marked as an abbreviation.
-  - any other word ending in '.' is marked as a sentence break.
-
-Return these annotations as a tuple of three sets:
-
-  - sentbreak_toks: The indices of all sentence breaks.
-  - abbrev_toks: The indices of all abbreviations.
-  - ellipsis_toks: The indices of all ellipsis marks.</p></div>
+    <div><p>Perform the first pass of annotation, which makes decisions
+based purely based on the word type of each word:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>'?', '!', and '.' are marked as sentence breaks.</li>
+<li>sequences of two or more periods are marked as ellipsis.</li>
+<li>any word ending in '.' that's a known abbreviation is
+marked as an abbreviation.</li>
+<li>any other word ending in '.' is marked as a sentence break.</li>
+</ul>
+</blockquote>
+<p>Return these annotations as a tuple of three sets:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>sentbreak_toks: The indices of all sentence breaks.</li>
+<li>abbrev_toks: The indices of all abbreviations.</li>
+<li>ellipsis_toks: The indices of all ellipsis marks.</li>
+</ul>
+</blockquote>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -190,7 +196,7 @@ Return these annotations as a tuple of three sets:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_first_pass_annotation</span>(self, aug_tok):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L600">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L600">
       
       (source)
     </a>
@@ -198,7 +204,7 @@ Return these annotations as a tuple of three sets:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Performs type-based annotation on a single token.</p></div>
+    <div>Performs type-based annotation on a single token.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -212,7 +218,7 @@ Return these annotations as a tuple of three sets:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_tokenize_words</span>(self, plaintext):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L549">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L549">
       
       (source)
     </a>
@@ -220,11 +226,11 @@ Return these annotations as a tuple of three sets:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Divide the given text into tokens, using the punkt word
+    <div>Divide the given text into tokens, using the punkt word
 segmentation regular expression, and generate the resulting list
 of tokens augmented as three-tuples with two boolean values for whether
 the given token occurs at the start of a paragraph or a new line,
-respectively.</p></div>
+respectively.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -238,7 +244,7 @@ respectively.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_lang_vars</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L540">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L540">
       
       (source)
     </a>
@@ -260,7 +266,7 @@ respectively.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_params</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L539">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L539">
       
       (source)
     </a>
@@ -282,7 +288,7 @@ respectively.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_Token</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/punkt.py#L541">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/punkt.py#L541">
       
       (source)
     </a>
@@ -290,8 +296,8 @@ respectively.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The collection of parameters that determines the behavior
-of the punkt tokenizer.</p></div>
+    <div>The collection of parameters that determines the behavior
+of the punkt tokenizer.</div>
   </div>
 </div>
 
@@ -303,7 +309,7 @@ of the punkt tokenizer.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

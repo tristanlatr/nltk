@@ -65,37 +65,39 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConfusionMatrix</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L12" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ConfusionMatrix</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L12" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.metrics.confusionmatrix.ConfusionMatrix">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">The confusion matrix between a list of reference values and a
-corresponding list of test values.  Entry *[r,t]* of this
+        <div><p>The confusion matrix between a list of reference values and a
+corresponding list of test values.  Entry <em>[r,t]</em> of this
 matrix is a count of the number of times that the reference value
-*r* corresponds to the test value *t*.  E.g.:
-
-    &gt;&gt;&gt; from nltk.metrics import ConfusionMatrix
-    &gt;&gt;&gt; ref  = 'DET NN VB DET JJ NN NN IN DET NN'.split()
-    &gt;&gt;&gt; test = 'DET VB VB DET NN NN NN IN DET NN'.split()
-    &gt;&gt;&gt; cm = ConfusionMatrix(ref, test)
-    &gt;&gt;&gt; print(cm['NN', 'NN'])
-    3
-
-Note that the diagonal entries *Ri=Tj* of this matrix
+<em>r</em> corresponds to the test value <em>t</em>.  E.g.:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.metrics <span class="py-keyword">import</span> ConfusionMatrix
+<span class="py-prompt">&gt;&gt;&gt; </span>ref  = <span class="py-string">'DET NN VB DET JJ NN NN IN DET NN'</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span>test = <span class="py-string">'DET VB VB DET NN NN NN IN DET NN'</span>.split()
+<span class="py-prompt">&gt;&gt;&gt; </span>cm = ConfusionMatrix(ref, test)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(cm[<span class="py-string">'NN'</span>, <span class="py-string">'NN'</span>])
+<span class="py-output">3</span>
+</pre></blockquote>
+<p>Note that the diagonal entries <em>Ri=Tj</em> of this matrix
 corresponds to correct values; and the off-diagonal entries
-correspond to incorrect values.</p></div>
+correspond to incorrect values.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id820">
+        <table class="children sortable" id="id823">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__getitem__">__getitem__</a></code></td>
-    <td><span>:return: The number of times that value ``li`` was expected and value ``lj`` was given. :rtype: int</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -172,7 +174,7 @@ correspond to incorrect values.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, li_lj_tuple):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L82">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L82">
       
       (source)
     </a>
@@ -180,9 +182,8 @@ correspond to incorrect values.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: The number of times that value ``li`` was expected and
-value ``lj`` was given.
-:rtype: int</p></div>
+    <div>value <tt class="rst-docutils literal">lj</tt> was given.
+:rtype: int<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">The number of times that value <tt class="rst-docutils literal">li</tt> was expected and</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -196,7 +197,7 @@ value ``lj`` was given.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, reference, test, sort_by_count=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L31">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L31">
       
       (source)
     </a>
@@ -204,16 +205,10 @@ value ``lj`` was given.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a new confusion matrix from a list of reference
-values and a corresponding list of test values.
-
-:type reference: list
-:param reference: An ordered list of reference values.
-:type test: list
-:param test: A list of values to compare against the
-    corresponding reference values.
-:raise ValueError: If ``reference`` and ``length`` do not have
-    the same length.</p></div>
+    <div>Construct a new confusion matrix from a list of reference
+values and a corresponding list of test values.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference:</span>list</td><td class="fieldArgDesc">An ordered list of reference values.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">test:</span>list</td><td class="fieldArgDesc">A list of values to compare against the
+corresponding reference values.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sort_by_count</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code></td><td>If <tt class="rst-docutils literal">reference</tt> and <tt class="rst-docutils literal">length</tt> do not have
+the same length.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -227,7 +222,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L93">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L93">
       
       (source)
     </a>
@@ -249,7 +244,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L96">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L96">
       
       (source)
     </a>
@@ -271,7 +266,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">key</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L194">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L194">
       
       (source)
     </a>
@@ -293,7 +288,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pretty_format</span>(self, show_percents=False, values_in_chart=True, truncate=None, sort_by_count=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L99">
       
       (source)
     </a>
@@ -301,18 +296,13 @@ values and a corresponding list of test values.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: A multi-line string representation of this confusion matrix.
-:type truncate: int
-:param truncate: If specified, then only show the specified
-    number of values.  Any sorting (e.g., sort_by_count)
-    will be performed before truncation.
-:param sort_by_count: If true, then sort by the count of each
-    label in the reference data.  I.e., labels that occur more
-    frequently in the reference label will be towards the left
-    edge of the matrix, and labels that occur less frequently
-    will be towards the right edge.
-
-@todo: add marginals?</p></div>
+    <div>@todo: add marginals?<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">show_percents</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">values_in_chart</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">truncate:</span>int</td><td class="fieldArgDesc">If specified, then only show the specified
+number of values.  Any sorting (e.g., sort_by_count)
+will be performed before truncation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sort_by_count</span></td><td class="fieldArgDesc">If true, then sort by the count of each
+label in the reference data.  I.e., labels that occur more
+frequently in the reference label will be towards the left
+edge of the matrix, and labels that occur less frequently
+will be towards the right edge.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">A multi-line string representation of this confusion matrix.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -326,7 +316,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-defname">_confusion</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L74">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L74">
       
       (source)
     </a>
@@ -348,7 +338,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-defname">_correct</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L80">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L80">
       
       (source)
     </a>
@@ -370,7 +360,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-defname">_indices</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L72">
       
       (source)
     </a>
@@ -392,7 +382,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-defname">_max_conf</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L76">
       
       (source)
     </a>
@@ -414,7 +404,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-defname">_total</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L78">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L78">
       
       (source)
     </a>
@@ -436,7 +426,7 @@ values and a corresponding list of test values.
   <div class="functionHeader">
     
     <span class="py-defname">_values</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/confusionmatrix.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/confusionmatrix.py#L70">
       
       (source)
     </a>
@@ -456,7 +446,7 @@ values and a corresponding list of test values.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

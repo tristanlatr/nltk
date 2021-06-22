@@ -65,29 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextCollection</span>(<a href="nltk.text.Text.html" title="nltk.text.Text">Text</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L692" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TextCollection</span>(<a href="nltk.text.Text.html" title="nltk.text.Text">Text</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L692" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.text.TextCollection">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A collection of texts, which can be loaded with list of texts, or
+        <div><p>A collection of texts, which can be loaded with list of texts, or
 with a corpus consisting of one or more texts, and which supports
 counting, concordancing, collocation discovery, etc.  Initialize a
-TextCollection as follows:
-
-&gt;&gt;&gt; import nltk.corpus
-&gt;&gt;&gt; from nltk.text import TextCollection
-&gt;&gt;&gt; print('hack'); from nltk.book import text1, text2, text3
-hack...
-&gt;&gt;&gt; gutenberg = TextCollection(nltk.corpus.gutenberg)
-&gt;&gt;&gt; mytexts = TextCollection([text1, text2, text3])
-
-Iterating over a TextCollection produces all the tokens of all the
-texts in order.</p></div>
+TextCollection as follows:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> nltk.corpus
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.text <span class="py-keyword">import</span> TextCollection
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'hack'</span>); <span class="py-keyword">from</span> nltk.book <span class="py-keyword">import</span> text1, text2, text3
+<span class="py-output">hack...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>gutenberg = TextCollection(nltk.corpus.gutenberg)
+<span class="py-prompt">&gt;&gt;&gt; </span>mytexts = TextCollection([text1, text2, text3])</pre><p>Iterating over a TextCollection produces all the tokens of all the
+texts in order.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1772">
+        <table class="children sortable" id="id1776">
   
   
   <tr class="method">
@@ -126,7 +125,7 @@ texts in order.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.text.Text.html">Text</a></code>:
           </p>
-          <table class="children sortable" id="id1773">
+          <table class="children sortable" id="id1777">
   
   
   <tr class="basemethod">
@@ -168,12 +167,12 @@ texts in order.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.text.Text.html#concordance">concordance</a></code></td>
-    <td><span>Prints a concordance for ``word`` with the specified context window. Word matching is not case-sensitive.</span></td>
+    <td><span>Prints a concordance for <tt class="rst-docutils literal">word</tt> with the specified context window. Word matching is not case-sensitive.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.text.Text.html#concordance_list">concordance_list</a></code></td>
-    <td><span>Generate a concordance for ``word`` with the specified context window. Word matching is not case-sensitive.</span></td>
+    <td><span>Generate a concordance for <tt class="rst-docutils literal">word</tt> with the specified context window. Word matching is not case-sensitive.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -193,7 +192,7 @@ texts in order.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.text.Text.html#generate">generate</a></code></td>
-    <td><span>Print random text, generated using a trigram language model. See also `help(nltk.lm)`.</span></td>
+    <td><span>Print random text, generated using a trigram language model. See also <code>help(nltk.lm)</code>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -218,7 +217,7 @@ texts in order.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.text.Text.html#vocab">vocab</a></code></td>
-    <td><span>:seealso: nltk.prob.FreqDist</span></td>
+    <td><span></span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
@@ -233,7 +232,7 @@ texts in order.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.text.Text.html#_context">_context</a></code></td>
-    <td><span>One left &amp; one right token, both case-normalized.  Skip over non-sentence-final punctuation.  Used by the ``ContextIndex`` that is created for ``similar()`` and ``common_contexts()``.</span></td>
+    <td><span>One left &amp; one right token, both case-normalized.  Skip over non-sentence-final punctuation.  Used by the <tt class="rst-docutils literal">ContextIndex</tt> that is created for <tt class="rst-docutils literal">similar()</tt> and <tt class="rst-docutils literal">common_contexts()</tt>.</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -315,7 +314,7 @@ texts in order.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, source):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L709">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L709">
       
       (source)
     </a>
@@ -323,10 +322,7 @@ texts in order.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.text.Text.html#__init__">nltk.text.Text.__init__</a></code></div>
     
-    <div><p class="pre">Create a Text object.
-
-:param tokens: The source text.
-:type tokens: sequence of str</p></div>
+    <div>Create a Text object.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>sequence of str</td><td class="fieldArgDesc">The source text.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -340,7 +336,7 @@ texts in order.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">idf</span>(self, term):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L721">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L721">
       
       (source)
     </a>
@@ -348,9 +344,9 @@ texts in order.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">The number of texts in the corpus divided by the
+    <div>The number of texts in the corpus divided by the
 number of texts that the term appears in.
-If a term does not appear in the corpus, 0.0 is returned. </p></div>
+If a term does not appear in the corpus, 0.0 is returned.</div>
   </div>
 </div><div class="basemethod">
   
@@ -364,7 +360,7 @@ If a term does not appear in the corpus, 0.0 is returned. </p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tf</span>(self, term, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L717">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L717">
       
       (source)
     </a>
@@ -372,7 +368,7 @@ If a term does not appear in the corpus, 0.0 is returned. </p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">The frequency of the term in text. </p></div>
+    <div>The frequency of the term in text.</div>
   </div>
 </div><div class="basemethod">
   
@@ -386,7 +382,7 @@ If a term does not appear in the corpus, 0.0 is returned. </p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tf_idf</span>(self, term, text):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L735">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L735">
       
       (source)
     </a>
@@ -408,7 +404,7 @@ If a term does not appear in the corpus, 0.0 is returned. </p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_idf_cache</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L715">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L715">
       
       (source)
     </a>
@@ -430,7 +426,7 @@ If a term does not appear in the corpus, 0.0 is returned. </p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_texts</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L713">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L713">
       
       (source)
     </a>
@@ -450,7 +446,7 @@ If a term does not appear in the corpus, 0.0 is returned. </p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

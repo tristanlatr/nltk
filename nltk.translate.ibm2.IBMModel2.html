@@ -65,57 +65,56 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel2</span>(<span title="nltk.translate.IBMModel">IBMModel</span>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L59" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">IBMModel2</span>(<span title="nltk.translate.IBMModel">IBMModel</span>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L59" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.ibm2.IBMModel2">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Lexical translation model that considers word order
-
-&gt;&gt;&gt; bitext = []
-&gt;&gt;&gt; bitext.append(AlignedSent(['klein', 'ist', 'das', 'haus'], ['the', 'house', 'is', 'small']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'haus', 'ist', 'ja', 'groß'], ['the', 'house', 'is', 'big']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'buch', 'ist', 'ja', 'klein'], ['the', 'book', 'is', 'small']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'haus'], ['the', 'house']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['das', 'buch'], ['the', 'book']))
-&gt;&gt;&gt; bitext.append(AlignedSent(['ein', 'buch'], ['a', 'book']))
-
-&gt;&gt;&gt; ibm2 = IBMModel2(bitext, 5)
-
-&gt;&gt;&gt; print(round(ibm2.translation_table['buch']['book'], 3))
-1.0
-&gt;&gt;&gt; print(round(ibm2.translation_table['das']['book'], 3))
-0.0
-&gt;&gt;&gt; print(round(ibm2.translation_table['buch'][None], 3))
-0.0
-&gt;&gt;&gt; print(round(ibm2.translation_table['ja'][None], 3))
-0.0
-
-&gt;&gt;&gt; print(ibm2.alignment_table[1][1][2][2])
-0.938...
-&gt;&gt;&gt; print(round(ibm2.alignment_table[1][2][2][2], 3))
-0.0
-&gt;&gt;&gt; print(round(ibm2.alignment_table[2][2][4][5], 3))
-1.0
-
-&gt;&gt;&gt; test_sentence = bitext[2]
-&gt;&gt;&gt; test_sentence.words
-['das', 'buch', 'ist', 'ja', 'klein']
-&gt;&gt;&gt; test_sentence.mots
-['the', 'book', 'is', 'small']
-&gt;&gt;&gt; test_sentence.alignment
-Alignment([(0, 0), (1, 1), (2, 2), (3, 2), (4, 3)])</p></div>
+        <div><p>Lexical translation model that considers word order</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext = []
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'klein'</span>, <span class="py-string">'ist'</span>, <span class="py-string">'das'</span>, <span class="py-string">'haus'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'house'</span>, <span class="py-string">'is'</span>, <span class="py-string">'small'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'das'</span>, <span class="py-string">'haus'</span>, <span class="py-string">'ist'</span>, <span class="py-string">'ja'</span>, <span class="py-string">'groß'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'house'</span>, <span class="py-string">'is'</span>, <span class="py-string">'big'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'das'</span>, <span class="py-string">'buch'</span>, <span class="py-string">'ist'</span>, <span class="py-string">'ja'</span>, <span class="py-string">'klein'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'book'</span>, <span class="py-string">'is'</span>, <span class="py-string">'small'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'das'</span>, <span class="py-string">'haus'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'house'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'das'</span>, <span class="py-string">'buch'</span>], [<span class="py-string">'the'</span>, <span class="py-string">'book'</span>]))
+<span class="py-prompt">&gt;&gt;&gt; </span>bitext.append(AlignedSent([<span class="py-string">'ein'</span>, <span class="py-string">'buch'</span>], [<span class="py-string">'a'</span>, <span class="py-string">'book'</span>]))</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>ibm2 = IBMModel2(bitext, 5)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm2.translation_table[<span class="py-string">'buch'</span>][<span class="py-string">'book'</span>], 3))
+<span class="py-output">1.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm2.translation_table[<span class="py-string">'das'</span>][<span class="py-string">'book'</span>], 3))
+<span class="py-output">0.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm2.translation_table[<span class="py-string">'buch'</span>][<span class="py-builtin">None</span>], 3))
+<span class="py-output">0.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm2.translation_table[<span class="py-string">'ja'</span>][<span class="py-builtin">None</span>], 3))
+<span class="py-output">0.0</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(ibm2.alignment_table[1][1][2][2])
+<span class="py-output">0.938...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm2.alignment_table[1][2][2][2], 3))
+<span class="py-output">0.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-builtin">round</span>(ibm2.alignment_table[2][2][4][5], 3))
+<span class="py-output">1.0</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>test_sentence = bitext[2]
+<span class="py-prompt">&gt;&gt;&gt; </span>test_sentence.words
+<span class="py-output">['das', 'buch', 'ist', 'ja', 'klein']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>test_sentence.mots
+<span class="py-output">['the', 'book', 'is', 'small']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>test_sentence.alignment
+<span class="py-output">Alignment([(0, 0), (1, 1), (2, 2), (3, 2), (4, 3)])</span>
+</pre></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1878">
+        <table class="children sortable" id="id1882">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Train on ``sentence_aligned_corpus`` and create a lexical translation model and an alignment model.</span></td>
+    <td><span>Train on <tt class="rst-docutils literal">sentence_aligned_corpus</tt> and create a lexical translation model and an alignment model.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -135,7 +134,7 @@ Alignment([(0, 0), (1, 1), (2, 2), (3, 2), (4, 3)])</p></div>
     
     <td>Method</td>
     <td><code><a href="#prob_alignment_point">prob_alignment_point</a></code></td>
-    <td><span>Probability that position j in ``trg_sentence`` is aligned to position i in the ``src_sentence``</span></td>
+    <td><span>Probability that position j in <tt class="rst-docutils literal">trg_sentence</tt> is aligned to position i in the <tt class="rst-docutils literal">src_sentence</tt></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -187,7 +186,7 @@ Alignment([(0, 0), (1, 1), (2, 2), (3, 2), (4, 3)])</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, sentence_aligned_corpus, iterations, probability_tables=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L99">
       
       (source)
     </a>
@@ -195,25 +194,16 @@ Alignment([(0, 0), (1, 1), (2, 2), (3, 2), (4, 3)])</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Train on ``sentence_aligned_corpus`` and create a lexical
-translation model and an alignment model.
-
-Translation direction is from ``AlignedSent.mots`` to
-``AlignedSent.words``.
-
-:param sentence_aligned_corpus: Sentence-aligned parallel corpus
-:type sentence_aligned_corpus: list(AlignedSent)
-
-:param iterations: Number of iterations to run training algorithm
-:type iterations: int
-
-:param probability_tables: Optional. Use this to pass in custom
-    probability values. If not specified, probabilities will be
-    set to a uniform distribution, or some other sensible value.
-    If specified, all the following entries must be present:
-    ``translation_table``, ``alignment_table``.
-    See ``IBMModel`` for the type and purpose of these tables.
-:type probability_tables: dict[str]: object</p></div>
+    <div><p>Train on <tt class="rst-docutils literal">sentence_aligned_corpus</tt> and create a lexical
+translation model and an alignment model.</p>
+<p>Translation direction is from <tt class="rst-docutils literal">AlignedSent.mots</tt> to
+<tt class="rst-docutils literal">AlignedSent.words</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence_aligned_corpus:</span>list(AlignedSent)</td><td class="fieldArgDesc">Sentence-aligned parallel corpus</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">iterations:</span>int</td><td class="fieldArgDesc">Number of iterations to run training algorithm</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">probability_tables:</span>dict[str]: object</td><td class="fieldArgDesc">Optional. Use this to pass in custom
+probability values. If not specified, probabilities will be
+set to a uniform distribution, or some other sensible value.
+If specified, all the following entries must be present:
+<tt class="rst-docutils literal">translation_table</tt>, <tt class="rst-docutils literal">alignment_table</tt>.
+See <tt class="rst-docutils literal">IBMModel</tt> for the type and purpose of these tables.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -227,7 +217,7 @@ Translation direction is from ``AlignedSent.mots`` to
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">align</span>(self, sentence_pair):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L257">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L257">
       
       (source)
     </a>
@@ -235,17 +225,14 @@ Translation direction is from ``AlignedSent.mots`` to
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Determines the best word alignment for one sentence pair from
-the corpus that the model was trained on.
-
-The best alignment will be set in ``sentence_pair`` when the
+    <div><p>Determines the best word alignment for one sentence pair from
+the corpus that the model was trained on.</p>
+<p>The best alignment will be set in <tt class="rst-docutils literal">sentence_pair</tt> when the
 method returns. In contrast with the internal implementation of
-IBM models, the word indices in the ``Alignment`` are zero-
-indexed, not one-indexed.
-
-:param sentence_pair: A sentence in the source language and its
-    counterpart sentence in the target language
-:type sentence_pair: AlignedSent</p></div>
+IBM models, the word indices in the <tt class="rst-docutils literal">Alignment</tt> are zero-
+indexed, not one-indexed.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sentence_pair:</span>AlignedSent</td><td class="fieldArgDesc">A sentence in the source language and its
+counterpart sentence in the target language</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -259,7 +246,7 @@ indexed, not one-indexed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">align_all</span>(self, parallel_corpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L253">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L253">
       
       (source)
     </a>
@@ -281,7 +268,7 @@ indexed, not one-indexed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">maximize_alignment_probabilities</span>(self, counts):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L186">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L186">
       
       (source)
     </a>
@@ -303,7 +290,7 @@ indexed, not one-indexed.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_alignment_point</span>(self, i, j, src_sentence, trg_sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L221">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L221">
       
       (source)
     </a>
@@ -311,8 +298,8 @@ indexed, not one-indexed.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Probability that position j in ``trg_sentence`` is aligned to
-position i in the ``src_sentence``</p></div>
+    <div>Probability that position j in <tt class="rst-docutils literal">trg_sentence</tt> is aligned to
+position i in the <tt class="rst-docutils literal">src_sentence</tt></div>
   </div>
 </div><div class="basemethod">
   
@@ -326,7 +313,7 @@ position i in the ``src_sentence``</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_all_alignments</span>(self, src_sentence, trg_sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L198">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L198">
       
       (source)
     </a>
@@ -334,17 +321,13 @@ position i in the ``src_sentence``</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Computes the probability of all possible word alignments,
-expressed as a marginal distribution over target words t
-
-Each entry in the return value represents the contribution to
-the total alignment probability by the target word t.
-
-To obtain probability(alignment | src_sentence, trg_sentence),
-simply sum the entries in the return value.
-
-:return: Probability of t for all s in ``src_sentence``
-:rtype: dict(str): float</p></div>
+    <div><p>Computes the probability of all possible word alignments,
+expressed as a marginal distribution over target words t</p>
+<p>Each entry in the return value represents the contribution to
+the total alignment probability by the target word t.</p>
+<p>To obtain probability(alignment | src_sentence, trg_sentence),
+simply sum the entries in the return value.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">dict(str): float</td><td class="fieldArgDesc">Probability of t for all s in <tt class="rst-docutils literal">src_sentence</tt></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -358,7 +341,7 @@ simply sum the entries in the return value.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">prob_t_a_given_s</span>(self, alignment_info):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L232">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L232">
       
       (source)
     </a>
@@ -366,8 +349,8 @@ simply sum the entries in the return value.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Probability of target sentence and an alignment given the
-source sentence</p></div>
+    <div>Probability of target sentence and an alignment given the
+source sentence</div>
   </div>
 </div><div class="basemethod">
   
@@ -381,7 +364,7 @@ source sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">set_uniform_probabilities</span>(self, sentence_aligned_corpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L140">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L140">
       
       (source)
     </a>
@@ -403,7 +386,7 @@ source sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, parallel_corpus):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L160">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L160">
       
       (source)
     </a>
@@ -425,7 +408,7 @@ source sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">alignment_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L133">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L133">
       
       (source)
     </a>
@@ -447,7 +430,7 @@ source sentence</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">translation_table</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/ibm2.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/ibm2.py#L128">
       
       (source)
     </a>
@@ -467,7 +450,7 @@ source sentence</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

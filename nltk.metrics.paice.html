@@ -65,27 +65,30 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Counts Paice's performance statistics for evaluating stemming algorithms.
-
-What is required:
- - A dictionary of words grouped by their real lemmas
- - A dictionary of words grouped by stems from a stemming algorithm
-
-When these are given, Understemming Index (UI), Overstemming Index (OI),
-Stemming Weight (SW) and Error-rate relative to truncation (ERRT) are counted.
-
-References:
+        <div><p>Counts Paice's performance statistics for evaluating stemming algorithms.</p>
+<dl class="rst-docutils">
+<dt>What is required:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>A dictionary of words grouped by their real lemmas</li>
+<li>A dictionary of words grouped by stems from a stemming algorithm</li>
+</ul>
+</dd>
+</dl>
+<p>When these are given, Understemming Index (UI), Overstemming Index (OI),
+Stemming Weight (SW) and Error-rate relative to truncation (ERRT) are counted.</p>
+<p>References:
 Chris D. Paice (1994). An evaluation method for stemming algorithms.
-In Proceedings of SIGIR, 42--50.</p></div>
+In Proceedings of SIGIR, 42--50.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id822">
+        <table class="children sortable" id="id825">
   
   
   <tr class="class">
@@ -154,7 +157,7 @@ In Proceedings of SIGIR, 42--50.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py#L343">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py#L343">
       
       (source)
     </a>
@@ -162,7 +165,7 @@ In Proceedings of SIGIR, 42--50.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Demonstration of the module.</p></div>
+    <div>Demonstration of the module.</div>
   </div>
 </div><div class="basefunction">
   
@@ -176,7 +179,7 @@ In Proceedings of SIGIR, 42--50.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">get_words_from_dictionary</span>(lemmas):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py#L26">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py#L26">
       
       (source)
     </a>
@@ -184,13 +187,12 @@ In Proceedings of SIGIR, 42--50.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Get original set of words used for analysis.
-
-:param lemmas: A dictionary where keys are lemmas and values are sets
-or lists of words corresponding to that lemma.
+    <div><p>Get original set of words used for analysis.</p>
+<p>or lists of words corresponding to that lemma.
 :type lemmas: dict(str): list(str)
 :return: Set of words that exist as values in the dictionary
-:rtype: set(str)</p></div>
+:rtype: set(str)</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lemmas</span></td><td class="fieldArgDesc">A dictionary where keys are lemmas and values are sets</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -204,7 +206,7 @@ or lists of words corresponding to that lemma.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_calculate</span>(lemmas, stems):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py#L138">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py#L138">
       
       (source)
     </a>
@@ -212,10 +214,8 @@ or lists of words corresponding to that lemma.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Calculate actual and maximum possible amounts of understemmed and overstemmed word pairs.
-
-:param lemmas: A dictionary where keys are lemmas and values are sets
-or lists of words corresponding to that lemma.
+    <div><p>Calculate actual and maximum possible amounts of understemmed and overstemmed word pairs.</p>
+<p>or lists of words corresponding to that lemma.
 :param stems: A dictionary where keys are stems and values are sets
 or lists of words corresponding to that stem.
 :type lemmas: dict(str): list(str)
@@ -224,7 +224,8 @@ or lists of words corresponding to that stem.
 global desired merge total (gdmt),
 global wrongly merged total (gwmt) and
 global desired non-merge total (gdnt).
-:rtype: tuple(float, float, float, float)</p></div>
+:rtype: tuple(float, float, float, float)</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lemmas</span></td><td class="fieldArgDesc">A dictionary where keys are lemmas and values are sets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stems</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -238,7 +239,7 @@ global desired non-merge total (gdnt).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_calculate_cut</span>(lemmawords, stems):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py#L113">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py#L113">
       
       (source)
     </a>
@@ -246,16 +247,14 @@ global desired non-merge total (gdnt).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Count understemmed and overstemmed pairs for (lemma, stem) pair with common words.
-
-:param lemmawords: Set or list of words corresponding to certain lemma.
-:param stems: A dictionary where keys are stems and values are sets
-or lists of words corresponding to that stem.
+    <div><p>Count understemmed and overstemmed pairs for (lemma, stem) pair with common words.</p>
+<p>or lists of words corresponding to that stem.
 :type lemmawords: set(str) or list(str)
 :type stems: dict(str): set(str)
 :return: Amount of understemmed and overstemmed pairs contributed by words
 existing in both lemmawords and stems.
-:rtype: tuple(float, float)</p></div>
+:rtype: tuple(float, float)</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">lemmawords</span></td><td class="fieldArgDesc">Set or list of words corresponding to certain lemma.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stems</span></td><td class="fieldArgDesc">A dictionary where keys are stems and values are sets</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -269,7 +268,7 @@ existing in both lemmawords and stems.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_count_intersection</span>(l1, l2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py#L64">
       
       (source)
     </a>
@@ -277,14 +276,7 @@ existing in both lemmawords and stems.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Count intersection between two line segments defined by coordinate pairs.
-
-:param l1: Tuple of two coordinate pairs defining the first line segment
-:param l2: Tuple of two coordinate pairs defining the second line segment
-:type l1: tuple(float, float)
-:type l2: tuple(float, float)
-:return: Coordinates of the intersection
-:rtype: tuple(float, float)</p></div>
+    <div>Count intersection between two line segments defined by coordinate pairs.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">l1:</span>tuple(float, float)</td><td class="fieldArgDesc">Tuple of two coordinate pairs defining the first line segment</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">l2:</span>tuple(float, float)</td><td class="fieldArgDesc">Tuple of two coordinate pairs defining the second line segment</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">tuple(float, float)</td><td class="fieldArgDesc">Coordinates of the intersection</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -298,7 +290,7 @@ existing in both lemmawords and stems.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_get_derivative</span>(coordinates):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py#L99">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py#L99">
       
       (source)
     </a>
@@ -306,12 +298,7 @@ existing in both lemmawords and stems.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Get derivative of the line from (0,0) to given coordinates.
-
-:param coordinates: A coordinate pair
-:type coordinates: tuple(float, float)
-:return: Derivative; inf if x is zero
-:rtype: float</p></div>
+    <div>Get derivative of the line from (0,0) to given coordinates.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">coordinates:</span>tuple(float, float)</td><td class="fieldArgDesc">A coordinate pair</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc">Derivative; inf if x is zero</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -325,7 +312,7 @@ existing in both lemmawords and stems.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_indexes</span>(gumt, gdmt, gwmt, gdnt):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py#L179">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py#L179">
       
       (source)
     </a>
@@ -333,17 +320,16 @@ existing in both lemmawords and stems.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Count Understemming Index (UI), Overstemming Index (OI) and Stemming Weight (SW).
-
-:param gumt, gdmt, gwmt, gdnt: Global unachieved merge total (gumt),
-global desired merge total (gdmt),
+    <div><p>Count Understemming Index (UI), Overstemming Index (OI) and Stemming Weight (SW).</p>
+<p>global desired merge total (gdmt),
 global wrongly merged total (gwmt) and
 global desired non-merge total (gdnt).
 :type gumt, gdmt, gwmt, gdnt: float
 :return: Understemming Index (UI),
 Overstemming Index (OI) and
 Stemming Weight (SW).
-:rtype: tuple(float, float, float)</p></div>
+:rtype: tuple(float, float, float)</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gumt</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gdmt</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gwmt</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gdnt</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gumt, gdmt, gwmt, gdnt</span></td><td class="fieldArgDesc">Global unachieved merge total (gumt),</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -357,7 +343,7 @@ Stemming Weight (SW).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_truncate</span>(words, cutlength):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/paice.py#L42">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/paice.py#L42">
       
       (source)
     </a>
@@ -365,15 +351,10 @@ Stemming Weight (SW).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Group words by stems defined by truncating them at given length.
-
-:param words: Set of words used for analysis
-:param cutlength: Words are stemmed by cutting at this length.
-:type words: set(str) or list(str)
-:type cutlength: int
-:return: Dictionary where keys are stems and values are sets of words
-corresponding to that stem.
-:rtype: dict(str): set(str)</p></div>
+    <div><p>Group words by stems defined by truncating them at given length.</p>
+<p>corresponding to that stem.
+:rtype: dict(str): set(str)</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">words:</span>set(str) or list(str)</td><td class="fieldArgDesc">Set of words used for analysis</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cutlength:</span>int</td><td class="fieldArgDesc">Words are stemmed by cutting at this length.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">Dictionary where keys are stems and values are sets of words</td></tr></table></div>
   </div>
 </div>
 
@@ -385,7 +366,7 @@ corresponding to that stem.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

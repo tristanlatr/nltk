@@ -65,24 +65,24 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Transition</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L180" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Transition</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L180" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.parse.transitionparser.Transition">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This class defines a set of transition which is applied to a configuration to get another configuration
-Note that for different parsing algorithm, the transition is different.</p></div>
+        <div>This class defines a set of transition which is applied to a configuration to get another configuration
+Note that for different parsing algorithm, the transition is different.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1122">
+        <table class="children sortable" id="id1126">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param alg_option: the algorithm option of this parser. Currently support `arc-standard` and `arc-eager` algorithm :type alg_option: str</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -149,7 +149,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, alg_option):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L192">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L192">
       
       (source)
     </a>
@@ -157,8 +157,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param alg_option: the algorithm option of this parser. Currently support `arc-standard` and `arc-eager` algorithm
-:type alg_option: str</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alg_option:</span>str</td><td class="fieldArgDesc">the algorithm option of this parser. Currently support <code>arc-standard</code> and <code>arc-eager</code> algorithm</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -172,7 +171,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">left_arc</span>(self, conf, relation):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L207">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L207">
       
       (source)
     </a>
@@ -180,9 +179,11 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Note that the algorithm for left-arc is quite similar except for precondition for both arc-standard and arc-eager
-    :param configuration: is the current configuration
-    :return : A new configuration or -1 if the pre-condition is not satisfied</p></div>
+    <div><dl class="rst-docutils">
+<dt>Note that the algorithm for left-arc is quite similar except for precondition for both arc-standard and arc-eager</dt>
+<dd>:return : A new configuration or -1 if the pre-condition is not satisfied</dd>
+</dl>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">conf</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">relation</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">configuration</span></td><td class="fieldArgDesc">is the current configuration</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -196,7 +197,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">reduce</span>(self, conf):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L253">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L253">
       
       (source)
     </a>
@@ -204,9 +205,11 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Note that the algorithm for reduce is only available for arc-eager
-    :param configuration: is the current configuration
-    :return : A new configuration or -1 if the pre-condition is not satisfied</p></div>
+    <div><dl class="rst-docutils">
+<dt>Note that the algorithm for reduce is only available for arc-eager</dt>
+<dd>:return : A new configuration or -1 if the pre-condition is not satisfied</dd>
+</dl>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">conf</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">configuration</span></td><td class="fieldArgDesc">is the current configuration</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -220,7 +223,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">right_arc</span>(self, conf, relation):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L234">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L234">
       
       (source)
     </a>
@@ -228,9 +231,11 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Note that the algorithm for right-arc is DIFFERENT for arc-standard and arc-eager
-    :param configuration: is the current configuration
-    :return : A new configuration or -1 if the pre-condition is not satisfied</p></div>
+    <div><dl class="rst-docutils">
+<dt>Note that the algorithm for right-arc is DIFFERENT for arc-standard and arc-eager</dt>
+<dd>:return : A new configuration or -1 if the pre-condition is not satisfied</dd>
+</dl>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">conf</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">relation</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">configuration</span></td><td class="fieldArgDesc">is the current configuration</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -244,7 +249,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">shift</span>(self, conf):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L275">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L275">
       
       (source)
     </a>
@@ -252,9 +257,11 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Note that the algorithm for shift is the SAME for arc-standard and arc-eager
-    :param configuration: is the current configuration
-    :return : A new configuration or -1 if the pre-condition is not satisfied</p></div>
+    <div><dl class="rst-docutils">
+<dt>Note that the algorithm for shift is the SAME for arc-standard and arc-eager</dt>
+<dd>:return : A new configuration or -1 if the pre-condition is not satisfied</dd>
+</dl>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">conf</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">configuration</span></td><td class="fieldArgDesc">is the current configuration</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -268,7 +275,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">LEFT_ARC</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L187">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L187">
       
       (source)
     </a>
@@ -290,7 +297,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">REDUCE</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L190">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L190">
       
       (source)
     </a>
@@ -312,7 +319,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">RIGHT_ARC</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L188">
       
       (source)
     </a>
@@ -334,7 +341,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">SHIFT</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L189">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L189">
       
       (source)
     </a>
@@ -356,7 +363,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="functionHeader">
     
     <span class="py-defname">_algo</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L197">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L197">
       
       (source)
     </a>
@@ -376,7 +383,7 @@ Note that for different parsing algorithm, the transition is different.</p></div
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

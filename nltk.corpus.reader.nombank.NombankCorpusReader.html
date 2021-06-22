@@ -65,25 +65,25 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NombankCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L19" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NombankCorpusReader</span>(<a href="nltk.corpus.reader.api.CorpusReader.html" title="nltk.corpus.reader.api.CorpusReader">CorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L19" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.nombank.NombankCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Corpus reader for the nombank corpus, which augments the Penn
+        <div>Corpus reader for the nombank corpus, which augments the Penn
 Treebank with information about the predicate argument structure
 of every noun instance.  The corpus consists of two parts: the
 predicate-argument annotations themselves, and a set of "frameset
 files" which define the argument labels used by the annotations,
 on a per-noun basis.  Each "frameset file" contains one or more
-predicates, such as ``'turn'`` or ``'turn_on'``, each of which is
+predicates, such as <tt class="rst-docutils literal">'turn'</tt> or <tt class="rst-docutils literal">'turn_on'</tt>, each of which is
 divided into coarse-grained word senses called "rolesets".  For
 each "roleset", the frameset file provides descriptions of the
-argument roles, along with examples.</p></div>
+argument roles, along with examples.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id361">
+        <table class="children sortable" id="id364">
   
   
   <tr class="method">
@@ -95,32 +95,32 @@ argument roles, along with examples.</p></div>
     
     <td>Method</td>
     <td><code><a href="#instances">instances</a></code></td>
-    <td><span>:return: a corpus view that acts as a list of ``NombankInstance`` objects, one for each noun in the corpus.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#lines">lines</a></code></td>
-    <td><span>:return: a corpus view that acts as a list of strings, one for each line in the predicate-argument annotation file.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#nouns">nouns</a></code></td>
-    <td><span>:return: a corpus view that acts as a list of all noun lemmas in this corpus (from the nombank.1.0.words file).</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#raw">raw</a></code></td>
-    <td><span>:return: the text contents of the given fileids, as a single string.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#roleset">roleset</a></code></td>
-    <td><span>:return: the xml description for the given roleset.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#rolesets">rolesets</a></code></td>
-    <td><span>:return: list of xml descriptions for rolesets.</span></td>
+    <td><span></span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -157,7 +157,7 @@ argument roles, along with examples.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id362">
+          <table class="children sortable" id="id365">
   
   
   <tr class="basemethod">
@@ -224,7 +224,7 @@ argument roles, along with examples.</p></div>
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -256,7 +256,7 @@ argument roles, along with examples.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, nomfile, framefiles='', nounsfile=None, parse_fileid_xform=None, parse_corpus=None, encoding='utf8'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L33">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L33">
       
       (source)
     </a>
@@ -264,18 +264,14 @@ argument roles, along with examples.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:param root: The root directory for this corpus.
-:param nomfile: The name of the file containing the predicate-
-    argument annotations (relative to ``root``).
-:param framefiles: A list or regexp specifying the frameset
-    fileids for this corpus.
-:param parse_fileid_xform: A transform that should be applied
-    to the fileids in this corpus.  This should be a function
-    of one argument (a fileid) that returns a string (the new
-    fileid).
-:param parse_corpus: The corpus containing the parse trees
-    corresponding to this corpus.  These parse trees are
-    necessary to resolve the tree pointers used by nombank.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">The root directory for this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nomfile</span></td><td class="fieldArgDesc">The name of the file containing the predicate-
+argument annotations (relative to <tt class="rst-docutils literal">root</tt>).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">framefiles</span></td><td class="fieldArgDesc">A list or regexp specifying the frameset
+fileids for this corpus.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nounsfile</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parse_fileid_xform</span></td><td class="fieldArgDesc">A transform that should be applied
+to the fileids in this corpus.  This should be a function
+of one argument (a fileid) that returns a string (the new
+fileid).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parse_corpus</span></td><td class="fieldArgDesc">The corpus containing the parse trees
+corresponding to this corpus.  These parse trees are
+necessary to resolve the tree pointers used by nombank.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -289,7 +285,7 @@ argument roles, along with examples.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">instances</span>(self, baseform=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L81">
       
       (source)
     </a>
@@ -297,8 +293,7 @@ argument roles, along with examples.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a corpus view that acts as a list of
-``NombankInstance`` objects, one for each noun in the corpus.</p></div>
+    <div><tt class="rst-docutils literal">NombankInstance</tt> objects, one for each noun in the corpus.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a corpus view that acts as a list of</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -312,7 +307,7 @@ argument roles, along with examples.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">lines</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L95">
       
       (source)
     </a>
@@ -320,8 +315,7 @@ argument roles, along with examples.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a corpus view that acts as a list of strings, one for
-each line in the predicate-argument annotation file.</p></div>
+    <div>each line in the predicate-argument annotation file.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a corpus view that acts as a list of strings, one for</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -335,7 +329,7 @@ each line in the predicate-argument annotation file.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">nouns</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L147">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L147">
       
       (source)
     </a>
@@ -343,8 +337,7 @@ each line in the predicate-argument annotation file.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: a corpus view that acts as a list of all noun lemmas
-in this corpus (from the nombank.1.0.words file).</p></div>
+    <div>in this corpus (from the nombank.1.0.words file).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a corpus view that acts as a list of all noun lemmas</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -358,7 +351,7 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">raw</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L71">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L71">
       
       (source)
     </a>
@@ -366,7 +359,7 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the text contents of the given fileids, as a single string.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the text contents of the given fileids, as a single string.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -380,7 +373,7 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">roleset</span>(self, roleset_id):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L106">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L106">
       
       (source)
     </a>
@@ -388,7 +381,7 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: the xml description for the given roleset.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the xml description for the given roleset.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -402,7 +395,7 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">rolesets</span>(self, baseform=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L127">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L127">
       
       (source)
     </a>
@@ -410,7 +403,7 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:return: list of xml descriptions for rolesets.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of xml descriptions for rolesets.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -424,7 +417,7 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_instance_block</span>(self, stream, instance_filter=(lambda inst: True)):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L158">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L158">
       
       (source)
     </a>
@@ -446,7 +439,7 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_fileids</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L60">
       
       (source)
     </a>
@@ -454,8 +447,8 @@ in this corpus (from the nombank.1.0.words file).</p></div>
   <div class="functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#_fileids">nltk.corpus.reader.api.CorpusReader._fileids</a></code></div>
     
-    <div><p class="pre">A list of the relative paths for the fileids that make up
-this corpus.</p></div>
+    <div>A list of the relative paths for the fileids that make up
+this corpus.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -469,7 +462,7 @@ this corpus.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_nomfile</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L66">
       
       (source)
     </a>
@@ -491,7 +484,7 @@ this corpus.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_nounsfile</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L67">
       
       (source)
     </a>
@@ -513,7 +506,7 @@ this corpus.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_parse_corpus</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L69">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L69">
       
       (source)
     </a>
@@ -535,7 +528,7 @@ this corpus.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_parse_fileid_xform</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nombank.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nombank.py#L68">
       
       (source)
     </a>
@@ -555,7 +548,7 @@ this corpus.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

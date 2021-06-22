@@ -65,23 +65,20 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SequentialBackoffTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L36" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tag.sequential.ClassifierBasedTagger.html">nltk.tag.sequential.ClassifierBasedTagger</a></code>, <code><a href="nltk.tag.sequential.ContextTagger.html">nltk.tag.sequential.ContextTagger</a></code>, <code><a href="nltk.tag.sequential.DefaultTagger.html">nltk.tag.sequential.DefaultTagger</a></code>, <code><a href="nltk.tag.sequential.RegexpTagger.html">nltk.tag.sequential.RegexpTagger</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SequentialBackoffTagger</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L36" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tag.sequential.ClassifierBasedTagger.html">nltk.tag.sequential.ClassifierBasedTagger</a></code>, <code><a href="nltk.tag.sequential.ContextTagger.html">nltk.tag.sequential.ContextTagger</a></code>, <code><a href="nltk.tag.sequential.DefaultTagger.html">nltk.tag.sequential.DefaultTagger</a></code>, <code><a href="nltk.tag.sequential.RegexpTagger.html">nltk.tag.sequential.RegexpTagger</a></code></p>
         <p><a href="classIndex.html#nltk.tag.sequential.SequentialBackoffTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract base class for taggers that tags words sequentially,
+        <div>An abstract base class for taggers that tags words sequentially,
 left to right.  Tagging of individual words is performed by the
-``choose_tag()`` method, which should be defined by subclasses.  If
+<tt class="rst-docutils literal">choose_tag()</tt> method, which should be defined by subclasses.  If
 a tagger is unable to determine a tag for the specified token,
-then its backoff tagger is consulted.
-
-:ivar _taggers: A list of all the taggers that should be tried to
-    tag a token (i.e., self and its backoff taggers).</p></div>
+then its backoff tagger is consulted.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1571">
+        <table class="children sortable" id="id1575">
   
   
   <tr class="method">
@@ -98,7 +95,7 @@ then its backoff tagger is consulted.
     
     <td>Method</td>
     <td><code><a href="#tag">tag</a></code></td>
-    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple ``(token, tag)``.</span></td>
+    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -113,14 +110,15 @@ then its backoff tagger is consulted.
     
     <td>Instance Variable</td>
     <td><code><a href="#_taggers">_taggers</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list of all the taggers that should be tried to
+tag a token (i.e., self and its backoff taggers).</span></td>
   </tr>
 </table>
         
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code>:
           </p>
-          <table class="children sortable" id="id1572">
+          <table class="children sortable" id="id1576">
   
   
   <tr class="basemethod">
@@ -132,7 +130,7 @@ then its backoff tagger is consulted.
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -159,7 +157,7 @@ then its backoff tagger is consulted.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, backoff=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L48">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L48">
       
       (source)
     </a>
@@ -181,7 +179,7 @@ then its backoff tagger is consulted.
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">choose_tag</span>(self, tokens, index, history):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L88">
       
       (source)
     </a>
@@ -189,20 +187,12 @@ then its backoff tagger is consulted.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.tag.sequential.ClassifierBasedTagger.html">nltk.tag.sequential.ClassifierBasedTagger</a></code>, <code><a href="nltk.tag.sequential.ContextTagger.html">nltk.tag.sequential.ContextTagger</a></code>, <code><a href="nltk.tag.sequential.DefaultTagger.html">nltk.tag.sequential.DefaultTagger</a></code>, <code><a href="nltk.tag.sequential.RegexpTagger.html">nltk.tag.sequential.RegexpTagger</a></code></div>
     
-    <div><p class="pre">Decide which tag should be used for the specified token, and
+    <div>Decide which tag should be used for the specified token, and
 return that tag.  If this tagger is unable to determine a tag
 for the specified token, return None -- do not consult
 the backoff tagger.  This method should be overridden by
-subclasses of SequentialBackoffTagger.
-
-:rtype: str
-:type tokens: list
-:param tokens: The list of words that are being tagged.
-:type index: int
-:param index: The index of the word whose tag should be
-    returned.
-:type history: list(str)
-:param history: A list of the tags for all words before *index*.</p></div>
+subclasses of SequentialBackoffTagger.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list</td><td class="fieldArgDesc">The list of words that are being tagged.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index:</span>int</td><td class="fieldArgDesc">The index of the word whose tag should be
+returned.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">history:</span>list(str)</td><td class="fieldArgDesc">A list of the tags for all words before <em>index</em>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -216,19 +206,17 @@ subclasses of SequentialBackoffTagger.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, tokens):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L59">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L59">
       
       (source)
     </a>
   </div>
   <div class="docstring functionBody">
-    <div class="interfaceinfo">overrides <code><a href="nltk.tag.api.TaggerI.html#tag">nltk.tag.api.TaggerI.tag</a></code></div>
+    <div class="interfaceinfo">overrides <code><a href="nltk.tag.api.TaggerI.html#tag">nltk.tag.api.TaggerI.tag</a></code></div><div class="interfaceinfo">overridden in <code><a href="nltk.tag.sequential.DefaultTagger.html">nltk.tag.sequential.DefaultTagger</a></code></div>
     
-    <div><p class="pre">Determine the most appropriate tag sequence for the given
+    <div>Determine the most appropriate tag sequence for the given
 token sequence, and return a corresponding list of tagged
-tokens.  A tagged token is encoded as a tuple ``(token, tag)``.
-
-:rtype: list(tuple(str, str))</p></div>
+tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(tuple(str, str))</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -242,7 +230,7 @@ tokens.  A tagged token is encoded as a tuple ``(token, tag)``.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag_one</span>(self, tokens, index, history):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L66">
       
       (source)
     </a>
@@ -250,18 +238,10 @@ tokens.  A tagged token is encoded as a tuple ``(token, tag)``.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Determine an appropriate tag for the specified token, and
+    <div>Determine an appropriate tag for the specified token, and
 return that tag.  If this tagger is unable to determine a tag
-for the specified token, then its backoff tagger is consulted.
-
-:rtype: str
-:type tokens: list
-:param tokens: The list of words that are being tagged.
-:type index: int
-:param index: The index of the word whose tag should be
-    returned.
-:type history: list(str)
-:param history: A list of the tags for all words before *index*.</p></div>
+for the specified token, then its backoff tagger is consulted.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list</td><td class="fieldArgDesc">The list of words that are being tagged.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index:</span>int</td><td class="fieldArgDesc">The index of the word whose tag should be
+returned.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">history:</span>list(str)</td><td class="fieldArgDesc">A list of the tags for all words before <em>index</em>.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">str</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="baseproperty">
   
@@ -275,15 +255,15 @@ for the specified token, then its backoff tagger is consulted.
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">backoff</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L54">
       
       (source)
     </a>
   </div>
   <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="nltk.tag.sequential.BigramTagger.html">nltk.tag.sequential.BigramTagger</a></code>, <code><a href="nltk.tag.sequential.TrigramTagger.html">nltk.tag.sequential.TrigramTagger</a></code>, <code><a href="nltk.tag.sequential.UnigramTagger.html">nltk.tag.sequential.UnigramTagger</a></code></div>
     
-    
-    <div><p class="pre">The backoff tagger for this tagger.</p></div>
+    <div>The backoff tagger for this tagger.</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -297,7 +277,7 @@ for the specified token, then its backoff tagger is consulted.
   <div class="functionHeader">
     
     <span class="py-defname">_taggers</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L50">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L44">
       
       (source)
     </a>
@@ -305,7 +285,8 @@ for the specified token, then its backoff tagger is consulted.
   <div class="functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div>A list of all the taggers that should be tried to
+tag a token (i.e., self and its backoff taggers).</div>
   </div>
 </div>
 
@@ -317,7 +298,7 @@ for the specified token, then its backoff tagger is consulted.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

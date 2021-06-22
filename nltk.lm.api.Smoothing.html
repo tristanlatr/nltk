@@ -65,20 +65,20 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">Smoothing</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/api.py#L21" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.lm.smoothing.KneserNey.html">nltk.lm.smoothing.KneserNey</a></code>, <code><a href="nltk.lm.smoothing.WittenBell.html">nltk.lm.smoothing.WittenBell</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Smoothing</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/api.py#L21" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.lm.smoothing.KneserNey.html">nltk.lm.smoothing.KneserNey</a></code>, <code><a href="nltk.lm.smoothing.WittenBell.html">nltk.lm.smoothing.WittenBell</a></code></p>
         <p><a href="classIndex.html#nltk.lm.api.Smoothing">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Ngram Smoothing Interface
-
-Implements Chen &amp; Goodman 1995's idea that all smoothing algorithms have
+        <div><p>Ngram Smoothing Interface</p>
+<p>Implements Chen &amp; Goodman 1995's idea that all smoothing algorithms have
 certain features in common. This should ideally allow smoothing algorithms to
-work both with Backoff and Interpolation.</p></div>
+work both with Backoff and Interpolation.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id778">
+        <table class="children sortable" id="id781">
   
   
   <tr class="method">
@@ -127,7 +127,7 @@ work both with Backoff and Interpolation.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, vocabulary, counter):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/api.py#L29">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/api.py#L29">
       
       (source)
     </a>
@@ -135,10 +135,7 @@ work both with Backoff and Interpolation.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.lm.smoothing.KneserNey.html">nltk.lm.smoothing.KneserNey</a></code>, <code><a href="nltk.lm.smoothing.WittenBell.html">nltk.lm.smoothing.WittenBell</a></code></div>
     
-    <div><p class="pre">:param vocabulary: The Ngram vocabulary object.
-:type vocabulary: nltk.lm.vocab.Vocabulary
-:param counter: The counts of the vocabulary items.
-:type counter: nltk.lm.counter.NgramCounter</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">vocabulary:</span>nltk.lm.vocab.Vocabulary</td><td class="fieldArgDesc">The Ngram vocabulary object.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">counter:</span>nltk.lm.counter.NgramCounter</td><td class="fieldArgDesc">The counts of the vocabulary items.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -152,7 +149,7 @@ work both with Backoff and Interpolation.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">alpha_gamma</span>(self, word, context):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/api.py#L43">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/api.py#L43">
       
       (source)
     </a>
@@ -174,7 +171,7 @@ work both with Backoff and Interpolation.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">unigram_score</span>(self, word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/api.py#L39">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/api.py#L39">
       
       (source)
     </a>
@@ -196,7 +193,7 @@ work both with Backoff and Interpolation.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">counts</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/api.py#L37">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/api.py#L37">
       
       (source)
     </a>
@@ -218,7 +215,7 @@ work both with Backoff and Interpolation.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">vocab</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/lm/api.py#L36">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/lm/api.py#L36">
       
       (source)
     </a>
@@ -238,7 +235,7 @@ work both with Backoff and Interpolation.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

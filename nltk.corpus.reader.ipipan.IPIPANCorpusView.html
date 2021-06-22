@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">IPIPANCorpusView</span>(<a href="nltk.corpus.reader.util.StreamBackedCorpusView.html" title="nltk.corpus.reader.util.StreamBackedCorpusView">StreamBackedCorpusView</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L253" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">IPIPANCorpusView</span>(<a href="nltk.corpus.reader.util.StreamBackedCorpusView.html" title="nltk.corpus.reader.util.StreamBackedCorpusView">StreamBackedCorpusView</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L253" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.ipipan.IPIPANCorpusView">View In Hierarchy</a></p>
       </div>
 
@@ -74,14 +74,14 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id328">
+        <table class="children sortable" id="id331">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>Create a new corpus view, based on the file ``fileid``, and read with ``block_reader``.  See the class documentation for more information.</span></td>
+    <td><span>Create a new corpus view, based on the file <tt class="rst-docutils literal">fileid</tt>, and read with <tt class="rst-docutils literal">block_reader</tt>.  See the class documentation for more information.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -173,7 +173,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html">StreamBackedCorpusView</a></code>:
           </p>
-          <table class="children sortable" id="id329">
+          <table class="children sortable" id="id332">
   
   
   <tr class="basemethod">
@@ -229,8 +229,18 @@
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
+    <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_block_reader">_block_reader</a></code></td>
+    <td><span>The function used to read
+a single block from the underlying file stream.</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_cache">_cache</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A cache of the most recently read block.  It
+is encoded as a tuple (start_toknum, end_toknum, tokens), where
+start_toknum is the token index of the first token in the block;
+end_toknum is the token index of the first token not in the
+block; and tokens is a list of the tokens in the block.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -250,7 +260,9 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_eofpos">_eofpos</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The character position of the last character in the
+file.  This is calculated when the corpus view is initialized,
+and is used to decide when the end of file has been reached.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -260,22 +272,31 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_filepos">_filepos</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list containing the file position of each block
+that has been processed.  In particular, <tt class="rst-docutils literal">_toknum[i]</tt> is the
+file position of the first character in block <tt class="rst-docutils literal">i</tt>.  Together
+with <tt class="rst-docutils literal">_toknum</tt>, this forms a partial mapping between token
+indices and file positions.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_len">_len</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The total number of tokens in the corpus, if known;
+or None, if the number of tokens is not yet known.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_stream">_stream</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>The stream used to access the underlying corpus file.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#_toknum">_toknum</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list containing the token index of each block
+that has been processed.  In particular, <tt class="rst-docutils literal">_toknum[i]</tt> is the
+token index of the first token in block <tt class="rst-docutils literal">i</tt>.  Together
+with <tt class="rst-docutils literal">_filepos</tt>, this forms a partial mapping between token
+indices and file positions.</span></td>
   </tr>
 </table>
           
@@ -297,7 +318,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, filename, startpos=0, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L259">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L259">
       
       (source)
     </a>
@@ -305,22 +326,16 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#__init__">nltk.corpus.reader.util.StreamBackedCorpusView.__init__</a></code></div>
     
-    <div><p class="pre">Create a new corpus view, based on the file ``fileid``, and
-read with ``block_reader``.  See the class documentation
-for more information.
-
-:param fileid: The path to the file that is read by this
-    corpus view.  ``fileid`` can either be a string or a
-    ``PathPointer``.
-
-:param startpos: The file position at which the view will
-    start reading.  This can be used to skip over preface
-    sections.
-
-:param encoding: The unicode encoding that should be used to
-    read the file's contents.  If no encoding is specified,
-    then the file's contents will be read as a non-unicode
-    string (i.e., a str).</p></div>
+    <div>Create a new corpus view, based on the file <tt class="rst-docutils literal">fileid</tt>, and
+read with <tt class="rst-docutils literal">block_reader</tt>.  See the class documentation
+for more information.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filename</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">startpos</span></td><td class="fieldArgDesc">The file position at which the view will
+start reading.  This can be used to skip over preface
+sections.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileid</span></td><td class="fieldArgDesc">The path to the file that is read by this
+corpus view.  <tt class="rst-docutils literal">fileid</tt> can either be a string or a
+<tt class="rst-docutils literal">PathPointer</tt>.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc">The unicode encoding that should be used to
+read the file's contents.  If no encoding is specified,
+then the file's contents will be read as a non-unicode
+string (i.e., a str).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -334,7 +349,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">read_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L273">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L273">
       
       (source)
     </a>
@@ -342,12 +357,7 @@ for more information.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.util.StreamBackedCorpusView.html#read_block">nltk.corpus.reader.util.StreamBackedCorpusView.read_block</a></code></div>
     
-    <div><p class="pre">Read a block from the input stream.
-
-:return: a block of tokens from the input stream
-:rtype: list(any)
-:param stream: an input stream
-:type stream: stream</p></div>
+    <div>Read a block from the input stream.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stream:</span>stream</td><td class="fieldArgDesc">an input stream</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(any)</td><td class="fieldArgDesc">a block of tokens from the input stream</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -361,7 +371,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">PARAS_MODE</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L257">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L257">
       
       (source)
     </a>
@@ -383,7 +393,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">SENTS_MODE</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L256">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L256">
       
       (source)
     </a>
@@ -405,7 +415,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">WORDS_MODE</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L255">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L255">
       
       (source)
     </a>
@@ -427,7 +437,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">append_no_space</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L269">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L269">
       
       (source)
     </a>
@@ -449,7 +459,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">append_space</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L270">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L270">
       
       (source)
     </a>
@@ -471,7 +481,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">disamb_only</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L265">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L265">
       
       (source)
     </a>
@@ -493,7 +503,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">in_sentence</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L261">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L261">
       
       (source)
     </a>
@@ -515,7 +525,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">mode</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L266">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L266">
       
       (source)
     </a>
@@ -537,7 +547,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">one_tag</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L268">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L268">
       
       (source)
     </a>
@@ -559,7 +569,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">position</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L262">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L262">
       
       (source)
     </a>
@@ -581,7 +591,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">replace_xmlentities</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L271">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L271">
       
       (source)
     </a>
@@ -603,7 +613,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">show_tags</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L264">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L264">
       
       (source)
     </a>
@@ -625,7 +635,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-defname">simplify_tags</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L267">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L267">
       
       (source)
     </a>
@@ -647,7 +657,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_append_space</span>(self, sentence):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L362">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L362">
       
       (source)
     </a>
@@ -669,7 +679,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_data</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L352">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L352">
       
       (source)
     </a>
@@ -691,7 +701,7 @@ for more information.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_seek</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/ipipan.py#L359">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/ipipan.py#L359">
       
       (source)
     </a>
@@ -711,7 +721,7 @@ for more information.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

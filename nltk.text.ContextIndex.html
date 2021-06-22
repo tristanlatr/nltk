@@ -65,19 +65,19 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">ContextIndex</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L38" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ContextIndex</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L38" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.text.ContextIndex">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A bidirectional index between words and their 'contexts' in a text.
+        <div>A bidirectional index between words and their 'contexts' in a text.
 The context of a word is usually defined to be the words that occur
 in a fixed window around the word; but other definitions may also
-be used by providing a custom context function.</p></div>
+be used by providing a custom context function.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1768">
+        <table class="children sortable" id="id1772">
   
   
   <tr class="method">
@@ -99,7 +99,7 @@ be used by providing a custom context function.</p></div>
     
     <td>Method</td>
     <td><code><a href="#tokens">tokens</a></code></td>
-    <td><span>:rtype: list(str) :return: The document that this context index was created from.</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -156,7 +156,7 @@ be used by providing a custom context function.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, tokens, context_func=None, filter=None, key=(lambda x: x)):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L53">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L53">
       
       (source)
     </a>
@@ -178,7 +178,7 @@ be used by providing a custom context function.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">common_contexts</span>(self, words, fail_on_unknown=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L102">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L102">
       
       (source)
     </a>
@@ -186,14 +186,10 @@ be used by providing a custom context function.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Find contexts where the specified words can all appear; and
+    <div>Find contexts where the specified words can all appear; and
 return a frequency distribution mapping each context to the
-number of times that context was used.
-
-:param words: The words used to seed the similarity search
-:type words: str
-:param fail_on_unknown: If true, then raise a value error if
-    any of the given words do not occur at all in the index.</p></div>
+number of times that context was used.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">words:</span>str</td><td class="fieldArgDesc">The words used to seed the similarity search</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fail_on_unknown</span></td><td class="fieldArgDesc">If true, then raise a value error if
+any of the given words do not occur at all in the index.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -207,7 +203,7 @@ number of times that context was used.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">similar_words</span>(self, word, n=20):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L92">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L92">
       
       (source)
     </a>
@@ -229,7 +225,7 @@ number of times that context was used.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tokens</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L69">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L69">
       
       (source)
     </a>
@@ -237,9 +233,8 @@ number of times that context was used.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:rtype: list(str)
-:return: The document that this context index was
-    created from.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">The document that this context index was
+created from.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -253,7 +248,7 @@ number of times that context was used.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">word_similarity_dict</span>(self, word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L77">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L77">
       
       (source)
     </a>
@@ -261,9 +256,9 @@ number of times that context was used.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return a dictionary mapping from words to 'similarity scores,'
+    <div>Return a dictionary mapping from words to 'similarity scores,'
 indicating how often these two words occur in the same
-context.</p></div>
+context.</div>
   </div>
 </div><div class="basestaticmethod private">
   
@@ -277,7 +272,7 @@ context.</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_default_context</span>(tokens, i):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L46">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L46">
       
       (source)
     </a>
@@ -285,7 +280,7 @@ context.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">One left token and one right token, normalized to lowercase</p></div>
+    <div>One left token and one right token, normalized to lowercase</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -299,7 +294,7 @@ context.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_context_func</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L57">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L57">
       
       (source)
     </a>
@@ -321,7 +316,7 @@ context.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_context_to_words</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L65">
       
       (source)
     </a>
@@ -343,7 +338,7 @@ context.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_key</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L54">
       
       (source)
     </a>
@@ -365,7 +360,7 @@ context.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tokens</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L55">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L55">
       
       (source)
     </a>
@@ -387,7 +382,7 @@ context.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_word_to_contexts</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/text.py#L62">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/text.py#L62">
       
       (source)
     </a>
@@ -407,7 +402,7 @@ context.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

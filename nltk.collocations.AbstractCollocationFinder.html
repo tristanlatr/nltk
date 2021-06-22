@@ -65,22 +65,22 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">AbstractCollocationFinder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L48" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.collocations.BigramCollocationFinder.html">nltk.collocations.BigramCollocationFinder</a></code>, <code><a href="nltk.collocations.QuadgramCollocationFinder.html">nltk.collocations.QuadgramCollocationFinder</a></code>, <code><a href="nltk.collocations.TrigramCollocationFinder.html">nltk.collocations.TrigramCollocationFinder</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">AbstractCollocationFinder</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L48" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.collocations.BigramCollocationFinder.html">nltk.collocations.BigramCollocationFinder</a></code>, <code><a href="nltk.collocations.QuadgramCollocationFinder.html">nltk.collocations.QuadgramCollocationFinder</a></code>, <code><a href="nltk.collocations.TrigramCollocationFinder.html">nltk.collocations.TrigramCollocationFinder</a></code></p>
         <p><a href="classIndex.html#nltk.collocations.AbstractCollocationFinder">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An abstract base class for collocation finders whose purpose is to
-collect collocation candidate frequencies, filter and rank them.
-
-As a minimum, collocation finders require the frequencies of each
+        <div><p>An abstract base class for collocation finders whose purpose is to
+collect collocation candidate frequencies, filter and rank them.</p>
+<p>As a minimum, collocation finders require the frequencies of each
 word in a corpus, and the joint frequency of word tuples. This data
 should be provided through nltk.probability.FreqDist objects or an
-identical interface.</p></div>
+identical interface.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id221">
+        <table class="children sortable" id="id224">
   
   
   <tr class="classmethod">
@@ -179,7 +179,7 @@ identical interface.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">from_documents</span>(cls, documents):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L81">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L81">
       
       (source)
     </a>
@@ -187,8 +187,8 @@ identical interface.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Constructs a collocation finder given a collection of documents,
-each of which is a list (or iterable) of tokens.</p></div>
+    <div>Constructs a collocation finder given a collection of documents,
+each of which is a list (or iterable) of tokens.</div>
   </div>
 </div><div class="basemethod">
   
@@ -202,7 +202,7 @@ each of which is a list (or iterable) of tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, word_fd, ngram_fd):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L59">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L59">
       
       (source)
     </a>
@@ -224,7 +224,7 @@ each of which is a list (or iterable) of tokens.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">above_score</span>(self, score_fn, min_score):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L140">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L140">
       
       (source)
     </a>
@@ -232,8 +232,8 @@ each of which is a list (or iterable) of tokens.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns a sequence of ngrams, ordered by decreasing score, whose
-scores each exceed the given minimum score.</p></div>
+    <div>Returns a sequence of ngrams, ordered by decreasing score, whose
+scores each exceed the given minimum score.</div>
   </div>
 </div><div class="basemethod">
   
@@ -247,7 +247,7 @@ scores each exceed the given minimum score.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply_freq_filter</span>(self, min_freq):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L105">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L105">
       
       (source)
     </a>
@@ -255,7 +255,7 @@ scores each exceed the given minimum score.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Removes candidate ngrams which have frequency less than min_freq.</p></div>
+    <div>Removes candidate ngrams which have frequency less than min_freq.</div>
   </div>
 </div><div class="basemethod">
   
@@ -269,7 +269,7 @@ scores each exceed the given minimum score.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply_ngram_filter</span>(self, fn):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L109">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L109">
       
       (source)
     </a>
@@ -277,8 +277,8 @@ scores each exceed the given minimum score.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Removes candidate ngrams (w1, w2, ...) where fn(w1, w2, ...)
-evaluates to True.</p></div>
+    <div>Removes candidate ngrams (w1, w2, ...) where fn(w1, w2, ...)
+evaluates to True.</div>
   </div>
 </div><div class="basemethod">
   
@@ -292,7 +292,7 @@ evaluates to True.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply_word_filter</span>(self, fn):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L115">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L115">
       
       (source)
     </a>
@@ -300,8 +300,8 @@ evaluates to True.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Removes candidate ngrams (w1, w2, ...) where any of (fn(w1), fn(w2),
-...) evaluates to True.</p></div>
+    <div>Removes candidate ngrams (w1, w2, ...) where any of (fn(w1), fn(w2),
+...) evaluates to True.</div>
   </div>
 </div><div class="basemethod">
   
@@ -315,7 +315,7 @@ evaluates to True.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">nbest</span>(self, score_fn, n):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L136">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L136">
       
       (source)
     </a>
@@ -323,7 +323,7 @@ evaluates to True.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns the top n ngrams when scored by the given function.</p></div>
+    <div>Returns the top n ngrams when scored by the given function.</div>
   </div>
 </div><div class="basemethod">
   
@@ -337,7 +337,7 @@ evaluates to True.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">score_ngrams</span>(self, score_fn):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L130">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L130">
       
       (source)
     </a>
@@ -345,8 +345,8 @@ evaluates to True.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Returns a sequence of (ngram, score) pairs ordered from highest to
-lowest score, as determined by the scoring function provided.</p></div>
+    <div>Returns a sequence of (ngram, score) pairs ordered from highest to
+lowest score, as determined by the scoring function provided.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -360,7 +360,7 @@ lowest score, as determined by the scoring function provided.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">N</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L61">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L61">
       
       (source)
     </a>
@@ -382,7 +382,7 @@ lowest score, as determined by the scoring function provided.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">ngram_fd</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L62">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L62">
       
       (source)
     </a>
@@ -404,7 +404,7 @@ lowest score, as determined by the scoring function provided.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">word_fd</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L60">
       
       (source)
     </a>
@@ -426,7 +426,7 @@ lowest score, as determined by the scoring function provided.</p></div>
   <div class="functionHeader">
     @classmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_build_new_documents</span>(cls, documents, window_size, pad_left=False, pad_right=False, pad_symbol=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L64">
       
       (source)
     </a>
@@ -434,7 +434,7 @@ lowest score, as determined by the scoring function provided.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Pad the document with the place holder according to the window_size</p></div>
+    <div>Pad the document with the place holder according to the window_size</div>
   </div>
 </div><div class="basestaticmethod private">
   
@@ -448,7 +448,7 @@ lowest score, as determined by the scoring function provided.</p></div>
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_ngram_freqdist</span>(words, n):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L91">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L91">
       
       (source)
     </a>
@@ -470,7 +470,7 @@ lowest score, as determined by the scoring function provided.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_apply_filter</span>(self, fn=(lambda ngram, freq: False)):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L95">
       
       (source)
     </a>
@@ -478,8 +478,8 @@ lowest score, as determined by the scoring function provided.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Generic filter removes ngrams from the frequency distribution
-if the function returns True when passed an ngram tuple.</p></div>
+    <div>Generic filter removes ngrams from the frequency distribution
+if the function returns True when passed an ngram tuple.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -493,7 +493,7 @@ if the function returns True when passed an ngram tuple.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_score_ngrams</span>(self, score_fn):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/collocations.py#L121">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/collocations.py#L121">
       
       (source)
     </a>
@@ -501,8 +501,8 @@ if the function returns True when passed an ngram tuple.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Generates of (ngram, score) pairs as determined by the scoring
-function provided.</p></div>
+    <div>Generates of (ngram, score) pairs as determined by the scoring
+function provided.</div>
   </div>
 </div>
 
@@ -514,7 +514,7 @@ function provided.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,42 +65,46 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">KNBCorpusReader</span>(<a href="nltk.corpus.reader.api.SyntaxCorpusReader.html" title="nltk.corpus.reader.api.SyntaxCorpusReader">SyntaxCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/knbc.py#L25" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">KNBCorpusReader</span>(<a href="nltk.corpus.reader.api.SyntaxCorpusReader.html" title="nltk.corpus.reader.api.SyntaxCorpusReader">SyntaxCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/knbc.py#L25" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.knbc.KNBCorpusReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">This class implements:
-  - ``__init__``, which specifies the location of the corpus
-    and a method for detecting the sentence blocks in corpus files.
-  - ``_read_block``, which reads a block from the input stream.
-  - ``_word``, which takes a block and returns a list of list of words.
-  - ``_tag``, which takes a block and returns a list of list of tagged
-    words.
-  - ``_parse``, which takes a block and returns a list of parsed
-    sentences.
-
-The structure of tagged words:
-  tagged_word = (word(str), tags(tuple))
-  tags = (surface, reading, lemma, pos1, posid1, pos2, posid2, pos3, posid3, others ...)
-
-Usage example
--------------
-
-&gt;&gt;&gt; from nltk.corpus.util import LazyCorpusLoader
-&gt;&gt;&gt; knbc = LazyCorpusLoader(
-...     'knbc/corpus1',
-...     KNBCorpusReader,
-...     r'.*/KN.*',
-...     encoding='euc-jp',
-... )
-
-&gt;&gt;&gt; len(knbc.sents()[0])
-9</p></div>
+        <div><dl class="rst-docutils">
+<dt>This class implements:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><tt class="rst-docutils literal">__init__</tt>, which specifies the location of the corpus
+and a method for detecting the sentence blocks in corpus files.</li>
+<li><tt class="rst-docutils literal">_read_block</tt>, which reads a block from the input stream.</li>
+<li><tt class="rst-docutils literal">_word</tt>, which takes a block and returns a list of list of words.</li>
+<li><tt class="rst-docutils literal">_tag</tt>, which takes a block and returns a list of list of tagged
+words.</li>
+<li><tt class="rst-docutils literal">_parse</tt>, which takes a block and returns a list of parsed
+sentences.</li>
+</ul>
+</dd>
+<dt>The structure of tagged words:</dt>
+<dd>tagged_word = (word(str), tags(tuple))
+tags = (surface, reading, lemma, pos1, posid1, pos2, posid2, pos3, posid3, others ...)</dd>
+</dl>
+<div class="rst-section" id="rst-usage-example">
+<h1 class="heading">Usage example</h1>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.corpus.util <span class="py-keyword">import</span> LazyCorpusLoader
+<span class="py-prompt">&gt;&gt;&gt; </span>knbc = LazyCorpusLoader(
+<span class="py-more">... </span>    <span class="py-string">'knbc/corpus1'</span>,
+<span class="py-more">... </span>    KNBCorpusReader,
+<span class="py-more">... </span>    r<span class="py-string">'.*/KN.*'</span>,
+<span class="py-more">... </span>    encoding=<span class="py-string">'euc-jp'</span>,
+<span class="py-more">... </span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(knbc.sents()[0])
+<span class="py-output">9</span>
+</pre></div>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id331">
+        <table class="children sortable" id="id334">
   
   
   <tr class="method">
@@ -139,7 +143,7 @@ Usage example
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.SyntaxCorpusReader.html">SyntaxCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id332">
+          <table class="children sortable" id="id335">
   
   
   <tr class="basemethod">
@@ -203,7 +207,7 @@ Usage example
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.api.SyntaxCorpusReader.html">SyntaxCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id333">
+          <table class="children sortable" id="id336">
   
   
   <tr class="basemethod">
@@ -270,7 +274,7 @@ Usage example
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -307,7 +311,7 @@ Usage example
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, encoding='utf8', morphs2str=_morphs2str_default):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/knbc.py#L57">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/knbc.py#L57">
       
       (source)
     </a>
@@ -315,9 +319,9 @@ Usage example
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.api.CorpusReader.html#__init__">nltk.corpus.reader.api.CorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">Initialize KNBCorpusReader
+    <div>Initialize KNBCorpusReader
 morphs2str is a function to convert morphlist to str for tree representation
-for _parse()</p></div>
+for _parse()</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -331,7 +335,7 @@ for _parse()</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">morphs2str</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/knbc.py#L66">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/knbc.py#L66">
       
       (source)
     </a>
@@ -353,7 +357,7 @@ for _parse()</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_parse</span>(self, t):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/knbc.py#L94">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/knbc.py#L94">
       
       (source)
     </a>
@@ -375,7 +379,7 @@ for _parse()</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read_block</span>(self, stream):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/knbc.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/knbc.py#L68">
       
       (source)
     </a>
@@ -397,7 +401,7 @@ for _parse()</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_tag</span>(self, t, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/knbc.py#L83">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/knbc.py#L83">
       
       (source)
     </a>
@@ -419,7 +423,7 @@ for _parse()</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_word</span>(self, t):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/knbc.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/knbc.py#L72">
       
       (source)
     </a>
@@ -439,7 +443,7 @@ for _parse()</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

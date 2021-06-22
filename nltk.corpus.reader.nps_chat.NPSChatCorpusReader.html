@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">NPSChatCorpusReader</span>(<a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html" title="nltk.corpus.reader.xmldocs.XMLCorpusReader">XMLCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L20" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">NPSChatCorpusReader</span>(<a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html" title="nltk.corpus.reader.xmldocs.XMLCorpusReader">XMLCorpusReader</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L20" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.reader.nps_chat.NPSChatCorpusReader">View In Hierarchy</a></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id369">
+        <table class="children sortable" id="id372">
   
   
   <tr class="method">
@@ -138,7 +138,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html">XMLCorpusReader</a></code>:
           </p>
-          <table class="children sortable" id="id370">
+          <table class="children sortable" id="id373">
   
   
   <tr class="basemethod">
@@ -162,7 +162,7 @@
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code> (via <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html">XMLCorpusReader</a></code>):
           </p>
-          <table class="children sortable" id="id371">
+          <table class="children sortable" id="id374">
   
   
   <tr class="basemethod">
@@ -229,7 +229,7 @@
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.corpus.reader.api.CorpusReader.html#_encoding">_encoding</a></code></td>
-    <td><span>The default unicode encoding for the fileids that make up this corpus.  If ``encoding`` is None, then the file contents are processed using byte strings.</span></td>
+    <td><span>The default unicode encoding for the fileids that make up this corpus.  If <tt class="rst-docutils literal">encoding</tt> is None, then the file contents are processed using byte strings.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
@@ -261,7 +261,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, root, fileids, wrap_etree=False, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L21">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L21">
       
       (source)
     </a>
@@ -269,34 +269,34 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html#__init__">nltk.corpus.reader.xmldocs.XMLCorpusReader.__init__</a></code></div>
     
-    <div><p class="pre">:type root: PathPointer or str
-:param root: A path pointer identifying the root directory for
-    this corpus.  If a string is specified, then it will be
-    converted to a ``PathPointer`` automatically.
-:param fileids: A list of the files that make up this corpus.
-    This list can either be specified explicitly, as a list of
-    strings; or implicitly, as a regular expression over file
-    paths.  The absolute path for each file will be constructed
-    by joining the reader's root to each file name.
-:param encoding: The default unicode encoding for the files
-    that make up the corpus.  The value of ``encoding`` can be any
-    of the following:
-    - A string: ``encoding`` is the encoding name for all files.
-    - A dictionary: ``encoding[file_id]`` is the encoding
-      name for the file whose identifier is ``file_id``.  If
-      ``file_id`` is not in ``encoding``, then the file
-      contents will be processed using non-unicode byte strings.
-    - A list: ``encoding`` should be a list of ``(regexp, encoding)``
-      tuples.  The encoding for a file whose identifier is ``file_id``
-      will be the ``encoding`` value for the first tuple whose
-      ``regexp`` matches the ``file_id``.  If no tuple's ``regexp``
-      matches the ``file_id``, the file contents will be processed
-      using non-unicode byte strings.
-    - None: the file contents of all files will be
-      processed using non-unicode byte strings.
-:param tagset: The name of the tagset used by this corpus, to be used
-      for normalizing or converting the POS tags returned by the
-      tagged_...() methods.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root:</span>PathPointer or str</td><td class="fieldArgDesc">A path pointer identifying the root directory for
+this corpus.  If a string is specified, then it will be
+converted to a <tt class="rst-docutils literal">PathPointer</tt> automatically.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fileids</span></td><td class="fieldArgDesc">A list of the files that make up this corpus.
+This list can either be specified explicitly, as a list of
+strings; or implicitly, as a regular expression over file
+paths.  The absolute path for each file will be constructed
+by joining the reader's root to each file name.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">wrap_etree</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tagset</span></td><td class="fieldArgDesc">The name of the tagset used by this corpus, to be used
+for normalizing or converting the POS tags returned by the
+<a href="#id1"><span class="rst-problematic" id="rst-id2">tagged_</span></a>...() methods.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">encoding</span></td><td class="fieldArgDesc"><p>The default unicode encoding for the files
+that make up the corpus.  The value of <tt class="rst-docutils literal">encoding</tt> can be any
+of the following:
+- A string: <tt class="rst-docutils literal">encoding</tt> is the encoding name for all files.
+- A dictionary: <tt class="rst-docutils literal">encoding[file_id]</tt> is the encoding</p>
+<blockquote>
+name for the file whose identifier is <tt class="rst-docutils literal">file_id</tt>.  If
+<tt class="rst-docutils literal">file_id</tt> is not in <tt class="rst-docutils literal">encoding</tt>, then the file
+contents will be processed using non-unicode byte strings.</blockquote>
+<ul class="rst-simple">
+<li>A list: <tt class="rst-docutils literal">encoding</tt> should be a list of <tt class="rst-docutils literal">(regexp, encoding)</tt>
+tuples.  The encoding for a file whose identifier is <tt class="rst-docutils literal">file_id</tt>
+will be the <tt class="rst-docutils literal">encoding</tt> value for the first tuple whose
+<tt class="rst-docutils literal">regexp</tt> matches the <tt class="rst-docutils literal">file_id</tt>.  If no tuple's <tt class="rst-docutils literal">regexp</tt>
+matches the <tt class="rst-docutils literal">file_id</tt>, the file contents will be processed
+using non-unicode byte strings.</li>
+<li>None: the file contents of all files will be
+processed using non-unicode byte strings.</li>
+</ul>
+</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -310,7 +310,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">posts</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L41">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L41">
       
       (source)
     </a>
@@ -332,7 +332,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_posts</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L51">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L51">
       
       (source)
     </a>
@@ -354,7 +354,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagged_words</span>(self, fileids=None, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L65">
       
       (source)
     </a>
@@ -376,7 +376,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">words</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L62">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L62">
       
       (source)
     </a>
@@ -384,12 +384,9 @@
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.corpus.reader.xmldocs.XMLCorpusReader.html#words">nltk.corpus.reader.xmldocs.XMLCorpusReader.words</a></code></div>
     
-    <div><p class="pre">Returns all of the words and punctuation symbols in the specified file
+    <div>Returns all of the words and punctuation symbols in the specified file
 that were in text nodes -- ie, tags are ignored. Like the xml() method,
-fileid can only specify one file.
-
-:return: the given file's text nodes as a list of words and punctuation symbols
-:rtype: list(str)</p></div>
+fileid can only specify one file.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">the given file's text nodes as a list of words and punctuation symbols</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -403,7 +400,7 @@ fileid can only specify one file.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">xml_posts</span>(self, fileids=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L25">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L25">
       
       (source)
     </a>
@@ -425,7 +422,7 @@ fileid can only specify one file.
   <div class="functionHeader">
     @staticmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">_simplify_username</span>(word):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L85">
       
       (source)
     </a>
@@ -447,7 +444,7 @@ fileid can only specify one file.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_elt_to_tagged_words</span>(self, elt, handler, tagset=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L74">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L74">
       
       (source)
     </a>
@@ -469,7 +466,7 @@ fileid can only specify one file.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_elt_to_words</span>(self, elt, handler):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L71">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L71">
       
       (source)
     </a>
@@ -491,7 +488,7 @@ fileid can only specify one file.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_wrap_elt</span>(self, elt, handler):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L68">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L68">
       
       (source)
     </a>
@@ -513,7 +510,7 @@ fileid can only specify one file.
   <div class="functionHeader">
     
     <span class="py-defname">_tagset</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/reader/nps_chat.py#L23">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/reader/nps_chat.py#L23">
       
       (source)
     </a>
@@ -533,7 +530,7 @@ fileid can only specify one file.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

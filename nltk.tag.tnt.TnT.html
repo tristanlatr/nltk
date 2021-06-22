@@ -65,73 +65,73 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TnT</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L24" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TnT</span>(<a href="nltk.tag.api.TaggerI.html" title="nltk.tag.api.TaggerI">TaggerI</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L24" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.tnt.TnT">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">TnT - Statistical POS tagger
-
-IMPORTANT NOTES:
-
-* DOES NOT AUTOMATICALLY DEAL WITH UNSEEN WORDS
-
-  - It is possible to provide an untrained POS tagger to
-    create tags for unknown words, see __init__ function
-
-* SHOULD BE USED WITH SENTENCE-DELIMITED INPUT
-
-  - Due to the nature of this tagger, it works best when
-    trained over sentence delimited input.
-  - However it still produces good results if the training
-    data and testing data are separated on all punctuation eg: [,.?!]
-  - Input for training is expected to be a list of sentences
-    where each sentence is a list of (word, tag) tuples
-  - Input for tag function is a single sentence
-    Input for tagdata function is a list of sentences
-    Output is of a similar form
-
-* Function provided to process text that is unsegmented
-
-  - Please see basic_sent_chop()
-
-
-TnT uses a second order Markov model to produce tags for
-a sequence of input, specifically:
-
-  argmax [Proj(P(t_i|t_i-1,t_i-2)P(w_i|t_i))] P(t_T+1 | t_T)
-
-IE: the maximum projection of a set of probabilities
-
-The set of possible tags for a given word is derived
+        <div><p>TnT - Statistical POS tagger</p>
+<p>IMPORTANT NOTES:</p>
+<ul class="rst-simple">
+<li>DOES NOT AUTOMATICALLY DEAL WITH UNSEEN WORDS<ul>
+<li>It is possible to provide an untrained POS tagger to
+create tags for unknown words, see __init__ function</li>
+</ul>
+</li>
+<li>SHOULD BE USED WITH SENTENCE-DELIMITED INPUT<ul>
+<li>Due to the nature of this tagger, it works best when
+trained over sentence delimited input.</li>
+<li>However it still produces good results if the training
+data and testing data are separated on all punctuation eg: [,.?!]</li>
+<li>Input for training is expected to be a list of sentences
+where each sentence is a list of (word, tag) tuples</li>
+<li>Input for tag function is a single sentence
+Input for tagdata function is a list of sentences
+Output is of a similar form</li>
+</ul>
+</li>
+<li>Function provided to process text that is unsegmented<ul>
+<li>Please see basic_sent_chop()</li>
+</ul>
+</li>
+</ul>
+<p>TnT uses a second order Markov model to produce tags for
+a sequence of input, specifically:</p>
+<blockquote>
+argmax [Proj(P(t_i|t_i-1,t_i-2)P(w_i|t_i))] P(t_T+1 | t_T)</blockquote>
+<p>IE: the maximum projection of a set of probabilities</p>
+<p>The set of possible tags for a given word is derived
 from the training data. It is the set of all tags
-that exact word has been assigned.
-
-To speed up and get more precision, we can use log addition
-to instead multiplication, specifically:
-
-  argmax [Sigma(log(P(t_i|t_i-1,t_i-2))+log(P(w_i|t_i)))] +
-         log(P(t_T+1|t_T))
-
-The probability of a tag for a given word is the linear
+that exact word has been assigned.</p>
+<p>To speed up and get more precision, we can use log addition
+to instead multiplication, specifically:</p>
+<blockquote>
+<dl class="rst-docutils">
+<dt>argmax [Sigma(log(P(t_i|t_i-1,t_i-2))+log(P(w_i|t_i)))] +</dt>
+<dd>log(P(t_T+1|t_T))</dd>
+</dl>
+</blockquote>
+<p>The probability of a tag for a given word is the linear
 interpolation of 3 markov models; a zero-order, first-order,
-and a second order model.
-
-  P(t_i| t_i-1, t_i-2) = l1*P(t_i) + l2*P(t_i| t_i-1) +
-                         l3*P(t_i| t_i-1, t_i-2)
-
-A beam search is used to limit the memory usage of the algorithm.
+and a second order model.</p>
+<blockquote>
+<dl class="rst-docutils">
+<dt>P(t_i| t_i-1, t_i-2) = l1*P(t_i) + l2*P(t_i| t_i-1) +</dt>
+<dd>l3*P(t_i| t_i-1, t_i-2)</dd>
+</dl>
+</blockquote>
+<p>A beam search is used to limit the memory usage of the algorithm.
 The degree of the beam can be changed using N in the initialization.
 N represents the maximum number of possible solutions to maintain
-while tagging.
-
-It is possible to differentiate the tags which are assigned to
+while tagging.</p>
+<p>It is possible to differentiate the tags which are assigned to
 capitalized words. However this does not result in a significant
-gain in the accuracy of the results.</p></div>
+gain in the accuracy of the results.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1624">
+        <table class="children sortable" id="id1628">
   
   
   <tr class="method">
@@ -245,7 +245,7 @@ gain in the accuracy of the results.</p></div>
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code>:
           </p>
-          <table class="children sortable" id="id1625">
+          <table class="children sortable" id="id1629">
   
   
   <tr class="basemethod">
@@ -257,7 +257,7 @@ gain in the accuracy of the results.</p></div>
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -284,7 +284,7 @@ gain in the accuracy of the results.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, unk=None, Trained=False, N=1000, C=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L86">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L86">
       
       (source)
     </a>
@@ -292,32 +292,27 @@ gain in the accuracy of the results.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Construct a TnT statistical tagger. Tagger must be trained
-before being used to tag input.
-
-:param unk: instance of a POS tagger, conforms to TaggerI
-:type  unk:(TaggerI)
+    <div><p>Construct a TnT statistical tagger. Tagger must be trained
+before being used to tag input.</p>
+<p>:type  unk:(TaggerI)
 :param Trained: Indication that the POS tagger is trained or not
 :type  Trained: boolean
 :param N: Beam search degree (see above)
 :type  N:(int)
 :param C: Capitalization flag
-:type  C: boolean
-
-Initializer, creates frequency distributions to be used
-for tagging
-
-_lx values represent the portion of the tri/bi/uni taggers
-to be used to calculate the probability
-
-N value is the number of possible solutions to maintain
-while tagging. A good value for this is 1000
-
-C is a boolean value which specifies to use or
+:type  C: boolean</p>
+<p>Initializer, creates frequency distributions to be used
+for tagging</p>
+<p>_lx values represent the portion of the tri/bi/uni taggers
+to be used to calculate the probability</p>
+<p>N value is the number of possible solutions to maintain
+while tagging. A good value for this is 1000</p>
+<p>C is a boolean value which specifies to use or
 not use the Capitalization of the word as additional
 information for tagging.
 NOTE: using capitalization may not increase the accuracy
-of the tagger</p></div>
+of the tagger</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">unk</span></td><td class="fieldArgDesc">instance of a POS tagger, conforms to TaggerI</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">Trained</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">N</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">C</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -331,7 +326,7 @@ of the tagger</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tag</span>(self, data):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L285">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L285">
       
       (source)
     </a>
@@ -339,20 +334,13 @@ of the tagger</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.api.TaggerI.html#tag">nltk.tag.api.TaggerI.tag</a></code></div>
     
-    <div><p class="pre">Tags a single sentence
-
-:param data: list of words
-:type data: [string,]
-
-:return: [(word, tag),]
-
-Calls recursive function '_tagword'
-to produce a list of tags
-
-Associates the sequence of returned tags
-with the correct words in the input sequence
-
-returns a list of (word, tag) tuples</p></div>
+    <div><p>Tags a single sentence</p>
+<p>Calls recursive function '_tagword'
+to produce a list of tags</p>
+<p>Associates the sequence of returned tags
+with the correct words in the input sequence</p>
+<p>returns a list of (word, tag) tuples</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data:</span>[string,]</td><td class="fieldArgDesc">list of words</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">[(word, tag),]</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -366,7 +354,7 @@ returns a list of (word, tag) tuples</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tagdata</span>(self, data):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L267">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L267">
       
       (source)
     </a>
@@ -374,15 +362,14 @@ returns a list of (word, tag) tuples</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Tags each sentence in a list of sentences
-
-:param data:list of list of words
+    <div><p>Tags each sentence in a list of sentences</p>
+<p>:param <a class="rst-reference external" href="data:list" target="_top">data:list</a> of list of words
 :type data: [[string,],]
-:return: list of list of (word, tag) tuples
-
-Invokes tag(sent) function for each sentence
+:return: list of list of (word, tag) tuples</p>
+<p>Invokes tag(sent) function for each sentence
 compiles the results into a list of tagged sentences
-each tagged sentence is a list of (word, tag) tuples</p></div>
+each tagged sentence is a list of (word, tag) tuples</p>
+</div>
   </div>
 </div><div class="basemethod">
   
@@ -396,7 +383,7 @@ each tagged sentence is a list of (word, tag) tuples</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, data):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L134">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L134">
       
       (source)
     </a>
@@ -404,12 +391,9 @@ each tagged sentence is a list of (word, tag) tuples</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Uses a set of tagged data to train the tagger.
+    <div>Uses a set of tagged data to train the tagger.
 If an unknown word tagger is specified,
-it is trained on the same data.
-
-:param data: List of lists of (word, tag) tuples
-:type data: tuple(str)</p></div>
+it is trained on the same data.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data:</span>tuple(str)</td><td class="fieldArgDesc">List of lists of (word, tag) tuples</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -423,7 +407,7 @@ it is trained on the same data.
   <div class="functionHeader">
     
     <span class="py-defname">known</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L132">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L132">
       
       (source)
     </a>
@@ -445,7 +429,7 @@ it is trained on the same data.
   <div class="functionHeader">
     
     <span class="py-defname">unknown</span>: <code><a href="https://docs.python.org/3/library/functions.html#int">int</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L131">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L131">
       
       (source)
     </a>
@@ -467,7 +451,7 @@ it is trained on the same data.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_compute_lambda</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L176">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L176">
       
       (source)
     </a>
@@ -475,22 +459,19 @@ it is trained on the same data.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">creates lambda values based upon training data
-
-NOTE: no need to explicitly reference C,
-it is contained within the tag variable :: tag == (tag,C)
-
-for each tag trigram (t1, t2, t3)
+    <div><p>creates lambda values based upon training data</p>
+<p>NOTE: no need to explicitly reference C,
+it is contained within the tag variable :: tag == (tag,C)</p>
+<p>for each tag trigram (t1, t2, t3)
 depending on the maximum value of
 - f(t1,t2,t3)-1 / f(t1,t2)-1
 - f(t2,t3)-1 / f(t2)-1
-- f(t3)-1 / N-1
-
-increment l3,l2, or l1 by f(t1,t2,t3)
-
-ISSUES -- Resolutions:
+- f(t3)-1 / N-1</p>
+<p>increment l3,l2, or l1 by f(t1,t2,t3)</p>
+<p>ISSUES -- Resolutions:
 if 2 values are equal, increment both lambda values
-by (f(t1,t2,t3) / 2)</p></div>
+by (f(t1,t2,t3) / 2)</p>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -504,7 +485,7 @@ by (f(t1,t2,t3) / 2)</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_safe_div</span>(self, v1, v2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L257">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L257">
       
       (source)
     </a>
@@ -512,8 +493,8 @@ by (f(t1,t2,t3) / 2)</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Safe floating point division function, does not allow division by 0
-returns -1 if the denominator is 0</p></div>
+    <div>Safe floating point division function, does not allow division by 0
+returns -1 if the denominator is 0</div>
   </div>
 </div><div class="basemethod private">
   
@@ -527,7 +508,7 @@ returns -1 if the denominator is 0</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_tagword</span>(self, sent, current_states):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L317">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L317">
       
       (source)
     </a>
@@ -535,18 +516,18 @@ returns -1 if the denominator is 0</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:param sent : List of words remaining in the sentence
+    <div><p>:param sent : List of words remaining in the sentence
 :type sent  : [word,]
-:param current_states : List of possible tag combinations for
-                        the sentence so far, and the log probability
-                        associated with each tag combination
-:type current_states  : [([tag, ], logprob), ]
-
-Tags the first word in the sentence and
-recursively tags the reminder of sentence
-
-Uses formula specified above to calculate the probability
-of a particular tag</p></div>
+:param current_states : List of possible tag combinations for</p>
+<blockquote>
+the sentence so far, and the log probability
+associated with each tag combination</blockquote>
+<p>:type current_states  : [([tag, ], logprob), ]</p>
+<p>Tags the first word in the sentence and
+recursively tags the reminder of sentence</p>
+<p>Uses formula specified above to calculate the probability
+of a particular tag</p>
+</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -560,7 +541,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_bi</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L117">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L117">
       
       (source)
     </a>
@@ -582,7 +563,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_C</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L125">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L125">
       
       (source)
     </a>
@@ -604,7 +585,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_eos</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L120">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L120">
       
       (source)
     </a>
@@ -626,7 +607,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_l1</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L121">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L121">
       
       (source)
     </a>
@@ -648,7 +629,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_l2</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L122">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L122">
       
       (source)
     </a>
@@ -670,7 +651,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_l3</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L123">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L123">
       
       (source)
     </a>
@@ -692,7 +673,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_N</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L124">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L124">
       
       (source)
     </a>
@@ -714,7 +695,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_T</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L126">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L126">
       
       (source)
     </a>
@@ -736,7 +717,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_tri</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L118">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L118">
       
       (source)
     </a>
@@ -758,7 +739,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_uni</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L116">
       
       (source)
     </a>
@@ -780,7 +761,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_unk</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L128">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L128">
       
       (source)
     </a>
@@ -802,7 +783,7 @@ of a particular tag</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_wd</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/tnt.py#L119">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/tnt.py#L119">
       
       (source)
     </a>
@@ -822,7 +803,7 @@ of a particular tag</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

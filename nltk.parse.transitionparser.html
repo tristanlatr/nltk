@@ -65,7 +65,7 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1120">
+        <table class="children sortable" id="id1124">
   
   
   <tr class="class">
@@ -118,7 +118,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">demo</span>():
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/parse/transitionparser.py#L650">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/parse/transitionparser.py#L650">
       
       (source)
     </a>
@@ -126,143 +126,132 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">&gt;&gt;&gt; from nltk.parse import DependencyGraph, DependencyEvaluator
-&gt;&gt;&gt; from nltk.parse.transitionparser import TransitionParser, Configuration, Transition
-&gt;&gt;&gt; gold_sent = DependencyGraph("""
-... Economic  JJ     2      ATT
-... news  NN     3       SBJ
-... has       VBD       0       ROOT
-... little      JJ      5       ATT
-... effect   NN     3       OBJ
-... on     IN      5       ATT
-... financial       JJ       8       ATT
-... markets    NNS      6       PC
-... .    .      3       PU
-... """)
-
-&gt;&gt;&gt; conf = Configuration(gold_sent)
-
-###################### Check the Initial Feature ########################
-
-&gt;&gt;&gt; print(', '.join(conf.extract_features()))
-STK_0_POS_TOP, BUF_0_FORM_Economic, BUF_0_LEMMA_Economic, BUF_0_POS_JJ, BUF_1_FORM_news, BUF_1_POS_NN, BUF_2_POS_VBD, BUF_3_POS_JJ
-
-###################### Check The Transition #######################
+    <div><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.parse <span class="py-keyword">import</span> DependencyGraph, DependencyEvaluator
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> nltk.parse.transitionparser <span class="py-keyword">import</span> TransitionParser, Configuration, Transition
+<span class="py-prompt">&gt;&gt;&gt; </span>gold_sent = DependencyGraph(<span class="py-string">"""</span>
+<span class="py-more">... </span><span class="py-string">Economic  JJ     2      ATT</span>
+<span class="py-more">... </span><span class="py-string">news  NN     3       SBJ</span>
+<span class="py-more">... </span><span class="py-string">has       VBD       0       ROOT</span>
+<span class="py-more">... </span><span class="py-string">little      JJ      5       ATT</span>
+<span class="py-more">... </span><span class="py-string">effect   NN     3       OBJ</span>
+<span class="py-more">... </span><span class="py-string">on     IN      5       ATT</span>
+<span class="py-more">... </span><span class="py-string">financial       JJ       8       ATT</span>
+<span class="py-more">... </span><span class="py-string">markets    NNS      6       PC</span>
+<span class="py-more">... </span><span class="py-string">.    .      3       PU</span>
+<span class="py-more">... </span><span class="py-string">"""</span>)</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>conf = Configuration(gold_sent)</pre><p>###################### Check the Initial Feature ########################</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">', '</span>.join(conf.extract_features()))
+<span class="py-output">STK_0_POS_TOP, BUF_0_FORM_Economic, BUF_0_LEMMA_Economic, BUF_0_POS_JJ, BUF_1_FORM_news, BUF_1_POS_NN, BUF_2_POS_VBD, BUF_3_POS_JJ</span>
+</pre><p>###################### Check The Transition #######################
 Check the Initialized Configuration
 &gt;&gt;&gt; print(conf)
-Stack : [0]  Buffer : [1, 2, 3, 4, 5, 6, 7, 8, 9]   Arcs : []
-
-A. Do some transition checks for ARC-STANDARD
-
-&gt;&gt;&gt; operation = Transition('arc-standard')
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.left_arc(conf, "ATT")
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.left_arc(conf,"SBJ")
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.left_arc(conf, "ATT")
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.left_arc(conf, "ATT")
-
-Middle Configuration and Features Check
+Stack : [0]  Buffer : [1, 2, 3, 4, 5, 6, 7, 8, 9]   Arcs : []</p>
+<ol class="rst-upperalpha simple">
+<li>Do some transition checks for ARC-STANDARD</li>
+</ol>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>operation = Transition(<span class="py-string">'arc-standard'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.left_arc(conf, <span class="py-string">"ATT"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.left_arc(conf,<span class="py-string">"SBJ"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.left_arc(conf, <span class="py-string">"ATT"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.left_arc(conf, <span class="py-string">"ATT"</span>)</pre><p>Middle Configuration and Features Check
 &gt;&gt;&gt; print(conf)
-Stack : [0, 3, 5, 6]  Buffer : [8, 9]   Arcs : [(2, 'ATT', 1), (3, 'SBJ', 2), (5, 'ATT', 4), (8, 'ATT', 7)]
-
-&gt;&gt;&gt; print(', '.join(conf.extract_features()))
-STK_0_FORM_on, STK_0_LEMMA_on, STK_0_POS_IN, STK_1_POS_NN, BUF_0_FORM_markets, BUF_0_LEMMA_markets, BUF_0_POS_NNS, BUF_1_FORM_., BUF_1_POS_., BUF_0_LDEP_ATT
-
-&gt;&gt;&gt; operation.right_arc(conf, "PC")
-&gt;&gt;&gt; operation.right_arc(conf, "ATT")
-&gt;&gt;&gt; operation.right_arc(conf, "OBJ")
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.right_arc(conf, "PU")
-&gt;&gt;&gt; operation.right_arc(conf, "ROOT")
-&gt;&gt;&gt; operation.shift(conf)
-
-Terminated Configuration Check
+Stack : [0, 3, 5, 6]  Buffer : [8, 9]   Arcs : [(2, 'ATT', 1), (3, 'SBJ', 2), (5, 'ATT', 4), (8, 'ATT', 7)]</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">', '</span>.join(conf.extract_features()))
+<span class="py-output">STK_0_FORM_on, STK_0_LEMMA_on, STK_0_POS_IN, STK_1_POS_NN, BUF_0_FORM_markets, BUF_0_LEMMA_markets, BUF_0_POS_NNS, BUF_1_FORM_., BUF_1_POS_., BUF_0_LDEP_ATT</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf, <span class="py-string">"PC"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf, <span class="py-string">"ATT"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf, <span class="py-string">"OBJ"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf, <span class="py-string">"PU"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf, <span class="py-string">"ROOT"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)</pre><p>Terminated Configuration Check
 &gt;&gt;&gt; print(conf)
-Stack : [0]  Buffer : []   Arcs : [(2, 'ATT', 1), (3, 'SBJ', 2), (5, 'ATT', 4), (8, 'ATT', 7), (6, 'PC', 8), (5, 'ATT', 6), (3, 'OBJ', 5), (3, 'PU', 9), (0, 'ROOT', 3)]
-
-
-B. Do some transition checks for ARC-EAGER
-
-&gt;&gt;&gt; conf = Configuration(gold_sent)
-&gt;&gt;&gt; operation = Transition('arc-eager')
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.left_arc(conf,'ATT')
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.left_arc(conf,'SBJ')
-&gt;&gt;&gt; operation.right_arc(conf,'ROOT')
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.left_arc(conf,'ATT')
-&gt;&gt;&gt; operation.right_arc(conf,'OBJ')
-&gt;&gt;&gt; operation.right_arc(conf,'ATT')
-&gt;&gt;&gt; operation.shift(conf)
-&gt;&gt;&gt; operation.left_arc(conf,'ATT')
-&gt;&gt;&gt; operation.right_arc(conf,'PC')
-&gt;&gt;&gt; operation.reduce(conf)
-&gt;&gt;&gt; operation.reduce(conf)
-&gt;&gt;&gt; operation.reduce(conf)
-&gt;&gt;&gt; operation.right_arc(conf,'PU')
-&gt;&gt;&gt; print(conf)
-Stack : [0, 3, 9]  Buffer : []   Arcs : [(2, 'ATT', 1), (3, 'SBJ', 2), (0, 'ROOT', 3), (5, 'ATT', 4), (3, 'OBJ', 5), (5, 'ATT', 6), (8, 'ATT', 7), (6, 'PC', 8), (3, 'PU', 9)]
-
-###################### Check The Training Function #######################
-
-A. Check the ARC-STANDARD training
+Stack : [0]  Buffer : []   Arcs : [(2, 'ATT', 1), (3, 'SBJ', 2), (5, 'ATT', 4), (8, 'ATT', 7), (6, 'PC', 8), (5, 'ATT', 6), (3, 'OBJ', 5), (3, 'PU', 9), (0, 'ROOT', 3)]</p>
+<ol class="rst-upperalpha simple" start="2">
+<li>Do some transition checks for ARC-EAGER</li>
+</ol>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>conf = Configuration(gold_sent)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation = Transition(<span class="py-string">'arc-eager'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.left_arc(conf,<span class="py-string">'ATT'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.left_arc(conf,<span class="py-string">'SBJ'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf,<span class="py-string">'ROOT'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.left_arc(conf,<span class="py-string">'ATT'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf,<span class="py-string">'OBJ'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf,<span class="py-string">'ATT'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.shift(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.left_arc(conf,<span class="py-string">'ATT'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf,<span class="py-string">'PC'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.reduce(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.reduce(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.reduce(conf)
+<span class="py-prompt">&gt;&gt;&gt; </span>operation.right_arc(conf,<span class="py-string">'PU'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(conf)
+<span class="py-output">Stack : [0, 3, 9]  Buffer : []   Arcs : [(2, 'ATT', 1), (3, 'SBJ', 2), (0, 'ROOT', 3), (5, 'ATT', 4), (3, 'OBJ', 5), (5, 'ATT', 6), (8, 'ATT', 7), (6, 'PC', 8), (3, 'PU', 9)]</span>
+</pre><p>###################### Check The Training Function #######################</p>
+<p>A. Check the ARC-STANDARD training
 &gt;&gt;&gt; import tempfile
 &gt;&gt;&gt; import os
-&gt;&gt;&gt; input_file = tempfile.NamedTemporaryFile(prefix='transition_parse.train', dir=tempfile.gettempdir(), delete=False)
-
-&gt;&gt;&gt; parser_std = TransitionParser('arc-standard')
-&gt;&gt;&gt; print(', '.join(parser_std._create_training_examples_arc_std([gold_sent], input_file)))
- Number of training examples : 1
- Number of valid (projective) examples : 1
-SHIFT, LEFTARC:ATT, SHIFT, LEFTARC:SBJ, SHIFT, SHIFT, LEFTARC:ATT, SHIFT, SHIFT, SHIFT, LEFTARC:ATT, RIGHTARC:PC, RIGHTARC:ATT, RIGHTARC:OBJ, SHIFT, RIGHTARC:PU, RIGHTARC:ROOT, SHIFT
-
-&gt;&gt;&gt; parser_std.train([gold_sent],'temp.arcstd.model', verbose=False)
- Number of training examples : 1
- Number of valid (projective) examples : 1
-&gt;&gt;&gt; remove(input_file.name)
-
-B. Check the ARC-EAGER training
-
-&gt;&gt;&gt; input_file = tempfile.NamedTemporaryFile(prefix='transition_parse.train', dir=tempfile.gettempdir(),delete=False)
-&gt;&gt;&gt; parser_eager = TransitionParser('arc-eager')
-&gt;&gt;&gt; print(', '.join(parser_eager._create_training_examples_arc_eager([gold_sent], input_file)))
- Number of training examples : 1
- Number of valid (projective) examples : 1
-SHIFT, LEFTARC:ATT, SHIFT, LEFTARC:SBJ, RIGHTARC:ROOT, SHIFT, LEFTARC:ATT, RIGHTARC:OBJ, RIGHTARC:ATT, SHIFT, LEFTARC:ATT, RIGHTARC:PC, REDUCE, REDUCE, REDUCE, RIGHTARC:PU
-
-&gt;&gt;&gt; parser_eager.train([gold_sent],'temp.arceager.model', verbose=False)
- Number of training examples : 1
- Number of valid (projective) examples : 1
-
-&gt;&gt;&gt; remove(input_file.name)
-
-###################### Check The Parsing Function ########################
-
-A. Check the ARC-STANDARD parser
-
-&gt;&gt;&gt; result = parser_std.parse([gold_sent], 'temp.arcstd.model')
-&gt;&gt;&gt; de = DependencyEvaluator(result, [gold_sent])
-&gt;&gt;&gt; de.eval() &gt;= (0, 0)
-True
-
-B. Check the ARC-EAGER parser
+&gt;&gt;&gt; input_file = tempfile.NamedTemporaryFile(prefix='transition_parse.train', dir=tempfile.gettempdir(), delete=False)</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>parser_std = TransitionParser(<span class="py-string">'arc-standard'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">', '</span>.join(parser_std._create_training_examples_arc_std([gold_sent], input_file)))
+<span class="py-output"> Number of training examples : 1</span>
+<span class="py-output"> Number of valid (projective) examples : 1</span>
+<span class="py-output">SHIFT, LEFTARC:ATT, SHIFT, LEFTARC:SBJ, SHIFT, SHIFT, LEFTARC:ATT, SHIFT, SHIFT, SHIFT, LEFTARC:ATT, RIGHTARC:PC, RIGHTARC:ATT, RIGHTARC:OBJ, SHIFT, RIGHTARC:PU, RIGHTARC:ROOT, SHIFT</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>parser_std.train([gold_sent],<span class="py-string">'temp.arcstd.model'</span>, verbose=<span class="py-builtin">False</span>)
+<span class="py-output"> Number of training examples : 1</span>
+<span class="py-output"> Number of valid (projective) examples : 1</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>remove(input_file.name)</pre><ol class="rst-upperalpha simple" start="2">
+<li>Check the ARC-EAGER training</li>
+</ol>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>input_file = tempfile.NamedTemporaryFile(prefix=<span class="py-string">'transition_parse.train'</span>, <span class="py-builtin">dir</span>=tempfile.gettempdir(),delete=<span class="py-builtin">False</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>parser_eager = TransitionParser(<span class="py-string">'arc-eager'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">', '</span>.join(parser_eager._create_training_examples_arc_eager([gold_sent], input_file)))
+<span class="py-output"> Number of training examples : 1</span>
+<span class="py-output"> Number of valid (projective) examples : 1</span>
+<span class="py-output">SHIFT, LEFTARC:ATT, SHIFT, LEFTARC:SBJ, RIGHTARC:ROOT, SHIFT, LEFTARC:ATT, RIGHTARC:OBJ, RIGHTARC:ATT, SHIFT, LEFTARC:ATT, RIGHTARC:PC, REDUCE, REDUCE, REDUCE, RIGHTARC:PU</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>parser_eager.train([gold_sent],<span class="py-string">'temp.arceager.model'</span>, verbose=<span class="py-builtin">False</span>)
+<span class="py-output"> Number of training examples : 1</span>
+<span class="py-output"> Number of valid (projective) examples : 1</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>remove(input_file.name)</pre><p>###################### Check The Parsing Function ########################</p>
+<ol class="rst-upperalpha simple">
+<li>Check the ARC-STANDARD parser</li>
+</ol>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>result = parser_std.parse([gold_sent], <span class="py-string">'temp.arcstd.model'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>de = DependencyEvaluator(result, [gold_sent])
+<span class="py-prompt">&gt;&gt;&gt; </span>de.eval() &gt;= (0, 0)
+<span class="py-output">True</span>
+</pre><p>B. Check the ARC-EAGER parser
 &gt;&gt;&gt; result = parser_eager.parse([gold_sent], 'temp.arceager.model')
 &gt;&gt;&gt; de = DependencyEvaluator(result, [gold_sent])
 &gt;&gt;&gt; de.eval() &gt;= (0, 0)
-True
-
-Remove test temporary files
+True</p>
+<p>Remove test temporary files
 &gt;&gt;&gt; remove('temp.arceager.model')
-&gt;&gt;&gt; remove('temp.arcstd.model')
-
-Note that result is very poor because of only one training example.</p></div>
+&gt;&gt;&gt; remove('temp.arcstd.model')</p>
+<p>Note that result is very poor because of only one training example.</p>
+</div>
   </div>
 </div>
 
@@ -274,7 +263,7 @@ Note that result is very poor because of only one training example.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

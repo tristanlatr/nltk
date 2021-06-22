@@ -65,16 +65,16 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SentimentAnalyzer</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L31" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SentimentAnalyzer</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L31" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.sentiment.sentiment_analyzer.SentimentAnalyzer">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A Sentiment Analysis tool based on machine learning approaches.</p></div>
+        <div>A Sentiment Analysis tool based on machine learning approaches.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1455">
+        <table class="children sortable" id="id1459">
   
   
   <tr class="method">
@@ -96,12 +96,12 @@
     
     <td>Method</td>
     <td><code><a href="#apply_features">apply_features</a></code></td>
-    <td><span>Apply all feature extractor functions to the documents. This is a wrapper around `nltk.classify.util.apply_features`.</span></td>
+    <td><span>Apply all feature extractor functions to the documents. This is a wrapper around <code><a href="nltk.classify.util.html#apply_features">nltk.classify.util.apply_features</a></code>.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#bigram_collocation_feats">bigram_collocation_feats</a></code></td>
-    <td><span>Return `top_n` bigram features (using `assoc_measure`). Note that this method is based on bigram collocations measures, and not on simple bigram frequency.</span></td>
+    <td><span>Return <code>top_n</code> bigram features (using <code>assoc_measure</code>). Note that this method is based on bigram collocations measures, and not on simple bigram frequency.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -121,7 +121,7 @@
     
     <td>Method</td>
     <td><code><a href="#save_file">save_file</a></code></td>
-    <td><span>Store `content` in `filename`. Can be used to store a SentimentAnalyzer.</span></td>
+    <td><span>Store <code>content</code> in <code>filename</code>. Can be used to store a SentimentAnalyzer.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -163,7 +163,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, classifier=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L36">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L36">
       
       (source)
     </a>
@@ -185,7 +185,7 @@
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add_feat_extractor</span>(self, function, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L127">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L127">
       
       (source)
     </a>
@@ -193,15 +193,12 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a new function to extract features from a document. This function will
+    <div>Add a new function to extract features from a document. This function will
 be used in extract_features().
 Important: in this step our kwargs are only representing additional parameters,
 and NOT the document we have to parse. The document will always be the first
 parameter in the parameter list, and it will be added in the extract_features()
-function.
-
-:param function: the extractor function to add to the list of feature extractors.
-:param kwargs: additional parameters required by the `function` function.</p></div>
+function.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">function</span></td><td class="fieldArgDesc">the extractor function to add to the list of feature extractors.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc">additional parameters required by the <code>function</code> function.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -215,7 +212,7 @@ function.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">all_words</span>(self, documents, labeled=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L40">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L40">
       
       (source)
     </a>
@@ -223,13 +220,13 @@ function.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return all words/tokens from the documents (with duplicates).
+    <div><p>Return all words/tokens from the documents (with duplicates).
 :param documents: a list of (words, label) tuples.
-:param labeled: if `True`, assume that each document is represented by a
-    (words, label) tuple: (list(str), str). If `False`, each document is
-    considered as being a simple list of strings: list(str).
-:rtype: list(str)
-:return: A list of all words/tokens in `documents`.</p></div>
+:param labeled: if <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, assume that each document is represented by a</p>
+<blockquote>
+(words, label) tuple: (list(str), str). If <code><a href="https://docs.python.org/3/library/constants.html#False">False</a></code>, each document is
+considered as being a simple list of strings: list(str).</blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">A list of all words/tokens in <code>documents</code>.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -243,7 +240,7 @@ function.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply_features</span>(self, documents, labeled=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L61">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L61">
       
       (source)
     </a>
@@ -251,17 +248,16 @@ function.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Apply all feature extractor functions to the documents. This is a wrapper
-around `nltk.classify.util.apply_features`.
-
-If `labeled=False`, return featuresets as:
-    [feature_func(doc) for doc in documents]
-If `labeled=True`, return featuresets as:
-    [(feature_func(tok), label) for (tok, label) in toks]
-
-:param documents: a list of documents. `If labeled=True`, the method expects
-    a list of (words, label) tuples.
-:rtype: LazyMap</p></div>
+    <div><p>Apply all feature extractor functions to the documents. This is a wrapper
+around <code><a href="nltk.classify.util.html#apply_features">nltk.classify.util.apply_features</a></code>.</p>
+<dl class="rst-docutils">
+<dt>If <code>labeled=False</code>, return featuresets as:</dt>
+<dd>[feature_func(doc) for doc in documents]</dd>
+<dt>If <code>labeled=True</code>, return featuresets as:</dt>
+<dd>[(feature_func(tok), label) for (tok, label) in toks]</dd>
+</dl>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">documents</span></td><td class="fieldArgDesc">a list of documents. <code>If labeled=True</code>, the method expects
+a list of (words, label) tuples.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labeled</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">LazyMap</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -275,7 +271,7 @@ If `labeled=True`, return featuresets as:
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">bigram_collocation_feats</span>(self, documents, top_n=None, min_freq=3, assoc_measure=BigramAssocMeasures.pmi):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L95">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L95">
       
       (source)
     </a>
@@ -283,18 +279,11 @@ If `labeled=True`, return featuresets as:
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return `top_n` bigram features (using `assoc_measure`).
+    <div>Return <code>top_n</code> bigram features (using <code>assoc_measure</code>).
 Note that this method is based on bigram collocations measures, and not
-on simple bigram frequency.
-
-:param documents: a list (or iterable) of tokens.
-:param top_n: number of best words/tokens to use, sorted by association
-    measure.
-:param assoc_measure: bigram association measure to use as score function.
-:param min_freq: the minimum number of occurrencies of bigrams to take
-    into consideration.
-
-:return: `top_n` ngrams scored by the given association measure.</p></div>
+on simple bigram frequency.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">documents</span></td><td class="fieldArgDesc">a list (or iterable) of tokens.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">top_n</span></td><td class="fieldArgDesc">number of best words/tokens to use, sorted by association
+measure.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_freq</span></td><td class="fieldArgDesc">the minimum number of occurrencies of bigrams to take
+into consideration.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">assoc_measure</span></td><td class="fieldArgDesc">bigram association measure to use as score function.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><code>top_n</code> ngrams scored by the given association measure.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -308,7 +297,7 @@ on simple bigram frequency.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">classify</span>(self, instance):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L116">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L116">
       
       (source)
     </a>
@@ -316,11 +305,8 @@ on simple bigram frequency.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Classify a single instance applying the features that have already been
-stored in the SentimentAnalyzer.
-
-:param instance: a list (or iterable) of tokens.
-:return: the classification result given by applying the classifier.</p></div>
+    <div>Classify a single instance applying the features that have already been
+stored in the SentimentAnalyzer.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">instance</span></td><td class="fieldArgDesc">a list (or iterable) of tokens.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the classification result given by applying the classifier.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -334,7 +320,7 @@ stored in the SentimentAnalyzer.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">evaluate</span>(self, test_set, classifier=None, accuracy=True, f_measure=True, precision=True, recall=True, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L197">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L197">
       
       (source)
     </a>
@@ -342,16 +328,7 @@ stored in the SentimentAnalyzer.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Evaluate and print classifier performance on the test set.
-
-:param test_set: A list of (tokens, label) tuples to use as gold set.
-:param classifier: a classifier instance (previously trained).
-:param accuracy: if `True`, evaluate classifier accuracy.
-:param f_measure: if `True`, evaluate classifier f_measure.
-:param precision: if `True`, evaluate classifier precision.
-:param recall: if `True`, evaluate classifier recall.
-:return: evaluation results.
-:rtype: dict(str): float</p></div>
+    <div>Evaluate and print classifier performance on the test set.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">test_set</span></td><td class="fieldArgDesc">A list of (tokens, label) tuples to use as gold set.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classifier</span></td><td class="fieldArgDesc">a classifier instance (previously trained).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">accuracy</span></td><td class="fieldArgDesc">if <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, evaluate classifier accuracy.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f_measure</span></td><td class="fieldArgDesc">if <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, evaluate classifier f_measure.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">precision</span></td><td class="fieldArgDesc">if <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, evaluate classifier precision.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">recall</span></td><td class="fieldArgDesc">if <code><a href="https://docs.python.org/3/library/constants.html#True">True</a></code>, evaluate classifier recall.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">dict(str): float</td><td class="fieldArgDesc">evaluation results.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -365,7 +342,7 @@ stored in the SentimentAnalyzer.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">extract_features</span>(self, document):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L141">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L141">
       
       (source)
     </a>
@@ -373,16 +350,12 @@ stored in the SentimentAnalyzer.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Apply extractor functions (and their parameters) to the present document.
-We pass `document` as the first parameter of the extractor functions.
+    <div>Apply extractor functions (and their parameters) to the present document.
+We pass <code>document</code> as the first parameter of the extractor functions.
 If we want to use the same extractor function multiple times, we have to
-add it to the extractors with `add_feat_extractor` using multiple sets of
-parameters (one for each call of the extractor function).
-
-:param document: the document that will be passed as argument to the
-    feature extractor functions.
-:return: A dictionary of populated features extracted from the document.
-:rtype: dict</p></div>
+add it to the extractors with <code><a href="#add_feat_extractor">add_feat_extractor</a></code> using multiple sets of
+parameters (one for each call of the extractor function).<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">document</span></td><td class="fieldArgDesc">the document that will be passed as argument to the
+feature extractor functions.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">dict</td><td class="fieldArgDesc">A dictionary of populated features extracted from the document.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -396,7 +369,7 @@ parameters (one for each call of the extractor function).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">save_file</span>(self, content, filename):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L187">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L187">
       
       (source)
     </a>
@@ -404,7 +377,7 @@ parameters (one for each call of the extractor function).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Store `content` in `filename`. Can be used to store a SentimentAnalyzer.</p></div>
+    <div>Store <code>content</code> in <code>filename</code>. Can be used to store a SentimentAnalyzer.</div>
   </div>
 </div><div class="basemethod">
   
@@ -418,7 +391,7 @@ parameters (one for each call of the extractor function).
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">train</span>(self, trainer, training_set, save_classifier=None, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L161">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L161">
       
       (source)
     </a>
@@ -426,22 +399,15 @@ parameters (one for each call of the extractor function).
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Train classifier on the training set, optionally saving the output in the
-file specified by `save_classifier`.
+    <div>Train classifier on the training set, optionally saving the output in the
+file specified by <code>save_classifier</code>.
 Additional arguments depend on the specific trainer used. For example,
-a MaxentClassifier can use `max_iter` parameter to specify the number
-of iterations, while a NaiveBayesClassifier cannot.
-
-:param trainer: `train` method of a classifier.
-    E.g.: NaiveBayesClassifier.train
-:param training_set: the training set to be passed as argument to the
-    classifier `train` method.
-:param save_classifier: the filename of the file where the classifier
-    will be stored (optional).
-:param kwargs: additional parameters that will be passed as arguments to
-    the classifier `train` function.
-:return: A classifier instance trained on the training set.
-:rtype:</p></div>
+a MaxentClassifier can use <code>max_iter</code> parameter to specify the number
+of iterations, while a NaiveBayesClassifier cannot.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trainer</span></td><td class="fieldArgDesc"><code><a href="#train">train</a></code> method of a classifier.
+E.g.: NaiveBayesClassifier.train</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">training_set</span></td><td class="fieldArgDesc">the training set to be passed as argument to the
+classifier <code><a href="#train">train</a></code> method.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">save_classifier</span></td><td class="fieldArgDesc">the filename of the file where the classifier
+will be stored (optional).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kwargs</span></td><td class="fieldArgDesc">additional parameters that will be passed as arguments to
+the classifier <code><a href="#train">train</a></code> function.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"></td><td class="fieldArgDesc">A classifier instance trained on the training set.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -455,7 +421,7 @@ of iterations, while a NaiveBayesClassifier cannot.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">unigram_word_feats</span>(self, words, top_n=None, min_freq=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L77">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L77">
       
       (source)
     </a>
@@ -463,13 +429,8 @@ of iterations, while a NaiveBayesClassifier cannot.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return most common top_n word features.
-
-:param words: a list of words/tokens.
-:param top_n: number of best words/tokens to use, sorted by frequency.
-:rtype: list(str)
-:return: A list of `top_n` words/tokens (with no duplicates) sorted by
-    frequency.</p></div>
+    <div>Return most common top_n word features.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">words</span></td><td class="fieldArgDesc">a list of words/tokens.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">top_n</span></td><td class="fieldArgDesc">number of best words/tokens to use, sorted by frequency.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min_freq</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(str)</td><td class="fieldArgDesc">A list of <code>top_n</code> words/tokens (with no duplicates) sorted by
+frequency.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -483,7 +444,7 @@ of iterations, while a NaiveBayesClassifier cannot.
   <div class="functionHeader">
     
     <span class="py-defname">classifier</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L38">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L38">
       
       (source)
     </a>
@@ -505,7 +466,7 @@ of iterations, while a NaiveBayesClassifier cannot.
   <div class="functionHeader">
     
     <span class="py-defname">feat_extractors</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/sentiment/sentiment_analyzer.py#L37">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/sentiment/sentiment_analyzer.py#L37">
       
       (source)
     </a>
@@ -525,7 +486,7 @@ of iterations, while a NaiveBayesClassifier cannot.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

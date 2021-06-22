@@ -65,22 +65,22 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">MinimalSet</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L11" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">MinimalSet</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L11" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.misc.minimalset.MinimalSet">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Find contexts where more than one possible target value can
+        <div>Find contexts where more than one possible target value can
 appear.  E.g. if targets are word-initial letters, and contexts
 are the remainders of words, then we would like to find cases like
 "fat" vs "cat", and "training" vs "draining".  If targets are
 parts-of-speech and contexts are words, then we would like to find
 cases like wind (noun) 'air in rapid motion', vs wind (verb)
-'coil, wrap'.</p></div>
+'coil, wrap'.</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id831">
+        <table class="children sortable" id="id834">
   
   
   <tr class="method">
@@ -154,7 +154,7 @@ cases like wind (noun) 'air in rapid motion', vs wind (verb)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, parameters=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L22">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L22">
       
       (source)
     </a>
@@ -162,10 +162,7 @@ cases like wind (noun) 'air in rapid motion', vs wind (verb)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Create a new minimal set.
-
-:param parameters: The (context, target, display) tuples for the item
-:type parameters: list(tuple(str, str, str))</p></div>
+    <div>Create a new minimal set.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parameters:</span>list(tuple(str, str, str))</td><td class="fieldArgDesc">The (context, target, display) tuples for the item</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -179,7 +176,7 @@ cases like wind (noun) 'air in rapid motion', vs wind (verb)
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add</span>(self, context, target, display):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L38">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L38">
       
       (source)
     </a>
@@ -187,15 +184,8 @@ cases like wind (noun) 'air in rapid motion', vs wind (verb)
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Add a new item to the minimal set, having the specified
-context, target, and display form.
-
-:param context: The context in which the item of interest appears
-:type context: str
-:param target: The item of interest
-:type target: str
-:param display: The information to be reported for each item
-:type display: str</p></div>
+    <div>Add a new item to the minimal set, having the specified
+context, target, and display form.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">context:</span>str</td><td class="fieldArgDesc">The context in which the item of interest appears</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target:</span>str</td><td class="fieldArgDesc">The item of interest</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">display:</span>str</td><td class="fieldArgDesc">The information to be reported for each item</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -209,7 +199,7 @@ context, target, and display form.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">contexts</span>(self, minimum=2):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L60">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L60">
       
       (source)
     </a>
@@ -217,11 +207,9 @@ context, target, and display form.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Determine which contexts occurred with enough distinct targets.
-
-:param minimum: the minimum number of distinct target forms
-:type minimum: int
-:rtype list</p></div>
+    <div><p>Determine which contexts occurred with enough distinct targets.</p>
+<p>:rtype list</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">minimum:</span>int</td><td class="fieldArgDesc">the minimum number of distinct target forms</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -235,7 +223,7 @@ context, target, and display form.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">display</span>(self, context, target, default=''):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L70">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L70">
       
       (source)
     </a>
@@ -257,7 +245,7 @@ context, target, and display form.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">display_all</span>(self, context):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L76">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L76">
       
       (source)
     </a>
@@ -279,7 +267,7 @@ context, target, and display form.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">targets</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L84">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L84">
       
       (source)
     </a>
@@ -301,7 +289,7 @@ context, target, and display form.
   <div class="functionHeader">
     
     <span class="py-defname">_contexts</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L30">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L30">
       
       (source)
     </a>
@@ -323,7 +311,7 @@ context, target, and display form.
   <div class="functionHeader">
     
     <span class="py-defname">_displays</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L32">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L32">
       
       (source)
     </a>
@@ -345,7 +333,7 @@ context, target, and display form.
   <div class="functionHeader">
     
     <span class="py-defname">_seen</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L31">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L31">
       
       (source)
     </a>
@@ -367,7 +355,7 @@ context, target, and display form.
   <div class="functionHeader">
     
     <span class="py-defname">_targets</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/misc/minimalset.py#L29">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/misc/minimalset.py#L29">
       
       (source)
     </a>
@@ -387,7 +375,7 @@ context, target, and display form.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

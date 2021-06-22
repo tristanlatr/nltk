@@ -65,62 +65,62 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/simple.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/simple.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Simple Tokenizers
-
-These tokenizers divide strings into substrings using the string
-``split()`` method.
+        <div><p>Simple Tokenizers</p>
+<p>These tokenizers divide strings into substrings using the string
+<tt class="rst-docutils literal">split()</tt> method.
 When tokenizing using a particular delimiter string, use
-the string ``split()`` method directly, as this is more efficient.
-
-The simple tokenizers are *not* available as separate functions;
-instead, you should just use the string ``split()`` method directly:
-
-    &gt;&gt;&gt; s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."
-    &gt;&gt;&gt; s.split()
-    ['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York.',
-    'Please', 'buy', 'me', 'two', 'of', 'them.', 'Thanks.']
-    &gt;&gt;&gt; s.split(' ')
-    ['Good', 'muffins', 'cost', '$3.88\nin', 'New', 'York.', '',
-    'Please', 'buy', 'me\ntwo', 'of', 'them.\n\nThanks.']
-    &gt;&gt;&gt; s.split('\n')
-    ['Good muffins cost $3.88', 'in New York.  Please buy me',
-    'two of them.', '', 'Thanks.']
-
-The simple tokenizers are mainly useful because they follow the
-standard ``TokenizerI`` interface, and so can be used with any code
+the string <tt class="rst-docutils literal">split()</tt> method directly, as this is more efficient.</p>
+<p>The simple tokenizers are <em>not</em> available as separate functions;
+instead, you should just use the string <tt class="rst-docutils literal">split()</tt> method directly:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>s = <span class="py-string">"Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s.split()
+<span class="py-output">['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York.',</span>
+<span class="py-output">'Please', 'buy', 'me', 'two', 'of', 'them.', 'Thanks.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s.split(<span class="py-string">' '</span>)
+<span class="py-output">['Good', 'muffins', 'cost', '$3.88\nin', 'New', 'York.', '',</span>
+<span class="py-output">'Please', 'buy', 'me\ntwo', 'of', 'them.\n\nThanks.']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s.split(<span class="py-string">'\n'</span>)
+<span class="py-output">['Good muffins cost $3.88', 'in New York.  Please buy me',</span>
+<span class="py-output">'two of them.', '', 'Thanks.']</span>
+</pre></blockquote>
+<p>The simple tokenizers are mainly useful because they follow the
+standard <tt class="rst-docutils literal">TokenizerI</tt> interface, and so can be used with any code
 that expects a tokenizer.  For example, these tokenizers can be used
-to specify the tokenization conventions when building a `CorpusReader`.</p></div>
+to specify the tokenization conventions when building a <code><a href="nltk.corpus.reader.api.CorpusReader.html">CorpusReader</a></code>.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1821">
+        <table class="children sortable" id="id1825">
   
   
   <tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.tokenize.simple.CharTokenizer.html">CharTokenizer</a></code></td>
-    <td><span>Tokenize a string into individual characters.  If this functionality is ever required directly, use ``for char in string``.</span></td>
+    <td><span>Tokenize a string into individual characters.  If this functionality is ever required directly, use <tt class="rst-docutils literal">for char in string</tt>.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.tokenize.simple.LineTokenizer.html">LineTokenizer</a></code></td>
-    <td><span>Tokenize a string into its lines, optionally discarding blank lines. This is similar to ``s.split('\n')``.</span></td>
+    <td><span>Tokenize a string into its lines, optionally discarding blank lines. This is similar to <tt class="rst-docutils literal"><span class="pre">s.split('\n')</span></tt>.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.tokenize.simple.SpaceTokenizer.html">SpaceTokenizer</a></code></td>
-    <td><span>Tokenize a string using the space character as a delimiter, which is the same as ``s.split(' ')``.</span></td>
+    <td><span>Tokenize a string using the space character as a delimiter, which is the same as <tt class="rst-docutils literal">s.split(' ')</tt>.</span></td>
   </tr><tr class="class">
     
     <td>Class</td>
     <td><code><a href="nltk.tokenize.simple.TabTokenizer.html">TabTokenizer</a></code></td>
-    <td><span>Tokenize a string use the tab character as a delimiter, the same as ``s.split('\t')``.</span></td>
+    <td><span>Tokenize a string use the tab character as a delimiter, the same as <tt class="rst-docutils literal"><span class="pre">s.split('\t')</span></tt>.</span></td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -147,7 +147,7 @@ to specify the tokenization conventions when building a `CorpusReader`.</p></div
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">line_tokenize</span>(text, blanklines='discard'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tokenize/simple.py#L139">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tokenize/simple.py#L139">
       
       (source)
     </a>
@@ -167,7 +167,7 @@ to specify the tokenization conventions when building a `CorpusReader`.</p></div
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

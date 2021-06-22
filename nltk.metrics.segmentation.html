@@ -65,44 +65,43 @@
       </div>
 
       <div class="extrasDocstring">
-        <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/segmentation.py" class="sourceLink">(source)</a>
+        <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/segmentation.py" class="sourceLink">(source)</a>
         <p></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">Text Segmentation Metrics
-
-1. Windowdiff
-
-Pevzner, L., and Hearst, M., A Critique and Improvement of
-  an Evaluation Metric for Text Segmentation,
-Computational Linguistics 28, 19-36
-
-
-2. Generalized Hamming Distance
-
-Bookstein A., Kulyukin V.A., Raita T.
+        <div><p>Text Segmentation Metrics</p>
+<ol class="rst-arabic simple">
+<li>Windowdiff</li>
+</ol>
+<dl class="rst-docutils">
+<dt>Pevzner, L., and Hearst, M., A Critique and Improvement of</dt>
+<dd>an Evaluation Metric for Text Segmentation,</dd>
+</dl>
+<p>Computational Linguistics 28, 19-36</p>
+<ol class="rst-arabic simple" start="2">
+<li>Generalized Hamming Distance</li>
+</ol>
+<p>Bookstein A., Kulyukin V.A., Raita T.
 Generalized Hamming Distance
-Information Retrieval 5, 2002, pp 353-375
-
-Baseline implementation in C++
-http://digital.cs.usu.edu/~vkulyukin/vkweb/software/ghd/ghd.html
-
-Study describing benefits of Generalized Hamming Distance Versus
+Information Retrieval 5, 2002, pp 353-375</p>
+<p>Baseline implementation in C++
+<a class="rst-reference external" href="http://digital.cs.usu.edu/~vkulyukin/vkweb/software/ghd/ghd.html" target="_top">http://digital.cs.usu.edu/~vkulyukin/vkweb/software/ghd/ghd.html</a></p>
+<p>Study describing benefits of Generalized Hamming Distance Versus
 WindowDiff for evaluating text segmentation tasks
 Begsten, Y.  Quel indice pour mesurer l'efficacite en segmentation de textes ?
-TALN 2009
-
-
-3. Pk text segmentation metric
-
-Beeferman D., Berger A., Lafferty J. (1999)
+TALN 2009</p>
+<ol class="rst-arabic simple" start="3">
+<li>Pk text segmentation metric</li>
+</ol>
+<p>Beeferman D., Berger A., Lafferty J. (1999)
 Statistical Models for Text Segmentation
-Machine Learning, 34, 177-210</p></div>
+Machine Learning, 34, 177-210</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id825">
+        <table class="children sortable" id="id828">
   
   
   <tr class="function">
@@ -156,7 +155,7 @@ Machine Learning, 34, 177-210</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">ghd</span>(ref, hyp, ins_cost=2.0, del_cost=2.0, shift_cost_coeff=1.0, boundary='1'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/segmentation.py#L121">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/segmentation.py#L121">
       
       (source)
     </a>
@@ -164,48 +163,39 @@ Machine Learning, 34, 177-210</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Compute the Generalized Hamming Distance for a reference and a hypothetical
+    <div><p>Compute the Generalized Hamming Distance for a reference and a hypothetical
 segmentation, corresponding to the cost related to the transformation
 of the hypothetical segmentation into the reference segmentation
-through boundary insertion, deletion and shift operations.
-
-A segmentation is any sequence over a vocabulary of two items
+through boundary insertion, deletion and shift operations.</p>
+<p>A segmentation is any sequence over a vocabulary of two items
 (e.g. "0", "1"), where the specified boundary value is used to
-mark the edge of a segmentation.
-
-Recommended parameter values are a shift_cost_coeff of 2.
+mark the edge of a segmentation.</p>
+<p>Recommended parameter values are a shift_cost_coeff of 2.
 Associated with a ins_cost, and del_cost equal to the mean segment
-length in the reference segmentation.
-
-    &gt;&gt;&gt; # Same examples as Kulyukin C++ implementation
-    &gt;&gt;&gt; ghd('1100100000', '1100010000', 1.0, 1.0, 0.5)
-    0.5
-    &gt;&gt;&gt; ghd('1100100000', '1100000001', 1.0, 1.0, 0.5)
-    2.0
-    &gt;&gt;&gt; ghd('011', '110', 1.0, 1.0, 0.5)
-    1.0
-    &gt;&gt;&gt; ghd('1', '0', 1.0, 1.0, 0.5)
-    1.0
-    &gt;&gt;&gt; ghd('111', '000', 1.0, 1.0, 0.5)
-    3.0
-    &gt;&gt;&gt; ghd('000', '111', 1.0, 2.0, 0.5)
-    6.0
-
-:param ref: the reference segmentation
-:type ref: str or list
-:param hyp: the hypothetical segmentation
-:type hyp: str or list
-:param ins_cost: insertion cost
-:type ins_cost: float
-:param del_cost: deletion cost
-:type del_cost: float
-:param shift_cost_coeff: constant used to compute the cost of a shift.
-shift cost = shift_cost_coeff * |i - j| where i and j are
+length in the reference segmentation.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># Same examples as Kulyukin C++ implementation</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ghd(<span class="py-string">'1100100000'</span>, <span class="py-string">'1100010000'</span>, 1.0, 1.0, 0.5)
+<span class="py-output">0.5</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ghd(<span class="py-string">'1100100000'</span>, <span class="py-string">'1100000001'</span>, 1.0, 1.0, 0.5)
+<span class="py-output">2.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ghd(<span class="py-string">'011'</span>, <span class="py-string">'110'</span>, 1.0, 1.0, 0.5)
+<span class="py-output">1.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ghd(<span class="py-string">'1'</span>, <span class="py-string">'0'</span>, 1.0, 1.0, 0.5)
+<span class="py-output">1.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ghd(<span class="py-string">'111'</span>, <span class="py-string">'000'</span>, 1.0, 1.0, 0.5)
+<span class="py-output">3.0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ghd(<span class="py-string">'000'</span>, <span class="py-string">'111'</span>, 1.0, 2.0, 0.5)
+<span class="py-output">6.0</span>
+</pre></blockquote>
+<p>shift cost = shift_cost_coeff * <a href="#id1"><span class="rst-problematic" id="rst-id2">|i - j|</span></a> where i and j are
 the positions indicating the shift
 :type shift_cost_coeff: float
 :param boundary: boundary value
 :type boundary: str or int or bool
-:rtype: float</p></div>
+:rtype: float</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ref:</span>str or list</td><td class="fieldArgDesc">the reference segmentation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hyp:</span>str or list</td><td class="fieldArgDesc">the hypothetical segmentation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ins_cost:</span>float</td><td class="fieldArgDesc">insertion cost</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">del_cost:</span>float</td><td class="fieldArgDesc">deletion cost</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">shift_cost_coeff</span></td><td class="fieldArgDesc">constant used to compute the cost of a shift.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">boundary</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -219,7 +209,7 @@ the positions indicating the shift
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">pk</span>(ref, hyp, k=None, boundary='1'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/segmentation.py#L188">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/segmentation.py#L188">
       
       (source)
     </a>
@@ -227,27 +217,18 @@ the positions indicating the shift
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Compute the Pk metric for a pair of segmentations A segmentation
+    <div><p>Compute the Pk metric for a pair of segmentations A segmentation
 is any sequence over a vocabulary of two items (e.g. "0", "1"),
 where the specified boundary value is used to mark the edge of a
-segmentation.
-
-&gt;&gt;&gt; '%.2f' % pk('0100'*100, '1'*400, 2)
-'0.50'
-&gt;&gt;&gt; '%.2f' % pk('0100'*100, '0'*400, 2)
-'0.50'
-&gt;&gt;&gt; '%.2f' % pk('0100'*100, '0100'*100, 2)
-'0.00'
-
-:param ref: the reference segmentation
-:type ref: str or list
-:param hyp: the segmentation to evaluate
-:type hyp: str or list
-:param k: window size, if None, set to half of the average reference segment length
-:type boundary: str or int or bool
-:param boundary: boundary value
-:type boundary: str or int or bool
-:rtype: float</p></div>
+segmentation.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'%.2f'</span> % pk(<span class="py-string">'0100'</span>*100, <span class="py-string">'1'</span>*400, 2)
+<span class="py-output">'0.50'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'%.2f'</span> % pk(<span class="py-string">'0100'</span>*100, <span class="py-string">'0'</span>*400, 2)
+<span class="py-output">'0.50'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'%.2f'</span> % pk(<span class="py-string">'0100'</span>*100, <span class="py-string">'0100'</span>*100, 2)
+<span class="py-output">'0.00'</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ref:</span>str or list</td><td class="fieldArgDesc">the reference segmentation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hyp:</span>str or list</td><td class="fieldArgDesc">the segmentation to evaluate</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">k</span></td><td class="fieldArgDesc">window size, if None, set to half of the average reference segment length</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">boundary:</span>str or int or bool</td><td class="fieldArgDesc">boundary value</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -261,7 +242,7 @@ segmentation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">setup_module</span>(module):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/segmentation.py#L226">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/segmentation.py#L226">
       
       (source)
     </a>
@@ -283,7 +264,7 @@ segmentation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">windowdiff</span>(seg1, seg2, k, boundary='1', weighted=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/segmentation.py#L49">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/segmentation.py#L49">
       
       (source)
     </a>
@@ -291,32 +272,23 @@ segmentation.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Compute the windowdiff score for a pair of segmentations.  A
+    <div><p>Compute the windowdiff score for a pair of segmentations.  A
 segmentation is any sequence over a vocabulary of two items
 (e.g. "0", "1"), where the specified boundary value is used to
-mark the edge of a segmentation.
-
-    &gt;&gt;&gt; s1 = "000100000010"
-    &gt;&gt;&gt; s2 = "000010000100"
-    &gt;&gt;&gt; s3 = "100000010000"
-    &gt;&gt;&gt; '%.2f' % windowdiff(s1, s1, 3)
-    '0.00'
-    &gt;&gt;&gt; '%.2f' % windowdiff(s1, s2, 3)
-    '0.30'
-    &gt;&gt;&gt; '%.2f' % windowdiff(s2, s3, 3)
-    '0.80'
-
-:param seg1: a segmentation
-:type seg1: str or list
-:param seg2: a segmentation
-:type seg2: str or list
-:param k: window width
-:type k: int
-:param boundary: boundary value
-:type boundary: str or int or bool
-:param weighted: use the weighted variant of windowdiff
-:type weighted: boolean
-:rtype: float</p></div>
+mark the edge of a segmentation.</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>s1 = <span class="py-string">"000100000010"</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s2 = <span class="py-string">"000010000100"</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s3 = <span class="py-string">"100000010000"</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'%.2f'</span> % windowdiff(s1, s1, 3)
+<span class="py-output">'0.00'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'%.2f'</span> % windowdiff(s1, s2, 3)
+<span class="py-output">'0.30'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-string">'%.2f'</span> % windowdiff(s2, s3, 3)
+<span class="py-output">'0.80'</span>
+</pre></blockquote>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seg1:</span>str or list</td><td class="fieldArgDesc">a segmentation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seg2:</span>str or list</td><td class="fieldArgDesc">a segmentation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">k:</span>int</td><td class="fieldArgDesc">window width</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">boundary:</span>str or int or bool</td><td class="fieldArgDesc">boundary value</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">weighted:</span>boolean</td><td class="fieldArgDesc">use the weighted variant of windowdiff</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">float</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction private">
   
@@ -330,7 +302,7 @@ mark the edge of a segmentation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_ghd_aux</span>(mat, rowv, colv, ins_cost, del_cost, shift_cost_coeff):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/segmentation.py#L105">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/segmentation.py#L105">
       
       (source)
     </a>
@@ -352,7 +324,7 @@ mark the edge of a segmentation.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_init_mat</span>(nrows, ncols, ins_cost, del_cost):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/metrics/segmentation.py#L98">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/metrics/segmentation.py#L98">
       
       (source)
     </a>
@@ -372,7 +344,7 @@ mark the edge of a segmentation.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

@@ -65,37 +65,28 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TrigramTagger</span>(<a href="nltk.tag.sequential.NgramTagger.html" title="nltk.tag.sequential.NgramTagger">NgramTagger</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L393" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TrigramTagger</span>(<a href="nltk.tag.sequential.NgramTagger.html" title="nltk.tag.sequential.NgramTagger">NgramTagger</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L393" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.tag.sequential.TrigramTagger">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A tagger that chooses a token's tag based its word string and on
+        <div>A tagger that chooses a token's tag based its word string and on
 the preceding two words' tags.  In particular, a tuple consisting
 of the previous two tags and the word is looked up in a table, and
-the corresponding tag is returned.
-
-:param train: The corpus of training data, a list of tagged sentences
-:type train: list(list(tuple(str, str)))
-:param model: The tagger model
-:type model: dict
-:param backoff: Another tagger which this tagger will consult when it is
-    unable to tag a word
-:type backoff: TaggerI
-:param cutoff: The number of instances of training data the tagger must see
-    in order not to use the backoff tagger
-:type cutoff: int</p></div>
+the corresponding tag is returned.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">train</span></td><td class="fieldArgDesc">The corpus of training data, a list of tagged sentences</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model</span></td><td class="fieldArgDesc">The tagger model</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">backoff</span></td><td class="fieldArgDesc">Another tagger which this tagger will consult when it is
+unable to tag a word</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cutoff</span></td><td class="fieldArgDesc">The number of instances of training data the tagger must see
+in order not to use the backoff tagger</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1593">
+        <table class="children sortable" id="id1597">
   
   
   <tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
-    <td><span>:param context_to_tag: A dictionary mapping contexts to tags. :param backoff: The backoff tagger that should be used for this tagger.</span></td>
+    <td><span></span></td>
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
@@ -107,7 +98,7 @@ the corresponding tag is returned.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.sequential.NgramTagger.html">NgramTagger</a></code>:
           </p>
-          <table class="children sortable" id="id1594">
+          <table class="children sortable" id="id1598">
   
   
   <tr class="baseclassmethod">
@@ -136,7 +127,7 @@ the corresponding tag is returned.
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.sequential.ContextTagger.html">ContextTagger</a></code> (via <code><a href="nltk.tag.sequential.NgramTagger.html">NgramTagger</a></code>):
           </p>
-          <table class="children sortable" id="id1595">
+          <table class="children sortable" id="id1599">
   
   
   <tr class="basemethod">
@@ -153,7 +144,7 @@ the corresponding tag is returned.
     
     <td>Method</td>
     <td><code><a href="nltk.tag.sequential.ContextTagger.html#size">size</a></code></td>
-    <td><span>:return: The number of entries in the table used by this tagger to map from contexts to tags.</span></td>
+    <td><span></span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -163,43 +154,39 @@ the corresponding tag is returned.
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.tag.sequential.ContextTagger.html#_context_to_tag">_context_to_tag</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>Dictionary mapping contexts to tags.</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">SequentialBackoffTagger</a></code> (via <code><a href="nltk.tag.sequential.NgramTagger.html">NgramTagger</a></code>, <code><a href="nltk.tag.sequential.ContextTagger.html">ContextTagger</a></code>):
           </p>
-          <table class="children sortable" id="id1596">
+          <table class="children sortable" id="id1600">
   
   
   <tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tag.sequential.SequentialBackoffTagger.html#tag">tag</a></code></td>
-    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple ``(token, tag)``.</span></td>
+    <td><span>Determine the most appropriate tag sequence for the given token sequence, and return a corresponding list of tagged tokens.  A tagged token is encoded as a tuple <tt class="rst-docutils literal">(token, tag)</tt>.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="nltk.tag.sequential.SequentialBackoffTagger.html#tag_one">tag_one</a></code></td>
     <td><span>Determine an appropriate tag for the specified token, and return that tag.  If this tagger is unable to determine a tag for the specified token, then its backoff tagger is consulted.</span></td>
-  </tr><tr class="baseproperty">
-    
-    <td>Property</td>
-    <td><code><a href="nltk.tag.sequential.SequentialBackoffTagger.html#backoff">backoff</a></code></td>
-    <td><span>The backoff tagger for this tagger.</span></td>
   </tr><tr class="baseinstancevariable private">
     
     <td>Instance Variable</td>
     <td><code><a href="nltk.tag.sequential.SequentialBackoffTagger.html#_taggers">_taggers</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td><span>A list of all the taggers that should be tried to
+tag a token (i.e., self and its backoff taggers).</span></td>
   </tr>
 </table>
           
           <p class="inheritedFrom">
             Inherited from <code><a href="nltk.tag.api.TaggerI.html">TaggerI</a></code> (via <code><a href="nltk.tag.sequential.NgramTagger.html">NgramTagger</a></code>, <code><a href="nltk.tag.sequential.ContextTagger.html">ContextTagger</a></code>, <code><a href="nltk.tag.sequential.SequentialBackoffTagger.html">SequentialBackoffTagger</a></code>):
           </p>
-          <table class="children sortable" id="id1597">
+          <table class="children sortable" id="id1601">
   
   
   <tr class="basemethod">
@@ -211,7 +198,7 @@ the corresponding tag is returned.
     
     <td>Method</td>
     <td><code><a href="nltk.tag.api.TaggerI.html#tag_sents">tag_sents</a></code></td>
-    <td><span>Apply ``self.tag()`` to each element of *sentences*.  I.e.:</span></td>
+    <td><span>Apply <tt class="rst-docutils literal">self.tag()</tt> to each element of <em>sentences</em>.  I.e.:</span></td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -238,7 +225,7 @@ the corresponding tag is returned.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, train=None, model=None, backoff=None, cutoff=0, verbose=False):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L415">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L415">
       
       (source)
     </a>
@@ -246,8 +233,7 @@ the corresponding tag is returned.
   <div class="docstring functionBody">
     <div class="interfaceinfo">overrides <code><a href="nltk.tag.sequential.NgramTagger.html#__init__">nltk.tag.sequential.NgramTagger.__init__</a></code></div>
     
-    <div><p class="pre">:param context_to_tag: A dictionary mapping contexts to tags.
-:param backoff: The backoff tagger that should be used for this tagger.</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">train</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">backoff</span></td><td class="fieldArgDesc">The backoff tagger that should be used for this tagger.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cutoff</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">context_to_tag</span></td><td class="fieldArgDesc">A dictionary mapping contexts to tags.</td></tr></table></div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -261,7 +247,7 @@ the corresponding tag is returned.
   <div class="functionHeader">
     
     <span class="py-defname">json_tag</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tag/sequential.py#L413">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tag/sequential.py#L413">
       
       (source)
     </a>
@@ -281,7 +267,7 @@ the corresponding tag is returned.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

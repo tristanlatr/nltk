@@ -65,28 +65,27 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">SeekableUnicodeStreamReader</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L968" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SeekableUnicodeStreamReader</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L968" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.data.SeekableUnicodeStreamReader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">A stream reader that automatically encodes the source byte stream
-into unicode (like ``codecs.StreamReader``); but still supports the
-``seek()`` and ``tell()`` operations correctly.  This is in contrast
-to ``codecs.StreamReader``, which provide *broken* ``seek()`` and
-``tell()`` methods.
-
-This class was motivated by ``StreamBackedCorpusView``, which
-makes extensive use of ``seek()`` and ``tell()``, and needs to be
-able to handle unicode-encoded files.
-
-Note: this class requires stateless decoders.  To my knowledge,
+        <div><p>A stream reader that automatically encodes the source byte stream
+into unicode (like <tt class="rst-docutils literal">codecs.StreamReader</tt>); but still supports the
+<tt class="rst-docutils literal">seek()</tt> and <tt class="rst-docutils literal">tell()</tt> operations correctly.  This is in contrast
+to <tt class="rst-docutils literal">codecs.StreamReader</tt>, which provide <em>broken</em> <tt class="rst-docutils literal">seek()</tt> and
+<tt class="rst-docutils literal">tell()</tt> methods.</p>
+<p>This class was motivated by <tt class="rst-docutils literal">StreamBackedCorpusView</tt>, which
+makes extensive use of <tt class="rst-docutils literal">seek()</tt> and <tt class="rst-docutils literal">tell()</tt>, and needs to be
+able to handle unicode-encoded files.</p>
+<p>Note: this class requires stateless decoders.  To my knowledge,
 this shouldn't cause a problem with any of python's builtin
-unicode encodings.</p></div>
+unicode encodings.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id548">
+        <table class="children sortable" id="id551">
   
   
   <tr class="method">
@@ -113,7 +112,7 @@ unicode encodings.</p></div>
     
     <td>Method</td>
     <td><code><a href="#char_seek_forward">char_seek_forward</a></code></td>
-    <td><span>Move the read pointer forward by ``offset`` characters.</span></td>
+    <td><span>Move the read pointer forward by <tt class="rst-docutils literal">offset</tt> characters.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -133,7 +132,7 @@ unicode encodings.</p></div>
     
     <td>Method</td>
     <td><code><a href="#read">read</a></code></td>
-    <td><span>Read up to ``size`` bytes, decode them using this reader's encoding, and return the resulting unicode string.</span></td>
+    <td><span>Read up to <tt class="rst-docutils literal">size</tt> bytes, decode them using this reader's encoding, and return the resulting unicode string.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -213,7 +212,7 @@ unicode encodings.</p></div>
     
     <td>Method</td>
     <td><code><a href="#_char_seek_forward">_char_seek_forward</a></code></td>
-    <td><span>Move the file position forward by ``offset`` characters, ignoring all buffers.</span></td>
+    <td><span>Move the file position forward by <tt class="rst-docutils literal">offset</tt> characters, ignoring all buffers.</span></td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -228,7 +227,7 @@ unicode encodings.</p></div>
     
     <td>Method</td>
     <td><code><a href="#_read">_read</a></code></td>
-    <td><span>Read up to ``size`` bytes from the underlying stream, decode them using this reader's encoding, and return the resulting unicode string.  ``linebuffer`` is not included in the result.</span></td>
+    <td><span>Read up to <tt class="rst-docutils literal">size</tt> bytes from the underlying stream, decode them using this reader's encoding, and return the resulting unicode string.  <tt class="rst-docutils literal">linebuffer</tt> is not included in the result.</span></td>
   </tr><tr class="classvariable private">
     
     <td>Class Variable</td>
@@ -270,7 +269,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__del__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1157">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1157">
       
       (source)
     </a>
@@ -292,7 +291,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     @py3_data<br />
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, stream, encoding, errors='strict'):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L987">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L987">
       
       (source)
     </a>
@@ -314,7 +313,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__iter__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1153">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1153">
       
       (source)
     </a>
@@ -322,7 +321,7 @@ unicode encodings.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return self</p></div>
+    <div>Return self</div>
   </div>
 </div><div class="basemethod">
   
@@ -336,7 +335,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__next__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1150">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1150">
       
       (source)
     </a>
@@ -358,7 +357,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">char_seek_forward</span>(self, offset):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1219">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1219">
       
       (source)
     </a>
@@ -366,7 +365,7 @@ unicode encodings.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Move the read pointer forward by ``offset`` characters.</p></div>
+    <div>Move the read pointer forward by <tt class="rst-docutils literal">offset</tt> characters.</div>
   </div>
 </div><div class="basemethod">
   
@@ -380,7 +379,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">close</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1185">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1185">
       
       (source)
     </a>
@@ -388,7 +387,7 @@ unicode encodings.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Close the underlying stream.</p></div>
+    <div>Close the underlying stream.</div>
   </div>
 </div><div class="basemethod">
   
@@ -402,7 +401,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">discard_line</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1064">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1064">
       
       (source)
     </a>
@@ -424,7 +423,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">next</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1142">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1142">
       
       (source)
     </a>
@@ -432,7 +431,7 @@ unicode encodings.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the next decoded line from the underlying stream.</p></div>
+    <div>Return the next decoded line from the underlying stream.</div>
   </div>
 </div><div class="basemethod">
   
@@ -446,7 +445,7 @@ unicode encodings.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">read</span>(self, size=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1044">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1044">
       
       (source)
     </a>
@@ -454,13 +453,9 @@ unicode encodings.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Read up to ``size`` bytes, decode them using this reader's
-encoding, and return the resulting unicode string.
-
-:param size: The maximum number of bytes to read.  If not
-    specified, then read as many bytes as possible.
-:type size: int
-:rtype: unicode</p></div>
+    <div>Read up to <tt class="rst-docutils literal">size</tt> bytes, decode them using this reader's
+encoding, and return the resulting unicode string.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">size:</span>int</td><td class="fieldArgDesc">The maximum number of bytes to read.  If not
+specified, then read as many bytes as possible.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">unicode</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -474,7 +469,7 @@ encoding, and return the resulting unicode string.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">readline</span>(self, size=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1071">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1071">
       
       (source)
     </a>
@@ -482,13 +477,10 @@ encoding, and return the resulting unicode string.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Read a line of text, decode it using this reader's encoding,
-and return the resulting unicode string.
-
-:param size: The maximum number of bytes to read.  If no
-    newline is encountered before ``size`` bytes have been read,
-    then the returned value may not be a complete line of text.
-:type size: int</p></div>
+    <div>Read a line of text, decode it using this reader's encoding,
+and return the resulting unicode string.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">size:</span>int</td><td class="fieldArgDesc">The maximum number of bytes to read.  If no
+newline is encountered before <tt class="rst-docutils literal">size</tt> bytes have been read,
+then the returned value may not be a complete line of text.</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -502,7 +494,7 @@ and return the resulting unicode string.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">readlines</span>(self, sizehint=None, keepends=True):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1131">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1131">
       
       (source)
     </a>
@@ -510,12 +502,8 @@ and return the resulting unicode string.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Read this file's contents, decode them using this reader's
-encoding, and return it as a list of unicode lines.
-
-:rtype: list(unicode)
-:param sizehint: Ignored.
-:param keepends: If false, then strip newlines.</p></div>
+    <div>Read this file's contents, decode them using this reader's
+encoding, and return it as a list of unicode lines.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sizehint</span></td><td class="fieldArgDesc">Ignored.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">keepends</span></td><td class="fieldArgDesc">If false, then strip newlines.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(unicode)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -529,7 +517,7 @@ encoding, and return it as a list of unicode lines.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">seek</span>(self, offset, whence=0):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1195">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1195">
       
       (source)
     </a>
@@ -537,15 +525,12 @@ encoding, and return it as a list of unicode lines.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Move the stream to a new file position.  If the reader is
-maintaining any buffers, then they will be cleared.
-
-:param offset: A byte count offset.
-:param whence: If 0, then the offset is from the start of the file
-    (offset should be positive), if 1, then the offset is from the
-    current position (offset may be positive or negative); and if 2,
-    then the offset is from the end of the file (offset should
-    typically be negative).</p></div>
+    <div>Move the stream to a new file position.  If the reader is
+maintaining any buffers, then they will be cleared.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">offset</span></td><td class="fieldArgDesc">A byte count offset.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">whence</span></td><td class="fieldArgDesc">If 0, then the offset is from the start of the file
+(offset should be positive), if 1, then the offset is from the
+current position (offset may be positive or negative); and if 2,
+then the offset is from the end of the file (offset should
+typically be negative).</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -559,7 +544,7 @@ maintaining any buffers, then they will be cleared.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">tell</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1270">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1270">
       
       (source)
     </a>
@@ -567,10 +552,10 @@ maintaining any buffers, then they will be cleared.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return the current file position on the underlying byte
+    <div>Return the current file position on the underlying byte
 stream.  If this reader is maintaining any buffers, then the
 returned file position will be the position of the beginning
-of those buffers.</p></div>
+of those buffers.</div>
   </div>
 </div><div class="basemethod">
   
@@ -584,7 +569,7 @@ of those buffers.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">xreadlines</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1162">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1162">
       
       (source)
     </a>
@@ -592,7 +577,7 @@ of those buffers.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Return self</p></div>
+    <div>Return self</div>
   </div>
 </div><div class="baseclassvariable">
   
@@ -606,7 +591,7 @@ of those buffers.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">DEBUG</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool">bool</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L985">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L985">
       
       (source)
     </a>
@@ -628,7 +613,7 @@ of those buffers.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">bytebuffer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1008">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1008">
       
       (source)
     </a>
@@ -636,9 +621,9 @@ of those buffers.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">A buffer to use bytes that have been read but have not yet
+    <div>A buffer to use bytes that have been read but have not yet
 been decoded.  This is only used when the final bytes from
-a read do not form a complete encoding for a character.</p></div>
+a read do not form a complete encoding for a character.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -652,7 +637,7 @@ a read do not form a complete encoding for a character.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">decode</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1004">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1004">
       
       (source)
     </a>
@@ -660,8 +645,8 @@ a read do not form a complete encoding for a character.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The function that is used to decode byte strings into
-unicode strings.</p></div>
+    <div>The function that is used to decode byte strings into
+unicode strings.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -675,7 +660,7 @@ unicode strings.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">encoding</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L995">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L995">
       
       (source)
     </a>
@@ -683,8 +668,8 @@ unicode strings.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The name of the encoding that should be used to encode the
-underlying stream.</p></div>
+    <div>The name of the encoding that should be used to encode the
+underlying stream.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -698,7 +683,7 @@ underlying stream.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">errors</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L999">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L999">
       
       (source)
     </a>
@@ -706,9 +691,9 @@ underlying stream.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The error mode that should be used when decoding data from
+    <div>The error mode that should be used when decoding data from
 the underlying stream.  Can be 'strict', 'ignore', or
-'replace'.</p></div>
+'replace'.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -722,7 +707,7 @@ the underlying stream.  Can be 'strict', 'ignore', or
   <div class="functionHeader">
     
     <span class="py-defname">linebuffer</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1013">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1013">
       
       (source)
     </a>
@@ -730,15 +715,15 @@ the underlying stream.  Can be 'strict', 'ignore', or
   <div class="functionBody">
     
     
-    <div><p class="pre">A buffer used by ``readline()`` to hold characters that have
-been read, but have not yet been returned by ``read()`` or
-``readline()``.  This buffer consists of a list of unicode
+    <div>A buffer used by <tt class="rst-docutils literal">readline()</tt> to hold characters that have
+been read, but have not yet been returned by <tt class="rst-docutils literal">read()</tt> or
+<tt class="rst-docutils literal">readline()</tt>.  This buffer consists of a list of unicode
 strings, where each string corresponds to a single line.
 The final element of the list may or may not be a complete
 line.  Note that the existence of a linebuffer makes the
-``tell()`` operation more complex, because it must backtrack
+<tt class="rst-docutils literal">tell()</tt> operation more complex, because it must backtrack
 to the beginning of the buffer to determine the correct
-file position in the underlying byte stream.</p></div>
+file position in the underlying byte stream.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -752,7 +737,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">stream</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L992">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L992">
       
       (source)
     </a>
@@ -760,7 +745,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The underlying stream.</p></div>
+    <div>The underlying stream.</div>
   </div>
 </div><div class="baseproperty">
   
@@ -774,7 +759,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">closed</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1170">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1170">
       
       (source)
     </a>
@@ -782,7 +767,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">True if the underlying stream is closed.</p></div>
+    <div>True if the underlying stream is closed.</div>
   </div>
 </div><div class="baseproperty">
   
@@ -796,7 +781,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">mode</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1180">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1180">
       
       (source)
     </a>
@@ -804,7 +789,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The mode of the underlying stream.</p></div>
+    <div>The mode of the underlying stream.</div>
   </div>
 </div><div class="baseproperty">
   
@@ -818,7 +803,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionHeader">
     @property<br />
     <span class="py-defname">name</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1175">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1175">
       
       (source)
     </a>
@@ -826,7 +811,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The name of the underlying stream.</p></div>
+    <div>The name of the underlying stream.</div>
   </div>
 </div><div class="basemethod private">
   
@@ -840,7 +825,7 @@ file position in the underlying byte stream.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_char_seek_forward</span>(self, offset, est_bytes=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1230">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1230">
       
       (source)
     </a>
@@ -848,12 +833,10 @@ file position in the underlying byte stream.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Move the file position forward by ``offset`` characters,
-ignoring all buffers.
-
-:param est_bytes: A hint, giving an estimate of the number of
-    bytes that will be needed to move forward by ``offset`` chars.
-    Defaults to ``offset``.</p></div>
+    <div>Move the file position forward by <tt class="rst-docutils literal">offset</tt> characters,
+ignoring all buffers.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">offset</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">est_bytes</span></td><td class="fieldArgDesc">A hint, giving an estimate of the number of
+bytes that will be needed to move forward by <tt class="rst-docutils literal">offset</tt> chars.
+Defaults to <tt class="rst-docutils literal">offset</tt>.</td></tr></table></div>
   </div>
 </div><div class="basemethod private">
   
@@ -867,7 +850,7 @@ ignoring all buffers.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_check_bom</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1394">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1394">
       
       (source)
     </a>
@@ -889,7 +872,7 @@ ignoring all buffers.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_incr_decode</span>(self, bytes):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1354">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1354">
       
       (source)
     </a>
@@ -897,15 +880,15 @@ ignoring all buffers.
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Decode the given byte string into a unicode string, using this
+    <div><p>Decode the given byte string into a unicode string, using this
 reader's encoding.  If an exception is encountered that
 appears to be caused by a truncation error, then just decode
 the byte string without the bytes that cause the trunctaion
-error.
-
-Return a tuple ``(chars, num_consumed)``, where ``chars`` is
-the decoded unicode string, and ``num_consumed`` is the
-number of bytes that were consumed.</p></div>
+error.</p>
+<p>Return a tuple <tt class="rst-docutils literal">(chars, num_consumed)</tt>, where <tt class="rst-docutils literal">chars</tt> is
+the decoded unicode string, and <tt class="rst-docutils literal">num_consumed</tt> is the
+number of bytes that were consumed.</p>
+</div>
   </div>
 </div><div class="basemethod private">
   
@@ -919,7 +902,7 @@ number of bytes that were consumed.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_read</span>(self, size=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1316">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1316">
       
       (source)
     </a>
@@ -927,9 +910,9 @@ number of bytes that were consumed.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Read up to ``size`` bytes from the underlying stream, decode
+    <div>Read up to <tt class="rst-docutils literal">size</tt> bytes from the underlying stream, decode
 them using this reader's encoding, and return the resulting
-unicode string.  ``linebuffer`` is not included in the result.</p></div>
+unicode string.  <tt class="rst-docutils literal">linebuffer</tt> is not included in the result.</div>
   </div>
 </div><div class="baseclassvariable private">
   
@@ -943,7 +926,7 @@ unicode string.  ``linebuffer`` is not included in the result.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_BOM_TABLE</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1384">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1384">
       
       (source)
     </a>
@@ -965,7 +948,7 @@ unicode string.  ``linebuffer`` is not included in the result.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_bom</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1036">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1036">
       
       (source)
     </a>
@@ -973,8 +956,8 @@ unicode string.  ``linebuffer`` is not included in the result.</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The length of the byte order marker at the beginning of
-the stream (or None for no byte order marker).</p></div>
+    <div>The length of the byte order marker at the beginning of
+the stream (or None for no byte order marker).</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -988,7 +971,7 @@ the stream (or None for no byte order marker).</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">_rewind_checkpoint</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1024">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1024">
       
       (source)
     </a>
@@ -996,10 +979,10 @@ the stream (or None for no byte order marker).</p></div>
   <div class="functionBody">
     
     
-    <div><p class="pre">The file position at which the most recent read on the
+    <div>The file position at which the most recent read on the
 underlying stream began.  This is used, together with
-``_rewind_numchars``, to backtrack to the beginning of
-``linebuffer`` (which is required by ``tell()``).</p></div>
+<tt class="rst-docutils literal">_rewind_numchars</tt>, to backtrack to the beginning of
+<tt class="rst-docutils literal">linebuffer</tt> (which is required by <tt class="rst-docutils literal">tell()</tt>).</div>
   </div>
 </div><div class="baseinstancevariable private">
   
@@ -1013,7 +996,7 @@ underlying stream began.  This is used, together with
   <div class="functionHeader">
     
     <span class="py-defname">_rewind_numchars</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/data.py#L1030">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/data.py#L1030">
       
       (source)
     </a>
@@ -1021,10 +1004,10 @@ underlying stream began.  This is used, together with
   <div class="functionBody">
     
     
-    <div><p class="pre">The number of characters that have been returned since the
-read that started at ``_rewind_checkpoint``.  This is used,
-together with ``_rewind_checkpoint``, to backtrack to the
-beginning of ``linebuffer`` (which is required by ``tell()``).</p></div>
+    <div>The number of characters that have been returned since the
+read that started at <tt class="rst-docutils literal">_rewind_checkpoint</tt>.  This is used,
+together with <tt class="rst-docutils literal">_rewind_checkpoint</tt>, to backtrack to the
+beginning of <tt class="rst-docutils literal">linebuffer</tt> (which is required by <tt class="rst-docutils literal">tell()</tt>).</div>
   </div>
 </div>
 
@@ -1036,7 +1019,7 @@ beginning of ``linebuffer`` (which is required by ``tell()``).</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

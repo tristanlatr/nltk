@@ -65,25 +65,25 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">TagRule</span>: <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L19" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tbl.rule.Rule.html">nltk.tbl.rule.Rule</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TagRule</span>: <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L19" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="nltk.tbl.rule.Rule.html">nltk.tbl.rule.Rule</a></code></p>
         <p><a href="classIndex.html#nltk.tbl.rule.TagRule">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">An interface for tag transformations on a tagged corpus, as
+        <div><p>An interface for tag transformations on a tagged corpus, as
 performed by tbl taggers.  Each transformation finds all tokens
 in the corpus that are tagged with a specific original tag and
 satisfy a specific condition, and replaces their tags with a
 replacement tag.  For any given transformation, the original
 tag, replacement tag, and condition are fixed.  Conditions may
 depend on the token under consideration, as well as any other
-tokens in the corpus.
-
-Tag rules must be comparable and hashable.</p></div>
+tokens in the corpus.</p>
+<p>Tag rules must be comparable and hashable.</p>
+</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1633">
+        <table class="children sortable" id="id1637">
   
   
   <tr class="method">
@@ -147,7 +147,7 @@ Tag rules must be comparable and hashable.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L85">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L85">
       
       (source)
     </a>
@@ -169,7 +169,7 @@ Tag rules must be comparable and hashable.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__hash__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L91">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L91">
       
       (source)
     </a>
@@ -191,7 +191,7 @@ Tag rules must be comparable and hashable.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, original_tag, replacement_tag):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L33">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L33">
       
       (source)
     </a>
@@ -213,7 +213,7 @@ Tag rules must be comparable and hashable.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L88">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L88">
       
       (source)
     </a>
@@ -235,7 +235,7 @@ Tag rules must be comparable and hashable.</p></div>
   <div class="functionHeader">
     @abstractmethod<br />
     <span class="py-keyword">def</span> <span class="py-defname">applies</span>(self, tokens, index):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L72">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L72">
       
       (source)
     </a>
@@ -243,13 +243,8 @@ Tag rules must be comparable and hashable.</p></div>
   <div class="docstring functionBody">
     <div class="interfaceinfo">overridden in <code><a href="nltk.tbl.rule.Rule.html">nltk.tbl.rule.Rule</a></code></div>
     
-    <div><p class="pre">:return: True if the rule would change the tag of
-    ``tokens[index]``, False otherwise
-:rtype: bool
-:param tokens: A tagged sentence
-:type tokens: list(str)
-:param index: The index to check
-:type index: int</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(str)</td><td class="fieldArgDesc">A tagged sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index:</span>int</td><td class="fieldArgDesc">The index to check</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">bool</td><td class="fieldArgDesc">True if the rule would change the tag of
+<tt class="rst-docutils literal">tokens[index]</tt>, False otherwise</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -263,7 +258,7 @@ Tag rules must be comparable and hashable.</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">apply</span>(self, tokens, positions=None):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L41">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L41">
       
       (source)
     </a>
@@ -271,20 +266,13 @@ Tag rules must be comparable and hashable.</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Apply this rule at every position in positions where it
+    <div>Apply this rule at every position in positions where it
 applies to the given sentence.  I.e., for each position p
-in *positions*, if *tokens[p]* is tagged with this rule's
+in <em>positions</em>, if <em>tokens[p]</em> is tagged with this rule's
 original tag, and satisfies this rule's condition, then set
-its tag to be this rule's replacement tag.
-
-:param tokens: The tagged sentence
-:type tokens: list(tuple(str, str))
-:type positions: list(int)
-:param positions: The positions where the transformation is to
-    be tried.  If not specified, try it at all positions.
-:return: The indices of tokens whose tags were changed by this
-    rule.
-:rtype: int</p></div>
+its tag to be this rule's replacement tag.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tokens:</span>list(tuple(str, str))</td><td class="fieldArgDesc">The tagged sentence</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">positions:</span>list(int)</td><td class="fieldArgDesc">The positions where the transformation is to
+be tried.  If not specified, try it at all positions.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">int</td><td class="fieldArgDesc">The indices of tokens whose tags were changed by this
+rule.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -298,7 +286,7 @@ its tag to be this rule's replacement tag.
   <div class="functionHeader">
     
     <span class="py-defname">original_tag</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L35">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L35">
       
       (source)
     </a>
@@ -306,7 +294,7 @@ its tag to be this rule's replacement tag.
   <div class="functionBody">
     
     
-    <div><p class="pre">The tag which this TagRule may cause to be replaced.</p></div>
+    <div>The tag which this TagRule may cause to be replaced.</div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -320,7 +308,7 @@ its tag to be this rule's replacement tag.
   <div class="functionHeader">
     
     <span class="py-defname">replacement_tag</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/tbl/rule.py#L38">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/tbl/rule.py#L38">
       
       (source)
     </a>
@@ -328,7 +316,7 @@ its tag to be this rule's replacement tag.
   <div class="functionBody">
     
     
-    <div><p class="pre">The tag with which this TagRule may replace another tag.</p></div>
+    <div>The tag with which this TagRule may replace another tag.</div>
   </div>
 </div>
 
@@ -340,7 +328,7 @@ its tag to be this rule's replacement tag.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

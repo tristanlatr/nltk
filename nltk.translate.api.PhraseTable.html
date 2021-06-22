@@ -65,17 +65,17 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">PhraseTable</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L294" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PhraseTable</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L294" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.translate.api.PhraseTable">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">In-memory store of translations for a given phrase, and the log
-probability of the those translations</p></div>
+        <div>In-memory store of translations for a given phrase, and the log
+probability of the those translations</div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id1867">
+        <table class="children sortable" id="id1871">
   
   
   <tr class="method">
@@ -92,7 +92,7 @@ probability of the those translations</p></div>
     
     <td>Method</td>
     <td><code><a href="#add">add</a></code></td>
-    <td><span>:type src_phrase: tuple(str) :type trg_phrase: tuple(str)</span></td>
+    <td><span></span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -124,7 +124,7 @@ probability of the those translations</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__contains__</span>(self, src_phrase):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L333">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L333">
       
       (source)
     </a>
@@ -146,7 +146,7 @@ probability of the those translations</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L300">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L300">
       
       (source)
     </a>
@@ -168,7 +168,7 @@ probability of the those translations</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">add</span>(self, src_phrase, trg_phrase, log_prob):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L318">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L318">
       
       (source)
     </a>
@@ -176,12 +176,8 @@ probability of the those translations</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">:type src_phrase: tuple(str)
-:type trg_phrase: tuple(str)
-
-:param log_prob: Log probability that given ``src_phrase``,
-    ``trg_phrase`` is its translation
-:type log_prob: float</p></div>
+    <div><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">src_phrase:</span>tuple(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trg_phrase:</span>tuple(str)</td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">log_prob:</span>float</td><td class="fieldArgDesc">Log probability that given <tt class="rst-docutils literal">src_phrase</tt>,
+<tt class="rst-docutils literal">trg_phrase</tt> is its translation</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -195,7 +191,7 @@ probability of the those translations</p></div>
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">translations_for</span>(self, src_phrase):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L303">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L303">
       
       (source)
     </a>
@@ -203,16 +199,10 @@ probability of the those translations</p></div>
   <div class="docstring functionBody">
     
     
-    <div><p class="pre">Get the translations for a source language phrase
-
-:param src_phrase: Source language phrase of interest
-:type src_phrase: tuple(str)
-
-:return: A list of target language phrases that are translations
-    of ``src_phrase``, ordered in decreasing order of
-    likelihood. Each list element is a tuple of the target
-    phrase and its log probability.
-:rtype: list(PhraseTableEntry)</p></div>
+    <div>Get the translations for a source language phrase<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">src_phrase:</span>tuple(str)</td><td class="fieldArgDesc">Source language phrase of interest</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">list(PhraseTableEntry)</td><td class="fieldArgDesc">A list of target language phrases that are translations
+of <tt class="rst-docutils literal">src_phrase</tt>, ordered in decreasing order of
+likelihood. Each list element is a tuple of the target
+phrase and its log probability.</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -226,7 +216,7 @@ probability of the those translations</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">src_phrases</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/translate/api.py#L301">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/translate/api.py#L301">
       
       (source)
     </a>
@@ -246,7 +236,7 @@ probability of the those translations</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 

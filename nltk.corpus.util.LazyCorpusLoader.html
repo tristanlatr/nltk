@@ -65,42 +65,31 @@
       </div>
 
       <div class="extrasDocstring">
-        <p><code><span class="py-keyword">class</span> <span class="py-defname">LazyCorpusLoader</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L19" class="sourceLink">(source)</a></code></p>
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">LazyCorpusLoader</span>(<a href="https://docs.python.org/3/library/functions.html#object" title="object">object</a>): <a href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L19" class="sourceLink">(source)</a></code></p>
         <p><a href="classIndex.html#nltk.corpus.util.LazyCorpusLoader">View In Hierarchy</a></p>
       </div>
 
       <div class="moduleDocstring">
-        <div><p class="pre">To see the API documentation for this lazily loaded corpus, first
-run corpus.ensure_loaded(), and then run help(this_corpus).
-
-LazyCorpusLoader is a proxy object which is used to stand in for a
+        <div><p>To see the API documentation for this lazily loaded corpus, first
+run corpus.ensure_loaded(), and then run help(this_corpus).</p>
+<p>LazyCorpusLoader is a proxy object which is used to stand in for a
 corpus object before the corpus is loaded.  This allows NLTK to
 create an object for each corpus, but defer the costs associated
 with loading those corpora until the first time that they're
-actually accessed.
-
-The first time this object is accessed in any way, it will load
+actually accessed.</p>
+<p>The first time this object is accessed in any way, it will load
 the corresponding corpus, and transform itself into that corpus
-(by modifying its own ``__class__`` and ``__dict__`` attributes).
-
-If the corpus can not be found, then accessing this object will
+(by modifying its own <tt class="rst-docutils literal">__class__</tt> and <tt class="rst-docutils literal">__dict__</tt> attributes).</p>
+<p>If the corpus can not be found, then accessing this object will
 raise an exception, displaying installation instructions for the
 NLTK data package.  Once they've properly installed the data
-package (or modified ``nltk.data.path`` to point to its location),
-they can then use the corpus object without restarting python.
-
-:param name: The name of the corpus
-:type name: str
-:param reader_cls: The specific CorpusReader class, e.g. PlaintextCorpusReader, WordListCorpusReader
-:type reader: nltk.corpus.reader.api.CorpusReader
-:param nltk_data_subdir: The subdirectory where the corpus is stored.
-:type nltk_data_subdir: str
-:param *args: Any other non-keywords arguments that `reader_cls` might need.
-:param *kargs: Any other keywords arguments that `reader_cls` might need.</p></div>
+package (or modified <tt class="rst-docutils literal">nltk.data.path</tt> to point to its location),
+they can then use the corpus object without restarting python.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">The name of the corpus</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reader_cls</span></td><td class="fieldArgDesc">The specific CorpusReader class, e.g. PlaintextCorpusReader, WordListCorpusReader</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nltk_data_subdir</span></td><td class="fieldArgDesc">The subdirectory where the corpus is stored.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">Any other non-keywords arguments that <code>reader_cls</code> might need.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">kargs</span></td><td class="fieldArgDesc">Any other keywords arguments that <code>reader_cls</code> might need.</td></tr></table></div>
       </div>
 
       <div id="splitTables">
-        <table class="children sortable" id="id538">
+        <table class="children sortable" id="id541">
   
   
   <tr class="method">
@@ -189,7 +178,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__getattr__</span>(self, attr):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L111">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L111">
       
       (source)
     </a>
@@ -211,7 +200,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, name, reader_cls, *args, **kwargs):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L50">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L50">
       
       (source)
     </a>
@@ -233,7 +222,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L125">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L125">
       
       (source)
     </a>
@@ -255,7 +244,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-defname">__class__</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L98">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L98">
       
       (source)
     </a>
@@ -277,7 +266,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-defname">__dict__</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L97">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L97">
       
       (source)
     </a>
@@ -299,7 +288,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-defname">__name__</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L54">
       
       (source)
     </a>
@@ -321,7 +310,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-defname">subdir</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L59">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L59">
       
       (source)
     </a>
@@ -343,7 +332,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">__load</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L67">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L67">
       
       (source)
     </a>
@@ -365,7 +354,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-keyword">def</span> <span class="py-defname">_unload</span>(self):
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L131">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L131">
       
       (source)
     </a>
@@ -387,7 +376,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-defname">__args</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L64">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L64">
       
       (source)
     </a>
@@ -409,7 +398,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-defname">__kwargs</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L65">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L65">
       
       (source)
     </a>
@@ -431,7 +420,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-defname">__name</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L54">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L54">
       
       (source)
     </a>
@@ -453,7 +442,7 @@ they can then use the corpus object without restarting python.
   <div class="functionHeader">
     
     <span class="py-defname">__reader_cls</span> =
-    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/f83d0acf07ed0fd627306ec5ae73265b05025e51/nltk/corpus/util.py#L55">
+    <a class="sourceLink" href="https://github.com/tristanlatr/nltk/tree/03a34b1932460e632ce9048adc0ccabbc7c0558c/nltk/corpus/util.py#L55">
       
       (source)
     </a>
@@ -473,7 +462,7 @@ they can then use the corpus object without restarting python.
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/tristanlatr/nltk" class="projecthome">Natural Language Toolkit</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    21.2.2 at 2021-06-22 02:51:08.
+    21.2.2 at 2021-06-22 02:56:13.
   </div>
 </footer>
 
